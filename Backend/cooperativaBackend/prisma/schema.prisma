@@ -1,0 +1,144 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model formactivosfijos {
+  actID      String   @id @db.VarChar(255)
+  actContent Json
+  report     report[]
+}
+
+model formcaratula {
+  carID      String   @id @db.VarChar(255)
+  carContent Json
+  report     report[]
+}
+
+model formdetallerenglones {
+  detID      String   @id @db.VarChar(255)
+  detContent Json
+  report     report[]
+}
+
+model formesfpatrimonio {
+  esfID      String   @id @db.VarChar(255)
+  esfContent Json
+  report     report[]
+}
+
+model formimpuestodiferido {
+  impID      String   @id @db.VarChar(255)
+  impContent Json
+  report     report[]
+}
+
+model formingresosfancturacion {
+  ingID      String   @id @db.VarChar(255)
+  ingContent Json
+  report     report[]
+}
+
+model formr110 {
+  r110ID      String   @id @db.VarChar(255)
+  r110Content Json
+  report      report[]
+}
+
+model formrentaliquida {
+  renID      String   @id @db.VarChar(255)
+  renContent Json
+  report     report[]
+}
+
+model formresumenesferi {
+  resID      String   @id @db.VarChar(255)
+  resContent Json
+  report     report[]
+}
+
+model report {
+  repID                    String                   @id @db.VarChar(255)
+  stuID                    String                   @db.VarChar(255)
+  roomID                   String                   @db.VarChar(255)
+  carID                    String                   @db.VarChar(255)
+  detID                    String                   @db.VarChar(255)
+  esfID                    String                   @db.VarChar(255)
+  renID                    String                   @db.VarChar(255)
+  impID                    String                   @db.VarChar(255)
+  ingID                    String                   @db.VarChar(255)
+  actID                    String                   @db.VarChar(255)
+  resID                    String                   @db.VarChar(255)
+  r110ID                   String                   @db.VarChar(255)
+  formactivosfijos         formactivosfijos         @relation(fields: [actID], references: [actID])
+  formcaratula             formcaratula             @relation(fields: [carID], references: [carID])
+  formdetallerenglones     formdetallerenglones     @relation(fields: [detID], references: [detID])
+  formesfpatrimonio        formesfpatrimonio        @relation(fields: [esfID], references: [esfID])
+  formimpuestodiferido     formimpuestodiferido     @relation(fields: [impID], references: [impID])
+  formingresosfancturacion formingresosfancturacion @relation(fields: [ingID], references: [ingID])
+  formr110                 formr110                 @relation(fields: [r110ID], references: [r110ID])
+  formrentaliquida         formrentaliquida         @relation(fields: [renID], references: [renID])
+  formresumenesferi        formresumenesferi        @relation(fields: [resID], references: [resID])
+  room                     room                     @relation(fields: [roomID], references: [roomID])
+  student                  student                  @relation(fields: [stuID], references: [stuID])
+
+  @@index([actID], map: "report_actID_fkey")
+  @@index([carID], map: "report_carID_fkey")
+  @@index([detID], map: "report_detID_fkey")
+  @@index([esfID], map: "report_esfID_fkey")
+  @@index([impID], map: "report_impID_fkey")
+  @@index([ingID], map: "report_ingID_fkey")
+  @@index([r110ID], map: "report_r110ID_fkey")
+  @@index([renID], map: "report_renID_fkey")
+  @@index([resID], map: "report_resID_fkey")
+  @@index([roomID], map: "report_roomID_fkey")
+  @@index([stuID], map: "report_stuID_fkey")
+}
+
+model room {
+  roomID       String          @id @db.VarChar(255)
+  roomName     String          @db.VarChar(255)
+  roomPassword String          @db.VarChar(255)
+  roomDate     DateTime        @db.Date
+  roomStatus   room_roomStatus
+  roomAnswer   Json
+  usuID        String          @db.VarChar(255)
+  report       report[]
+  user         user            @relation(fields: [usuID], references: [usuID])
+  student      student[]
+
+  @@index([usuID], map: "room_usuID_fkey")
+}
+
+model student {
+  stuID   String   @id @db.VarChar(255)
+  stuName String   @db.VarChar(128)
+  roomID  String
+  report  report[]
+  room    room     @relation(fields: [roomID], references: [roomID])
+
+  @@index([roomID], map: "student_roomID_fkey")
+}
+
+model user {
+  usuID       String       @id @db.VarChar(255)
+  usuName     String       @db.VarChar(128)
+  usuEmail    String       @unique @db.VarChar(128)
+  usuPassword String       @db.VarChar(255)
+  usuRole     user_usuRole
+  room        room[]
+}
+
+enum user_usuRole {
+  admin
+  profesor
+}
+
+enum room_roomStatus {
+  open
+  closed
+}
