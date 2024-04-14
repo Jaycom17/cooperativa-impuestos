@@ -14,13 +14,13 @@ export const User = z.object({
       required_error: "Se requiere un rol",
     }).refine((value) => value === "admin" || value === "user", {
       message: "El rol debe ser admin o user",
-    }),
+    })
 });
 
 export const Id = z.object({
   usuId: z.string({
     required_error: "Se requiere un nombre",
-  }).number({ message: "Id invalido"}),
+  })
 });
 
 export const Login = z.object({
@@ -29,5 +29,5 @@ export const Login = z.object({
   }),
   usuPassword: z.string({
       required_error: "Se requiere una contraseña",
-  }).min(6, { message: "La contraseña debe tener al menos 6 caracteres" }),
+  }).min(6, { message: "La contraseña debe tener al menos 6 caracteres" })
 });

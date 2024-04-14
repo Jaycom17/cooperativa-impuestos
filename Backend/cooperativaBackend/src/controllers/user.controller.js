@@ -50,8 +50,8 @@ export const login = async (req, res) => {
     const { usuEmail, usuPassword } = req.body;
     const result = await loginUser({ usuEmail, usuPassword });
 
-    if (!result) {
-        return res.status(500).json({ error: 'Iniciar sesion' });
+    if (result==null) {
+        return res.status(500).json({ error: 'No se pudo Iniciar sesion' });
     }
 
     res.status(201).json(result);

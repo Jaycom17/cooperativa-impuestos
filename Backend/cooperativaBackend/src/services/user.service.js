@@ -56,12 +56,12 @@ export const removeUser = async (id) => {
 export const loginUser = async (user) => {
   try {
     const result = await prisma.user.findUnique({ where: { usuEmail: user.usuEmail } });
-    if (!result) return false;
+    if (!result) return null;
     const passwordMatch = await compare(user.usuPassword, result.usuPassword);
-    if (!passwordMatch) return false;
-    return true;
+    if (!passwordMatch) return null;
+    return user.usuRole;
   } catch (error) {
     console.error(error.ConnectorError);
-    return false;
+    return null;
   }
 }

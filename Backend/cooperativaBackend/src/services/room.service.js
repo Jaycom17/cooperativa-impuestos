@@ -21,3 +21,59 @@ export const createRoom = async (room) => {
         return false;
     }
 }
+
+const getRoom = async (roomID) => {
+    try {
+        const result = await prisma.room.findUnique({
+            where: {
+                roomID: roomID
+            }
+        });
+        return result;
+    } catch (error) {
+        console.error(error.ConnectorError);
+        return false;
+    }
+}
+
+const getRooms = async () => {
+    try {
+        const result = await prisma.room.findMany();
+        return result;
+    } catch (error) {
+        console.error(error.ConnectorError);
+        return false;
+    }
+}
+
+const updateRoom = async (room) => {
+    try {
+        const result = await prisma.room.update({
+            where: {
+                roomID: room.roomID
+            },
+            data: {
+                roomDate: room.roomDate,
+                roomStatus: room.roomStatus
+            }
+        });
+        return result;
+    } catch (error) {
+        console.error(error.ConnectorError);
+        return false;
+    }
+}
+
+const deleteRoom = async (roomID) => {
+    try {
+        const result = await prisma.room.delete({
+            where: {
+                roomID: roomID
+            }
+        });
+        return result;
+    } catch (error) {
+        console.error(error.ConnectorError);
+        return false;
+    }
+}
