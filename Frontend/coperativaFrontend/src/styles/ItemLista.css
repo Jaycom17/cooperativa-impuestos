@@ -46,3 +46,6 @@
 .btn-eliminar:hover {
   background-color: #FF4E4E;
 }
+button {
+  background-color: #FFFFFF;
+}
