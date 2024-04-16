@@ -19,7 +19,7 @@ export const User = z.object({
 
 export const Id = z.object({
   usuId: z.string({
-    required_error: "Se requiere un nombre",
+    required_error: "Se requiere una id",
   })
 });
 

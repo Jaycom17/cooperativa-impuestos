@@ -5,6 +5,12 @@ import { v4 as uuidv4 } from 'uuid';
 export const createRoom = async (room) => {
     try {
         const encryptedPassword = await encrypt(room.roomPassword);
+
+        const usuResult = await prisma.user.findUnique({ where: { usuID: id } });
+        if (!usuResult) {
+            return false;
+        }
+
         const result = await prisma.room.create({
             data: {
                 roomID: uuidv4(),

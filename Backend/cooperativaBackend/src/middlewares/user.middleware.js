@@ -12,7 +12,7 @@ export const validateUser = async (req, res, next) => {
 
 export const validateId = async (req, res, next) => {
     try {
-        const id = Id.parse(req.body);
+        const id = Id.parse(req.param);
         req.body = id;
         next();
     } catch (error) {
