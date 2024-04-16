@@ -1,7 +1,7 @@
 import React from 'react';
-import ItemLista from '../components/ItemLista'
-import Navbar from '../components/Navbar';
-import '../styles/ListaItems.css'
+import ItemLista from '../../components/ItemLista/ItemLista';
+import Navbar from '../../components/Navbar/Navbar';
+import './ListaItems.css';
 
 const ListaItems = () => {
   const items = [

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/ItemLista.css';
+import './ItemLista.css';
 
 const ItemLista = ({ nombre, estado, onActualizar, onEliminar }) => {
   // Check if nombre and estado have values and estado is a string
