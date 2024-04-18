@@ -4,10 +4,11 @@ import ItemLista from './components/ItemLista/ItemLista'
 import ListaItems from './pages/ListaItems/ListaItems'
 import Navbar from './components/Navbar/Navbar'
 import Sala from './components/Sala/Sala'
+import TeacherPage from './pages/TeacherPage/TeacherPage'
 function App() {
 
   return (
-    <Sala />
+    <TeacherPage />
   )
 }
 
