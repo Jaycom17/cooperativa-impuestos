@@ -1,9 +1,9 @@
-import { User, Id, Login } from '../models/user.model.js';
+import { Room, Id, update } from '../models/room.model.js';
 
-export const validateUser = async (req, res, next) => {
+export const validateRoom = async (req, res, next) => {
     try {
-        const user = User.parse(req.body);
-        req.body = user;
+        const room = Room.parse(req.body);
+        req.body = room;
         next();
     } catch (error) {
         res.status(400).json({ error: error.errors });
@@ -12,18 +12,17 @@ export const validateUser = async (req, res, next) => {
 
 export const validateId = async (req, res, next) => {
     try {
-        const id = Id.parse(req.param);
+        const id = Id.parse(req.body);
         req.body = id;
         next();
     } catch (error) {
         res.status(400).json({ error: error.errors });
     }
 }
-
-export const validateLogin = async (req, res, next) => {
+export const validateUpdate = async (req, res, next) => {
     try {
-        const login = Login.parse(req.body);
-        req.body = login;
+        const updateRoom = update.parse(req.body);
+        req.body = updateRoom;
         next();
     } catch (error) {
         res.status(400).json({ error: error.errors });

@@ -1,21 +1,13 @@
 import { Router }  from 'express';
-import { postUser } from '../controllers/user.controller.js';
-import { validateUser } from '../middlewares/user.middleware.js';
+import { postUser, getUsers, getUser, deleteUser, login } from '../controllers/user.controller.js';
+import { validateUser, validateId, validateLogin } from '../middlewares/user.middleware.js';
 
 const userRouter = Router();
 
-userRouter.get('/', (req, res) => {
-    res.send('Hello from user routes');
-});
-
-userRouter.get('/profile', (req, res) => {
-    res.send('Hello from user profile');
-});
-
-userRouter.get('/profile/:id', (req, res) => {
-    res.send('Hello from user profile id');
-});
-
 userRouter.post('/',validateUser, postUser);
+userRouter.get('/', getUsers);
+userRouter.get('/:id', validateId, getUser);
+userRouter.delete('/:id', validateId, deleteUser);
+userRouter.post('/login', validateLogin, login);
 
 export default userRouter;
