@@ -1,8 +1,7 @@
 import { createUser, obtainUsers, obtainUser, removeUser, loginUser} from "../services/user.service.js";
 
 export const postUser = async (req, res) => {
-    const { usuName, usuEmail, usuPassword, usuRole } = req.body;
-    const newUser = { usuName, usuEmail, usuPassword, usuRole };
+    const newUser = req.body;
 
     const result = await createUser(newUser);
 
