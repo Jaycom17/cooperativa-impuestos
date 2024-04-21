@@ -24,9 +24,9 @@ export const Id = z.object({
 });
 
 export const Login = z.object({
-  usuName: z.string({
-    required_error: "Se requiere un nombre",
-  }),
+  usuEmail: z.string({
+    required_error: "Se requiere un email",
+  }).email({ message: "Email inválido"}),
   usuPassword: z.string({
       required_error: "Se requiere una contraseña",
   }).min(6, { message: "La contraseña debe tener al menos 6 caracteres" })
