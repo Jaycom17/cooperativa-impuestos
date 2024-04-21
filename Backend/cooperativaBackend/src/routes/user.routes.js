@@ -6,8 +6,8 @@ const userRouter = Router();
 
 userRouter.post('/',validateUser, postUser);
 userRouter.get('/', getUsers);
-userRouter.get('/:id', validateId, getUser);
-userRouter.delete('/:id', validateId, deleteUser);
+userRouter.get('/:usuId', validateId, getUser);
+userRouter.delete('/:usuId', validateId, deleteUser);
 userRouter.post('/login', validateLogin, login);
 
 export default userRouter;

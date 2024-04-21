@@ -22,8 +22,8 @@ export const validateIdP = async (req, res, next) => {
 
 export const validateIdB = async (req, res, next) => {
     try {
-        const {roomId} = Id.parse(req.body);
-        req.params = roomId;
+        const room = Id.parse(req.body);
+        req.params = room;
         next();
     } catch (error) {
         res.status(400).json({ error: error.errors });

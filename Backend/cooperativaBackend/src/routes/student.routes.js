@@ -6,8 +6,8 @@ const userRouter = Router();
 
 userRouter.post('/', validateStudent, postStudent);
 userRouter.get('/', getStudents);
-userRouter.get('/:id', validateIdP, getStudent);
-userRouter.put('/:id', validateIdP, validateIdB, putStudent);
-userRouter.delete('/:id', validateIdP, deleteStudent);
+userRouter.get('/:stuId', validateIdP, getStudent);
+userRouter.put('/:stuId', validateIdP, validateIdB, putStudent);
+userRouter.delete('/:stuId', validateIdP, deleteStudent);
 
 export default userRouter;

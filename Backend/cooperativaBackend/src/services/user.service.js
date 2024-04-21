@@ -17,38 +17,43 @@ export const createUser = async (user) => {
     console.log(result);
     return true;
   } catch (error) {
-    console.error(error.ConnectorError);
+    console.error(error);
     return false;
   }
 }
 
 export const obtainUsers = async () => {
   try {
+    console.log("get users");
     const result = await prisma.user.findMany();
+    
     return result;
   } catch (error) {
-    console.error(error.ConnectorError);
+    console.error(error);
     return null;
   }
 }
 
-export const obtainUser = async (id) => {
+export const obtainUser = async (usuId) => {
   try {
-    const result = await prisma.user.findUnique({ where: { usuID: id } });
+    console.log("Id ingresada "+usuId);
+    const result = await prisma.user.findUnique({ where: { usuID: usuId } });
+    console.log("get user");
     return result;
   } catch (error) {
-    console.error(error.ConnectorError);
+    console.error(error);
     return null;
   }
 }
 
-export const removeUser = async (id) => {
+export const removeUser = async (usuId) => {
   try {
-    const result = await prisma.user.delete({ where: { usuID: id } });
+    console.log("id " + usuId);
+    const result = await prisma.user.delete({ where: { usuID: usuId } });
     console.log(result);
     return true;
   } catch (error) {
-    console.error(error.ConnectorError);
+    console.error(error);
     return false;
   }
 }
@@ -56,10 +61,12 @@ export const removeUser = async (id) => {
 export const loginUser = async (user) => {
   try {
     const result = await prisma.user.findUnique({ where: { usuEmail: user.usuEmail } });
+    console.log(result);
     if (!result) return null;
     const passwordMatch = await compare(user.usuPassword, result.usuPassword);
     if (!passwordMatch) return null;
-    return user.usuRole;
+    console.log("passwordMatch");
+    return result.usuRole;
   } catch (error) {
     console.error(error.ConnectorError);
     return null;

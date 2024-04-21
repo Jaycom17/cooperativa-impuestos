@@ -24,8 +24,8 @@ export const Id = z.object({
 });
 
 export const Login = z.object({
-  usuName: z.string({
-    required_error: "Se requiere un nombre",
+  usuEmail: z.string({
+    required_error: "Se requiere un email",
   }),
   usuPassword: z.string({
       required_error: "Se requiere una contraseña",

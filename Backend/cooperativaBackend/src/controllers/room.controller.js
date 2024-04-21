@@ -1,8 +1,8 @@
-import { createRoom, getRoom, getRooms, updateRoom, deleteRoom } from "../services/room.service.js";
+import { createRoom, obtainRoom, obtainRooms, updateRoom, removeRoom } from "../services/room.service.js";
 
 export const postRoom = async (req, res) => {
-    const { roomPassword, roomDate, roomStatus, usuID } = req.body;
-    const newRoom = { roomPassword, roomDate, roomStatus, usuID };
+    const {roomName, roomPassword, roomDate, roomStatus, usuID } = req.body;
+    const newRoom = {roomName, roomPassword, roomDate, roomStatus, usuID };
 
     const result = await createRoom(newRoom);
 
@@ -14,8 +14,8 @@ export const postRoom = async (req, res) => {
 };
 
 export const getRoom = async (req, res) => {
-    const { id } = req.params;
-    const room = await getRoom(id);
+    const { roomID } = req.params;
+    const room = await obtainRoom(roomID);
 
     if (!room) {
         return res.status(500).json({ error: 'No se pudo obtener la sala' });
@@ -25,7 +25,7 @@ export const getRoom = async (req, res) => {
 }
 
 export const getRooms = async (req, res) => {
-    const rooms = await getRooms();
+    const rooms = await obtainRooms();
 
     if (!rooms) {
         return res.status(500).json({ error: 'No se pudo obtener las salas' });
@@ -35,12 +35,11 @@ export const getRooms = async (req, res) => {
 }
 
 export const putRoom = async (req, res) => {
-    const {id} = req.params;
-    const { roomDate, roomStatus} = req.body;
-    const room = { id, roomDate, roomStatus};
-
+    const {roomID} = req.params;
+    const { roomDate, roomStatus,usuID} = req.body;
+    const room = { roomID, roomDate, roomStatus,usuID};
+    console.log(room); 
     const result = await updateRoom(room);
-
     if (!result) {
         return res.status(500).json({ error: 'No se pudo actualizar la sala' });
     }
@@ -49,8 +48,8 @@ export const putRoom = async (req, res) => {
 }
 
 export const deleteRoom = async (req, res) => {
-    const { id } = req.params;
-    const result = await deleteRoom(id);
+    const { roomID } = req.params;
+    const result = await removeRoom(roomID);
 
     if (!result) {
         return res.status(500).json({ error: 'No se pudo eliminar la sala' });
