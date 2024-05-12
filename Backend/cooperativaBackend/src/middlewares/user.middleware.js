@@ -12,8 +12,8 @@ export const validateUser = async (req, res, next) => {
 
 export const validateId = async (req, res, next) => {
     try {
-        const id = Id.parse(req.param);
-        req.body = id;
+        const id = Id.parse(req.params);
+        req.params = id;
         next();
     } catch (error) {
         res.status(400).json({ error: error.errors });

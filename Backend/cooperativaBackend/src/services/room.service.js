@@ -6,29 +6,32 @@ export const createRoom = async (room) => {
     try {
         const encryptedPassword = await encrypt(room.roomPassword);
 
-        const usuResult = await prisma.user.findUnique({ where: { usuID: id } });
+        const usuResult = await prisma.user.findUnique({ where: { usuID: room.usuID } });
         if (!usuResult) {
             return false;
         }
-
+        console.log("Id usuario");
+        console.log(room.roomName);
         const result = await prisma.room.create({
             data: {
                 roomID: uuidv4(),
+                roomName: room.roomName,
                 roomPassword: encryptedPassword,
                 roomDate: room.roomDate,
                 roomStatus: room.roomStatus,
+                roomAnswer: null,
                 usuID: room.usuID
             }
         });
         console.log(result);
         return true;
     } catch (error) {
-        console.error(error.ConnectorError);
+        console.error(error);
         return false;
     }
 }
 
-const getRoom = async (roomID) => {
+export const obtainRoom = async (roomID) => {
     try {
         const result = await prisma.room.findUnique({
             where: {
@@ -37,49 +40,53 @@ const getRoom = async (roomID) => {
         });
         return result;
     } catch (error) {
-        console.error(error.ConnectorError);
+        console.error(error);
         return false;
     }
 }
 
-const getRooms = async () => {
+export const obtainRooms = async () => {
     try {
         const result = await prisma.room.findMany();
         return result;
     } catch (error) {
-        console.error(error.ConnectorError);
+        console.error(error);
         return false;
     }
 }
 
-const updateRoom = async (room) => {
+export const updateRoom = async (room) => {
     try {
+        console.log(room);
         const result = await prisma.room.update({
             where: {
                 roomID: room.roomID
             },
             data: {
                 roomDate: room.roomDate,
-                roomStatus: room.roomStatus
+                roomStatus: room.roomStatus,
+                usuID: room.usuID
             }
         });
         return result;
     } catch (error) {
-        console.error(error.ConnectorError);
+        console.error(error);
         return false;
     }
 }
 
-const deleteRoom = async (roomID) => {
+export const removeRoom = async (roomDate) => {
     try {
-        const result = await prisma.room.delete({
+        const result = await prisma.room.deleteMany({
             where: {
-                roomID: roomID
+                roomDate: {
+                    startsWith: roomDate
+                }
             }
         });
         return result;
     } catch (error) {
-        console.error(error.ConnectorError);
+        console.error(error);
         return false;
     }
 }
