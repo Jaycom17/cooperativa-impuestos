@@ -17,9 +17,7 @@ import AccountDropdown from './components/accountDrop/AccountDropdown'
 function App() {
 
   return (
-    <TeacherNavbarTW
-    nombreProfesor="Gerardo"
-    />
+    <ListaItemsTW/>
   )
 }
 
