@@ -1,21 +1,20 @@
-const ItemListaTW = ({ nombre, estado, onActualizar, onEliminar }) => {
-  // Check if nombre and estado have values and estado is a string
-  if (!nombre || !estado || typeof estado !== 'string') {
-    nombre = 'Carlitos :3';
-    estado = 'INACTIVO';
+const ItemListaTW = ({ nombre, onActualizar, onEliminar }) => {
+  // Check if nombre have values and rol is a string
+  if (!nombre || typeof nombre !== 'string') {
+    nombre = 'Nombre_docente';
   }
 
   return (
-    <section className="flex justify-between items-center mb-4 rounded-md bg-primary p-[10px] text-unicoop-white shadow-md">
-      <h1 className="flex-1 rounded-l p-[5px] text-center font-medium ml-4">{nombre}</h1>
-      <h1 className={`flex-1 text-center rounded-r p-[5px] font-bold
-       ${estado.toLowerCase() === "inactivo" ? "bg-unicoop-green":"bg-unicoop-blue"}`} >{estado}</h1>
-      <button onClick={onActualizar} className="text-unicoop-black py-[5px] px-4 ml-4 rounded transition-colors duration-200 ease-in hover:bg-unicoop-blue hover:text-unicoop-white">
-        Actualizar
-      </button>
-      <button onClick={onEliminar} className="text-unicoop-black py-[5px] px-4 mx-4 rounded transition-colors duration-200 ease-in hover:bg-buttons-closing-red hover:text-unicoop-white">
-        Eliminar
-      </button>
+    <section className="flex flex-col justify-between items-center mb-4 rounded-md max-w-[400px] bg-primary p-[10px] text-unicoop-white shadow-md">
+      <h1 className=" rounded-md flex-1 w-[90%] text-sm sm:rounded-l p-[5px] my-auto md:py-[5px] text-center font-medium">{nombre}</h1>
+      <div className="flex mt-3 bg-primary">
+        <button onClick={onActualizar} className="text-unicoop-black py-[5px] px-4 mr-2 rounded transition-colors duration-200 ease-in hover:bg-unicoop-blue hover:text-unicoop-white w-full ">
+          Actualizar
+        </button>
+        <button onClick={onEliminar} className="text-unicoop-black py-[5px] px-4 ml-2 rounded transition-colors duration-200 ease-in hover:bg-buttons-closing-red hover:text-unicoop-white w-full">
+          Eliminar
+        </button>
+      </div>
     </section>
   );
 };

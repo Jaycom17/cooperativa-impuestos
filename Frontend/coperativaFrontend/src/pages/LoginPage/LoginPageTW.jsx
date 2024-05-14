@@ -7,7 +7,7 @@ const LoginPageTW = () => {
                     <h1 className="text-2xl text-white bg-[#385075] mt-4">Iniciar sesión</h1>
                     <input type="text" placeholder="Usuario" name="username" required className="w-[90%] rounded-[3px] border-solid border-unicoop border-[1px] my-3 p-2 text-unicoop-white"/>
                     <input type="password" placeholder="Contraseña" name="password" required
-                    className="w-[90%] rounded-[3px] border-solid border-unicoop border-[1px] my-3 p-2"/>
+                    className="w-[90%] rounded-[3px] border-solid border-unicoop text-unicoop border-[1px] my-3 p-2"/>
                     <button className="bg-[#404142] text-unicoop-white w-[90%] p-2 rounded-md my-4 hover:bg-[#0056b3] focus:ring-2 transition-colors duration-200 ease-in">Ingresar</button>
                 </form>
             </section>
