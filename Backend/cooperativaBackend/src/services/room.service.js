@@ -4,9 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const createRoom = async (room) => {
     try {
-        const encryptedPassword = await encrypt(room.roomPassword);
+        const usuResult = await prisma.user.findUnique({ where: { usuID: room.usuID } });
 
-        const usuResult = await prisma.user.findUnique({ where: { usuID: id } });
         if (!usuResult) {
             return false;
         }
@@ -14,21 +13,23 @@ export const createRoom = async (room) => {
         const result = await prisma.room.create({
             data: {
                 roomID: uuidv4(),
-                roomPassword: encryptedPassword,
-                roomDate: room.roomDate,
+                roomPassword: room.roomPassword,
+                roomDate: new Date(room.roomDate).toISOString(),
                 roomStatus: room.roomStatus,
-                usuID: room.usuID
+                usuID: room.usuID,
+                roomName: room.roomName,
+                roomAnswer: {}
             }
         });
-        console.log(result);
+
         return true;
     } catch (error) {
-        console.error(error.ConnectorError);
+        console.error(error);
         return false;
     }
 }
 
-const getRoom = async (roomID) => {
+export const listRoom = async (roomID) => {
     try {
         const result = await prisma.room.findUnique({
             where: {
@@ -42,7 +43,7 @@ const getRoom = async (roomID) => {
     }
 }
 
-const getRooms = async () => {
+export const listRooms = async () => {
     try {
         const result = await prisma.room.findMany();
         return result;
@@ -52,7 +53,7 @@ const getRooms = async () => {
     }
 }
 
-const updateRoom = async (room) => {
+export const updateRoom = async (room) => {
     try {
         const result = await prisma.room.update({
             where: {
@@ -70,7 +71,7 @@ const updateRoom = async (room) => {
     }
 }
 
-const deleteRoom = async (roomID) => {
+export const dropRoom = async (roomID) => {
     try {
         const result = await prisma.room.delete({
             where: {
@@ -81,5 +82,22 @@ const deleteRoom = async (roomID) => {
     } catch (error) {
         console.error(error.ConnectorError);
         return false;
+    }
+}
+
+export const validateRoomPassword = async (password) => {
+    try {
+        const result = await prisma.room.findUnique({
+            select: {
+                roomID: true
+            },
+            where: {
+                roomPassword: password
+            }
+        });
+        return result;
+    } catch (error) {
+        console.error(error.ConnectorError);
+        return { message: "Error al validar contraseña" };
     }
 }

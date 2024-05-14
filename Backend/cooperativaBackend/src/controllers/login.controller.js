@@ -17,3 +17,8 @@ export const login = async (req, res) => {
 
     res.status(201).json({ message: 'Inicio de sesión exitoso' });
 };
+
+export const logout = async (req, res) => {
+    res.clearCookie('token');
+    res.status(200).json({ message: 'Sesión cerrada' });
+}

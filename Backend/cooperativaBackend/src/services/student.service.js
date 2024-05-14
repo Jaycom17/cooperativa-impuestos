@@ -1,4 +1,3 @@
-import { encrypt, compare } from "./encrypt.service.js";
 import prisma from "../config/prisma.js";
 import { v4 as uuidv4 } from 'uuid';
 
@@ -8,7 +7,15 @@ export const createStudent = async (student) => {
             data: {
                 estID: uuidv4(),
                 estName: student.estName,
-                roomId: 0
+                roomId: student.roomId
+            }
+        });
+
+        await prisma.report.create({
+            data: {
+                repID: uuidv4(),
+                estID: result.stuID,
+                roomID: student.roomId,
             }
         });
         console.log(result);
@@ -88,3 +95,4 @@ export const removeStudent = async (estID) => {
         return false;
     }
 }
+

@@ -1,12 +1,15 @@
 import { z } from "zod";
 
-export const User = z.object({
+export const Room = z.object({
+    roomName: z.string({
+        required_error: "Se requiere un nombre",
+    }),
     roomPassword: z.string({
         required_error: "Se requiere una contraseña",
     }),
     roomDate: z.string({
         required_error: "Se requiere una fecha",
-    }).date({ message: "Fecha invalida" }),
+    }).refine(value => !isNaN(Date.parse(value)), { message: "Fecha invalida" }),
     roomStatus: z.string({
         required_error: "Se requiere un estado",
     }).refine((value) => value === "open" || value === "closed", {
@@ -15,7 +18,7 @@ export const User = z.object({
     //Buscar como validar con la base de datos
     usuID: z.string({
         required_error: "Se requiere una id de usuario",
-    }).number({ message: "Id invalido" })
+    })
 });
 
 export const Id = z.object({
@@ -30,7 +33,7 @@ export const update = z.object({
     }),
     roomDate: z.string({
         required_error: "Se requiere una fecha",
-    }).date({ message: "Fecha invalida" }),
+        }).refine(value => !isNaN(Date.parse(value)), { message: "Fecha invalida" }),
     roomStatus: z.string({
         required_error: "Se requiere un estado",
     }).refine((value) => value === "open" || value === "closed", {
