@@ -7,6 +7,8 @@ const ListaItemsTW = () => {
     { id: 1, nombre: 'Carlos Andrés García Solarte'},
     { id: 2, nombre: 'Juan Camilo Orejuela Meneses'},
     { id: 3, nombre: 'Juan Esteban Sotelo Palta'},
+    { id: 4, nombre: 'Jose Esteban Narvaez Maldonado'},
+    { id: 5, nombre: 'Francisco Javier Obando'},
     // ...otros items
   ];
 
@@ -42,18 +44,18 @@ const ListaItemsTW = () => {
         onCrearProfesor={handleCrearProfesor}
         onActualizarDatos={handleActualizarDatos}
       />
-      <div className="grid-cols-1 gap-4  md:grid-cols-3">
-        <ul className="p-2 sm:items-center">
+      <div className="">
+        <section className="p-2 items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           {items.map((item) => (
-            <li key={item.id} className='max-w-[400px]'>
+            <article key={item.id} className="mx-auto">
               <ItemListaTW 
                 nombre={item.nombre}
                 onActualizar={() => handleActualizar(item.id)}
                 onEliminar={() => handleEliminar(item.id)}
               />
-            </li>
+            </article>
           ))}
-        </ul>
+        </section>
       </div>
     </div>
   );
