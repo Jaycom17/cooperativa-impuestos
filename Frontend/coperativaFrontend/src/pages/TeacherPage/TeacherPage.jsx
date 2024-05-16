@@ -1,13 +1,13 @@
 import React from 'react';
 import Sala from '../../components/Sala/Sala';
-import TeacherNavbar from '../../components/TeacherNavBar/TeacherNavbar';
+import TeacherNavbarTW from '../../components/TeacherNavBar/TeacherNavbarTW';
 import './TeacherPage.css';
 
 const TeacherPage = () => {
   const Salas = [
     { id: 1, nombre: 'Sala 1',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
     { id: 2, nombre: 'Sala 2',codigo: "123",fecha: '2021-09-30' ,estado: 'Inactivo' },
-    { id: 3, nombre: 'Sala 3',codigo: "123",fecha: '2021-09-30' ,estado: 'Desconocido' },
+    { id: 3, nombre: 'Sala 3',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
     // ...otros items
   ];
 
@@ -37,13 +37,14 @@ const TeacherPage = () => {
   };
 
   return (
-    <div className="app-container">
-      <TeacherNavbar
+    <div className="flex flex-col justify-center items-center h-full w-screen bg-[#1f324e]
+      ">
+      <TeacherNavbarTW
         onCerrarSesion={handleCerrarSesion}
         onCrearSala={handleCrearProfesor}
         onActualizarDatos={handleActualizarDatos}
       />
-      <ul className="lista-items">
+      <ul className="w-screen pr-16 pl-16">
         {Salas.map((Salas) => (
           <li key={Salas.id}>
             <Sala
