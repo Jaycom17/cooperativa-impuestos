@@ -1,8 +1,10 @@
-import MainPage from './pages/MainPage'
-function App() {
+import 'tailwindcss/tailwind.css'
+import Router from './routes/Router'
 
+
+function App() {
   return (
-    <MainPage />
+    <Router/>
   )
 }
 
