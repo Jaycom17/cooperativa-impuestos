@@ -1,13 +1,9 @@
 import MainPage from "../pages/MainPage/MainPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
-import ItemLista from "../components/ItemLista/ItemLista";
-import ItemListaTW from "../components/ItemLista/ItemListaTW";
-import ListaItemsTW from "../pages/ListaItems/ListaItems";
-import Navbar from "../components/Navbar/Navbar";
-import NavbarTW from "../components/Navbar/NavbarTW";
-import Sala from "../components/Sala/Sala";
+import MainAdminPage from "../pages/MainAdminPage/MainAdminPage";
+import Room from "../components/Room/Room";
 import TeacherPage from "../pages/TeacherPage/TeacherPage";
-import LoginPageTW from "../pages/LoginPage/LoginPageTW";
+import MainStudent from "../pages/MainStudent/MainStudent";
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
@@ -19,11 +15,12 @@ function Router() {
     <AuthProvider>
       <BrowserRouter id="App">
         <Routes>
-          <Route path="/login" element={<LoginPageTW />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={<MainPage />} />
-          <Route path="/sala" element={<Sala />} />
+          <Route path="/room" element={<Room />} />
           <Route path="/teacher" element={<TeacherPage />} />
-          <Route path="/lista" element={<ListaItemsTW />} />
+          <Route path="/admin" element={<MainAdminPage />} />
+          <Route path="/student" element={<MainStudent />} />
           <Route element={<ProtectedRoute />}></Route>
         </Routes>
       </BrowserRouter>
