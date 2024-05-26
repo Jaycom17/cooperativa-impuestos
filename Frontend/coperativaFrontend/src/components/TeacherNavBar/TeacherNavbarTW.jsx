@@ -26,7 +26,9 @@ const TeacherNavbarTW = ({nombreProfesor, onCerrarSesion, onCrearSala, onActuali
     const buttonStyle = "text-unicoop-white bg-primary w-40 h-10 rounded transition-colors duration-200 ease-in";
 
     return (
-      <nav className="flex justify-between items-center p-4 bg-primary">
+
+      <nav className="flex justify-between items-center p-4 bg-primary w-screen">
+
         <h1 className="bg-primary font-semibold text-2xl text-unicoop-white my-auto">{nombreProfesor}</h1>
         <div className="flex gap-3 bg-primary font-semibold">
             <MdMenu className="text-3xl bg-primary text-unicoop-white md:hidden cursor-pointer hover:text-unicoop-yellow" onClick={() => setIsMenuOpen(true)}/>
