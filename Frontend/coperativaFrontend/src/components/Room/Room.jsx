@@ -1,9 +1,8 @@
 import React from 'react';
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FaPencilAlt } from "react-icons/fa";
-import './Sala.css';
 
-const Sala = ({ nombre,codigo,fecha, estado ,onActualizar, onEliminar }) => {
+const Room = ({ nombre,codigo,fecha, estado ,onActualizar, onEliminar }) => {
   // Check if nombre and estado have values and estado is a string
   if (!nombre || !estado || typeof estado !== 'string') {
     nombre = 'Sala 1';
@@ -33,4 +32,4 @@ const Sala = ({ nombre,codigo,fecha, estado ,onActualizar, onEliminar }) => {
   );
 };
 
-export default Sala;
+export default Room;
