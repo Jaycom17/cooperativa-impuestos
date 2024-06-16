@@ -40,3 +40,13 @@ x#root {
 .read-the-docs {
   color: #888;
 }
+
+@keyframes spin-once {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hover\:animate-spin-once:hover {
+  animation: spin-once 1s linear;
+}

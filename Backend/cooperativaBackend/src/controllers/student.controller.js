@@ -1,13 +1,8 @@
 import {createStudent, obtainStudent, obtainStudents, removeStudent} from "../services/student.service.js"
 
 export const postStudent = async (req, res) => {
-<<<<<<< HEAD
     const {estName, roomId} = req.body
     const student = {estName, roomId}
-=======
-    const {stuName} = req.body
-    const student = {stuName}
->>>>>>> 5cad2010bef3fe9355ef134bcb30c1ff313a10ad
 
     const result = await createStudent(student)
 

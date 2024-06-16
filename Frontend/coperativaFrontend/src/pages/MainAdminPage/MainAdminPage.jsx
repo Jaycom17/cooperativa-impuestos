@@ -1,13 +1,13 @@
-import React from 'react';
-import ItemLista from '../../components/ItemLista/ItemListaTW';
+import ListItem from '../../components/ItemLista/ListItem';
 import Navbar from '../../components/Navbar/Navbar';
-import './ListaItems.css';
 
-const ListaItems = () => {
+const MainAdminPage = () => {
   const items = [
-    { id: 1, nombre: 'Item 1', estado: 'Activo' },
-    { id: 2, nombre: 'Item 2', estado: 'Inactivo' },
-    { id: 3, nombre: 'Item 3', estado: 'Desconocido' },
+    { id: 1, nombre: 'Carlos Andrés García Solarte'},
+    { id: 2, nombre: 'Juan Camilo Orejuela Meneses'},
+    { id: 3, nombre: 'Juan Esteban Sotelo Palta'},
+    { id: 4, nombre: 'Jose Esteban Narvaez Maldonado'},
+    { id: 5, nombre: 'Francisco Javier Obando'},
     // ...otros items
   ];
 
@@ -37,26 +37,27 @@ const ListaItems = () => {
   };
 
   return (
-    <div className="app-container">
+    <div className="">
       <Navbar
         onCerrarSesion={handleCerrarSesion}
         onCrearProfesor={handleCrearProfesor}
         onActualizarDatos={handleActualizarDatos}
       />
-      <ul className="lista-items">
-        {items.map((item) => (
-          <li key={item.id}>
-            <ItemLista
-              nombre={item.nombre}
-              estado={item.estado}
-              onActualizar={() => handleActualizar(item.id)}
-              onEliminar={() => handleEliminar(item.id)}
-            />
-          </li>
-        ))}
-      </ul>
+      <div className="">
+        <section className="p-2 items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {items.map((item) => (
+            <article key={item.id} className="mx-auto">
+              <ListItem 
+                nombre={item.nombre}
+                onActualizar={() => handleActualizar(item.id)}
+                onEliminar={() => handleEliminar(item.id)}
+              />
+            </article>
+          ))}
+        </section>
+      </div>
     </div>
   );
 };
 
-export default ListaItems;
+export default MainAdminPage;
