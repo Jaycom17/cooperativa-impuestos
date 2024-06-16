@@ -24,19 +24,20 @@ export const getUsers = async (req, res) => {
 };
 
 export const getUser = async (req, res) => {
-  const { id } = req.body;
-  const result = await obtainUser(id);
-
-  res.status(201).json(result);
+    const { usuId } = req.params;
+    console.log("getuser id "+usuId);
+    const result = await obtainUser(usuId);
+    
+    res.status(201).json(result);
 };
 
 export const deleteUser = async (req, res) => {
-  const { id } = req.body;
-  const result = await removeUser(id);
+    const { usuId } = req.params;
+    const result = await removeUser(usuId);
 
-  if (!result) {
-    return res.status(500).json({ error: "No se pudieron obtener el usuario" });
-  }
+    if (!result) {
+        return res.status(500).json({ error: 'No se pudo eliminar el usuario' });
+    }  
 
   res.status(201).json(result);
 };

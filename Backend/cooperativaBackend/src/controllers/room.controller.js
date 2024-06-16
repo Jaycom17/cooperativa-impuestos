@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 import { createRoom, listRoom, listRooms, updateRoom, dropRoom, validateRoomPassword } from "../services/room.service.js";
 
 export const postRoom = async (req, res) => {
     const { roomPassword, roomDate, roomStatus, usuID, roomName } = req.body;
     const newRoom = { roomPassword, roomDate, roomStatus, usuID, roomName };
+=======
+import { createRoom, obtainRoom, obtainRooms, updateRoom, removeRoom } from "../services/room.service.js";
+
+export const postRoom = async (req, res) => {
+    const {roomName, roomPassword, roomDate, roomStatus, usuID } = req.body;
+    const newRoom = {roomName, roomPassword, roomDate, roomStatus, usuID };
+>>>>>>> 5cad2010bef3fe9355ef134bcb30c1ff313a10ad
 
     const result = await createRoom(newRoom);
 
@@ -14,8 +22,13 @@ export const postRoom = async (req, res) => {
 };
 
 export const getRoom = async (req, res) => {
+<<<<<<< HEAD
     const { id } = req.params;
     const room = await listRoom(id);
+=======
+    const { roomID } = req.params;
+    const room = await obtainRoom(roomID);
+>>>>>>> 5cad2010bef3fe9355ef134bcb30c1ff313a10ad
 
     if (!room) {
         return res.status(500).json({ error: 'No se pudo obtener la sala' });
@@ -25,7 +38,11 @@ export const getRoom = async (req, res) => {
 }
 
 export const getRooms = async (req, res) => {
+<<<<<<< HEAD
     const rooms = await listRooms();
+=======
+    const rooms = await obtainRooms();
+>>>>>>> 5cad2010bef3fe9355ef134bcb30c1ff313a10ad
 
     if (!rooms) {
         return res.status(500).json({ error: 'No se pudo obtener las salas' });
@@ -35,12 +52,11 @@ export const getRooms = async (req, res) => {
 }
 
 export const putRoom = async (req, res) => {
-    const {id} = req.params;
-    const { roomDate, roomStatus} = req.body;
-    const room = { id, roomDate, roomStatus};
-
+    const {roomID} = req.params;
+    const { roomDate, roomStatus,usuID} = req.body;
+    const room = { roomID, roomDate, roomStatus,usuID};
+    console.log(room); 
     const result = await updateRoom(room);
-
     if (!result) {
         return res.status(500).json({ error: 'No se pudo actualizar la sala' });
     }
@@ -49,8 +65,13 @@ export const putRoom = async (req, res) => {
 }
 
 export const deleteRoom = async (req, res) => {
+<<<<<<< HEAD
     const { id } = req.params;
     const result = await dropRoom(id);
+=======
+    const { roomID } = req.params;
+    const result = await removeRoom(roomID);
+>>>>>>> 5cad2010bef3fe9355ef134bcb30c1ff313a10ad
 
     if (!result) {
         return res.status(500).json({ error: 'No se pudo eliminar la sala' });
