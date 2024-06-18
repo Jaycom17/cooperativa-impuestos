@@ -1,7 +1,6 @@
 import React from 'react';
-import Sala from '../../components/Sala/Sala';
-import TeacherNavbarTW from '../../components/TeacherNavBar/TeacherNavbarTW';
-import './TeacherPage.css';
+import Room from '../../components/Room/Room';
+import TeacherNavbar from '../../components/TeacherNavBar/TeacherNavbar';
 
 const TeacherPage = () => {
   const Salas = [
@@ -39,7 +38,7 @@ const TeacherPage = () => {
   return (
     <div className="flex flex-col justify-center items-center h-full w-screen bg-[#1f324e]
       ">
-      <TeacherNavbarTW
+      <TeacherNavbar
         onCerrarSesion={handleCerrarSesion}
         onCrearSala={handleCrearProfesor}
         onActualizarDatos={handleActualizarDatos}
@@ -47,7 +46,7 @@ const TeacherPage = () => {
       <ul className="w-screen pr-16 pl-16">
         {Salas.map((Salas) => (
           <li key={Salas.id}>
-            <Sala
+            <Room
               nombre={Salas.nombre}
               codigo={Salas.codigo}
               fecha={Salas.fecha}
