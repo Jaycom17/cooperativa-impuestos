@@ -5,8 +5,8 @@ const ItemListaTW = ({ nombre, onActualizar, onEliminar }) => {
   }
 
   return (
-    <section className="flex flex-col justify-between items-center mb-4 rounded-md w-[350px] bg-primary p-[10px] text-unicoop-white shadow-md">
-      <h1 className=" rounded-md flex-1 w-[90%] text-sm sm:rounded-l p-[5px] my-auto md:py-[5px] text-center font-medium bg-transparent">{nombre}</h1>
+    <section className="flex flex-col justify-between items-center mb-4 rounded-md w-[300px]  bg-primary p-[10px] text-unicoop-white shadow-md">
+      <h1 className=" bg-transparent rounded-md flex-1 w-[90%] text-sm sm:rounded-l p-[5px] my-auto md:py-[5px] text-center font-medium">{nombre}</h1>
       <div className="flex mt-3 bg-primary">
         <button onClick={onActualizar} className="text-unicoop-black py-[5px] px-4 mr-2 rounded transition-colors duration-200 ease-in hover:bg-unicoop-blue hover:text-unicoop-white w-full ">
           Actualizar
