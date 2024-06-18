@@ -20,15 +20,13 @@ const LoginPage = () => {
         <form
           className="flex flex-col items-center bg-[#385075] rounded-md"
           onSubmit={handleSubmit((values) => {
-            console.log(values);
-            if(values.usuEmail == 'admin'){
-              navigate('/admin')
-            }else{
-              navigate('/teacher')
-            }
             login(values)
               .then((response) => {
-                console.log(response);
+                if (response) {
+                  navigate("/");
+                } else {
+                  console.log("Error de autenticación");
+                }
               })
               .catch((error) => {
                 console.log(error);
@@ -44,11 +42,11 @@ const LoginPage = () => {
             </p>
           )}
           <input
-            type="text"
+            type="email"
             placeholder="Usuario"
             name="username"
             className="w-[90%] rounded-[3px] border-solid border-unicoop border-[1px] my-3 p-2 text-unicoop-white"
-            {...register("usuEmail", { required: true, type: "email" })}
+            {...register("usuEmail", { required: true })}
           />
           {errors.usuPassword && (
             <p className="text-[red] text-sm bg-[#385075]">

@@ -4,6 +4,7 @@ import MainAdminPage from "../pages/MainAdminPage/MainAdminPage";
 import Room from "../components/Room/Room";
 import TeacherPage from "../pages/TeacherPage/TeacherPage";
 import MainStudent from "../pages/MainStudent/MainStudent";
+import ESFpatrimonioForm from "../pages/ESFpatrimonio/Form/ESFpatrimonioForm";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -22,6 +23,7 @@ function Router() {
           <Route path="/admin" element={<MainAdminPage />} />
           <Route path="/student" element={<MainStudent />} />
           <Route element={<ProtectedRoute />}></Route>
+          <Route path="/esfpatrimonioform" element={<ESFpatrimonioForm />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

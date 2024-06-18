@@ -1,5 +1,4 @@
-import { createContext, useState, useContext, useEffect } from "react";
-import Cookies from "js-cookie";
+import { createContext, useState, useContext } from "react";
 
 import { login, logout, profile } from "../services/login.service";
 
@@ -41,19 +40,15 @@ export const AuthProvider = ({ children }) => {
         });
     }
 
-    useEffect(() => {
-        const cookies = Cookies.get();
-        if(cookies.token){
-            profile().then((res) => {
-                setUser(res);
-                setIsAuthenticated(true);
-                setActualRole(res.usu_rol);
-            }).catch((err) => {
-                console.log(err);
-                setIsAuthenticated(false);
-            });
-        }
-    });
+    const validateLogin = () => {
+        profile().then((res) => {
+            setUser(res);
+            setIsAuthenticated(true);
+            setActualRole(res.usu_rol);
+        }).catch((err) => {
+            console.log(err);
+        });
+    }
 
 
     return (

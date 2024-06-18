@@ -6,23 +6,9 @@ export const createStudent = async (student) => {
         
         const result = await prisma.student.create({
             data: {
-<<<<<<< HEAD
-                estID: uuidv4(),
-                estName: student.estName,
-                roomId: student.roomId
-            }
-        });
-
-        await prisma.report.create({
-            data: {
-                repID: uuidv4(),
-                estID: result.stuID,
-                roomID: student.roomId,
-=======
                 stuID: uuidv4(),
                 stuName: student.stuName,
                 roomId: null
->>>>>>> 5cad2010bef3fe9355ef134bcb30c1ff313a10ad
             }
         });
         console.log(result);

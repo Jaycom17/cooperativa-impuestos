@@ -4,13 +4,17 @@ import roomRouter from './routes/room.routes.js';
 import studentRouter from './routes/student.routes.js';
 import activosFijosRouter from './routes/activosFijos.routes.js';
 import loginRouter from './routes/login.routes.js';
-import roomRouter from './routes/room.routes.js';
 import cookieParse from 'cookie-parser';
+import cors from 'cors';
 
 const app = express();
 
 app.use(express.json());
 app.use(cookieParse());
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+}));
 
 app.use('/user', userRouter);
 app.use('/room', roomRouter);
