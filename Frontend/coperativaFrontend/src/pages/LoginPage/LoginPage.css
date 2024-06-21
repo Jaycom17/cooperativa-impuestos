@@ -1,0 +1,79 @@
+/* LoginPage.css */
+
+/* Container */
+.principal {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1f324e;
+}
+.imagen {
+    width: 500PX; /* Adjust the width as needed */
+    height: 270PX; /* Adjust the height as needed */
+    Align-items: center;
+    background-color: #1f324e;
+}
+.container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.Login{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+/* Form */
+.formulario {
+    color: #fff;
+    width: 300px;
+    padding: 20px;
+    padding-left: 20px;
+    background-color: #385075;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Input fields */
+.contraseña {
+    width: 93%;
+    font-style: normal normal normal 30px/38px "interbold";
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;     
+}
+.usuario {
+    width: 93%;
+    font-style: normal normal normal 30px/38px "interbold";
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;     
+}
+
+/* Submit button */
+.enviarL {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #404142;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.enviarL:hover {
+    background-color: #0056b3;
+}
+
+/* Error message */
+.login-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
