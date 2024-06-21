@@ -1,6 +1,6 @@
 import { z } from "zod"
 
-export const schema = z.object({
+export const Caratula = z.object({
   Anno: z.number(),
   DatDecl: z.object({
     NIT: z.number(),

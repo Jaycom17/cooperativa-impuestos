@@ -1,6 +1,6 @@
 import { z } from "zod"
 
-export const schema = z.object({
+export const Formulario110 = z.object({
   Anno: z.number(),
   NumForm: z.number(),
   DatDecl: z.object({

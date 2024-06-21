@@ -1,6 +1,6 @@
 import { z } from "zod"
 
-export const schema = z.object({
+export const IngresosFacturacion = z.object({
   VentBien: z.object({
     PasivIngrDif: z.object({
       SaldoIniPer: z.number(),
