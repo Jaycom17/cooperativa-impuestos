@@ -11,16 +11,7 @@ export const validateAuth = async (req, res, next) => {
         jwt.verify(token, JWT_SECRET, (error, user) => {
             if (error) return res.status(401).json({ message: "No autorizado" });
 
-            req.user = user;
-
-            createAccessToken(user).then((token) => {
-                res.cookie("token", token, {
-                    httpOnly: true,
-                    secure: true,
-                    sameSite: "none",
-                    maxAge: 900000,
-                });
-            });
+            req.body.user = user;
 
             next();
         });
