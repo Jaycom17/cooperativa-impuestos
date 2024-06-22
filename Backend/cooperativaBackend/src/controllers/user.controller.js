@@ -25,7 +25,7 @@ export const getUsers = async (req, res) => {
 
 export const getUser = async (req, res) => {
     const { usuId } = req.params;
-    console.log("getuser id "+usuId);
+    
     const result = await obtainUser(usuId);
     
     res.status(201).json(result);

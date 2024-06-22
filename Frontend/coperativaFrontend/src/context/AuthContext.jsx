@@ -1,64 +1,67 @@
-import { createContext, useState, useContext, useEffect } from "react";
-import Cookies from "js-cookie";
-
-import { login, logout, profile } from "../services/login.service";
+import { createContext, useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { login, profile, logout } from "../services/login.service";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
-export const useAuth = () => {
-    const context = useContext(AuthContext);
-    if (!context) {
-        throw new Error("useAuth must be used within an AuthProvider");
-    }
-    return context;
-}
-
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [haveError, setHaveError] = useState(null);
-    const [actualRole, setActualRole] = useState(null);
 
-    const singin = (user) => {
-        login(user).then((res) => {
-            setUser(res);
-            setIsAuthenticated(true);
-            setHaveError(null);
-            setActualRole(res.usu_rol);
-        }).catch((err) => {
-            setIsAuthenticated(false);
-            setHaveError(err.response.data);
+    useEffect(() => {
+        profile().then((result) => {
+            localStorage.setItem('user', JSON.stringify(result));
+            setUser(result);
+        }).catch(() => {
+            setUser(null);
+        });
+    }, []);
+
+    const singin = async (userLogin) => {
+        login(userLogin).then((result) => {
+            if (!result) {
+                return false;
+            }
+
+            localStorage.setItem('user', JSON.stringify(result));
+
+            if (result.usuRole === "admin") {
+                navigate("/admin");
+                return;
+              }
+  
+              navigate("/pofessor");
+        }).catch(() => {
+            return false;
         });
     }
 
     const singout = () => {
-        logout().then(() => {
-            setUser(null);
-            setIsAuthenticated(false);
-            setActualRole(null);
-        }).catch((err) => {
-            console.log(err);
-        });
+        const result = logout(user);
+
+        if (!result) {
+            return false;
+        }
+
+        setUser(null);
+        localStorage.removeItem('user');
+
+        return true;
     }
 
-    useEffect(() => {
-        const cookies = Cookies.get();
-        if(cookies.token){
-            profile().then((res) => {
-                setUser(res);
-                setIsAuthenticated(true);
-                setActualRole(res.usu_rol);
-            }).catch((err) => {
-                console.log(err);
-                setIsAuthenticated(false);
-            });
-        }
-    });
+    const validateUser = () => {
+        console.log(localStorage.getItem("user"))
+        return JSON.parse(localStorage.getItem("user")) !== null;
+    }
 
 
     return (
-        <AuthContext.Provider value={{singin, user, isAuthenticated, haveError, actualRole, singout}}>
+        <AuthContext.Provider value={{singin, user, singout, validateUser}}>
             {children}
         </AuthContext.Provider>
     );
 }
+
+AuthProvider.propTypes = {
+    children: PropTypes.node.isRequired,
+};

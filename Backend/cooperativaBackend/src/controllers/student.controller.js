@@ -1,8 +1,8 @@
 import {createStudent, obtainStudent, obtainStudents, removeStudent} from "../services/student.service.js"
 
 export const postStudent = async (req, res) => {
-    const {stuName} = req.body
-    const student = {stuName}
+    const {estName, roomId} = req.body
+    const student = {estName, roomId}
 
     const result = await createStudent(student)
 
@@ -13,7 +13,7 @@ export const postStudent = async (req, res) => {
     res.status(201).json(result)
 }
 
-export const getStudents = async (req, res) => {
+export const getStudents = async (_req, res) => {
     const result = await obtainStudents()
 
     res.status(201).json(result)

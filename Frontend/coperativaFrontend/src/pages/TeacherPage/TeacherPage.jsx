@@ -1,4 +1,3 @@
-import React from 'react';
 import Room from '../../components/Room/Room';
 import TeacherNavbar from '../../components/TeacherNavBar/TeacherNavbar';
 

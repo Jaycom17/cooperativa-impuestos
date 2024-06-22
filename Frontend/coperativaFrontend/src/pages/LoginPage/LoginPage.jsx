@@ -1,15 +1,17 @@
 import { useForm } from "react-hook-form";
-import { login } from "../../services/login.service";
-import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+import { useContext } from "react";
 
 const LoginPage = () => {
-    
-  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const { singin } = useContext(AuthContext);
+
   return (
     <main className="flex flex-col max-w-md  mx-auto items-center min-h-screen place-content-center">
       <img
@@ -19,20 +21,8 @@ const LoginPage = () => {
       <section className="p-6 w-96">
         <form
           className="flex flex-col items-center bg-[#385075] rounded-md"
-          onSubmit={handleSubmit((values) => {
-            console.log(values);
-            if(values.usuEmail == 'admin'){
-              navigate('/admin')
-            }else{
-              navigate('/teacher')
-            }
-            login(values)
-              .then((response) => {
-                console.log(response);
-              })
-              .catch((error) => {
-                console.log(error);
-              });
+          onSubmit={handleSubmit(async(values) => {
+            await singin(values)
           })}
         >
           <h1 className="text-2xl text-white bg-[#385075] mt-4">
@@ -44,11 +34,11 @@ const LoginPage = () => {
             </p>
           )}
           <input
-            type="text"
+            type="email"
             placeholder="Usuario"
             name="username"
             className="w-[90%] rounded-[3px] border-solid border-unicoop border-[1px] my-3 p-2 text-unicoop-white"
-            {...register("usuEmail", { required: true, type: "email" })}
+            {...register("usuEmail", { required: true })}
           />
           {errors.usuPassword && (
             <p className="text-[red] text-sm bg-[#385075]">

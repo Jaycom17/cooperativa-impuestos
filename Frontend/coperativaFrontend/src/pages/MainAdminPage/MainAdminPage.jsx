@@ -1,7 +1,12 @@
 import ListItem from '../../components/ItemLista/ListItem';
 import Navbar from '../../components/Navbar/Navbar';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 const MainAdminPage = () => {
+
+  const { singout } = useContext(AuthContext);
+
   const items = [
     { id: 1, nombre: 'Carlos Andrés García Solarte'},
     { id: 2, nombre: 'Juan Camilo Orejuela Meneses'},
@@ -12,8 +17,7 @@ const MainAdminPage = () => {
   ];
 
   const handleCerrarSesion = () => {
-    // Lógica para cerrar sesión
-    console.log('Cerrar sesión');
+    singout();
   };
 
   const handleCrearProfesor = () => {
