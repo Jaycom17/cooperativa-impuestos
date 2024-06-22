@@ -1,15 +1,17 @@
 import { useForm } from "react-hook-form";
-import { login } from "../../services/login.service";
-import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+import { useContext } from "react";
 
 const LoginPage = () => {
-    
-  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const { singin } = useContext(AuthContext);
+
   return (
     <main className="flex flex-col max-w-md  mx-auto items-center min-h-screen place-content-center">
       <img
@@ -19,18 +21,8 @@ const LoginPage = () => {
       <section className="p-6 w-96">
         <form
           className="flex flex-col items-center bg-[#385075] rounded-md"
-          onSubmit={handleSubmit((values) => {
-            login(values)
-              .then((response) => {
-                if (response) {
-                  navigate("/");
-                } else {
-                  console.log("Error de autenticación");
-                }
-              })
-              .catch((error) => {
-                console.log(error);
-              });
+          onSubmit={handleSubmit(async(values) => {
+            await singin(values)
           })}
         >
           <h1 className="text-2xl text-white bg-[#385075] mt-4">
