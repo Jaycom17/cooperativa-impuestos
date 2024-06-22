@@ -8,6 +8,6 @@ userRouter.post('/',validateUser, postUser);
 userRouter.get('/', getUsers);
 userRouter.get('/:usuId', validateId, getUser);
 userRouter.delete('/:usuId', validateId, deleteUser);
-userRouter.post('/login', validateLogin, login);
+//userRouter.post('/login', validateLogin, login);
 
 export default userRouter;

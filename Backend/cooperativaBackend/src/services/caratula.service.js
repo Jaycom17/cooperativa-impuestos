@@ -23,6 +23,7 @@ export const listCaratulaById = async (carID) => {
         carID,
       },
     });
+    result.carContent = JSON.parse(result.carContent.replace(/'/g, '"'));
     return result;
   } catch (error) {
     console.error(error);

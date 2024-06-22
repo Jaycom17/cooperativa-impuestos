@@ -44,5 +44,5 @@ export const putDetalleRenglones = async (req, res) => {
         return res.status(500).json({ error: 'No se pudo actualizar los detalles renglones' });
     }
 
-    res.json(updatedActivosFijos);
+    res.json(updatedDetalleRenglones);
 }

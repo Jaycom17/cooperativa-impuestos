@@ -23,6 +23,7 @@ export const listDetalleRenglonesById = async (detID) => {
         detID,
       },
     });
+    result.detContent = JSON.parse(result.detContent.replace(/'/g, '"'));
     return result;
   } catch (error) {
     console.error(error);

@@ -3,6 +3,10 @@ import userRouter from './routes/user.routes.js';
 import roomRouter from './routes/room.routes.js';
 import studentRouter from './routes/student.routes.js';
 import activosFijosRouter from './routes/activosFijos.routes.js';
+import caratulaRouter from './routes/caratula.routes.js';
+import detalleRenglonesRouter from './routes/detalleRenglones.routes.js';
+import form110Router from './routes/form110.routes.js';
+import ingFactRouter from './routes/ingFact.routes.js';
 import loginRouter from './routes/login.routes.js';
 import cookieParse from 'cookie-parser';
 
@@ -15,6 +19,10 @@ app.use('/user', userRouter);
 app.use('/room', roomRouter);
 app.use('/student', studentRouter);
 app.use('/activosFijos', activosFijosRouter);
+app.use('/caratula', caratulaRouter);
+app.use('/detalleRenglones', detalleRenglonesRouter);
+app.use('/form110', form110Router);
+app.use('/ingFact', ingFactRouter);
 app.use('/login', loginRouter);
 
 app.listen(3000, () => {

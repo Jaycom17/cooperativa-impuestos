@@ -1,7 +1,7 @@
 import { Caratula } from "../models/caratula.model.js";
 import { DetalleRenglones } from "../models/detalleRenglones.model.js";
 import { Formulario110 } from "../models/form110.model.js";
-import { IngresosFacturacion } from "../models/ingfact.model.js";
+import { IngresosFacturacion } from "../models/ingFact.model.js";
 
 export const validateCaratula = async (req, res, next) => {
     try {
@@ -34,7 +34,7 @@ export const validateFormulario110 = async (req, res, next) => {
     }
 }
 
-export const validateIngresosFacturacion = async (req, res, next) => {
+export const validateIngresosFacturaciones = async (req, res, next) => {
     try {
         const ingresosFacturacion = IngresosFacturacion.parse(req.body);
         req.body = ingresosFacturacion;

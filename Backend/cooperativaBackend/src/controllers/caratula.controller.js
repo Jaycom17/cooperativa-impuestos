@@ -44,5 +44,5 @@ export const putCaratula = async (req, res) => {
         return res.status(500).json({ error: 'No se pudo actualizar la caratula' });
     }
 
-    res.json(updatedActivosFijos);
+    res.json(updatedCaratula);
 }
