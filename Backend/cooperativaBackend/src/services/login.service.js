@@ -10,7 +10,8 @@ export const loginUser = async (user) => {
       where: { usuEmail: user.usuEmail },
     });
 
-    
+    console.log(result)
+
     if (!result) return { message: "Usuario o contraseña incorrectos" };
 
     const passwordMatch = await compare(user.usuPassword, result.usuPassword);
@@ -22,6 +23,7 @@ export const loginUser = async (user) => {
     return { usuID: result.usuID, usuEmail: result.usuEmail, usuName: result.usuName, usuRole: result.usuRole,  token };
 
   } catch (error) {
+    console.error(error);
     return { message: "Error al iniciar sesión" };
   }
 };
