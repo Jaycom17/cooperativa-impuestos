@@ -1,14 +1,14 @@
 import {
   createUser,
-  obtainUsers,
-  obtainUser,
+  obtainProfessors,
+  obtainAdmins,
   removeUser,
 } from "../services/user.service.js";
 
-export const postUser = async (req, res) => {
+export const postProfessor = async (req, res) => {
   const newUser = req.body;
 
-  const result = await createUser(newUser);
+  const result = await createUser({...newUser, usuRole: "professor"});
 
   if (!result) {
     return res.status(500).json({ error: "No se pudo crear el usuario" });
@@ -17,11 +17,29 @@ export const postUser = async (req, res) => {
   res.status(201).json(newUser);
 };
 
-export const getUsers = async (req, res) => {
-  const result = await obtainUsers();
+export const postAdmin = async (req, res) => {
+  const newUser = req.body;
+
+  const result = await createUser({...newUser, usuRole: "admin"});
+
+  if (!result) {
+    return res.status(500).json({ error: "No se pudo crear el usuario" });
+  }
+
+  res.status(201).json(newUser);
+};
+
+export const getProfessors = async (req, res) => {
+  const result = await obtainProfessors();
 
   res.status(201).json(result);
 };
+
+export const getAdmins = async (req, res) => {
+  const result = await obtainAdmins();
+
+  res.status(201).json(result);
+}
 
 export const getUser = async (req, res) => {
     const { usuId } = req.params;

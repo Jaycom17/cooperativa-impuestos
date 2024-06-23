@@ -10,8 +10,6 @@ export const loginUser = async (user) => {
       where: { usuEmail: user.usuEmail },
     });
 
-    console.log(result)
-
     if (!result) return { message: "Usuario o contraseña incorrectos" };
 
     const passwordMatch = await compare(user.usuPassword, result.usuPassword);

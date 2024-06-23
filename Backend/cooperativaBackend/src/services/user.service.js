@@ -22,10 +22,21 @@ export const createUser = async (user) => {
   }
 }
 
-export const obtainUsers = async () => {
+export const obtainProfessors = async () => {
   try {
     console.log("get users");
-    const result = await prisma.user.findMany();
+    const result = await prisma.user.findMany({where: { usuRole: "professor" }, select: { usuID: true, usuName: true, usuEmail: true }});
+    
+    return result;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
+export const obtainAdmins = async () => {
+  try {
+    const result = await prisma.user.findMany({where: { usuRole: "admin" }, select: { usuID: true, usuName: true, usuEmail: true }});
     
     return result;
   } catch (error) {
@@ -36,7 +47,7 @@ export const obtainUsers = async () => {
 
 export const obtainUser = async (usuId) => {
   try {
-    const result = await prisma.user.findUnique({ where: { usuID: usuId } });
+    const result = await prisma.user.findUnique({ where: { usuID: usuId }, select: { usuID: true, usuName: true, usuEmail: true }});
     
     return result;
   } catch (error) {

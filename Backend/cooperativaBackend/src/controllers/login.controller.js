@@ -11,14 +11,13 @@ export const login = async (req, res) => {
     res.cookie('token', result.token, {
         httpOnly: true,
         secure: true,
-        sameSite: 'none',
-        maxAge: 900000
+        sameSite: 'none'
     });
 
     res.status(200).json({ usuID: result.usuID, usuEmail: result.usuEmail, usuName: result.usuName, usuRole: result.usuRole});
 };
 
-export const logout = async (req, res) => {
+export const logout = async (_req, res) => {
     res.clearCookie('token');
     res.status(200).json({ message: 'Sesión cerrada' });
 }
