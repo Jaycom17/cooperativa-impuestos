@@ -1,18 +1,31 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
+import StudentLogForm from '../../components/loginForms/StudentLogForm'
+
 
 function MainPage() {
     const navigate = useNavigate();
+
+    const onSubmit = (values) => {
+        console.log(values);
+        if(values.roomID) { navigate('/student');}
+        login(values)
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+    
     return (
-        <div className='flex flex-col justify-center items-center bg-[#1f324e] w-full h-screen'>
-                <img className="w-[500px]  rounded-[20%]" src="https://fernandocolmenares.co/wp-content/uploads/2020/08/U.CooperativaCol.png" alt="Logo" />
-                <div className='p-[16px] flex flex-col justify-center items-center bg-[#385075] rounded'>
-                    <input className= "w-[18rem] h-[3rem] text-xl text-[#666] text-center" type="text" placeholder="Introduzca el código" />
-                    <button onClick={() => navigate('/student')} className='w-[18rem] h-[3rem] bg-[#404142] text-white text-xl border-none rounded flex justify-center items-center mt-[10px] hover:bg-[#365583]'>Enviar</button>
-                </div>
-                <h3 className='text-white mt-[40px]'>Si no eres estudiante, dale click <a className='text-cyan-400 hover:text-[#11a3f1]' href='/login'>aqui</a> para crear un codigo</h3>
-                
-        </div>
+        <main className="flex flex-col max-w-md  mx-auto items-center min-h-screen place-content-center">
+            <img src="https://fernandocolmenares.co/wp-content/uploads/2020/08/U.CooperativaCol.png" alt="logo universidad cooperativa" className="w-11/12 md:w-96"/>
+            <section className="p-6 w-11/12 md:w-[400px] bg-unicoop-black rounded-lg">
+                <StudentLogForm onSubmit={onSubmit}/>
+            </section>
+            <p className="text-unicoop mt-5 font-medium text-center">¿No eres un estudiante? <a className="text-unicoop-blue hover:text-buttons-list-blue " href='/login'>¡Inicia sesión!</a></p>
+        </main>
     );
 }
 
