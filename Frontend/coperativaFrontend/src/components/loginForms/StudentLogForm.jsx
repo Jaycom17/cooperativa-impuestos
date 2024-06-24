@@ -24,7 +24,7 @@ const StudentLogForm = ({onSubmit}) =>{
           type="text"
           placeholder="Código"
           name="roomID"
-          className="w-11/12 p-2.5 rounded-md text-xl text-unicoop text-center border-solid border-unicoop border"
+          className="w-11/12 p-2.5 rounded-md text-xl text-unicoop text-center bg-background border-solid border-unicoop border"
           {...register("roomID", { required: true })}
         />
         <button className="bg-buttons-login text-unicoop-white w-11/12 p-2.5 rounded-md my-4 hover:bg-gray-600 focus:ring-2 transition-colors duration-200 ease-in font-medium">

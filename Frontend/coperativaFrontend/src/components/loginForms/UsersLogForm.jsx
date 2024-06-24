@@ -29,7 +29,7 @@ const UsersLogForm = ({onSubmit}) =>{
           type="text"
           placeholder="Correo electrónico"
           name="username"
-          className="w-11/12 p-2.5 rounded-md text-xl text-unicoop text-center border-solid border-unicoop border"
+          className="w-11/12 p-2.5 rounded-md text-xl text-unicoop bg-background text-center border-solid border-unicoop border"
           {...register("usuEmail", { required: true, type: "email" })}
         />
         {errors.usuPassword && (
@@ -37,7 +37,7 @@ const UsersLogForm = ({onSubmit}) =>{
         )}
         <div className="relative w-11/12">
             <input
-              className="w-full p-2.5 rounded-md text-xl text-unicoop text-center border-solid border-unicoop border"
+              className="w-full p-2.5 rounded-md text-xl text-unicoop bg-background text-center border-solid border-unicoop border"
               type={showPassword ? "text" : "password"}
               placeholder="Contraseña"
               {...register("usuPassword", { required: true })}
