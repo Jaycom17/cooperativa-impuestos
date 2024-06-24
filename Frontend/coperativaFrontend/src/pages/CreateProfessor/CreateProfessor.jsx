@@ -1,10 +1,13 @@
 import Navbar from "../../components/Navbar/Navbar";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { createProfessor } from "../../services/professor.service";
+import { useNavigate } from "react-router-dom";
 
 function CreateProfessor() {
     const [passwordMatch, setPasswordMatch] = useState(true);
 
+    const navigate = useNavigate();
 
     const {
         register,
@@ -20,8 +23,24 @@ function CreateProfessor() {
             }, 5000);
             return;
         }
-        console.log(data);
-    }
+
+        const professorToCreate = {
+            usuName: data.usuName,
+            usuEmail: data.usuEmail,
+            usuPassword: data.usuPassword,
+        }
+
+        createProfessor(professorToCreate).then((response) => {
+          if (response.status === 200) {
+            alert("Profesor creado exitosamente");
+            navigate("/admin");
+          }else{
+            alert("Error al crear el profesor");
+          }
+        }).catch(() => {
+          alert("Error al crear el profesor");
+        });
+      };
   return (
     <div>
       <Navbar />

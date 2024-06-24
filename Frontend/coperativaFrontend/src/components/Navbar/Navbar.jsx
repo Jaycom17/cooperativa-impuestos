@@ -49,7 +49,7 @@ const Navbar = () => {
                     onCerrarSesion={singout}
                     />
                 {navButtons.map((data, i)=>(
-                    <button key={i} className={`${buttonStyle} ${data.hoverProps}`} onClick={data.onClick}>{data.label}</button>
+                    <Link to={data.to} key={i} className={`${buttonStyle} ${data.hoverProps}`}>{data.label}</Link>
                 ))}
             </section>
         </div>

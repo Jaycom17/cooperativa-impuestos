@@ -8,13 +8,13 @@ import {
 export const postProfessor = async (req, res) => {
   const newUser = req.body;
 
-  const result = await createUser({...newUser, usuRole: "professor"});
+  const result = await createUser({...newUser, usuRole: "profesor"});
 
   if (!result) {
     return res.status(500).json({ error: "No se pudo crear el usuario" });
   }
 
-  res.status(201).json(newUser);
+  res.status(200).json(newUser);
 };
 
 export const postAdmin = async (req, res) => {
@@ -26,19 +26,19 @@ export const postAdmin = async (req, res) => {
     return res.status(500).json({ error: "No se pudo crear el usuario" });
   }
 
-  res.status(201).json(newUser);
+  res.status(200).json(newUser);
 };
 
 export const getProfessors = async (req, res) => {
   const result = await obtainProfessors();
 
-  res.status(201).json(result);
+  res.status(200).json(result);
 };
 
 export const getAdmins = async (req, res) => {
   const result = await obtainAdmins();
 
-  res.status(201).json(result);
+  res.status(200).json(result);
 }
 
 export const getUser = async (req, res) => {
@@ -46,7 +46,7 @@ export const getUser = async (req, res) => {
     
     const result = await obtainUser(usuId);
     
-    res.status(201).json(result);
+    res.status(200).json(result);
 };
 
 export const deleteUser = async (req, res) => {
@@ -57,5 +57,5 @@ export const deleteUser = async (req, res) => {
         return res.status(500).json({ error: 'No se pudo eliminar el usuario' });
     }  
 
-  res.status(201).json(result);
+  res.status(200).json(result);
 };

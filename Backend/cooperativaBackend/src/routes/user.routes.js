@@ -7,7 +7,7 @@ const userRouter = Router();
 userRouter.post('/admin',validateUser, postAdmin);
 userRouter.post('/professor', validateUser, postProfessor);
 userRouter.get('/admis', getAdmins);
-userRouter.get('/profes', getProfessors);
+userRouter.get('/professor', getProfessors);
 userRouter.get('/:usuId', validateId, getUser);
 userRouter.delete('/:usuId', validateId, deleteUser);
 

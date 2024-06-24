@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function MainPage() {
     const navigate = useNavigate();
@@ -9,7 +9,7 @@ function MainPage() {
                     <input className= "w-[18rem] h-[3rem] text-xl text-[#666] text-center" type="text" placeholder="Introduzca el código" />
                     <button onClick={() => navigate('/student')} className='w-[18rem] h-[3rem] bg-[#404142] text-white text-xl border-none rounded flex justify-center items-center mt-[10px] hover:bg-[#365583]'>Enviar</button>
                 </div>
-                <h3 className='text-white mt-[40px]'>Si no eres estudiante, dale click <a className='text-cyan-400 hover:text-[#11a3f1]' href='/login'>aqui</a> para crear un codigo</h3>
+                <h3 className='text-white mt-[40px]'>Si no eres estudiante, dale click <Link className='text-cyan-400 hover:text-[#11a3f1]' to='/login'>aqui</Link> para crear un codigo</h3>
                 
         </div>
     );

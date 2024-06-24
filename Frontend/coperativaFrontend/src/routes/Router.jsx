@@ -6,6 +6,7 @@ import TeacherPage from "../pages/TeacherPage/TeacherPage";
 import MainStudent from "../pages/MainStudent/MainStudent";
 import ESFpatrimonioForm from "../pages/ESFpatrimonio/Form/ESFpatrimonioForm";
 import CreateProfessor from "../pages/CreateProfessor/CreateProfessor";
+import MiddlewareStudent from "../pages/MiddlewareStudent/MiddlewareStudent";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -23,6 +24,7 @@ function Router() {
           <Route path="/" element={<MainPage />} />
           <Route path="/room" element={<Room />} />
           <Route path="/student" element={<MainStudent />} />
+          <Route path="/middlewarestudent" element={<MiddlewareStudent />} />
 
           <Route element={<ProtectedRouteAdmin />}>
             <Route path="/admin" element={<MainAdminPage />} />

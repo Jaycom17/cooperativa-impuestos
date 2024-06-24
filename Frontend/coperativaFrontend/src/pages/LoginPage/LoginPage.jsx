@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../context/AuthContext";
 import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ const LoginPage = () => {
         src="https://fernandocolmenares.co/wp-content/uploads/2020/08/U.CooperativaCol.png"
         alt="logo universidad cooperativa"
       />
-      <section className="p-6 w-96">
+      <section className="px-6 w-96">
         <form
           className="flex flex-col items-center bg-[#385075] rounded-md"
           onSubmit={handleSubmit(async (values) => {
@@ -86,6 +86,7 @@ const LoginPage = () => {
           </button>
         </form>
       </section>
+      <h3 className='text-white mt-[40px]'>Si eres estudiante, dale click <Link className='text-cyan-400 hover:text-[#11a3f1]' to='/'>aqui</Link> para acceder a una sala</h3>
     </main>
   );
 };
