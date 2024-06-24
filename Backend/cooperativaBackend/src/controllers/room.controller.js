@@ -48,8 +48,8 @@ export const putRoom = async (req, res) => {
 }
 
 export const deleteRoom = async (req, res) => {
-    const { roomID } = req.params;
-    const result = await removeRoom(roomID);
+    const { roomDate } = req.body;
+    const result = await removeRoom(roomDate);
 
     if (!result) {
         return res.status(500).json({ error: 'No se pudo eliminar la sala' });

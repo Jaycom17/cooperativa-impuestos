@@ -10,8 +10,6 @@ export const createRoom = async (room) => {
         if (!usuResult) {
             return false;
         }
-        console.log("Id usuario");
-        console.log(room.roomName);
         const result = await prisma.room.create({
             data: {
                 roomID: uuidv4(),
@@ -77,10 +75,24 @@ export const updateRoom = async (room) => {
 
 export const removeRoom = async (roomDate) => {
     try {
+        const startDate = new Date(`${roomDate}-01-01T00:00:00.000Z`);
+        const endDate = new Date(`${roomDate}-12-31T23:59:59.999Z`);
+        const delStuResult = await prisma.student.deleteMany({
+            where: {
+                room: {
+                    roomDate: {
+                        gte: startDate,
+                        lte: endDate
+                    }
+                }
+            }
+        });
+        console.log(delStuResult);
         const result = await prisma.room.deleteMany({
             where: {
                 roomDate: {
-                    startsWith: roomDate
+                    gte: startDate,
+                    lte: endDate
                 }
             }
         });

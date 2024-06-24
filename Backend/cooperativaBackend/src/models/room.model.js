@@ -27,8 +27,8 @@ export const Id = z.object({
     })
 });
 
-export const Year = z.object({
-    roomYear: z.string({
+export const Date = z.object({
+    roomDate: z.string({
         required_error: "Se requiere un año",
     })
 });

@@ -5,11 +5,20 @@ import { v4 as uuidv4 } from 'uuid';
 export const createStudent = async (student) => {
     try {
         
+        const roomResult = await prisma.room.findUnique({
+            where: {
+                roomID: student.roomID
+            }
+        });
+        if (!roomResult) {
+            console.log("Room not found");
+            return false;
+        }
         const result = await prisma.student.create({
             data: {
                 stuID: uuidv4(),
                 stuName: student.stuName,
-                roomId: null
+                roomID: student.roomID
             }
         });
         console.log(result);
@@ -49,7 +58,7 @@ export const updateStudent = async (student) => {
     try {
         const roomResult = await prisma.room.findUnique({
             where: {
-                roomId: student.roomId
+                roomID: student.roomID
             }
         });
         if (!roomResult) {
@@ -60,7 +69,7 @@ export const updateStudent = async (student) => {
                 stuID: student.stuID
             },
             data: {
-                roomId: student.roomId
+                roomID: student.roomID
             }
         });
         if (!result) {

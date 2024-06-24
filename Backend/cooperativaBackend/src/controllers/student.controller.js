@@ -1,8 +1,8 @@
-import {createStudent, obtainStudent, obtainStudents, removeStudent} from "../services/student.service.js"
+import {createStudent, obtainStudent, obtainStudents, removeStudent, updateStudent} from "../services/student.service.js"
 
 export const postStudent = async (req, res) => {
-    const {stuName} = req.body
-    const student = {stuName}
+    const {stuName, roomID} = req.body
+    const student = {stuName, roomID}
 
     const result = await createStudent(student)
 
@@ -20,18 +20,16 @@ export const getStudents = async (req, res) => {
 }
 
 export const getStudent = async (req, res) => {
-    const {stuId} = req.params
-    const result = await obtainStudent(stuId)
+    const {stuID} = req.params
+    const result = await obtainStudent(stuID)
 
     res.status(201).json(result)
 }
 
 export const putStudent = async (req, res) => {
-    const {stuId} = req.params
-    const {roomId} = req.body
-    const room = {roomId}
-
-    const result = await updateStudent(stuId, room)
+    const {stuID} = req.params
+    const {roomID} = req.body
+    const result = await updateStudent({stuID, roomID})
 
     if(!result){
         res.status(500).json({message: "Error al actualizar usuario"})
@@ -41,8 +39,8 @@ export const putStudent = async (req, res) => {
 }
 
 export const deleteStudent = async (req, res) => {
-    const {stuId} = req.params
-    const result = await removeStudent(stuId)
+    const {stuID} = req.params
+    const result = await removeStudent(stuID)
 
     if(!result){
         res.status(500).json({message: "Error al eliminar usuario"})

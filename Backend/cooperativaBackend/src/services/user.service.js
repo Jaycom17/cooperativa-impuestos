@@ -48,6 +48,7 @@ export const obtainUser = async (usuId) => {
 
 export const removeUser = async (usuId) => {
   try {
+    
     console.log("id " + usuId);
     const result = await prisma.user.delete({ where: { usuID: usuId } });
     console.log(result);
