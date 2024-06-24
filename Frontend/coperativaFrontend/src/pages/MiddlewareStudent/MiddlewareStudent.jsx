@@ -72,7 +72,7 @@ function MiddlewareStudent() {
           </form>
           <div className="w-full">
           <button onClick={() => setFirstTime(OPTIONS.NOTHING)} className=" text-start underline text-cyan-400 hover:text-[#11a3f1]">Atras</button>
-          </div>
+          </div>  
       </div>
       )}
     </div>
