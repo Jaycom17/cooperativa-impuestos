@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MdMenu } from "react-icons/md";
 import { GrFormClose } from "react-icons/gr";
-import AccountDropdown from "../AccountDrop/AccountDropdown";
+import AccountDropdown from "../accountDrop/AccountDropdown";
 
 const Navbar = ({ onCerrarSesion, onCrearProfesor, onActualizarDatos,onLista }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
