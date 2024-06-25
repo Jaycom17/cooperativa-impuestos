@@ -1,12 +1,12 @@
-import AsideEstudent from "../../components/AsideStudent/AsideStudent";
+import AsideStudent from "../../components/AsideStudent/AsideStudent";
 import FormItem from "../../components/FormItem/FormItem";
 
 const MainStudent = () => {
   return (
     <div className="flex">
-      <AsideEstudent />
+      <AsideStudent />
 
-      <div className="flex flex-col w-full h-screen md:justify-center items-center p-2 md:p-6 lg:p-10">
+      <div className="flex flex-col w-full h-screen md:justify-center items-center p-2 md:p-6 lg:p-10 md:mt-0 mt-12">
         
       <img className="w-[300px] h-[100px] rounded-[20%]" src="https://fernandocolmenares.co/wp-content/uploads/2020/08/U.CooperativaCol.png" alt="Logo" />
         <h2 className="text-2xl text-white font-semibold pb-8">Seleccione el formulario que desea diligenciar</h2>

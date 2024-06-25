@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { MdMenu } from "react-icons/md";
 import { GrFormClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
-import AccountDropdown from "../AccountDrop/AccountDropdown";
+import AccountDropdown from "../accountDrop/AccountDropdown";
 import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {

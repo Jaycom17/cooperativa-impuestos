@@ -13,7 +13,7 @@ export default {
           'white': '#fff',
           'yellow': '#ccd443',
           'black': '#18273e',
-          'deep-blue': '#385075'
+          'slate-blue': '#385075'
         },
         'buttons':{
           DEFAULT:'#fff',
@@ -33,4 +33,3 @@ export default {
   },
   plugins: [],
 }
-
