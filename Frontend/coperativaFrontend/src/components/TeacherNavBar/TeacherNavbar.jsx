@@ -1,27 +1,65 @@
-import React from 'react';
-import './TeacherNavbar.css';
+import { useState } from "react";
+import { MdMenu } from "react-icons/md";
+import { GrFormClose } from "react-icons/gr";
+import AccountDropdown from "../AccountDrop/AccountDropdown";
 
-const TeacherNavbar = ({ onCerrarSesion, onCrearProfesor, onActualizarDatos,onLista }) => {
-  return (
-    
-    <nav className="navbar">
-      <div className="navbar-brand">Nombre Profesor</div>
-      <div className="navbar-actions">
-      <button onLista={onLista} className="btn-lista">
-          Lista de Salas
-        </button>
-        <button onClick={onCrearProfesor} className="btn-crear-profesor">
-          Crear Sala
-        </button>
-        <button onClick={onActualizarDatos} className="btn-actualizar-datos">
-          Actualizar Datos
-        </button>
-        <button onClick={onCerrarSesion} className="btn-cerrar-sesion">
-          Cerrar Sesión
-        </button>
-      </div>
-    </nav>
-  );
-};
+const TeacherNavbarTW = ({nombreProfesor, onCerrarSesion, onCrearSala, onActualizarDatos, onLista }) => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-export default TeacherNavbar;
+    if (!nombreProfesor || typeof nombreProfesor !== 'string') {
+        nombreProfesor = 'Nombre_docente';
+    }
+
+    const navButtons = [
+        {
+            label: "Lista de salas",
+            hoverProps: "hover:bg-buttons-list-blue",
+            onClick: onLista
+        },
+        {
+            label: "Actualizar datos",
+            hoverProps: "hover:bg-unicoop-green",
+            onClick: onCrearSala
+        }
+    ];
+
+    const buttonStyle = "text-unicoop-white bg-primary w-40 h-10 rounded transition-colors duration-200 ease-in";
+
+    return (
+
+      <nav className="flex justify-between items-center p-4 bg-primary w-screen">
+
+        <h1 className="bg-primary font-semibold text-2xl text-unicoop-white my-auto">{nombreProfesor}</h1>
+        <div className="flex gap-3 bg-primary font-semibold">
+            <MdMenu className="text-3xl bg-primary text-unicoop-white md:hidden cursor-pointer hover:text-unicoop-yellow" onClick={() => setIsMenuOpen(true)}/>
+        </div>
+        <section className="gap-3 bg-primary font-semibold hidden md:flex">
+            {navButtons.map((data, i)=>(
+                <button key={i} className={`${buttonStyle} ${data.hoverProps}`} onClick={data.onClick}>{data.label}</button>
+            ))}
+            <AccountDropdown
+            onActualizarDatos={onActualizarDatos}
+            onCerrarSesion={onCerrarSesion}
+            />
+        </section>
+        
+        
+        {/*Menu lateral*/}
+        <div className={`fixed w-full h-screen md:hidden bg-primary/50 backdrop-blur-sm top-0 right-0 ${isMenuOpen ? '': 'hidden'}`}>
+            <section className="text-unicoop-white bg-primary flex-col absolute right-0 top-0 h-screen p-8 gap-4 z-50 flex font-semibold w-56 items-center">
+                <GrFormClose onClick={() => setIsMenuOpen(false)} className="text-3xl bg-primary cursor-pointer hover:animate-spin-once hover:text-buttons-closing-red"/>
+                <AccountDropdown
+                    onActualizarDatos={onActualizarDatos}
+                    onCerrarSesion={onCerrarSesion}
+                    />
+                {navButtons.map((data, i)=>(
+                    <button key={i} className={`${buttonStyle} ${data.hoverProps}`} onClick={data.onClick}>{data.label}</button>
+                ))}
+            </section>
+        </div>
+        {/*Hasta aquí el menú lateral*/}
+      </nav>
+    );
+  };
+  
+  export default TeacherNavbarTW;
