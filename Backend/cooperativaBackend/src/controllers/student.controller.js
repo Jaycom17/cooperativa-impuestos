@@ -7,7 +7,7 @@ export const postStudent = async (req, res) => {
     const result = await createStudent(student)
 
     if(!result){
-        res.status(500).json({message: "Error al crear usuario"})
+        return res.status(500).json({message: "Error al crear usuario"})
     }
     
     res.status(201).json(result)
@@ -32,7 +32,7 @@ export const putStudent = async (req, res) => {
     const result = await updateStudent({stuID, roomID})
 
     if(!result){
-        res.status(500).json({message: "Error al actualizar usuario"})
+        return res.status(500).json({message: "Error al actualizar usuario"})
     }
 
     res.status(201).json(result)
@@ -43,7 +43,7 @@ export const deleteStudent = async (req, res) => {
     const result = await removeStudent(stuID)
 
     if(!result){
-        res.status(500).json({message: "Error al eliminar usuario"})
+        return res.status(500).json({message: "Error al eliminar usuario"})
     }
 
     res.status(201).json(result)

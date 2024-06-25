@@ -26,7 +26,7 @@ export const obtainUsers = async () => {
   try {
     console.log("get users");
     const result = await prisma.user.findMany();
-    
+
     return result;
   } catch (error) {
     console.error(error);
@@ -36,7 +36,7 @@ export const obtainUsers = async () => {
 
 export const obtainUser = async (usuId) => {
   try {
-    console.log("Id ingresada "+usuId);
+    console.log("Id ingresada " + usuId);
     const result = await prisma.user.findUnique({ where: { usuID: usuId } });
     console.log("get user");
     return result;
@@ -48,11 +48,57 @@ export const obtainUser = async (usuId) => {
 
 export const removeUser = async (usuId) => {
   try {
-    
-    console.log("id " + usuId);
-    const result = await prisma.user.delete({ where: { usuID: usuId } });
-    console.log(result);
-    return true;
+    // Encontrar todas las salas asignadas al usuario
+    const userRooms = await prisma.room.findMany({
+      where: { usuID: usuId },
+      include: { student: true }
+    });
+
+    // Verificar si el usuario tiene salas asignadas
+    if (userRooms.length > 0) {
+      // Eliminar estudiantes y salas asignadas al usuario
+      for (const room of userRooms) {
+        const roomId = room.roomID;
+
+        // Verificar si la sala tiene estudiantes
+        if (room.student.length > 0) {
+          // Eliminar estudiantes asignados a la sala
+          const deleteStudentsResult = await prisma.student.deleteMany({
+            where: { roomID: roomId }
+          });
+
+          console.log(`Estudiantes eliminados en la sala ${roomId}: ${deleteStudentsResult.count}`);
+        }
+
+        // Eliminar la sala
+        const deleteRoomResult = await prisma.room.delete({
+          where: { roomID: roomId }
+        });
+
+        console.log(`Sala eliminada: ${deleteRoomResult.roomID}`);
+      }
+    }
+
+    // Verificar si el usuario existe antes de eliminarlo
+    const userExists = await prisma.user.findUnique({
+      where: { usuID: usuId }
+    });
+
+    if (userExists) {
+      // Eliminar el usuario
+      const deleteUserResult = await prisma.user.delete({
+        where: { usuID: usuId }
+      });
+
+      console.log(`Usuario eliminado: ${deleteUserResult.usuID}`);
+      return true;
+    } else {
+      console.log(`Usuario con ID ${usuId} no existe.`);
+      return false;
+    }
+    //console.log("id " + usuId);
+    //const result = await prisma.user.delete({ where: { usuID: usuId } });
+    //console.log(result);
   } catch (error) {
     console.error(error);
     return false;

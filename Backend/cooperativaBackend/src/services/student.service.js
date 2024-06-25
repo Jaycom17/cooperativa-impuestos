@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const createStudent = async (student) => {
     try {
-        
+
         const roomResult = await prisma.room.findUnique({
             where: {
                 roomID: student.roomID
@@ -84,15 +84,21 @@ export const updateStudent = async (student) => {
 
 export const removeStudent = async (stuID) => {
     try {
+        const studentExist = await prisma.student.findUnique({
+            where: {
+                stuID: stuID
+            }
+        });
+
+        if (!studentExist) {
+            return false;
+        }
         const result = await prisma.student.delete({
             where: {
                 stuID: stuID
             }
         });
-        if (!result) {
-            return false;
-        }
-        return true;
+        return result;
     } catch (error) {
         console.error(error);
         return false;
