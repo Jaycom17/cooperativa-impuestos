@@ -16,7 +16,6 @@ function MainPage() {
 
 
     const onSubmit = async(values) => {
-        console.log(values);
         await checkRoom(values);
       };
 

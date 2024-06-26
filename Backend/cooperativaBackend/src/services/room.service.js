@@ -92,12 +92,22 @@ export const validateRoomPassword = async (password) => {
         const result = await prisma.room.findUnique({
             select: {
                 roomID: true,
-                roomPassword: true
+                roomPassword: true,
+                roomStatus: true
             },
             where: {
                 roomPassword: password
             }
         });
+
+        if (!result) {
+            return { message: "Contraseña incorrecta" };
+        }
+
+        if (result.roomStatus === "closed") {
+            return { message: "La sala se encuentra cerrada" };
+        }
+
         return result;
     } catch (error) {
         console.error(error);

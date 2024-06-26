@@ -9,7 +9,7 @@ export const createStudent = async (student) => {
             data: {
                 stuID: uuidv4(),
                 stuName: student.stuName,
-                roomId: student.roomId
+                roomID: student.roomID
             }
         });
 
@@ -17,9 +17,9 @@ export const createStudent = async (student) => {
             return {message: "Error al crear el estudiante"};
         }
 
-        const token = await createAccessTokenStudent({ stuID: student.stuID, roomId: student.roomId });
+        const token = await createAccessTokenStudent({ stuID: student.stuID, roomID: student.roomID });
 
-        return {stuID: result.stuID, roomId: result.roomID, token};
+        return {stuID: result.stuID, roomID: result.roomID, token};
     } catch (error) {
         console.error(error);
         return {message: "Error al crear el estudiante"};
