@@ -1,20 +1,23 @@
+import { RoomContext } from "../../context/StudentContext";
+import { useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import StudentLogForm from '../../components/loginForms/StudentLogForm'
-import { login } from '../../services/login.service';
 
 function MainPage() {
-    const navigate = useNavigate();
+  const { checkRoom, currentRoom } = useContext(RoomContext);
+  
+  const navigate = useNavigate();
 
-    const onSubmit = (values) => {
+  useEffect(() => {
+    if (!currentRoom) return;
+
+    navigate('/middlewarestudent');
+  }, [currentRoom, navigate]);
+
+
+    const onSubmit = async(values) => {
         console.log(values);
-        if(values.roomID) { navigate('/student');}
-        login(values)
-          .then((response) => {
-            console.log(response);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        await checkRoom(values);
       };
 
     return (

@@ -1,8 +1,6 @@
-import { encrypt, compare } from "./encrypt.service.js";
+import { compare } from "./encrypt.service.js";
 import prisma from "../config/prisma.js";
 import { createAccessToken } from "./jwt.service.js";
-
-export const studentLogin = async (student) => {};
 
 export const loginUser = async (user) => {
   try {
