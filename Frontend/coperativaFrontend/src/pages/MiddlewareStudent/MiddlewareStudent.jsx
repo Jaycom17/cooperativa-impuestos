@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { IoCaretBackSharp } from "react-icons/io5";
+import { RoomContext } from "../../context/StudentContext";
 
 const OPTIONS = {
   SI: "SI",
@@ -11,6 +12,8 @@ function MiddlewareStudent() {
   const [firstTime, setFirstTime] = useState(OPTIONS.NOTHING);
 
   const [animationClass, setAnimationClass] = useState("");
+
+  const {leaveRoom} = useContext(RoomContext)
 
   const handleSetFirstTime = (option) => {
     if (option === OPTIONS.SI) {
@@ -30,7 +33,7 @@ function MiddlewareStudent() {
           <h2 className="font-semibold text-lg">
             ¿Es la primera vez que entras a la sala?
           </h2>
-          <section className="flex gap-3 mt-3">
+          <section className="flex gap-6 mt-3">
             <button
               onClick={() => handleSetFirstTime(OPTIONS.SI)}
               className="p-2 bg-green-400 w-16 text-black rounded-md hover:bg-green-300 duration-150 text-lg font-semibold"
@@ -44,6 +47,12 @@ function MiddlewareStudent() {
               NO
             </button>
           </section>
+          <button
+            onClick={() => leaveRoom()}
+            className="p-2 bg-unicoop-blue w-auto mt-5 text-black rounded-md hover:bg-buttons-list-blue duration-150 text-lg font-semibold"
+          >
+            Regresar al inicio
+          </button>
         </div>
       )}
 
