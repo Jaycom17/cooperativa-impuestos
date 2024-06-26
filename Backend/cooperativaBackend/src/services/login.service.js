@@ -1,8 +1,6 @@
-import { encrypt, compare } from "./encrypt.service.js";
+import { compare } from "./encrypt.service.js";
 import prisma from "../config/prisma.js";
 import { createAccessToken } from "./jwt.service.js";
-
-export const studentLogin = async (student) => {};
 
 export const loginUser = async (user) => {
   try {
@@ -10,7 +8,6 @@ export const loginUser = async (user) => {
       where: { usuEmail: user.usuEmail },
     });
 
-    
     if (!result) return { message: "Usuario o contraseña incorrectos" };
 
     const passwordMatch = await compare(user.usuPassword, result.usuPassword);
@@ -22,6 +19,7 @@ export const loginUser = async (user) => {
     return { usuID: result.usuID, usuEmail: result.usuEmail, usuName: result.usuName, usuRole: result.usuRole,  token };
 
   } catch (error) {
+    console.error(error);
     return { message: "Error al iniciar sesión" };
   }
 };

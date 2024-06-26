@@ -1,10 +1,4 @@
-import {
-  createRoom,
-  obtainRoom,
-  obtainRooms,
-  updateRoom,
-  removeRoom,
-} from "../services/room.service.js";
+import { createRoom, obtainRoom, obtainRooms, updateRoom, removeRoom, validateRoomPassword } from "../services/room.service.js";
 
 export const postRoom = async (req, res) => {
   const { roomName, roomPassword, roomDate, roomStatus, usuID } = req.body;

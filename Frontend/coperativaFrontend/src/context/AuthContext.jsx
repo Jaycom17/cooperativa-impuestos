@@ -1,62 +1,67 @@
 import { createContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { login, profile, logout } from "../services/login.service";
-import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [loginError, setLoginError] = useState(null);
 
     useEffect(() => {
-        profile().then((result) => {
-            localStorage.setItem('user', JSON.stringify(result));
-            setUser(result);
-        }).catch(() => {
-            setUser(null);
-        });
+        if (loginError) {
+          const timer = setTimeout(() => {
+            setLoginError(null);
+          }, 5000);
+          return () => clearTimeout(timer);
+        }
+      }, [loginError]);
+    
+
+    useEffect(() => {
+        const checkLogin = async () => {      
+            try {
+              const res = await profile();
+
+              if (!res.data) return;
+
+              setUser(res.data);
+              setLoading(false);
+            } catch (error) {
+              setLoading(false);
+            }
+          };
+          checkLogin();
     }, []);
 
     const singin = async (userLogin) => {
-        login(userLogin).then((result) => {
-            if (!result) {
-                return false;
-            }
-
-            localStorage.setItem('user', JSON.stringify(result));
-
-            if (result.usuRole === "admin") {
-                navigate("/admin");
-                return;
-              }
-  
-              navigate("/pofessor");
-        }).catch(() => {
-            return false;
-        });
+        try {
+            const res = await login(userLogin);
+            setUser(res.data);
+            setLoginError(null);
+          } catch (error) {
+            console.log(error);
+            setLoginError("Usuario o contraseña incorrectos")
+          }
     }
 
     const singout = () => {
-        const result = logout(user);
+        const result = logout();
 
         if (!result) {
             return false;
         }
 
         setUser(null);
-        localStorage.removeItem('user');
+        setLoading(false);
 
         return true;
     }
 
-    const validateUser = () => {
-        console.log(localStorage.getItem("user"))
-        return JSON.parse(localStorage.getItem("user")) !== null;
-    }
-
 
     return (
-        <AuthContext.Provider value={{singin, user, singout, validateUser}}>
+        <AuthContext.Provider value={{singin, user, loading, singout, loginError}}>
             {children}
         </AuthContext.Provider>
     );

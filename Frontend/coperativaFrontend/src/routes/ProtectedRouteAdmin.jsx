@@ -4,9 +4,11 @@ import { Navigate, Outlet } from "react-router-dom";
 
 
 function ProtectedRouteAdmin () {
-  const { user, validateUser } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
 
-  return validateUser() && user.usuRole === "admin" ? <Outlet /> : <Navigate to="/login" />;
+  if (loading) return <h1>Loading...</h1>;
+
+  return user && user.usuRole === "admin" ? <Outlet /> : <Navigate to="/login" />;
 }
 
 export default ProtectedRouteAdmin;

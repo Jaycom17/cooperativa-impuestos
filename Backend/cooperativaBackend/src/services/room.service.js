@@ -8,16 +8,14 @@ export const createRoom = async (room) => {
         if (!usuResult) {
             return false;
         }
-        console.log("Id usuario");
-        console.log(room.roomName);
         const result = await prisma.room.create({
             data: {
                 roomID: uuidv4(),
                 roomName: room.roomName,
-                roomPassword: encryptedPassword,
-                roomDate: room.roomDate,
+                roomPassword: room.roomPassword,
+                roomDate: new Date(room.roomDate).toISOString(),
                 roomStatus: room.roomStatus,
-                roomAnswer: null,
+                roomAnswer: {},
                 usuID: room.usuID
             }
         });
@@ -93,15 +91,26 @@ export const validateRoomPassword = async (password) => {
     try {
         const result = await prisma.room.findUnique({
             select: {
-                roomID: true
+                roomID: true,
+                roomPassword: true,
+                roomStatus: true
             },
             where: {
                 roomPassword: password
             }
         });
+
+        if (!result) {
+            return { message: "Contraseña incorrecta" };
+        }
+
+        if (result.roomStatus === "closed") {
+            return { message: "La sala se encuentra cerrada" };
+        }
+
         return result;
     } catch (error) {
-        console.error(error.ConnectorError);
+        console.error(error);
         return { message: "Error al validar contraseña" };
     }
 }
