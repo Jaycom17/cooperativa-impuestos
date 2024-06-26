@@ -1,19 +1,25 @@
 import {createStudent, obtainStudent, obtainStudents, removeStudent} from "../services/student.service.js"
 
 export const postStudent = async (req, res) => {
-    const {stuName} = req.body
-    const student = {stuName}
+    const {estName, roomId} = req.body
+    const student = {estName, roomId}
 
     const result = await createStudent(student)
 
-    if(!result){
+    if(!result.stuID){
         res.status(500).json({message: "Error al crear usuario"})
     }
+
+    res.cookie('token', result.token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none'
+    });
     
-    res.status(201).json(result)
+    res.status(201).json({stuID: result.stuID, roomId: result.roomId})
 }
 
-export const getStudents = async (req, res) => {
+export const getStudents = async (_req, res) => {
     const result = await obtainStudents()
 
     res.status(201).json(result)

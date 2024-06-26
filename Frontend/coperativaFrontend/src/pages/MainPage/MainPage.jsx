@@ -1,30 +1,32 @@
-import React from 'react';
-import { useNavigate } from "react-router-dom";
+import { RoomContext } from "../../context/StudentContext";
+import { useContext, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import StudentLogForm from '../../components/loginForms/StudentLogForm'
-import { login } from '../../services/login.service';
 
 function MainPage() {
-    const navigate = useNavigate();
+  const { checkRoom, currentRoom } = useContext(RoomContext);
+  
+  const navigate = useNavigate();
 
-    const onSubmit = (values) => {
+  useEffect(() => {
+    if (!currentRoom) return;
+
+    navigate('/middlewarestudent');
+  }, [currentRoom, navigate]);
+
+
+    const onSubmit = async(values) => {
         console.log(values);
-        if(values.roomID) { navigate('/student');}
-        login(values)
-          .then((response) => {
-            console.log(response);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        await checkRoom(values);
       };
-    
+
     return (
         <main className="flex flex-col mx-auto items-center min-h-screen place-content-center bg-background">
             <img src="https://fernandocolmenares.co/wp-content/uploads/2020/08/U.CooperativaCol.png" alt="logo universidad cooperativa" className="w-11/12 md:w-96"/>
             <section className="p-6 w-11/12 md:w-[400px] bg-unicoop-black rounded-lg">
                 <StudentLogForm onSubmit={onSubmit}/>
             </section>
-            <p className="text-unicoop mt-5 font-medium text-center">¿No eres un estudiante? <a className="text-unicoop-blue hover:text-buttons-list-blue " href='/login'>¡Inicia sesión!</a></p>
+            <p className="text-unicoop mt-5 font-medium text-center">¿No eres un estudiante? <Link className="text-unicoop-blue hover:text-buttons-list-blue " to='/login'>¡Inicia sesión!</Link></p>
         </main>
     );
 }

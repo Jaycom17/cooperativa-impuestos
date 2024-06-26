@@ -1,25 +1,29 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { MdMenu } from "react-icons/md";
 import { GrFormClose } from "react-icons/gr";
-import AccountDropdown from "../accountDrop/AccountDropdown";
+import { Link } from "react-router-dom";
+import AccountDropdown from "../AccountDrop/AccountDropdown";
+import { AuthContext } from "../../context/AuthContext";
 
-const Navbar = ({ onCerrarSesion, onCrearProfesor, onActualizarDatos,onLista }) => {
+const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const { singout } = useContext(AuthContext);
 
     const navButtons = [
         {
             label: "Lista de profesores",
             hoverProps: "hover:bg-buttons-list-blue",
-            onClick: onLista
+            to: "/admin",
         },
         {
             label: "Crear profesor",
             hoverProps: "hover:bg-unicoop-green",
-            onClick: onCrearProfesor
+            to: "/createprofessor",
         }
     ];
 
-    const buttonStyle = "text-unicoop-white bg-primary w-40 h-10 rounded transition-colors duration-200 ease-in";
+    const buttonStyle = "text-unicoop-white bg-primary w-40 h-10 rounded transition-colors duration-200 ease-in flex justify-center items-center";
 
     return (
       <nav className="flex justify-between items-center p-4 bg-primary">
@@ -29,11 +33,10 @@ const Navbar = ({ onCerrarSesion, onCrearProfesor, onActualizarDatos,onLista }) 
         </div>
         <section className="gap-3 bg-primary font-semibold hidden md:flex">
             {navButtons.map((data, i)=>(
-                <button key={i} className={`${buttonStyle} ${data.hoverProps}`} onClick={data.onClick}>{data.label}</button>
+                <Link to={data.to} key={i} className={`${buttonStyle} ${data.hoverProps}`}>{data.label}</Link>
             ))}
             <AccountDropdown
-            onActualizarDatos={onActualizarDatos}
-            onCerrarSesion={onCerrarSesion}
+                onCerrarSesion={singout}
             />
         </section>
         
@@ -43,11 +46,10 @@ const Navbar = ({ onCerrarSesion, onCrearProfesor, onActualizarDatos,onLista }) 
             <section className="text-unicoop-white bg-primary flex-col absolute right-0 top-0 h-screen p-8 gap-4 z-50 flex font-semibold w-56 items-center">
                 <GrFormClose onClick={() => setIsMenuOpen(false)} className="text-3xl bg-primary cursor-pointer hover:animate-spin-once hover:text-buttons-closing-red"/>
                 <AccountDropdown
-                    onActualizarDatos={onActualizarDatos}
-                    onCerrarSesion={onCerrarSesion}
+                    onCerrarSesion={singout}
                     />
                 {navButtons.map((data, i)=>(
-                    <button key={i} className={`${buttonStyle} ${data.hoverProps}`} onClick={data.onClick}>{data.label}</button>
+                    <Link to={data.to} key={i} className={`${buttonStyle} ${data.hoverProps}`}>{data.label}</Link>
                 ))}
             </section>
         </div>

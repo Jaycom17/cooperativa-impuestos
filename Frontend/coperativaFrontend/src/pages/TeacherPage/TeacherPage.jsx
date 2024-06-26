@@ -1,8 +1,12 @@
-import React from 'react';
 import Room from '../../components/Room/Room';
 import TeacherNavbar from '../../components/TeacherNavBar/TeacherNavbar';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 const TeacherPage = () => {
+
+  const { singout } = useContext(AuthContext);
+
   const Salas = [
     { id: 1, nombre: 'Sala 1',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
     { id: 2, nombre: 'Sala 2',codigo: "123",fecha: '2021-09-30' ,estado: 'Inactivo' },
@@ -12,7 +16,7 @@ const TeacherPage = () => {
 
   const handleCerrarSesion = () => {
     // Lógica para cerrar sesión
-    console.log('Cerrar sesión');
+    singout();
   };
 
   const handleCrearProfesor = () => {

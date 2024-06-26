@@ -1,4 +1,4 @@
-import { createRoom, obtainRoom, obtainRooms, updateRoom, removeRoom } from "../services/room.service.js";
+import { createRoom, obtainRoom, obtainRooms, updateRoom, removeRoom, validateRoomPassword } from "../services/room.service.js";
 
 export const postRoom = async (req, res) => {
     const {roomName, roomPassword, roomDate, roomStatus, usuID } = req.body;
@@ -53,6 +53,17 @@ export const deleteRoom = async (req, res) => {
 
     if (!result) {
         return res.status(500).json({ error: 'No se pudo eliminar la sala' });
+    }
+
+    res.status(201).json(result);
+}
+
+export const valRoomPassword = async (req, res) => {
+    const { roomPassword } = req.body;
+    const result = await validateRoomPassword(roomPassword);
+
+    if (!result) {
+        return res.status(500).json({ error: 'No se pudo validar la contraseña de la sala' });
     }
 
     res.status(201).json(result);

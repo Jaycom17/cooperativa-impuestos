@@ -4,26 +4,22 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const createRoom = async (room) => {
     try {
-        const encryptedPassword = await encrypt(room.roomPassword);
-
         const usuResult = await prisma.user.findUnique({ where: { usuID: room.usuID } });
         if (!usuResult) {
             return false;
         }
-        console.log("Id usuario");
-        console.log(room.roomName);
         const result = await prisma.room.create({
             data: {
                 roomID: uuidv4(),
                 roomName: room.roomName,
-                roomPassword: encryptedPassword,
-                roomDate: room.roomDate,
+                roomPassword: room.roomPassword,
+                roomDate: new Date(room.roomDate).toISOString(),
                 roomStatus: room.roomStatus,
-                roomAnswer: null,
+                roomAnswer: {},
                 usuID: room.usuID
             }
         });
-        console.log(result);
+
         return true;
     } catch (error) {
         console.error(error);
@@ -88,5 +84,23 @@ export const removeRoom = async (roomDate) => {
     } catch (error) {
         console.error(error);
         return false;
+    }
+}
+
+export const validateRoomPassword = async (password) => {
+    try {
+        const result = await prisma.room.findUnique({
+            select: {
+                roomID: true,
+                roomPassword: true
+            },
+            where: {
+                roomPassword: password
+            }
+        });
+        return result;
+    } catch (error) {
+        console.error(error);
+        return { message: "Error al validar contraseña" };
     }
 }

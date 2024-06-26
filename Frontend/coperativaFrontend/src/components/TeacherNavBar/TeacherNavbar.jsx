@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { MdMenu } from "react-icons/md";
 import { GrFormClose } from "react-icons/gr";
-import AccountDropdown from "../accountDrop/AccountDropdown";
+import AccountDropdown from "../AccountDrop/AccountDropdown";
+import PropTypes from 'prop-types'
 
 const TeacherNavbarTW = ({nombreProfesor, onCerrarSesion, onCrearSala, onActualizarDatos, onLista }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,6 +61,14 @@ const TeacherNavbarTW = ({nombreProfesor, onCerrarSesion, onCrearSala, onActuali
         {/*Hasta aquí el menú lateral*/}
       </nav>
     );
+  };
+
+  TeacherNavbarTW.propTypes = {
+    nombreProfesor: PropTypes.string.isRequired,
+    onCerrarSesion: PropTypes.func.isRequired,
+    onCrearSala: PropTypes.func.isRequired,
+    onActualizarDatos: PropTypes.func.isRequired,
+    onLista: PropTypes.func.isRequired
   };
   
   export default TeacherNavbarTW;
