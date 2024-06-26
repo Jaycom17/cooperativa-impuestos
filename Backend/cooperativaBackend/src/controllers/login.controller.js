@@ -32,3 +32,20 @@ export const profile = async (req, res) => {
 
     res.status(200).json(result);
 }
+
+export const loginStudent = async (req, res) => {
+    const { usuID } = req.body;
+    const result = await loginUser({ usuID });
+
+    if (!result.token) {
+        return res.status(500).json(result.message);
+    }
+
+    res.cookie('token', result.token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none'
+    });
+
+    res.status(200).json({ usuID: result.usuID, usuEmail: result.usuEmail, usuName: result.usuName, usuRole: result.usuRole});
+}

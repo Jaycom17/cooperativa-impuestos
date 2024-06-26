@@ -11,20 +11,26 @@ import MiddlewareStudent from "../pages/MiddlewareStudent/MiddlewareStudent";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { AuthProvider } from "../context/AuthContext";
+import { RoomProvider } from "../context/StudentContext";
 
 import ProtectedRouteAdmin from "./ProtectedRouteAdmin";
 import ProtectedRouteProfessor from "./ProtectedRouteProfessor";
+import ProtectedRouteStudent from "./ProtectedRouteStudent";
 
 function Router() {
   return (
     <AuthProvider>
+      <RoomProvider>
       <BrowserRouter id="App">
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={<MainPage />} />
           <Route path="/room" element={<Room />} />
-          <Route path="/student" element={<MainStudent />} />
-          <Route path="/middlewarestudent" element={<MiddlewareStudent />} />
+          
+          <Route element={<ProtectedRouteStudent />}>
+            <Route path="/student" element={<MainStudent />} />
+            <Route path="/middlewarestudent" element={<MiddlewareStudent />} />
+          </Route>
 
           <Route element={<ProtectedRouteAdmin />}>
             <Route path="/admin" element={<MainAdminPage />} />
@@ -37,6 +43,7 @@ function Router() {
           <Route path="/esfpatrimonioform" element={<ESFpatrimonioForm />} />
         </Routes>
       </BrowserRouter>
+      </RoomProvider>
     </AuthProvider>
   );
 }
