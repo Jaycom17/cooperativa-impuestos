@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import basicInformation from '../../../formsData/ESFpatrimonio.json';
 import ESFvalues from '../../../components/ESFvalues/ESFvalues';
-import AsideEstudent from '../../../components/AsideStudent/AsideStudent';
+import AsideStudent from '../../../components/AsideStudent/AsideStudent';
 
 const ESFpatrimonio = () => {
   const [data, setData] = useState(basicInformation);
@@ -59,8 +59,8 @@ const ESFpatrimonio = () => {
 
   return (
     <div className="flex bg-gray-100 rounded shadow-md">
-      <AsideEstudent />
-      <form className='bg-white w-full p-2 overflow-auto max-h-screen'>
+      <AsideStudent />
+      <form className='bg-white w-full p-2 overflow-auto max-h-screen mt-12 md:mt-0'>
         <div className='bg-white'>
           <h1 className="text-2xl font-bold ml-2 bg-white">Activos</h1>
           <section className='p-2 bg-white border rounded-md'>
