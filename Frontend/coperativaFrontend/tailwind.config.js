@@ -24,10 +24,25 @@ export default {
         },
       },
       keyframes:{
-        'spin-once': {to: {transform: 'rotate(90deg)'}}
+        'spin-once': {to: {transform: 'rotate(90deg)'}},
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+        slideFromTop: {
+          '0%': { transform: 'translateY(-50px)', opacity: 0 },
+          '100%': { transform: 'translateY(0)', opacity: 1 },
+        },
+        slideFromBottom: {
+          '0%': { transform: 'translateY(50px)', opacity: 0 },
+          '100%': { transform: 'translateY(0)', opacity: 1 },
+        },
       },
       animation:{
-        'spin-once': 'spin-once 0.2s linear'
+        'spin-once': 'spin-once 0.2s linear',
+        'fade-in': 'fadeIn 0.5s ease-out',
+        'slide-from-top': 'slideFromTop 0.5s ease-out',
+        'slide-from-bottom': 'slideFromBottom 0.5s ease-out',
       },
     },
   },
