@@ -14,7 +14,7 @@ export const createUser = async (user) => {
         usuRole: user.usuRole
       }
     });
-    return true;
+    return { usuID: result.usuID, usuName: result.usuName, usuEmail: result.usuEmail };
   } catch (error) {
     console.error(error);
     return false;

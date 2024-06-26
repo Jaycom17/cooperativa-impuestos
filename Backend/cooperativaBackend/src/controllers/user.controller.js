@@ -14,7 +14,7 @@ export const postProfessor = async (req, res) => {
     return res.status(500).json({ error: "No se pudo crear el usuario" });
   }
 
-  res.status(200).json(newUser);
+  res.status(200).json(result);
 };
 
 export const postAdmin = async (req, res) => {
@@ -26,7 +26,7 @@ export const postAdmin = async (req, res) => {
     return res.status(500).json({ error: "No se pudo crear el usuario" });
   }
 
-  res.status(200).json(newUser);
+  res.status(200).json(result);
 };
 
 export const getProfessors = async (req, res) => {
