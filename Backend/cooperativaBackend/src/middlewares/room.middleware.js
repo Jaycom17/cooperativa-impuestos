@@ -1,4 +1,4 @@
-import { Room, Id, updateRoom, Date } from '../models/room.model.js';
+import { Room, Id, updateRoomState, Date } from '../models/room.model.js';
 
 export const validateRoom = async (req, res, next) => {
     try {
@@ -32,7 +32,7 @@ export const validateIdBody = async (req, res, next) => {
 
 export const validateRoomUpdate = async (req, res, next) => {
     try {
-        const room = updateRoom.parse(req.body);
+        const room = updateRoomState.parse(req.body);
         
         req.body = room;
         next();

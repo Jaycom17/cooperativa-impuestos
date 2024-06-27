@@ -36,8 +36,8 @@ export const getRooms = async (req, res) => {
 
 export const putRoom = async (req, res) => {
     const {roomID} = req.params;
-    const { roomDate, roomStatus,usuID} = req.body;
-    const room = { roomID, roomDate, roomStatus,usuID};
+    const {roomStatus} = req.body;
+    const room = {roomID, roomStatus};
     console.log(room); 
     const result = await updateRoom(room);
     if (!result) {

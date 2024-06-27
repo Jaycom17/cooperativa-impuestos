@@ -61,9 +61,7 @@ export const updateRoom = async (room) => {
                 roomID: room.roomID
             },
             data: {
-                roomDate: room.roomDate,
-                roomStatus: room.roomStatus,
-                usuID: room.usuID
+                roomStatus: room.roomStatus
             }
         });
         return result;
