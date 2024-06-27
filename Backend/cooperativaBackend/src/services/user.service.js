@@ -22,6 +22,45 @@ export const createUser = async (user) => {
   }
 }
 
+export const obtainProfessors = async () => {
+  try {
+    const result = await prisma.user.findMany({ 
+      where: { 
+        usuRole: "profesor" 
+      }, 
+      select: { 
+        usuID: true, 
+        usuName: true, 
+        usuEmail: true 
+      } 
+    });
+
+    return result;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
+export const obtainAdmins = async () => {
+  try {
+    const result = await prisma.user.findMany({ 
+      where: { 
+        usuRole: "admin" 
+      }, 
+      select: { 
+        usuID: true, 
+        usuName: true, 
+        usuEmail: true 
+      } 
+    });
+    return result;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
 export const obtainUsers = async () => {
   try {
     console.log("get users");

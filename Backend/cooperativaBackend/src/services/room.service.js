@@ -15,9 +15,9 @@ export const createRoom = async (room) => {
                 roomID: uuidv4(),
                 roomName: room.roomName,
                 roomPassword: encryptedPassword,
-                roomDate: room.roomDate,
+                roomDate: new Date(room.roomDate).toISOString(),
                 roomStatus: room.roomStatus,
-                roomAnswer: null,
+                roomAnswer: {},
                 usuID: room.usuID
             }
         });
@@ -55,13 +55,32 @@ export const obtainRooms = async () => {
 
 export const updateRoom = async (room) => {
     try {
-        console.log(room);
         const result = await prisma.room.update({
             where: {
                 roomID: room.roomID
             },
             data: {
                 roomStatus: room.roomStatus
+            }
+        });
+        return result;
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
+}
+
+export const updateRoomName = async (room) => {
+    try {
+        const encryptedPassword = await encrypt(room.roomPassword);
+
+        const result = await prisma.room.update({
+            where: {
+                roomID: room.roomID
+            },
+            data: {
+                roomName: room.roomName,
+                roomPassword: encryptedPassword
             }
         });
         return result;

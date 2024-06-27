@@ -1,4 +1,4 @@
-import { createRoom, obtainRoom, obtainRooms, updateRoom, removeRoom } from "../services/room.service.js";
+import { createRoom, obtainRoom, obtainRooms, updateRoom, updateRoomName, removeRoom } from "../services/room.service.js";
 
 export const postRoom = async (req, res) => {
     const {roomName, roomPassword, roomDate, roomStatus, usuID } = req.body;
@@ -40,6 +40,19 @@ export const putRoom = async (req, res) => {
     const room = {roomID, roomStatus};
     console.log(room); 
     const result = await updateRoom(room);
+    if (!result) {
+        return res.status(500).json({ error: 'No se pudo actualizar la sala' });
+    }
+
+    res.status(201).json(room);
+}
+
+export const putRoomName = async (req, res) => {
+    const {roomID} = req.params;
+    const {roomName, roomPassword} = req.body;
+    const room = {roomID, roomName, roomPassword};
+    console.log(room); 
+    const result = await updateRoomName(room);
     if (!result) {
         return res.status(500).json({ error: 'No se pudo actualizar la sala' });
     }
