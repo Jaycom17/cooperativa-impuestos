@@ -1,22 +1,19 @@
 import Room from '../../components/Room/Room';
 import TeacherNavbar from '../../components/TeacherNavBar/TeacherNavbar';
-import { useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
+import { getRooms } from '../../services/room.service';
 
 const TeacherPage = () => {
+  const [rooms, setRooms] = useState([]);
 
   const { singout } = useContext(AuthContext);
 
-  const Salas = [
-    { id: 1, nombre: 'Investigación de operaciones',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
-    { id: 2, nombre: 'Sala 2',codigo: "123",fecha: '2021-09-30' ,estado: 'Inactivo' },
-    { id: 3, nombre: 'Sala 3',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
-    { id: 3, nombre: 'Sala 3',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
-    { id: 3, nombre: 'Sala 3',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
-    { id: 3, nombre: 'Sala 3',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
-    { id: 3, nombre: 'Sala 3',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
-    // ...otros items
-  ];
+  useEffect(() => {
+    getRooms().then((response) =>{
+      if(response.status === 201) {setRooms(response.data);}
+    }).catch(() => {alert("Error al cargar los profesores");});
+  }, []);
 
   const handleCerrarSesion = () => {
     // Lógica para cerrar sesión
@@ -43,6 +40,14 @@ const TeacherPage = () => {
     console.log(`Eliminar item con id: ${id}`);
   };
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
+    const day = ('0' + (date.getDate() + 1)).slice(-2);
+    return `${day} / ${month} / ${year}`;
+  };
+
   return (
     <>
       <TeacherNavbar
@@ -52,8 +57,8 @@ const TeacherPage = () => {
       />
       <main className="flex flex-col items-center min-h-screen bg-background">
         <section className="w-11/12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 my-5 mx-auto justify-items-center">
-          {Salas.map((Sala,i) => (
-              <Room key={i} nombre={Sala.nombre} codigo={Sala.codigo} fecha={Sala.fecha} estado={Sala.estado} onActualizar={() => handleActualizar(Sala.id)} onEliminar={() => handleEliminar(Sala.id)}
+          {rooms.map((room) => (
+              <Room key={room.roomID} nombre={room.roomName} codigo={room.roomPassword} fecha={formatDate(room.roomDate)} estado={room.roomStatus} onActualizar={() => handleActualizar(room.roomID)} onEliminar={() => handleEliminar(room.roomID)}
               />
           ))}
         </section>

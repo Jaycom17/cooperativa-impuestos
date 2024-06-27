@@ -8,7 +8,7 @@ const Room = ({ nombre,codigo,fecha, estado ,onActualizar, onEliminar }) => {
   const [formOpen, setFormOpen] = useState(false);
 
   useEffect(() => {
-    setActivated(estado.toLowerCase() === 'activo');
+    setActivated(estado.toLowerCase() === 'open');
   }, [estado]);
 
   // Check if nombre and estado have values and estado is a string
@@ -23,7 +23,7 @@ const Room = ({ nombre,codigo,fecha, estado ,onActualizar, onEliminar }) => {
     const newState = !activated;
     setActivated(!activated);
     // Aquí sería poner la vuelta para actualizar el estado.
-    onActualizarEstado(codigo, newState ? 'ACTIVO' : 'INACTIVO');
+    onActualizarEstado(codigo, newState ? 'OPEN' : 'CLOSED');
   };
 
   return (
