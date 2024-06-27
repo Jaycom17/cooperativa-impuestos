@@ -20,7 +20,11 @@ export default {
           'warning-yellow': '#ffd518',
           'closing-red': '#FF4E4E',
           'list-blue': '#628dce',
-          'login': '#404142'
+          'login': '#404142',
+          'update-green': '#28a745',
+          'update-green-h': '#218838',
+          'delete-red': '#dc3545',
+          'delete-red-h': '#c82333',
         },
       },
       keyframes:{

@@ -1,18 +1,22 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect,useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { GrFormClose } from "react-icons/gr";
 import { MdMenu } from "react-icons/md";
-
+import { RoomContext } from "../../context/StudentContext";
 
 const AsideStudent = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const menuRef = useRef(null);
+    const asideRef = useRef(null);
+
+    const {leaveRoom} = useContext(RoomContext);
+
+    const handleLeaveRoom = ()=>{ leaveRoom() }
 
     // Función para cerrar el menú desplegable al hacer clic fuera de él
     useEffect(() => {
         function handleClickOutside(event) {
-            if (menuRef.current && !menuRef.current.contains(event.target)) {
+            if (asideRef.current && !asideRef.current.contains(event.target)) {
                 setIsMenuOpen(false);
             }
         }
@@ -44,7 +48,7 @@ const AsideStudent = () => {
                 <MdMenu className="text-2xl"/>
                 <h1 className="text-sm font-medium">MENÚ</h1>
             </div>
-            <aside className={`fixed md:relative top-0 min-h-screen h-full w-[200px] bg-primary md:translate-x-0 backdrop-blur-sm transition-transform duration-150 ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`} ref={menuRef}>
+            <aside className={`fixed md:relative top-0 min-h-screen h-full w-[200px] bg-primary md:translate-x-0 transition-transform duration-150 ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`} ref={asideRef}>
                 <div className="flex w-full justify-center mt-2 md:hidden ">
                     <GrFormClose className="hover:animate-spin-once cursor-pointer text-unicoop hover:text-buttons-closing-red text-3xl" onClick={handleMenuOpen}/>
                 </div>
@@ -60,7 +64,7 @@ const AsideStudent = () => {
                         <Link key={index} className="flex items-center justify-center w-full h-[40px] md:h-[50px] bg-transparent text-white text-sm md:text-base hover:bg-unicoop-slate-blue duration-200 font-medium" to={form.to}>{form.label}</Link>
                     ))}
                 </section>
-                <Link className="flex items-center justify-center w-full h-[50px] bg-transparent text-white hover:bg-buttons-closing-red duration-200 font-medium mt-[20px]" to="">Salir de la sala</Link>
+                <button className="flex items-center justify-center w-full h-[50px] bg-transparent text-white hover:bg-buttons-closing-red duration-200 font-medium mt-[20px]" onClick={handleLeaveRoom}>Salir de la sala</button>
             </aside>
         </section>
         

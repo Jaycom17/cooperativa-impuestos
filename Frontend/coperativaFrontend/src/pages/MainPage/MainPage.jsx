@@ -1,7 +1,7 @@
 import { RoomContext } from "../../context/StudentContext";
 import { useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import StudentLogForm from '../../components/loginForms/StudentLogForm'
+import StudentLogForm from '../../components/LoginForms/StudentLogForm'
 
 function MainPage() {
   const { checkRoom, currentRoom } = useContext(RoomContext);

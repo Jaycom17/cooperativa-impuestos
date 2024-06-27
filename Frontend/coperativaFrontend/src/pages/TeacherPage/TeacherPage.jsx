@@ -8,8 +8,12 @@ const TeacherPage = () => {
   const { singout } = useContext(AuthContext);
 
   const Salas = [
-    { id: 1, nombre: 'Sala 1',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
+    { id: 1, nombre: 'Investigación de operaciones',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
     { id: 2, nombre: 'Sala 2',codigo: "123",fecha: '2021-09-30' ,estado: 'Inactivo' },
+    { id: 3, nombre: 'Sala 3',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
+    { id: 3, nombre: 'Sala 3',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
+    { id: 3, nombre: 'Sala 3',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
+    { id: 3, nombre: 'Sala 3',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
     { id: 3, nombre: 'Sala 3',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
     // ...otros items
   ];
@@ -40,28 +44,22 @@ const TeacherPage = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-full w-screen bg-[#1f324e]
-      ">
+    <>
       <TeacherNavbar
         onCerrarSesion={handleCerrarSesion}
         onCrearSala={handleCrearProfesor}
         onActualizarDatos={handleActualizarDatos}
       />
-      <ul className="w-screen pr-16 pl-16">
-        {Salas.map((Salas) => (
-          <li key={Salas.id}>
-            <Room
-              nombre={Salas.nombre}
-              codigo={Salas.codigo}
-              fecha={Salas.fecha}
-              estado={Salas.estado}
-              onActualizar={() => handleActualizar(Salas.id)}
-              onEliminar={() => handleEliminar(Salas.id)}
-            />
-          </li>
-        ))}
-      </ul>
-    </div>
+      <main className="flex flex-col items-center min-h-screen bg-background">
+        <section className="w-11/12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 my-5 mx-auto justify-items-center">
+          {Salas.map((Sala,i) => (
+              <Room key={i} nombre={Sala.nombre} codigo={Sala.codigo} fecha={Sala.fecha} estado={Sala.estado} onActualizar={() => handleActualizar(Sala.id)} onEliminar={() => handleEliminar(Sala.id)}
+              />
+          ))}
+        </section>
+      </main>
+      
+    </>
   );
 };
 
