@@ -2,12 +2,15 @@ import Room from '../../components/Room/Room';
 import TeacherNavbar from '../../components/TeacherNavBar/TeacherNavbar';
 import { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
-import { getRooms, updateRoomState } from '../../services/room.service';
+import { getRooms } from '../../services/room.service';
+import InfoBubble from '../../components/InfoBubble/InfoBubble';
 
 const TeacherPage = () => {
   const [rooms, setRooms] = useState([]);
 
   const { singout } = useContext(AuthContext);
+
+  const dateInfo = "La fecha se encuentra en formato: - Día / Mes / Año"
 
   useEffect(() => {
     getRooms().then((response) =>{
@@ -30,30 +33,6 @@ const TeacherPage = () => {
     console.log('Actualizar datos');
   };
 
-  const handleActualizar = (id) => {
-    // Lógica para actualizar el item con el id proporcionado
-    console.log(`Actualizar item con id: ${id}`);
-  };
-
-  const handleUpdateRoomState = (id, newState) =>{
-    
-    const roomStatusToUp = {
-      roomID: id,
-      roomState: newState
-    }
-    
-    try {
-      updateRoomState(roomStatusToUp);
-      setRooms((prevRooms) =>
-        prevRooms.map((room) =>
-          room.roomID === id ? { ...room, roomStatus: newState } : room
-        )
-      );
-    } catch (error) {
-      console.error('Error al actualizar el estado de la sala:', error);
-    }
-  };
-
   const handleEliminar = (id) => {
     // Lógica para eliminar el item con el id proporcionado
     console.log(`Eliminar item con id: ${id}`);
@@ -67,6 +46,7 @@ const TeacherPage = () => {
     return `${day} / ${month} / ${year}`;
   };
 
+
   return (
     <>
       <TeacherNavbar
@@ -75,9 +55,13 @@ const TeacherPage = () => {
         onActualizarDatos={handleActualizarDatos}
       />
       <main className="flex flex-col items-center min-h-screen bg-background">
+        {/**Aquí, en esta sección la idea sería poner los filtros (Barra de busqueda, ordenar por?) */}
+        <section className="w-11/12 mt-5">
+          <InfoBubble info={dateInfo}/>
+        </section>
         <section className="w-11/12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 my-5 mx-auto justify-items-center">
           {rooms.map((room) => (
-              <Room key={room.roomID} name={room.roomName} code={room.roomPassword} date={formatDate(room.roomDate)} state={room.roomStatus} id={room.roomID} onUpdateState={handleUpdateRoomState} onDelete={() => handleEliminar(room.roomID)}
+              <Room key={room.roomID} name={room.roomName} code={room.roomPassword} date={formatDate(room.roomDate)} state={room.roomStatus} id={room.roomID} onDelete={() => handleEliminar(room.roomID)}
               />
           ))}
         </section>

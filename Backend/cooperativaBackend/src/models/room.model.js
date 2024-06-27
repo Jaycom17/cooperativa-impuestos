@@ -33,11 +33,8 @@ export const Date = z.object({
     })
 });
 
-export const updateRoom = z.object({
-    roomID: z.string({
-        required_error: "Se requiere una id de sala",
-    }),
+export const updateRoomState = z.object({
     roomStatus: z.string({
         required_error: "Se requiere un estado",
-    })
+    }),
 })

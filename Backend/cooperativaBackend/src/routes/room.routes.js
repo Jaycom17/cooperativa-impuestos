@@ -7,7 +7,7 @@ const roomRouter = Router();
 roomRouter.post('/', validateRoom, postRoom);
 roomRouter.get('/:roomID', validateIdParams, getRoom);
 roomRouter.get('/', getRooms);
-roomRouter.put('/', validateRoomUpdate, putRoom);
+roomRouter.put('/:roomID', validateRoomUpdate, putRoom);
 roomRouter.delete('/', validateYear, deleteRoom);
 roomRouter.post('/validate', valRoomPassword);
 

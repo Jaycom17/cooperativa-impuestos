@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import UpDRoomForm from "../UpDRoomForm/UpDRoomForm";
 import { updateRoomState } from "../../services/room.service";
 
-const Room = ({ name, code, date, state, id, onUpdateState, onUpdateData, onDelete }) => {
+const Room = ({ name, code, date, state, id, onUpdateData, onDelete }) => {
   const [activated, setActivated] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
 
@@ -21,11 +21,10 @@ const Room = ({ name, code, date, state, id, onUpdateState, onUpdateData, onDele
   }
 
   const toggleActivated = () => {
-    const newState = !activated ? 'open' : 'closed';
+    const roomStatus = !activated ? 'open' : 'closed';
     try {
-      updateRoomState({ roomState: newState }, id);
+      updateRoomState({ roomStatus }, id);
       setActivated(!activated);
-      onUpdateState(id, newState);
     } catch (error) {
       console.error('Error al actualizar el estado de la sala:', error);
     }
