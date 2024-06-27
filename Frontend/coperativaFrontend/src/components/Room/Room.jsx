@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import UpDRoomForm from "../UpDRoomForm/UpDRoomForm";
 import { updateRoomState } from "../../services/room.service";
 
-const Room = ({ name, code, date, state, id, onUpdateData, onDelete }) => {
+const Room = ({ name, code, date, state, id, onDelete }) => {
   const [activated, setActivated] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
 
@@ -63,7 +63,7 @@ const Room = ({ name, code, date, state, id, onUpdateData, onDelete }) => {
         </button>
       </div>
 
-      <UpDRoomForm formOpen={formOpen} setFormOpen={setFormOpen}/>
+      <UpDRoomForm formOpen={formOpen} setFormOpen={setFormOpen} roomId={id}/>
     </section>
   );
 };

@@ -2,7 +2,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 
 
-const UpDRoomForm = ({formOpen, setFormOpen, onUpdate}) =>{
+const UpDRoomForm = ({formOpen, setFormOpen, roomId}) =>{
     return(
         <div className={`fixed inset-0 bg-black bg-opacity-50 h-screen flex justify-center items-center transition-opacity duration-300 text-unicoop ${formOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`} style={{zIndex:120}}>
             <form className={`bg-unicoop-black shadow-md mx-auto w-2/3 p-6 border rounded-md flex flex-col items-center transition-transform duration-300 transform ${formOpen ? 'scale-100 translate-y-0' : 'scale-95 -translate-y-10'}`}>
