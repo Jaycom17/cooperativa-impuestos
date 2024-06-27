@@ -27,20 +27,17 @@ export const Id = z.object({
     })
 });
 
-export const Year = z.object({
-    roomYear: z.string({
+export const Date = z.object({
+    roomDate: z.string({
         required_error: "Se requiere un año",
     })
 });
 
 export const updateRoom = z.object({
-    roomDate: z.string({
-        required_error: "Se requiere una fecha",
+    roomID: z.string({
+        required_error: "Se requiere una id de sala",
     }),
     roomStatus: z.string({
         required_error: "Se requiere un estado",
-    }),
-    usuID: z.string({
-        required_error: "Se requiere una id de usuario",
     })
 })

@@ -4,4 +4,4 @@ export const validateRoom = async (room) => axios.post("http://localhost:3000/ro
 
 export const getRooms = async () => axios.get("http://localhost:3000/room");
 
-export const updateRoomState = async ( roomID, roomNewState) => axios.put(`http://localhost:3000/room/${roomID}`,roomNewState);
+export const updateRoomState = async ( room, roomID ) => axios.put(`http://localhost:3000/room/${roomID}`,room);

@@ -59,9 +59,7 @@ export const updateRoom = async (room) => {
                 roomID: room.roomID
             },
             data: {
-                roomDate: room.roomDate,
-                roomStatus: room.roomStatus,
-                usuID: room.usuID
+                roomStatus: room.roomStatus
             }
         });
         return result;
@@ -73,14 +71,50 @@ export const updateRoom = async (room) => {
 
 export const removeRoom = async (roomDate) => {
     try {
-        const result = await prisma.room.deleteMany({
+        const startDate = new Date(`${roomDate}-01-01T00:00:00.000Z`);
+        const endDate = new Date(`${roomDate}-12-31T23:59:59.999Z`);
+        const studentRoom = await prisma.student.findMany({
             where: {
-                roomDate: {
-                    startsWith: roomDate
+                room: {
+                    roomDate: {
+                        gte: startDate,
+                        lte: endDate
+                    }
                 }
             }
         });
-        return result;
+        if(studentRoom.length > 0){
+            const delStuResult = await prisma.student.deleteMany({
+                where: {
+                    room: {
+                        roomDate: {
+                            gte: startDate,
+                            lte: endDate
+                        }
+                    }
+                }
+            });
+        }
+        const roomExist = await prisma.room.findMany({
+            where: {
+                roomDate: {
+                    gte: startDate,
+                    lte: endDate
+                }
+            }
+        });
+        if(roomExist.length > 0){
+            const result = await prisma.room.deleteMany({
+                where: {
+                    roomDate: {
+                        gte: startDate,
+                        lte: endDate
+                    }
+                }
+            });
+            return result;
+        }
+        return false;
     } catch (error) {
         console.error(error);
         return false;
