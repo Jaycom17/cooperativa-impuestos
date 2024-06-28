@@ -18,6 +18,12 @@ const TeacherPage = () => {
     }).catch(() => {alert("Error al cargar las salas");});
   }, []);
 
+  const refreshRooms = () =>{
+    getRooms().then((response) =>{
+      if(response.status === 201) {setRooms(response.data);}
+    }).catch(() => {alert("Error al cargar las salas");});
+  };
+
   const handleCerrarSesion = () => {
     // Lógica para cerrar sesión
     singout();
@@ -61,7 +67,7 @@ const TeacherPage = () => {
         </section>
         <section className="w-11/12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 my-5 mx-auto justify-items-center">
           {rooms.map((room) => (
-              <Room key={room.roomID} name={room.roomName} code={room.roomPassword} date={formatDate(room.roomDate)} state={room.roomStatus} id={room.roomID} onDelete={() => handleEliminar(room.roomID)}
+              <Room key={room.roomID} name={room.roomName} code={room.roomPassword} date={formatDate(room.roomDate)} state={room.roomStatus} id={room.roomID} onDelete={() => handleEliminar(room.roomID)} onRefresh={refreshRooms}
               />
           ))}
         </section>

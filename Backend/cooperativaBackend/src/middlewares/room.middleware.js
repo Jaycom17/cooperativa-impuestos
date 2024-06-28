@@ -1,4 +1,4 @@
-import { Room, Id, updateRoomState, Date } from '../models/room.model.js';
+import { Room, Id, updateRoomState, Date, updateRoomName } from '../models/room.model.js';
 
 export const validateRoom = async (req, res, next) => {
     try {
@@ -40,6 +40,17 @@ export const validateRoomUpdate = async (req, res, next) => {
         res.status(400).json({ error: error.errors });
     }
 }
+
+export const validateRoomUpdateName = async (req, res, next) => {
+    try {
+        const room = updateRoomName.parse(req.body);
+        req.body = room;
+        next();
+    } catch (error) {
+        res.status(400).json({ error: error.errors });
+    }
+}
+
 export const validateYear = async (req, res, next) => {
     try {
         const roomDate = Date.parse(req.body);

@@ -38,3 +38,11 @@ export const updateRoomState = z.object({
         required_error: "Se requiere un estado",
     }),
 })
+export const updateRoomName = z.object({
+    roomName: z.string({
+        required_error: "Se requiere un nombre",
+    }),
+    roomPassword: z.string({
+        required_error: "Se requiere una contraseña",
+    }),
+})

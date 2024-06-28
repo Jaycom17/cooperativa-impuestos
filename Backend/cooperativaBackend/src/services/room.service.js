@@ -53,13 +53,31 @@ export const obtainRooms = async () => {
 
 export const updateRoom = async (room) => {
     try {
-        console.log(room);
         const result = await prisma.room.update({
             where: {
                 roomID: room.roomID
             },
             data: {
                 roomStatus: room.roomStatus
+            }
+        });
+        return result;
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
+}
+
+export const updateRoomName = async (room) => {
+    try {
+
+        const result = await prisma.room.update({
+            where: {
+                roomID: room.roomID
+            },
+            data: {
+                roomName: room.roomName,
+                roomPassword: room.roomPassword
             }
         });
         return result;
