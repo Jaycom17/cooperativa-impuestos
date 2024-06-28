@@ -108,7 +108,7 @@ export const validateRoomPassword = async (password) => {
             return { message: "La sala se encuentra cerrada" };
         }
 
-        return result;
+        return { roomID: result.roomID, roomPassword: result.roomPassword };
     } catch (error) {
         console.error(error);
         return { message: "Error al validar contraseña" };

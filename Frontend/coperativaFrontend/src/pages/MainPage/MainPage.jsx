@@ -1,4 +1,4 @@
-import { RoomContext } from "../../context/StudentContext";
+import { RoomContext } from "../../context/RoomContext";
 import { useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import StudentLogForm from '../../components/loginForms/StudentLogForm'

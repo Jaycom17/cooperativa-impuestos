@@ -66,6 +66,28 @@ export const removeUser = async (usuId) => {
   }
 }
 
+export const updateUser = async (user) => {
+  try {
+    const encryptedPassword = await encrypt(user.usuPassword);
+
+    const result = await prisma.user.update({
+      where: {
+        usuID: user.usuID
+      },
+      data: {
+        usuName: user.usuName,
+        usuEmail: user.usuEmail,
+        usuPassword: encryptedPassword,
+        usuRole: user.usuRole
+      }
+    });
+    return result;
+  } catch (error) {
+    console.error(error);
+    return { message: "Error al actualizar usuario"};
+  }
+}
+
 export const loginUser = async (user) => {
   try {
     const result = await prisma.user.findUnique({ where: { usuEmail: user.usuEmail } });

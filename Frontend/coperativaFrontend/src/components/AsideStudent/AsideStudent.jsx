@@ -1,13 +1,17 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { GrFormClose } from "react-icons/gr";
 import { MdMenu } from "react-icons/md";
+import { StudentContext } from "../../context/StuContext";
+import { RoomContext } from "../../context/RoomContext";
 
 
 const AsideStudent = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef(null);
+  const {logout} = useContext(StudentContext);
+  const {leaveRoom} = useContext(RoomContext);    
 
     // Función para cerrar el menú desplegable al hacer clic fuera de él
     useEffect(() => {
@@ -24,6 +28,11 @@ const AsideStudent = () => {
 
     const handleMenuOpen = () =>{
         setIsMenuOpen(!isMenuOpen)
+    }
+
+    const handleGoOut = () => {
+        logout();
+        leaveRoom();
     }
 
     const forms = [
@@ -60,7 +69,7 @@ const AsideStudent = () => {
                         <Link key={index} className="flex items-center justify-center w-full h-[40px] md:h-[50px] bg-transparent text-white text-sm md:text-base hover:bg-unicoop-slate-blue duration-200 font-medium" to={form.to}>{form.label}</Link>
                     ))}
                 </section>
-                <Link className="flex items-center justify-center w-full h-[50px] bg-transparent text-white hover:bg-buttons-closing-red duration-200 font-medium mt-[20px]" to="">Salir de la sala</Link>
+                <button onClick={handleGoOut} className="flex items-center justify-center w-full h-[50px] bg-transparent text-white hover:bg-buttons-closing-red duration-200 font-medium mt-[20px]" >Salir de la sala</button>
             </aside>
         </section>
         

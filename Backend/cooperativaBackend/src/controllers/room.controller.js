@@ -38,7 +38,6 @@ export const putRoom = async (req, res) => {
   const { roomID } = req.params;
   const { roomDate, roomStatus, usuID } = req.body;
   const room = { roomID, roomDate, roomStatus, usuID };
-  console.log(room);
   const result = await updateRoom(room);
   if (!result) {
     return res.status(500).json({ error: "No se pudo actualizar la sala" });

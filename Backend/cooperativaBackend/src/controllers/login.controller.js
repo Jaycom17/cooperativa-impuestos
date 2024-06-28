@@ -39,3 +39,13 @@ export const profile = async (req, res) => {
 
   res.status(200).json(result);
 };
+
+export const studentProfile = async (req, res) => {
+  const student = req.body.student;
+
+  if (!student) {
+    return res.status(500).json({ message: "Error al obtener el estudiante" });
+  }
+
+  res.status(200).json(student);
+}
