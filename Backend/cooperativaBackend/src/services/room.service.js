@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const createRoom = async (room) => {
     try {
-        const encryptedPassword = await encrypt(room.roomPassword);
 
         const usuResult = await prisma.user.findUnique({ where: { usuID: room.usuID } });
         if (!usuResult) {
@@ -14,7 +13,7 @@ export const createRoom = async (room) => {
             data: {
                 roomID: uuidv4(),
                 roomName: room.roomName,
-                roomPassword: encryptedPassword,
+                roomPassword: room.roomPassword,
                 roomDate: new Date(room.roomDate).toISOString(),
                 roomStatus: room.roomStatus,
                 roomAnswer: {},
@@ -46,6 +45,20 @@ export const obtainRoom = async (roomID) => {
 export const obtainRooms = async () => {
     try {
         const result = await prisma.room.findMany();
+        return result;
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
+}
+
+export const obtainRoomsByUser = async (usuID) => {
+    try {
+        const result = await prisma.room.findMany({
+            where:{
+                usuID: usuID
+            }
+        });
         return result;
     } catch (error) {
         console.error(error);
@@ -131,6 +144,44 @@ export const removeRoom = async (roomDate) => {
                         gte: startDate,
                         lte: endDate
                     }
+                }
+            });
+            return result;
+        }
+        return false;
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
+}
+
+export const removeRoomByID = async (roomID) => {
+    try {
+        const studentRoom = await prisma.student.findMany({
+            where: {
+                room: {
+                    roomID: roomID
+                }
+            }
+        });
+        if(studentRoom.length > 0){
+            const delStuResult = await prisma.student.deleteMany({
+                where: {
+                    room: {
+                        roomID: roomID
+                    }
+                }
+            });
+        }
+        const roomExist = await prisma.room.findMany({
+            where: {
+                roomID: roomID
+            }
+        });
+        if(roomExist.length > 0){
+            const result = await prisma.room.deleteMany({
+                where: {
+                    roomID: roomID
                 }
             });
             return result;
