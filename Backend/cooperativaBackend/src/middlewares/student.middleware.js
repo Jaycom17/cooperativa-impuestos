@@ -2,6 +2,7 @@ import {Student, Id} from '../models/student.model.js';
 
 export const validateStudent = async (req, res, next) => {
     try {
+        console.log(req.body)
         const student = Student.parse(req.body);
         req.body = student;
         next();

@@ -1,4 +1,3 @@
-import { encrypt, compare } from "./encrypt.service.js";
 import prisma from "../config/prisma.js";
 import { v4 as uuidv4 } from 'uuid';
 
@@ -8,16 +7,14 @@ export const createRoom = async (room) => {
         if (!usuResult) {
             return false;
         }
-        console.log("Id usuario");
-        console.log(room.roomName);
         const result = await prisma.room.create({
             data: {
                 roomID: uuidv4(),
                 roomName: room.roomName,
-                roomPassword: encryptedPassword,
-                roomDate: room.roomDate,
+                roomPassword: room.roomPassword,
+                roomDate: new Date(room.roomDate).toISOString(),
                 roomStatus: room.roomStatus,
-                roomAnswer: null,
+                roomAnswer: {},
                 usuID: room.usuID
             }
         });
@@ -61,7 +58,7 @@ export const updateRoom = async (room) => {
                 roomID: room.roomID
             },
             data: {
-                roomDate: room.roomDate,
+                roomDate: new Date(room.roomDate).toISOString(),
                 roomStatus: room.roomStatus,
                 usuID: room.usuID
             }
@@ -93,15 +90,26 @@ export const validateRoomPassword = async (password) => {
     try {
         const result = await prisma.room.findUnique({
             select: {
-                roomID: true
+                roomID: true,
+                roomPassword: true,
+                roomStatus: true
             },
             where: {
                 roomPassword: password
             }
         });
-        return result;
+
+        if (!result) {
+            return { message: "Contraseña incorrecta" };
+        }
+
+        if (result.roomStatus === "closed") {
+            return { message: "La sala se encuentra cerrada" };
+        }
+
+        return { roomID: result.roomID, roomPassword: result.roomPassword };
     } catch (error) {
-        console.error(error.ConnectorError);
+        console.error(error);
         return { message: "Error al validar contraseña" };
     }
 }

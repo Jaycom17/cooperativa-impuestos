@@ -1,37 +1,11 @@
 import axios from './axios.service.js';
 
-export const login = async (user) => {
-    try {
-        const response = await axios.post("http://localhost:3000/login", { user });
+export const login = async(user) => axios.post("http://localhost:3000/login", user);
 
-        if (response.status === 200) {
-            return true;
-        }
+export const profile = async () => axios.get("http://localhost:3000/login/profile");
 
-        return false;
-    } catch (error) {
-        return false;
-    }
-}
+export const logout = async () => axios.get("http://localhost:3000/login/logout");
 
-export const profile = async (user) => {
-    try {
-        //const response = await axios.post("http://localhost:3001/api/login", { user });
-        console.log(user);
+export const studentProfile = async () => axios.get("http://localhost:3000/login/studentprofile");
 
-        return true;
-    } catch (error) {
-        return error;
-    }
-}
-
-export const logout = async (user) => {
-    try {
-        //const response = await axios.post("http://localhost:3001/api/login", { user });
-        console.log(user);
-
-        return true;
-    } catch (error) {
-        return error;
-    }
-}
+export const logoutStudent = async () => axios.get("http://localhost:3000/login/logoutstudent");
