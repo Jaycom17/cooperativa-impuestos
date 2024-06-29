@@ -1,4 +1,3 @@
-import { encrypt, compare } from "./encrypt.service.js";
 import prisma from "../config/prisma.js";
 import { v4 as uuidv4 } from 'uuid';
 
@@ -59,7 +58,7 @@ export const updateRoom = async (room) => {
                 roomID: room.roomID
             },
             data: {
-                roomDate: room.roomDate,
+                roomDate: new Date(room.roomDate).toISOString(),
                 roomStatus: room.roomStatus,
                 usuID: room.usuID
             }
