@@ -19,18 +19,6 @@ export const postProfessor = async (req, res) => {
 };
 
 
-export const postProfessor = async (req, res) => {
-  const newUser = req.body;
-
-  const result = await createUser({...newUser, usuRole: "profesor"});
-
-  if (!result) {
-    return res.status(500).json({ error: "No se pudo crear el usuario" });
-  }
-
-  res.status(200).json(newUser);
-};
-
 export const postAdmin = async (req, res) => {
   const newUser = req.body;
 
@@ -59,13 +47,6 @@ export const getAdmins = async (req, res) => {
   if(!result){
     return res.status(500).json({ error: "No se pudieron obtener los administradores" });
   }
-
-  res.status(200).json(result);
-}
-
-
-export const getAdmins = async (req, res) => {
-  const result = await obtainAdmins();
 
   res.status(200).json(result);
 }
