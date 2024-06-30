@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { IoMdLogIn } from "react-icons/io";
 import PropTypes from 'prop-types';
-import { RoomContext } from "../../context/StudentContext";
+import { RoomContext } from "../../context/RoomContext";
 import { useContext } from "react";
 
 const StudentLogForm = ({onSubmit}) =>{

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect,useContext } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { GrFormClose } from "react-icons/gr";
@@ -28,6 +28,11 @@ const AsideStudent = () => {
 
     const handleMenuOpen = () =>{
         setIsMenuOpen(!isMenuOpen)
+    }
+
+    const handleGoOut = () => {
+        logout();
+        leaveRoom();
     }
 
     const forms = [

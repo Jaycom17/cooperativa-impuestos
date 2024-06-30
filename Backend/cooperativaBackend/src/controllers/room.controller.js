@@ -1,31 +1,45 @@
-import { createRoom, obtainRoom, obtainRooms, updateRoom, updateRoomName, removeRoom } from "../services/room.service.js";
+
+
+import { createRoom, obtainRoom, obtainRooms, obtainRoomsByUser, updateRoom, updateRoomName, removeRoom, removeRoomByID, validateRoomPassword } from "../services/room.service.js";
+
 
 export const postRoom = async (req, res) => {
-    const {roomName, roomPassword, roomDate, roomStatus, usuID } = req.body;
-    const newRoom = {roomName, roomPassword, roomDate, roomStatus, usuID };
+  const { roomName, roomPassword, roomDate, roomStatus, usuID } = req.body;
+  const newRoom = { roomName, roomPassword, roomDate, roomStatus, usuID };
 
-    const result = await createRoom(newRoom);
+  const result = await createRoom(newRoom);
 
-    if (!result) {
-        return res.status(500).json({ error: 'No se pudo crear la sala' });
-    }
+  if (!result) {
+    return res.status(500).json({ error: "No se pudo crear la sala" });
+  }
 
-    res.status(201).json(newRoom);
+  res.status(201).json(newRoom);
 };
 
 export const getRoom = async (req, res) => {
-    const { roomID } = req.params;
-    const room = await obtainRoom(roomID);
+  const { roomID } = req.params;
+  const room = await obtainRoom(roomID);
 
-    if (!room) {
-        return res.status(500).json({ error: 'No se pudo obtener la sala' });
-    }
+  if (!room) {
+    return res.status(500).json({ error: "No se pudo obtener la sala" });
+  }
 
-    res.status(201).json(room);
-}
+  res.status(201).json(room);
+};
 
 export const getRooms = async (req, res) => {
-    const rooms = await obtainRooms();
+  const rooms = await obtainRooms();
+
+  if (!rooms) {
+    return res.status(500).json({ error: "No se pudo obtener las salas" });
+  }
+
+  res.status(201).json(rooms);
+};
+
+export const getRoomsByUser = async (req, res) => {
+    const { usuID } = req.params;
+    const rooms = await obtainRoomsByUser(usuID);
 
     if (!rooms) {
         return res.status(500).json({ error: 'No se pudo obtener las salas' });
@@ -46,6 +60,7 @@ export const putRoom = async (req, res) => {
 
     res.status(201).json(room);
 }
+
 
 export const putRoomName = async (req, res) => {
     const {roomID} = req.params;
@@ -71,13 +86,26 @@ export const deleteRoom = async (req, res) => {
     res.status(201).json(result);
 }
 
+export const deleteRoomByID = async (req, res) => {
+    const { roomID } = req.params;
+    const result = await removeRoomByID(roomID);
+  
+  if (!result) {
+    return res.status(500).json({ error: "No se pudo eliminar la sala" });
+  }
+
+  res.status(201).json(result);
+};
+
 export const valRoomPassword = async (req, res) => {
-    const { roomPassword } = req.body;
-    const result = await validateRoomPassword(roomPassword);
+  const { roomPassword } = req.body;
+  const result = await validateRoomPassword(roomPassword);
 
-    if (!result) {
-        return res.status(500).json({ error: 'No se pudo validar la contraseña de la sala' });
-    }
+  if (!result) {
+    return res
+      .status(500)
+      .json({ error: "No se pudo validar la contraseña de la sala" });
+  }
 
-    res.status(201).json(result);
-}
+  res.status(201).json(result);
+};

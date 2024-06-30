@@ -27,6 +27,12 @@ export const Id = z.object({
     })
 });
 
+export const usuId = z.object({
+    usuID: z.string({
+        required_error: "Se requiere una id de sala",
+    })
+});
+
 export const Date = z.object({
     roomDate: z.string({
         required_error: "Se requiere un año",

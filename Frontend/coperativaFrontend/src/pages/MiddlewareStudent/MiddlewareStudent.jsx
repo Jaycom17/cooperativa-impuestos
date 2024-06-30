@@ -1,6 +1,9 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { IoCaretBackSharp } from "react-icons/io5";
-import { RoomContext } from "../../context/StudentContext";
+import { RoomContext } from "../../context/RoomContext";
+import { StudentContext } from "../../context/StuContext";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const OPTIONS = {
   SI: "SI",
@@ -13,7 +16,39 @@ function MiddlewareStudent() {
 
   const [animationClass, setAnimationClass] = useState("");
 
-  const {leaveRoom} = useContext(RoomContext)
+  const {leaveRoom, currentRoom} = useContext(RoomContext);
+  const {student, checkStudent, sStudent} = useContext(StudentContext);
+
+  const navigate = useNavigate();
+
+  const {
+      register,
+      handleSubmit,
+      formState: { errors },
+  } = useForm();  
+
+  useEffect(() => {
+
+    if(!currentRoom){
+      navigate("/");
+    }
+
+    if(student) {
+      navigate("/student");
+    }
+  }), [student];
+
+  const onSubmitNew = async (data) => {
+    await checkStudent(data)
+  };
+
+  const onSubmitSaved = async (data) => {
+    await sStudent(data.stuName)
+  };
+
+  useEffect(() => {
+    console.log(student)
+  }, [student]);
 
   const handleSetFirstTime = (option) => {
     if (option === OPTIONS.SI) {
@@ -64,12 +99,16 @@ function MiddlewareStudent() {
             <p className="text-center mt-3">
               A continuación, escribe el nombre con el cual ingresaste previamente a la sala.
             </p>
-            <form className="flex flex-col w-full items-center gap-2">
+            <form className="flex flex-col w-full items-center gap-2" onSubmit={handleSubmit(onSubmitSaved)}>
             <input
                 type="text"
                 className="w-1/2 p-2 rounded-md border border-gray-300 mt-3 text-black"
+                {...register("stuName", { required: true })}
             />
-            <button className="p-2 bg-buttons-login w-24 text-unicoop rounded-md hover:bg-gray-600 duration-150 focus:ring-2 transition-colors ease-in font-medium">Buscar</button>
+            {errors.stuName && (
+              <p className="text-[red] text-sm bg-transparent">Debe ingresar un nombre</p>
+            )}
+            <button type="submit" className="p-2 bg-buttons-login w-24 text-unicoop rounded-md hover:bg-gray-600 duration-150 focus:ring-2 transition-colors ease-in font-medium">Buscar</button>
             </form>
             
           <div className="w-full">
@@ -86,12 +125,16 @@ function MiddlewareStudent() {
           <p className="text-center mt-3">
             A continuación escribe el nombre con el cual deseas registrarte en la sala.
           </p>
-          <form className="flex flex-col w-full items-center gap-2">
+          <form className="flex flex-col w-full items-center gap-2" onSubmit={handleSubmit(onSubmitNew)}>
           <input
               type="text"
               className="w-1/2 p-2 rounded-md border border-gray-300 mt-3 text-black"
+              {...register("stuName", { required: true })}
           />
-          <button className="p-2 bg-buttons-login w-24 text-unicoop rounded-md hover:bg-gray-600 duration-150 focus:ring-2 transition-colors ease-in font-medium">Ingresar</button>
+          {errors.stuName && (
+            <p className="text-[red] text-sm bg-transparent">Debe ingresar un nombre</p>
+          )}
+          <button type="submit" className="p-2 bg-buttons-login w-24 text-unicoop rounded-md hover:bg-gray-600 duration-150 focus:ring-2 transition-colors ease-in font-medium">Ingresar</button>
           </form>
           <div className="w-full">
             <button onClick={() => handleSetFirstTime(OPTIONS.NOTHING)} className="flex items-center text-start bg-unicoop-blue w-20 py-1 rounded-lg text-unicoop hover:bg-buttons-list-blue font-semibold"><IoCaretBackSharp className="text-sm mt-1 ml-2 mr-1"/> Atrás</button>

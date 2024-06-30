@@ -1,4 +1,4 @@
-import { RoomContext } from "../../context/StudentContext";
+import { RoomContext } from "../../context/RoomContext";
 import { useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import StudentLogForm from '../../components/LoginForms/StudentLogForm'
@@ -16,7 +16,6 @@ function MainPage() {
 
 
     const onSubmit = async(values) => {
-        console.log(values);
         await checkRoom(values);
       };
 
