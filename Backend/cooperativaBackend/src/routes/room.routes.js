@@ -1,6 +1,8 @@
 import { Router } from 'express';
+
 import { postRoom, getRoom, getRooms, getRoomsByUser, putRoom, putRoomName, deleteRoom, deleteRoomByID, valRoomPassword} from '../controllers/room.controller.js';
 import { validateIdBody,validateIdParams, validateUsuIdParams, validateRoom, validateRoomUpdate, validateYear, validateRoomUpdateName } from '../middlewares/room.middleware.js';
+
 
 const roomRouter = Router();
 

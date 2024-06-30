@@ -27,7 +27,7 @@ const MainAdminPage = () => {
   };
 
   return (
-    <div className="">
+    <div className="bg-background min-h-screen">
       <Navbar />
       <div className="">
         <section className="p-2 items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
