@@ -62,6 +62,7 @@ export const searchStudentByName = async (req, res) => {
 
   if (!result.token) {
     res.status(500).json({ message: "Error al buscar usuario" });
+    return;
   }
 
   res.cookie("token", result.token, {
