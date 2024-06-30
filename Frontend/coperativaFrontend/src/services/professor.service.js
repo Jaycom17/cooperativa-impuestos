@@ -4,7 +4,7 @@ export const getProfessors = async () => axios.get("http://localhost:3000/user/p
 
 export const createProfessor = async (professor) => axios.post("http://localhost:3000/user/professor", professor);
 
-export const updateProfessor = async (professor) => axios.put("http://localhost:3000/user/professor", professor);
+export const updateProfessor = async (usuID,professor) => axios.put(`http://localhost:3000/user/professor/${usuID}`, professor);
 
 export const deleteProfessor = async (professor) => axios.delete("http://localhost:3000/user/professor", { data: professor });
 

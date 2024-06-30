@@ -1,3 +1,4 @@
+
 import { Room, Id, usuId, updateRoomState, Date, updateRoomName } from '../models/room.model.js';
 
 export const validateRoom = async (req, res, next) => {

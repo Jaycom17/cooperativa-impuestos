@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { createProfessor } from "../../services/professor.service";
 import { useNavigate } from "react-router-dom";
+import ProfForm from "../../components/ProfForm/ProfForm";
 
 function CreateProfessor() {
     const [passwordMatch, setPasswordMatch] = useState(true);
@@ -16,13 +17,13 @@ function CreateProfessor() {
       } = useForm();
 
     const onSubmit = (data) => {
-        if (data.usuPassword !== data.password) {
-            setPasswordMatch(false);
-            setTimeout(() => {
-                setPasswordMatch(true);
-            }, 5000);
-            return;
-        }
+      if (data.usuPassword !== data.confirmPassword) {
+        setPasswordMatch(false);
+        setTimeout(() => {
+          setPasswordMatch(true);
+        }, 5000);
+        return;
+      }
 
         const professorToCreate = {
             usuName: data.usuName,
@@ -42,73 +43,19 @@ function CreateProfessor() {
         });
       };
   return (
-    <div>
+    <>
       <Navbar />
-      <main className="w-full min-h-screen bg-[#1f324e] flex justify-center items-center flex-col">
-        <article className="px-5 md:px-32 lg:px-60 xl:px-80 mb-5">
-            <p className="text-center text-white">A continuación puede crear un profesor, tenga en cuenta que una vez creado este tendrá la capacidad de crear salas y gestionarlas, por lo cual revise bien la información aqui suministrada para asi evitar inconvenientes a futuro.</p>
+      <main className="w-full min-h-screen bg-background flex justify-center items-center flex-col">
+        <article className="px-5 md:px-32 lg:px-60 xl:px-80 mb-5 text-center text-unicoop">
+          <h1 className="font-bold text-4xl mb-3">CREAR PROFESOR</h1>
+          <h2 className="font-semibold text-xl mb-5">Ingresa los siguientes datos del profesor para crearlo</h2>
+          <p className="text-justify lg:text-center text-lg">A continuación, puede crear un profesor. Una vez creado, podrá crear y gestionar salas. Por favor, revise cuidadosamente la información para evitar inconvenientes futuros.</p>
         </article>
-        <form className="flex flex-col items-center bg-[#385075] rounded-md w-80 md:w-96" onSubmit={handleSubmit((data) => onSubmit(data))}>
-          <h1 className="text-2xl text-white bg-[#385075] mt-4">
-            Crea un profesor
-          </h1>
-          <input
-            type="text"
-            className="w-[90%] rounded-[3px] border-solid border-unicoop border-[1px] my-3 p-2"
-            placeholder="Nombre del profesor"
-            {...register("usuName", { required: true })}
-          />
-          {errors.usuName && (
-            <p className="text-red-500 text-sm bg-[#385075] font-semibold">
-              debe ingresar el nombre
-            </p>
-          )}
-          <input
-            type="email"
-            className="w-[90%] rounded-[3px] border-solid border-unicoop border-[1px] my-3 p-2"
-            placeholder="Correo electronico del profesor"
-            {...register("usuEmail", { required: true })}
-            />
-            {errors.usuEmail && (
-            <p className="text-red-500 text-sm bg-[#385075] font-semibold">
-              debe ingresar el email
-            </p>
-          )}
-          <input
-            type="password"
-            className="w-[90%] rounded-[3px] border-solid border-unicoop border-[1px] my-3 p-2"
-            placeholder="Contraseña del profesor"
-            {...register("usuPassword", { required: true })}
-            />
-            {errors.usuPassword && (
-            <p className="text-red-500 text-sm bg-[#385075] font-semibold">
-              debe ingresar la contraseña
-            </p>
-          )}
-          {
-            !passwordMatch && (
-              <p className="text-red-500 text-sm bg-[#385075] font-semibold">
-                las contraseñas no coinciden
-              </p>
-            )
-          }
-          <input
-            type="password"
-            className="w-[90%] rounded-[3px] border-solid border-unicoop border-[1px] my-3 p-2"
-            placeholder="Repita la contraseña"
-            {...register("password", { required: true })}
-            />
-            {errors.password && (
-            <p className="text-red-500 text-sm bg-[#385075] font-semibold">
-              debe repetir la contraseña
-            </p>
-          )}
-          <button className="bg-[#404142] text-unicoop-white w-[90%] p-2 rounded-md my-4 hover:bg-gray-600 focus:ring-2 transition-colors duration-200 ease-in">
-            Crear
-          </button>
-        </form>
+        <section className="w-10/12 md:w-3/5 lg:2/5">
+          <ProfForm onSubmit={handleSubmit(onSubmit)} passwordMatch={passwordMatch} errors={errors} register={register}/>
+        </section>
       </main>
-    </div>
+    </>
   );
 }
 

@@ -1,3 +1,4 @@
+
 import {createStudent, obtainStudent, obtainStudents, removeStudent, updateStudent, studentByName} from "../services/student.service.js"
 
 export const postStudent = async (req, res) => {
@@ -6,7 +7,9 @@ export const postStudent = async (req, res) => {
 
     const result = await createStudent(student);
 
+
     if(!result.token){
+
         return res.status(500).json({message: "Error al crear usuario"})
     }
 
