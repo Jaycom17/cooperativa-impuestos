@@ -1,4 +1,4 @@
-import {Student, Id} from '../models/student.model.js';
+import {Student, Id, roomId} from '../models/student.model.js';
 
 export const validateStudent = async (req, res, next) => {
     try {
@@ -13,8 +13,8 @@ export const validateStudent = async (req, res, next) => {
 
 export const validateIdP = async (req, res, next) => {
     try {
-        const id = Id.parse(req.params);
-        req.params = id;
+        const stuID = Id.parse(req.params);
+        req.params = stuID;
         next();
     } catch (error) {
         res.status(400).json({ error: error.errors });
@@ -23,8 +23,18 @@ export const validateIdP = async (req, res, next) => {
 
 export const validateIdB = async (req, res, next) => {
     try {
-        const room = Id.parse(req.body);
-        req.params = room;
+        const roomID = Id.parse(req.body);
+        req.body = roomID;
+        next();
+    } catch (error) {
+        res.status(400).json({ error: error.errors });
+    }
+}
+
+export const validateRoomId = async (req, res, next) => {
+    try {
+        const roomID = roomId.parse(req.body);
+        req.body = roomID;
         next();
     } catch (error) {
         res.status(400).json({ error: error.errors });

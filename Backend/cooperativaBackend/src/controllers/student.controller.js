@@ -1,10 +1,4 @@
-import {
-  createStudent,
-  obtainStudent,
-  obtainStudents,
-  removeStudent,
-  studentByName
-} from "../services/student.service.js";
+import {createStudent, obtainStudent, obtainStudents, removeStudent, updateStudent, studentByName} from "../services/student.service.js"
 
 export const postStudent = async (req, res) => {
     const {stuName, roomID} = req.body
@@ -13,7 +7,7 @@ export const postStudent = async (req, res) => {
     const result = await createStudent(student);
 
     if(!result.token){
-        res.status(500).json({message: "Error al crear usuario"})
+        return res.status(500).json({message: "Error al crear usuario"})
     }
 
     res.cookie('token', result.token, {
@@ -32,33 +26,31 @@ export const getStudents = async (_req, res) => {
 };
 
 export const getStudent = async (req, res) => {
-  const { stuId } = req.params;
-  const result = await obtainStudent(stuId);
+    const {stuID} = req.params
+    const result = await obtainStudent(stuID)
 
   res.status(201).json(result);
 };
 
 export const putStudent = async (req, res) => {
-  const { stuId } = req.params;
-  const { roomID } = req.body;
-  const room = { roomID };
+    const {stuID} = req.params
+    const {roomID} = req.body
+    const result = await updateStudent({stuID, roomID})
 
-  const result = await updateStudent(stuId, room);
-
-  if (!result) {
-    res.status(500).json({ message: "Error al actualizar usuario" });
-  }
+    if(!result){
+        return res.status(500).json({message: "Error al actualizar usuario"})
+    }
 
   res.status(201).json(result);
 };
 
 export const deleteStudent = async (req, res) => {
-  const { stuId } = req.params;
-  const result = await removeStudent(stuId);
+    const {stuID} = req.params
+    const result = await removeStudent(stuID)
 
-  if (!result) {
-    res.status(500).json({ message: "Error al eliminar usuario" });
-  }
+    if(!result){
+        return res.status(500).json({message: "Error al eliminar usuario"})
+    }
 
   res.status(201).json(result);
 };

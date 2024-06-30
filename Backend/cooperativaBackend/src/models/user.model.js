@@ -9,7 +9,7 @@ export const User = z.object({
     }).email({ message: "Email inválido"}),
   usuPassword: z.string({
       required_error: "Se requiere una contraseña",
-    }).min(6, { message: "La contraseña debe tener al menos 6 caracteres" }),
+    }).min(6, { message: "La contraseña debe tener al menos 6 caracteres" })
 });
 
 export const Id = z.object({

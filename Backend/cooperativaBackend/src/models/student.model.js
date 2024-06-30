@@ -10,7 +10,13 @@ export const Student = z.object({
 })
 
 export const Id = z.object({
-    stuId: z.string({
-      required_error: "Se requiere una id",
+    stuID: z.string({
+      required_error: "Se requiere una id stu",
+    })
+  });
+
+export const roomId = z.object({
+    roomID: z.string({
+      required_error: "Se requiere una id room",
     })
   });
