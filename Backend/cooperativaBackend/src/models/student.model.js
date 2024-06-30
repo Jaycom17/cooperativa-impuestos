@@ -5,7 +5,7 @@ export const Student = z.object({
         required_error: "Se requiere un nombre",
     }),
     roomID: z.string({
-        required_error: "Se requiere un id de aula",
+        required_error: "Se requiere una id de sala",
     }),
 })
 

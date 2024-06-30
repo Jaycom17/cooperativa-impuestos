@@ -14,8 +14,7 @@ export const createUser = async (user) => {
         usuRole: user.usuRole
       }
     });
-    console.log(result);
-    return true;
+    return { usuID: result.usuID, usuName: result.usuName, usuEmail: result.usuEmail };
   } catch (error) {
     console.error(error);
     return false;
@@ -34,7 +33,7 @@ export const obtainProfessors = async () => {
         usuEmail: true 
       } 
     });
-
+    
     return result;
   } catch (error) {
     console.error(error);
@@ -61,23 +60,10 @@ export const obtainAdmins = async () => {
   }
 }
 
-export const obtainUsers = async () => {
-  try {
-    console.log("get users");
-    const result = await prisma.user.findMany();
-
-    return result;
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
-}
-
 export const obtainUser = async (usuId) => {
   try {
-    console.log("Id ingresada " + usuId);
-    const result = await prisma.user.findUnique({ where: { usuID: usuId } });
-    console.log("get user");
+    const result = await prisma.user.findUnique({ where: { usuID: usuId }, select: { usuID: true, usuName: true, usuEmail: true }});
+    
     return result;
   } catch (error) {
     console.error(error);
@@ -141,6 +127,28 @@ export const removeUser = async (usuId) => {
   } catch (error) {
     console.error(error);
     return false;
+  }
+}
+
+export const updateUser = async (user) => {
+  try {
+    const encryptedPassword = await encrypt(user.usuPassword);
+
+    const result = await prisma.user.update({
+      where: {
+        usuID: user.usuID
+      },
+      data: {
+        usuName: user.usuName,
+        usuEmail: user.usuEmail,
+        usuPassword: encryptedPassword,
+        usuRole: user.usuRole
+      }
+    });
+    return result;
+  } catch (error) {
+    console.error(error);
+    return { message: "Error al actualizar usuario"};
   }
 }
 

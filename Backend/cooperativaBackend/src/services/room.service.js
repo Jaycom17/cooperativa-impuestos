@@ -1,10 +1,8 @@
-import { encrypt, compare } from "./encrypt.service.js";
 import prisma from "../config/prisma.js";
 import { v4 as uuidv4 } from 'uuid';
 
 export const createRoom = async (room) => {
     try {
-
         const usuResult = await prisma.user.findUnique({ where: { usuID: room.usuID } });
         if (!usuResult) {
             return false;
@@ -20,7 +18,7 @@ export const createRoom = async (room) => {
                 usuID: room.usuID
             }
         });
-        console.log(result);
+
         return true;
     } catch (error) {
         console.error(error);
@@ -85,7 +83,6 @@ export const updateRoom = async (room) => {
 
 export const updateRoomName = async (room) => {
     try {
-        const encryptedPassword = await encrypt(room.roomPassword);
 
         const result = await prisma.room.update({
             where: {
@@ -93,7 +90,7 @@ export const updateRoomName = async (room) => {
             },
             data: {
                 roomName: room.roomName,
-                roomPassword: encryptedPassword
+                roomPassword: room.roomPassword
             }
         });
         return result;
@@ -190,5 +187,33 @@ export const removeRoomByID = async (roomID) => {
     } catch (error) {
         console.error(error);
         return false;
+    }
+}
+
+export const validateRoomPassword = async (password) => {
+    try {
+        const result = await prisma.room.findUnique({
+            select: {
+                roomID: true,
+                roomPassword: true,
+                roomStatus: true
+            },
+            where: {
+                roomPassword: password
+            }
+        });
+
+        if (!result) {
+            return { message: "Contraseña incorrecta" };
+        }
+
+        if (result.roomStatus === "closed") {
+            return { message: "La sala se encuentra cerrada" };
+        }
+
+        return { roomID: result.roomID, roomPassword: result.roomPassword };
+    } catch (error) {
+        console.error(error);
+        return { message: "Error al validar contraseña" };
     }
 }

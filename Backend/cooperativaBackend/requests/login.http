@@ -1,0 +1,16 @@
+@api = http://localhost:3000/login
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VJZCI6IjEyNDEzNTZiLTNhYjktNDlmMS1hZDg0LTU4ODk0OWQzOTYxMCIsImlhdCI6MTcxODkyMjU4NiwiZXhwIjoxNzE4OTI0Mzg2fQ.4pxbiwNo8ZcmPEOe10GW09QkAxeIVb98s_J0IvmYZV8
+
+
+### POST
+POST {{api}}
+Content-Type: application/json
+
+{
+  "usuEmail": "juanccamilo65@gmail.com",
+  "usuPassword": "juan123"
+}
+
+### GET
+GET {{api}}/profile
+Cookie: token={{token}}
