@@ -58,6 +58,7 @@ export const deleteStudent = async (req, res) => {
 
   if (!result) {
     res.status(500).json({ message: "Error al eliminar usuario" });
+    result;
   }
 
   res.status(201).json(result);
@@ -70,6 +71,7 @@ export const searchStudentByName = async (req, res) => {
 
   if (!result.token) {
     res.status(500).json({ message: "Error al buscar usuario" });
+    return;
   }
 
   res.cookie("token", result.token, {
