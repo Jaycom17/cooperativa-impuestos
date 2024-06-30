@@ -1,45 +1,46 @@
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FaPencilAlt } from "react-icons/fa";
 import { useState, useEffect } from 'react';
-import UpDRoomForm from "../UpDRoomForm/UpDRoomForm";
+import FloatingContainer from "../FloatingContainer/FloatingContainer";
+import RoomForm from "../RoomForm/RoomForm";
 import { updateRoomState } from "../../services/room.service";
 
-const Room = ({ name, code, date, state, id, onDelete, onRefresh }) => {
+const Room = ({ room, usuId, onRefresh }) => {
   const [activated, setActivated] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
 
   useEffect(() => {
-    setActivated(state.toLowerCase() === 'open');
-  }, [state]);
-
-  // Check if nombre and estado have values and estado is a string
-  if (!name || !state || typeof state !== 'string') {
-    name = 'Sala 1';
-    code = '1234';
-    date = '2021-09-30';
-    state = 'INACTIVO';
-  }
+    setActivated(room.roomStatus.toLowerCase() === 'open');
+  }, [room.roomStatus]);
 
   const toggleActivated = () => {
     const roomStatus = !activated ? 'open' : 'closed';
     try {
-      updateRoomState({ roomStatus }, id);
+      updateRoomState({ roomStatus }, room.roomID);
       setActivated(!activated);
     } catch (error) {
       console.error('Error al actualizar el estado de la sala:', error);
     }
   };
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
+    const day = ('0' + (date.getDate() + 1)).slice(-2);
+    return `${day} / ${month} / ${year}`;
+  };
+
   return (
     <section className="flex flex-col items-center w-4/5 sm:1/3 lg:w-[375px] bg-primary rounded-lg text-unicoop">
       <div className="w-full text-center mt-2">
-        <h1 className="text-2xl font-bold mx-1">{name}</h1>
-        <h2 className="text-unicoop-green text-lg"><span className="font-medium">Código de acceso:</span> {code}</h2>
-        <h2><span className="font-medium">Fecha de creación:</span> {date}</h2>
+        <h1 className="text-2xl font-bold mx-1">{room.roomName}</h1>
+        <h2 className="text-unicoop-green text-lg"><span className="font-medium">Código de acceso:</span> {room.roomPassword}</h2>
+        <h2><span className="font-medium">Fecha de creación:</span> {formatDate(room.roomDate)}</h2>
       </div>
       <div className="flex flex-row my-1">
         <h1 className="font-medium mr-2">Estado:</h1>
-        <span className={`mr-1 w-14 text-center ${activated ? 'text-unicoop-green': 'text-buttons-closing-red'}`}>{activated ? 'Activa' : 'Inactiva'}</span>
+        <span className={`mr-1 w-14 text-center`}>{activated ? 'Activa' : 'Inactiva'}</span>
         <label className="flex items-center cursor-pointer">
           {/* Input oculto para manejar el estado */}
           <input
@@ -58,12 +59,14 @@ const Room = ({ name, code, date, state, id, onDelete, onRefresh }) => {
         <button onClick={() => setFormOpen(true)} className="flex items-center p-1.5 bg-buttons-update-green hover:bg-buttons-update-green-h duration-150 rounded">
           <FaPencilAlt className='bg-transparent'/> Actualizar
         </button>
-        <button onClick={onDelete} className="flex items-center p-1.5 bg-buttons-delete-red hover:bg-buttons-delete-red-h duration-150 rounded">
+        <button className="flex items-center p-1.5 bg-buttons-delete-red hover:bg-buttons-delete-red-h duration-150 rounded">
          <FaRegTrashAlt className='bg-transparent'/> Eliminar
         </button>
       </div>
 
-      <UpDRoomForm formOpen={formOpen} setFormOpen={setFormOpen} roomId={id} onRefresh={onRefresh}/>
+      <FloatingContainer open={formOpen} setOpen={setFormOpen}>
+        <RoomForm roomId={room.roomID} usuID={usuId} onRefresh={onRefresh} setOpen={setFormOpen}/>
+      </FloatingContainer>
     </section>
   );
 };

@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { useForm } from "react-hook-form";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
-import { FaChalkboardTeacher } from "react-icons/fa";
+import { IoPersonAddSharp } from "react-icons/io5";
 import { MdCreate } from "react-icons/md";
 import PropTypes from "prop-types";
 
-const CreateProfForm = ({ onSubmit, passwordMatch, errors, register }) => {
+const ProfForm = ({ onSubmit, passwordMatch, errors, register }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword2, setShowPassword2] = useState(false);
 
@@ -19,9 +18,8 @@ const CreateProfForm = ({ onSubmit, passwordMatch, errors, register }) => {
       className="flex flex-col items-center bg-unicoop-black rounded-md gap-3"
       onSubmit={onSubmit}
     >
-      <h1 className="flex bg-transparent text-unicoop text-3xl mt-2 gap-4 font-medium text-center">
-        <MdCreate />
-        <FaChalkboardTeacher />
+      <h1 className="flex bg-transparent text-unicoop text-4xl mt-2 gap-4 font-medium text-center">
+        <IoPersonAddSharp />
       </h1>
       <section className="flex flex-col md:flex-row gap-3 w-11/12">
         <div className="w-full flex flex-col items-center">
@@ -104,8 +102,8 @@ const CreateProfForm = ({ onSubmit, passwordMatch, errors, register }) => {
   );
 };
 
-CreateProfForm.propTypes = {
+ProfForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-export default CreateProfForm;
+export default ProfForm;

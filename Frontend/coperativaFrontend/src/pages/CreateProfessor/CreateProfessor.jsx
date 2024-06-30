@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { createProfessor } from "../../services/professor.service";
 import { useNavigate } from "react-router-dom";
-import CreateProfForm from "../../components/CreateProfForm/CreateProfForm";
+import ProfForm from "../../components/ProfForm/ProfForm";
 
 function CreateProfessor() {
     const [passwordMatch, setPasswordMatch] = useState(true);
@@ -52,7 +52,7 @@ function CreateProfessor() {
           <p className="text-justify lg:text-center text-lg">A continuación, puede crear un profesor. Una vez creado, podrá crear y gestionar salas. Por favor, revise cuidadosamente la información para evitar inconvenientes futuros.</p>
         </article>
         <section className="w-10/12 md:w-3/5 lg:2/5">
-          <CreateProfForm onSubmit={handleSubmit(onSubmit)} passwordMatch={passwordMatch} errors={errors} register={register}/>
+          <ProfForm onSubmit={handleSubmit(onSubmit)} passwordMatch={passwordMatch} errors={errors} register={register}/>
         </section>
       </main>
     </>

@@ -3,6 +3,7 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import MainAdminPage from "../pages/MainAdminPage/MainAdminPage";
 import Room from "../components/Room/Room";
 import TeacherPage from "../pages/TeacherPage/TeacherPage";
+import CreateRoom from "../pages/CreateRoom/CreateRoom";
 import MainStudent from "../pages/MainStudent/MainStudent";
 import ESFpatrimonioForm from "../pages/ESFpatrimonio/Form/ESFpatrimonioForm";
 import CreateProfessor from "../pages/CreateProfessor/CreateProfessor";
@@ -39,6 +40,7 @@ function Router() {
 
           <Route element={<ProtectedRouteProfessor />}>
             <Route path="/professor" element={<TeacherPage />} />
+            <Route path="/createroom" element={<CreateRoom />} />
           </Route>
           <Route path="/esfpatrimonioform" element={<ESFpatrimonioForm />} />
         </Routes>
