@@ -16,38 +16,39 @@ function MiddlewareStudent() {
 
   const [animationClass, setAnimationClass] = useState("");
 
-  const {leaveRoom, currentRoom} = useContext(RoomContext);
-  const {student, checkStudent, sStudent} = useContext(StudentContext);
+  const { leaveRoom, currentRoom } = useContext(RoomContext);
+  const { student, checkStudent, sStudent, studentError } =
+    useContext(StudentContext);
 
   const navigate = useNavigate();
 
   const {
-      register,
-      handleSubmit,
-      formState: { errors },
-  } = useForm();  
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   useEffect(() => {
-
-    if(!currentRoom){
+    if (!currentRoom) {
       navigate("/");
     }
 
-    if(student) {
+    if (student) {
       navigate("/student");
     }
-  }), [student];
+  }),
+    [student];
 
   const onSubmitNew = async (data) => {
-    await checkStudent(data)
+    await checkStudent(data);
   };
 
   const onSubmitSaved = async (data) => {
-    await sStudent(data.stuName)
+    await sStudent(data.stuName);
   };
 
   useEffect(() => {
-    console.log(student)
+    console.log(student);
   }, [student]);
 
   const handleSetFirstTime = (option) => {
@@ -93,54 +94,95 @@ function MiddlewareStudent() {
 
       {firstTime === OPTIONS.NO && (
         <div className={`flex flex-col items-center ${animationClass}`}>
-          <h2 className="font-semibold text-3xl">
-            Bienvenido a la sala
-          </h2>
-            <p className="text-center mt-3">
-              A continuación, escribe el nombre con el cual ingresaste previamente a la sala.
-            </p>
-            <form className="flex flex-col w-full items-center gap-2" onSubmit={handleSubmit(onSubmitSaved)}>
+          <h2 className="font-semibold text-3xl">Bienvenido a la sala</h2>
+          <p className="text-center mt-3">
+            A continuación, escribe el nombre con el cual ingresaste previamente
+            a la sala.
+          </p>
+          <form
+            className="flex flex-col w-full items-center gap-2"
+            onSubmit={handleSubmit(onSubmitSaved)}
+          >
+            {studentError && (
+              <p className="text-[red] text-sm bg-transparent">
+                {studentError}
+              </p>
+            )}
             <input
-                type="text"
-                className="w-1/2 p-2 rounded-md border border-gray-300 mt-3 text-black"
-                {...register("stuName", { required: true })}
+              type="text"
+              className="w-1/2 p-2 rounded-md border border-gray-300 mt-3 text-black"
+              {...register("stuName", { required: true })}
             />
             {errors.stuName && (
-              <p className="text-[red] text-sm bg-transparent">Debe ingresar un nombre</p>
+              <p className="text-[red] text-sm bg-transparent">
+                Debe ingresar un nombre
+              </p>
             )}
-            <button type="submit" className="p-2 bg-buttons-login w-24 text-unicoop rounded-md hover:bg-gray-600 duration-150 focus:ring-2 transition-colors ease-in font-medium">Buscar</button>
-            </form>
-            
+            <button
+              type="submit"
+              className="p-2 bg-buttons-login w-24 text-unicoop rounded-md hover:bg-gray-600 duration-150 focus:ring-2 transition-colors ease-in font-medium"
+            >
+              Buscar
+            </button>
+          </form>
+
           <div className="w-full">
-          <button onClick={() => handleSetFirstTime(OPTIONS.NOTHING)} className="flex items-center text-start bg-unicoop-blue w-20 py-1 rounded-lg text-unicoop hover:bg-buttons-list-blue font-semibold"><IoCaretBackSharp className="text-sm mt-1 ml-2 mr-1"/> Atrás</button>
+            <button
+              onClick={() => handleSetFirstTime(OPTIONS.NOTHING)}
+              className="flex items-center text-start bg-unicoop-blue w-20 py-1 rounded-lg text-unicoop hover:bg-buttons-list-blue font-semibold"
+            >
+              <IoCaretBackSharp className="text-sm mt-1 ml-2 mr-1" /> Atrás
+            </button>
           </div>
         </div>
       )}
 
       {firstTime === OPTIONS.SI && (
         <div className={`flex flex-col items-center ${animationClass}`}>
-        <h2 className="font-semibold text-3xl">
-          Bienvenido a la sala
-        </h2>
+          <h2 className="font-semibold text-3xl">Bienvenido a la sala</h2>
           <p className="text-center mt-3">
-            A continuación escribe el nombre con el cual deseas registrarte en la sala.
+            A continuación escribe el nombre con el cual deseas registrarte en
+            la sala.
           </p>
-          <form className="flex flex-col w-full items-center gap-2" onSubmit={handleSubmit(onSubmitNew)}>
-          <input
+          <form
+            className="flex flex-col w-full items-center gap-2"
+            onSubmit={handleSubmit(onSubmitNew)}
+          >
+            {studentError && (
+              <p className="text-[red] text-sm bg-transparent">
+                {studentError}
+              </p>
+            )}
+            <input
               type="text"
               className="w-1/2 p-2 rounded-md border border-gray-300 mt-3 text-black"
               {...register("stuName", { required: true })}
-          />
-          {errors.stuName && (
-            <p className="text-[red] text-sm bg-transparent">Debe ingresar un nombre</p>
-          )}
-          <button type="submit" className="p-2 bg-buttons-login w-24 text-unicoop rounded-md hover:bg-gray-600 duration-150 focus:ring-2 transition-colors ease-in font-medium">Ingresar</button>
+            />
+            {errors.stuName && (
+              <p className="text-[red] text-sm bg-transparent">
+                Debe ingresar un nombre
+              </p>
+            )}
+            <button
+              type="submit"
+              className="p-2 bg-buttons-login w-24 text-unicoop rounded-md hover:bg-gray-600 duration-150 focus:ring-2 transition-colors ease-in font-medium"
+            >
+              Ingresar
+            </button>
           </form>
           <div className="w-full">
-            <button onClick={() => handleSetFirstTime(OPTIONS.NOTHING)} className="flex items-center text-start bg-unicoop-blue w-20 py-1 rounded-lg text-unicoop hover:bg-buttons-list-blue font-semibold"><IoCaretBackSharp className="text-sm mt-1 ml-2 mr-1"/> Atrás</button>
-          </div>  
-          <p className="mt-3"><span className="font-bold">Recomendación:</span> Anota este nombre para futuros ingresos a esta sala ;)</p>
-      </div>
+            <button
+              onClick={() => handleSetFirstTime(OPTIONS.NOTHING)}
+              className="flex items-center text-start bg-unicoop-blue w-20 py-1 rounded-lg text-unicoop hover:bg-buttons-list-blue font-semibold"
+            >
+              <IoCaretBackSharp className="text-sm mt-1 ml-2 mr-1" /> Atrás
+            </button>
+          </div>
+          <p className="mt-3">
+            <span className="font-bold">Recomendación:</span> Anota este nombre
+            para futuros ingresos a esta sala ;)
+          </p>
+        </div>
       )}
     </div>
   );

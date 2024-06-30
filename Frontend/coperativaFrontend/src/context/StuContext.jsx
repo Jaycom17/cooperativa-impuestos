@@ -45,7 +45,7 @@ export const StudentProvider = ({ children }) => {
       setStudentError(null);
     } catch (error) {
       console.log(error);
-      setStudentError("Codigo de sala incorrecto");
+      setStudentError("Error al crear el estudiante");
     }
   };
 
@@ -60,7 +60,6 @@ export const StudentProvider = ({ children }) => {
       setStudent(res.data);
       setStudentError(null);
     } catch (error) {
-      console.log(error);
       setStudentError("Estudiante no encontrado");
     }
   };
