@@ -4,3 +4,12 @@
 GET  {{api}}
 
 ###POST
+POST {{api}}
+Content-Type: application/json
+
+{
+    "stuName": "John",
+    "roomID": "d6683194-d5fd-4953-a7c3-21e935d2e140"
+}
+
+###

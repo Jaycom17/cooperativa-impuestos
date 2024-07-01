@@ -1,48 +1,57 @@
-import { createActivosFijos, listActivosFijos, listActivosFijosById, updateActivosFijos } from '../services/activosFijos.service.js';
+import {
+  createActivosFijos,
+  listActivosFijos,
+  listActivosFijosById,
+  updateActivosFijos,
+} from "../services/activosFijos.service.js";
 
-export const getActivosFijos = async (req, res) => {
-    const result = await listActivosFijos();
+export const getActivosFijos = async (_req, res) => {
+  const result = await listActivosFijos();
 
-    if (!result) {
-        return res.status(500).json({ error: 'No se pudo obtener los activos fijos' });
-    }
+  if (!result) {
+    return res
+      .status(500)
+      .json({ error: "No se pudo obtener los activos fijos" });
+  }
 
-    res.json(result);
-}
+  res.json(result);
+};
 
 export const getActivosFijosById = async (req, res) => {
-    const { actID } = req.params;
+  const { actID } = req.params;
 
-    const result = await listActivosFijosById(actID);
+  const result = await listActivosFijosById(actID);
 
-    if (!result) {
-        return res.status(404).json({ error: 'Activo fijo no encontrado' });
-    }
+  if (!result) {
+    return res.status(404).json({ error: "Activo fijo no encontrado" });
+  }
 
-    res.json(result);
-}
+  res.json(result);
+};
 
 export const postActivosFijos = async (req, res) => {
-    const newActivosFijos = req.body;
+  const newActivosFijos = req.body;
 
-    const result = await createActivosFijos(newActivosFijos);
+  const result = await createActivosFijos(newActivosFijos);
 
-    if (!result) {
-        return res.status(500).json({ error: 'No se pudo crear el activo fijo' });
-    }
+  if (!result) {
+    return res.status(500).json({ error: "No se pudo crear el activo fijo" });
+  }
 
-    res.status(201).json(newActivosFijos);
-}
+  res.status(201).json(newActivosFijos);
+};
 
 export const putActivosFijos = async (req, res) => {
-    const { actID } = req.params;
-    const updatedActivosFijos = req.body;
+  const { actID } = req.params;
+  const updatedActivosFijos = req.body;
 
-    const result = await updateActivosFijos(actID, updatedActivosFijos);
+  const result = await updateActivosFijos(actID, updatedActivosFijos);
 
-    if (!result) {
-        return res.status(500).json({ error: 'No se pudo actualizar el activo fijo' });
-    }
+  if (!result) {
+    return res
+      .status(500)
+      .json({ error: "No se pudo actualizar el activo fijo" });
+  }
 
-    res.json(updatedActivosFijos);
-}
+  res.json(updatedActivosFijos);
+};

@@ -1,14 +1,14 @@
-import { RoomContext } from "../context/StudentContext";
+import { StudentContext } from "../context/StuContext";
 import { useContext } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
 
 function ProtectedRouteStudent () {
-  const { currentRoom, loading } = useContext(RoomContext);
+  const { student, loading } = useContext(StudentContext);
 
   if (loading) return <h1>Loading...</h1>;
 
-  return currentRoom ? <Outlet /> : <Navigate to="/" />;
+  return student ? <Outlet /> : <Navigate to="/" />;
 }
 
 export default ProtectedRouteStudent;

@@ -12,7 +12,8 @@ import MiddlewareStudent from "../pages/MiddlewareStudent/MiddlewareStudent";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { AuthProvider } from "../context/AuthContext";
-import { RoomProvider } from "../context/StudentContext";
+import { RoomProvider } from "../context/RoomContext";
+import { StudentProvider } from "../context/StuContext";
 
 import ProtectedRouteAdmin from "./ProtectedRouteAdmin";
 import ProtectedRouteProfessor from "./ProtectedRouteProfessor";
@@ -22,29 +23,38 @@ function Router() {
   return (
     <AuthProvider>
       <RoomProvider>
-      <BrowserRouter id="App">
-        <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/" element={<MainPage />} />
-          <Route path="/room" element={<Room />} />
-          
-          <Route element={<ProtectedRouteStudent />}>
-            <Route path="/student" element={<MainStudent />} />
-            <Route path="/middlewarestudent" element={<MiddlewareStudent />} />
-          </Route>
+        <StudentProvider>
+          <BrowserRouter id="App">
+            <Routes>
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/" element={<MainPage />} />
+              <Route path="/room" element={<Room />} />
 
-          <Route element={<ProtectedRouteAdmin />}>
-            <Route path="/admin" element={<MainAdminPage />} />
-            <Route path="/createprofessor" element={<CreateProfessor />} />
-          </Route>
+              <Route
+                  path="/middlewarestudent"
+                  element={<MiddlewareStudent />}
+                />
 
-          <Route element={<ProtectedRouteProfessor />}>
-            <Route path="/professor" element={<TeacherPage />} />
-            <Route path="/createroom" element={<CreateRoom />} />
-          </Route>
-          <Route path="/esfpatrimonioform" element={<ESFpatrimonioForm />} />
-        </Routes>
-      </BrowserRouter>
+              <Route element={<ProtectedRouteStudent />}>
+                <Route path="/student" element={<MainStudent />} />
+              </Route>
+
+              <Route element={<ProtectedRouteAdmin />}>
+                <Route path="/admin" element={<MainAdminPage />} />
+                <Route path="/createprofessor" element={<CreateProfessor />} />
+              </Route>
+
+              <Route element={<ProtectedRouteProfessor />}>
+                <Route path="/professor" element={<TeacherPage />} />
+                <Route path="/createroom" element={<CreateRoom />} />
+              </Route>
+              <Route
+                path="/esfpatrimonioform"
+                element={<ESFpatrimonioForm />}
+              />
+            </Routes>
+          </BrowserRouter>
+        </StudentProvider>
       </RoomProvider>
     </AuthProvider>
   );
