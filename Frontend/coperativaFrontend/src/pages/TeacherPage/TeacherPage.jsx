@@ -54,7 +54,6 @@ const TeacherPage = () => {
     <>
       <TeacherNavbar professorName={user.usuName} />
       <main className="flex flex-col items-center min-h-screen bg-background">
-        {/**Aquí, en esta sección la idea sería poner los filtros (Barra de busqueda, ordenar por?) */}
         <section className="w-full px-5 md:px-32 lg:px-52 mt-5 flex">
           <InfoBubble info={dateInfo} />
           <div className="flex justify-between w-full text-white">

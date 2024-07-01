@@ -68,8 +68,7 @@ export const searchStudentByName = async (req, res) => {
   const result = await studentByName(stuName, roomID);
 
   if (!result.token) {
-    res.status(500).json({ message: "Error al buscar usuario" });
-    return;
+    return res.status(500).json({ message: "Error al buscar usuario" });
   }
 
   res.cookie("token", result.token, {
