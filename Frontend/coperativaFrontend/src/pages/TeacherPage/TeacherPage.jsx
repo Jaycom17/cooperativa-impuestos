@@ -29,7 +29,7 @@ const TeacherPage = () => {
       <TeacherNavbar professorName={user.usuName}/>
       <main className="flex flex-col items-center min-h-screen bg-background">
         {/**Aquí, en esta sección la idea sería poner los filtros (Barra de busqueda, ordenar por?) */}
-        <section className="lg:w-11/12 mt-5">
+        <section className="w-11/12 mt-5">
           <InfoBubble info={dateInfo}/>
         </section>
         <section className="w-11/12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 my-5 mx-auto justify-items-center">

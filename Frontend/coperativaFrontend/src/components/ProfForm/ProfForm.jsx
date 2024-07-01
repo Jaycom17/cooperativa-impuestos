@@ -1,26 +1,99 @@
-import { useState } from "react";
-import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
-import { IoPersonAddSharp } from "react-icons/io5";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { IoEyeOffOutline, IoEyeOutline, IoPersonAddSharp } from "react-icons/io5";
+import { FaCheckCircle } from "react-icons/fa";
 import { MdCreate } from "react-icons/md";
 import PropTypes from "prop-types";
+import { createProfessor, updateProfessor, getProfessor } from "../../services/professor.service";
 
-const ProfForm = ({ onSubmit, passwordMatch, errors, register }) => {
+const ProfForm = ({ profId, onRefresh, setOpen }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword2, setShowPassword2] = useState(false);
+  const [passwordMatch, setPasswordMatch] = useState(true);
+  const [isUpdate, setIsUpdate] = useState(false);
+
+  const navigate = useNavigate();
+
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm();
+
+  useEffect(() => {
+    console.log(profId)
+    if (profId) {
+      getProfessor(profId).then((response) => {
+        if (response.status === 201) {
+          setIsUpdate(true);
+          const profData = response.data;
+          setValue('usuName', profData.usuName);
+          setValue('usuEmail', profData.usuName);
+        }
+      }).catch(() => {
+        alert("Error al cargar la información del profesor");
+      });
+    } else { setIsUpdate(false); }
+  }, [profId, setValue]);
 
   const togglePasswordVisibility = (field) => {
     if(field === 1) {setShowPassword(!showPassword);}
-    else if(field === 2){setShowPassword2(!showPassword2)};
+    else if(field === 2){setShowPassword2(!showPassword2);}
+  };
+
+  const onSubmit = (data) => {
+    if (data.usuPassword !== data.confirmPassword) {
+      setPasswordMatch(false);
+      setTimeout(() => {
+        setPasswordMatch(true);
+      }, 5000);
+      return;
+    }
+
+    const professorData = {
+        usuName: data.usuName,
+        usuEmail: data.usuEmail,
+        usuPassword: data.usuPassword,
+    }
+
+    if (isUpdate) {
+      createProfessor(professorData).then((response) => {
+        if (response.status === 200) {
+          alert("Profesor creado exitosamente");
+          navigate("/admin");
+        }else{
+          alert("Error al crear el profesor");
+        }
+      }).catch(() => {
+        alert("Error al crear el profesor");
+      });
+    } 
+    else {
+      updateProfessor(professorData, profId).then((response) => {
+        if(response.status === 201){
+          alert("Se ha actualizado la sala");
+          onRefresh();
+          setOpen(false)
+        }else{
+          alert("Error al actualizar la sala");
+        }
+      }).catch(() => {
+        alert("Error al actualizar la sala");
+      }) 
+    }
   };
 
   return (
-    <form
-      className="flex flex-col items-center bg-unicoop-black rounded-md gap-3"
-      onSubmit={onSubmit}
-    >
-      <h1 className="flex bg-transparent text-unicoop text-4xl mt-2 gap-4 font-medium text-center">
-        <IoPersonAddSharp />
-      </h1>
+    <form className="flex flex-col items-center bg-unicoop-black rounded-md gap-3 p-6" onSubmit={handleSubmit(onSubmit)}>
+      {isUpdate ? (
+        <article className="flex flex-col items-center">
+          <MdCreate className="text-5xl font-semibold text-center"/>
+          <h1 className="text-2xl font-semibold text-center">Actualizar datos del profesor</h1>
+          <p className="text-center">A continuación, puede actualizar los datos del profesor. Recuerde informar al docente los cambios realizados</p>  
+        </article>
+      ): <IoPersonAddSharp className="text-unicoop text-4xl"/>}
       <section className="flex flex-col md:flex-row gap-3 w-11/12">
         <div className="w-full flex flex-col items-center">
           <input
@@ -31,7 +104,7 @@ const ProfForm = ({ onSubmit, passwordMatch, errors, register }) => {
           />
           {errors.usuName && (
             <p className="text-red-500 text-sm font-semibold">
-              Debe ingresar el nombre del docente
+              El nombre del docente no puede quedar vacío
             </p>
           )}
         </div>
@@ -44,7 +117,7 @@ const ProfForm = ({ onSubmit, passwordMatch, errors, register }) => {
           />
           {errors.usuEmail && (
             <p className="text-red-500 text-sm font-semibold">
-              Debe ingresar el email del docente
+              El email del docente no puede quedar vacío
             </p>
           )}
         </div>
@@ -72,7 +145,7 @@ const ProfForm = ({ onSubmit, passwordMatch, errors, register }) => {
       </div>
       {errors.usuPassword && (
         <p className="text-red-500 text-sm font-semibold">
-          Debe ingresar la contraseña
+          Debe ingresar una contraseña
         </p>
       )}
       <div className="relative w-11/12">
@@ -95,15 +168,17 @@ const ProfForm = ({ onSubmit, passwordMatch, errors, register }) => {
           Debe repetir la contraseña
         </p>
       )}
-      <button className="bg-buttons-login text-unicoop-white w-11/12 p-2.5 rounded-md my-4 hover:bg-gray-600 focus:ring-2 transition-colors duration-200 ease-in font-medium">
-        Crear
+      <button type="submit" className="flex items-center p-1.5 mt-4 gap-1 bg-buttons-update-green hover:bg-buttons-update-green-h text-unicoop duration-150 rounded" >
+        <FaCheckCircle className='bg-transparent'/> Confirmar
       </button>
     </form>
   );
 };
 
-ProfForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
-
 export default ProfForm;
+
+ProfForm.propTypes = {
+  profId: PropTypes.string,
+  onRefresh: PropTypes.func,
+  setOpen: PropTypes.func
+}

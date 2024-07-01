@@ -52,7 +52,7 @@ function CreateProfessor() {
           <p className="text-justify lg:text-center text-lg">A continuación, puede crear un profesor. Una vez creado, podrá crear y gestionar salas. Por favor, revise cuidadosamente la información para evitar inconvenientes futuros.</p>
         </article>
         <section className="w-10/12 md:w-3/5 lg:2/5">
-          <ProfForm onSubmit={handleSubmit(onSubmit)} passwordMatch={passwordMatch} errors={errors} register={register}/>
+          <ProfForm/>
         </section>
       </main>
     </>

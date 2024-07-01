@@ -35,7 +35,7 @@ const Room = ({ room, usuId, onRefresh }) => {
     <section className="flex flex-col items-center w-4/5 sm:1/3 lg:w-[375px] bg-primary rounded-lg text-unicoop">
       <div className="w-full text-center mt-2">
         <h1 className="text-2xl font-bold mx-1">{room.roomName}</h1>
-        <h2 className="text-unicoop-green text-lg"><span className="font-medium">Código de acceso:</span> {room.roomPassword}</h2>
+        <h2 className="text-slate-200 border-b-2 text-xl mb-2"><span className="font-medium">Código de acceso:</span> {room.roomPassword}</h2>
         <h2><span className="font-medium">Fecha de creación:</span> {formatDate(room.roomDate)}</h2>
       </div>
       <div className="flex flex-row my-1">
