@@ -7,14 +7,14 @@ import AccountDropdown from "../AccountDrop/AccountDropdown";
 import PropTypes from 'prop-types'
 import { AuthContext } from "../../context/AuthContext";
 
-const TeacherNavbarTW = ({professorName}) => {
+const TeacherNavbarTW = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const { singout } = useContext(AuthContext);
+     
+    const {user} = useContext(AuthContext);
 
-    if (!professorName || typeof professorName !== 'string') {
-        professorName = 'Nombre_docente';
-    }
+
 
     const tNavRef = useRef(null);
 
@@ -50,7 +50,7 @@ const TeacherNavbarTW = ({professorName}) => {
 
       <nav className="flex justify-between items-center p-4 bg-primary w-full z-50">
 
-        <h1 className="bg-primary font-semibold text-2xl text-unicoop-white my-auto">{professorName}</h1>
+        <h1 className="bg-primary font-semibold text-2xl text-unicoop-white my-auto">{user.usuName}</h1>
         <div className="flex gap-3 bg-primary font-semibold">
             <MdMenu className="text-3xl bg-primary text-unicoop-white md:hidden cursor-pointer hover:text-unicoop-yellow" onClick={() => setIsMenuOpen(true)}/>
         </div>

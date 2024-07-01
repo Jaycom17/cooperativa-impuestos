@@ -26,11 +26,11 @@ const ProfForm = ({ profId, onRefresh, setOpen }) => {
     console.log(profId)
     if (profId) {
       getProfessor(profId).then((response) => {
-        if (response.status === 201) {
-          setIsUpdate(true);
+        if (response.status === 200) {
           const profData = response.data;
           setValue('usuName', profData.usuName);
-          setValue('usuEmail', profData.usuName);
+          setValue('usuEmail', profData.usuEmail);
+          setIsUpdate(true);
         }
       }).catch(() => {
         alert("Error al cargar la información del profesor");
@@ -59,6 +59,19 @@ const ProfForm = ({ profId, onRefresh, setOpen }) => {
     }
 
     if (isUpdate) {
+      updateProfessor(profId, professorData).then((response) => {
+        if(response.status === 200){
+          alert("Se han actualizado los datos del profesor");
+          onRefresh();
+          setOpen(false)
+        }else{
+          alert("Error al actualizar los datos del profesor");
+        }
+      }).catch(() => {
+        alert("Error al actualizar los datos del docente");
+      }) 
+    } 
+    else {
       createProfessor(professorData).then((response) => {
         if (response.status === 200) {
           alert("Profesor creado exitosamente");
@@ -69,19 +82,6 @@ const ProfForm = ({ profId, onRefresh, setOpen }) => {
       }).catch(() => {
         alert("Error al crear el profesor");
       });
-    } 
-    else {
-      updateProfessor(professorData, profId).then((response) => {
-        if(response.status === 201){
-          alert("Se ha actualizado la sala");
-          onRefresh();
-          setOpen(false)
-        }else{
-          alert("Error al actualizar la sala");
-        }
-      }).catch(() => {
-        alert("Error al actualizar la sala");
-      }) 
     }
   };
 

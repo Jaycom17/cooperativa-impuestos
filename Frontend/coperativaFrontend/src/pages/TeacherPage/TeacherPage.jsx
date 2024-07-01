@@ -1,14 +1,11 @@
 import Room from '../../components/Room/Room';
 import TeacherNavbar from '../../components/TeacherNavBar/TeacherNavbar';
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { getRooms } from '../../services/room.service';
-import { AuthContext } from '../../context/AuthContext';
 import InfoBubble from '../../components/InfoBubble/InfoBubble';
 
 const TeacherPage = () => {
   const [rooms, setRooms] = useState([]);
-
-  const {user} = useContext(AuthContext);
 
   const dateInfo = 'La fecha se encuentra en formato: - Día / Mes / Año'
 
@@ -26,7 +23,7 @@ const TeacherPage = () => {
 
   return (
     <>
-      <TeacherNavbar professorName={user.usuName}/>
+      <TeacherNavbar/>
       <main className="flex flex-col items-center min-h-screen bg-background">
         {/**Aquí, en esta sección la idea sería poner los filtros (Barra de busqueda, ordenar por?) */}
         <section className="w-11/12 mt-5">

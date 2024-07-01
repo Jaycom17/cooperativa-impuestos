@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 import { GrFormClose } from "react-icons/gr";
 import { MdMenu } from "react-icons/md";
-import { RoomContext } from "../../context/StudentContext";
+import { StudentContext } from "../../context/StuContext";
 
 const AsideStudent = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const asideRef = useRef(null);
 
-    const {leaveRoom} = useContext(RoomContext);
+    const {leaveRoom} = useContext(StudentContext);
 
     const handleLeaveRoom = ()=>{ leaveRoom() }
 

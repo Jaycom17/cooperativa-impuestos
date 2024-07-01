@@ -133,10 +133,9 @@ export const removeUser = async (usuId) => {
 export const updateUser = async (user) => {
   try {
     const encryptedPassword = await encrypt(user.usuPassword);
-
     const result = await prisma.user.update({
       where: {
-        usuID: user.usuID
+        usuID: user.usuId
       },
       data: {
         usuName: user.usuName,
@@ -148,7 +147,7 @@ export const updateUser = async (user) => {
     return result;
   } catch (error) {
     console.error(error);
-    return { message: "Error al actualizar usuario"};
+    return false;
   }
 }
 
