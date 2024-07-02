@@ -20,7 +20,6 @@ const RoomForm = ({roomId, usuId , onRefresh, setOpen})=>{
 
 
     useEffect(() => {
-      console.log(roomId)
       if (roomId) {
         getRoom(roomId).then((response) => {
           if (response.status === 201) {

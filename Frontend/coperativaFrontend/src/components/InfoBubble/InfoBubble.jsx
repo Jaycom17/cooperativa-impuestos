@@ -8,14 +8,14 @@ const InfoBubble = ({info, colorMode}) => {
     const color = colorMode === 'light' ? "text-primary hover:text-unicoop-slate-blue bg-transparent": "text-unicoop hover:text-slate-300 bg-primary";
 
     return(
-        <div className="relative flex items-center w-52">
+        <div className="relative inline-block items-center">
             <FaCircleInfo
                 className={`size-5 rounded-full duration-150 cursor-pointer ${color}`}
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
             />
             <div
-                className={`absolute top-full transform left-3/4 -translate-x-1/2 mt-2 p-2 w-64 bg-white text-black rounded shadow-lg transition-opacity duration-300 ${
+                className={`absolute top-full transform left-32  -translate-x-1/2 mt-2 p-2 w-64 bg-white text-black rounded shadow-lg transition-opacity duration-300 ${
                 hovered ? 'opacity-100' : 'opacity-0'
                 }`}
             >

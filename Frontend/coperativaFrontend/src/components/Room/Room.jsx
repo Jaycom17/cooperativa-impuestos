@@ -4,8 +4,8 @@ import { FaEye } from "react-icons/fa";
 import { useState, useEffect } from 'react';
 import FloatingContainer from "../FloatingContainer/FloatingContainer";
 import RoomForm from "../RoomForm/RoomForm";
-import { updateRoomState } from "../../services/room.service";
-import { Link } from "react-router-dom";
+import { updateRoomState, deleteRoom } from "../../services/room.service";
+import PropTypes from "prop-types";
 
 const Room = ({ room, usuId, onRefresh }) => {
   const [activated, setActivated] = useState(false);
@@ -33,11 +33,25 @@ const Room = ({ room, usuId, onRefresh }) => {
     return `${day} / ${month} / ${year}`;
   };
 
+  const handleDelete = (roomId) =>{
+    const confirmDelete = window.confirm(`¿Estás seguro de que deseas eliminar la sala ${room.roomName}?`);
+    if (confirmDelete) {
+        deleteRoom(roomId).then((response) =>{
+            if(response.status === 201){
+                alert("Se ha eliminado la sala correctamente");
+                onRefresh();
+            }
+        }).catch(() =>{
+            alert("Error al eliminar la sala");
+        });
+    }
+  };
+
   return (
-    <section className="flex flex-col items-center w-full lg:w-[375px] bg-primary rounded-lg text-unicoop">
+    <section className="flex flex-col items-center w-11/12 sm:1/3 lg:w-[375px] bg-primary rounded-lg text-unicoop">
       <div className="w-full text-center mt-2">
         <h1 className="text-2xl font-bold mx-1">{room.roomName}</h1>
-        <h2 className="text-unicoop-green text-lg"><span className="font-medium">Código de acceso:</span> {room.roomPassword}</h2>
+        <h2 className="text-slate-200  text-2xl mb-2 font-semibold">Código: {room.roomPassword}</h2>
         <h2><span className="font-medium">Fecha de creación:</span> {formatDate(room.roomDate)}</h2>
       </div>
       <div className="flex flex-row my-1">
@@ -61,11 +75,8 @@ const Room = ({ room, usuId, onRefresh }) => {
         <button onClick={() => setFormOpen(true)} className="flex items-center p-1.5 bg-buttons-update-green hover:bg-buttons-update-green-h duration-150 rounded">
           <FaPencilAlt className='bg-transparent mr-1'/> Actualizar
         </button>
-        <Link to={`/roomreport/${room.roomID}`} className="flex items-center p-1.5 bg-buttons-login hover:bg-[#696969] duration-150 rounded">
-          <FaEye className="bg-transparent mr-1"/> Revisar
-        </Link>
-        <button className="flex items-center p-1.5 bg-buttons-delete-red hover:bg-buttons-delete-red-h duration-150 rounded">
-         <FaRegTrashAlt className='bg-transparent mr-1'/> Eliminar
+        <button onClick={() => handleDelete(room.roomID)} className="flex items-center p-1.5 bg-buttons-delete-red hover:bg-buttons-delete-red-h duration-150 rounded">
+         <FaRegTrashAlt className='bg-transparent'/> Eliminar
         </button>
       </div>
 
@@ -78,3 +89,14 @@ const Room = ({ room, usuId, onRefresh }) => {
 
 export default Room;
 
+Room.propTypes = {
+  room: PropTypes.shape({
+      roomID: PropTypes.string,
+      roomName: PropTypes.string,
+      roomPassword: PropTypes.string,
+      roomStatus: PropTypes.string,
+      roomDate: PropTypes.string
+  }),
+  usuId: PropTypes.string,
+  onRefresh: PropTypes.func
+}
