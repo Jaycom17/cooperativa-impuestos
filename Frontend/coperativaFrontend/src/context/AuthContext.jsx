@@ -1,64 +1,72 @@
-import { createContext, useState, useContext, useEffect } from "react";
-import Cookies from "js-cookie";
-
-import { login, logout, profile } from "../services/login.service";
+import { createContext, useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { login, profile, logout } from "../services/login.service";
 
 export const AuthContext = createContext();
 
-export const useAuth = () => {
-    const context = useContext(AuthContext);
-    if (!context) {
-        throw new Error("useAuth must be used within an AuthProvider");
-    }
-    return context;
-}
-
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [haveError, setHaveError] = useState(null);
-    const [actualRole, setActualRole] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [loginError, setLoginError] = useState(null);
 
-    const singin = (user) => {
-        login(user).then((res) => {
-            setUser(res);
-            setIsAuthenticated(true);
-            setHaveError(null);
-            setActualRole(res.usu_rol);
-        }).catch((err) => {
-            setIsAuthenticated(false);
-            setHaveError(err.response.data);
-        });
+    useEffect(() => {
+        if (loginError) {
+          const timer = setTimeout(() => {
+            setLoginError(null);
+          }, 5000);
+          return () => clearTimeout(timer);
+        }
+      }, [loginError]);
+    
+
+    useEffect(() => {
+        const checkLogin = async () => {      
+            try {
+              const res = await profile();
+
+              if (!res.data) return;
+
+              setUser(res.data);
+              setLoading(false);
+            } catch (error) {
+              setLoading(false);
+            }
+          };
+          checkLogin();
+    }, []);
+
+    const singin = async (userLogin) => {
+        try {
+            const res = await login(userLogin);
+            setUser(res.data);
+            setLoginError(null);
+          } catch (error) {
+            console.log(error);
+            setLoginError("Usuario o contraseña incorrectos")
+          }
     }
 
     const singout = () => {
-        logout().then(() => {
-            setUser(null);
-            setIsAuthenticated(false);
-            setActualRole(null);
-        }).catch((err) => {
-            console.log(err);
-        });
-    }
+        const result = logout();
 
-    useEffect(() => {
-        const cookies = Cookies.get();
-        if(cookies.token){
-            profile().then((res) => {
-                setUser(res);
-                setIsAuthenticated(true);
-                setActualRole(res.usu_rol);
-            }).catch((err) => {
-                console.log(err);
-                setIsAuthenticated(false);
-            });
+        if (!result) {
+            return false;
         }
-    });
+
+        setUser(null);
+        setLoading(false);
+
+        return true;
+    }
 
 
     return (
-        <AuthContext.Provider value={{singin, user, isAuthenticated, haveError, actualRole, singout}}>
+        <AuthContext.Provider value={{singin, user, loading, singout, loginError}}>
             {children}
         </AuthContext.Provider>
     );
 }
+
+AuthProvider.propTypes = {
+    children: PropTypes.node.isRequired,
+};

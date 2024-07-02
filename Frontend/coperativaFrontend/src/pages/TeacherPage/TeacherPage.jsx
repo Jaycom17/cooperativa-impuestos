@@ -1,63 +1,71 @@
-import React from 'react';
 import Room from '../../components/Room/Room';
 import TeacherNavbar from '../../components/TeacherNavBar/TeacherNavbar';
+import { useState, useEffect } from 'react';
+import { getRooms } from '../../services/room.service';
+import InfoBubble from '../../components/InfoBubble/InfoBubble';
 
 const TeacherPage = () => {
-  const Salas = [
-    { id: 1, nombre: 'Sala 1',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
-    { id: 2, nombre: 'Sala 2',codigo: "123",fecha: '2021-09-30' ,estado: 'Inactivo' },
-    { id: 3, nombre: 'Sala 3',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
-    // ...otros items
-  ];
+  const [rooms, setRooms] = useState([]);
 
-  const handleCerrarSesion = () => {
-    // Lógica para cerrar sesión
-    console.log('Cerrar sesión');
+  const dateInfo = 'La fecha se encuentra en formato: - Día / Mes / Año'
+
+  useEffect(() => {
+    getRooms()
+      .then((response) => {
+        if (response.status === 201) {
+          setRooms(response.data);
+        }
+      })
+      .catch(() => {
+        alert("Error al cargar las salas");
+      });
+  }, []);
+
+  const refreshRooms = () => {
+    getRooms()
+      .then((response) => {
+        if (response.status === 201) {
+          setRooms(response.data);
+        }
+      })
+      .catch(() => {
+        alert("Error al cargar las salas");
+      });
   };
 
-  const handleCrearProfesor = () => {
-    // Lógica para crear un profesor
-    console.log('Crear Sala');
+  const orderByDate = () => {
+    const sortedRooms = [...rooms].sort(
+      (a, b) => new Date(a.roomDate) - new Date(b.roomDate)
+    );
+    setRooms(sortedRooms);
   };
 
-  const handleActualizarDatos = () => {
-    // Lógica para actualizar datos
-    console.log('Actualizar datos');
-  };
-
-  const handleActualizar = (id) => {
-    // Lógica para actualizar el item con el id proporcionado
-    console.log(`Actualizar item con id: ${id}`);
-  };
-
-  const handleEliminar = (id) => {
-    // Lógica para eliminar el item con el id proporcionado
-    console.log(`Eliminar item con id: ${id}`);
+  const orderByName = () => {
+    const sortedRooms = [...rooms].sort((a, b) =>
+      a.roomName.localeCompare(b.roomName)
+    );
+    setRooms(sortedRooms);
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-full w-screen bg-[#1f324e]
-      ">
-      <TeacherNavbar
-        onCerrarSesion={handleCerrarSesion}
-        onCrearSala={handleCrearProfesor}
-        onActualizarDatos={handleActualizarDatos}
-      />
-      <ul className="w-screen pr-16 pl-16">
-        {Salas.map((Salas) => (
-          <li key={Salas.id}>
-            <Room
-              nombre={Salas.nombre}
-              codigo={Salas.codigo}
-              fecha={Salas.fecha}
-              estado={Salas.estado}
-              onActualizar={() => handleActualizar(Salas.id)}
-              onEliminar={() => handleEliminar(Salas.id)}
-            />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <TeacherNavbar/>
+      <main className="flex flex-col items-center min-h-screen bg-background">
+        {/**Aquí, en esta sección la idea sería poner los filtros (Barra de busqueda, ordenar por?) */}
+        <section className="w-11/12 mt-5">
+          <InfoBubble info={dateInfo}/>
+          <div className="flex justify-between w-full text-white">
+            <button onClick={orderByDate}>Ordenar por fecha</button>
+            <button onClick={orderByName}>Ordenar por nombre</button>
+          </div>
+        </section>
+        <section className="w-11/12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 my-5 mx-auto justify-items-center">
+          {rooms.map((room) => (
+            <Room key={room.roomID} room={room} onRefresh={refreshRooms} />
+          ))}
+        </section>
+      </main>
+    </>
   );
 };
 

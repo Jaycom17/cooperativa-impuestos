@@ -102,7 +102,7 @@ model report {
 model room {
   roomID       String          @id @db.VarChar(255)
   roomName     String          @db.VarChar(255)
-  roomPassword String          @db.VarChar(255)
+  roomPassword String          @db.VarChar(255) @unique
   roomDate     DateTime        @db.Date
   roomStatus   room_roomStatus
   roomAnswer   Json

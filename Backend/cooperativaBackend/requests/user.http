@@ -1,0 +1,16 @@
+@api = http://localhost:3000/user/admin
+
+### GET
+GET {{api}}
+
+### POST
+POST {{api}}
+Content-Type: application/json
+
+{
+    "usuName": "juan",
+    "usuEmail": "juanorejuela499@gmail.com",
+    "usuPassword": "juan123"
+}
+
+###
