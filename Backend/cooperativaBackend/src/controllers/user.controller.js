@@ -1,4 +1,3 @@
-import { response } from "express";
 import {
   createUser,
   obtainProfessors,
@@ -53,17 +52,10 @@ export const getAdmins = async (req, res) => {
 }
 
 export const putProfessor = async (req, res) => {
-<<<<<<< HEAD
   const { usuID } = req.params;
-  const { usuName, usuEmail } = req.body;
-
-  const user = { usuID, usuName, usuEmail, usuRole: "profesor" };
-=======
-  const { usuId } = req.params;
   const { usuName, usuEmail, usuPassword } = req.body;
 
-  const user = { usuId, usuName, usuEmail,usuPassword , usuRole: "profesor" };
->>>>>>> origin/main
+  const user = { usuID, usuName, usuEmail, usuPassword , usuRole: "profesor" };
 
   const result = await updateUser(user);
 
@@ -76,17 +68,10 @@ export const putProfessor = async (req, res) => {
 };
 
 export const putAdmin = async (req, res) => {
-<<<<<<< HEAD
   const { usuID } = req.params;
-  const { usuName, usuEmail } = req.body;
-
-  const user = { usuID, usuName, usuEmail, usuRole: "admin" };
-=======
-  const { usuId } = req.params;
   const { usuName, usuEmail, usuPassword } = req.body;
 
-  const user = { usuId, usuName, usuEmail,usuPassword , usuRole: "admin" };
->>>>>>> origin/main
+  const user = { usuID, usuName, usuEmail, usuPassword , usuRole: "admin" };
 
   const result = await updateUser(user);
 

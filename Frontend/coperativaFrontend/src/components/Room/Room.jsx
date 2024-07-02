@@ -6,6 +6,7 @@ import FloatingContainer from "../FloatingContainer/FloatingContainer";
 import RoomForm from "../RoomForm/RoomForm";
 import { updateRoomState, deleteRoom } from "../../services/room.service";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Room = ({ room, usuId, onRefresh }) => {
   const [activated, setActivated] = useState(false);
@@ -75,8 +76,11 @@ const Room = ({ room, usuId, onRefresh }) => {
         <button onClick={() => setFormOpen(true)} className="flex items-center p-1.5 bg-buttons-update-green hover:bg-buttons-update-green-h duration-150 rounded">
           <FaPencilAlt className='bg-transparent mr-1'/> Actualizar
         </button>
-        <button onClick={() => handleDelete(room.roomID)} className="flex items-center p-1.5 bg-buttons-delete-red hover:bg-buttons-delete-red-h duration-150 rounded">
-         <FaRegTrashAlt className='bg-transparent'/> Eliminar
+        <Link to={`/roomreport/${room.roomID}`} className="flex items-center p-1.5 bg-buttons-login hover:bg-[#696969] duration-150 rounded">
+          <FaEye className="bg-transparent mr-1"/> Revisar
+        </Link>
+        <button onClick={handleDelete} className="flex items-center p-1.5 bg-buttons-delete-red hover:bg-buttons-delete-red-h duration-150 rounded">
+         <FaRegTrashAlt className='bg-transparent mr-1'/> Eliminar
         </button>
       </div>
 

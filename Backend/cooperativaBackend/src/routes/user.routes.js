@@ -8,9 +8,9 @@ userRouter.post('/admin',validateUser, postAdmin);
 userRouter.post('/professor', validateUser, postProfessor);
 userRouter.get('/admin', getAdmins);
 userRouter.get('/professor', getProfessors);
-userRouter.get('/:usuId', validateId, getUser);
-userRouter.delete('/:usuId', validateId, deleteUser);
-userRouter.put('/admin/:usuId', validateId, putAdmin);
-userRouter.put('/professor/:usuId', putProfessor);
+userRouter.get('/:usuID', validateId, getUser);
+userRouter.delete('/:usuID', validateId, deleteUser);
+userRouter.put('/admin/:usuID', validateId, putAdmin);
+userRouter.put('/professor/:usuID', putProfessor);
 
 export default userRouter;
