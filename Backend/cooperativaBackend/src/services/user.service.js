@@ -60,9 +60,9 @@ export const obtainAdmins = async () => {
   }
 }
 
-export const obtainUser = async (usuId) => {
+export const obtainUser = async (usuID) => {
   try {
-    const result = await prisma.user.findUnique({ where: { usuID: usuId }, select: { usuID: true, usuName: true, usuEmail: true }});
+    const result = await prisma.user.findUnique({ where: { usuID: usuID }, select: { usuID: true, usuName: true, usuEmail: true }});
     
     return result;
   } catch (error) {
@@ -71,11 +71,11 @@ export const obtainUser = async (usuId) => {
   }
 }
 
-export const removeUser = async (usuId) => {
+export const removeUser = async (usuID) => {
   try {
     // Encontrar todas las salas asignadas al usuario
     const userRooms = await prisma.room.findMany({
-      where: { usuID: usuId },
+      where: { usuID: usuID },
       include: { student: true }
     });
 
@@ -106,23 +106,23 @@ export const removeUser = async (usuId) => {
 
     // Verificar si el usuario existe antes de eliminarlo
     const userExists = await prisma.user.findUnique({
-      where: { usuID: usuId }
+      where: { usuID: usuID }
     });
 
     if (userExists) {
       // Eliminar el usuario
       const deleteUserResult = await prisma.user.delete({
-        where: { usuID: usuId }
+        where: { usuID: usuID }
       });
 
       console.log(`Usuario eliminado: ${deleteUserResult.usuID}`);
       return true;
     } else {
-      console.log(`Usuario con ID ${usuId} no existe.`);
+      console.log(`Usuario con ID ${usuID} no existe.`);
       return false;
     }
-    //console.log("id " + usuId);
-    //const result = await prisma.user.delete({ where: { usuID: usuId } });
+    //console.log("id " + usuID);
+    //const result = await prisma.user.delete({ where: { usuID: usuID } });
     //console.log(result);
   } catch (error) {
     console.error(error);
@@ -135,7 +135,7 @@ export const updateUser = async (user) => {
     const encryptedPassword = await encrypt(user.usuPassword);
     const result = await prisma.user.update({
       where: {
-        usuID: user.usuId
+        usuID: user.usuID
       },
       data: {
         usuName: user.usuName,

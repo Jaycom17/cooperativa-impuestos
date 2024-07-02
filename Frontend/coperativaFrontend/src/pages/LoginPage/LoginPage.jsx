@@ -2,7 +2,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-import UsersLogForm from "../../components/LoginForms/UsersLogForm";
+import UsersLogForm from "../../components/loginForms/UsersLogForm";
 
 
 const LoginPage = () => {

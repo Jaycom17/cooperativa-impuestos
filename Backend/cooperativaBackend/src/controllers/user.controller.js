@@ -1,4 +1,3 @@
-import { response } from "express";
 import {
   createUser,
   obtainProfessors,
@@ -53,10 +52,10 @@ export const getAdmins = async (req, res) => {
 }
 
 export const putProfessor = async (req, res) => {
-  const { usuId } = req.params;
+  const { usuID } = req.params;
   const { usuName, usuEmail, usuPassword } = req.body;
 
-  const user = { usuId, usuName, usuEmail,usuPassword , usuRole: "profesor" };
+  const user = { usuID, usuName, usuEmail, usuPassword , usuRole: "profesor" };
 
   const result = await updateUser(user);
 
@@ -69,10 +68,10 @@ export const putProfessor = async (req, res) => {
 };
 
 export const putAdmin = async (req, res) => {
-  const { usuId } = req.params;
+  const { usuID } = req.params;
   const { usuName, usuEmail, usuPassword } = req.body;
 
-  const user = { usuId, usuName, usuEmail,usuPassword , usuRole: "admin" };
+  const user = { usuID, usuName, usuEmail, usuPassword , usuRole: "admin" };
 
   const result = await updateUser(user);
 
@@ -84,16 +83,16 @@ export const putAdmin = async (req, res) => {
 }
 
 export const getUser = async (req, res) => {
-    const { usuId } = req.params;
+    const { usuID } = req.params;
     
-    const result = await obtainUser(usuId);
+    const result = await obtainUser(usuID);
     
     res.status(200).json(result);
 };
 
 export const deleteUser = async (req, res) => {
-    const { usuId } = req.params;
-    const result = await removeUser(usuId);
+    const { usuID } = req.params;
+    const result = await removeUser(usuID);
 
     if (!result) {
         return res.status(500).json({ error: 'No se pudo eliminar el usuario' });
