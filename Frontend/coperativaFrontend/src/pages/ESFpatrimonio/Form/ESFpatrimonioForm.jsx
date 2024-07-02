@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import basicInformation from '../../../formsData/ESFpatrimonio.json';
 import ESFvalues from '../../../components/ESFvalues/ESFvalues';
-import AsideEstudent from '../../../components/AsideStudent/AsideStudent';
+import AsideStudent from '../../../components/AsideStudent/AsideStudent';
 
 const ESFpatrimonio = () => {
   const [data, setData] = useState(basicInformation);
@@ -72,7 +72,7 @@ const ESFpatrimonio = () => {
 
   return (
     <div className="flex bg-gray-100 rounded shadow-md">
-      <AsideEstudent />
+      <AsideStudent />
       <div className="bg-white w-full p-2 overflow-auto max-h-screen">
         <div className="bg-white">
           <div className="flex">

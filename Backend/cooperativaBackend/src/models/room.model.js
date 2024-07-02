@@ -27,20 +27,28 @@ export const Id = z.object({
     })
 });
 
-export const Year = z.object({
-    roomYear: z.string({
+export const usuId = z.object({
+    usuID: z.string({
+        required_error: "Se requiere una id de sala",
+    })
+});
+
+export const Date = z.object({
+    roomDate: z.string({
         required_error: "Se requiere un año",
     })
 });
 
-export const updateRoom = z.object({
-    roomDate: z.string({
-        required_error: "Se requiere una fecha",
-    }),
+export const updateRoomState = z.object({
     roomStatus: z.string({
         required_error: "Se requiere un estado",
     }),
-    usuID: z.string({
-        required_error: "Se requiere una id de usuario",
-    })
+})
+export const updateRoomName = z.object({
+    roomName: z.string({
+        required_error: "Se requiere un nombre",
+    }),
+    roomPassword: z.string({
+        required_error: "Se requiere una contraseña",
+    }),
 })
