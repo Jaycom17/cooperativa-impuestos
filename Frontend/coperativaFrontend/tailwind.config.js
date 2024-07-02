@@ -16,9 +16,16 @@ export default {
         'buttons':{
           DEFAULT:'#fff',
           'warning-yellow': '#ffd518',
-          'closing-red': '#FF4E4E'
+          'closing-red': '#FF4E4E',
+          'list-blue': '#628dce'
         }
-      }
+      },
+      keyframes:{
+        'spin-once': {to: {transform: 'rotate(90deg)'}}
+      },
+      animation:{
+        'spin-once': 'spin-once 0.2s linear'
+      },
     },
   },
   plugins: [],

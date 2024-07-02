@@ -92,3 +92,14 @@ export const deleteRoomByID = async (req, res) => {
 
     res.status(201).json(result);
 }
+
+export const valRoomPassword = async (req, res) => {
+    const { roomPassword } = req.body;
+    const result = await validateRoomPassword(roomPassword);
+
+    if (!result) {
+        return res.status(500).json({ error: 'No se pudo validar la contraseña de la sala' });
+    }
+
+    res.status(201).json(result);
+}

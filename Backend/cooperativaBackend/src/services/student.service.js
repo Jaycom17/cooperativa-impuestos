@@ -1,4 +1,3 @@
-import { encrypt, compare } from "./encrypt.service.js";
 import prisma from "../config/prisma.js";
 import { v4 as uuidv4 } from 'uuid';
 
@@ -104,3 +103,4 @@ export const removeStudent = async (stuID) => {
         return false;
     }
 }
+

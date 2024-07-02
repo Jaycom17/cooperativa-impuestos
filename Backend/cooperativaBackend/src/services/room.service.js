@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const createRoom = async (room) => {
     try {
-
         const usuResult = await prisma.user.findUnique({ where: { usuID: room.usuID } });
         if (!usuResult) {
             return false;
@@ -20,7 +19,7 @@ export const createRoom = async (room) => {
                 usuID: room.usuID
             }
         });
-        console.log(result);
+
         return true;
     } catch (error) {
         console.error(error);
@@ -190,5 +189,22 @@ export const removeRoomByID = async (roomID) => {
     } catch (error) {
         console.error(error);
         return false;
+    }
+}
+
+export const validateRoomPassword = async (password) => {
+    try {
+        const result = await prisma.room.findUnique({
+            select: {
+                roomID: true
+            },
+            where: {
+                roomPassword: password
+            }
+        });
+        return result;
+    } catch (error) {
+        console.error(error.ConnectorError);
+        return { message: "Error al validar contraseña" };
     }
 }

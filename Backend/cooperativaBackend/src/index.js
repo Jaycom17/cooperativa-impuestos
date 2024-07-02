@@ -9,11 +9,16 @@ import form110Router from './routes/form110.routes.js';
 import ingFactRouter from './routes/ingFact.routes.js';
 import loginRouter from './routes/login.routes.js';
 import cookieParse from 'cookie-parser';
+import cors from 'cors';
 
 const app = express();
 
 app.use(express.json());
 app.use(cookieParse());
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+}));
 
 app.use('/user', userRouter);
 app.use('/room', roomRouter);
@@ -24,6 +29,7 @@ app.use('/detalleRenglones', detalleRenglonesRouter);
 app.use('/form110', form110Router);
 app.use('/ingFact', ingFactRouter);
 app.use('/login', loginRouter);
+app.use('/room', roomRouter);
 
 app.listen(3000, () => {
     console.log('Server started on http://localhost:3000');

@@ -12,6 +12,5 @@ userRouter.get('/admin', getAdmins);
 userRouter.get('/professor', getProfessors);
 userRouter.get('/:usuId', validateId, getUser);
 userRouter.delete('/:usuId', validateId, deleteUser);
-//userRouter.post('/login', validateLogin, login);
 
 export default userRouter;

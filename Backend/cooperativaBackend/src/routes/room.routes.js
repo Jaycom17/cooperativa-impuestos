@@ -8,9 +8,9 @@ roomRouter.get('/info', (req, res) => {
     res.send('Hello from room info');
 });
 
-roomRouter.get('/info/:id', (req, res) => {
-    res.send('Hello from room info id');
-});
+// roomRouter.get('/info/:id', (req, res) => {
+//     res.send('Hello from room info id');
+// });
 
 roomRouter.post('/', validateRoom, postRoom);
 roomRouter.get('/:roomID', validateIdParams, getRoom);

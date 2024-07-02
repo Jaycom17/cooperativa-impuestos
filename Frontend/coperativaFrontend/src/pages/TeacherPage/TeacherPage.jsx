@@ -1,13 +1,11 @@
-import React from 'react';
-import Sala from '../../components/Sala/Sala';
+import Room from '../../components/Room/Room';
 import TeacherNavbar from '../../components/TeacherNavBar/TeacherNavbar';
-import './TeacherPage.css';
 
 const TeacherPage = () => {
   const Salas = [
     { id: 1, nombre: 'Sala 1',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
     { id: 2, nombre: 'Sala 2',codigo: "123",fecha: '2021-09-30' ,estado: 'Inactivo' },
-    { id: 3, nombre: 'Sala 3',codigo: "123",fecha: '2021-09-30' ,estado: 'Desconocido' },
+    { id: 3, nombre: 'Sala 3',codigo: "123",fecha: '2021-09-30' ,estado: 'Activo' },
     // ...otros items
   ];
 
@@ -37,16 +35,17 @@ const TeacherPage = () => {
   };
 
   return (
-    <div className="app-container">
+    <div className="flex flex-col justify-center items-center h-full w-screen bg-[#1f324e]
+      ">
       <TeacherNavbar
         onCerrarSesion={handleCerrarSesion}
         onCrearSala={handleCrearProfesor}
         onActualizarDatos={handleActualizarDatos}
       />
-      <ul className="lista-items">
+      <ul className="w-screen pr-16 pl-16">
         {Salas.map((Salas) => (
           <li key={Salas.id}>
-            <Sala
+            <Room
               nombre={Salas.nombre}
               codigo={Salas.codigo}
               fecha={Salas.fecha}
