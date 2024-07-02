@@ -1,9 +1,11 @@
+import { response } from "express";
 import {
   createUser,
   obtainProfessors,
   obtainAdmins,
   removeUser,
-  updateUser
+  updateUser,
+  obtainUser
 } from "../services/user.service.js";
 
 export const postProfessor = async (req, res) => {
@@ -16,19 +18,6 @@ export const postProfessor = async (req, res) => {
   }
 
   res.status(200).json(result);
-};
-
-
-export const postProfessor = async (req, res) => {
-  const newUser = req.body;
-
-  const result = await createUser({...newUser, usuRole: "profesor"});
-
-  if (!result) {
-    return res.status(500).json({ error: "No se pudo crear el usuario" });
-  }
-
-  res.status(200).json(newUser);
 };
 
 export const postAdmin = async (req, res) => {
@@ -63,18 +52,11 @@ export const getAdmins = async (req, res) => {
   res.status(200).json(result);
 }
 
-
-export const getAdmins = async (req, res) => {
-  const result = await obtainAdmins();
-
-  res.status(200).json(result);
-}
-
 export const putProfessor = async (req, res) => {
   const { usuId } = req.params;
-  const { usuName, usuEmail } = req.body;
+  const { usuName, usuEmail, usuPassword } = req.body;
 
-  const user = { usuId, usuName, usuEmail, usuRole: "profesor" };
+  const user = { usuId, usuName, usuEmail,usuPassword , usuRole: "profesor" };
 
   const result = await updateUser(user);
 
@@ -82,14 +64,15 @@ export const putProfessor = async (req, res) => {
     return res.status(500).json({ error: 'No se pudo actualizar el usuario' });
   }
 
+  console.log(result)
   res.status(200).json(result);
 };
 
 export const putAdmin = async (req, res) => {
   const { usuId } = req.params;
-  const { usuName, usuEmail } = req.body;
+  const { usuName, usuEmail, usuPassword } = req.body;
 
-  const user = { usuId, usuName, usuEmail, usuRole: "admin" };
+  const user = { usuId, usuName, usuEmail,usuPassword , usuRole: "admin" };
 
   const result = await updateUser(user);
 

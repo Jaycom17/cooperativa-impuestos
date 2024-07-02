@@ -92,7 +92,7 @@ function MiddlewareStudent() {
       )}
 
       {firstTime === OPTIONS.NO && (
-        <div className={`flex flex-col items-center ${animationClass}`}>
+        <div className={`flex flex-col items-center p-3 ${animationClass}`}>
           <h2 className="font-semibold text-3xl">
             Bienvenido a la sala
           </h2>
@@ -118,7 +118,7 @@ function MiddlewareStudent() {
       )}
 
       {firstTime === OPTIONS.SI && (
-        <div className={`flex flex-col items-center ${animationClass}`}>
+        <div className={`flex flex-col items-center p-3 ${animationClass}`}>
         <h2 className="font-semibold text-3xl">
           Bienvenido a la sala
         </h2>
@@ -139,7 +139,7 @@ function MiddlewareStudent() {
           <div className="w-full">
             <button onClick={() => handleSetFirstTime(OPTIONS.NOTHING)} className="flex items-center text-start bg-unicoop-blue w-20 py-1 rounded-lg text-unicoop hover:bg-buttons-list-blue font-semibold"><IoCaretBackSharp className="text-sm mt-1 ml-2 mr-1"/> Atrás</button>
           </div>  
-          <p className="mt-3"><span className="font-bold">Recomendación:</span> Anota este nombre para futuros ingresos a esta sala ;)</p>
+          <p className="mt-3 text-center"><span className="font-bold">Recomendación:</span> Anota este nombre para futuros ingresos a esta sala ;)</p>
       </div>
       )}
     </div>
