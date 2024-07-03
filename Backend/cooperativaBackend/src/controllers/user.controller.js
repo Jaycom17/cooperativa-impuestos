@@ -3,7 +3,8 @@ import {
   obtainProfessors,
   obtainAdmins,
   removeUser,
-  updateUser
+  updateUser,
+  obtainUser
 } from "../services/user.service.js";
 
 export const postProfessor = async (req, res) => {
@@ -17,7 +18,6 @@ export const postProfessor = async (req, res) => {
 
   res.status(200).json(result);
 };
-
 
 export const postAdmin = async (req, res) => {
   const newUser = req.body;
@@ -53,9 +53,9 @@ export const getAdmins = async (req, res) => {
 
 export const putProfessor = async (req, res) => {
   const { usuID } = req.params;
-  const { usuName, usuEmail } = req.body;
+  const { usuName, usuEmail, usuPassword } = req.body;
 
-  const user = { usuID, usuName, usuEmail, usuRole: "profesor" };
+  const user = { usuID, usuName, usuEmail, usuPassword , usuRole: "profesor" };
 
   const result = await updateUser(user);
 
@@ -63,14 +63,15 @@ export const putProfessor = async (req, res) => {
     return res.status(500).json({ error: 'No se pudo actualizar el usuario' });
   }
 
+  console.log(result)
   res.status(200).json(result);
 };
 
 export const putAdmin = async (req, res) => {
   const { usuID } = req.params;
-  const { usuName, usuEmail } = req.body;
+  const { usuName, usuEmail, usuPassword } = req.body;
 
-  const user = { usuID, usuName, usuEmail, usuRole: "admin" };
+  const user = { usuID, usuName, usuEmail, usuPassword , usuRole: "admin" };
 
   const result = await updateUser(user);
 

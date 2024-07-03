@@ -93,7 +93,7 @@ function MiddlewareStudent() {
       )}
 
       {firstTime === OPTIONS.NO && (
-        <div className={`flex flex-col items-center ${animationClass}`}>
+        <div className={`flex flex-col items-center p-3 ${animationClass}`}>
           <h2 className="font-semibold text-3xl">Bienvenido a la sala</h2>
           <p className="text-center mt-3">
             A continuación, escribe el nombre con el cual ingresaste previamente
@@ -103,11 +103,6 @@ function MiddlewareStudent() {
             className="flex flex-col w-full items-center gap-2"
             onSubmit={handleSubmit(onSubmitSaved)}
           >
-            {studentError && (
-              <p className="text-[red] text-sm bg-transparent">
-                {studentError}
-              </p>
-            )}
             <input
               type="text"
               className="w-1/2 p-2 rounded-md border border-gray-300 mt-3 text-black"
@@ -138,7 +133,7 @@ function MiddlewareStudent() {
       )}
 
       {firstTime === OPTIONS.SI && (
-        <div className={`flex flex-col items-center ${animationClass}`}>
+        <div className={`flex flex-col items-center p-3 ${animationClass}`}>
           <h2 className="font-semibold text-3xl">Bienvenido a la sala</h2>
           <p className="text-center mt-3">
             A continuación escribe el nombre con el cual deseas registrarte en
@@ -178,7 +173,7 @@ function MiddlewareStudent() {
               <IoCaretBackSharp className="text-sm mt-1 ml-2 mr-1" /> Atrás
             </button>
           </div>
-          <p className="mt-3">
+          <p className="mt-3 text-center">
             <span className="font-bold">Recomendación:</span> Anota este nombre
             para futuros ingresos a esta sala ;)
           </p>
