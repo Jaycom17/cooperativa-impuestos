@@ -5,6 +5,7 @@ import {
   removeStudent,
   updateStudent,
   studentByName,
+  obtainStudentByRoom
 } from "../services/student.service.js";
 
 export const postStudent = async (req, res) => {
@@ -14,7 +15,7 @@ export const postStudent = async (req, res) => {
   const result = await createStudent(student);
 
   if (!result.token) {
-    return res.status(500).json({ message: "Error al crear usuario" });
+    return res.status(500).json(result);
   }
 
   res.cookie("token", result.token, {
@@ -79,3 +80,14 @@ export const searchStudentByName = async (req, res) => {
 
   res.status(201).json({ stuID: result.stuID, roomID: result.roomID });
 };
+
+export const getStudentByRoom = async (req, res) => {
+  const { roomID } = req.params;
+  const result = await obtainStudentByRoom(roomID);
+
+  if(result.message) {
+    return res.status(500).json(result);
+  }
+
+  res.status(201).json(result);
+}

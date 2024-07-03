@@ -10,7 +10,7 @@ const CreateRoom = () =>{
 
     return(
         <>
-            <TeacherNavbar professorName={user.usuName} />
+            <TeacherNavbar/>
             <main className="w-full min-h-screen bg-background flex justify-center items-center flex-col">
                 <article className="px-5 md:px-32 lg:px-60 xl:px-80 mb-5 text-center text-unicoop">
                 <h1 className="font-bold text-4xl mb-3">CREAR SALA</h1>
