@@ -13,20 +13,6 @@ export const validateAuth = async (req, res, next) => {
 
             req.body.user = user;
 
-            //TODO: revisar si esto funciona bien
-
-            if (req.originalUrl === '/login/logout' || req.originalUrl === '/login/profile') return next();
-
-            const auxToken = createAccessToken(user.usuID);
-
-            res.cookie('token', auxToken, {
-                httpOnly: true,
-                secure: true,
-                sameSite: 'none'
-            });
-
-            //END TODO
-
             next();
         });
     } catch (error) {

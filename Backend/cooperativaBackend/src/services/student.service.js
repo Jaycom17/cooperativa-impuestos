@@ -1,6 +1,7 @@
 import prisma from "../config/prisma.js";
 import { v4 as uuidv4 } from "uuid";
 import { createAccessTokenStudent } from "./jwt.service.js";
+import { createReport } from "./report.service.js";
 
 export const createStudent = async (student) => {
   try {
@@ -36,6 +37,8 @@ export const createStudent = async (student) => {
     if (!result) {
       return { message: "Error al crear el estudiante" };
     }
+
+    await createReport(result.stuID, result.roomID);
 
     const token = await createAccessTokenStudent({
       stuID: result.stuID,

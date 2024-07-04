@@ -18,63 +18,63 @@ export const createReport = async (stuID, roomID) => {
         await prisma.formactivosfijos.create({
             data: {
                 actID: formsID.formActivosFijos,
-                actContent: {}
+                actContent: "{}"
             }
         });
 
         await prisma.formcaratula.create({
             data: {
                 carID: formsID.formCaratula,
-                carContent: {}
+                carContent: "{}"
             }
         });
 
         await prisma.formdetallerenglones.create({
             data: {
                 detID: formsID.formDetalleReglones,
-                detContent: {}
+                detContent: "{}"
             }
         });
 
         await prisma.formesfpatrimonio.create({
             data: {
                 esfID: formsID.formEsfPatrimonio,
-                esfContent: {}
+                esfContent: "{}"
             }
         });
 
         await prisma.formimpuestodiferido.create({
             data: {
                 impID: formsID.formImpuestoDiferido,
-                impContent: {}
+                impContent: "{}"
             }
         });
 
         await prisma.formingresosfancturacion.create({
             data: {
                 ingID: formsID.formIngresosFacturacion,
-                ingContent: {}
+                ingContent: "{}"
             }
         });
 
         await prisma.formr110.create({
             data: {
-                form110ID: formsID.form110,
-                form110Content: {}
+                r110ID: formsID.form110,
+                r110Content: "{}"
             }
         });
 
         await prisma.formrentaliquida.create({
             data: {
-                rentID: formsID.formRentaLiquida,
-                rentContent: {}
+                renID: formsID.formRentaLiquida,
+                renContent: "{}"
             }
         });
 
         await prisma.formresumenesferi.create({
             data: {
                 resID: formsID.formResumen,
-                resContent: {}
+                resContent: "{}"
             }
         });
 
@@ -91,7 +91,7 @@ export const createReport = async (stuID, roomID) => {
                 ingID: formsID.formIngresosFacturacion,
                 actID: formsID.formActivosFijos,
                 resID: formsID.formResumen,
-                form110ID: formsID.form110
+                r110ID: formsID.form110
             }
         });
     }catch(error){
