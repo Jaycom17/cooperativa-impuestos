@@ -510,7 +510,10 @@
         "ValorContable": 0,
         "EfectoConversion": 0,
         "MenorValorFiscal": 0,
-        "PropiedadesPlantaEquipo": {
+        "MayorValorFiscal": 0,
+        "ValorFiscal": 0
+      },
+      "PropiedadesPlantaEquipo": {
           "Terrenos": {
             "ValorContable": 0,
             "EfectoConversion": 0,
@@ -599,8 +602,8 @@
             "MayorValorFiscal": 0,
             "ValorFiscal": 0
           }
-        },
-        "ActivosIntangibles": {
+      },
+      "ActivosIntangibles": {
           "ActivosIntangiblesDistintosPlusvalia": {
             "AcuerdosConcesionActivoIntangible": {
               "ValorContable": 0,
@@ -774,8 +777,8 @@
             "MayorValorFiscal": 0,
             "ValorFiscal": 0
           }
-        },
-        "PropiedadesInversion": {
+      },
+      "PropiedadesInversion": {
           "TerrenoEdificios": {
             "AlCosto": {
               "ValorContable": 0,
@@ -813,8 +816,8 @@
             "MayorValorFiscal": 0,
             "ValorFiscal": 0
           }
-        },
-        "ActivosNoCorrientes": {
+      },
+      "ActivosNoCorrientes": {
           "MantenidosParaVenta": {
             "ValorContable": 0,
             "EfectoConversion": 0,
@@ -844,139 +847,104 @@
             "ValorFiscal": 0
           },
           "Total": {}
+      },
+      "ActivosBiologicos": {
+        "AnimalesVivos": {
+          "AnimalesProductoresMedidosAlCosto": {
+            "ValorContable": 0,
+            "EfectoConversion": 0,
+            "MenorValorFiscal": 0,
+            "MayorValorFiscal": 0,
+            "ValorFiscal": 0
+          },
+          "DepreciacionAcumuladaDeAnimalesProductoresMedidosAlCosto": {
+            "ValorContable": 0,
+            "EfectoConversion": 0,
+            "MenorValorFiscal": 0,
+            "MayorValorFiscal": 0,
+            "ValorFiscal": 0
+          },
+          "DeterioroAcumuladoDeAnimalesProductoresMedidosAlCosto": {
+            "ValorContable": 0,
+            "EfectoConversion": 0,
+            "MenorValorFiscal": 0,
+            "MayorValorFiscal": 0,
+            "ValorFiscal": 0
+          },
+          "AnimalesProductoresMedidosAlValorRazonableMenosCostosDeVenta": {
+            "ValorContable": 0,
+            "EfectoConversion": 0,
+            "MenorValorFiscal": 0,
+            "MayorValorFiscal": 0,
+            "ValorFiscal": 0
+          },
+          "AnimalesConsumiblesMedidosAlCosto": {
+            "ValorContable": 0,
+            "EfectoConversion": 0,
+            "MenorValorFiscal": 0,
+            "MayorValorFiscal": 0,
+            "ValorFiscal": 0
+          },
+          "DeterioroAcumuladoAnimalesConsumiblesMedidosAlCosto": {
+            "ValorContable": 0,
+            "EfectoConversion": 0,
+            "MenorValorFiscal": 0,
+            "MayorValorFiscal": 0,
+            "ValorFiscal": 0
+          },
+          "AnimalesConsumiblesMedidosAlValorRazonableMenosCostosDeVenta": {
+            "ValorContable": 0,
+            "EfectoConversion": 0,
+            "MenorValorFiscal": 0,
+            "MayorValorFiscal": 0,
+            "ValorFiscal": 0
+          },
+          "Total": {}
         },
-        "ActivosBiologicos": {
-          "AnimalesVivos": {
-            "AnimalesProductoresMedidosAlCosto": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
-            },
-            "DepreciacionAcumuladaDeAnimalesProductoresMedidosAlCosto": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
-            },
-            "DeterioroAcumuladoDeAnimalesProductoresMedidosAlCosto": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
-            },
-            "AnimalesProductoresMedidosAlValorRazonableMenosCostosDeVenta": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
-            },
-            "AnimalesConsumiblesMedidosAlCosto": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
-            },
-            "DeterioroAcumuladoAnimalesConsumiblesMedidosAlCosto": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
-            },
-            "AnimalesConsumiblesMedidosAlValorRazonableMenosCostosDeVenta": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
-            },
-            "Total": {}
-          },
-          "PlantasProductorasCultivosConsumibles": {
-            "PlantasProductorasMedidasAlCosto": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
-            },
-            "DepreciacionAcumuladaDePlantasProductoras": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
-            },
-            "DeterioroAcumuladoDePlantasProductoras": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
-            },
-            "PlantasProductorasMedidasAlValorRazonable": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
-            },
-            "CultivosConsumiblesMedidosAlCosto": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
-            },
-            "DeterioroAcumuladoCultivosConsumiblesMedidosAlCosto": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
-            },
-            "CultivosConsumiblesMedidosAlValorRazonableMenosCostosDeVenta": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
-            }
-          },
-          "Total": {
-            "ValorContable": 0,
-            "EfectoConversion": 0,
-            "MenorValorFiscal": 0,
-            "MayorValorFiscal": 0,
-            "ValorFiscal": 0
-          }
-        },
-        "OtrosActivos": {
-          "ActivosPlanBeneficiosEmpleados": {
+        "PlantasProductorasCultivosConsumibles": {
+          "PlantasProductorasMedidasAlCosto": {
             "ValorContable": 0,
             "EfectoConversion": 0,
             "MenorValorFiscal": 0,
             "MayorValorFiscal": 0,
             "ValorFiscal": 0
           },
-          "OtrosActivos": {
+          "DepreciacionAcumuladaDePlantasProductoras": {
             "ValorContable": 0,
             "EfectoConversion": 0,
             "MenorValorFiscal": 0,
             "MayorValorFiscal": 0,
             "ValorFiscal": 0
           },
-          "ActivosReconocidosSolamenteFinesFiscales": {
+          "DeterioroAcumuladoDePlantasProductoras": {
+            "ValorContable": 0,
+            "EfectoConversion": 0,
+            "MenorValorFiscal": 0,
             "MayorValorFiscal": 0,
             "ValorFiscal": 0
           },
-          "Total": {
+          "PlantasProductorasMedidasAlValorRazonable": {
+            "ValorContable": 0,
+            "EfectoConversion": 0,
+            "MenorValorFiscal": 0,
+            "MayorValorFiscal": 0,
+            "ValorFiscal": 0
+          },
+          "CultivosConsumiblesMedidosAlCosto": {
+            "ValorContable": 0,
+            "EfectoConversion": 0,
+            "MenorValorFiscal": 0,
+            "MayorValorFiscal": 0,
+            "ValorFiscal": 0
+          },
+          "DeterioroAcumuladoCultivosConsumiblesMedidosAlCosto": {
+            "ValorContable": 0,
+            "EfectoConversion": 0,
+            "MenorValorFiscal": 0,
+            "MayorValorFiscal": 0,
+            "ValorFiscal": 0
+          },
+          "CultivosConsumiblesMedidosAlValorRazonableMenosCostosDeVenta": {
             "ValorContable": 0,
             "EfectoConversion": 0,
             "MenorValorFiscal": 0,
@@ -992,7 +960,42 @@
           "ValorFiscal": 0
         }
       },
-      "Pasivos": {
+      "OtrosActivos": {
+        "ActivosPlanBeneficiosEmpleados": {
+          "ValorContable": 0,
+          "EfectoConversion": 0,
+          "MenorValorFiscal": 0,
+          "MayorValorFiscal": 0,
+          "ValorFiscal": 0
+        },
+        "OtrosActivos": {
+          "ValorContable": 0,
+          "EfectoConversion": 0,
+          "MenorValorFiscal": 0,
+          "MayorValorFiscal": 0,
+          "ValorFiscal": 0
+        },
+        "ActivosReconocidosSolamenteFinesFiscales": {
+          "MayorValorFiscal": 0,
+          "ValorFiscal": 0
+        },
+        "Total": {
+          "ValorContable": 0,
+          "EfectoConversion": 0,
+          "MenorValorFiscal": 0,
+          "MayorValorFiscal": 0,
+          "ValorFiscal": 0
+        }
+      },
+      "Total": {
+        "ValorContable": 0,
+        "EfectoConversion": 0,
+        "MenorValorFiscal": 0,
+        "MayorValorFiscal": 0,
+        "ValorFiscal": 0
+      }
+    },
+    "Pasivos": {
         "ObligacionesFinancierasCuentasPorPagar": {
           "ObligacionesFinancierasEnMonedaLocal": {
             "ValorContable": 0,
@@ -1403,14 +1406,6 @@
           "ValorFiscal": 0
         }
       },
-      "Total": {
-        "ValorContable": 0,
-        "EfectoConversion": 0,
-        "MenorValorFiscal": 0,
-        "MayorValorFiscal": 0,
-        "ValorFiscal": 0
-      }
-    },
     "PatrimonioContable": {
       "CapitalSocialReservas": {
         "CapitalPagado": {
