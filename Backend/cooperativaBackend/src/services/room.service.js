@@ -1,4 +1,3 @@
-import { encrypt, compare } from "./encrypt.service.js";
 import prisma from "../config/prisma.js";
 import { v4 as uuidv4 } from 'uuid';
 
@@ -84,7 +83,6 @@ export const updateRoom = async (room) => {
 
 export const updateRoomName = async (room) => {
     try {
-        const encryptedPassword = await encrypt(room.roomPassword);
 
         const result = await prisma.room.update({
             where: {
@@ -92,7 +90,7 @@ export const updateRoomName = async (room) => {
             },
             data: {
                 roomName: room.roomName,
-                roomPassword: encryptedPassword
+                roomPassword: room.roomPassword
             }
         });
         return result;
@@ -196,15 +194,26 @@ export const validateRoomPassword = async (password) => {
     try {
         const result = await prisma.room.findUnique({
             select: {
-                roomID: true
+                roomID: true,
+                roomPassword: true,
+                roomStatus: true
             },
             where: {
                 roomPassword: password
             }
         });
-        return result;
+
+        if (!result) {
+            return { message: "Contraseña incorrecta" };
+        }
+
+        if (result.roomStatus === "closed") {
+            return { message: "La sala se encuentra cerrada" };
+        }
+
+        return { roomID: result.roomID, roomPassword: result.roomPassword };
     } catch (error) {
-        console.error(error.ConnectorError);
+        console.error(error);
         return { message: "Error al validar contraseña" };
     }
 }

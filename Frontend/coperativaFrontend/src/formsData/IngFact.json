@@ -1,0 +1,106 @@
+{
+  "VentBien":{
+    "PasivIngrDif":{
+      "SaldoIniPer": 1,
+      "IngrContPer": 1,
+      "GenPer": 1,
+      "TotPasivDif": 1
+    },
+    "FactEmitPer":{
+      "DevIngrPerAnt": 1,
+      "DevIngrPerAct": 1,
+      "RegIngDif": 1,
+      "SoloFact": 1,
+      "TotFactEmiPEr": 1
+    },
+    "IngrContDevPer":{
+      "SinFact": 1,
+      "FactPerAnt": 1,
+      "TotalIngrContDevPer":1
+    }
+  },
+  "PrestServ":{
+    "PasivIngrDif":{
+      "SaldoIniPer": 1,
+      "IngrContPer": 1,
+      "GenPer": 1,
+      "TotPasivDif": 1
+    },
+    "FactEmitPer":{
+      "DevIngrPerAnt": 1,
+      "DevIngrPerAct": 1,
+      "RegIngDif": 1,
+      "SoloFact": 1,
+      "TotFactEmiPEr": 1
+    },
+    "IngrContDevPer":{
+      "SinFact": 1,
+      "FactPerAnt": 1,
+      "TotalIngrContDevPer":1
+    }
+  },
+  "OtrosIngresos":{
+    "PasivIngrDif":{
+      "SaldoIniPer": 1,
+      "IngrContPer": 1,
+      "GenPer": 1,
+      "TotPasivDif": 1
+    },
+    "FactEmitPer":{
+      "DevIngrPerAnt": 1,
+      "DevIngrPerAct": 1,
+      "RegIngDif": 1,
+      "SoloFact": 1,
+      "TotFactEmiPEr": 1
+    },
+    "IngrContDevPer":{
+      "SinFact": 1,
+      "FactPerAnt": 1,
+      "TotalIngrContDevPer":1
+    }
+  },
+  "IngresosTer":{
+    "FactEmitPer":{
+      "DevIngrPerAnt": 1,
+      "DevIngrPerAct": 1,
+      "RegIngDif": 1,
+      "SoloFact": 1,
+      "TotFactEmiPEr": 1
+    },
+    "IngrContDevPer":{
+      "TotalIngrContDevPer":1
+    }
+  },
+  "AjustesValAdec":{
+    "FactEmitPer":{
+      "DevIngrPerAnt": 1,
+      "DevIngrPerAct": 1,
+      "RegIngDif": 1,
+      "SoloFact": 1,
+      "TotFactEmiPEr": 1
+    },
+    "IngrContDevPer":{
+      "TotalIngrContDevPer":1
+    }
+  },
+  "Totales":{
+    "PasivIngrDif":{
+      "SaldoIniPer": 1,
+      "IngrContPer": 1,
+      "GenPer": 1,
+      "TotPasivDif": 1
+    },
+    "FactEmitPer":{
+      "DevIngrPerAnt": 1,
+      "DevIngrPerAct": 1,
+      "RegIngDif": 1,
+      "SoloFact": 1,
+      "TotFactEmiPEr": 1
+    },
+    "IngrContDevPer":{
+      "SinFact": 1,
+      "FactPerAnt": 1,
+      "TotalIngrContDevPer":1
+    }
+  }
+}
