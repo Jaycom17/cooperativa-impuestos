@@ -7,8 +7,8 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const TeacherPage = () => {
   const [rooms, setRooms] = useState([]);
-  const [isDateAscending, setIsDateAscending] = useState(true);
-  const [isNameAscending, setIsNameAscending] = useState(true);
+  const [isDateAscending, setIsDateAscending] = useState(false);
+  const [isNameAscending, setIsNameAscending] = useState(false);
 
   const dateInfo = 'La fecha se encuentra en formato: - Día / Mes / Año'
 
@@ -16,7 +16,8 @@ const TeacherPage = () => {
     getRooms()
       .then((response) => {
         if (response.status === 201) {
-          setRooms(response.data);
+          const sortedRooms = response.data.sort((a, b) => a.roomName.localeCompare(b.roomName))
+          setRooms(sortedRooms);
         }
       })
       .catch(() => {
