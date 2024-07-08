@@ -36,15 +36,15 @@ const AsideStudent = () => {
   };
 
   const forms = [
-    { label: "Formulario 110", to: "/" },
-    { label: "Detalle reglones 110", to: "/" },
-    { label: "Caratula", to: "/" },
+    { label: "Formulario 110", to: "/student" },
+    { label: "Detalle reglones 110", to: "/student" },
+    { label: "Caratula", to: "/student" },
     { label: "ESF patrimonio", to: "/esfpatrimonioform" },
-    { label: "Renta liquida", to: "/" },
-    { label: "Impuesto diferido", to: "/" },
-    { label: "Ingresos y facturación", to: "/" },
+    { label: "Renta liquida", to: "/student" },
+    { label: "Impuesto diferido", to: "/student" },
+    { label: "Ingresos y facturación", to: "/student" },
     { label: "Activos fijos", to: "/activosfijos" },
-    { label: "Resumen ESF ERI", to: "/" },
+    { label: "Resumen ESF ERI", to: "/student" },
   ];
 
   return (
