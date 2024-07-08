@@ -1,4 +1,5 @@
 import { MdCancel } from "react-icons/md";
+import PropTypes from "prop-types";
 
 const FloatingContainer = ({open, setOpen, children}) =>{
   return(
@@ -14,3 +15,9 @@ const FloatingContainer = ({open, setOpen, children}) =>{
 }
 
 export default FloatingContainer;
+
+FloatingContainer.propTypes = {
+  open: PropTypes.string.isRequired,
+  setOpen: PropTypes.func.isRequired,
+  children: PropTypes.node
+}

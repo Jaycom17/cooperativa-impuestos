@@ -73,7 +73,7 @@ const ESFpatrimonio = () => {
   return (
     <div className="flex bg-gray-100 rounded shadow-md">
       <AsideStudent />
-      <div className="bg-white w-full p-2 overflow-auto max-h-screen">
+      <div className="bg-white w-full p-2 mt-12 md:mt-0 overflow-auto max-h-screen">
         <div className="bg-white">
           <div className="flex">
             <button

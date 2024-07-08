@@ -20,7 +20,7 @@ const MainStudent = () => {
       <AsideStudent />
       <div className="flex flex-col w-full overflow-auto max-h-screen h-screen items-center p-2 md:p-6 lg:p-10 md:mt-0 mt-12">
         <img className="w-[300px] md:w-[400px] rounded-[20%]" src="https://fernandocolmenares.co/wp-content/uploads/2020/08/U.CooperativaCol.png" alt="Logo universidad cooperativa" />
-        <h2 className="text-2xl font-semibold pb-8 text-center">Seleccione el formulario que desea diligenciar</h2>
+        <h2 className="text-2xl font-semibold pb-8 text-center">Selecciona el formulario que desea diligenciar</h2>
         <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6 lg:gap-10">
           {forms.map((form, index) => (
             <FormItem key={index} name={form.label} to={form.to} />
