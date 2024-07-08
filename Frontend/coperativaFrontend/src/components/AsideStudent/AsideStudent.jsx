@@ -38,11 +38,11 @@ const AsideStudent = () => {
   const forms = [
     { label: "Formulario 110", to: "/" },
     { label: "Detalle reglones 110", to: "/" },
-    { label: "Caratula", to: "/" },
+    { label: "Caratula", to: "/caratulaform" },
     { label: "ESF patrimonio", to: "/esfpatrimonioform" },
     { label: "Renta liquida", to: "/" },
     { label: "Impuesto diferido", to: "/" },
-    { label: "Ingresos y facturación", to: "/" },
+    { label: "Ingresos y facturación", to: "/ingrefactform" },
     { label: "Activos fijos", to: "/" },
     { label: "Resumen ESF ERI", to: "/" },
   ];
@@ -50,11 +50,10 @@ const AsideStudent = () => {
   return (
     <section className="absolute md:relative">
       <div
-        className="flex md:hidden cursor-pointer items-center text-unicoop rounded-br-lg h-12 w-28 bg-primary hover:bg-unicoop-slate-blue duration-200"
+        className="flex md:hidden cursor-pointer items-center text-unicoop rounded-br-lg h-12 px-2 bg-primary hover:bg-unicoop-slate-blue duration-200"
         onClick={handleMenuOpen}
       >
-        <MdMenu className="text-2xl" />
-        <h1 className="text-sm font-medium">MENÚ</h1>
+        <MdMenu className="text-2xl"/>
       </div>
       <aside
         className={`fixed md:relative top-0 min-h-screen h-full w-[200px] bg-primary md:translate-x-0 transition-transform duration-150 ${

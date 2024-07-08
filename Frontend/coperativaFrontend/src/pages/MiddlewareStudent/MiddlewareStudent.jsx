@@ -103,6 +103,11 @@ function MiddlewareStudent() {
             className="flex flex-col w-full items-center gap-2"
             onSubmit={handleSubmit(onSubmitSaved)}
           >
+            {studentError && (
+              <p className="text-[red] text-sm bg-transparent">
+                {studentError}
+              </p>
+            )}
             <input
               type="text"
               className="w-1/2 p-2 rounded-md border border-gray-300 mt-3 text-black"

@@ -138,7 +138,7 @@ export const studentByName = async (stuName, roomID) => {
     });
 
     if (result.length === 0) {
-      return { message: "No se encontraron estudiantes" };
+      return { message: "No se encontró al estudiante" };
     }
 
     if (result.length > 1) {

@@ -9,7 +9,8 @@ import ESFpatrimonioForm from "../pages/ESFpatrimonio/Form/ESFpatrimonioForm";
 import CreateProfessor from "../pages/CreateProfessor/CreateProfessor";
 import MiddlewareStudent from "../pages/MiddlewareStudent/MiddlewareStudent";
 import RoomReport from "../pages/RoomReport/RoomReport";
-import RoomStudentReport from "../pages/RoomStudentReport/RoomStudentReport";
+import CaratulaForm from "../pages/Caratula/Form/Caratula";
+import IngresosFacturacionForm from "../pages/IngresosFacturacion/Form/IngresosFacturacionForm";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -50,15 +51,13 @@ function Router() {
                 <Route path="/professor" element={<TeacherPage />} />
                 <Route path="/createroom" element={<CreateRoom />} />
                 <Route path="/roomreport/:roomID" element={<RoomReport />} />
-                <Route
-                  path="/roomstudentreport/:roomID/:stuID"
-                  element={<RoomStudentReport />}
-                />
               </Route>
               <Route
                 path="/esfpatrimonioform"
                 element={<ESFpatrimonioForm />}
               />
+              <Route path="/caratulaform" element={<CaratulaForm />} />
+              <Route path="/ingrefactform" element={<IngresosFacturacionForm />}/>
             </Routes>
           </BrowserRouter>
         </StudentProvider>
