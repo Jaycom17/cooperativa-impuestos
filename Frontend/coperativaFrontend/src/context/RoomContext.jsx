@@ -50,7 +50,7 @@ export const RoomProvider = ({ children }) => {
             const res = await validateRoom(room);
 
             if (!res.data.roomID) {
-                setRoomError(res.data.message ||"Codigo de sala incorrecto")
+                setRoomError(res.data.message || "Codigo de sala incorrecto")
                 return
             }
 

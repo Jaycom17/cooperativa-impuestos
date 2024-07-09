@@ -52,8 +52,8 @@ const TeacherPage = () => {
       <TeacherNavbar/>
       <main className="flex flex-col items-center min-h-screen bg-background">
         {/**Aquí, en esta sección la idea sería poner los filtros (Barra de busqueda, ordenar por?) */}
-        <section className="w-11/12 mt-5">
-          <InfoBubble info={dateInfo}/>
+        <section className="w-11/12 mt-5 flex">
+          <InfoBubble className="w-10" info={dateInfo}/>
           <div className="flex justify-between w-full text-white">
             <button onClick={orderByDate}>Ordenar por fecha</button>
             <button onClick={orderByName}>Ordenar por nombre</button>

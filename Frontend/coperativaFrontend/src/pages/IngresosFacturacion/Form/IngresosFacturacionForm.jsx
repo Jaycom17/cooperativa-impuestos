@@ -6,6 +6,12 @@ import basicInformation from "../../../formsData/IngFact.json";
 function IngresosFacturacionForm() {
   const [data, setData] = useState(basicInformation);
 
+  const calculeteTotalPasivoImpDif = (currentData) => {
+    return currentData.SaldoIniPer - currentData.IngrContPer + currentData.GenPer;
+  }
+
+    
+
   const changeValue = (path, e) => {
     let { name, value } = e.target;
 
@@ -19,8 +25,32 @@ function IngresosFacturacionForm() {
       return acc[key];
     }, newData);
 
+    const categories = Object.keys(newData);
+    const totalCategories = categories.filter(cat => cat !== 'Totales');
+    const totals = {
+      PasivIngrDif: {},
+      FactEmitPer: {},
+      IngrContDevPer: {}
+    };
+  
+    totalCategories.forEach(cat => {
+      const category = newData[cat];
+  
+      Object.keys(category).forEach(subCat => {
+        Object.keys(category[subCat]).forEach(key => {
+          if (!totals[subCat][key]) {
+            totals[subCat][key] = 0;
+          }
+          totals[subCat][key] += category[subCat][key];
+        });
+      });
+    });
+
+    newData.VentBien.PasivIngrDif.TotPasivDif = calculeteTotalPasivoImpDif(newData.VentBien.PasivIngrDif)
+  
+    newData.Totales = totals;
+
     setData(newData);
-    console.log(data)
   };
 
   return (
