@@ -17,25 +17,21 @@ const ActivosFijos = () =>{
     ]
 
     const handleChange = (e, path) => {
-        console.log(data)
         let { name, value } = e.target;
         if (value === '') value = 0;
 
-        console.log(path, name);
         path = path.split(".");
-        console.log(path);
-
         const newData = { ...data };
         path.reduce((acc, key, index) => {
-          if (index === path.length - 1) {
-            acc[key][name] = Number.parseInt(value);
-          }
-          return acc[key];
+            if (index === path.length - 1) {
+                acc[key][name] = Number.parseInt(value);
+            }
+            return acc[key];
         }, newData);
-    
+
         console.log(newData)
         setData(newData);
-      };
+    };
 
     const [activeTab, setActiveTab] = useState(tabs[0].name)
 
@@ -66,6 +62,9 @@ const ActivosFijos = () =>{
                         </Accordeon>
                     </div>
                 )}
+                {activeTab === 'ANCMV' && (
+                    <ActivosFijosValues title={"ANCMV"} path={'ANCMV'} data={data.ANCMV} handleChange={handleChange} />
+                )}
                 {activeTab === 'AI' && (
                     <div>
                         <Accordeon title={"Marcas comerciales"}>
@@ -77,6 +76,11 @@ const ActivosFijos = () =>{
                 {activeTab === 'TOTALES' && (
                     <div>
                         <Accordeon title={"Total PPE, PI y ANCMV"}>
+                            <div>
+                                <Accordeon title={"Marcas comerciales"}>
+                                    <ActivosFijosValues title={"ANCMV"} path={'ANCMV'} data={data.ANCMV} handleChange={handleChange} />
+                                </Accordeon>   
+                            </div>
                         </Accordeon>    
                         <Accordeon title={"TOTAL PPE, PI, ANCMV e INTANGIBLES"}>
                         </Accordeon>

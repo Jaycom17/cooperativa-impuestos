@@ -1,23 +1,13 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import PropTypes from "prop-types";
 
 const Accordeon = ({title, children}) =>{
     const [open, setOpen] = useState(false);
-    const [height, setHeight] = useState("0px");
-    const contenidoRef = useRef(null);
 
     const handleOpen = () => {
         setOpen(!open);
     };
-
-    useEffect(() => {
-        if (open) {
-          setHeight(`${contenidoRef.current.scrollHeight}px`);
-        } else {
-          setHeight("0px");
-        }
-      }, [open]);
 
     return(
         <article className={`${open ? "mb-2": ""}`}>
@@ -25,7 +15,7 @@ const Accordeon = ({title, children}) =>{
                 <h2>{title}</h2>
                 <IoIosArrowDown className={`md:text-lg transition-all duration-300 ${open ? 'rotate-180':''}`}/>
             </button>
-            <div ref={contenidoRef} style={{height}} className="ml-3 overflow-hidden transition-height duration-300 ease-in-out">
+            <div className={`ml-3 overflow-hidden ${open ? 'max-h-full' : 'max-h-0'}`}>
                 {children}
             </div>
         </article>
