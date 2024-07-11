@@ -846,7 +846,13 @@
             "MayorValorFiscal": 0,
             "ValorFiscal": 0
           },
-          "Total": {}
+          "Total": {
+            "ValorContable": 0,
+            "EfectoConversion": 0,
+            "MenorValorFiscal": 0,
+            "MayorValorFiscal": 0,
+            "ValorFiscal": 0
+          }
       },
       "ActivosBiologicos": {
         "AnimalesVivos": {
@@ -899,7 +905,13 @@
             "MayorValorFiscal": 0,
             "ValorFiscal": 0
           },
-          "Total": {}
+          "Total": {
+            "ValorContable": 0,
+            "EfectoConversion": 0,
+            "MenorValorFiscal": 0,
+            "MayorValorFiscal": 0,
+            "ValorFiscal": 0
+          }
         },
         "PlantasProductorasCultivosConsumibles": {
           "PlantasProductorasMedidasAlCosto": {
@@ -945,6 +957,13 @@
             "ValorFiscal": 0
           },
           "CultivosConsumiblesMedidosAlValorRazonableMenosCostosDeVenta": {
+            "ValorContable": 0,
+            "EfectoConversion": 0,
+            "MenorValorFiscal": 0,
+            "MayorValorFiscal": 0,
+            "ValorFiscal": 0
+          },
+          "Total":{
             "ValorContable": 0,
             "EfectoConversion": 0,
             "MenorValorFiscal": 0,
@@ -1406,6 +1425,13 @@
           "ValorFiscal": 0
         }
       },
+    "TotalPatrimonio":{
+      "ValorContable": 0,
+      "EfectoConversion": 0,
+      "MenorValorFiscal": 0,
+      "MayorValorFiscal": 0,
+      "ValorFiscal": 0
+    },
     "PatrimonioContable": {
       "CapitalSocialReservas": {
         "CapitalPagado": {
