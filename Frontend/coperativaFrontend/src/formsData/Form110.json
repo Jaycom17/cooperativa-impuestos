@@ -17,9 +17,9 @@
         "NoFormAnt": 0
       }
     },
-    "FractAnnoAgrv": true,
-    "RenunPertRegTribEsp": true,
-    "VinPagObraImpu": true,
+    "FractAnnoAgrv": false,
+    "RenunPertRegTribEsp": false,
+    "VinPagObraImpu": false,
     "PerdFiscAcumAnnoAnt": 0
   },
   "DatosResum": {
@@ -132,7 +132,7 @@
     "ValTotProyObrImpMod2": 0,
     "CodRepre": 0,
     "CodCont": 0,
-    "Salvedad": true,
+    "Salvedad": false,
     "NoTarjProf": 0,
     "PagoTot": 0
   }

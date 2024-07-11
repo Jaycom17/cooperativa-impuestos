@@ -1,58 +1,50 @@
 import jsonData from '../../../formsData/Form110.json';
-import CustomAccordion from '../../../components/Accordeon/Accordeon';
-import TabBar from "../../../components/TabBar/TabBar";
 import AsideStudent from "../../../components/AsideStudent/AsideStudent";
+import Form110Tabs from '../../../components/Form110Values/Form110Tabs';
 import { useState } from "react";
 
 const From110Form = () => {
-    const tabs = [
-        { name: 'DatoPers', label: 'Datos del declarante' },
-        { name: 'DatosResum', label: 'Datos resumidos' },
-        { name: 'TOTALES', label: 'TOTALES' },
-    ];
 
-    const [activeTab, setActiveTab] = useState(tabs[0].name);
+    const [data, setData] = useState(jsonData);
 
-    const renderTextField = (label, value, key) => (
-        <div key={key} className="flex flex-col space-y-2 bg-white">
-            <label className="bg-white font-semibold text-sm" htmlFor={key}>
-                {label}
-            </label>
-            <input
-                className=" bg-white border rounded-md p-1"
-                type="number"
-                name={key}
-                placeholder={label}
-            />
-        </div>
-    );
+    const handleChange = (e) => {
+        let { name, value } = e.target;
 
-    const renderContent = (data, parentKey = '') => {
-        return Object.entries(data).map(([key, val]) => {
-            const uniqueKey = `${parentKey}-${key}`;
-            if (typeof val === 'object') {
-                return renderCustomAccordion(key, val, uniqueKey);
-            } else {
-                return renderTextField(key, val, uniqueKey);
-            }
-        });
+        // Crear una copia del objeto data
+        const updatedData = { ...data };
+
+        // Navegar al valor específico usando la ruta (name)
+        let currentLevel = updatedData;
+        const pathArray = name.split('.');
+        for (let i = 0; i < pathArray.length - 1; i++) {
+            currentLevel = currentLevel[pathArray[i]];
+        }
+
+        const lastKey = pathArray[pathArray.length - 1];
+
+        // Detectar el tipo de dato actual
+        const currentValueType = typeof currentLevel[lastKey];
+
+        // Convertir el valor al tipo correcto
+        if (currentValueType === 'number') {
+            value = parseFloat(value);
+        } else if (currentValueType === 'boolean') {
+            value = value === 'true';
+        }
+        // No es necesario convertir si es una cadena de texto (string)
+
+        // Actualizar el valor
+        currentLevel[lastKey] = value;
+
+        // Actualizar el estado con el objeto modificado
+        console.log(updatedData);
+        setData(updatedData);
     };
-
-    const renderCustomAccordion = (title, content, key) => (
-        <CustomAccordion key={key} title={title}>
-            {renderContent(content, key)}
-        </CustomAccordion>
-    );
 
     return (
         <main className="flex md:flex-row w-full">
             <AsideStudent />
-            <section className="w-full mt-12 md:mt-0 overflow-auto max-h-screen">
-                <TabBar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
-                {activeTab === 'DatoPers' && renderContent(jsonData.DatoPers)}
-                {activeTab === 'DatosResum' && renderContent(jsonData.DatosResum)}
-                {activeTab === 'TOTALES' && renderContent(jsonData.Totales)}
-            </section>
+            <Form110Tabs json={jsonData} handleChange={handleChange}/>
         </main>
     );
 };

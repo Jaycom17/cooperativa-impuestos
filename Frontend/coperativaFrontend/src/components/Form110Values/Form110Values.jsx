@@ -1,26 +1,10 @@
 import PropTypes from "prop-types";
 import Accordeon from "../Accordeon/Accordeon";
 
-function Form110Values({ sectionData, pathPrefix, handleChange }) {
+function Form110Values({ json, path, handleChange}) {
     //{ title, path, data, handleChange }
-    const datoPersKeys = [
-        "DatDecl",
-        "Correct"
-    ];
 
-    const datosResumKeys = [
-        "DatosInf",
-        "Patrim",
-        "Ingre",
-        "CostDedic",
-        "ESAL",
-        "Renta",
-        "GananciasOcasion",
-        "LiquiPriv",
-        "ImpuesRentLiquiGrav",
-        "Reten",
-        "SobreInstFin"
-    ]
+
 
     const Names = {
         "DatoPers": "Datos Personales",
@@ -136,100 +120,100 @@ function Form110Values({ sectionData, pathPrefix, handleChange }) {
         "NoTarjProf": "No. Tarjeta profesional",
         "PagoTot": "Pago total"
     };
-    /*
-        const renderSection = (sectionData, keys, sectionTitle) => (
-            <section className="flex flex-col gap-3 border rounded-md p-2">
-                <h3 className="font-semibold text-xl">{sectionTitle}</h3>
-                <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                {keys.map((key) => (
-                    <article key={key} className="flex flex-col border p-3 rounded-md">
-                      <h4 className="mb-3 text-lg font-medium">{Names[key]}</h4>
-                      <section className="flex flex-col gap-y-2">
-                          {typeof sectionData[key] === "object" ? (
-                          Object.entries(sectionData[key]).map(([subKey, subValue]) => (
-                              <div key={subKey} className="flex flex-col space-y-2 bg-white">
-                              <label className="bg-white font-semibold text-sm" htmlFor={subKey}>
-                                  {Names[subKey] || subKey}
-                              </label>
-                              <input
-                                  className=" bg-white border rounded-md p-1"
-                                  type="number"
-                                  name={subKey}
-                                  placeholder={subValue}
-                                  onChange={(e) => handleChange(e, `${path}.${key}`)}
-                              />
-                              </div>
-                          ))
-                          ) : (
-                          <div className="flex flex-col space-y-2 bg-white">
-                              <label className="bg-white font-semibold text-sm" htmlFor={key}>
-                              {Names[key]}
-                              </label>
-                              <input className=" bg-white border rounded-md p-1" type="number" name={key}   placeholder={sectionData[key]} onChange={(e) => handleChange(e, `${path}.${key}`)}
-                              />
-                          </div>
-                          )}
-                      </section>
-                    </article>
-                ))}
-                </section>
-            </section>
-        );
-    
-    
-    */
 
-    const renderAccordeon = (title, path, data) => {
-        <Accordeon key={Names[title]} title={Names[title]}>
-            <div className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white">
-                <h3 className="w-full font-bold text-xl pb-2">{Names[title]}</h3>
-            </div>
-        </Accordeon>
-    }
+    const renderTextField = (label, value, key) => {
+        const displayTitle = Names[label] || label;
+        return(
+            <div key={key} className="flex flex-col space-y-2 bg-white">
+            <label className="bg-white font-semibold text-sm" htmlFor={key}>
+                {displayTitle}
+            </label>
+            <input
+                className=" bg-white border rounded-md p-1"
+                type="text"
+                name={key}
+                placeholder={key}
+                onChange={(e) => handleChange(e)}
+            />
+        </div>
+        )
+    };
 
-    const renderData = (title) => (
-            <div className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white">
-                <h3 className="w-full font-bold text-xl pb-2">{Names[title]}</h3>
-            </div>
+    const renderNumberField = (label, value, key) => {
+        const displayTitle = Names[label] || label;
+        return(
+            <div key={key} className="flex flex-col space-y-2 bg-white">
+            <label className="bg-white font-semibold text-sm" htmlFor={key}>
+                {displayTitle}
+            </label>
+            <input
+                className=" bg-white border rounded-md p-1"
+                type="number"
+                name={key}
+                placeholder={value}
+                onChange={(e) => handleChange(e)}
+            />
+        </div>
+        )
+    };
 
-    )
-
-    const renderSections = () => {
-        return Object.keys(sectionData).map((sectionKey) => {
-            const isInKeys = datoPersKeys.includes(sectionKey) || datosResumKeys.includes(sectionKey);
-            
-            return isInKeys ? (
-                <renderAccordeon
-                    title={sectionKey}
-                    path={`${pathPrefix}.${sectionKey}`}
-                    data={sectionData[sectionKey]}
-                />
-            ) : (
-                <label key={sectionKey} title={sectionKey}>
-                    <renderData
-                        title={sectionKey}
-                    />
+    const renderBooleanField = (label, value, key) => {
+        const displayTitle = Names[label] || label;
+        return (
+            <div key={key} className="flex flex-col space-y-2 bg-white">
+                <label className="bg-white font-semibold text-sm" htmlFor={key}>
+                    {displayTitle}
                 </label>
-            )
+                <select
+                    className="bg-white border rounded-md p-1"
+                    name={key}
+                    defaultValue={value ? 'true' : 'false'}
+                    onChange={
+                        (e) => handleChange(e)
+                    }
+                >
+                    <option value="true">True</option>
+                    <option value="false">False</option>
+                </select>
+            </div>
+        );
+    };
+
+    const renderContent = (data, parentKey) => {
+        return Object.entries(data).map(([key, val]) => {
+            const uniqueKey = `${parentKey}.${key}`;
+            if (typeof val === 'object') {
+                return renderAccordeon(key, val, uniqueKey);
+            }else if(typeof val === 'string'){
+                return renderTextField(key, val, uniqueKey);
+            }else if(typeof val === 'boolean'){
+                return renderBooleanField(key, val, uniqueKey);
+            } 
+            else {
+                return renderNumberField(key, val, uniqueKey);
+            }
         });
-    }
+    };
+
+    const renderAccordeon = (title, content, key) => {
+        const displayTitle = Names[title] || title;
+        return (
+            <Accordeon key={key} title={displayTitle}>
+                {renderContent(content, key)}
+            </Accordeon>
+        );
+    };
 
     return (
-        /*
-        <div className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white">
-          <h3 className="w-full font-bold text-xl pb-2">{Names[title]}</h3>
-        </div>
-       */
         <>
-            {renderSections}
+            {renderContent(json,path)}
         </>
     );
 }
 export default Form110Values;
-/*
+
 Form110Values.propTypes = {
-    title: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired,
-    data: PropTypes.object.isRequired,
-    handleChange: PropTypes.func.isRequired,
-}*/
+    json: PropTypes.object.isRequired,
+    handleChange: PropTypes.func.isRequired
+}
