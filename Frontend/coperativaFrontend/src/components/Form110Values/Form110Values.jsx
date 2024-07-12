@@ -132,7 +132,7 @@ function Form110Values({ json, path, handleChange}) {
                 className=" bg-white border rounded-md p-1"
                 type="text"
                 name={key}
-                placeholder={key}
+                placeholder={value}
                 onChange={(e) => handleChange(e)}
             />
         </div>
