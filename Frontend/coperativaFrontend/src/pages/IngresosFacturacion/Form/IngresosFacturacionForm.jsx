@@ -47,7 +47,7 @@ function IngresosFacturacionForm() {
         newData[cat].FactEmitPer.TotFactEmiPEr = calculateTotalEmiPer(newData[cat].FactEmitPer);
       }
 
-      newData[cat].IngrContDevPer.TotalIngrContDevPer = calculateTotalIngrContDevPer(newData[cat])
+      newData[cat].IngrContDevPer.TotalIngrContDevPer = calculateTotalIngrContDevPer(newData[cat]);
     })
 
     const totalCategories = categories.filter(cat => cat !== 'Totales');
