@@ -1,5 +1,4 @@
 {
-  "ActivosPasivos": {
     "Activos": {
       "ActivosEquivalentesEfectivo": {
         "Efectivo": {
@@ -1631,6 +1630,5 @@
           "EfectoConversion": 0
         }
       }
-    }
-  }
+    }  
 }
