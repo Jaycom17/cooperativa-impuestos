@@ -6,7 +6,7 @@ import TeacherPage from "../pages/TeacherPage/TeacherPage";
 import CreateRoom from "../pages/CreateRoom/CreateRoom";
 import MainStudent from "../pages/MainStudent/MainStudent";
 import ESFpatrimonioForm from "../pages/ESFpatrimonio/Form/ESFpatrimonioForm";
-import ActivosFijos from "../pages/ActivosFijos/ActivosFijos";
+import ActivosFijosForm from "../pages/ActivosFijos/Form/ActivosFijosForm";
 import CreateProfessor from "../pages/CreateProfessor/CreateProfessor";
 import MiddlewareStudent from "../pages/MiddlewareStudent/MiddlewareStudent";
 import RoomReport from "../pages/RoomReport/RoomReport";
@@ -52,7 +52,7 @@ function Router() {
                 <Route path="/roomreport/:id" element={<RoomReport />} />
               </Route>
               <Route path="/esfpatrimonioform" element={<ESFpatrimonioForm />}/>
-              <Route path="/activosfijos" element={<ActivosFijos />}/>
+              <Route path="/activosfijos" element={<ActivosFijosForm />}/>
             </Routes>
           </BrowserRouter>
         </StudentProvider>

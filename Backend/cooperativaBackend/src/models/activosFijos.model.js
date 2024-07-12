@@ -1644,6 +1644,49 @@ export const ActivosFijos = z.object({
         GastoFiscal: z.number(),
       }),
     }),
+    Total: z.object({
+      Contables: z.object({
+        Comienzo: z.object({
+          Costo: z.number(),
+          Conversion: z.number(),
+          Ajuste: z.number(),
+        }),
+        Incrementos: z.object({
+          Transferencias: z.number(),
+          CambiosValorRazonable: z.number(),
+        }),
+        Disminuciones: z.object({
+          Transferencias: z.number(),
+          CambiosValorRazonable: z.number(),
+        }),
+        Depreciacion: z.object({
+          Costo: z.number(),
+          Conversion: z.number(),
+          Ajuste: z.number(),
+        }),
+        Deterioro: z.number(),
+        ImporteNeto: z.object({ Costo: z.number(), Ajuste: z.number() }),
+        GastoDepreciacion: z.object({ Costo: z.number(), Ajuste: z.number() }),
+        GastoDetereorio: z.number(),
+        IngresosPeriodoDetereorio: z.number(),
+        ValorActivosLeasing: z.number(),
+        DesmantelamientoRestauracion: z.number(),
+        ValorRevaluacion: z.number(),
+      }),
+      Fiscales: z.object({
+        SaldoComienzo: z.number(),
+        IncrementosTransferencias: z.number(),
+        DisminucionesTransferencias: z.number(),
+        SubtotalFinalPeriodo: z.number(),
+        Depreciacion: z.number(),
+        TotalNeto: z.number(),
+        GastoFiscalPeriodo: z.number(),
+        ValorTotal: z.number(),
+        DepreacionFinal: z.number(),
+        ValorNeto: z.number(),
+        GastoFiscal: z.number(),
+      }),
+    }),
   }),
   TotalTodo: z.object({
     Contables: z.object({
