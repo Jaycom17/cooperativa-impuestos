@@ -12,4 +12,5 @@ Content-Type: application/json
     "roomID": "d6683194-d5fd-4953-a7c3-21e935d2e140"
 }
 
-###
+###GET by room
+GET  {{api}}/room/d6683194-d5fd-4953-a7c3-21e935d2e140

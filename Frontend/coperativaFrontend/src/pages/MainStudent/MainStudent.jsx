@@ -11,7 +11,7 @@ const MainStudent = () => {
     {label: "Renta liquida", to:"/"},
     {label: "Impuesto diferido", to:"/"},
     {label: "Ingresos y facturación", to:"/"},
-    {label: "Activos fijos", to:"/"},
+    {label: "Activos fijos", to:"/activosfijos"},
     {label: "Resumen ESF ERI", to:"/"},
   ];
 

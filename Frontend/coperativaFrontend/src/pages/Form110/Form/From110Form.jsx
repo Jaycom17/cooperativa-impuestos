@@ -7,8 +7,15 @@ const From110Form = () => {
 
     const [data, setData] = useState(jsonData);
 
+    const calculateTotalPatBruto = (currentData) => {
+        console.log(currentData)
+        return (currentData.EfectvEquiEfect || 0) + (currentData.InvInstFinDeriv || 0) + (currentData.CuentDocArreFinCob || 0) + (currentData.Inv || 0) + (currentData.ActivInt || 0) + (currentData.ActivBio || 0) + (currentData.PPEPANCMC || 0) + (currentData.Otro || 0);
+    }
+
     const handleChange = (e) => {
         let { name, value } = e.target;
+
+        if (value === '') value = 0;
 
         // Crear una copia del objeto data
         const updatedData = { ...data };
@@ -37,7 +44,9 @@ const From110Form = () => {
         currentLevel[lastKey] = value;
 
         // Actualizar el estado con el objeto modificado
-        console.log(updatedData);
+        updatedData.DatosResum.Patrim.TotalBruto = calculateTotalPatBruto(updatedData.DatosResum.Patrim);
+        // Calculo de los totales
+
         setData(updatedData);
     };
 

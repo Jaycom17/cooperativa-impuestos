@@ -40,9 +40,13 @@ export const obtainRoom = async (roomID) => {
     }
 }
 
-export const obtainRooms = async () => {
+export const obtainRooms = async (teaID) => {
     try {
-        const result = await prisma.room.findMany();
+        const result = await prisma.room.findMany({
+            where: {
+                usuID: teaID
+            }
+        });
         return result;
     } catch (error) {
         console.error(error);

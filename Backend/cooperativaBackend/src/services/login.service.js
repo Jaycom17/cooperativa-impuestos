@@ -14,7 +14,7 @@ export const loginUser = async (user) => {
 
     if (!passwordMatch) return { message: "Usuario o contraseña incorrectos" };
 
-    const token = await createAccessToken({ usuId: result.usuID });
+    const token = await createAccessToken({ usuID: result.usuID });
 
     return { usuID: result.usuID, usuEmail: result.usuEmail, usuName: result.usuName, usuRole: result.usuRole,  token };
 
