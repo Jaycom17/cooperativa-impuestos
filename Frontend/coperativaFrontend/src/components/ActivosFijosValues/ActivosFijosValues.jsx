@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { ActivosFijosTotal } from "../../utils/activosFijos.js";
 
 function ActivosFijosValues({ title, path, data, handleChange }) {
     const contablesValorTotalKeys = [
@@ -75,7 +76,13 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
                                         <label className="bg-white font-semibold text-sm" htmlFor={subKey}>
                                             {friendlyNames[subKey] || subKey}
                                         </label>
-                                        <input
+                                        {
+                                            ActivosFijosTotal.includes(`${key}.${subKey}`) ?
+                                            <p className="bg-white rounded-md p-1">
+                                                {subValue === 0 ? '0' : subValue}
+                                            </p>
+                                            : 
+                                            <input
                                             className="bg-white border rounded-md p-1"
                                             type="number"
                                             name={subKey}
@@ -83,6 +90,7 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
                                             placeholder="0"
                                             onChange={(e) => handleChange(e, `${path}.${category}.${key}.${subKey}`)}
                                         />
+                                        }
                                     </div>
                                 ))
                             ) : (
