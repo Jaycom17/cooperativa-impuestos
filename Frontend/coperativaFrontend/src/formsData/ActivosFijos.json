@@ -1,0 +1,102 @@
+{
+    "PropiedadesPlantasEquipos":{
+        "Terrenos": {
+            "Contables": {
+                "Comienzo": {
+                    "Costo": 0,
+                    "Conversion": 0,
+                    "Ajuste": 0
+                },
+                "Incrementos": {
+                    "Transferencias": 0,
+                    "CambiosValorRazonable": 0
+                },
+                "Disminuciones": {
+                    "Transferencias": 0,
+                    "CambiosValorRazonable": 0
+                },
+                "Depreciacion": {
+                    "Costo": 0,
+                    "Conversion": 0,
+                    "Ajuste": 0
+                },
+                "Deterioro": 0,
+                "ImporteNeto": {
+                    "Costo": 0,
+                    "Ajuste": 0
+                },
+                "GastoDepreciacion": {
+                    "Costo": 0,
+                    "Ajuste": 0
+                },
+                "GastoDetereorio": 0,
+                "IngresosPeriodoDetereorio": 0,
+                "ValorActivosLeasing": 0,
+                "DesmantelamientoRestauracion": 0,
+                "ValorRevaluacion": 0
+            },
+            "Fiscales": {
+                "SaldoComienzo": 0,
+                "IncrementosTransferencias": 0,
+                "DisminucionesTransferencias": 0,
+                "SubtotalFinalPeriodo": 0,
+                "Depreciacion": 0,
+                "TotalNeto": 0,
+                "GastoFiscalPeriodo": 0,
+                "ValorTotal": 0,
+                "DepreacionFinal": 0,
+                "ValorNeto": 0,
+                "GastoFiscal": 0
+            }
+        },
+        "Edificios": {
+            "Contables": {
+                "Comienzo": {
+                    "Costo": 0,
+                    "Conversion": 0,
+                    "Ajuste": 0
+                },
+                "Incrementos": {
+                    "Transferencias": 0,
+                    "CambiosValorRazonable": 0
+                },
+                "Disminuciones": {
+                    "Transferencias": 0,
+                    "CambiosValorRazonable": 0
+                },
+                "Depreciacion": {
+                    "Costo": 0,
+                    "Conversion": 0,
+                    "Ajuste": 0
+                },
+                "Deterioro": 0,
+                "ImporteNeto": {
+                    "Costo": 0,
+                    "Ajuste": 0
+                },
+                "GastoDepreciacion": {
+                    "Costo": 0,
+                    "Ajuste": 0
+                },
+                "GastoDetereorio": 0,
+                "IngresosPeriodoDetereorio": 0,
+                "ValorActivosLeasing": 0,
+                "DesmantelamientoRestauracion": 0,
+                "ValorRevaluacion": 0
+            },
+            "Fiscales": {
+                "SaldoComienzo": 0,
+                "IncrementosTransferencias": 0,
+                "DisminucionesTransferencias": 0,
+                "SubtotalFinalPeriodo": 0,
+                "Depreciacion": 0,
+                "TotalNeto": 0,
+                "GastoFiscalPeriodo": 0,
+                "ValorTotal": 0,
+                "DepreacionFinal": 0,
+                "ValorNeto": 0,
+                "GastoFiscal": 0
+            }
+        }
+    }
+}

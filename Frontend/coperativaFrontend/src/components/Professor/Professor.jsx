@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import FloatingContainer from "../FloatingContainer/FloatingContainer";
 import ProfForm from "../ProfForm/ProfForm";
 import { deleteProfessor } from "../../services/professor.service";
+import cutString from "../../utils/CropName";
 
 const Professor = ({professor, onRefresh}) => {
     const [formOpen, setFormOpen] = useState(false);
@@ -25,8 +26,8 @@ const Professor = ({professor, onRefresh}) => {
 
     return (
         <section className="flex flex-col items-center w-4/5 sm:1/3 lg:w-[375px] bg-primary rounded-lg text-unicoop">
-            <h1 className="text-2xl font-bold mx-1">{professor.usuName}</h1>
-            <h2 className="text-lg"><span className="font-medium">E-mail:</span> {professor.usuEmail}</h2>
+            <h1 className="text-2xl font-bold text-center mx-1" title={professor.usuName}>{cutString(professor.usuName)}</h1>
+            <h2 className="text-lg text-center" title={professor.usuEmail}><span className="font-medium">E-mail:</span> {cutString(professor.usuEmail)}</h2>
             <div className="flex items-center gap-3 mt-2 mb-3">
                 <button onClick={() => setFormOpen(true)} className="flex items-center p-1.5 bg-buttons-update-green hover:bg-buttons-update-green-h duration-150 rounded">
                 <FaPencilAlt className='bg-transparent'/> Actualizar
