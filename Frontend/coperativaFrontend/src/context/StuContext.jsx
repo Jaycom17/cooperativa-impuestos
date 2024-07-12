@@ -44,8 +44,7 @@ export const StudentProvider = ({ children }) => {
       setStudent(res.data);
       setStudentError(null);
     } catch (error) {
-      console.log(error);
-      setStudentError("Error al crear el estudiante");
+      setStudentError(error.response.data.message || "Error al crear el estudiante");
     }
   };
 
@@ -60,7 +59,7 @@ export const StudentProvider = ({ children }) => {
       setStudent(res.data);
       setStudentError(null);
     } catch (error) {
-      setStudentError("Estudiante no encontrado");
+      setStudentError(error.response.data.message || "Estudiante no encontrado");
     }
   };
 

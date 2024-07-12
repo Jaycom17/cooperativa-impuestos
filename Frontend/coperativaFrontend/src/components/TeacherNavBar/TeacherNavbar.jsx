@@ -4,17 +4,12 @@ import { GrFormClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
 import AccountDropdown from "../AccountDrop/AccountDropdown";
-import PropTypes from 'prop-types'
 import { AuthContext } from "../../context/AuthContext";
 
 const TeacherNavbarTW = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const { singout } = useContext(AuthContext);
-     
-    const {user} = useContext(AuthContext);
-
-
+    const { singout, user } = useContext(AuthContext);
 
     const tNavRef = useRef(null);
 
@@ -79,12 +74,5 @@ const TeacherNavbarTW = () => {
     );
   };
 
-  TeacherNavbarTW.propTypes = {
-    professorName: PropTypes.string.isRequired,
-    onCerrarSesion: PropTypes.func.isRequired,
-    onCrearSala: PropTypes.func.isRequired,
-    onActualizarDatos: PropTypes.func.isRequired,
-    onLista: PropTypes.func.isRequired
-  };
   
   export default TeacherNavbarTW;

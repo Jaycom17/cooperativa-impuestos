@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-import Accordeon from "../Accordeon/Accordeon";
+import Accordeon from "../Accordeon/Accordeon";4
+import { Form110Total } from "../../utils/form110.js";
 
 function Form110Values({ json, path, handleChange}) {
     //{ title, path, data, handleChange }
@@ -146,6 +147,7 @@ function Form110Values({ json, path, handleChange}) {
             <label className="bg-white font-semibold text-sm" htmlFor={key}>
                 {displayTitle}
             </label>
+            {Form110Total.includes(key.split(".").pop()) ? <p className="bg-white rounded-md p-1">{value}</p> : 
             <input
                 className=" bg-white border rounded-md p-1"
                 type="number"
@@ -153,6 +155,7 @@ function Form110Values({ json, path, handleChange}) {
                 placeholder={value}
                 onChange={(e) => handleChange(e)}
             />
+    }
         </div>
         )
     };

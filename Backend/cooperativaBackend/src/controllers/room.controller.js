@@ -28,7 +28,7 @@ export const getRoom = async (req, res) => {
 };
 
 export const getRooms = async (req, res) => {
-  const rooms = await obtainRooms();
+  const rooms = await obtainRooms(req.body.user.usuID);
 
   if (!rooms) {
     return res.status(500).json({ error: "No se pudo obtener las salas" });
