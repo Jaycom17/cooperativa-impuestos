@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaCircleInfo } from "react-icons/fa6";
+import PropTypes from "prop-types";
 
 
 const InfoBubble = ({info, colorMode}) => {
@@ -14,13 +15,17 @@ const InfoBubble = ({info, colorMode}) => {
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
             />
-            <div
-                className={`absolute top-full left-32 -translate-x-1/2 mt-2 p-2 w-64 bg-white text-black rounded shadow-lg ${hovered ? '' : 'hidden'}`  }
-            >
+            <div className={`absolute top-full left-32 -translate-x-1/2 mt-2 p-2 w-64 bg-white text-black rounded shadow-lg ${hovered ? '' : 'hidden'}`}>
                 {info}
             </div>
         </div>
     );
 };
 
-export default InfoBubble
+export default InfoBubble;
+
+InfoBubble.propTypes = {
+    info: PropTypes.string,
+    colorMode: PropTypes.string
+};
+
