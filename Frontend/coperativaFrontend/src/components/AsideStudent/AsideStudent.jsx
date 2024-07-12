@@ -41,7 +41,7 @@ const AsideStudent = () => {
     { label: "Caratula", to: "/caratulaform" },
     { label: "ESF patrimonio", to: "/esfpatrimonioform" },
     { label: "Renta liquida", to: "/student" },
-    { label: "Impuesto diferido", to: "/student" },
+    { label: "Impuesto diferido", to: "/impuestodiferido" },
     { label: "Ingresos y facturación", to: "/ingrefactform" },
     { label: "Activos fijos", to: "/activosfijos" },
     { label: "Resumen ESF ERI", to: "/student" },

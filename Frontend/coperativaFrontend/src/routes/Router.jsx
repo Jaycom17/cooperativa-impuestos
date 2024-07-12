@@ -13,6 +13,7 @@ import MiddlewareStudent from "../pages/MiddlewareStudent/MiddlewareStudent";
 import RoomReport from "../pages/RoomReport/RoomReport";
 import CaratulaForm from "../pages/Caratula/Form/Caratula";
 import IngresosFacturacionForm from "../pages/IngresosFacturacion/Form/IngresosFacturacionForm";
+import ImpuestoDiferidoForm from "../pages/ImpuestoDiferido/Form/ImpuestoDiferidoForm";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -62,6 +63,7 @@ function Router() {
               <Route path="/ingrefactform" element={<IngresosFacturacionForm />}/>
               <Route path="/activosfijos" element={<ActivosFijosForm />}/>
               <Route path="/form110" element={<From110Form />}/>
+              <Route path="/impuestodiferido" element={<ImpuestoDiferidoForm />}/>
             </Routes>
           </BrowserRouter>
         </StudentProvider>
