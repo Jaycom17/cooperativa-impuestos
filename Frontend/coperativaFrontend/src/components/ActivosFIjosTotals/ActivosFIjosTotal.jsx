@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function ActivosFijosValues({ title, path, data, handleChange }) {
+function ActivosFijosTotals({ title, data }) {
     const contablesValorTotalKeys = [
         "Comienzo",
         "Incrementos",
@@ -61,7 +61,7 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
         "GastoFiscal": "Gasto Fiscal"
     };
 
-    const renderSection = (sectionData, keys, sectionTitle, category) => (
+    const renderSection = (sectionData, keys, sectionTitle) => (
         <section className="flex flex-col gap-3 border rounded-md p-2">
             <h3 className="font-semibold text-xl">{sectionTitle}</h3>
             <section className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-3">
@@ -72,32 +72,22 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
                             {typeof sectionData[key] === "object" ? (
                                 Object.entries(sectionData[key]).map(([subKey, subValue]) => (
                                     <div key={subKey} className="flex flex-col space-y-2 bg-white">
-                                        <label className="bg-white font-semibold text-sm" htmlFor={subKey}>
+                                        <label className="bg-white font-semibold text-sm">
                                             {friendlyNames[subKey] || subKey}
                                         </label>
-                                        <input
-                                            className="bg-white border rounded-md p-1"
-                                            type="number"
-                                            name={subKey}
-                                            value={subValue === 0 ? '' : subValue}
-                                            placeholder="0"
-                                            onChange={(e) => handleChange(e, `${path}.${category}.${key}.${subKey}`)}
-                                        />
+                                        <span className="bg-white border rounded-md p-1">
+                                            {subValue}
+                                        </span>
                                     </div>
                                 ))
                             ) : (
                                 <div className="flex flex-col space-y-2 bg-white">
-                                    <label className="bg-white font-semibold text-sm" htmlFor={key}>
+                                    <label className="bg-white font-semibold text-sm">
                                         {friendlyNames[key]}
                                     </label>
-                                    <input
-                                        className="bg-white border rounded-md p-1"
-                                        type="number"
-                                        name={key}
-                                        value={sectionData[key] === 0 ? '' : sectionData[key]}
-                                        placeholder="0"
-                                        onChange={(e) => handleChange(e, `${path}.${category}.${key}`)}
-                                    />
+                                    <span className="bg-white border rounded-md p-1">
+                                        {sectionData[key]}
+                                    </span>
                                 </div>
                             )}
                         </section>
@@ -114,8 +104,8 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
                 <h3 className="font-semibold text-2xl text-center">Datos contables</h3>
                 {data.Contables && (
                     <>
-                        {renderSection(data.Contables, contablesValorTotalKeys, "Valor total, incluyendo arrendamiento financiero o leasing financiero", "Contables")}
-                        {renderSection(data.Contables, contablesDatosInformativosKeys, "Datos informativos", "Contables")}
+                        {renderSection(data.Contables, contablesValorTotalKeys, "Valor total, incluyendo arrendamiento financiero o leasing financiero")}
+                        {renderSection(data.Contables, contablesDatosInformativosKeys, "Datos informativos")}
                     </>
                 )}
             </section>
@@ -123,8 +113,8 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
                 <h3 className="font-semibold text-2xl text-center">Datos Fiscales</h3>
                 {data.Fiscales && (
                     <>
-                        {renderSection(data.Fiscales, fiscalesValorTotalKeys, "Valor total, incluyendo arrendamiento financiero o leasing financiero", "Fiscales")}
-                        {renderSection(data.Fiscales, fiscalesDatosInformativosKeys, "Datos informativos", "Fiscales")}
+                        {renderSection(data.Fiscales, fiscalesValorTotalKeys, "Valor total, incluyendo arrendamiento financiero o leasing financiero")}
+                        {renderSection(data.Fiscales, fiscalesDatosInformativosKeys, "Datos informativos")}
                     </>
                 )}
             </section>
@@ -132,11 +122,9 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
     );
 }
 
-ActivosFijosValues.propTypes = {
-    title: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
-    data: PropTypes.object.isRequired,
-    handleChange: PropTypes.func.isRequired,
-};
+export default ActivosFijosTotals;
 
-export default ActivosFijosValues;
+ActivosFijosTotals.propTypes = {
+    title: PropTypes.string.isRequired,
+    data: PropTypes.object.isRequired,
+};
