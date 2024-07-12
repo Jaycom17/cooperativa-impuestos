@@ -1,1 +1,1 @@
-export const Form110Total = ["TotalBruto"]
+export const Form110Total = ["TotalBruto", "TotalLiqui", "TotBruto", "Tot", "LiquidOrd", "PerdidLiqui", "RentLiquida", "RenLiquida", "TotImpRentLiquidGrav", "ImpNetRent", "TotImpCarg", "TotReten", "SaldoPagImp", "TotSaldPag", "TotSaldFav"]
