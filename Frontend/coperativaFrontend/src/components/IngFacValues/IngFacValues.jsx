@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { IngFacFormEq } from "../../utils/ingresosFacturación";
+import { IngFacFormEq, IngFacTotals } from "../../utils/ingresosFacturacion";
 import InfoBubble from "../InfoBubble/InfoBubble";
 
 function IngFacValues({ title, path, data, handleChange }) {
@@ -13,13 +13,20 @@ function IngFacValues({ title, path, data, handleChange }) {
               <InfoBubble colorMode={"light"} info={IngFacFormEq[key]}/>
               {IngFacFormEq[key]}
             </label>
-            <input
+            {
+              (IngFacTotals.includes(key) || path.split(".")[0] === "Totales")? 
+              <p className="p-1">
+                {Intl.NumberFormat("es-CO").format(value)}
+              </p> : 
+                <input
               className=" bg-white border rounded-md p-1"
               type="number"
               name={key}
-              placeholder={value}
+              placeholder="0"
+              defaultValue={value === 0 ? "" : value}
               onChange={(e) => handleChange(path.split("."), e)}
-            />
+              />
+            }
           </div>
         ))}
       </section>

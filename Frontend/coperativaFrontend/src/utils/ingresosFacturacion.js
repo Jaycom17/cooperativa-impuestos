@@ -12,3 +12,5 @@ export const IngFacFormEq = {
   FactPerAnt: "Facturado períodos anteriores",
   TotalIngrContDevPer: "valor total ingreso contable devengado en el período",
 };
+
+export const IngFacTotals = ["TotPasivDif", "TotFactEmiPEr", "TotalIngrContDevPer"]
