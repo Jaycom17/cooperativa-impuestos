@@ -133,6 +133,7 @@ function Form110Values({ json, path, handleChange}) {
                 className=" bg-white border rounded-md p-1"
                 type="text"
                 name={key}
+                value={value}
                 placeholder={value}
                 onChange={(e) => handleChange(e)}
             />
@@ -152,10 +153,11 @@ function Form110Values({ json, path, handleChange}) {
                 className=" bg-white border rounded-md p-1"
                 type="number"
                 name={key}
-                placeholder={value}
+                value={value}
+                placeholder={0}
                 onChange={(e) => handleChange(e)}
             />
-    }
+        }
         </div>
         )
     };
@@ -192,7 +194,8 @@ function Form110Values({ json, path, handleChange}) {
             }else if(typeof val === 'boolean'){
                 return renderBooleanField(key, val, uniqueKey);
             } 
-            else {
+            else {            
+                if(val == 0){val=''}
                 return renderNumberField(key, val, uniqueKey);
             }
         });
