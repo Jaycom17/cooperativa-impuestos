@@ -144,7 +144,7 @@ function Form110Values({ json, path, handleChange}) {
     const renderNumberField = (label, value, key) => {
         const displayTitle = Names[label] || label;
         return(
-            <div key={key} className="flex flex-col space-y-2 bg-white">
+            <div key={key} className="flex flex-col border rounded-md p-4 bg-white">
             <label className="bg-white font-semibold text-sm" htmlFor={key}>
                 {displayTitle}
             </label>

@@ -80,6 +80,8 @@ const ActivosFijosForm = () =>{
                     }
                 });
             });
+
+            
     
             return newData;
         });
