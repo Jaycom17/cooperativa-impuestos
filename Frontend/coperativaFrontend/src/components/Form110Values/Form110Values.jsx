@@ -125,8 +125,8 @@ function Form110Values({ json, path, handleChange}) {
     const renderTextField = (label, value, key) => {
         const displayTitle = Names[label] || label;
         return(
-            <div key={key} className="flex flex-col space-y-2 bg-white">
-            <label className="bg-white font-semibold text-sm" htmlFor={key}>
+            <div key={key} className="flex flex-col gap-2 p-4 bg-white justify-between">
+            <label className="bg-white font-semibold text-[1rem]" htmlFor={key}>
                 {displayTitle}
             </label>
             <input
@@ -144,8 +144,8 @@ function Form110Values({ json, path, handleChange}) {
     const renderNumberField = (label, value, key) => {
         const displayTitle = Names[label] || label;
         return(
-            <div key={key} className="flex flex-col border rounded-md p-4 bg-white">
-            <label className="bg-white font-semibold text-sm" htmlFor={key}>
+            <div key={key} className="flex flex-col gap-2 p-4 bg-white justify-between">
+            <label className="bg-white font-semibold text-[1rem]" htmlFor={key}>
                 {displayTitle}
             </label>
             {Form110Total.includes(key.split(".").pop()) ? <p className="bg-white rounded-md p-1">{value}</p> : 
@@ -165,8 +165,8 @@ function Form110Values({ json, path, handleChange}) {
     const renderBooleanField = (label, value, key) => {
         const displayTitle = Names[label] || label;
         return (
-            <div key={key} className="flex flex-col space-y-2 bg-white">
-                <label className="bg-white font-semibold text-sm" htmlFor={key}>
+            <div key={key} className="flex flex-col gap-2 p-4 bg-white justify-between">
+                <label className="bg-white font-semibold text-[1rem]" htmlFor={key}>
                     {displayTitle}
                 </label>
                 <select

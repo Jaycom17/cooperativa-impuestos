@@ -16,7 +16,9 @@ const Accordeon = ({title, children}) =>{
                 <IoIosArrowDown className={`md:text-lg transition-all duration-300 ${open ? 'rotate-180':''}`}/>
             </button>
             <div className={`ml-3 overflow-hidden ${open ? 'max-h-full' : 'max-h-0'}`}>
-                {children}
+                <div className={`${children[0].type === "div" && "grid grid-cols-3 gap-2"} p-2`}>
+                    {children}
+                </div>
             </div>
         </article>
     );
