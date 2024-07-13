@@ -36,15 +36,15 @@ const AsideStudent = () => {
   };
 
   const forms = [
-    { label: "Formulario 110", to: "/" },
-    { label: "Detalle reglones 110", to: "/" },
+    { label: "Formulario 110", to: "/form110" },
+    { label: "Detalle reglones 110", to: "/student" },
     { label: "Caratula", to: "/caratulaform" },
     { label: "ESF patrimonio", to: "/esfpatrimonioform" },
-    { label: "Renta liquida", to: "/" },
-    { label: "Impuesto diferido", to: "/" },
+    { label: "Renta liquida", to: "/student" },
+    { label: "Impuesto diferido", to: "/impuestodiferido" },
     { label: "Ingresos y facturación", to: "/ingrefactform" },
-    { label: "Activos fijos", to: "/" },
-    { label: "Resumen ESF ERI", to: "/" },
+    { label: "Activos fijos", to: "/activosfijos" },
+    { label: "Resumen ESF ERI", to: "/student" },
   ];
 
   return (
@@ -55,17 +55,9 @@ const AsideStudent = () => {
       >
         <MdMenu className="text-2xl"/>
       </div>
-      <aside
-        className={`fixed md:relative top-0 min-h-screen h-full w-[200px] bg-primary md:translate-x-0 transition-transform duration-150 ${
-          isMenuOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-        ref={asideRef}
-      >
+      <aside className={`fixed md:relative overflow-auto top-0 min-h-screen h-full w-[200px] bg-primary md:translate-x-0 transition-transform duration-150 ${ isMenuOpen ? "translate-x-0" : "-translate-x-full" }`} ref={asideRef} >
         <div className="flex w-full justify-center mt-2 md:hidden ">
-          <GrFormClose
-            className="hover:animate-spin-once cursor-pointer text-unicoop hover:text-buttons-closing-red text-3xl"
-            onClick={handleMenuOpen}
-          />
+          <GrFormClose className="hover:animate-spin-once cursor-pointer text-unicoop hover:text-buttons-closing-red text-3xl" onClick={handleMenuOpen} />
         </div>
         <div className="flex flex-col items-center bg-transparent p-4 text-center font-semibold">
           <h1 className="text-white md:text-xl md:mt-[10px] bg-transparent">

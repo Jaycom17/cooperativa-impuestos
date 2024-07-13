@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import FloatingContainer from "../FloatingContainer/FloatingContainer";
 import RoomForm from "../RoomForm/RoomForm";
 import { updateRoomState, deleteRoom } from "../../services/room.service";
+import cutString from "../../utils/CropName";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
@@ -51,8 +52,8 @@ const Room = ({ room, usuId, onRefresh }) => {
   return (
     <section className="flex flex-col items-center w-11/12 sm:1/3 lg:w-[375px] bg-primary rounded-lg text-unicoop">
       <div className="w-full text-center mt-2">
-        <h1 className="text-2xl font-bold mx-1">{room.roomName}</h1>
-        <h2 className="text-slate-200  text-2xl mb-2 font-semibold">Código: {room.roomPassword}</h2>
+        <h1 className="text-2xl font-bold mx-1" title={room.roomName}>{cutString(room.roomName)}</h1>
+        <h2 className="text-slate-200 text-center  text-2xl mb-2 font-semibold" title={room.roomPassword}>{cutString("Código: " + room.roomPassword)}</h2>
         <h2><span className="font-medium">Fecha de creación:</span> {formatDate(room.roomDate)}</h2>
       </div>
       <div className="flex flex-row my-1">
@@ -60,12 +61,7 @@ const Room = ({ room, usuId, onRefresh }) => {
         <span className={`mr-1 w-14 text-center`}>{activated ? 'Activa' : 'Inactiva'}</span>
         <label className="flex items-center cursor-pointer">
           {/* Input oculto para manejar el estado */}
-          <input
-            type="checkbox"
-            className="hidden"
-            checked={activated}
-            onChange={toggleActivated}
-          />
+          <input type="checkbox" className="hidden" checked={activated} onChange={toggleActivated}/>
           {/* El interruptor deslizante */}
           <div className={`toggle-wrapper relative w-10 h-6 mt-0.5 rounded-full transition-colors duration-150 ${activated ? 'bg-[green]/40':'bg-[red]/40'} `}>
             <div className={`toggle absolute left-1 top-1 w-4 h-4 rounded-full shadow-md transform transition-all duration-300 ${activated ? 'translate-x-full bg-[green]' : 'bg-[red]'}`}></div>

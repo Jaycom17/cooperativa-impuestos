@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AsideStudent from "../../../components/AsideStudent/AsideStudent";
 import IngFacValues from "../../../components/IngFacValues/IngFacValues";
 import basicInformation from "../../../formsData/IngFact.json";
@@ -6,12 +6,23 @@ import basicInformation from "../../../formsData/IngFact.json";
 function IngresosFacturacionForm() {
   const [data, setData] = useState(basicInformation);
 
-  const calculeteTotalPasivoImpDif = (currentData) => {
-    return currentData.SaldoIniPer - currentData.IngrContPer + currentData.GenPer;
+  useEffect(() => {
+    setData(basicInformation);
+  }, []);
+
+  const calculateTotalPasivoImpDif = (currentData) => {
+    return (currentData.SaldoIniPer || 0) - (currentData.IngrContPer || 0) + (currentData.GenPer || 0);
   }
 
-    
+  const calculateTotalEmiPer = (currentData) => {
+    return (currentData.DevIngrPerAnt || 0) + (currentData.DevIngrPerAct || 0) + (currentData.RegIngDif || 0) + (currentData.SoloFact || 0);
+  }
 
+  const calculateTotalIngrContDevPer = (currentData) => {
+    return (currentData.FactEmitPer.DevIngrPerAct || 0) + (currentData.IngrContDevPer.SinFact || 0) + (currentData.IngrContDevPer.FactPerAnt || 0);
+  }
+
+  
   const changeValue = (path, e) => {
     let { name, value } = e.target;
 
@@ -29,6 +40,19 @@ function IngresosFacturacionForm() {
     newData.VentBien.PasivIngrDif.TotPasivDif = calculeteTotalPasivoImpDif(newData.VentBien.PasivIngrDif)
 
     const categories = Object.keys(newData);
+
+    categories.forEach((cat) => {
+      if(newData[cat].PasivIngrDif){
+        newData[cat].PasivIngrDif.TotPasivDif = calculateTotalPasivoImpDif(newData[cat].PasivIngrDif);
+      }
+      
+      if(newData[cat].FactEmitPer){
+        newData[cat].FactEmitPer.TotFactEmiPEr = calculateTotalEmiPer(newData[cat].FactEmitPer);
+      }
+
+      newData[cat].IngrContDevPer.TotalIngrContDevPer = calculateTotalIngrContDevPer(newData[cat]);
+    })
+
     const totalCategories = categories.filter(cat => cat !== 'Totales');
     const totals = {
       PasivIngrDif: {},
