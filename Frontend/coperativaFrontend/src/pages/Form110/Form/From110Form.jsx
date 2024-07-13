@@ -1,4 +1,4 @@
-import jsonData from '../../../formsData/Form110.json';
+import jsonData from '../../../formsData/DetalleReng.json';
 import AsideStudent from "../../../components/AsideStudent/AsideStudent";
 import Form110Tabs from '../../../components/Form110Values/Form110Tabs';
 import { useState } from "react";
