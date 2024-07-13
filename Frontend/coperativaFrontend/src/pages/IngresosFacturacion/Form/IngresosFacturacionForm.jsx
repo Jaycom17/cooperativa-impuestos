@@ -25,6 +25,9 @@ function IngresosFacturacionForm() {
       return acc[key];
     }, newData);
 
+
+    newData.VentBien.PasivIngrDif.TotPasivDif = calculeteTotalPasivoImpDif(newData.VentBien.PasivIngrDif)
+
     const categories = Object.keys(newData);
     const totalCategories = categories.filter(cat => cat !== 'Totales');
     const totals = {
@@ -45,8 +48,6 @@ function IngresosFacturacionForm() {
         });
       });
     });
-
-    newData.VentBien.PasivIngrDif.TotPasivDif = calculeteTotalPasivoImpDif(newData.VentBien.PasivIngrDif)
   
     newData.Totales = totals;
 
