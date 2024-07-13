@@ -32,7 +32,7 @@ const TabBar = ({tabs, activeTab, setActiveTab})=>{
               <h1 className="text-sm font-medium">Secciones</h1>
               <MdMenu className="ml-2 text-2xl" />
           </button>
-          <nav className={`fixed w-[200px] md:w-full top-0 right-0 min-h-screen h-full bg-gray-200  md:min-h-fit ${manyOptions ? `md:absolute ${ isMenuOpen ? "" : "hidden" }`: `md:bg-transparent md:relative`} md:-translate-x-0 transition-transform duration-150 ${ isMenuOpen ? "-translate-x-0 " : "translate-x-full" }`} ref={asideRef}>
+          <nav className={`fixed w-[200px] md:w-full overflow-auto top-0 right-0 min-h-screen h-full bg-gray-200  md:min-h-fit ${manyOptions ? `md:absolute ${ isMenuOpen ? "" : "hidden" }`: `md:bg-transparent md:relative`} md:-translate-x-0 transition-transform duration-150 ${ isMenuOpen ? "-translate-x-0 " : "translate-x-full" }`} ref={asideRef}>
               <button className={`flex w-full justify-center text-black hover:text-buttons-closing-red bg-gray-200 hover:bg-gray-100 ${manyOptions ? `p-3 `:"mt-2 md:hidden mb-2"}`} onClick={handleMenuOpen} >
                   <GrFormClose className="hover:animate-spin-once text-3xl"/>
               </button>

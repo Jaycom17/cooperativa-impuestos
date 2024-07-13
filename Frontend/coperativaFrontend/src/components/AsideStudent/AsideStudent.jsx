@@ -55,7 +55,7 @@ const AsideStudent = () => {
       >
         <MdMenu className="text-2xl"/>
       </div>
-      <aside className={`fixed md:relative top-0 min-h-screen h-full w-[200px] bg-primary md:translate-x-0 transition-transform duration-150 ${ isMenuOpen ? "translate-x-0" : "-translate-x-full" }`} ref={asideRef} >
+      <aside className={`fixed md:relative overflow-auto top-0 min-h-screen h-full w-[200px] bg-primary md:translate-x-0 transition-transform duration-150 ${ isMenuOpen ? "translate-x-0" : "-translate-x-full" }`} ref={asideRef} >
         <div className="flex w-full justify-center mt-2 md:hidden ">
           <GrFormClose className="hover:animate-spin-once cursor-pointer text-unicoop hover:text-buttons-closing-red text-3xl" onClick={handleMenuOpen} />
         </div>
