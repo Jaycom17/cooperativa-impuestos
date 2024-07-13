@@ -15,7 +15,7 @@ const InfoBubble = ({info, colorMode}) => {
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
             />
-            <div className={`absolute top-full left-32 -translate-x-1/2 mt-2 p-2 w-64 bg-white text-black rounded shadow-lg ${hovered ? '' : 'hidden'}`}>
+            <div className={`absolute top-full left-32 -translate-x-1/2 mt-2 p-2 w-64 bg-white text-black rounded shadow-lg z-10 ${hovered ? '' : 'hidden'}`}>
                 {info}
             </div>
         </div>

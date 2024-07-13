@@ -1,66 +1,7 @@
 import PropTypes from "prop-types";
-import { ActivosFijosTotal } from "../../utils/activosFijos.js";
+import { ActivosFijosTotal, friendlyNames, contablesDatosInformativosKeys, contablesValorTotalKeys, fiscalesDatosInformativosKeys, fiscalesValorTotalKeys } from "../../utils/activosFijos.js";
 
 function ActivosFijosValues({ title, path, data, handleChange }) {
-    const contablesValorTotalKeys = [
-        "Comienzo",
-        "Incrementos",
-        "Disminuciones",
-        "Depreciacion",
-        "Deterioro",
-        "ImporteNeto",
-        "GastoDepreciacion",
-        "GastoDetereorio",
-        "IngresosPeriodoDetereorio",
-    ];
-
-    const contablesDatosInformativosKeys = [
-        "ValorActivosLeasing",
-        "DesmantelamientoRestauracion",
-        "ValorRevaluacion",
-    ];
-
-    const fiscalesValorTotalKeys = [
-        "SaldoComienzo",
-        "IncrementosTransferencias",
-        "DisminucionesTransferencias",
-        "SubtotalFinalPeriodo",
-        "Depreciacion",
-        "TotalNeto",
-        "GastoFiscalPeriodo",
-    ];
-
-    const fiscalesDatosInformativosKeys = [
-        "ValorTotal",
-        "DepreacionFinal",
-        "ValorNeto",
-        "GastoFiscal",
-    ];
-
-    const friendlyNames = {
-        "Comienzo": "Importe al comienzo del período",
-        "Incrementos": "Incrementos",
-        "Disminuciones": "Disminuciones",
-        "Depreciacion": "Depreciación o amortización acumulada al final del período",
-        "Deterioro": "Deterioro acumulado al final del período",
-        "ImporteNeto": "Importe Neto al final del período",
-        "GastoDepreciacion": "Gasto del período por depreciación o amortización",
-        "GastoDetereorio": "Gasto del período por deterioro",
-        "IngresosPeriodoDetereorio": "Ingresos del período por recuperación del deterioro",
-        "ValorActivosLeasing": "Valor Activos Leasing",
-        "DesmantelamientoRestauracion": "Desmantelamiento y Restauración",
-        "ValorRevaluacion": "Valor Revaluación",
-        "SaldoComienzo": "Saldo al Comienzo",
-        "IncrementosTransferencias": "Incrementos y Transferencias",
-        "DisminucionesTransferencias": "Disminuciones y Transferencias",
-        "SubtotalFinalPeriodo": "Subtotal al Final del Período",
-        "TotalNeto": "Total Neto",
-        "GastoFiscalPeriodo": "Gasto Fiscal del Período",
-        "ValorTotal": "Valor Total",
-        "DepreacionFinal": "Depreciación Final",
-        "ValorNeto": "Valor Neto",
-        "GastoFiscal": "Gasto Fiscal"
-    };
 
     const renderSection = (sectionData, keys, sectionTitle, category) => (
         <section className="flex flex-col gap-3 border rounded-md p-2">
@@ -68,17 +9,17 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
             <section className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-3">
                 {keys.map((key) => (
                     <article key={key} className="flex flex-col border p-3 rounded-md">
-                        <h4 className="mb-3 text-lg font-medium">{friendlyNames[key]}</h4>
+                        <h4 className="mb-3 font-semibold">{friendlyNames[key]}</h4>
                         <section className="flex flex-col gap-y-2">
                             {typeof sectionData[key] === "object" ? (
                                 Object.entries(sectionData[key]).map(([subKey, subValue]) => (
                                     <div key={subKey} className="flex flex-col space-y-2 bg-white">
-                                        <label className="bg-white font-semibold text-sm" htmlFor={subKey}>
-                                            {friendlyNames[subKey] || subKey}
+                                        <label className="bg-white text-sm" htmlFor={subKey}>
+                                            {subKey === "CambiosValorRazonable" ? "Cambios de valor razonable" : friendlyNames[subKey] || subKey}
                                         </label>
                                         {
                                             ActivosFijosTotal.includes(`${key}.${subKey}`) ?
-                                            <p className="bg-white rounded-md p-1">
+                                            <p className="p-1 text-xl font-medium border-b-4">
                                                 {subValue === 0 ? '0' : subValue}
                                             </p>
                                             : 
@@ -95,9 +36,13 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
                                 ))
                             ) : (
                                 <div className="flex flex-col space-y-2 bg-white">
-                                    <label className="bg-white font-semibold text-sm" htmlFor={key}>
-                                        {friendlyNames[key]}
-                                    </label>
+
+                                    {
+                                       ActivosFijosTotal.includes(`${key}`) ?
+                                       <p className="p-1 text-xl font-medium border-b-4">
+                                           {sectionData[key] === 0 ? '0' : sectionData[key]}
+                                       </p> 
+                                    :
                                     <input
                                         className="bg-white border rounded-md p-1"
                                         type="number"
@@ -106,6 +51,7 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
                                         placeholder="0"
                                         onChange={(e) => handleChange(e, `${path}.${category}.${key}`)}
                                     />
+                                    }
                                 </div>
                             )}
                         </section>
@@ -132,7 +78,7 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
                 {data.Fiscales && (
                     <>
                         {renderSection(data.Fiscales, fiscalesValorTotalKeys, "Valor total, incluyendo arrendamiento financiero o leasing financiero", "Fiscales")}
-                        {renderSection(data.Fiscales, fiscalesDatosInformativosKeys, "Datos informativos", "Fiscales")}
+                        {renderSection(data.Fiscales, fiscalesDatosInformativosKeys, "Datos informativos: Valor activos adquiridos mediante arrendamiento financiero o leasing financiero", "Fiscales")}
                     </>
                 )}
             </section>
