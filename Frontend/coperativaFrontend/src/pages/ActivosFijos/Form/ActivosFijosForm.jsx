@@ -5,6 +5,7 @@ import basicInformation from '../../../formsData/ActivosFijos.json';
 import Accordeon from "../../../components/Accordeon/Accordeon";
 import TabBar from "../../../components/TabBar/TabBar";
 import { useState } from "react";
+import { friendlyNamesPPE, friendlyNamesAI } from "../../../utils/activosFijos";
 
 const ActivosFijosForm = () =>{
   const [data, setData] = useState(basicInformation);
@@ -20,8 +21,23 @@ const ActivosFijosForm = () =>{
     const [activeTab, setActiveTab] = useState(tabs[0].name);
 
     const calculateCostoImpNetoFinPeriodo = (currentData) => {
-        console.log(currentData)
         return (currentData.Contables.Comienzo.Costo || 0) + (currentData.Contables.Comienzo.Conversion || 0) + (currentData.Contables.Incrementos.Transferencias || 0) - (currentData.Contables.Disminuciones.Transferencias || 0) - (currentData.Contables.Depreciacion.Costo || 0) - (currentData.Contables.Depreciacion.Conversion || 0) + (currentData.Contables.Deterioro || 0);
+    }
+
+    const calculateAjusteImpNetoFinPeriodo = (currentData) => {
+        return (currentData.Contables.Comienzo.Ajuste || 0) + (currentData.Contables.Incrementos.CambiosValorRazonable || 0) - (currentData.Contables.Disminuciones.CambiosValorRazonable || 0) - (currentData.Contables.Depreciacion.Ajuste || 0)
+    }
+
+    const calculateSubTotalFinPeriodo = (currentData) => {
+        return (currentData.Fiscales.SaldoComienzo || 0) + (currentData.Fiscales.IncrementosTransferencias || 0) - (currentData.Fiscales.DisminucionesTransferencias || 0)
+    }
+
+    const calculateTotalNetoFinPeriodo = (currentData) => {
+        return (currentData.Fiscales.SubtotalFinalPeriodo || 0) - (currentData.Fiscales.Depreciacion || 0)
+    }
+
+    const calculateValorNetoFinPeriodo = (currentData) => {
+        return (currentData.Fiscales.ValorTotal || 0) - (currentData.Fiscales.DepreacionFinal || 0)
     }
 
     const handleChange = (e, path) => {
@@ -49,55 +65,38 @@ const ActivosFijosForm = () =>{
 
             keys.forEach((key) => {
                 Object.keys(newData[key]).forEach((subKey) => {
-                    const importeNeto = newData[key][subKey].Contables ? newData[key][subKey].Contables.ImporteNeto : undefined;
-                    
-                    if(importeNeto) {
-                        console.log(importeNeto);
-                        newData[key][subKey].Contables.ImporteNeto.Costo = calculateCostoImpNetoFinPeriodo(newData[key][subKey]);
+                    const contables = newData[key][subKey].Contables;
+                    const fiscales = newData[key][subKey].Fiscales;
+
+                    if (contables && contables.ImporteNeto) {
+                        contables.ImporteNeto.Costo = calculateCostoImpNetoFinPeriodo(newData[key][subKey]);
+                        contables.ImporteNeto.Ajuste = calculateAjusteImpNetoFinPeriodo(newData[key][subKey]);
+                    }
+
+                    if (fiscales) {
+                        fiscales.SubtotalFinalPeriodo = calculateSubTotalFinPeriodo(newData[key][subKey]);
+                        fiscales.TotalNeto = calculateTotalNetoFinPeriodo(newData[key][subKey]);
+                        fiscales.ValorNeto = calculateValorNetoFinPeriodo(newData[key][subKey]);
                     }
                 });
             });
-    
-            // Calcular los totales
-            // const calculateTotals = (obj) => {
-            //     const totals = {};
-          
-            //     Object.entries(obj).forEach(([key, values]) => {
-            //       if (key !== 'Total' && typeof values === 'object' && values !== null) {
-            //         Object.entries(values).forEach(([subKey, subValue]) => {
-            //           if (typeof subValue === 'number') {
-            //             if (!totals[subKey]) {
-            //               totals[subKey] = 0;
-            //             }
-            //             totals[subKey] += subValue;
-            //           }
-            //         });
-            //       }
-            //     });
-          
-            //     return totals;
-            //   };
-    
-            // // Actualizar los totales de PropiedadesInversión
-            // const PPE_Total = calculateTotals(newData.PropiedadesPlantasEquipos);
-            // const PI_Total = calculateTotals(newData.PropiedadesInversión);
-            // const AI_Total = calculateTotals(newData.ActivosIntangibles);
+
             
-            // newData.PropiedadesPlantasEquipos.Total = PPE_Total;
-            // newData.PropiedadesInversión.Total = PI_Total;
-            // newData.ActivosIntangibles.Total = AI_Total;
     
             return newData;
         });
     };
 
-    const renderSections = (sectionData, pathPrefix, excludeSection = "") => {
+    const renderSections = (sectionData, pathPrefix, excludeSection = "", friendlyNames = []) => {
         return Object.keys(sectionData).map((sectionKey) => {
             if (sectionKey === excludeSection) return null;
+
+            const friendlyName = friendlyNames[sectionKey] || sectionKey;
+
             return (
-                <Accordeon key={sectionKey} title={sectionKey}>
+                <Accordeon key={sectionKey} title={friendlyName }>
                     <ActivosFijosValues 
-                        title={sectionKey} 
+                        title={friendlyName } 
                         path={`${pathPrefix}.${sectionKey}`} 
                         data={sectionData[sectionKey]} 
                         handleChange={handleChange}
@@ -112,26 +111,26 @@ const ActivosFijosForm = () =>{
             <AsideStudent/>
             <section className="w-full mt-12 md:mt-0 overflow-auto max-h-screen">
                 <TabBar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab}/>
-                {activeTab === 'PPE' && renderSections(data.PropiedadesPlantasEquipos, 'PropiedadesPlantasEquipos', 'Total')}
+                {activeTab === 'PPE' && renderSections(data.PropiedadesPlantasEquipos, 'PropiedadesPlantasEquipos', 'Total', friendlyNamesPPE)}
                 {activeTab === 'PI' && renderSections(data.PropiedadesInversión, 'PropiedadesInversión', 'Total')}
-                {activeTab === 'ANCMV' && ( <ActivosFijosValues title={"ANCMV"} path={'ANCMV'} data={data.ANCMV} handleChange={handleChange} /> )}
-                {activeTab === 'AI' && renderSections(data.ActivosIntangibles, 'ActivosIntangibles', 'Total')}
+                {activeTab === 'ANCMV' && ( <ActivosFijosValues title={"ANCMV"} path={'ANCMV.ANCMV'} data={data.ANCMV.ANCMV} handleChange={handleChange} /> )}
+                {activeTab === 'AI' && renderSections(data.ActivosIntangibles, 'ActivosIntangibles', 'Total', friendlyNamesAI)}
                 {activeTab === 'TOTALES' && (
                     <div>
                         <Accordeon title={"Total Propiedades, plantas y equipos"}>
                             <ActivosFijosTotals title="Total PPE" data={data.PropiedadesPlantasEquipos.Total} />
                         </Accordeon>
                         <Accordeon title={"Total Propiedades de inversión"}>
-                            <ActivosFijosTotals title="Total PPE" data={data.ANCMV} />
+                            <ActivosFijosTotals title="Total PI" data={data.ANCMV.ANCMV} />
                         </Accordeon>
                         <Accordeon title={"Total Activos Intangibles"}>
-                            <ActivosFijosTotals title="Total PPE" data={data.ANCMV} />
+                            <ActivosFijosTotals title="Total AI" data={data.ANCMV.ANCMV} />
                         </Accordeon>
                         <Accordeon title={"Total PPE, PI y ANCMV"}>
-                            <ActivosFijosTotals title="Total PPE" data={data.TotalPPEPIANCMV} />
+                            <ActivosFijosTotals title="Total PPE, PI y ANCMV" data={data.TotalPPEPIANCMV} />
                         </Accordeon>
                         <Accordeon title={"Total Propiedades, plantas y equipos"}>
-                            <ActivosFijosTotals title="Total PPE" data={data.ANCMV} />
+                            <ActivosFijosTotals title="Total Propiedades, plantas y equipos" data={data.ANCMV} />
                         </Accordeon>
                     </div>
                 )}

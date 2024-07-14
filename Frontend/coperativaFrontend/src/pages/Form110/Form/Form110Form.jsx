@@ -1,4 +1,4 @@
-import jsonData from '../../../formsData/Form110.json';
+import jsonData from "../../../formsData/Form110.json";
 import AsideStudent from "../../../components/AsideStudent/AsideStudent.jsx";
 import Form110Values from '../../../components/Form110Values/Form110Values.jsx';
 import Accordeon from '../../../components/Accordeon/Accordeon.jsx';
@@ -6,6 +6,7 @@ import TabBar from '../../../components/TabBar/TabBar.jsx';
 import { useState } from "react";
 
 const From110Form = () => {
+  const [data, setData] = useState(jsonData);
 
     const [data, setData] = useState(jsonData);
 
@@ -226,6 +227,6 @@ const From110Form = () => {
             </section>
         </main>
     );
-};
+  };
 
 export default From110Form;

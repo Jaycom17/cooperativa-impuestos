@@ -25,7 +25,7 @@ function Form110Values({ json, path, handleChange, CalculatedValues, ValuesNames
     const renderNumberField = (label, value, key) => {
         const displayTitle = ValuesNames[label] || label;
         return(
-            <div key={key} className="flex flex-col space-y-2 bg-white">
+            <div key={key} className="flex flex-col justify-between space-y-2 bg-white">
             <label className="bg-white font-semibold text-sm" htmlFor={key}>
                 {displayTitle}
             </label>
@@ -34,7 +34,7 @@ function Form110Values({ json, path, handleChange, CalculatedValues, ValuesNames
                 className=" bg-white border rounded-md p-1"
                 type="number"
                 name={key}
-                value={value}
+                defaultValue={value === 0 ? '' : value}
                 placeholder={0}
                 onChange={(e) => handleChange(e)}
             />
