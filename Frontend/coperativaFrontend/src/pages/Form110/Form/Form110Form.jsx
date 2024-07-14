@@ -1,7 +1,8 @@
 import jsonData from '../../../formsData/Form110.json';
-import AsideStudent from "../../../components/AsideStudent/AsideStudent";
-import Form110Tabs from '../../../components/Form110Values/Form110Tabs';
+import AsideStudent from "../../../components/AsideStudent/AsideStudent.jsx";
+import Form110Tabs from '../../../components/Form110Values/FormTabs.jsx';
 import { useState } from "react";
+import { TabsNames, CalculatedValues, ValuesNames } from "../../../utils/form110.js";
 
 const From110Form = () => {
 
@@ -194,7 +195,8 @@ const From110Form = () => {
     return (
         <main className="flex md:flex-row w-full">
             <AsideStudent />
-            <Form110Tabs json={jsonData} handleChange={handleChange} />
+            <Form110Tabs json={jsonData} handleChange={handleChange} TabsNames={TabsNames} 
+            CalculatedValues={CalculatedValues} ValuesNames={ValuesNames}/>
         </main>
     );
 };
