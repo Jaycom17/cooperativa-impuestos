@@ -1,6 +1,6 @@
 import AsideStudent from "../../../components/AsideStudent/AsideStudent";
 import jsonData from '../../../formsData/ImpuestoDiferido.json';
-import Form110Tabs from '../../../components/Form110Values/Form110Tabs';
+import Form110Tabs from '../../../components/Form110Values/FormTabs';
 import { useState } from "react";
 
 function ImpuestoDiferidoForm() {
