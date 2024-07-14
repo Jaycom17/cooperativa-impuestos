@@ -142,6 +142,104 @@ const rentaLiquida = {
         TotalIngresos: {},
     },
     Costos: {
-        
-    }
+        MateriasPrimasReventaBienes:{
+            CostossVentasCalculadoSistemaPermanente: {},
+            MateriasPrimasProduccion: {
+                InventarioInicial: {},
+                ComprasLocales: {},
+                Importaciones: {},
+                InventarioFinal: {},
+
+            },
+            CostoBienesVendidos: {
+                InventarioInicial: {},
+                ComprasLocales: {},
+                Importaciones: {},
+                InventarioFinal: {},
+            },
+            ProductosProceso: {
+                InventarioInicial: {},
+                InventarioFinal: {},
+            },
+            ProductosTerminados: {
+                InventarioInicial: {},
+                InventarioFinal: {},
+            },  
+            CostosPrestacionServicios: {},
+            OtrosSistemasDeterminacionCostoVentas: {},
+            Ajustes: {},
+            Total: {},
+        },
+        ManoObra: {
+            CortoPlazo: {},
+            LargoPlazo: {},
+            PostTerminacionVinculoLaboral: {},
+            PostEmpleo: {},
+            Total: {},
+        },
+        DepresionacionesAmortizacionesDeterioros:{
+            DepreciacionPropiedadesPlantaEquipo: {
+                Costo: {},
+                AjusteAcumunlado: {},
+            },
+            DepreciacionPropiedadesInversion: {
+                Costo: {},
+                AjusteAcumunlado: {},
+            },
+            DepreciacionActivosBiologicos: {
+                Costo: {},
+                AjusteAcumunlado: {},
+            },
+            AmortizacionActivosIntangibles: {
+                Costo: {},
+                AjusteAcumunlado: {},
+            },
+            DepreciacionDerechosUsoArrendamientos: {},
+            OtrasDepreciacionesAmortizaciones: {
+                Costo: {},
+                AjusteAcumunlado: {},
+            },
+            DeterioroValorActivos: {
+                Inventarios: {},
+                PropiedadesPlantaEquipo: {},
+                ActivosIntangibles: {},
+                ActivosExploracionEvaluacionRecursosMinerales: {},
+                PropiedadesInversionMedidasCosto: {},
+                ActivosNoCorrientesMantenidosVentaEntregarPropietarios: {},
+                ActivosBiologicosMedidosCosto: {},
+                BienesArteCultura: {},
+                ActivosFinancieros: {},
+                CarteraCreditoOperacionesLeasing: {},
+                OtrasInversionesMedidasCostoMetodoParticipacion: {},
+                OtrosDeterioros: {},
+            },
+            Total: {},
+        },
+        OtrosCostos: {
+            Arrendamientos: {},
+            Seguros: {},
+            Servicios: {},
+            Honorarios: {},
+            ServiciosTecnicos: {
+                VinculadosEconomicos: {},
+                JurisdiccionesNoCooperantesBajaNulaImposicion: {},
+                NoVinculados: {},
+            },
+            AsistenciaTecnica: {
+                VinculadosEconomicos: {},
+                JurisdiccionesNoCooperantesBajaNulaImposicion: {},
+                NoVinculados: {},
+            },
+            OtrosConceptosReconocidosCostos: {},
+            OtrosConceptosFiscalesNoReconocidos: {},
+            Total: {},
+        },
+        MenosCostoAjustePrecios: {},
+        TotalCostos: {},
+    },
+    Gastos: {
+        Administracion: {
+            
+        },
+    },
 }
