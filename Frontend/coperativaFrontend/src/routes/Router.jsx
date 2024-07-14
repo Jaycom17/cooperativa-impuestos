@@ -7,7 +7,7 @@ import CreateRoom from "../pages/CreateRoom/CreateRoom";
 import MainStudent from "../pages/MainStudent/MainStudent";
 import ESFpatrimonioForm from "../pages/ESFpatrimonio/Form/ESFpatrimonioForm";
 import ActivosFijosForm from "../pages/ActivosFijos/Form/ActivosFijosForm";
-import Form110Form from "../pages/Form110/Form/Form110Form";
+import From110Form from "../pages/Form110/Form/Form110Form";
 import DetalleReng from "../pages/DetalleRenglones/Form/DetalleRengForm";
 import CreateProfessor from "../pages/CreateProfessor/CreateProfessor";
 import MiddlewareStudent from "../pages/MiddlewareStudent/MiddlewareStudent";
@@ -64,7 +64,7 @@ function Router() {
               <Route path="/ingrefactform" element={<IngresosFacturacionForm />}/>
               <Route path="/activosfijos" element={<ActivosFijosForm />}/>
               <Route path="/impuestodiferido" element={<ImpuestoDiferidoForm />}/>
-              <Route path="/form110" element={<Form110Form />}/>
+              <Route path="/form110" element={<From110Form />}/>
               <Route path="/detalleReng" element={<DetalleReng />}/>
             </Routes>
           </BrowserRouter>
