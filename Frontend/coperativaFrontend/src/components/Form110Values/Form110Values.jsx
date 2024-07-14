@@ -204,9 +204,14 @@ function Form110Values({ json, path, handleChange}) {
     const renderAccordeon = (title, content, key) => {
         const displayTitle = Names[title] || title;
         return (
+            <>
+            {key.split('.').pop() === '0' && (<div>
+                <buttton onClick={()=> console.log("hola")}>Hola</buttton>
+            </div>)}
             <Accordeon key={key} title={displayTitle}>
                 {renderContent(content, key)}
             </Accordeon>
+            </>
         );
     };
 
