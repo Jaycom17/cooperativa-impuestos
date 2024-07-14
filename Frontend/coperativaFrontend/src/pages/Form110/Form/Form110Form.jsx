@@ -1,8 +1,9 @@
 import jsonData from '../../../formsData/Form110.json';
 import AsideStudent from "../../../components/AsideStudent/AsideStudent.jsx";
-import Form110Tabs from '../../../components/Form110Values/FormTabs.jsx';
+import Form110Values from '../../../components/Form110Values/Form110Values.jsx';
+import Accordeon from '../../../components/Accordeon/Accordeon.jsx';
+import TabBar from '../../../components/TabBar/TabBar.jsx';
 import { useState } from "react";
-import { TabsNames, CalculatedValues, ValuesNames } from "../../../utils/form110.js";
 
 const From110Form = () => {
 
@@ -192,11 +193,37 @@ const From110Form = () => {
         console.log(data)
     };
 
+    const tabs = [
+        {name: 'DatoPers', label: 'Datos Personales'},
+        {name: 'DatosResum', label: 'Datos Resumidos'},
+        {name: 'Totales', label: 'Totales'}
+    ];
+
+    const [activeTab, setActiveTab] = useState(tabs[0].name);
+
+    const renderSections = (sectionData, pathPrefix, excludeSection = "") => {
+        return Object.keys(sectionData).map((sectionKey) => {
+            if (sectionKey === excludeSection) return null;
+            return (
+                <div key={sectionKey}>
+                    <Form110Values 
+                        title={sectionKey} 
+                        path={`${pathPrefix}.${sectionKey}`} 
+                        data={sectionData[sectionKey]} 
+                        handleChange={handleChange}
+                    />
+                </div>
+            );
+        });
+    };
+
     return (
         <main className="flex md:flex-row w-full">
             <AsideStudent />
-            <Form110Tabs json={jsonData} handleChange={handleChange} TabsNames={TabsNames} 
-            CalculatedValues={CalculatedValues} ValuesNames={ValuesNames}/>
+            <section className="w-full mt-12 md:mt-0 overflow-auto max-h-screen">
+                <TabBar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab}/>
+                {activeTab === 'DatoPers' && renderSections(data.DatoPers, 'DatoPers', '')}
+            </section>
         </main>
     );
 };

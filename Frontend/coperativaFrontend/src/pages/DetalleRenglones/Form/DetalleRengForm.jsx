@@ -1,6 +1,6 @@
 import jsonData from '../../../formsData/DetalleReng.json';
 import AsideStudent from "../../../components/AsideStudent/AsideStudent";
-import Form110Tabs from '../../../components/Form110Values/FormTabs.jsx';
+import Form110Tabs from '../../../components/GenericFormValues/FormTabs.jsx';
 import { useState } from "react";
 import { TabsNames, CalculatedValues, ValuesNames } from "../../../utils/DetalleReng.js";
 
