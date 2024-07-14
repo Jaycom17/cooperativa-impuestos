@@ -3,10 +3,10 @@ import AsideStudent from "../../../components/AsideStudent/AsideStudent.jsx";
 import Form110Values from '../../../components/Form110Values/Form110Values.jsx';
 import Accordeon from '../../../components/Accordeon/Accordeon.jsx';
 import TabBar from '../../../components/TabBar/TabBar.jsx';
+import { ValuesNames } from "../../../utils/form110.js"
 import { useState } from "react";
 
 const From110Form = () => {
-  const [data, setData] = useState(jsonData);
 
     const [data, setData] = useState(jsonData);
 
@@ -82,25 +82,25 @@ const From110Form = () => {
         return (currentData.RentLiquidGrav || 0) + (currentData.DivPartGravET00 || 0) + + (currentData.DivPartGravET || 0) +
             (currentData.DivPartGrav27 || 0) + (currentData.DivPartGrav || 0) + + (currentData.DivPartGrav33 || 0);
     }
-    
+
     const calculateImpNetRent = (currentData) => {
         const result = (currentData.TotImpRentLiquidGrav || 0) - (currentData.DescTrib || 0);
-        if(result>0){
+        if (result > 0) {
             return result;
-        }else{
+        } else {
             return 0;
         }
     }
-    
+
     const calculateTotImpCarg = (currentData) => {
         const result = (currentData.ImpNetRent || 0) + (currentData.ImpGanOcas || 0) - (currentData.DescPorImpPagad || 0);
-        if(result > 0){
+        if (result > 0) {
             return result;
-        }else{
+        } else {
             return 0;
         }
     }
-    
+
     const calculateTotReten = (currentData) => {
         return (currentData.AutoReten || 0) + (currentData.OtraReten || 0);
     }
@@ -115,34 +115,37 @@ const From110Form = () => {
         } else {
             return result;
         }
-    } 
+    }
 
     const calculateTotSaldPag = (currentData) => {
         const result = (currentData.TotImpCarg || 0) + (currentData.AntRenAnnoGravSig || 0) + (currentData.SobreInstFin.SobreInstFinan || 0) +
-            (currentData.SobreInstFin.AnticSobreInstAnnoGravSig || 0) + (currentData.Sansion || 0) - (currentData.ValInvObraImp50 || 0) - 
-            (currentData.DescEfectInvObrImp || 0) - (currentData.CredFisc || 0) - (currentData.AnticRentLiquidAnnoAntGrav || 0) - 
+            (currentData.SobreInstFin.AnticSobreInstAnnoGravSig || 0) + (currentData.Sansion || 0) - (currentData.ValInvObraImp50 || 0) -
+            (currentData.DescEfectInvObrImp || 0) - (currentData.CredFisc || 0) - (currentData.AnticRentLiquidAnnoAntGrav || 0) -
             (currentData.SaldFavAnnoAntGrav || 0) - (currentData.Reten.TotReten || 0) - (currentData.SobreInstFin.AnticSobreInstAnnoGranAnt || 0);
         if (result < 0) {
             return 0;
         } else {
             return result;
         }
-    } 
-    
+    }
+
     const calculateTotSaldFav = (currentData) => {
-        const result = (currentData.ValInvObraImp50 || 0) + (currentData.DescEfectInvObrImp || 0) + (currentData.CredFisc || 0) + 
-        (currentData.AnticRentLiquidAnnoAntGrav || 0) + (currentData.SaldFavAnnoAntGrav || 0) + (currentData.Reten.TotReten || 0) + 
-        (currentData.SobreInstFin.AnticSobreInstAnnoGranAnt || 0) - (currentData.TotImpCarg || 0) - (currentData.AntRenAnnoGravSig || 0) - 
-        (currentData.SobreInstFin.SobreInstFinan || 0) - (currentData.SobreInstFin.AnticSobreInstAnnoGravSig || 0) - (currentData.Sansion || 0);
+        const result = (currentData.ValInvObraImp50 || 0) + (currentData.DescEfectInvObrImp || 0) + (currentData.CredFisc || 0) +
+            (currentData.AnticRentLiquidAnnoAntGrav || 0) + (currentData.SaldFavAnnoAntGrav || 0) + (currentData.Reten.TotReten || 0) +
+            (currentData.SobreInstFin.AnticSobreInstAnnoGranAnt || 0) - (currentData.TotImpCarg || 0) - (currentData.AntRenAnnoGravSig || 0) -
+            (currentData.SobreInstFin.SobreInstFinan || 0) - (currentData.SobreInstFin.AnticSobreInstAnnoGravSig || 0) - (currentData.Sansion || 0);
         if (result < 0) {
             return 0;
         } else {
             return result;
         }
-    } 
+    }
 
     const handleChange = (e) => {
         let { name, value } = e.target;
+        console.log(name,value)
+/*
+       
 
         if (value === '') value = 0;
 
@@ -192,41 +195,98 @@ const From110Form = () => {
         // Calculo de los totales
         setData(updatedData);
         console.log(data)
+        */
     };
 
     const tabs = [
-        {name: 'DatoPers', label: 'Datos Personales'},
-        {name: 'DatosResum', label: 'Datos Resumidos'},
-        {name: 'Totales', label: 'Totales'}
+        { name: 'DatoPers', label: 'Datos Personales' },
+        { name: 'DatosResum', label: 'Datos Resumidos' },
+        { name: 'Totales', label: 'Totales' }
     ];
 
     const [activeTab, setActiveTab] = useState(tabs[0].name);
 
-    const renderSections = (sectionData, pathPrefix, excludeSection = "") => {
+    const renderSections = (sectionData, pathPrefix, excludeSection = "", friendlyNames = []) => {
+        if (Array.isArray(sectionData)) {
+            return Object.keys(sectionData).map((sectionKey) => {
+                if (sectionKey === excludeSection) return null;
+
+                const friendlyName = sectionData[sectionKey].Anio.toString();
+
+                return (
+                    <Accordeon
+                        key={sectionKey}
+                        title={friendlyName}
+                        arrayIndex={sectionKey}
+                    >
+                        <Form110Values
+                            title={friendlyName}
+                            path={`${pathPrefix}.${sectionKey}`}
+                            data={sectionData[sectionKey]}
+                            handleChange={handleChange}
+                        />
+                    </Accordeon>
+                );
+            });
+        }
+
         return Object.keys(sectionData).map((sectionKey) => {
             if (sectionKey === excludeSection) return null;
+
+            const friendlyName = friendlyNames[sectionKey] || sectionKey;
+
+            if(typeof sectionData[sectionKey] !== 'object'){
+                return (
+                    <div key={sectionKey}>
+                        <Form110Values
+                            title={friendlyName}
+                            path={`${pathPrefix}.${sectionKey}`}
+                            data={sectionData[sectionKey]}
+                            handleChange={handleChange}
+                        />
+                    </div>
+                );
+            }
             return (
-                <div key={sectionKey}>
-                    <Form110Values 
-                        title={sectionKey} 
-                        path={`${pathPrefix}.${sectionKey}`} 
-                        data={sectionData[sectionKey]} 
+                <Accordeon key={sectionKey} title={friendlyName}>
+                    <Form110Values
+                        title={friendlyName}
+                        path={`${pathPrefix}.${sectionKey}`}
+                        data={sectionData[sectionKey]}
                         handleChange={handleChange}
                     />
-                </div>
+                </Accordeon>
             );
         });
     };
+
 
     return (
         <main className="flex md:flex-row w-full">
             <AsideStudent />
             <section className="w-full mt-12 md:mt-0 overflow-auto max-h-screen">
-                <TabBar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab}/>
-                {activeTab === 'DatoPers' && renderSections(data.DatoPers, 'DatoPers', '')}
+                <TabBar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
+                {activeTab === 'DatoPers' && renderSections(
+                    data.DatoPers,
+                    "DatoPers",
+                    "",
+                    ValuesNames
+                )}
+                {activeTab === 'DatosResum' && renderSections(
+                    data.DatosResum,
+                    "DatosResum",
+                    "",
+                    ValuesNames
+                )}
+                {activeTab === 'Totales' && renderSections(
+                    data.Totales,
+                    "Totales",
+                    "",
+                    ValuesNames
+                )}
             </section>
         </main>
     );
-  };
+};
 
 export default From110Form;
