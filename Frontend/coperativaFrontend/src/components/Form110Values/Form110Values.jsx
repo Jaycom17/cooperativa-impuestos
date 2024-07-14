@@ -5,19 +5,18 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
 
 
 
-    const renderTextField = (sectionData, sectionTitle, value) => {
+    const renderTextField = (sectionData, sectionTitle, value = 0) => {
         let newPath = ""
         if (sectionTitle !== "") {
             newPath = path + "." + sectionTitle;
         } else {
             newPath = path
         }
-        console.log(newPath,"-",sectionData)
         const pathParts = newPath.split('.');
         if (CalculatedValues.includes(pathParts[pathParts.length-1])) {
             return (
                 <p className="p-1 text-xl font-medium border-b-4">
-                    {0}
+                    {typeof sectionData === 'object' ? value : sectionData}
                 </p>
             );
         } else {
@@ -27,7 +26,7 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
                         className="bg-white border rounded-md p-1"
                         type="string"
                         name={newPath}
-                        value={value === 0 ? '' : value}
+                        value={typeof sectionData === 'object' ? value : sectionData}
                         placeholder={newPath}
                         onChange={(e) => handleChange(e)}
                     />
@@ -54,7 +53,7 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
                         className="bg-white border rounded-md p-1"
                         type="number"
                         name={newPath}
-                        value={value === 0 ? '' : value}
+                        value={typeof sectionData === 'object' ? value : sectionData}
                         placeholder={newPath}
                         onChange={(e) => handleChange(e)}
                     />
@@ -69,7 +68,7 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
             {
                 typeof sectionData !== 'object'
                     ? <>{
-                        renderTextField(sectionData, "",sectionData[title])
+                        renderTextField(sectionData, "")
                     }</>
                     :
                     <section className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-3">
@@ -95,7 +94,7 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
 
                                             {
                                                 
-                                                    <>{renderTextField(sectionData[key], key,sectionData[key])}</>
+                                                    <>{renderTextField(sectionData[key], key)}</>
 
                                             }
                                         </div>
