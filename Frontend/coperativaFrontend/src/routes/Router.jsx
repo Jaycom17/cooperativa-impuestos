@@ -15,6 +15,7 @@ import RoomReport from "../pages/RoomReport/RoomReport";
 import CaratulaForm from "../pages/Caratula/Form/Caratula";
 import IngresosFacturacionForm from "../pages/IngresosFacturacion/Form/IngresosFacturacionForm";
 import ImpuestoDiferidoForm from "../pages/ImpuestoDiferido/Form/ImpuestoDiferidoForm";
+import ResetPasswordTeacher from "../pages/ResetPassword/ResetPasswordTeacher";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -55,6 +56,7 @@ function Router() {
                 <Route path="/professor" element={<TeacherPage />} />
                 <Route path="/createroom" element={<CreateRoom />} />
                 <Route path="/roomreport/:roomID" element={<RoomReport />} />
+                <Route path="/resetpasswordteacher" element={<ResetPasswordTeacher />} />
               </Route>
               <Route
                 path="/esfpatrimonioform"

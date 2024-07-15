@@ -1,13 +1,15 @@
 import { useState, useRef,useContext, useEffect } from "react";
 import { MdMenu } from "react-icons/md";
 import { GrFormClose } from "react-icons/gr";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import AccountDropdown from "../AccountDrop/AccountDropdown";
 import { AuthContext } from "../../context/AuthContext";
 
 const TeacherNavbarTW = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const navigate = useNavigate();
 
     const { singout, user } = useContext(AuthContext);
 
@@ -54,6 +56,7 @@ const TeacherNavbarTW = () => {
                 <Link to={data.to} key={i} className={`${buttonStyle} ${data.hoverProps}`}>{data.label}</Link>
             ))}
             <AccountDropdown
+            onActualizarDatos={()=>navigate('/resetpasswordteacher')}
             onCerrarSesion={singout}
             />
         </section>
