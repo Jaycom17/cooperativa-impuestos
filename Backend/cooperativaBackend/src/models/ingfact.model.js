@@ -79,7 +79,11 @@ export const IngresosFacturacion = z.object({
       SoloFact: z.number(),
       TotFactEmiPEr: z.number()
     }),
-    IngrContDevPer: z.object({ TotalIngrContDevPer: z.number() })
+    IngrContDevPer: z.object({
+      SinFact: z.number(),
+      FactPerAnt: z.number(),
+      TotalIngrContDevPer: z.number()
+    })
   }),
   Totales: z.object({
     PasivIngrDif: z.object({

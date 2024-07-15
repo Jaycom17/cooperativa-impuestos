@@ -1,106 +1,108 @@
 {
   "VentBien":{
     "PasivIngrDif":{
-      "SaldoIniPer": 1,
-      "IngrContPer": 1,
-      "GenPer": 1,
-      "TotPasivDif": 1
+      "SaldoIniPer": 0,
+      "IngrContPer": 0,
+      "GenPer": 0,
+      "TotPasivDif": 0
     },
     "FactEmitPer":{
-      "DevIngrPerAnt": 1,
-      "DevIngrPerAct": 1,
-      "RegIngDif": 1,
-      "SoloFact": 1,
-      "TotFactEmiPEr": 1
+      "DevIngrPerAnt": 0,
+      "DevIngrPerAct": 0,
+      "RegIngDif": 0,
+      "SoloFact": 0,
+      "TotFactEmiPEr": 0
     },
     "IngrContDevPer":{
-      "SinFact": 1,
-      "FactPerAnt": 1,
-      "TotalIngrContDevPer":1
+      "SinFact": 0,
+      "FactPerAnt": 0,
+      "TotalIngrContDevPer":0
     }
   },
   "PrestServ":{
     "PasivIngrDif":{
-      "SaldoIniPer": 1,
-      "IngrContPer": 1,
-      "GenPer": 1,
-      "TotPasivDif": 1
+      "SaldoIniPer": 0,
+      "IngrContPer": 0,
+      "GenPer": 0,
+      "TotPasivDif": 0
     },
     "FactEmitPer":{
-      "DevIngrPerAnt": 1,
-      "DevIngrPerAct": 1,
-      "RegIngDif": 1,
-      "SoloFact": 1,
-      "TotFactEmiPEr": 1
+      "DevIngrPerAnt": 0,
+      "DevIngrPerAct": 0,
+      "RegIngDif": 0,
+      "SoloFact": 0,
+      "TotFactEmiPEr": 0
     },
     "IngrContDevPer":{
-      "SinFact": 1,
-      "FactPerAnt": 1,
-      "TotalIngrContDevPer":1
+      "SinFact": 0,
+      "FactPerAnt": 0,
+      "TotalIngrContDevPer":0
     }
   },
   "OtrosIngresos":{
     "PasivIngrDif":{
-      "SaldoIniPer": 1,
-      "IngrContPer": 1,
-      "GenPer": 1,
-      "TotPasivDif": 1
+      "SaldoIniPer": 0,
+      "IngrContPer": 0,
+      "GenPer": 0,
+      "TotPasivDif": 0
     },
     "FactEmitPer":{
-      "DevIngrPerAnt": 1,
-      "DevIngrPerAct": 1,
-      "RegIngDif": 1,
-      "SoloFact": 1,
-      "TotFactEmiPEr": 1
+      "DevIngrPerAnt": 0,
+      "DevIngrPerAct": 0,
+      "RegIngDif": 0,
+      "SoloFact": 0,
+      "TotFactEmiPEr": 0
     },
     "IngrContDevPer":{
-      "SinFact": 1,
-      "FactPerAnt": 1,
-      "TotalIngrContDevPer":1
+      "SinFact": 0,
+      "FactPerAnt": 0,
+      "TotalIngrContDevPer":0
     }
   },
   "IngresosTer":{
     "FactEmitPer":{
-      "DevIngrPerAnt": 1,
-      "DevIngrPerAct": 1,
-      "RegIngDif": 1,
-      "SoloFact": 1,
-      "TotFactEmiPEr": 1
+      "DevIngrPerAnt": 0,
+      "DevIngrPerAct": 0,
+      "RegIngDif": 0,
+      "SoloFact": 0,
+      "TotFactEmiPEr": 0
     },
     "IngrContDevPer":{
-      "TotalIngrContDevPer":1
+      "TotalIngrContDevPer":0
     }
   },
   "AjustesValAdec":{
     "FactEmitPer":{
-      "DevIngrPerAnt": 1,
-      "DevIngrPerAct": 1,
-      "RegIngDif": 1,
-      "SoloFact": 1,
-      "TotFactEmiPEr": 1
+      "DevIngrPerAnt": 0,
+      "DevIngrPerAct": 0,
+      "RegIngDif": 0,
+      "SoloFact": 0,
+      "TotFactEmiPEr": 0
     },
     "IngrContDevPer":{
-      "TotalIngrContDevPer":1
+      "SinFact": 0,
+      "FactPerAnt": 0,
+      "TotalIngrContDevPer":0
     }
   },
   "Totales":{
     "PasivIngrDif":{
-      "SaldoIniPer": 1,
-      "IngrContPer": 1,
-      "GenPer": 1,
-      "TotPasivDif": 1
+      "SaldoIniPer": 0,
+      "IngrContPer": 0,
+      "GenPer": 0,
+      "TotPasivDif": 0
     },
     "FactEmitPer":{
-      "DevIngrPerAnt": 1,
-      "DevIngrPerAct": 1,
-      "RegIngDif": 1,
-      "SoloFact": 1,
-      "TotFactEmiPEr": 1
+      "DevIngrPerAnt": 0,
+      "DevIngrPerAct": 0,
+      "RegIngDif": 0,
+      "SoloFact": 0,
+      "TotFactEmiPEr": 0
     },
     "IngrContDevPer":{
-      "SinFact": 1,
-      "FactPerAnt": 1,
-      "TotalIngrContDevPer":1
+      "SinFact": 0,
+      "FactPerAnt": 0,
+      "TotalIngrContDevPer":0
     }
   }
 }
