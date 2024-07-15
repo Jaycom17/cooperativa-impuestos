@@ -10,16 +10,16 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
                 {keys.map((key) => (
                     <article key={key} className="flex flex-col border p-3 rounded-md">
                         <h4 className="mb-3 font-semibold">{friendlyNames[key]}</h4>
-                        <section className="flex flex-col gap-y-2">
+                        <section className="flex flex-col gap-y-2 justify-between">
                             {typeof sectionData[key] === "object" ? (
                                 Object.entries(sectionData[key]).map(([subKey, subValue]) => (
                                     <div key={subKey} className="flex flex-col space-y-2 bg-white">
                                         <label className="bg-white text-sm" htmlFor={subKey}>
-                                            {subKey === "CambiosValorRazonable" ? "Cambios de valor razonable" : friendlyNames[subKey] || subKey}
+                                            {friendlyNames[subKey] || subKey}
                                         </label>
                                         {
                                             ActivosFijosTotal.includes(`${key}.${subKey}`) ?
-                                            <p className="p-1 text-xl font-medium border-b-4">
+                                            <p className="p-1 font-medium border-b-2">
                                                 {subValue === 0 ? '0' : subValue}
                                             </p>
                                             : 
@@ -39,7 +39,7 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
 
                                     {
                                        ActivosFijosTotal.includes(`${key}`) ?
-                                       <p className="p-1 text-xl font-medium border-b-4">
+                                       <p className="p-1 font-medium border-b-2">
                                            {sectionData[key] === 0 ? '0' : sectionData[key]}
                                        </p> 
                                     :
