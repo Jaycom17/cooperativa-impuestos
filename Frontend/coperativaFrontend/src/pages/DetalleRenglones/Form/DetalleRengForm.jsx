@@ -1,16 +1,11 @@
-import jsonData from '../../../formsData/Form110.json';
+import jsonData from '../../../formsData/DetalleReng.json';
 import AsideStudent from "../../../components/AsideStudent/AsideStudent";
-import Form110Tabs from '../../../components/Form110Values/Form110Tabs';
+import Form110Tabs from '../../../components/GenericFormValues/FormTabs.jsx';
 import { useState } from "react";
+import { TabsNames, CalculatedValues, ValuesNames } from "../../../utils/DetalleReng.js";
 
-const From110Form = () => {
-
+const DetalleReng = () => {
     const [data, setData] = useState(jsonData);
-
-    const calculateTotalPatBruto = (currentData) => {
-        console.log(currentData)
-        return (currentData.EfectvEquiEfect || 0) + (currentData.InvInstFinDeriv || 0) + (currentData.CuentDocArreFinCob || 0) + (currentData.Inv || 0) + (currentData.ActivInt || 0) + (currentData.ActivBio || 0) + (currentData.PPEPANCMC || 0) + (currentData.Otro || 0);
-    }
 
     const handleChange = (e) => {
         let { name, value } = e.target;
@@ -44,18 +39,18 @@ const From110Form = () => {
         currentLevel[lastKey] = value;
 
         // Actualizar el estado con el objeto modificado
-        updatedData.DatosResum.Patrim.TotalBruto = calculateTotalPatBruto(updatedData.DatosResum.Patrim);
+       
         // Calculo de los totales
-
         setData(updatedData);
+        console.log(data)
     };
 
     return (
         <main className="flex md:flex-row w-full">
             <AsideStudent />
-            <Form110Tabs json={jsonData} handleChange={handleChange}/>
+            <Form110Tabs json={jsonData} handleChange={handleChange} TabsNames={TabsNames} 
+            CalculatedValues={CalculatedValues} ValuesNames={ValuesNames}/>
         </main>
     );
 };
-
-export default From110Form;
+export default DetalleReng;

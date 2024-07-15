@@ -1,4410 +1,4431 @@
 {
-  "R33":{
-    "510506":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R33": {
+    "510506": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "510527":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "510527": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "510530":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "510530": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "510533":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "510533": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "510536":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "510536": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "510539":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "510539": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "510548":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "510548": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "520506":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "520506": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "520518":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "520518": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "520527":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "520527": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "520530":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "520530": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "520533":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "520533": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "520536":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "520536": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "520539":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "520539": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "520548":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "520548": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "720506":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "720506": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "720527":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "720527": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "720530":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "720530": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "720533":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "720533": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "720536":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "720536": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "720539":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "720539": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "720548":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "720548": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R34":{
-    "510568":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R34": {
+    "510568": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "510569":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "510569": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "510570":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "510570": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "520568":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "520568": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "520569":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "520569": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "520570":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "520570": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "720568":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "720568": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "720569":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "720569": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "720570":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "720570": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R35":{
-    "510572":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R35": {
+    "510572": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "510575":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "510575": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "510578":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "510578": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "520572":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "520572": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "520575":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "520575": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "520578":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "520578": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "720572":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "720572": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "720575":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "720575": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "720578":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "720578": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R36":{
-    "1105":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R36": {
+    "1105": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1110":{
-      "Nac":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "1110": {
+      "Nac": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Ext":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Ext": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "1115":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1115": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1120":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1120": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1125":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1125": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1140":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1140": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R37":{
-    "1205":{
-      "MedCost":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+  "R37": {
+    "1205": {
+      "MedCost": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "DetCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "DetCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "MedValRazCamRes":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "MedValRazCamRes": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "EfectMed":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "EfectMed": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "MedValRazCamORI":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "MedValRazCamORI": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "EfectMed":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "EfectMed": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "MedMetPart":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "MedMetPart": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "EfectApliPart":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "EfectApliPart": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "DetCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "DetCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       }
     },
-    "1210":{
-      "MedCost":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+    "1210": {
+      "MedCost": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "DetCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "DetCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "MedValRazCamRes":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "MedValRazCamRes": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "EfectMed":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "EfectMed": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "MedValRazCamORI":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "MedValRazCamORI": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "EfectMed":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "EfectMed": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       }
     },
-    "1215":{
-      "InsFinDervNegMedCost":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+    "1215": {
+      "InsFinDervNegMedCost": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "DetCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "DetCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "InsFinDervCovMedCost":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "InsFinDervCovMedCost": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "DetCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "DetCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "DerFidNegMedCost":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "DerFidNegMedCost": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "DetCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "DetCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       }
     },
-    "1216":{
-      "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        },
-        "DetCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        }
+    "1216": {
+      "ValCost": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "DetCost": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      }
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R38":{
-    "1305":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R38": {
+    "1305": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1310":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1310": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1315":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1315": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1320":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1320": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1325":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1325": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1330":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1330": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1335":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1335": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1340":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1340": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1345":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1345": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1350":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1350": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1360":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1360": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1365":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1365": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1380":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1380": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1399":{
-      "DetCli":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "1399": {
+      "DetCli": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "DetDem":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "DetDem": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R39":{
-    "1405":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R39": {
+    "1405": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1410":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1410": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1415":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1415": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1430":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1430": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1435":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1435": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1440":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1440": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1455":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1455": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1460":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1460": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1465":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1465": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1499":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1499": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R40":{
-    "1505":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R40": {
+    "1505": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1507":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1507": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1510":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1510": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1520":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1520": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1558":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1558": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1569":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1569": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1570":{
-      "Plus":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "1570": {
+      "Plus": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Adq":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Adq": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Fus":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Fus": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Esci":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Esci": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "CompAcc":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "CompAcc": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "1578":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1578": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1579":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1579": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R41":{
-    "1605":{
-      "AniProdCost":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+  "R41": {
+    "1605": {
+      "AniProdCost": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "DeprAcum":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "DeprAcum": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "DetAcum":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "DetAcum": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "AniProdCRaz":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "AniProdCRaz": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "Reval":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        }
-      }
-    },
-    "1610":{
-      "AniConsCost":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        },
-        "DetAni":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        }
-      },
-      "AniConsCRaz":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        },
-        "Reval":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "Reval": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       }
     },
-    "1615":{
-      "PlaProdCost":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+    "1610": {
+      "AniConsCost": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "DeprAcum":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        },
-        "DetAcum":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "DetAni": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "PlaProdCRaz":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "AniConsCRaz": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "Reval":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "Reval": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       }
     },
-    "1620":{
-      "PlaConsCost":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+    "1615": {
+      "PlaProdCost": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "DetAni":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "DeprAcum": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        },
+        "DetAcum": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "PlaConsCRaz":{
-        "ValCost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "PlaProdCRaz": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "Reval":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "Reval": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       }
     },
-    "TotCont":1,
-    "TotFisc":1
+    "1620": {
+      "PlaConsCost": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        },
+        "DetAni": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        }
+      },
+      "PlaConsCRaz": {
+        "ValCost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        },
+        "Reval": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        }
+      }
+    },
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R42":{
-    "1704":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R42": {
+    "1704": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1708":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1708": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1716":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1716": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1720":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1720": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1724":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1724": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1728":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1728": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1732":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1732": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1736":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1736": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1740":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1740": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1745":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1745": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1768":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1768": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1769":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1769": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1779":{
-      "ValCost":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "1779": {
+      "ValCost": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Reval":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Reval": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "1780":{
-      "ValCost":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "1780": {
+      "ValCost": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Reval":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Reval": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "1788":{
-      "ValCost":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "1788": {
+      "ValCost": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Reval":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Reval": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "1789":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1789": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1790":{
-      "ValCost":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "1790": {
+      "ValCost": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "DeprAcum":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "DeprAcum": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Det":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Det": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R43":{
-    "1805":{
-      "AntiImpRenSobT":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+  "R43": {
+    "1805": {
+      "AntiImpRenSobT": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "RetAutFuente":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "RetAutFuente": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "RetIVA":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "RetIVA": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "RetICA":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "RetICA": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "SaldoFavor":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "SaldoFavor": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "SaldoIVA":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "SaldoIVA": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "SaldoICA":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "SaldoICA": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "1810":{
-      "Plub":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "1810": {
+      "Plub": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "PriSeg":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "PriSeg": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Arrend":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Arrend": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Otro":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Otro": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "1850":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1850": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "1860":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "1860": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "CargDifInt":{
-      "ValCost":{
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "CargDifInt": {
+      "ValCost": {
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "AmortAcum":{
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "AmortAcum": {
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R44":{
-    "TotCont":1,
-    "TotFisc":1
+  "R44": {
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R45":{
-    "2105":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R45": {
+    "2105": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2110":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2110": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2115":{
-      "Colombia":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "2115": {
+      "Colombia": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "NoColombia":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "NoColombia": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "2205":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2205": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2210":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2210": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2335":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2335": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2355":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2355": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2365":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2365": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2367":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2367": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2368":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2368": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2370":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2370": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2404":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2404": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2408":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2408": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2412":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2412": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2505":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2505": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2510":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2510": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2515":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2515": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2525":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2525": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2530":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2530": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2605":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2605": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2705":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2705": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2710":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2710": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2715":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2715": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2805":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2805": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2810":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2810": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2815":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2815": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2816":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2816": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2820":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2820": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2825":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2825": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2826":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2826": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2835":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2835": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2840":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2840": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "2895":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "2895": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "PasivRecFisc":{
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "PasivRecFisc": {
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R46":{
-    "TotCont":1,
-    "TotFisc":1,
-    "3130":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R46": {
+    "TotCont": 1,
+    "TotFisc": 1,
+    "3130": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "3605":{
-      "UtilDesImp":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "3605": {
+      "UtilDesImp": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "PerDesImp":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "PerDesImp": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "3705":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "3705": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "3710":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "3710": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "3715":{
-      "GananAcum":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "3715": {
+      "GananAcum": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "PerAcum":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "PerAcum": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "3720":{
-      "GananAcumORI":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "3720": {
+      "GananAcumORI": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "PerAcumORI":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "PerAcumORI": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "3805":{
-      "Reval":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "3805": {
+      "Reval": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "MetPar":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "MetPar": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     }
   },
-  "R47":{
-    "VentBien":{
-      "CliNac":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+  "R47": {
+    "VentBien": {
+      "CliNac": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Export":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Export": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "CliZonFrac":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "CliZonFrac": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "SocCom":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "SocCom": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "CliJuri":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "CliJuri": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "VincEcoZonFrac":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "VincEcoZonFrac": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "ServGen":{
-      "CliNac":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "ServGen": {
+      "CliNac": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Export":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Export": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "CliZonFrac":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "CliZonFrac": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "SocCom":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "SocCom": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "CliJuri":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "CliJuri": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "VincEcoZonFrac":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "VincEcoZonFrac": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "ServConst":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "ServConst": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "AcuConcServ":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "AcuConcServ": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "ArrenOper":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "ArrenOper": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "Regal":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "Regal": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "Comis":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "Comis": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "HonProf":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "HonProf": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "ActSegCap":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "ActSegCap": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "LibRes":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "LibRes": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "ComBanc":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "ComBanc": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "Otro":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "Otro": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R48":{
-    "421005":{
-      "ArreFinMerc":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+  "R48": {
+    "421005": {
+      "ArreFinMerc": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "IntFin":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "IntFin": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "IntPrest":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "IntPrest": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "IntFinAmrt":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "IntFinAmrt": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "IntImplc":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "IntImplc": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "421020":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "421020": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "421021":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "421021": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "IntPresSoc":{
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "IntPresSoc": {
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R49":{
-    "RecSocNacMeg":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R49": {
+    "RecSocNacMeg": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "RecSocNacNoMegNoSoc":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "RecSocNacNoMegNoSoc": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "RecSocNacNoMegSoc":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "RecSocNacNoMegSoc": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "RecSocNacSim":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "RecSocNacSim": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R50":{
-    "TotCont":1,
-    "TotFisc":1
+  "R50": {
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R51":{
-    "TotCont":1,
-    "TotFisc":1,
-    "Dat":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R51": {
+    "TotCont": 1,
+    "TotFisc": 1,
+    "Dat": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     }
   },
-  "R52":{
-    "RecSocNacMeg":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R52": {
+    "RecSocNacMeg": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "RecSocNacNoMegNoSoc":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "RecSocNacNoMegNoSoc": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "RecSocNacNoMegSoc":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "RecSocNacNoMegSoc": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "RecSocNacSim":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "RecSocNacSim": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R53":{
-    "RecSocNacNoMegNoSoc":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R53": {
+    "RecSocNacNoMegNoSoc": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "RecSocNacNoMegSoc":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "RecSocNacNoMegSoc": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "RecSocNacSim":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "RecSocNacSim": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R54":{
-    "RecSocNacNoMegNoSoc":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R54": {
+    "RecSocNacNoMegNoSoc": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "RecSocNacNoMegSoc":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "RecSocNacNoMegSoc": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "RecSocNacSim":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "RecSocNacSim": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R55":{
-    "TotCont":1,
-    "TotFisc":1
+  "R55": {
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R56":{
-    "TotCont":1,
-    "TotFisc":1,
-    "RecSocNacMeg":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R56": {
+    "TotCont": 1,
+    "TotFisc": 1,
+    "RecSocNacMeg": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     }
   },
-  "R57":{
-    "4245":{
-      "Menos2":{
-        "PrpPlntEqp":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+  "R57": {
+    "4245": {
+      "Menos2": {
+        "PrpPlntEqp": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "PrpInv":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "PrpInv": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ActBio":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ActBio": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ActNoCorr":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ActNoCorr": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ActInta":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ActInta": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "InvAccOtro":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "InvAccOtro": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "DispInstr":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "DispInstr": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "Otro":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "Otro": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "Mas2":{
-        "PrpPlntEqp":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "Mas2": {
+        "PrpPlntEqp": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "PrpInv":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "PrpInv": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ActBio":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ActBio": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ActNoCorr":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ActNoCorr": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ActInta":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ActInta": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "InvAccOtro":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "InvAccOtro": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "DispInstr":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "DispInstr": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "Otro":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        }
-      }
-    },
-    "4265":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
-    },
-    "425035":{
-      "Inv":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "PrpPlntEqp":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "ActInt":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "ActExplrRecMat":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "PrpInv":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "ActNoCorrVent":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "ActBio":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "BienArtCult":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "ActFinan":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "CartCred":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "OtraInv":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "Otro":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      }
-    },
-    "425036":{
-      "Garan":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "ContOner":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "Litig":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "Reembol":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "Reestruc":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "Pasiv":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "Otro":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      }
-    },
-    "425037":{
-      "BenefCortoPlz":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "BenefLargPlz":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "BenefEmplTemVinLab":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "BenefEmplPost":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      }
-    },
-    "425050":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
-    },
-    "4255":{
-      "ReembCompSeg":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "Otro":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      }
-    },
-    "4295":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
-    },
-    "429501":{
-      "GananApli":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "GananCamb":{
-        "InvAsoSubNegCon":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        },
-        "ActBio":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        },
-        "PropInv":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        },
-        "InstFinan":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        },
-        "InstDer":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        },
-        "Otro":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "Otro": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       }
     },
-    "429502":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "4265": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "429503":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "425035": {
+      "Inv": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "PrpPlntEqp": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "ActInt": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "ActExplrRecMat": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "PrpInv": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "ActNoCorrVent": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "ActBio": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "BienArtCult": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "ActFinan": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "CartCred": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "OtraInv": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "Otro": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      }
     },
-    "429506":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "425036": {
+      "Garan": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "ContOner": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "Litig": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "Reembol": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "Reestruc": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "Pasiv": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "Otro": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      }
     },
-    "429507":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "425037": {
+      "BenefCortoPlz": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "BenefLargPlz": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "BenefEmplTemVinLab": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "BenefEmplPost": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      }
     },
-    "429543":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "425050": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "4255": {
+      "ReembCompSeg": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "Otro": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      }
+    },
+    "4295": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
+    },
+    "429501": {
+      "GananApli": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "GananCamb": {
+        "InvAsoSubNegCon": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        },
+        "ActBio": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        },
+        "PropInv": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        },
+        "InstFinan": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        },
+        "InstDer": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        },
+        "Otro": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        }
+      }
+    },
+    "429502": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
+    },
+    "429503": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
+    },
+    "429506": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
+    },
+    "429507": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
+    },
+    "429543": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
+    },
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R58":{
-    "TotCont":1,
-    "TotFisc":1
+  "R58": {
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R59":{
-    "TotCont":1,
-    "TotFisc":1,
-    "4175":{
-      "VentBien":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+  "R59": {
+    "TotCont": 1,
+    "TotFisc": 1,
+    "4175": {
+      "VentBien": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "PresServ":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "PresServ": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Otro":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Otro": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     }
   },
-  "R60":{
-    "DiviNoGrav":{
-      "Ajust1":1,
-      "SaldFisc":1
+  "R60": {
+    "DiviNoGrav": {
+      "Ajust1": 1,
+      "SaldFisc": 1
     },
-    "AprtObl":{
-      "Ajust1":1,
-      "SaldFisc":1
+    "AprtObl": {
+      "Ajust1": 1,
+      "SaldFisc": 1
     },
-    "AprtVol":{
-      "Ajust1":1,
-      "SaldFisc":1
+    "AprtVol": {
+      "Ajust1": 1,
+      "SaldFisc": 1
     },
-    "UtilEnaj":{
-      "Ajust1":1,
-      "SaldFisc":1
+    "UtilEnaj": {
+      "Ajust1": 1,
+      "SaldFisc": 1
     },
-    "ValCap":{
-      "Ajust1":1,
-      "SaldFisc":1
+    "ValCap": {
+      "Ajust1": 1,
+      "SaldFisc": 1
     },
-    "Indem":{
-      "Ajust1":1,
-      "SaldFisc":1
+    "Indem": {
+      "Ajust1": 1,
+      "SaldFisc": 1
     },
-    "Recom":{
-      "Ajust1":1,
-      "SaldFisc":1
+    "Recom": {
+      "Ajust1": 1,
+      "SaldFisc": 1
     },
-    "Ganan":{
-      "Ajust1":1,
-      "SaldFisc":1
+    "Ganan": {
+      "Ajust1": 1,
+      "SaldFisc": 1
     },
-    "SubsAgro":{
-      "Ajust1":1,
-      "SaldFisc":1
+    "SubsAgro": {
+      "Ajust1": 1,
+      "SaldFisc": 1
     },
-    "TotFisc":1
+    "TotFisc": 1
   },
-  "R61":{
-    "TotCont":1,
-    "TotFisc":1
+  "R61": {
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R62":{
-    "61":{
-      "InvIniTrbProc":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+  "R62": {
+    "61": {
+      "InvIniTrbProc": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "InvIniMatPri":{
-        "Data":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "InvIniMatPri": {
+        "Data": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "CompLoc":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "CompLoc": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "Imp":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "Imp": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "InvFinMatPri":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "InvFinMatPri": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "CostManoObr":{
-        "CortoPlz":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "CostManoObr": {
+        "CortoPlz": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "LargoPlz":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "LargoPlz": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "TermVincLab":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "TermVincLab": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "PostEmpl":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "PostEmpl": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "CostDepr":{
-        "DeprPrpPltEqu":{
-          "Cost":{
-            "SaldCont":1,
-            "Ajust1":1,
-            "Ajust2":"",
-            "Ajust3":1,
-            "SaldFisc":1
+      "CostDepr": {
+        "DeprPrpPltEqu": {
+          "Cost": {
+            "SaldCont": 1,
+            "Ajust1": 1,
+            "Ajust2": "",
+            "Ajust3": 1,
+            "SaldFisc": 1
           },
-          "AjusAcum":{
-            "SaldCont":1,
-            "Ajust1":1,
-            "Ajust2":"",
-            "Ajust3":1,
-            "SaldFisc":1
+          "AjusAcum": {
+            "SaldCont": 1,
+            "Ajust1": 1,
+            "Ajust2": "",
+            "Ajust3": 1,
+            "SaldFisc": 1
           }
         },
-        "DeprPrpInv":{
-          "Cost":{
-            "SaldCont":1,
-            "Ajust1":1,
-            "Ajust2":"",
-            "Ajust3":1,
-            "SaldFisc":1
+        "DeprPrpInv": {
+          "Cost": {
+            "SaldCont": 1,
+            "Ajust1": 1,
+            "Ajust2": "",
+            "Ajust3": 1,
+            "SaldFisc": 1
           },
-          "AjusAcum":{
-            "SaldCont":1,
-            "Ajust1":1,
-            "Ajust2":"",
-            "Ajust3":1,
-            "SaldFisc":1
+          "AjusAcum": {
+            "SaldCont": 1,
+            "Ajust1": 1,
+            "Ajust2": "",
+            "Ajust3": 1,
+            "SaldFisc": 1
           }
         },
-        "DeprActBio":{
-          "Cost":{
-            "SaldCont":1,
-            "Ajust1":1,
-            "Ajust2":"",
-            "Ajust3":1,
-            "SaldFisc":1
+        "DeprActBio": {
+          "Cost": {
+            "SaldCont": 1,
+            "Ajust1": 1,
+            "Ajust2": "",
+            "Ajust3": 1,
+            "SaldFisc": 1
           },
-          "AjusAcum":{
-            "SaldCont":1,
-            "Ajust1":1,
-            "Ajust2":"",
-            "Ajust3":1,
-            "SaldFisc":1
+          "AjusAcum": {
+            "SaldCont": 1,
+            "Ajust1": 1,
+            "Ajust2": "",
+            "Ajust3": 1,
+            "SaldFisc": 1
           }
         },
-        "DepreActInt":{
-          "Cost":{
-            "SaldCont":1,
-            "Ajust1":1,
-            "Ajust2":"",
-            "Ajust3":1,
-            "SaldFisc":1
+        "DepreActInt": {
+          "Cost": {
+            "SaldCont": 1,
+            "Ajust1": 1,
+            "Ajust2": "",
+            "Ajust3": 1,
+            "SaldFisc": 1
           },
-          "AjusAcum":{
-            "SaldCont":1,
-            "Ajust1":1,
-            "Ajust2":"",
-            "Ajust3":1,
-            "SaldFisc":1
+          "AjusAcum": {
+            "SaldCont": 1,
+            "Ajust1": 1,
+            "Ajust2": "",
+            "Ajust3": 1,
+            "SaldFisc": 1
           }
         },
-        "Otro":{
-          "Cost":{
-            "SaldCont":1,
-            "Ajust1":1,
-            "Ajust2":"",
-            "Ajust3":1,
-            "SaldFisc":1
+        "Otro": {
+          "Cost": {
+            "SaldCont": 1,
+            "Ajust1": 1,
+            "Ajust2": "",
+            "Ajust3": 1,
+            "SaldFisc": 1
           },
-          "AjusAcum":{
-            "SaldCont":1,
-            "Ajust1":1,
-            "Ajust2":"",
-            "Ajust3":1,
-            "SaldFisc":1
+          "AjusAcum": {
+            "SaldCont": 1,
+            "Ajust1": 1,
+            "Ajust2": "",
+            "Ajust3": 1,
+            "SaldFisc": 1
           }
         }
       },
-      "AmrtGatPagAnti":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "AmrtGatPagAnti": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Deterioros":{
-        "Inv":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "Deterioros": {
+        "Inv": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "PrpPltEqu":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "PrpPltEqu": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ActInt":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ActInt": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ActExp":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ActExp": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "PrpInver":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "PrpInver": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ActNoCorr":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ActNoCorr": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ActBio":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ActBio": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "BienArt":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "BienArt": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ActFin":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ActFin": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "CartCred":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "CartCred": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "OtrasInv":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "OtrasInv": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "DerUso":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "DerUso": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "Otros":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "Otros": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "Otros":{
-        "Arren":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "Otros": {
+        "Arren": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "Seguro":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "Seguro": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "Serv":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "Serv": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "Honor":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "Honor": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "ServTecn":{
-        "VinEco":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "ServTecn": {
+        "VinEco": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "JurisNoCoop":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "JurisNoCoop": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "NoVin":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "NoVin": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "AsisTec":{
-        "VinEco":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "AsisTec": {
+        "VinEco": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "JurisNoCoop":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "JurisNoCoop": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "NoVin":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "NoVin": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "Otros":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "Otros": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "InvFinTrbProc":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "InvFinTrbProc": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "InvIniProdTer":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "InvIniProdTer": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "CostFabric":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "CostFabric": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "InvFinProdTer":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "InvFinProdTer": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "CostVentInv":{
-        "InvIni":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "CostVentInv": {
+        "InvIni": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "CompLoc":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "CompLoc": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "Import":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "Import": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "InvFin":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "InvFin": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "CostVenSisPer":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "CostVenSisPer": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "6140":{
-      "CostActRenExt":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "6140": {
+      "CostActRenExt": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "CostFiscActFij":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "CostFiscActFij": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R63":{
-    "5105":{
-      "SalOtro":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+  "R63": {
+    "5105": {
+      "SalOtro": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "AporEPS":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "AporEPS": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "AporARL":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "AporARL": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "AporFondPen":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "AporFondPen": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "AporSENA":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "AporSENA": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "AporICBF":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "AporICBF": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "AporCajaComp":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "AporCajaComp": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "5110":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5110": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5115":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5115": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5120":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5120": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5125":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5125": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5130":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5130": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5135":{
-      "ServAdmVinEco":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "5135": {
+      "ServAdmVinEco": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "ServAdmVinTer":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "ServAdmVinTer": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "ServAdmNoVin":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "ServAdmNoVin": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "ServTecVinEco":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "ServTecVinEco": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "ServTecVinTer":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "ServTecVinTer": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "ServTecNoVin":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "ServTecNoVin": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Otro":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Otro": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "5136":{
-      "VinEco":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "5136": {
+      "VinEco": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "TerJurNoCoop":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "TerJurNoCoop": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "NoVin":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "NoVin": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "5137":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5137": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5140":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5140": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5145":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5145": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5150":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5150": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5155":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5155": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5160":{
-      "DeprePrpPltEqui":{
-        "Cost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+    "5160": {
+      "DeprePrpPltEqui": {
+        "Cost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "AjusAcum":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "AjusAcum": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "DeprePropInv":{
-        "Cost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "DeprePropInv": {
+        "Cost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "AjusAcum":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "AjusAcum": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "DepreOtro":{
-        "Cost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "DepreOtro": {
+        "Cost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "AjusAcum":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        }
-      }
-    },
-    "5165":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
-    },
-    "5166":{
-      "AmortActInt":{
-        "Cost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        },
-        "AjusAcum":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        }
-      },
-      "Otros":{
-        "Cost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        },
-        "AjusAcum":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "AjusAcum": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       }
     },
-    "5195":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5165": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5199":{
-      "Inv":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "5166": {
+      "AmortActInt": {
+        "Cost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        },
+        "AjusAcum": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        }
       },
-      "PrpPltEqui":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "ActInt":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "ActExplEva":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "PropInv":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "ActNoCorr":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "BienArt":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "ActBio":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "ActFin":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "CartCred":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "OtroInv":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "DerUso":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "Otro":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Otros": {
+        "Cost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        },
+        "AjusAcum": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        }
       }
     },
-    "TotCont":1,
-    "TotFisc":1
+    "5195": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
+    },
+    "5199": {
+      "Inv": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "PrpPltEqui": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "ActInt": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "ActExplEva": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "PropInv": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "ActNoCorr": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "BienArt": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "ActBio": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "ActFin": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "CartCred": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "OtroInv": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "DerUso": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "Otro": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      }
+    },
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R64":{
-    "5205":{
-      "SalOtro":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+  "R64": {
+    "5205": {
+      "SalOtro": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "AporEPS":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "AporEPS": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "AporARL":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "AporARL": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "AporFondPen":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "AporFondPen": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "AporSENA":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "AporSENA": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "AporICBF":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "AporICBF": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "AporCajaComp":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "AporCajaComp": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "5210":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5210": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5215":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5215": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "521501":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "521501": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5220":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5220": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5225":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5225": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5230":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5230": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5235":{
-      "ServAdmVinEco":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "5235": {
+      "ServAdmVinEco": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "ServAdmVinTer":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "ServAdmVinTer": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "ServAdmNoVin":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "ServAdmNoVin": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "ServTecVinEco":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "ServTecVinEco": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "ServTecVinTer":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "ServTecVinTer": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "ServTecNoVin":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "ServTecNoVin": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Otro":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Otro": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "5236":{
-      "VinEco":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "5236": {
+      "VinEco": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "TerJurNoCoop":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "TerJurNoCoop": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "NoVin":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "NoVin": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "5237":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5237": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5238":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5238": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5239":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5239": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5240":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5240": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5241":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5241": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5245":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5245": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5250":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5250": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5255":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5255": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5260":{
-      "DeprePrpPltEqui":{
-        "Cost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+    "5260": {
+      "DeprePrpPltEqui": {
+        "Cost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "AjusAcum":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "AjusAcum": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "DeprePropInv":{
-        "Cost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "DeprePropInv": {
+        "Cost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "AjusAcum":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "AjusAcum": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "DepreOtro":{
-        "Cost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "DepreOtro": {
+        "Cost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "AjusAcum":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "AjusAcum": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "DepreActBio":{
-        "Cost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "DepreActBio": {
+        "Cost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "AjusAcum":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        }
-      }
-    },
-    "5265":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
-    },
-    "5266":{
-      "AmortActInt":{
-        "Cost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        },
-        "AjusAcum":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        }
-      },
-      "Otros":{
-        "Cost":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
-        },
-        "AjusAcum":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "AjusAcum": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       }
     },
-    "5295":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5265": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5299":{
-      "Inv":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "5266": {
+      "AmortActInt": {
+        "Cost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        },
+        "AjusAcum": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        }
       },
-      "PrpPltEqui":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "ActInt":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "ActExplEva":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "PropInv":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "ActNoCorr":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "BienArt":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "ActBio":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "ActFin":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "CartCred":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "OtroInv":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "DerUso":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
-      },
-      "Otro":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Otros": {
+        "Cost": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        },
+        "AjusAcum": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        }
       }
     },
-    "TotCont":1,
-    "TotFisc":1
+    "5295": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
+    },
+    "5299": {
+      "Inv": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "PrpPltEqui": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "ActInt": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "ActExplEva": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "PropInv": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "ActNoCorr": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "BienArt": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "ActBio": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "ActFin": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "CartCred": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "OtroInv": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "DerUso": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      },
+      "Otro": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
+      }
+    },
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R65":{
-    "5305":{
-      "IntDevPrestTer":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+  "R65": {
+    "5305": {
+      "IntDevPrestTer": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "InstFin":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "InstFin": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "CstTrans":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "CstTrans": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "DifCamb":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "DifCamb": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "IntImpl":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "IntImpl": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "ActProvRecValPres":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "ActProvRecValPres": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "IntAccPref":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "IntAccPref": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Otro":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Otro": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "IntDIANSegSoc":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "IntDIANSegSoc": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R66":{
-    "5310":{
-      "Menos2":{
-        "PrpPltEqui":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+  "R66": {
+    "5310": {
+      "Menos2": {
+        "PrpPltEqui": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "PrpInv":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "PrpInv": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ActNoCor":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ActNoCor": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ValorVent":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ValorVent": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "DispOtroInst":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "DispOtroInst": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ActInt":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ActInt": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "InvAccPart":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "InvAccPart": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "Otro":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "Otro": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       },
-      "Mas2":{
-        "PrpPltEqui":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+      "Mas2": {
+        "PrpPltEqui": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "PrpInv":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "PrpInv": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ActNoCor":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ActNoCor": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ValorVent":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ValorVent": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "DispOtroInst":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "DispOtroInst": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "ActInt":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "ActInt": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "InvAccPart":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "InvAccPart": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         },
-        "Otro":{
-          "SaldCont":1,
-          "Ajust1":1,
-          "Ajust2":"",
-          "Ajust3":1,
-          "SaldFisc":1
+        "Otro": {
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
         }
       }
     },
-    "5313":{
-      "PerMetPart":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "5313": {
+      "PerMetPart": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "PerMedValRaz":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "PerMedValRaz": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "5314":{
-      "ActBio":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "5314": {
+      "ActBio": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "PrpInv":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "PrpInv": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "InsFin":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "InsFin": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "InsDer":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "InsDer": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Otros":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Otros": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "5315":{
-      "Garant":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "5315": {
+      "Garant": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "ContOne":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "ContOne": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Litig":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Litig": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "ReembCli":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "ReembCli": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "ReestNeg":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "ReestNeg": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "PasivCont":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "PasivCont": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Otro":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Otro": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "5316":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "5316": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "5395":{
-      "TransBubAyuGub":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+    "5395": {
+      "TransBubAyuGub": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Don":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Don": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "Otro":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "Otro": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "DeducEspcPubl":{
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "DeducEspcPubl": {
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       },
-      "DeducInvActFij":{
-        "Ajust1":1,
-        "Ajust2":"",
-        "Ajust3":1,
-        "SaldFisc":1
+      "DeducInvActFij": {
+        "Ajust1": 1,
+        "Ajust2": "",
+        "Ajust3": 1,
+        "SaldFisc": 1
       }
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R67":{
-    "TotCont":1,
-    "TotFisc":1
+  "R67": {
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R68":{
-    "TotCont":1,
-    "TotFisc":1
+  "R68": {
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R69":{
-    "TotCont":1,
-    "TotFisc":1
+  "R69": {
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R70":{
-    "TotCont":1,
-    "TotFisc":1,
-    "IndmnCompAseg":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R70": {
+    "TotCont": 1,
+    "TotFisc": 1,
+    "IndmnCompAseg": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "RecCuen":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "RecCuen": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "RecDepre":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "RecDepre": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     }
   },
-  "R71":{
-    "TotCont":1,
-    "TotFisc":1,
-    "IngBruto":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R71": {
+    "TotCont": 1,
+    "TotFisc": 1,
+    "IngBruto": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     }
   },
-  "R72":{
-    "TotCont":1,
-    "TotFisc":1
+  "R72": {
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R73":{
-    "TotCont":1,
-    "TotFisc":1
+  "R73": {
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R74":{
-    "CompenPerFisc":{
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R74": {
+    "CompenPerFisc": {
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "CompenExcRen":{
-      "Exc":1,
-      "Sub":1,
-      "ValFin":1
+    "CompenExcRen": {
+      "Exc": 1,
+      "Sub": 1,
+      "ValFin": 1
     },
-    "TotFisc":1
+    "TotFisc": 1
   },
-  "R75":{
-    "TotFisc":1
+  "R75": {
+    "TotFisc": 1
   },
-  "R76":{
-    "TotFisc":1
+  "R76": {
+    "TotFisc": 1
   },
-  "R77":{
-    "Act235":1,
-    "RentNet":1,
-    "RentHot":1,
-    "RentExent":1,
-    "PensColom":1,
-    "TotFisc":1
+  "R77": {
+    "Act235": 1,
+    "RentNet": 1,
+    "RentHot": 1,
+    "RentExent": 1,
+    "PensColom": 1,
+    "TotFisc": 1
   },
-  "R78":{
-    "ActOmi":1,
-    "PasivNoReal":1,
-    "RecEsp":1,
-    "RentComp":1,
-    "RentLiq":1,
-    "TotFisc":1
+  "R78": {
+    "ActOmi": 1,
+    "PasivNoReal": 1,
+    "RecEsp": 1,
+    "RentComp": 1,
+    "RentLiq": 1,
+    "TotFisc": 1
   },
-  "R79":{
-    "TotFisc":1
+  "R79": {
+    "TotFisc": 1
   },
-  "R80":{
-    "429543":{
-      "PreRifLot":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "SaldFisc":1
+  "R80": {
+    "429543": {
+      "PreRifLot": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "SaldFisc": 1
       },
-      "PreVent":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "SaldFisc":1
+      "PreVent": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "SaldFisc": 1
       },
-      "IngHerLeg":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "SaldFisc":1
+      "IngHerLeg": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "SaldFisc": 1
       },
-      "AprtSoc":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "SaldFisc":1
+      "AprtSoc": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "SaldFisc": 1
       },
-      "GananOca":{
-        "SaldCont":1,
-        "Ajust1":1,
-        "SaldFisc":1
+      "GananOca": {
+        "SaldCont": 1,
+        "Ajust1": 1,
+        "SaldFisc": 1
       }
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R81":{
-    "Valor":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R81": {
+    "Valor": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R82":{
-    "Val":1,
-    "TotFisc":1
+  "R82": {
+    "Val": 1,
+    "TotFisc": 1
   },
-  "R83":{
-    "CostFiscAct":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+  "R83": {
+    "CostFiscAct": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "Otros":{
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
+    "Otros": {
+      "SaldCont": 1,
+      "Ajust1": 1,
+      "Ajust2": "",
+      "Ajust3": 1,
+      "SaldFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R84":{
-    "UtilVent":{
-      "Ajust1":1,
-      "SaldFisc":1
+  "R84": {
+    "UtilVent": {
+      "Ajust1": 1,
+      "SaldFisc": 1
     },
-    "HerLegDon":{
-      "Ajust1":1,
-      "SaldFisc":1
+    "HerLegDon": {
+      "Ajust1": 1,
+      "SaldFisc": 1
     },
-    "Indemn":{
-      "Ajust1":1,
-      "SaldFisc":1
+    "Indemn": {
+      "Ajust1": 1,
+      "SaldFisc": 1
     },
-    "AprtSoc":{
-      "Ajust1":1,
-      "SaldFisc":1
+    "AprtSoc": {
+      "Ajust1": 1,
+      "SaldFisc": 1
     },
-    "TotFisc":1
+    "TotFisc": 1
   },
-  "R85":{
-    "Esc1":1,
-    "Esc2":1,
-    "Esc3":1,
-    "Esc4":1,
-    "TotFisc":1
+  "R85": {
+    "Esc1": 1,
+    "Esc2": 1,
+    "Esc3": 1,
+    "Esc4": 1,
+    "TotFisc": 1
   },
-  "R86":{
-    "TotFisc":1
+  "R86": {
+    "TotFisc": 1
   },
-  "R87":{
-    "TotFisc":1
+  "R87": {
+    "TotFisc": 1
   },
-  "R88":{
-    "TotFisc":1
+  "R88": {
+    "TotFisc": 1
   },
-  "R89":{
-    "TotFisc":1
+  "R89": {
+    "TotFisc": 1
   },
-  "R90":{
-    "TotFisc":1
+  "R90": {
+    "TotFisc": 1
   },
-  "R91":{
-    "TotFisc":1
+  "R91": {
+    "TotFisc": 1
   },
-  "R92":{
-    "TotFisc":1
+  "R92": {
+    "TotFisc": 1
   },
-  "R93":{
-    "DescTrib":{
-      "Ajust1":1,
-      "SaldFisc":1
+  "R93": {
+    "DescTrib": {
+      "Ajust1": 1,
+      "SaldFisc": 1
     },
-    "DescDonEnt":{
-      "Donac":1,
-      "PorcApli":1,
-      "ValApli":1,
-      "Limit":1,
-      "Desc":1
+    "DescDonEnt": {
+      "Donac": 1,
+      "PorcApli": 1,
+      "ValApli": 1,
+      "Limit": 1,
+      "Desc": 1
     },
-    "Otro":{
-      "IndCom":1,
-      "IVA":1,
-      "RetTran":1,
-      "Otro":1
+    "Otro": {
+      "IndCom": 1,
+      "IVA": 1,
+      "RetTran": 1,
+      "Otro": 1
     },
-    "TotFisc":1
+    "TotFisc": 1
   },
-  "R94":{
-    "TotFisc":1
+  "R94": {
+    "TotFisc": 1
   },
-  "R95":{
-    "LotRif":1,
-    "Otro":1,
-    "TotFisc":1
+  "R95": {
+    "LotRif": 1,
+    "Otro": 1,
+    "TotFisc": 1
   },
-  "R96":{
-    "TotFisc":1
+  "R96": {
+    "TotFisc": 1
   },
-  "R97":{
-    "TotFisc":1
+  "R97": {
+    "TotFisc": 1
   },
-  "R98":{
-    "TotFisc":1
+  "R98": {
+    "TotFisc": 1
   },
-  "R99":{
-    "TotFisc":1
+  "R99": {
+    "TotFisc": 1
   },
-  "R100":{
-    "TotFisc":1
+  "R100": {
+    "TotFisc": 1
   },
-  "R101":{
-    "TotFisc":1
+  "R101": {
+    "TotFisc": 1
   },
-  "R102":{
-    "TotFisc":1
+  "R102": {
+    "TotFisc": 1
   },
-  "R103":{
-    "TotCont":1,
-    "TotFisc":1
+  "R103": {
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R104":{
-    "Ventas":{
-      "Data":[{
-      "Nombre":"",
-      "Nit":"",
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
-      }],
-      "TotCont":1,
-      "TotFisc":1
+  "R104": {
+    "Ventas": {
+      "Data": [
+        {
+          "Nombre": "",
+          "Nit": "",
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        }
+      ],
+      "TotCont": 1,
+      "TotFisc": 1
     },
-    "Servicio":{
-      "Data":[{
-      "Nombre":"",
-      "Nit":"",
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
-      }],
-      "TotCont":1,
-      "TotFisc":1
+    "Servicio": {
+      "Data": [
+        {
+          "Nombre": "",
+          "Nit": "",
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        }
+      ],
+      "TotCont": 1,
+      "TotFisc": 1
     },
-    "HonorCom":{
-      "Data":[{
-        "Nombre":"",
-      "Nit":"",
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
-      }],
-      "TotCont":1,
-      "TotFisc":1
+    "HonorCom": {
+      "Data": [
+        {
+          "Nombre": "",
+          "Nit": "",
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        }
+      ],
+      "TotCont": 1,
+      "TotFisc": 1
     },
-    "RenFin":{
-      "Data":[{
-        "Nombre":"",
-      "Nit":"",
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
-      }],
-      "TotCont":1,
-      "TotFisc":1
+    "RenFin": {
+      "Data": [
+        {
+          "Nombre": "",
+          "Nit": "",
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        }
+      ],
+      "TotCont": 1,
+      "TotFisc": 1
     },
-    "DiviPart":{
-      "Data":[{
-        "Nombre":"",
-      "Nit":"",
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
-      }],
-      "TotCont":1,
-      "TotFisc":1
+    "DiviPart": {
+      "Data": [
+        {
+          "Nombre": "",
+          "Nit": "",
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        },
+        {
+          "Nombre": "",
+          "Nit": "",
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        }
+      ],
+      "TotCont": 1,
+      "TotFisc": 1
     },
-    "Otro":{
-      "Data":[{
-        "Nombre":"",
-      "Nit":"",
-      "SaldCont":1,
-      "Ajust1":1,
-      "Ajust2":"",
-      "Ajust3":1,
-      "SaldFisc":1
-      }],
-      "TotCont":1,
-      "TotFisc":1
+    "Otro": {
+      "Data": [
+        {
+          "Nombre": "",
+          "Nit": "",
+          "SaldCont": 1,
+          "Ajust1": 1,
+          "Ajust2": "",
+          "Ajust3": 1,
+          "SaldFisc": 1
+        }
+      ],
+      "TotCont": 1,
+      "TotFisc": 1
     },
-    "TotCont":1,
-    "TotFisc":1
+    "TotCont": 1,
+    "TotFisc": 1
   },
-  "R105":{
-    "TotFisc":1
+  "R105": {
+    "TotFisc": 1
   },
-  "R106":{
-    "TotFisc":1
+  "R106": {
+    "TotFisc": 1
   },
-  "R107":{
-    "TotFisc":1
+  "R107": {
+    "TotFisc": 1
   },
-  "R108":{
-    "TotFisc":1
+  "R108": {
+    "TotFisc": 1
   },
-  "R109":{
-    "TotFisc":1
+  "R109": {
+    "TotFisc": 1
   },
-  "R110":{
-    "TotFisc":1
+  "R110": {
+    "TotFisc": 1
   },
-  "R111":{
-    "Extem":1,
-    "TotFisc":1
+  "R111": {
+    "Extem": 1,
+    "TotFisc": 1
   },
-  "R112":{
-    "TotFisc":1
+  "R112": {
+    "TotFisc": 1
   },
-  "R113":{
-    "TotFisc":1
+  "R113": {
+    "TotFisc": 1
   },
-  "R114":{
-    "TotFisc":1
+  "R114": {
+    "TotFisc": 1
   },
-  "R115":{
-    "TotFisc":1
+  "R115": {
+    "TotFisc": 1
   }
 }

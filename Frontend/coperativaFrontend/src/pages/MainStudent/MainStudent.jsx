@@ -4,15 +4,15 @@ import FormItem from "../../components/FormItem/FormItem";
 const MainStudent = () => {
 
   const forms = [
-    {label: "Formulario 110", to:"/"},
-    {label: "Detalle reglones 110", to:"/"},
-    {label: "Caratula", to:"/"},
-    {label: "ESF patrimonio", to:"/esfpatrimonioform"},
-    {label: "Renta liquida", to:"/"},
-    {label: "Impuesto diferido", to:"/"},
-    {label: "Ingresos y facturación", to:"/"},
-    {label: "Activos fijos", to:"/activosfijos"},
-    {label: "Resumen ESF ERI", to:"/"},
+    { label: "Formulario 110", to: "/form110" },
+    { label: "Detalle reglones 110", to: "/student" },
+    { label: "Caratula", to: "/caratulaform" },
+    { label: "ESF patrimonio", to: "/esfpatrimonioform" },
+    { label: "Renta liquida", to: "/student" },
+    { label: "Impuesto diferido", to: "/student" },
+    { label: "Ingresos y facturación", to: "/ingrefactform" },
+    { label: "Activos fijos", to: "/activosfijos" },
+    { label: "Resumen ESF ERI", to: "/student" },
   ];
 
   return (

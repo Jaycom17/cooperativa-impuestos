@@ -7,12 +7,14 @@ import CreateRoom from "../pages/CreateRoom/CreateRoom";
 import MainStudent from "../pages/MainStudent/MainStudent";
 import ESFpatrimonioForm from "../pages/ESFpatrimonio/Form/ESFpatrimonioForm";
 import ActivosFijosForm from "../pages/ActivosFijos/Form/ActivosFijosForm";
-import From110Form from "../pages/Form110/Form/From110Form";
+import From110Form from "../pages/Form110/Form/Form110Form";
+import DetalleReng from "../pages/DetalleRenglones/Form/DetalleRengForm";
 import CreateProfessor from "../pages/CreateProfessor/CreateProfessor";
 import MiddlewareStudent from "../pages/MiddlewareStudent/MiddlewareStudent";
 import RoomReport from "../pages/RoomReport/RoomReport";
 import CaratulaForm from "../pages/Caratula/Form/Caratula";
 import IngresosFacturacionForm from "../pages/IngresosFacturacion/Form/IngresosFacturacionForm";
+import ImpuestoDiferidoForm from "../pages/ImpuestoDiferido/Form/ImpuestoDiferidoForm";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -61,7 +63,9 @@ function Router() {
               <Route path="/caratulaform" element={<CaratulaForm />} />
               <Route path="/ingrefactform" element={<IngresosFacturacionForm />}/>
               <Route path="/activosfijos" element={<ActivosFijosForm />}/>
+              <Route path="/impuestodiferido" element={<ImpuestoDiferidoForm />}/>
               <Route path="/form110" element={<From110Form />}/>
+              <Route path="/detalleReng" element={<DetalleReng />}/>
             </Routes>
           </BrowserRouter>
         </StudentProvider>

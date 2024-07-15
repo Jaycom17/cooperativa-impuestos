@@ -1,26 +1,21 @@
 import PropTypes from "prop-types";
-import Form110Values from "./Form110Values";
+import Form110Values from "./FormValues";
 import TabBar from "../TabBar/TabBar";
 import { useState } from "react";
 
-function Form110Tabs({json, handleChange}) {
-
-    const Names = {
-        "DatoPers": "Datos Personales",
-        "DatosResum": "Datos Resumidos"
-    }
+function Form110Tabs({json, handleChange, TabsNames, CalculatedValues, ValuesNames}) {
 
     const keys = Object.keys(json);
 
     const tabs = keys.map(key => ({
         name: key,
-        label: Names[key] || key
+        label: TabsNames[key] || key
     }));
 
     const [activeTab, setActiveTab] = useState(tabs[0].name);
 
     const renderForm = (json, path) => (
-        <Form110Values json={json} path={path} handleChange={handleChange} />
+        <Form110Values json={json} path={path} handleChange={handleChange} CalculatedValues={CalculatedValues} ValuesNames={ValuesNames}/>
     );
 
     return (
@@ -35,5 +30,8 @@ function Form110Tabs({json, handleChange}) {
 
 Form110Tabs.propTypes = {
     json: PropTypes.object.isRequired,
-    handleChange: PropTypes.func.isRequired
+    handleChange: PropTypes.func.isRequired,
+    TabsNames: PropTypes.object.isRequired,
+    CalculatedValues: PropTypes.array.isRequired,
+    ValuesNames: PropTypes.object.isRequired
 }
