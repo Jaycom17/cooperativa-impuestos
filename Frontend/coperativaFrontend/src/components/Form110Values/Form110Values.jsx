@@ -12,11 +12,14 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
         } else {
             newPath = path
         }
+        if(typeof sectionData !== 'object'){
+            value = sectionData
+        }
         const pathParts = newPath.split('.');
         if (CalculatedValues.includes(pathParts[pathParts.length-1])) {
             return (
                 <p className="p-1 text-xl font-medium border-b-4">
-                    {typeof sectionData === 'object' ? value : sectionData}
+                    {value}
                 </p>
             );
         } else {
@@ -26,7 +29,7 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
                         className="bg-white border rounded-md p-1"
                         type="string"
                         name={newPath}
-                        value={typeof sectionData === 'object' ? value : sectionData}
+                        value={value}
                         placeholder={newPath}
                         onChange={(e) => handleChange(e)}
                     />
@@ -53,7 +56,7 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
                         className="bg-white border rounded-md p-1"
                         type="number"
                         name={newPath}
-                        value={typeof sectionData === 'object' ? value : sectionData}
+                        value={value === 0 ? '' : value}
                         placeholder={newPath}
                         onChange={(e) => handleChange(e)}
                     />

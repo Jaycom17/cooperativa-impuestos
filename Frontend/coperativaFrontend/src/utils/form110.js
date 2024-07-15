@@ -1,4 +1,4 @@
-export const CalculatedValues = ["TotalBruto", "TotalLiqui", "TotBruto", "Tot", "LiquidOrd", "PerdidLiqui", "RentLiquida", "RenLiquida", "TotImpRentLiquidGrav", "ImpNetRent", "TotImpCarg", "TotReten", "SaldoPagImp", "TotSaldPag", "TotSaldFav","PagoTot"]
+export const CalculatedValues = ["TotalBruto", "TotalLiqui", "TotBruto", "Tot", "LiquidOrd", "PerdidLiqui", "RentLiquida", "RenLiquida", "TotImpRentLiquidGrav", "ImpNetRent", "TotImpCarg", "TotReten", "SaldoPagImp", "TotSaldPag", "TotSaldFav"]
 export const ValuesNames = {
     "DatoPers": "Datos Personales",
     "Anno": "Año",

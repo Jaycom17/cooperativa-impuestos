@@ -144,8 +144,8 @@ const From110Form = () => {
     const handleChange = (e) => {
         let { name, value } = e.target;
         console.log(name,value)
-/*
-       
+
+        
 
         if (value === '') value = 0;
 
@@ -174,7 +174,7 @@ const From110Form = () => {
 
         // Actualizar el valor
         currentLevel[lastKey] = value;
-
+        
         // Actualizar el estado con el objeto modificado
         updatedData.DatosResum.Patrim.TotalBruto = calculateTotalPatBruto(updatedData.DatosResum.Patrim);
         updatedData.DatosResum.Patrim.TotalLiqui = calculateTotalLiqui(updatedData.DatosResum.Patrim);
@@ -192,10 +192,11 @@ const From110Form = () => {
         updatedData.DatosResum.LiquiPriv.SaldoPagImp = calculateSaldoPagImp(updatedData.DatosResum.LiquiPriv);
         updatedData.DatosResum.LiquiPriv.TotSaldPag = calculateTotSaldPag(updatedData.DatosResum.LiquiPriv);
         updatedData.DatosResum.LiquiPriv.TotSaldFav = calculateTotSaldFav(updatedData.DatosResum.LiquiPriv);
+        
         // Calculo de los totales
         setData(updatedData);
         console.log(data)
-        */
+        
     };
 
     const tabs = [
