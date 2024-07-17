@@ -4,7 +4,8 @@ import {
   obtainAdmins,
   removeUser,
   updateUser,
-  obtainUser
+  obtainUser, 
+  changePassword
 } from "../services/user.service.js";
 
 export const postProfessor = async (req, res) => {
@@ -68,7 +69,8 @@ export const putProfessor = async (req, res) => {
 };
 
 export const putAdmin = async (req, res) => {
-  const { usuID } = req.params;
+  console.log(req.body)
+  const { usuID } = req.body.user;
   const { usuName, usuEmail, usuPassword } = req.body;
 
   const user = { usuID, usuName, usuEmail, usuPassword , usuRole: "admin" };
@@ -100,3 +102,15 @@ export const deleteUser = async (req, res) => {
 
   res.status(200).json(result);
 };
+
+export const changeUserPassword = async (req, res) => {
+  const user = { usuOldPassword: req.body.usuOldPassword, usuPassword: req.body.usuPassword, usuID: req.body.user.usuID };
+
+  const result = await changePassword(user);
+
+  if (result.message) {
+    return res.status(500).json(result.message);
+  }
+
+  res.status(200).json(result);
+}

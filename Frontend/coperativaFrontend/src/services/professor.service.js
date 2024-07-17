@@ -9,3 +9,5 @@ export const updateProfessor = async (usuID,professor) => axios.put(`http://loca
 export const deleteProfessor = async (usuID) => axios.delete(`http://localhost:3000/user/${usuID}`);
 
 export const getProfessor = async (usuID) => axios.get(`http://localhost:3000/user/${usuID}`);
+
+export const updatePassword = async (data) => axios.put(`http://localhost:3000/user/password`, data);

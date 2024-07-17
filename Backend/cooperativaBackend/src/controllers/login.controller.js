@@ -26,12 +26,14 @@ export const login = async (req, res) => {
 
 export const logout = async (_req, res) => {
   res.clearCookie("token");
+  res.clearCookie("tokenRefresh");
   res.status(200).json({ message: "Sesión cerrada" });
 };
 
 export const profile = async (req, res) => {
-  const { usuId } = req.body.user;
-  const result = await userProfile(usuId);
+  console.log(req.body)
+  const { usuID } = req.body.user;
+  const result = await userProfile(usuID);
 
   if (!result) {
     return res.status(500).json(result.message);

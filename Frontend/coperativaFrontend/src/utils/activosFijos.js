@@ -27,7 +27,8 @@ export const friendlyNames = {
     ValorTotal: "Valor total al final del periodo",
     DepreacionFinal: "Depreciación Final",
     ValorNeto: "Valor Neto al final del período (Calculado)",
-    GastoFiscal: "Gasto fiscal Depreciación y/o Amortización del período"
+    GastoFiscal: "Gasto fiscal Depreciación y/o Amortización del período",
+    CambiosValorRazonable: "Cambios de valor razonable"
 };
 
 export const friendlyNamesPPE = {

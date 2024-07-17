@@ -37,7 +37,7 @@ const AsideStudent = () => {
 
   const forms = [
     { label: "Formulario 110", to: "/form110" },
-    { label: "Detalle reglones 110", to: "/student" },
+    { label: "Detalle reglones 110", to: "/detalleReng" },
     { label: "Caratula", to: "/caratulaform" },
     { label: "ESF patrimonio", to: "/esfpatrimonioform" },
     { label: "Renta liquida", to: "/student" },

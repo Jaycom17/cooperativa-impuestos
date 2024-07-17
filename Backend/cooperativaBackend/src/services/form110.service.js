@@ -16,15 +16,33 @@ export const listFormulario110 = async () => {
   }
 };
 
-export const listFormulario110ById = async (r110ID) => {
+export const listFormulario110ById = async (student) => {
   try {
-    const result = await prisma.formr110.findUnique({
+    const result = await prisma.report.findFirst({
       where: {
-        r110ID,
+        stuID: student.stuID,
+        roomID: student.roomID,
+      },select: {
+        r110ID: true,
       },
     });
-    result.r110Content = JSON.parse(result.r110Content.replace(/'/g, '"'));
-    return result;
+
+    if (!result) {
+      return {message: "Formulario 110 no encontrado"};
+    }
+
+    form110 = await prisma.formr110.findUnique({
+      where: {
+        r110ID: result.r110ID,
+      },
+    });
+
+    if (!form110) {
+      return {message: "Formulario 110 no encontrado"};
+    }
+
+    form110.r110Content = JSON.parse(form110.r110Content.replace(/'/g, '"'));
+    return form110;
   } catch (error) {
     console.error(error);
     return false;
@@ -48,11 +66,19 @@ export const createFormulario110 = async (form110) => {
   }
 };
 
-export const updateFormulario110 = async (r110ID, form110) => {
+export const updateFormulario110 = async (student, form110) => {
   try {
+
+    const currentReport = await prisma.report.findUnique({
+      where: {
+        roomID: student.roomID,
+        stuID: student.stuID,
+      },
+    });
+
     const result = await prisma.formr110.update({
       where: {
-        r110ID,
+        r110ID: currentReport.r110ID,
       },
       data: {
         r110Content: JSON.stringify(form110)

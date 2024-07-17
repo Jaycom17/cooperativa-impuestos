@@ -418,6 +418,17 @@
         "AjustesMenorValor": 0,
         "PerdidaFiscalAcumuladaCompensarFinal": 0,
         "SaldoActivoImpuestoDiferido": 0
+      },
+      {
+        "Anio": 0,
+        "PerdidasFiscalesAcumuladasCompensarInicio": 0,
+        "PerdidaFiscalGeneradaPeriodo": 0,
+        "PerdidaFiscalCompensadaPeriodo": 0,
+        "ValoresNoCompesados": 0,
+        "AjustesMayorValor": 0,
+        "AjustesMenorValor": 0,
+        "PerdidaFiscalAcumuladaCompensarFinal": 0,
+        "SaldoActivoImpuestoDiferido": 0
       }
     ],
     "DetalleCompensacionExcesoRentaPresuntiva": [
