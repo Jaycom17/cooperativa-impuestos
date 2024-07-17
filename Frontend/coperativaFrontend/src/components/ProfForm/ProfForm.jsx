@@ -23,7 +23,6 @@ const ProfForm = ({ profId, onRefresh, setOpen }) => {
   } = useForm();
 
   useEffect(() => {
-    console.log(profId)
     if (profId) {
       getProfessor(profId).then((response) => {
         if (response.status === 200) {

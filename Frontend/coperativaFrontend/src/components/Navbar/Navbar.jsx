@@ -4,9 +4,12 @@ import { GrFormClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import AccountDropdown from "../AccountDrop/AccountDropdown";
 import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const navigate = useNavigate();
 
     const { singout } = useContext(AuthContext);
 
@@ -52,6 +55,7 @@ const Navbar = () => {
             ))}
             <AccountDropdown
                 onCerrarSesion={singout}
+                onActualizarDatos={() => navigate("/updateinfoadmin")}
             />
         </section>
         

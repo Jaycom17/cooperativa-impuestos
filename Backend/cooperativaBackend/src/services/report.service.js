@@ -100,3 +100,19 @@ export const createReport = async (stuID, roomID) => {
     return { message: "Error al crear el reporte" };
   }
 };
+
+export const listReport = async (student) => {
+  try {
+    const report = await prisma.report.findFirst({
+      where: {
+        stuID: student.stuID,
+        roomID: student.roomID,
+      },
+    });
+
+    return report;
+  } catch (error) {
+    console.error(error);
+    return { message: "Error al obtener el reporte" };
+  }
+};

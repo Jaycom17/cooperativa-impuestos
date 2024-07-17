@@ -1,9 +1,9 @@
-import { JWT_SECRET, JWT_SECRET_STUDENT } from "../config/env.js";
+import { JWT_SECRET, JWT_SECRET_STUDENT, JWT_SECRET_REFRESH } from "../config/env.js";
 import jwt from "jsonwebtoken";
 
 export function createAccessToken(user) {
     return new Promise((resolve, reject) => {
-        jwt.sign(user, JWT_SECRET, { expiresIn: "30m" }, (err, token) => {
+        jwt.sign(user, JWT_SECRET, { expiresIn: "1d" }, (err, token) => {
             if (err) {
                 reject(err);
             }
@@ -14,7 +14,7 @@ export function createAccessToken(user) {
 
 export function createAccessTokenStudent(user) {
     return new Promise((resolve, reject) => {
-        jwt.sign(user, JWT_SECRET_STUDENT, { expiresIn: "30m" }, (err, token) => {
+        jwt.sign(user, JWT_SECRET_STUDENT, { expiresIn: "12h" }, (err, token) => {
             if (err) {
                 reject(err);
             }
