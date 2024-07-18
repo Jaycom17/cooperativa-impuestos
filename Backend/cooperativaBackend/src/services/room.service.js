@@ -196,6 +196,7 @@ export const removeRoomByID = async (roomID) => {
 
 export const validateRoomPassword = async (password) => {
     try {
+        console.log(password);
         const result = await prisma.room.findUnique({
             select: {
                 roomID: true,

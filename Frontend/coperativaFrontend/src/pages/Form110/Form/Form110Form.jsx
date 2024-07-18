@@ -152,7 +152,8 @@ const From110Form = () => {
         getForm()
           .then((response) => {
             if (response.status === 200) {
-              setData(response.data.form);
+                console.log("data",response.data);
+              setData(response.data.r110Content);
             } else {
               console.error("Error en la respuesta", response);
             }

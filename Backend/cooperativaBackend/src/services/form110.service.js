@@ -40,7 +40,7 @@ export const listFormulario110ById = async (student) => {
     if (!result) {
       return {message: "Formulario 110 no encontrado"};
     }
-    return form110;
+    return result;
   } catch (error) {
     console.error(error);
     return false;
@@ -67,7 +67,7 @@ export const createFormulario110 = async (form110) => {
 export const updateFormulario110 = async (student, form110) => {
   try {
 
-    const res = await prisma.report.findUnique({
+    const res = await prisma.report.findFirst({
       where: {
         roomID: student.roomID,
         stuID: student.stuID,

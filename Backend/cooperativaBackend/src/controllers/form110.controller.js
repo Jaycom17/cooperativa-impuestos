@@ -18,7 +18,6 @@ export const getFormulario110ById = async (req, res) => {
     if (!result) {
         return res.status(404).json({ error: 'Formulario 110 no encontrado' });
     }
-
     res.json(result);
 }
 

@@ -18,7 +18,6 @@ export const getIngresosFacturacionesById = async (req, res) => {
     if (!result) {
         return res.status(404).json({ error: 'Formulario no encontrado' });
     }
-
     res.json(result);
 }
 
