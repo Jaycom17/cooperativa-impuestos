@@ -1,14 +1,166 @@
-import jsonData from "../../../formsData/Form110.json";
 import AsideStudent from "../../../components/AsideStudent/AsideStudent.jsx";
 import Form110Values from '../../../components/Form110Values/Form110Values.jsx';
 import Accordeon from '../../../components/Accordeon/Accordeon.jsx';
 import TabBar from '../../../components/TabBar/TabBar.jsx';
 import { ValuesNames } from "../../../utils/form110.js"
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getForm, updateForm} from "../../../services/form110.service.js";
 
 const From110Form = () => {
 
-    const [data, setData] = useState(jsonData);
+    const [data, setData] = useState({
+        "DatoPers": {
+          "Anno": 0,
+          "NumForm": 0,
+          "DatDecl": {
+            "NIT": 0,
+            "DV": 0,
+            "PriApll": "",
+            "SecApll": "",
+            "PriNomb": "",
+            "OtrosNomb": "",
+            "RazonSoc": "",
+            "CodDir": "",
+            "ActEcoPrin": "",
+            "Correct": {
+              "Cod": 0,
+              "NoFormAnt": 0
+            }
+          },
+          "FractAnnoAgrv": false,
+          "RenunPertRegTribEsp": false,
+          "VinPagObraImpu": false,
+          "PerdFiscAcumAnnoAnt": 0
+        },
+        "DatosResum": {
+          "DatosInf": {
+            "TotalCostGastNom": 0,
+            "AportSistSegSocial": 0,
+            "AportSenaEtc": 0
+          },
+          "Patrim": {
+            "EfectvEquiEfect": 0,
+            "InvInstFinDeriv": 0,
+            "CuentDocArreFinCob": 0,
+            "Inv": 0,
+            "ActivInt": 0,
+            "ActivBio": 0,
+            "PPEPANCMC": 0,
+            "Otro": 0,
+            "TotalBruto": 0,
+            "Pasiv": 0,
+            "TotalLiqui": 0
+          },
+          "Ingre": {
+            "Brutos": 0,
+            "Finan": 0,
+            "DividNoCont": 0,
+            "DividDistrEntNoCol": 0,
+            "DividGravExt06": 0,
+            "DividGravNat06": 0,
+            "DividGravNat07": 0,
+            "DiviDNoGrav07": 0,
+            "DividGravExt07": 0,
+            "DividGravMega07": 0,
+            "Otro": 0,
+            "TotBruto": 0,
+            "DevRebDec": 0,
+            "IngNoRent": 0,
+            "Tot": 0
+          },
+          "CostDedic": {
+            "Cost": 0,
+            "GastAdmin": 0,
+            "GastDistVent": 0,
+            "GastFinan": 0,
+            "Otro": 0,
+            "Tot": 0
+          },
+          "ESAL": {
+            "InvEfecAnno": 0,
+            "InvLiqui": 0
+          },
+          "Renta": {
+            "RecuDedu": 0,
+            "Passiv": 0,
+            "LiquidOrd": 0,
+            "PerdidLiqui": 0,
+            "Compensacion": 0,
+            "RentLiquida": 0,
+            "RentPresun": 0,
+            "RentExenta": 0,
+            "RenGravable": 0,
+            "RenLiquida": 0
+          },
+          "GananciasOcasion": {
+            "IngreGananOcasion": 0,
+            "RentDeudReg": 0,
+            "UtiliPerdFisc": 0,
+            "CostGananOcas": 0,
+            "GananOcasionNoAgrav": 0,
+            "GananOcasGrav": 0
+          },
+          "LiquiPriv": {
+            "ImpuesRentLiquiGrav": {
+              "RentLiquidGrav": 0,
+              "DivPartGravET00": 0,
+              "DivPartGravET": 0,
+              "DivPartGrav27": 0,
+              "DivPartGrav": 0,
+              "DivPartGrav33": 0
+            },
+            "TotImpRentLiquidGrav": 0,
+            "DescTrib": 0,
+            "ImpNetRent": 0,
+            "ImpGanOcas": 0,
+            "DescPorImpPagad": 0,
+            "TotImpCarg": 0,
+            "ValInvObraImp50": 0,
+            "DescEfectInvObrImp": 0,
+            "CredFisc": 0,
+            "AnticRentLiquidAnnoAntGrav": 0,
+            "SaldFavAnnoAntGrav": 0,
+            "Reten": {
+              "AutoReten": 0,
+              "OtraReten": 0,
+              "TotReten": 0
+            },
+            "AntRenAnnoGravSig": 0,
+            "SobreInstFin": {
+              "AnticSobreInstAnnoGranAnt": 0,
+              "SobreInstFinan": 0,
+              "AnticSobreInstAnnoGravSig": 0
+            },
+            "SaldoPagImp": 0,
+            "Sansion": 0,
+            "TotSaldPag": 0,
+            "TotSaldFav": 0
+          }
+        },
+        "Totales": {
+          "ValTotExiObrImpMod0": 0,
+          "ValTotProyObrImpMod2": 0,
+          "CodRepre": 0,
+          "CodCont": 0,
+          "Salvedad": false,
+          "NoTarjProf": 0,
+          "PagoTot": 0
+        }
+      });
+
+    useEffect(() => {
+        getForm()
+          .then((response) => {
+            if (response.status === 200) {
+              setData(response.data.form);
+            } else {
+              console.error("Error en la respuesta", response);
+            }
+          })
+          .catch((error) => {
+            console.error("Error en la llamada a la API", error);
+          });
+      }, []);
 
     const calculateTotalPatBruto = (currentData) => {
         return (currentData.EfectvEquiEfect || 0) + (currentData.InvInstFinDeriv || 0) + (currentData.CuentDocArreFinCob || 0) + (currentData.Inv || 0) + (currentData.ActivInt || 0) + (currentData.ActivBio || 0) + (currentData.PPEPANCMC || 0) + (currentData.Otro || 0);
@@ -195,7 +347,8 @@ const From110Form = () => {
         
         // Calculo de los totales
         setData(updatedData);
-        console.log(data)
+        console.log(data);
+        updateForm(data);
         
     };
 

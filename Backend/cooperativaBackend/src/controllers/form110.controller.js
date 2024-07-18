@@ -25,8 +25,6 @@ export const getFormulario110ById = async (req, res) => {
 export const postFormulario110 = async (req, res) => {
     const newFormulario110 = req.body;
 
-    delete newFormulario110.student;
-
     const result = await createFormulario110(newFormulario110);
 
     if (!result) {
@@ -46,7 +44,7 @@ export const putFormulario110 = async (req, res) => {
     const result = await updateFormulario110(student, updatedFormulario110);
 
     if (!result) {
-        return res.status(500).json({ error: 'No se pudo actualizar el formulario 110' });
+        return res.status(500).json({ error: 'result.message' });
     }
 
     res.json(updatedFormulario110);

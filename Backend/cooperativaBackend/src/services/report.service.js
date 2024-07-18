@@ -1,5 +1,7 @@
 import prisma from "../config/prisma.js";
 import { IngresosFacturacionInput } from "../models/ingFact.model.js";
+import { Form110Input } from "../models/form110.model.js"
+
 import { v4 as uuidv4 } from "uuid";
 
 export const createReport = async (stuID, roomID) => {
@@ -61,7 +63,7 @@ export const createReport = async (stuID, roomID) => {
     await prisma.formr110.create({
       data: {
         r110ID: formsID.form110,
-        r110Content: {},
+        r110Content: Form110Input,
       },
     });
 
