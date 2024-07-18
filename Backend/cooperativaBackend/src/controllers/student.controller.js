@@ -78,7 +78,7 @@ export const searchStudentByName = async (req, res) => {
     sameSite: "none",
   });
 
-  res.status(201).json({ stuID: result.stuID, roomID: result.roomID });
+  res.status(200).json({ stuID: result.stuID, roomID: result.roomID });
 };
 
 export const getStudentByRoom = async (req, res) => {

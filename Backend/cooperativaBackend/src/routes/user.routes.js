@@ -1,16 +1,28 @@
-import { Router }  from 'express';
-import { getUser, deleteUser, postAdmin, postProfessor, getAdmins, getProfessors, putAdmin, putProfessor } from '../controllers/user.controller.js';
-import { validateUser, validateId } from '../middlewares/user.middleware.js';
+import { Router } from "express";
+import {
+  getUser,
+  deleteUser,
+  postAdmin,
+  postProfessor,
+  getAdmins,
+  getProfessors,
+  putAdmin,
+  putProfessor,
+  changeUserPassword
+} from "../controllers/user.controller.js";
+import { validateUser, validateId } from "../middlewares/user.middleware.js";
+import { validateAuth } from "../middlewares/auth.middleware.js";
 
 const userRouter = Router();
 
-userRouter.post('/admin',validateUser, postAdmin);
-userRouter.post('/professor', validateUser, postProfessor);
-userRouter.get('/admin', getAdmins);
-userRouter.get('/professor', getProfessors);
-userRouter.get('/:usuID', validateId, getUser);
-userRouter.delete('/:usuID', validateId, deleteUser);
-userRouter.put('/admin/:usuID', validateId, putAdmin);
-userRouter.put('/professor/:usuID', putProfessor);
+userRouter.post("/admin", validateUser, postAdmin);
+userRouter.post("/professor", validateUser, postProfessor);
+userRouter.get("/admin", getAdmins);
+userRouter.get("/professor", getProfessors);
+userRouter.get("/:usuID", validateId, getUser);
+userRouter.delete("/:usuID", validateId, deleteUser);
+userRouter.put("/admin/", validateAuth, putAdmin);
+userRouter.put("/professor/:usuID", putProfessor);
+userRouter.put("/password", validateAuth, changeUserPassword);
 
 export default userRouter;

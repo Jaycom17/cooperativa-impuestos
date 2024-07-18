@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
 import { JWT_SECRET, JWT_SECRET_STUDENT } from '../config/env.js';
-import { createAccessToken } from '../services/jwt.service.js';
 
 export const validateAuth = async (req, res, next) => {
     try {
