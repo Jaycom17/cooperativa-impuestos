@@ -24,7 +24,7 @@ export const StudentProvider = ({ children }) => {
       try {
         const res = await studentProfile();
 
-        if (res.status !== 200) return;
+        if (res.statusText !== 'OK') return;
 
         setStudent(res.data);
         setLoading(false);
@@ -41,7 +41,9 @@ export const StudentProvider = ({ children }) => {
 
       const res = await createStudent({ ...student, roomID });
 
-      if (res.status !== 200) return;
+      console.log(res)
+
+      if (res.statusText !== 'Created') return;
 
       setStudent(res.data);
       setStudentError(null);
@@ -56,7 +58,7 @@ export const StudentProvider = ({ children }) => {
 
       const res = await searchStudent(stuName, roomID);
 
-      if (res.status !== 200) return;
+      if (res.statusText !== 'OK') return;
 
       setStudent(res.data);
       setStudentError(null);

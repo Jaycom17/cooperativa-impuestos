@@ -16,14 +16,33 @@ export const listIngresosFacturaciones = async () => {
   }
 };
 
-export const listIngresosFacturacionesById = async (ingID) => {
+export const listIngresosFacturacionesById = async (student) => {
   try {
-    const result = await prisma.formingresosfancturacion.findUnique({
+
+    const res = await prisma.report.findFirst({
       where: {
-        ingID,
+        stuID: student.stuID,
+        roomID: student.roomID,
+      },
+      select: {
+        ingID: true,
       },
     });
-    result.ingContent = JSON.parse(result.ingContent.replace(/'/g, '"'));
+
+    if (!res) {
+      return { message: 'Formulario no encontrado' };
+    }
+
+    const result = await prisma.formingresosfancturacion.findUnique({
+      where: {
+        ingID: res.ingID,
+      },
+    });
+
+    if (!result) {
+      return { message: 'Formulario no encontrado' };
+    } 
+
     return result;
   } catch (error) {
     console.error(error);
@@ -48,21 +67,34 @@ export const createIngresosFacturaciones = async (ingFact) => {
   }
 };
 
-export const updateIngresosFacturaciones = async (ingID, ingFact) => {
+export const updateIngresosFacturaciones = async (student, ingFact) => {
   try {
-    const result = await prisma.formingresosfancturacion.update({
+    const res = await prisma.report.findFirst({
       where: {
-        ingID,
+        stuID: student.stuID,
+        roomID: student.roomID,
       },
-      data: {
-        ingContent: JSON.stringify(ingFact)
-          .replace(/\n|\s/g, "")
-          .replace(/"/g, "'"),
+      select: {
+        ingID: true,
       },
     });
-    return true;
+
+    if (!res) {
+      return { message: 'Formulario no encontrado' };
+    }
+    
+    const result = await prisma.formingresosfancturacion.update({
+      where: {
+        ingID: res.ingID,
+      },
+      data: {
+        ingContent: ingFact
+      },
+    });
+
+    return result;
   } catch (error) {
     console.error(error);
-    return false;
+    return {message: {error: 'No se pudo actualizar el formulario'}};
   }
 }

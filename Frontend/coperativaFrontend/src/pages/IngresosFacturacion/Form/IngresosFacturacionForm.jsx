@@ -1,32 +1,83 @@
 import { useState, useEffect } from "react";
 import AsideStudent from "../../../components/AsideStudent/AsideStudent";
 import IngFacValues from "../../../components/IngFacValues/IngFacValues";
-import basicInformation from "../../../formsData/IngFact.json";
+import { getIngresosFacturacion, updateIngresosFacturacion } from "../../../services/ingFac.service.js";
 
 function IngresosFacturacionForm() {
-  const [data, setData] = useState(basicInformation);
+  const [data, setData] = useState({
+    VentBien: {
+      PasivIngrDif: {},
+      FactEmitPer: {},
+      IngrContDevPer: {}
+    },
+    PrestServ: {
+      PasivIngrDif: {},
+      FactEmitPer: {},
+      IngrContDevPer: {}
+    },
+    OtrosIngresos: {
+      PasivIngrDif: {},
+      FactEmitPer: {},
+      IngrContDevPer: {}
+    },
+    IngresosTer: {
+      FactEmitPer: {},
+      IngrContDevPer: {}
+    },
+    AjustesValAdec: {
+      FactEmitPer: {},
+      IngrContDevPer: {}
+    },
+    Totales: {
+      PasivIngrDif: {},
+      FactEmitPer: {},
+      IngrContDevPer: {}
+    }
+  });
 
   useEffect(() => {
-    setData(basicInformation);
+    getIngresosFacturacion()
+      .then((response) => {
+        if (response.status === 200) {
+          setData(response.data.ingContent);
+        } else {
+          console.error("Error en la respuesta", response);
+        }
+      })
+      .catch((error) => {
+        console.error("Error en la llamada a la API", error);
+      });
   }, []);
 
   const calculateTotalPasivoImpDif = (currentData) => {
-    return (currentData.SaldoIniPer || 0) - (currentData.IngrContPer || 0) + (currentData.GenPer || 0);
-  }
+    return (
+      (currentData.SaldoIniPer || 0) -
+      (currentData.IngrContPer || 0) +
+      (currentData.GenPer || 0)
+    );
+  };
 
   const calculateTotalEmiPer = (currentData) => {
-    return (currentData.DevIngrPerAnt || 0) + (currentData.DevIngrPerAct || 0) + (currentData.RegIngDif || 0) + (currentData.SoloFact || 0);
-  }
+    return (
+      (currentData.DevIngrPerAnt || 0) +
+      (currentData.DevIngrPerAct || 0) +
+      (currentData.RegIngDif || 0) +
+      (currentData.SoloFact || 0)
+    );
+  };
 
   const calculateTotalIngrContDevPer = (currentData) => {
-    return (currentData.FactEmitPer.DevIngrPerAct || 0) + (currentData.IngrContDevPer.SinFact || 0) + (currentData.IngrContDevPer.FactPerAnt || 0);
-  }
+    return (
+      (currentData.FactEmitPer.DevIngrPerAct || 0) +
+      (currentData.IngrContDevPer.SinFact || 0) +
+      (currentData.IngrContDevPer.FactPerAnt || 0)
+    );
+  };
 
-  
   const changeValue = (path, e) => {
     let { name, value } = e.target;
 
-    if (value === '') value = 0;
+    if (value === "") value = 0;
 
     const newData = { ...data };
     path.reduce((acc, key, index) => {
@@ -36,35 +87,37 @@ function IngresosFacturacionForm() {
       return acc[key];
     }, newData);
 
-
-    newData.VentBien.PasivIngrDif.TotPasivDif = calculeteTotalPasivoImpDif(newData.VentBien.PasivIngrDif)
-
     const categories = Object.keys(newData);
 
     categories.forEach((cat) => {
-      if(newData[cat].PasivIngrDif){
-        newData[cat].PasivIngrDif.TotPasivDif = calculateTotalPasivoImpDif(newData[cat].PasivIngrDif);
-      }
-      
-      if(newData[cat].FactEmitPer){
-        newData[cat].FactEmitPer.TotFactEmiPEr = calculateTotalEmiPer(newData[cat].FactEmitPer);
+      if (newData[cat].PasivIngrDif) {
+        newData[cat].PasivIngrDif.TotPasivDif = calculateTotalPasivoImpDif(
+          newData[cat].PasivIngrDif
+        );
       }
 
-      newData[cat].IngrContDevPer.TotalIngrContDevPer = calculateTotalIngrContDevPer(newData[cat]);
-    })
+      if (newData[cat].FactEmitPer) {
+        newData[cat].FactEmitPer.TotFactEmiPEr = calculateTotalEmiPer(
+          newData[cat].FactEmitPer
+        );
+      }
 
-    const totalCategories = categories.filter(cat => cat !== 'Totales');
+      newData[cat].IngrContDevPer.TotalIngrContDevPer =
+        calculateTotalIngrContDevPer(newData[cat]);
+    });
+
+    const totalCategories = categories.filter((cat) => cat !== "Totales");
     const totals = {
       PasivIngrDif: {},
       FactEmitPer: {},
-      IngrContDevPer: {}
+      IngrContDevPer: {},
     };
-  
-    totalCategories.forEach(cat => {
+
+    totalCategories.forEach((cat) => {
       const category = newData[cat];
-  
-      Object.keys(category).forEach(subCat => {
-        Object.keys(category[subCat]).forEach(key => {
+
+      Object.keys(category).forEach((subCat) => {
+        Object.keys(category[subCat]).forEach((key) => {
           if (!totals[subCat][key]) {
             totals[subCat][key] = 0;
           }
@@ -72,10 +125,12 @@ function IngresosFacturacionForm() {
         });
       });
     });
-  
+
     newData.Totales = totals;
 
     setData(newData);
+
+    updateIngresosFacturacion(newData);
   };
 
   return (
@@ -169,7 +224,9 @@ function IngresosFacturacionForm() {
           </article>
         </section>
         <section className="border p-2">
-          <h2 className="font-bold text-2xl">Ajustes al valor facturado (Descuentos, notas)</h2>
+          <h2 className="font-bold text-2xl">
+            Ajustes al valor facturado (Descuentos, notas)
+          </h2>
           <article className="grid grid-cols-1 lg:grid-cols-2 gap-2">
             <IngFacValues
               title="Facturación emitida en el período"
