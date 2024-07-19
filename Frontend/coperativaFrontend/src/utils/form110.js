@@ -3,6 +3,7 @@ export const ValuesNames = {
     "DatoPers": "Datos Personales",
     "Anno": "Año",
     "NumForm": "Numero Formulario",
+    "DatDecl":"Datos Del Declarante",
     "PriApll": "Primer Apellido",
     "SecApll": "Segundo Apellido",
     "PriNomb": "Primer Nombre",

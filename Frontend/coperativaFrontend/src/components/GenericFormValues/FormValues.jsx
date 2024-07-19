@@ -65,9 +65,22 @@ function Form110Values({ json, path, handleChange, CalculatedValues, ValuesNames
         );
     };
 
+    const renderArrayButtons = (key) => {
+        return (
+            <div key={key} className="flex flex-col space-y-2 bg-white">
+                <label className="bg-white font-semibold text-sm" htmlFor={key}>
+                    {key}
+                </label>
+            </div>
+        );
+    }
+
     const renderContent = (data, parentKey) => {
         return Object.entries(data).map(([key, val]) => {
             const uniqueKey = `${parentKey}.${key}`;
+            if(key === "Data"){
+                renderArrayButtons(key);
+            }
             if (typeof val === 'object') {
                 return renderAccordeon(key, val, uniqueKey);
             }else if(typeof val === 'string'){

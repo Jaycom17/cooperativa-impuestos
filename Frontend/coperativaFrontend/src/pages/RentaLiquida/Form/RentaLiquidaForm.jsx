@@ -3,6 +3,7 @@ import jsonData from "../../../formsData/RentaLiquida.json";
 import TabBar from "../../../components/TabBar/TabBar";
 import Accordeon from "../../../components/Accordeon/Accordeon";
 import ImpuestoDiferidoValues from "../../../components/ImpuestoDiferidoValues/ImpuestoDiferidoValues";
+import Form110Values from "../../../components/GenericFormValues/FormValues";
 import { useState } from "react";
 
 function RentaLiquidaForm() {
@@ -110,7 +111,7 @@ function RentaLiquidaForm() {
             arrayIndex={sectionKey}
             path={`${pathPrefix}`}
           >
-            <ImpuestoDiferidoValues
+            <Form110Values
               title={friendlyName}
               path={`${pathPrefix}.${sectionKey}`}
               data={sectionData[sectionKey]}
@@ -128,7 +129,7 @@ function RentaLiquidaForm() {
 
       return (
         <Accordeon key={sectionKey} title={friendlyName}>
-          <ImpuestoDiferidoValues
+          <Form110Values
             title={friendlyName}
             path={`${pathPrefix}.${sectionKey}`}
             data={sectionData[sectionKey]}

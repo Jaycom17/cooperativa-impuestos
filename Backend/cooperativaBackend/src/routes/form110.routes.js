@@ -9,8 +9,8 @@ form110Router.get("/", getFormulario110);
 
 form110Router.get("/student",validateStudent, getFormulario110ById);
 
-form110Router.post("/", validateStudent, validateFormulario110, postFormulario110);
+form110Router.post("/", validateStudent, postFormulario110);
 
-form110Router.put("/", validateStudent, validateFormulario110, putFormulario110);
+form110Router.put("/student", validateStudent, validateFormulario110, putFormulario110);
 
 export default form110Router;
