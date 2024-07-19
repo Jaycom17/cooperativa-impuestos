@@ -2,8 +2,8 @@ import AsideStudent from "../../../components/AsideStudent/AsideStudent";
 import jsonData from "../../../formsData/RentaLiquida.json";
 import TabBar from "../../../components/TabBar/TabBar";
 import Accordeon from "../../../components/Accordeon/Accordeon";
-import ImpuestoDiferidoValues from "../../../components/ImpuestoDiferidoValues/ImpuestoDiferidoValues";
-import Form110Values from "../../../components/GenericFormValues/FormValues";
+import RentaLiquidaValues from "../../../components/RentaLiquidaValues/RentaLiquidaValues";
+import Form110Values from "../../../components/Form110Values/Form110Values";
 import { useState } from "react";
 
 function RentaLiquidaForm() {
@@ -111,7 +111,7 @@ function RentaLiquidaForm() {
             arrayIndex={sectionKey}
             path={`${pathPrefix}`}
           >
-            <Form110Values
+            <RentaLiquidaValues
               title={friendlyName}
               path={`${pathPrefix}.${sectionKey}`}
               data={sectionData[sectionKey]}
@@ -127,17 +127,29 @@ function RentaLiquidaForm() {
 
       const friendlyName = friendlyNames[sectionKey] || sectionKey;
 
+      if (typeof sectionData[sectionKey] !== 'object') {
+          return (
+              <div key={sectionKey}>
+                  <RentaLiquidaValues
+                      title={friendlyName}
+                      path={`${pathPrefix}.${sectionKey}`}
+                      data={sectionData[sectionKey]}
+                      handleChange={handleChange}
+                  />
+              </div>
+          );
+      }
       return (
-        <Accordeon key={sectionKey} title={friendlyName}>
-          <Form110Values
-            title={friendlyName}
-            path={`${pathPrefix}.${sectionKey}`}
-            data={sectionData[sectionKey]}
-            handleChange={handleChange}
-          />
-        </Accordeon>
+          <Accordeon key={sectionKey} title={friendlyName}>
+              <RentaLiquidaValues
+                  title={friendlyName}
+                  path={`${pathPrefix}.${sectionKey}`}
+                  data={sectionData[sectionKey]}
+                  handleChange={handleChange}
+              />
+          </Accordeon>
       );
-    });
+  });
   };
 
   return (
