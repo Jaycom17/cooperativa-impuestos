@@ -1450,7 +1450,20 @@ export const RentaLiquida = z.object({
   }),
   Costos: z.object({
     MateriasPrimasReventaBienes: z.object({
-      CostossVentasCalculadoSistemaPermanente: z.object({}),
+      CostossVentasCalculadoSistemaPermanente: z.object({
+        ValorContable: z.number(),
+        EfectoConversion: z.number(),
+        MenorValorFiscal: z.number(),
+        MayorValorFiscal: z.number(),
+        ValorFiscal: z.number(),
+        Tarifa9: z.number(),
+        Tarifa15: z.number(),
+        Tarifa20: z.number(),
+        MegaInversiones: z.number(),
+        MegaInversiones27: z.number(),
+        TarifaGeneral240: z.number(),
+        Otras: z.number()
+      }),
       MateriasPrimasProduccion: z.object({
         InventarioInicial: z.object({
           ValorContable: z.number(),
@@ -7020,7 +7033,20 @@ export const RentaLiquidaInput = {
   },
   Costos: {
     MateriasPrimasReventaBienes: {
-      CostossVentasCalculadoSistemaPermanente: {},
+      CostossVentasCalculadoSistemaPermanente: {
+        ValorContable: 0,
+        EfectoConversion: 0,
+        MenorValorFiscal: 0,
+        MayorValorFiscal: 0,
+        ValorFiscal: 0,
+        Tarifa9: 0,
+        Tarifa15: 0,
+        Tarifa20: 0,
+        MegaInversiones: 0,
+        MegaInversiones27: 0,
+        TarifaGeneral240: 0,
+        Otras: 0,
+      },
       MateriasPrimasProduccion: {
         InventarioInicial: {
           ValorContable: 0,

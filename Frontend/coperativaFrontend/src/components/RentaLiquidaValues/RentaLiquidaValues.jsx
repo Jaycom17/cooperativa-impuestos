@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { ValuesNames, CalculatedValues } from "../../utils/form110.js";
-import Accordeon from "../Accordeon/Accordeon.jsx";
 
-function RentaLiquidaValues({ title, path, data, handleChange }) {
-  const renderTextField = (sectionData, sectionTitle, value = 0) => {
+function RentaLiquidaValues({ path, data, handleChange }) {
+
+  const renderTextField = (sectionData, sectionTitle = "", value = 0) => {  
     let newPath = "";
     if (sectionTitle !== "") {
       newPath = path + "." + sectionTitle;
@@ -15,52 +15,25 @@ function RentaLiquidaValues({ title, path, data, handleChange }) {
     }
     const pathParts = newPath.split(".");
     if (CalculatedValues.includes(pathParts[pathParts.length - 1])) {
-      return (<p className="p-1 text-xl font-medium border-b-4">{value}</p>);
+      return <p className="p-1 text-xl font-medium border-b-4">{value}</p>;
     } else {
-      if (typeof sectionData === "string") {
-        return (
-          <input
-            className="bg-white border rounded-md p-1"
-            type="string"
-            name={newPath}
-            value={value}
-            placeholder={newPath}
-            onChange={(e) => handleChange(e)}
-          />
-        );
-      } else if (typeof sectionData === "boolean") {
-        return (
-          <div className="flex flex-col space-y-2 bg-white">
-            <select
-              className="bg-white border rounded-md p-1"
-              name={newPath}
-              defaultValue={sectionData ? "true" : "false"}
-              onChange={(e) => handleChange(e)}
-            >
-              <option value="true">Si</option>
-              <option value="false">No</option>
-            </select>
-          </div>
-        );
-      } else {
-        return (
-          <input
-            className="bg-white border rounded-md p-1"
-            type="text"
-            name={newPath}
-            value={/*value === 0 ? "" : value*/ newPath}
-            placeholder={newPath}
-            onChange={(e) => handleChange(e)}
-          />
-        );
-      }
+      return (
+        <input
+          className="bg-white border rounded-md p-1"
+          type="number"
+          name={newPath}
+          defaultValue={value === 0 ? "" : value}
+          placeholder={newPath}
+          onChange={(e) => handleChange(e)}
+        />
+      );
     }
   };
 
   const renderSection = (sectionData, subSection = "") => (
     <>
       {typeof sectionData !== "object" ? (
-        <>{renderTextField(sectionData, "")}</>
+        <>{renderTextField(sectionData, `${subSection !== "" ? subSection : ""}`)}</>
       ) : (
         <section className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-3">
           {Object.keys(sectionData).map((key) => (
@@ -80,7 +53,9 @@ function RentaLiquidaValues({ title, path, data, handleChange }) {
                         <>
                           {renderTextField(
                             sectionData[key],
-                            `${subSection!== "" ? `${subSection}.` : ""}${key}.${subKey}`,
+                            `${
+                              subSection !== "" ? `${subSection}.` : ""
+                            }${key}.${subKey}`,
                             subValue
                           )}
                         </>
@@ -89,7 +64,9 @@ function RentaLiquidaValues({ title, path, data, handleChange }) {
                   ))
                 ) : (
                   <div className="flex flex-col space-y-2 bg-white">
-                    {<>{renderTextField(sectionData[key], key)}</>}
+                    {<>{renderTextField(sectionData[key], `${
+                              subSection !== "" ? `${subSection}.` : ""
+                            }${key}`)}</>}
                   </div>
                 )}
               </section>
@@ -100,34 +77,31 @@ function RentaLiquidaValues({ title, path, data, handleChange }) {
     </>
   );
 
+  if (typeof data !== "object") {
+    return (
+      <div className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white">
+        <h3 className="w-full font-bold text-xl pb-2">
+          {ValuesNames[path] || path}
+        </h3>
+        {renderTextField(data)}
+      </div>
+    );
+  }
+
   return (
     <>
-    {path === "Ingresos.IngresosNetosActividadIndustrialCoSer" ? (
-      <>
-      <Accordeon title="Ingresos Netos Actividad">
-        <div className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white">
-        <h3 className="w-full font-bold text-xl pb-2">Ingresos Netos Actividad</h3>
-        {<>{renderSection(data.IngresosNetosActividadIndustrialCoSer, "IngresosNetosActividadIndustrialCoSer")}</>}
+      {Object.keys(data).map((key) => (
+        <div
+          key={key}
+          className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white"
+        >
+          <h3 className="w-full font-bold text-xl pb-2">
+            {ValuesNames[key] || key}
+          </h3>
+          {<>{renderSection(data[key], key)}</>}
         </div>
-      </Accordeon>
-      <Accordeon title="Devoluciones Rebajas">
-        <div className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white">
-        <h3 className="w-full font-bold text-xl pb-2">Devoluciones Rebajas</h3>
-        {<>{renderSection(data.DevolucionesRebajasDescuentos, "DevolucionesRebajasDescuentos")}</>}
-        </div>
-      </Accordeon>
-      </>
-    ):( 
-    <div className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white">
-      
-      <>
-        <h3 className="w-full font-bold text-xl pb-2">
-        {ValuesNames[title] || title}
-      </h3>
-      {<>{renderSection(data)}</>}
-      </>
-    </div>
-    )}</>
+      ))}
+    </>
   );
 }
 
