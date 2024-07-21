@@ -17,6 +17,7 @@ import IngresosFacturacionForm from "../pages/IngresosFacturacion/Form/IngresosF
 import ImpuestoDiferidoForm from "../pages/ImpuestoDiferido/Form/ImpuestoDiferidoForm";
 import ResetPasswordTeacher from "../pages/ResetPassword/ResetPasswordTeacher";
 import UpdateInfoAdmin from "../pages/UpdateInfoAdmin/UpdateInfoAdmin";
+import RentaLiquidaForm from "../pages/RentaLiquida/Form/RentaLiquidaForm";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -70,6 +71,7 @@ function Router() {
               <Route path="/impuestodiferido" element={<ImpuestoDiferidoForm />}/>
               <Route path="/form110" element={<From110Form />}/>
               <Route path="/detalleReng" element={<DetalleReng />}/>
+              <Route path="/rentaliquida" element={<RentaLiquidaForm />} />
             </Routes>
           </BrowserRouter>
         </StudentProvider>
