@@ -1,14 +1,33 @@
 import { useState, useEffect, useRef } from "react";
 import { VscAccount } from "react-icons/vsc";
+import PropTypes from "prop-types";
+
+/**
+ * Componente desplegable de cuenta.
+ * 
+ * Este componente muestra un botón de cuenta que despliega opciones al hacer clic en él.
+ *
+ * @component
+ * @param {Object} props Las propiedades del componente.
+ * @param {Function} props.onActualizarDatos Función que se llama al hacer clic en "Cambiar contraseña".
+ * @param {Function} props.onCerrarSesion Función que se llama al hacer clic en "Cerrar sesión".
+ * @returns {JSX.Element} Elemento JSX que representa el desplegable de cuenta.
+ */
 
 const AccountDropdown = ({onActualizarDatos, onCerrarSesion})=>{
     const [isAccountOptOpen, setIsAccountOptOpen] = useState(false);
     const dropdownRef = useRef(null);
 
+    /**
+     * Maneja la apertura y cierre del menú de opciones de cuenta.
+     */
     const handleAccOpt = () =>{
         setIsAccountOptOpen(!isAccountOptOpen);
     }
     
+    /**
+    * Cierra el menú de opciones de cuenta cuando se hace clic fuera de él.
+    */
     useEffect(() => {
         function handleClickOutside(event) {
           if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -56,3 +75,8 @@ const AccountDropdown = ({onActualizarDatos, onCerrarSesion})=>{
 };
 
 export default AccountDropdown;
+
+AccountDropdown.propTypes = {
+    onActualizarDatos: PropTypes.func,
+    onCerrarSesion: PropTypes.func
+}

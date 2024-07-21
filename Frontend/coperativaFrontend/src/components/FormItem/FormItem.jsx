@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const FormItem = ({name, to}) => {
     return (
         <a href={to} className="flex items-center hover:scale-105 hover:bg-slate-100 duration-150 justify-center w-full flex-col rounded-2xl p-2">
@@ -8,5 +10,10 @@ const FormItem = ({name, to}) => {
         </a>
     );
 };
+
+FormItem.propTypes ={
+    name: PropTypes.string,
+    to: PropTypes.string
+}
 
 export default FormItem;
