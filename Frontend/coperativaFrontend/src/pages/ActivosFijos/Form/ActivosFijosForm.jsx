@@ -5,7 +5,14 @@ import basicInformation from '../../../formsData/ESFpatrimonio.json';
 import Accordeon from "../../../components/Accordeon/Accordeon";
 import TabBar from "../../../components/TabBar/TabBar";
 import { useState } from "react";
-import { friendlyNamesPPE, friendlyNamesAI } from "../../../utils/activosFijos";
+import { friendlyNamesPPE, 
+        friendlyNamesAI, 
+        calculateCostoImpNetoFinPeriodo, 
+        calculateAjusteImpNetoFinPeriodo,
+        calculateSubTotalFinPeriodo,
+        calculateTotalNetoFinPeriodo,
+        calculateValorNetoFinPeriodo,
+        calcultateTotal } from "../../../utils/activosFijos";
 
 const ActivosFijosForm = () =>{
   const [data, setData] = useState(basicInformation);
@@ -19,26 +26,6 @@ const ActivosFijosForm = () =>{
     ];
 
     const [activeTab, setActiveTab] = useState(tabs[0].name);
-
-    const calculateCostoImpNetoFinPeriodo = (currentData) => {
-        return (currentData.Contables.Comienzo.Costo || 0) + (currentData.Contables.Comienzo.Conversion || 0) + (currentData.Contables.Incrementos.Transferencias || 0) - (currentData.Contables.Disminuciones.Transferencias || 0) - (currentData.Contables.Depreciacion.Costo || 0) - (currentData.Contables.Depreciacion.Conversion || 0) + (currentData.Contables.Deterioro || 0);
-    }
-
-    const calculateAjusteImpNetoFinPeriodo = (currentData) => {
-        return (currentData.Contables.Comienzo.Ajuste || 0) + (currentData.Contables.Incrementos.CambiosValorRazonable || 0) - (currentData.Contables.Disminuciones.CambiosValorRazonable || 0) - (currentData.Contables.Depreciacion.Ajuste || 0)
-    }
-
-    const calculateSubTotalFinPeriodo = (currentData) => {
-        return (currentData.Fiscales.SaldoComienzo || 0) + (currentData.Fiscales.IncrementosTransferencias || 0) - (currentData.Fiscales.DisminucionesTransferencias || 0)
-    }
-
-    const calculateTotalNetoFinPeriodo = (currentData) => {
-        return (currentData.Fiscales.SubtotalFinalPeriodo || 0) - (currentData.Fiscales.Depreciacion || 0)
-    }
-
-    const calculateValorNetoFinPeriodo = (currentData) => {
-        return (currentData.Fiscales.ValorTotal || 0) - (currentData.Fiscales.DepreacionFinal || 0)
-    }
 
     const handleChange = (e, path) => {
         let { name, value } = e.target;
@@ -81,8 +68,73 @@ const ActivosFijosForm = () =>{
                 });
             });
 
+            const PPE = newData.PropiedadesPlantasEquipos;
+            const PI = newData.PropiedadesInversión;
+            const ANCMV = newData.ANCMV.ANCMV;
+            const AI = newData.ActivosIntangibles;
+            const TotalPPEPIANCMV = newData.TotalPPEPIANCMV;
+            const TotalTodo = newData.TotalTodo;
+
+            const elementosPPE = [
+                PPE.Terrenos,
+                PPE.Edificios,
+                PPE.Maquinaria,
+                PPE.Buques,
+                PPE.Aeronave,
+                PPE.EquiposTransporte,
+                PPE.EnseresAccesorios,
+                PPE.EquiposInformaticos,
+                PPE.EquiposRedesComunicacion,
+                PPE.InfraestructuraRed,
+                PPE.ActivosTangiblesExploracionEvaluacion,
+                PPE.ActivosMineria,
+                PPE.ActivosPetroleoGas,
+                PPE.PPyEArrendamientoOperativo,
+                PPE.PlantasProductoras,
+                PPE.AnimalesProductores,
+                PPE.ConstruccionesProceso,
+                PPE.Otras,
+            ];
+
+            const elementosPI = [
+                PI.Terrenos,
+                PI.Edificios,
+            ];
+
+            const elementosAI = [
+                AI.MarcasComerciales,
+                AI.ActivosIntangiblesExploracionEvaluacion,
+                AI.CabecerasOeriodicosRevistasTitulosPublicaciones,
+                AI.ProgramasAplicacionesInformaticos,
+                AI.LicenciasFranquicias,
+                AI.PropiedadIntelectualPatentesPropiedadIndustrialServiciosDerechosOperacion,
+                AI.RecetasFormulasModelosDiseñosPrototipos,
+                AI.Concesiones,
+                AI.DesembolsosDesarrolloCapitalizados,
+                AI.ActivosIntangiblesDesarrollo,
+                AI.Plusvalia,
+                AI.MejorasDerechosArrendamiento,
+                AI.SubvencionesEstado,
+                AI.Otros,
+            ];
             
-    
+            const elementosPPEPIANCMV = [
+                PPE.Total,
+                PI.Total,
+                ANCMV,
+            ];
+
+            const elementosTodo = [
+                TotalPPEPIANCMV,
+                AI.Total,
+            ];
+
+            calcultateTotal(PPE.Total, elementosPPE);
+            calcultateTotal(PI.Total, elementosPI);
+            calcultateTotal(AI.Total, elementosAI);
+            calcultateTotal(TotalPPEPIANCMV, elementosPPEPIANCMV);
+            calcultateTotal(TotalTodo, elementosTodo);
+
             return newData;
         });
     };
@@ -121,16 +173,16 @@ const ActivosFijosForm = () =>{
                             <ActivosFijosTotals title="Total PPE" data={data.PropiedadesPlantasEquipos.Total} />
                         </Accordeon>
                         <Accordeon title={"Total Propiedades de inversión"}>
-                            <ActivosFijosTotals title="Total PI" data={data.ANCMV.ANCMV} />
+                            <ActivosFijosTotals title="Total PI" data={data.PropiedadesInversión.Total} />
                         </Accordeon>
                         <Accordeon title={"Total Activos Intangibles"}>
-                            <ActivosFijosTotals title="Total AI" data={data.ANCMV.ANCMV} />
+                            <ActivosFijosTotals title="Total AI" data={data.ActivosIntangibles.Total} />
                         </Accordeon>
                         <Accordeon title={"Total PPE, PI y ANCMV"}>
                             <ActivosFijosTotals title="Total PPE, PI y ANCMV" data={data.TotalPPEPIANCMV} />
                         </Accordeon>
-                        <Accordeon title={"Total Propiedades, plantas y equipos"}>
-                            <ActivosFijosTotals title="Total Propiedades, plantas y equipos" data={data.ANCMV} />
+                        <Accordeon title={"Total PPE, PI, ANCMV y AI"}>
+                            <ActivosFijosTotals title="Total PPE, PI, ANCMV y AI" data={data.TotalTodo} />
                         </Accordeon>
                     </div>
                 )}
@@ -140,4 +192,3 @@ const ActivosFijosForm = () =>{
 };
 
 export default ActivosFijosForm;
-
