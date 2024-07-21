@@ -8,6 +8,7 @@ import detalleRenglonesRouter from './routes/detalleRenglones.routes.js';
 import form110Router from './routes/form110.routes.js';
 import ingFactRouter from './routes/ingFact.routes.js';
 import loginRouter from './routes/login.routes.js';
+import reportRouter from './routes/report.routes.js';
 import cookieParse from 'cookie-parser';
 import cors from 'cors';
 
@@ -30,6 +31,7 @@ app.use('/form110', form110Router);
 app.use('/ingFact', ingFactRouter);
 app.use('/login', loginRouter);
 app.use('/room', roomRouter);
+app.use('/report', reportRouter);
 
 app.listen(3000, () => {
     console.log('Server started on http://localhost:3000');

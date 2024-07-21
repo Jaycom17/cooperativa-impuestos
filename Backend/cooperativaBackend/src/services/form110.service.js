@@ -16,14 +16,30 @@ export const listFormulario110 = async () => {
   }
 };
 
-export const listFormulario110ById = async (r110ID) => {
+export const listFormulario110ById = async (student) => {
   try {
-    const result = await prisma.formr110.findUnique({
+    const res = await prisma.report.findFirst({
       where: {
-        r110ID,
+        stuID: student.stuID,
+        roomID: student.roomID,
+      },select: {
+        r110ID: true,
       },
     });
-    result.r110Content = JSON.parse(result.r110Content.replace(/'/g, '"'));
+
+    if (!res) {
+      return {message: "Formulario 110 no encontrado"};
+    }
+
+    const result = await prisma.formr110.findUnique({
+      where: {
+        r110ID: res.r110ID,
+      },
+    });
+
+    if (!result) {
+      return {message: "Formulario 110 no encontrado"};
+    }
     return result;
   } catch (error) {
     console.error(error);
@@ -48,21 +64,34 @@ export const createFormulario110 = async (form110) => {
   }
 };
 
-export const updateFormulario110 = async (r110ID, form110) => {
+export const updateFormulario110 = async (student, form110) => {
   try {
-    const result = await prisma.formr110.update({
+
+    const res = await prisma.report.findFirst({
       where: {
-        r110ID,
+        roomID: student.roomID,
+        stuID: student.stuID,
       },
-      data: {
-        r110Content: JSON.stringify(form110)
-          .replace(/\n|\s/g, "")
-          .replace(/"/g, "'"),
+      select: {
+        r110ID: true,
       },
     });
-    return true;
+
+    if (!res) {
+      return {message:'Formulario no encontrado'};
+    }
+
+    const result = await prisma.formr110.update({
+      where: {
+        r110ID: res.r110ID,
+      },
+      data: {
+        r110Content: form110
+      },
+    });
+    return result;
   } catch (error) {
     console.error(error);
-    return false;
+    return {message: {error: 'No se pudo actualizar el formulario'}};
   }
 }

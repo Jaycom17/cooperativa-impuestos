@@ -16,7 +16,7 @@ export const loginUser = async (user) => {
 
     const token = await createAccessToken({ usuID: result.usuID });
 
-    return { usuID: result.usuID, usuEmail: result.usuEmail, usuName: result.usuName, usuRole: result.usuRole,  token };
+    return { usuID: result.usuID, usuEmail: result.usuEmail, usuName: result.usuName, usuRole: result.usuRole, token };
 
   } catch (error) {
     console.error(error);
@@ -24,10 +24,10 @@ export const loginUser = async (user) => {
   }
 };
 
-export const userProfile = async (usuId) => {
+export const userProfile = async (usuID) => {
   try {
     const result = await prisma.user.findUnique({
-      where: { usuID: usuId },
+      where: { usuID: usuID },
       select: {
         usuID: true,
         usuEmail: true,
@@ -36,8 +36,11 @@ export const userProfile = async (usuId) => {
       },
     });
 
+    console.log(result)
+
     return result;
   } catch (error) {
+    console.log(error)
     return { message: "Error al obtener el perfil" };
   }
 }

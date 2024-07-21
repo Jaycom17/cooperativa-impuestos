@@ -1,14 +1,197 @@
-import jsonData from "../../../formsData/Form110.json";
 import AsideStudent from "../../../components/AsideStudent/AsideStudent.jsx";
 import Form110Values from '../../../components/Form110Values/Form110Values.jsx';
 import Accordeon from '../../../components/Accordeon/Accordeon.jsx';
 import TabBar from '../../../components/TabBar/TabBar.jsx';
 import { ValuesNames } from "../../../utils/form110.js"
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getForm, updateForm } from "../../../services/form110.service.js";
 
 const From110Form = () => {
 
-    const [data, setData] = useState(jsonData);
+    const [data, setData] = useState({
+        "DatoPers": {
+            "Anno": 0,
+            "NumForm": 0,
+            "DatDecl": {
+                "NIT": 0,
+                "DV": 0,
+                "PriApll": "",
+                "SecApll": "",
+                "PriNomb": "",
+                "OtrosNomb": "",
+                "RazonSoc": "",
+                "CodDir": "",
+                "ActEcoPrin": "",
+                "Correct": {
+                    "Cod": 0,
+                    "NoFormAnt": 0
+                }
+            },
+            "FractAnnoAgrv": false,
+            "RenunPertRegTribEsp": false,
+            "VinPagObraImpu": false,
+            "PerdFiscAcumAnnoAnt": 0
+        },
+        "DatosResum": {
+            "DatosInf": {
+                "TotalCostGastNom": 0,
+                "AportSistSegSocial": 0,
+                "AportSenaEtc": 0
+            },
+            "Patrim": {
+                "EfectvEquiEfect": 0,
+                "InvInstFinDeriv": 0,
+                "CuentDocArreFinCob": 0,
+                "Inv": 0,
+                "ActivInt": 0,
+                "ActivBio": 0,
+                "PPEPANCMC": 0,
+                "Otro": 0,
+                "TotalBruto": 0,
+                "Pasiv": 0,
+                "TotalLiqui": 0
+            },
+            "Ingre": {
+                "Brutos": 0,
+                "Finan": 0,
+                "DividNoCont": 0,
+                "DividDistrEntNoCol": 0,
+                "DividGravExt06": 0,
+                "DividGravNat06": 0,
+                "DividGravNat07": 0,
+                "DiviDNoGrav07": 0,
+                "DividGravExt07": 0,
+                "DividGravMega07": 0,
+                "Otro": 0,
+                "TotBruto": 0,
+                "DevRebDec": 0,
+                "IngNoRent": 0,
+                "Tot": 0
+            },
+            "CostDedic": {
+                "Cost": 0,
+                "GastAdmin": 0,
+                "GastDistVent": 0,
+                "GastFinan": 0,
+                "Otro": 0,
+                "Tot": 0
+            },
+            "ESAL": {
+                "InvEfecAnno": 0,
+                "InvLiqui": 0
+            },
+            "Renta": {
+                "RecuDedu": 0,
+                "Passiv": 0,
+                "LiquidOrd": 0,
+                "PerdidLiqui": 0,
+                "Compensacion": 0,
+                "RentLiquida": 0,
+                "RentPresun": 0,
+                "RentExenta": 0,
+                "RenGravable": 0,
+                "RenLiquida": 0
+            },
+            "GananciasOcasion": {
+                "IngreGananOcasion": 0,
+                "RentDeudReg": 0,
+                "UtiliPerdFisc": 0,
+                "CostGananOcas": 0,
+                "GananOcasionNoAgrav": 0,
+                "GananOcasGrav": 0
+            },
+            "LiquiPriv": {
+                "ImpuesRentLiquiGrav": {
+                    "RentLiquidGrav": 0,
+                    "DivPartGravET00": 0,
+                    "DivPartGravET": 0,
+                    "DivPartGrav27": 0,
+                    "DivPartGrav": 0,
+                    "DivPartGrav33": 0
+                },
+                "TotImpRentLiquidGrav": 0,
+                "DescTrib": 0,
+                "ImpNetRent": 0,
+                "ImpGanOcas": 0,
+                "DescPorImpPagad": 0,
+                "TotImpCarg": 0,
+                "ValInvObraImp50": 0,
+                "DescEfectInvObrImp": 0,
+                "CredFisc": 0,
+                "AnticRentLiquidAnnoAntGrav": 0,
+                "SaldFavAnnoAntGrav": 0,
+                "Reten": {
+                    "AutoReten": 0,
+                    "OtraReten": 0,
+                    "TotReten": 0
+                },
+                "AntRenAnnoGravSig": 0,
+                "SobreInstFin": {
+                    "AnticSobreInstAnnoGranAnt": 0,
+                    "SobreInstFinan": 0,
+                    "AnticSobreInstAnnoGravSig": 0
+                },
+                "SaldoPagImp": 0,
+                "Sansion": 0,
+                "TotSaldPag": 0,
+                "TotSaldFav": 0
+            }
+        },
+        "Totales": {
+            "ValTotExiObrImpMod0": 0,
+            "ValTotProyObrImpMod2": 0,
+            "CodRepre": 0,
+            "CodCont": 0,
+            "Salvedad": false,
+            "NoTarjProf": 0,
+            "PagoTot": 0
+        }
+    });
+
+    const updateValue = (value, path) => {
+        // Crear una copia del objeto data
+        const updatedData = { ...data };
+
+        // Navegar al valor específico usando la ruta (path)
+        let currentLevel = updatedData;
+        const pathArray = path.split('.');
+        for (let i = 0; i < pathArray.length - 1; i++) {
+            currentLevel = currentLevel[pathArray[i]];
+        }
+
+        const lastKey = pathArray[pathArray.length - 1];
+
+        // Actualizar el valor
+        currentLevel[lastKey] = value;
+        setData(updatedData);
+    }
+
+    const recieveData = (key, path) => {
+        if (typeof key === 'object') {
+            Object.entries(key).map(([key, val]) => {
+                recieveData(val, `${path}.${key}`);
+            })
+        } else {
+            updateValue(key,path)
+        }
+    }
+
+    useEffect(() => {
+        getForm()
+            .then((response) => {
+                if (response.status === 200) {
+                    Object.entries(response.data.r110Content).map(([key, val]) => {
+                        recieveData(val, [key]);
+                    });
+
+                } else {
+                    console.error("Error en la respuesta", response);
+                }
+            })
+            .catch((error) => {
+                console.error("Error en la llamada a la API", error);
+            });
+    }, []);
 
     const calculateTotalPatBruto = (currentData) => {
         return (currentData.EfectvEquiEfect || 0) + (currentData.InvInstFinDeriv || 0) + (currentData.CuentDocArreFinCob || 0) + (currentData.Inv || 0) + (currentData.ActivInt || 0) + (currentData.ActivBio || 0) + (currentData.PPEPANCMC || 0) + (currentData.Otro || 0);
@@ -143,9 +326,9 @@ const From110Form = () => {
 
     const handleChange = (e) => {
         let { name, value } = e.target;
-        console.log(name,value)
+        console.log(name, value)
 
-        
+
 
         if (value === '') value = 0;
 
@@ -174,7 +357,7 @@ const From110Form = () => {
 
         // Actualizar el valor
         currentLevel[lastKey] = value;
-        
+
         // Actualizar el estado con el objeto modificado
         updatedData.DatosResum.Patrim.TotalBruto = calculateTotalPatBruto(updatedData.DatosResum.Patrim);
         updatedData.DatosResum.Patrim.TotalLiqui = calculateTotalLiqui(updatedData.DatosResum.Patrim);
@@ -192,11 +375,12 @@ const From110Form = () => {
         updatedData.DatosResum.LiquiPriv.SaldoPagImp = calculateSaldoPagImp(updatedData.DatosResum.LiquiPriv);
         updatedData.DatosResum.LiquiPriv.TotSaldPag = calculateTotSaldPag(updatedData.DatosResum.LiquiPriv);
         updatedData.DatosResum.LiquiPriv.TotSaldFav = calculateTotSaldFav(updatedData.DatosResum.LiquiPriv);
-        
+
         // Calculo de los totales
         setData(updatedData);
-        console.log(data)
-        
+        console.log(data);
+        updateForm(data);
+
     };
 
     const tabs = [
@@ -236,7 +420,7 @@ const From110Form = () => {
 
             const friendlyName = friendlyNames[sectionKey] || sectionKey;
 
-            if(typeof sectionData[sectionKey] !== 'object'){
+            if (typeof sectionData[sectionKey] !== 'object') {
                 return (
                     <div key={sectionKey}>
                         <Form110Values

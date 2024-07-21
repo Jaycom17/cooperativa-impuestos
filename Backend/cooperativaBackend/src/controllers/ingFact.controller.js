@@ -11,14 +11,13 @@ export const getIngresosFacturaciones = async (req, res) => {
 }
 
 export const getIngresosFacturacionesById = async (req, res) => {
-    const { ingID } = req.params;
+    const student = req.body.student;
 
-    const result = await listIngresosFacturacionesById(ingID);
+    const result = await listIngresosFacturacionesById(student);
 
     if (!result) {
         return res.status(404).json({ error: 'Formulario no encontrado' });
     }
-
     res.json(result);
 }
 
@@ -35,13 +34,17 @@ export const postIngresosFacturaciones = async (req, res) => {
 }
 
 export const putIngresosFacturaciones = async (req, res) => {
-    const { ingID } = req.params;
+
+    const student = req.body.student;
+
     const updatedIngresosFacturaciones = req.body;
 
-    const result = await updateIngresosFacturaciones(ingID, updatedIngresosFacturaciones);
+    delete updatedIngresosFacturaciones.student;
 
-    if (!result) {
-        return res.status(500).json({ error: 'No se pudo actualizar el formulario' });
+    const result = await updateIngresosFacturaciones(student, updatedIngresosFacturaciones);
+
+    if (result.message) {
+        return res.status(500).json({ error: result.message });
     }
 
     res.json(updatedIngresosFacturaciones);

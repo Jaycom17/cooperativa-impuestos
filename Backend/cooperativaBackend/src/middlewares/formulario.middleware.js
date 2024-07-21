@@ -27,7 +27,10 @@ export const validateDetalleRenglones = async (req, res, next) => {
 export const validateFormulario110 = async (req, res, next) => {
     try {
         const formulario110 = Formulario110.parse(req.body);
+        const student = req.body.student;
         req.body = formulario110;
+
+        req.body.student = student;
         next();
     } catch (error) {
         res.status(400).json({ error: error.errors });
@@ -37,7 +40,10 @@ export const validateFormulario110 = async (req, res, next) => {
 export const validateIngresosFacturaciones = async (req, res, next) => {
     try {
         const ingresosFacturacion = IngresosFacturacion.parse(req.body);
+        const student = req.body.student;
         req.body = ingresosFacturacion;
+
+        req.body.student = student;
         next();
     } catch (error) {
         res.status(400).json({ error: error.errors });

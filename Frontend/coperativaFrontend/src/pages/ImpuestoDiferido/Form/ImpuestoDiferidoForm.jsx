@@ -3,6 +3,10 @@ import jsonData from "../../../formsData/ImpuestoDiferido.json";
 import TabBar from "../../../components/TabBar/TabBar";
 import Accordeon from "../../../components/Accordeon/Accordeon";
 import ImpuestoDiferidoValues from "../../../components/ImpuestoDiferidoValues/ImpuestoDiferidoValues";
+import {
+  addDetalleCompensacionExcesoRentaPresuntiva,
+  addDetalleCompensacionPerdidasFiscales,
+} from "../../../utils/impuestoDiferido";
 import { useState } from "react";
 
 function ImpuestoDiferidoForm() {
@@ -28,29 +32,58 @@ function ImpuestoDiferidoForm() {
   const [data, setData] = useState(jsonData);
   const [activeTab, setActiveTab] = useState(tabs[0].name);
 
+  const handleAdd = (path) => {
+    console.log(path);
+    if (path === "DetalleCompensacionPerdidasFiscales") {
+      let newData = { ...data };
+      newData.DetalleCompensacionPerdidasFiscales.push(
+        {...addDetalleCompensacionPerdidasFiscales}
+      );
+
+      setData(newData);
+    } else if (path === "DetalleCompensacionExcesoRentaPresuntiva") {
+      let newData = { ...data };
+      newData.DetalleCompensacionExcesoRentaPresuntiva.push(
+       {...addDetalleCompensacionExcesoRentaPresuntiva}
+      );
+
+      setData(newData);
+    }
+  };
+
+  const handleQuit = (path) => {
+    if (path === "DetalleCompensacionPerdidasFiscales") {
+      let newData = { ...data };
+      newData.DetalleCompensacionPerdidasFiscales.pop();
+      setData(newData);
+    } else if (path === "DetalleCompensacionExcesoRentaPresuntiva") {
+      let newData = { ...data };
+      newData.DetalleCompensacionExcesoRentaPresuntiva.pop();
+      setData(newData);
+    }
+  };
+
   const handleChange = (e, path) => {
     let { name, value } = e.target;
     if (value === "") value = 0;
     const pathArray = path.split(".");
 
-    setData((prevData) => {
-      let newData = { ...prevData };
-      let temp = newData;
+    let newData = { ...data };
+    let temp = newData;
 
-      for (let i = 0; i < pathArray.length; i++) {
-        if (i === pathArray.length - 1) {
-          if (typeof temp[pathArray[i]] === "object") {
-            temp[pathArray[i]][name] = parseFloat(value) || 0;
-          } else {
-            temp[pathArray[i]] = parseFloat(value) || 0;
-          }
+    for (let i = 0; i < pathArray.length; i++) {
+      if (i === pathArray.length - 1) {
+        if (typeof temp[pathArray[i]] === "object") {
+          temp[pathArray[i]][name] = parseFloat(value) || 0;
         } else {
-          temp = temp[pathArray[i]];
+          temp[pathArray[i]] = parseFloat(value) || 0;
         }
+      } else {
+        temp = temp[pathArray[i]];
       }
+    }
 
-      return newData;
-    });
+    setData(newData);
   };
 
   const renderSections = (
@@ -70,6 +103,9 @@ function ImpuestoDiferidoForm() {
             key={sectionKey}
             title={friendlyName}
             arrayIndex={sectionKey}
+            path={`${pathPrefix}`}
+            onAdd={handleAdd}
+            onQuit={handleQuit}
           >
             <ImpuestoDiferidoValues
               title={friendlyName}

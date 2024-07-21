@@ -178,7 +178,7 @@
             "MayorValorFiscal": 0,
             "ValorFiscal": 0
           },
-          "InstrumentosDeudaPatrimonioCosto": {
+          "InstrumentosDeudaPatrimoniooCosto": {
             "ValorContable": 0,
             "EfectoConversion": 0,
             "MenorValorFiscal": 0,
@@ -491,6 +491,43 @@
           "ValorFiscal": 0
         },
         "Otros": {
+          "ValorContable": 0,
+          "EfectoConversion": 0,
+          "MenorValorFiscal": 0,
+          "MayorValorFiscal": 0,
+          "ValorFiscal": 0
+        },
+        "Total": {
+          "ValorContable": 0,
+          "EfectoConversion": 0,
+          "MenorValorFiscal": 0,
+          "MayorValorFiscal": 0,
+          "ValorFiscal": 0
+        }
+      },
+      "ActivosImpuestosCorrientes": {
+        "SaldosaFavor": {
+          "ValorContable": 0,
+          "EfectoConversion": 0,
+          "MenorValorFiscal": 0,
+          "MayorValorFiscal": 0,
+          "ValorFiscal": 0
+        },
+        "SaldosaFavorOtrosImpuestos": {
+          "ValorContable": 0,
+          "EfectoConversion": 0,
+          "MenorValorFiscal": 0,
+          "MayorValorFiscal": 0,
+          "ValorFiscal": 0
+        },
+        "DescuentosTributarios" : {
+          "ValorContable": 0,
+          "EfectoConversion": 0,
+          "MenorValorFiscal": 0,
+          "MayorValorFiscal": 0,
+          "ValorFiscal": 0
+        },
+        "AnticiposyOtros" : {
           "ValorContable": 0,
           "EfectoConversion": 0,
           "MenorValorFiscal": 0,
@@ -1196,7 +1233,7 @@
             "MayorValorFiscal": 0,
             "ValorFiscal": 0
           },
-          "Otros": {
+          "Otrosimpuestos": {
             "ValorContable": 0,
             "EfectoConversion": 0,
             "MenorValorFiscal": 0,
@@ -1620,7 +1657,7 @@
         }
       },
       "Pasivos": {
-        "TotalIntereses": {
+        "TotalInteresespasivos": {
           "ValorContable": 0,
           "EfectoConversion": 0
         },

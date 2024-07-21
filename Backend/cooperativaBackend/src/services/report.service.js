@@ -1,4 +1,7 @@
 import prisma from "../config/prisma.js";
+import { IngresosFacturacionInput } from "../models/ingFact.model.js";
+import { Form110Input } from "../models/form110.model.js"
+
 import { v4 as uuidv4 } from "uuid";
 
 export const createReport = async (stuID, roomID) => {
@@ -53,14 +56,14 @@ export const createReport = async (stuID, roomID) => {
     await prisma.formingresosfancturacion.create({
       data: {
         ingID: formsID.formIngresosFacturacion,
-        ingContent: {},
+        ingContent: IngresosFacturacionInput,
       },
     });
 
     await prisma.formr110.create({
       data: {
         r110ID: formsID.form110,
-        r110Content: {},
+        r110Content: Form110Input,
       },
     });
 
@@ -97,5 +100,21 @@ export const createReport = async (stuID, roomID) => {
   } catch (error) {
     console.error(error);
     return { message: "Error al crear el reporte" };
+  }
+};
+
+export const listReport = async (student) => {
+  try {
+    const report = await prisma.report.findFirst({
+      where: {
+        stuID: student.stuID,
+        roomID: student.roomID,
+      },
+    });
+
+    return report;
+  } catch (error) {
+    console.error(error);
+    return { message: "Error al obtener el reporte" };
   }
 };

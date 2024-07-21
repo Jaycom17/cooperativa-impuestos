@@ -165,3 +165,35 @@ export const loginUser = async (user) => {
     return null;
   }
 }
+
+export const changePassword = async (user) => {
+  try {
+    const encryptedPassword = await encrypt(user.usuPassword);
+
+    const previusPassword = await prisma.user.findUnique({
+      where: {
+        usuID: user.usuID
+      },
+      select: {
+        usuPassword: true
+      }
+    });
+
+    const passwordMatch = await compare(user.usuOldPassword, previusPassword.usuPassword);
+
+    if (!passwordMatch) return { message: "La contraseña es incorrecta" };
+
+    const result = await prisma.user.update({
+      where: {
+        usuID: user.usuID
+      },
+      data: {
+        usuPassword: encryptedPassword
+      }
+    });
+    return result;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+}
