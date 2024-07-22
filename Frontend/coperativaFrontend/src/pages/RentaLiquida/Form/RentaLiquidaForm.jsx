@@ -3,6 +3,7 @@ import jsonData from "../../../formsData/RentaLiquida.json";
 import TabBar from "../../../components/TabBar/TabBar";
 import Accordeon from "../../../components/Accordeon/Accordeon";
 import RentaLiquidaValues from "../../../components/RentaLiquidaValues/RentaLiquidaValues";
+import { rentaLiquidaNames, calculateValorFiscalInputs, excludedCalculateValorFiscalInputs } from "../../../utils/rentaLiquida";
 import { useState } from "react";
 
 function RentaLiquidaForm() {
@@ -69,6 +70,39 @@ function RentaLiquidaForm() {
     },
   ];
 
+  const clculateValorFiscal = (path) => {
+    const pathArray = path.split(".");
+
+    if (
+      calculateValorFiscalInputs.includes(pathArray[0]) &&
+      !excludedCalculateValorFiscalInputs.some(elemment => path.includes(elemment))
+    ) {
+      let newData = { ...data };
+      let temp = newData;
+
+      let auxData = newData[pathArray[0]];
+
+      for (let i = 1; i < pathArray.length - 1; i++) {
+        auxData = auxData[pathArray[i]];
+      }
+
+      let calculatedValue =
+        (auxData.ValorContable || 0) +
+        (auxData.EfectoConversion || 0) -
+        (auxData.MenorValorFiscal || 0) +
+        (auxData.MayorValorFiscal || 0);
+
+      for (let i = 0; i < pathArray.length - 1; i++) {
+        if (!temp[pathArray[i]]) {
+          temp[pathArray[i]] = {}; // Crear objeto si no existe
+        }
+        temp = temp[pathArray[i]]; // Mover al siguiente nivel del objeto
+      }
+
+      temp.ValorFiscal = calculatedValue;
+    }
+  };
+
   const createOtrosSection = () => {
     const keys = Object.keys(data);
     const excludedSections = tabs.map((tab) => tab.name);
@@ -93,8 +127,6 @@ function RentaLiquidaForm() {
     if (value === "") value = 0;
     const pathArray = name.split(".");
 
-    console.log({ name, value, pathArray });
-
     let newData = { ...data };
     let temp = newData;
 
@@ -110,25 +142,20 @@ function RentaLiquidaForm() {
       }
     }
 
-    console.log(newData)
+    clculateValorFiscal(name);
 
     setData(newData);
   };
 
-  const renderSections = (
-    sectionData,
-    pathPrefix= "",
-    friendlyNames = []
-  ) => {
+  const renderSections = (sectionData, pathPrefix = "", friendlyNames = []) => {
     return Object.keys(sectionData).map((sectionKey) => {
-
       const friendlyName = friendlyNames[sectionKey] || sectionKey;
 
       if (typeof sectionData[sectionKey] !== "object") {
         return (
           <div key={sectionKey}>
             <RentaLiquidaValues
-              path={`${pathPrefix === "" ? "": `${pathPrefix}.`}${sectionKey}`}
+              path={`${pathPrefix === "" ? "" : `${pathPrefix}.`}${sectionKey}`}
               data={sectionData[sectionKey]}
               handleChange={handleChange}
             />
@@ -138,7 +165,7 @@ function RentaLiquidaForm() {
       return (
         <Accordeon key={sectionKey} title={friendlyName}>
           <RentaLiquidaValues
-            path={`${pathPrefix === "" ? "": `${pathPrefix}.`}${sectionKey}`}
+            path={`${pathPrefix === "" ? "" : `${pathPrefix}.`}${sectionKey}`}
             data={sectionData[sectionKey]}
             handleChange={handleChange}
           />
@@ -152,56 +179,56 @@ function RentaLiquidaForm() {
       <AsideStudent />
       <section className="w-full mt-12 md:mt-0 overflow-auto max-h-screen">
         <TabBar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
-        {activeTab === "Ingresos" && renderSections(data.Ingresos, "Ingresos")}
-        {activeTab === "Costos" && renderSections(data.Costos, "Costos")}
-        {activeTab === "Gastos" && renderSections(data.Gastos, "Gastos")}
+        {activeTab === "Ingresos" && renderSections(data.Ingresos, "Ingresos", rentaLiquidaNames)}
+        {activeTab === "Costos" && renderSections(data.Costos, "Costos", rentaLiquidaNames)}
+        {activeTab === "Gastos" && renderSections(data.Gastos, "Gastos", rentaLiquidaNames)}
         {activeTab === "GanaciaPerdidaAntesImpuestos" &&
           renderSections(
             data.GanaciaPerdidaAntesImpuestos,
-            "GanaciaPerdidaAntesImpuestos"
+            "GanaciaPerdidaAntesImpuestos", rentaLiquidaNames
           )}
         {activeTab === "InformativoClasificacionDiferencias" &&
           renderSections(
             data.InformativoClasificacionDiferencias,
-            "InformativoClasificacionDiferencias"
+            "InformativoClasificacionDiferencias", rentaLiquidaNames
           )}
         {activeTab === "RentasPasivasECE" &&
-          renderSections(data.RentasPasivasECE, "RentasPasivasECE")}
+          renderSections(data.RentasPasivasECE, "RentasPasivasECE", rentaLiquidaNames)}
         {activeTab === "Compensaciones" &&
-          renderSections(data.Compensaciones, "Compensaciones")}
+          renderSections(data.Compensaciones, "Compensaciones", rentaLiquidaNames)}
         {activeTab === "RentaPresuntiva" &&
-          renderSections(data.RentaPresuntiva, "RentaPresuntiva")}
+          renderSections(data.RentaPresuntiva, "RentaPresuntiva", rentaLiquidaNames)}
         {activeTab === "RentasGrvablesREntaLiquida" &&
           renderSections(
             data.RentasGrvablesREntaLiquida,
-            "RentasGrvablesREntaLiquida"
+            "RentasGrvablesREntaLiquida", rentaLiquidaNames
           )}
         {activeTab === "GananciasOcasionalesGravables" &&
           renderSections(
             data.GananciasOcasionalesGravables,
-            "GananciasOcasionalesGravables"
+            "GananciasOcasionalesGravables", rentaLiquidaNames
           )}
         {activeTab === "SaldoFavorAnioGravableAnteriorSinSolicitusDevolucion" &&
           renderSections(
             data.SaldoFavorAnioGravableAnteriorSinSolicitusDevolucion,
-            "SaldoFavorAnioGravableAnteriorSinSolicitusDevolucion"
+            "SaldoFavorAnioGravableAnteriorSinSolicitusDevolucion", rentaLiquidaNames
           )}
         {activeTab === "InformativoOtroResultadoIntegral" &&
           renderSections(
             data.InformativoOtroResultadoIntegral,
-            "InformativoOtroResultadoIntegral"
+            "InformativoOtroResultadoIntegral", rentaLiquidaNames
           )}
         {activeTab === "GastoIngresoImpuestoRentaComplementarioPeriodo" &&
           renderSections(
             data.GastoIngresoImpuestoRentaComplementarioPeriodo,
-            "GastoIngresoImpuestoRentaComplementarioPeriodo"
+            "GastoIngresoImpuestoRentaComplementarioPeriodo", rentaLiquidaNames
           )}
         {activeTab === "DatosInformativoConcepto" &&
           renderSections(
             data.DatosInformativoConcepto,
-            "DatosInformativoConcepto"
+            "DatosInformativoConcepto", rentaLiquidaNames
           )}
-        {activeTab === "OtrosDatosConSoloUnCampo" && renderSections(Otros)}
+        {activeTab === "OtrosDatosConSoloUnCampo" && renderSections(Otros, "", rentaLiquidaNames)}
       </section>
     </main>
   );
