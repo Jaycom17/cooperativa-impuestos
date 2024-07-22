@@ -3,14 +3,16 @@ import AsideProf from "../../components/AsideProf/AsideProf";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { forms } from "../../utils/report";
-import logo from '../../assets/LogoUniversidadCooperativa.png'
-
+import logo from '../../assets/LogoUniversidadCooperativa.png';
+import { getIngresosFacturacionStu } from "../../services/ingFac.service";
+import json from "../../formsData/IngFact.json"
+import Form110Tabs from "../../components/GenericFormValues/FormTabs";
 
 function RoomReport() {
   const { roomID } = useParams();
   const [form, setForm] = useState("");
   const [selectedStudent, setSelectedStudent] = useState(null);
-  const [data, setData] = useState({});
+  const [data, setData] = useState(null);
 
   const toNav = (formTo, stuID) => {
     setForm(formTo);
@@ -37,7 +39,12 @@ function RoomReport() {
       //getter del aja
         break;
       case "ingrefactform":
-      //getter del ing
+        setData(json)
+        getIngresosFacturacionStu(stuID, roomID).then(res =>{
+          console.log(res.data.ingContent);
+          setData(res.data.ingContent);
+          console.log(data)
+        }).catch(error => {console.log(error)});
         break;
       case "activosfijos":
       //getter del infierno
@@ -97,7 +104,9 @@ function RoomReport() {
             </section>
           </div>
         )}
-        
+        {(form !== "" && form!=="stuSelect") && (
+          <Form110Tabs json={data} handleChange={() => console.log()} CalculatedValues={[]} TabsNames={[]} ValuesNames={[]} />
+        )}
       </main>
     </>
   );

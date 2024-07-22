@@ -5,6 +5,7 @@ import { useState } from "react";
 
 function Form110Tabs({json, handleChange, TabsNames, CalculatedValues, ValuesNames}) {
 
+    console.log(json)
     const keys = Object.keys(json);
 
     const tabs = keys.map(key => ({
