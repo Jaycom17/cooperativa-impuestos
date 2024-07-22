@@ -21,6 +21,18 @@ export const getIngresosFacturacionesById = async (req, res) => {
     res.json(result);
 }
 
+export const getIngresosFacturacionesByStudent = async (req, res) => {
+    const stuID = req.params.stuID;
+    const roomID = req.params.roomID;
+
+    const result = await listIngresosFacturacionesById({ stuID, roomID });
+
+    if (!result) {
+        return res.status(404).json({ error: 'Formulario no encontrado' });
+    }
+    res.json(result);
+}
+
 export const postIngresosFacturaciones = async (req, res) => {
     const newIngresosFacturaciones = req.body;
 
