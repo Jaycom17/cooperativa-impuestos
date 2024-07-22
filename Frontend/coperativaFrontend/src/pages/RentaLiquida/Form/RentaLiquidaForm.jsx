@@ -3,6 +3,7 @@ import jsonData from "../../../formsData/RentaLiquida.json";
 import TabBar from "../../../components/TabBar/TabBar";
 import Accordeon from "../../../components/Accordeon/Accordeon";
 import RentaLiquidaValues from "../../../components/RentaLiquidaValues/RentaLiquidaValues";
+import { rentaLiquidaNames } from "../../../utils/rentaLiquida";
 import { useState } from "react";
 
 function RentaLiquidaForm() {
@@ -152,56 +153,56 @@ function RentaLiquidaForm() {
       <AsideStudent />
       <section className="w-full mt-12 md:mt-0 overflow-auto max-h-screen">
         <TabBar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
-        {activeTab === "Ingresos" && renderSections(data.Ingresos, "Ingresos")}
-        {activeTab === "Costos" && renderSections(data.Costos, "Costos")}
-        {activeTab === "Gastos" && renderSections(data.Gastos, "Gastos")}
+        {activeTab === "Ingresos" && renderSections(data.Ingresos, "Ingresos", rentaLiquidaNames)}
+        {activeTab === "Costos" && renderSections(data.Costos, "Costos", rentaLiquidaNames)}
+        {activeTab === "Gastos" && renderSections(data.Gastos, "Gastos", rentaLiquidaNames)}
         {activeTab === "GanaciaPerdidaAntesImpuestos" &&
           renderSections(
             data.GanaciaPerdidaAntesImpuestos,
-            "GanaciaPerdidaAntesImpuestos"
+            "GanaciaPerdidaAntesImpuestos", rentaLiquidaNames
           )}
         {activeTab === "InformativoClasificacionDiferencias" &&
           renderSections(
             data.InformativoClasificacionDiferencias,
-            "InformativoClasificacionDiferencias"
+            "InformativoClasificacionDiferencias", rentaLiquidaNames
           )}
         {activeTab === "RentasPasivasECE" &&
-          renderSections(data.RentasPasivasECE, "RentasPasivasECE")}
+          renderSections(data.RentasPasivasECE, "RentasPasivasECE", rentaLiquidaNames)}
         {activeTab === "Compensaciones" &&
-          renderSections(data.Compensaciones, "Compensaciones")}
+          renderSections(data.Compensaciones, "Compensaciones", rentaLiquidaNames)}
         {activeTab === "RentaPresuntiva" &&
-          renderSections(data.RentaPresuntiva, "RentaPresuntiva")}
+          renderSections(data.RentaPresuntiva, "RentaPresuntiva", rentaLiquidaNames)}
         {activeTab === "RentasGrvablesREntaLiquida" &&
           renderSections(
             data.RentasGrvablesREntaLiquida,
-            "RentasGrvablesREntaLiquida"
+            "RentasGrvablesREntaLiquida", rentaLiquidaNames
           )}
         {activeTab === "GananciasOcasionalesGravables" &&
           renderSections(
             data.GananciasOcasionalesGravables,
-            "GananciasOcasionalesGravables"
+            "GananciasOcasionalesGravables", rentaLiquidaNames
           )}
         {activeTab === "SaldoFavorAnioGravableAnteriorSinSolicitusDevolucion" &&
           renderSections(
             data.SaldoFavorAnioGravableAnteriorSinSolicitusDevolucion,
-            "SaldoFavorAnioGravableAnteriorSinSolicitusDevolucion"
+            "SaldoFavorAnioGravableAnteriorSinSolicitusDevolucion", rentaLiquidaNames
           )}
         {activeTab === "InformativoOtroResultadoIntegral" &&
           renderSections(
             data.InformativoOtroResultadoIntegral,
-            "InformativoOtroResultadoIntegral"
+            "InformativoOtroResultadoIntegral", rentaLiquidaNames
           )}
         {activeTab === "GastoIngresoImpuestoRentaComplementarioPeriodo" &&
           renderSections(
             data.GastoIngresoImpuestoRentaComplementarioPeriodo,
-            "GastoIngresoImpuestoRentaComplementarioPeriodo"
+            "GastoIngresoImpuestoRentaComplementarioPeriodo", rentaLiquidaNames
           )}
         {activeTab === "DatosInformativoConcepto" &&
           renderSections(
             data.DatosInformativoConcepto,
-            "DatosInformativoConcepto"
+            "DatosInformativoConcepto", rentaLiquidaNames
           )}
-        {activeTab === "OtrosDatosConSoloUnCampo" && renderSections(Otros)}
+        {activeTab === "OtrosDatosConSoloUnCampo" && renderSections(Otros, "", rentaLiquidaNames)}
       </section>
     </main>
   );

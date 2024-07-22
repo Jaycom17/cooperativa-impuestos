@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
-import { ValuesNames, CalculatedValues } from "../../utils/form110.js";
+import { rentaLiquidaNames } from "../../utils/rentaLiquida";
+
+const CalculatedValues = []
 
 function RentaLiquidaValues({ path, data, handleChange }) {
 
@@ -38,7 +40,7 @@ function RentaLiquidaValues({ path, data, handleChange }) {
         <section className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-3">
           {Object.keys(sectionData).map((key) => (
             <article key={key} className="flex flex-col border p-3 rounded-md">
-              <h4 className="mb-3 font-semibold">{ValuesNames[key] || key}</h4>
+              <h4 className="mb-3 font-semibold">{rentaLiquidaNames[key] || key}</h4>
               <section className="flex flex-col gap-y-2">
                 {typeof sectionData[key] === "object" ? (
                   Object.entries(sectionData[key]).map(([subKey, subValue]) => (
@@ -47,7 +49,7 @@ function RentaLiquidaValues({ path, data, handleChange }) {
                       className="flex flex-col space-y-2 bg-white"
                     >
                       <label className="bg-white text-sm" htmlFor={subKey}>
-                        {ValuesNames[subKey] || subKey}
+                        {rentaLiquidaNames[subKey] || subKey}
                       </label>
                       {
                         <>
@@ -81,7 +83,7 @@ function RentaLiquidaValues({ path, data, handleChange }) {
     return (
       <div className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white">
         <h3 className="w-full font-bold text-xl pb-2">
-          {ValuesNames[path] || path}
+          {rentaLiquidaNames[path] || path}
         </h3>
         {renderTextField(data)}
       </div>
@@ -96,7 +98,7 @@ function RentaLiquidaValues({ path, data, handleChange }) {
           className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white"
         >
           <h3 className="w-full font-bold text-xl pb-2">
-            {ValuesNames[key] || key}
+            {rentaLiquidaNames[key] || key}
           </h3>
           {<>{renderSection(data[key], key)}</>}
         </div>
