@@ -11,7 +11,7 @@ const AsideStudent = () => {
   const asideRef = useRef(null);
 
   const { leaveRoom } = useContext(RoomContext);
-  const { logout } = useContext(StudentContext);
+  const { logout, student } = useContext(StudentContext);
 
   const handleLeaveRoom = async() => {
     leaveRoom();
@@ -61,7 +61,7 @@ const AsideStudent = () => {
         </div>
         <div className="flex flex-col items-center bg-transparent p-4 text-center font-semibold">
           <h1 className="text-white md:text-xl md:mt-[10px] bg-transparent">
-            Nombre del estudiante
+            {student.stuName || 'Nombre estudiante'}
           </h1>
         </div>
         <Link

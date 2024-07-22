@@ -10,7 +10,7 @@ import { GrFormClose } from "react-icons/gr";
 import { MdMenu } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
 
-const AsideProf = ({ toNav, form }) => {
+const AsideProf = ({ toNav }) => {
   const { roomID } = useParams();
   const [students, setStudents] = useState([]);
   const [selectedStudent, setSelectedStudent] = useState(null);
@@ -131,6 +131,9 @@ const AsideProf = ({ toNav, form }) => {
             />
             <FaSearch className="absolute inset-y-0 right-4 top-1 text-xl my-auto cursor-text text-black/65" />
           </div>
+          {students.length === 0 && (
+            <p className="text-center mt-2 px-4 md:text-lg text-unicoop">Aún no hay estudiantes registrados en esta sala :(</p>
+          )}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 p-3">
             {students.map((student) => (
               <button
@@ -154,7 +157,6 @@ const AsideProf = ({ toNav, form }) => {
 
 AsideProf.propTypes = {
   toNav: PropTypes.func,
-  form: PropTypes.string,
 };
 
 export default AsideProf;

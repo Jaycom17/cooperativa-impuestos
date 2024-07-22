@@ -3,6 +3,8 @@ import AsideProf from "../../components/AsideProf/AsideProf";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { forms } from "../../utils/report";
+import logo from '../../assets/LogoUniversidadCooperativa.png'
+
 
 function RoomReport() {
   const { roomID } = useParams();
@@ -15,6 +17,35 @@ function RoomReport() {
     if (formTo === "stuSelect") {
       setSelectedStudent(stuID || null);
     }
+    switch(formTo) {
+      case "form110":
+        /**setData(getForm110(stuID)) (algo así?)*/
+        break;
+      case "detalleReng":
+      //getter del elefante
+        break;
+      case "caratulaform":
+      //getter del cartulina
+        break;
+      case "esfpatrimonioform":
+      //getter del esefeo
+        break;
+      case "rentaliquida":
+      //getter del liquido
+        break;
+      case "impuestodiferido":
+      //getter del aja
+        break;
+      case "ingrefactform":
+      //getter del ing
+        break;
+      case "activosfijos":
+      //getter del infierno
+        break; 
+      case "stuSelect":
+      //getter del fedelobo
+        break; 
+    }
     console.log(formTo, stuID);
   };
 
@@ -22,12 +53,11 @@ function RoomReport() {
     <>
       <TeacherNavbar />
       <main className="flex">
-        <AsideProf toNav={toNav} form={form} />
-
+        <AsideProf toNav={toNav}/>
         {form === "" && (
           <div className="flex flex-col items-center justify-center mb-32 text-center w-10/12 md:w-5/12 md:mx-auto">
             <img
-              src="https://fernandocolmenares.co/wp-content/uploads/2020/08/U.CooperativaCol.png"
+              src={logo}
               alt="Logo universidad cooperativa"
               className="w-11/12 md:w-96"
             />
@@ -35,8 +65,7 @@ function RoomReport() {
               Bienvenido al reporte de la sala
             </h1>
             <h2 className="text-lg lg:text-xl">
-              Para empezar a revisar los avances de un estudiante en los
-              formularios, escoge uno dando clic en el botón <span className="text-blue-400">Estudiantes</span>, en la barra de navegación lateral.
+              Para empezar a revisar los avances de un estudiante en los formularios, escoge uno dando clic en el botón &quot;<span className="text-unicoop-blue font-medium">Estudiantes</span>&quot;, en la barra de navegación lateral.
             </h2>
           </div>
         )}
@@ -44,7 +73,7 @@ function RoomReport() {
           <div className="flex flex-col items-center text-center w-full h-screen justify-center">
             <img
               className="w-[300px] md:w-[400px] rounded-[20%]"
-              src="https://fernandocolmenares.co/wp-content/uploads/2020/08/U.CooperativaCol.png"
+              src={logo}
               alt="Logo universidad cooperativa"
             />
             <h2 className="text-2xl font-semibold pb-8 text-center">
@@ -68,6 +97,7 @@ function RoomReport() {
             </section>
           </div>
         )}
+        
       </main>
     </>
   );
