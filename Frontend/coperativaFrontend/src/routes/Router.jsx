@@ -28,6 +28,7 @@ import { StudentProvider } from "../context/StuContext";
 import ProtectedRouteAdmin from "./ProtectedRouteAdmin";
 import ProtectedRouteProfessor from "./ProtectedRouteProfessor";
 import ProtectedRouteStudent from "./ProtectedRouteStudent";
+import ResumenESFForm from "../pages/ResumenESF/Form/ResumenESFForm";
 
 function Router() {
   return (
@@ -72,6 +73,7 @@ function Router() {
               <Route path="/form110" element={<From110Form />}/>
               <Route path="/detalleReng" element={<DetalleReng />}/>
               <Route path="/rentaliquida" element={<RentaLiquidaForm />} />
+              <Route path="/resumenesf" element={<ResumenESFForm />} />
             </Routes>
           </BrowserRouter>
         </StudentProvider>

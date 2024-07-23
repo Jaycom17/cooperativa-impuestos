@@ -19,7 +19,7 @@
     "TarifGen": 1
   },
   "DatosInf": {
-    "PerNatuSinRes": true,
+    "PerNatuSinRes": false,
     "ContrRegTriEsp": true,
     "EntCoop": true,
     "EntSecFin": true,

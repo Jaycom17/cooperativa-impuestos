@@ -44,7 +44,7 @@ const AsideStudent = () => {
     { label: "Impuesto diferido", to: "/impuestodiferido" },
     { label: "Ingresos y facturación", to: "/ingrefactform" },
     { label: "Activos fijos", to: "/activosfijos" },
-    { label: "Resumen ESF ERI", to: "/student" },
+    { label: "Resumen ESF ERI", to: "/resumenesf" },
   ];
 
   return (
