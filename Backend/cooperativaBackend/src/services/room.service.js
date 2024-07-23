@@ -108,6 +108,27 @@ export const removeRoom = async (roomDate) => {
     try {
         const startDate = new Date(`${roomDate}-01-01T00:00:00.000Z`);
         const endDate = new Date(`${roomDate}-12-31T23:59:59.999Z`);
+
+        const studentsReport = await prisma.report.findMany({
+            where: {
+                room: {
+                    roomDate: {
+                        gte: startDate,
+                        lte: endDate
+                    }
+                }
+            }
+        })
+        if(studentsReport.length > 0){
+            const delStudReport = await prisma.report.deleteMany({
+                where:{
+                    roomDate: {
+                        gte: startDate,
+                        lte: endDate
+                    }
+                }
+            })
+        }
         const studentRoom = await prisma.student.findMany({
             where: {
                 room: {
@@ -158,6 +179,22 @@ export const removeRoom = async (roomDate) => {
 
 export const removeRoomByID = async (roomID) => {
     try {
+        const studentsReport = await prisma.report.findMany({
+            where: {
+                room: {
+                    roomID: roomID
+                }
+            }
+        })
+        if(studentsReport.length > 0){
+            const delStudReport = await prisma.report.deleteMany({
+                where:{
+                    room:{
+                        roomID: roomID
+                    }
+                }
+            })
+        }
         const studentRoom = await prisma.student.findMany({
             where: {
                 room: {
@@ -165,6 +202,7 @@ export const removeRoomByID = async (roomID) => {
                 }
             }
         });
+        console.log(studentRoom);
         if(studentRoom.length > 0){
             const delStuResult = await prisma.student.deleteMany({
                 where: {

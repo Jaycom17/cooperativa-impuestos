@@ -128,12 +128,21 @@ const ProfForm = ({ profId, onRefresh, setOpen }) => {
         </p>
       )}
       <div className="relative w-11/12">
-        <input
+        {!isUpdate ?
+          <input
           type={showPassword ? "text" : "password"}
           className="w-full p-2.5 rounded-md text-xl text-unicoop bg-background text-center border-solid border-unicoop border"
           placeholder="Contraseña"
           {...register("usuPassword", { required: true })}
-        />
+          />
+        :
+          <input
+            type={showPassword ? "text" : "password"}
+            className="w-full p-2.5 rounded-md text-xl text-unicoop bg-background text-center border-solid border-unicoop border"
+            placeholder="Contraseña"
+            {...register("usuPassword", { required: false })}
+          />
+        }
         <button
           type="button"
           onClick={() => togglePasswordVisibility(1)}
@@ -148,12 +157,21 @@ const ProfForm = ({ profId, onRefresh, setOpen }) => {
         </p>
       )}
       <div className="relative w-11/12">
-        <input
-          type={showPassword2 ? "text" : "password"}
-          className="w-full p-2.5 rounded-md text-xl text-unicoop bg-background text-center border-solid border-unicoop border"
-          placeholder="Repita la contraseña"
-          {...register("confirmPassword", { required: true })}
-        />
+        {!isUpdate ? 
+          <input
+            type={showPassword2 ? "text" : "password"}
+            className="w-full p-2.5 rounded-md text-xl text-unicoop bg-background text-center border-solid border-unicoop border"
+            placeholder="Repita la contraseña"
+            {...register("confirmPassword", { required: true })}
+          />
+        :
+          <input
+            type={showPassword2 ? "text" : "password"}
+            className="w-full p-2.5 rounded-md text-xl text-unicoop bg-background text-center border-solid border-unicoop border"
+            placeholder="Repita la contraseña"
+            {...register("confirmPassword", { required: false })}
+          />
+        }
         <button
           type="button"
           onClick={() => togglePasswordVisibility(2)}

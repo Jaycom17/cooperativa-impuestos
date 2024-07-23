@@ -35,10 +35,10 @@ const Room = ({ room, usuId, onRefresh }) => {
     return `${day} / ${month} / ${year}`;
   };
 
-  const handleDelete = (roomId) =>{
+  const handleDelete = () =>{
     const confirmDelete = window.confirm(`¿Estás seguro de que deseas eliminar la sala ${room.roomName}?`);
     if (confirmDelete) {
-        deleteRoom(roomId).then((response) =>{
+        deleteRoom(room.roomID).then((response) =>{
             if(response.status === 201){
                 alert("Se ha eliminado la sala correctamente");
                 onRefresh();
