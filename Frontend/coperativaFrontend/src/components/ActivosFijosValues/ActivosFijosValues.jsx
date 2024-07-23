@@ -1,8 +1,30 @@
 import PropTypes from "prop-types";
 import { ActivosFijosTotal, friendlyNames, contablesDatosInformativosKeys, contablesValorTotalKeys, fiscalesDatosInformativosKeys, fiscalesValorTotalKeys } from "../../utils/activosFijos.js";
 
+/**
+ * Componente para mostrar y editar valores de activos fijos.
+ *
+ * Este componente permite mostrar y editar valores de activos fijos para datos contables y fiscales,
+ * incluyendo información detallada como valor total y datos informativos.
+ *
+ * @component
+ * @param {Object} props - Las propiedades del componente.
+ * @param {string} props.title - Título del componente.
+ * @param {string} props.path - Ruta para acceder a los datos dentro de la estructura de activos fijos.
+ * @param {Object} props.data - Objeto que contiene los datos de activos fijos.
+ * @param {Function} props.handleChange - Función llamada cuando cambia el valor de un input.
+ * @returns {JSX.Element} Elemento JSX que representa los valores de activos fijos.
+ */
 function ActivosFijosValues({ title, path, data, handleChange }) {
 
+    /**
+     * Renderiza una sección de datos utilizando las keys proporcionadas.
+     * @param {Object} sectionData - Datos de la sección.
+     * @param {Array} keys - Arreglo de keys para mostrar.
+     * @param {string} sectionTitle - Título de la sección.
+     * @param {string} category - Categoría de los datos (Contables o Fiscales).
+     * @returns {JSX.Element} Elemento JSX que representa la sección de datos.
+     */
     const renderSection = (sectionData, keys, sectionTitle, category) => (
         <section className="flex flex-col gap-3 border rounded-md p-2">
             <h3 className="font-semibold text-xl">{sectionTitle}</h3>

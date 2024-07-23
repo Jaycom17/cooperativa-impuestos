@@ -2,9 +2,24 @@ import TeacherNavbar from "../../components/TeacherNavBar/TeacherNavbar";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { updatePassword } from "../../services/professor.service.js";
+import { MdCreate } from "react-icons/md";
+import { FaCheckCircle } from "react-icons/fa";
+import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+
+
+import logo from '../../assets/LogoUniversidadCooperativa.png'
 
 function ResetPasswordTeacher() {
   const [passwordMatch, setPasswordMatch] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword2, setShowPassword2] = useState(false);
+  const [showPassword3, setShowPassword3] = useState(false);
+
+  const togglePasswordVisibility = (field) => {
+    if(field === 1) {setShowPassword(!showPassword);}
+    else if(field === 2){setShowPassword2(!showPassword2);}
+    else if(field === 3){setShowPassword3(!showPassword3);}
+  };
 
   const {
     register,
@@ -42,67 +57,82 @@ function ResetPasswordTeacher() {
   return (
     <>
       <TeacherNavbar />
-      <main className="w-full h-screen flex justify-center items-center bg-background text-white">
-        <section className="fflex flex-col items-center">
-          <h1 className="text-2xl font-semibold text-center mb-2">
-            Cambiar Contraseña
-          </h1>
-          <form className="flex flex-col items-center bg-unicoop-black rounded-md gap-3 p-6" onSubmit={handleSubmit(onSubmit)}>
-            <input
-              className="w-full p-2.5 rounded-md text-xl text-unicoop bg-background text-center border-solid border-unicoop border"
-              type="password"
-              id="usuOldPassword"
-              name="usuOldPassword"
-              placeholder="Contraseña anterior"
-              required
-              {...register("usuOldPassword", { required: true })}
-            />
+      <main className="w-full h-screen flex flex-col justify-center items-center bg-background text-white">
+        <img src={logo} alt="logo universidad cooperativa" className="w-11/12 sm:w-96"/>
+          <form className="flex flex-col items-center bg-unicoop-black rounded-md gap-3 w-10/12 md:w-96 p-6" onSubmit={handleSubmit(onSubmit)}>
+            <MdCreate className="text-5xl font-semibold text-center"/>
+            <h1 className="text-2xl font-semibold text-center mb-2">
+              Cambiar Contraseña
+            </h1>
+            <div className="relative w-11/12">
+              <input
+                type={showPassword ? "text" : "password"}
+                className="w-full p-2.5 rounded-md text-xl text-unicoop bg-background text-center border-solid border-unicoop border"
+                placeholder="Contraseña anterior"
+                {...register("usuOldPassword", { required: true })}
+              />
+              <button
+                type="button"
+                onClick={() => togglePasswordVisibility(1)}
+                className="absolute inset-y-0 right-0 flex items-center px-2 text-xl text-unicoop hover:text-unicoop-blue duration-150"
+              >
+                {showPassword ? <IoEyeOffOutline /> : <IoEyeOutline />}
+              </button>
+            </div>
             {errors.usuOldPassword && (
-        <p className="text-red-500 text-sm font-semibold">
-          Debe ingresar una contraseña
-        </p>
-      )}
+            <p className="text-red-500 text-sm font-semibold">
+              Debe ingresar una contraseña
+            </p>
+          )}
             {!passwordMatch && (
               <p className="text-red-500 text-sm font-semibold">
                 Las contraseñas no coinciden
               </p>
             )}
-            <input
-              className="w-full p-2.5 rounded-md text-xl text-unicoop bg-background text-center border-solid border-unicoop border"
-              type="password"
-              id="usuPassword"
-              name="usuPassword"
-              placeholder="Nueva contraseña"
-              required
-              {...register("usuPassword", { required: true })}
-            />
+            <div className="relative w-11/12">
+              <input
+                type={showPassword2 ? "text" : "password"}
+                className="w-full p-2.5 rounded-md text-xl text-unicoop bg-background text-center border-solid border-unicoop border"
+                placeholder="Nueva contraseña"
+                {...register("usuPassword", { required: true })}
+              />
+              <button
+                type="button"
+                onClick={() => togglePasswordVisibility(2)}
+                className="absolute inset-y-0 right-0 flex items-center px-2 text-xl text-unicoop hover:text-unicoop-blue duration-150"
+              >
+                {showPassword2 ? <IoEyeOffOutline /> : <IoEyeOutline />}
+              </button>
+            </div>
             {errors.usuPassword && (
-        <p className="text-red-500 text-sm font-semibold">
-          Debe ingresar una contraseña
-        </p>
-      )}
-            <input
-              className="w-full p-2.5 rounded-md text-xl text-unicoop bg-background text-center border-solid border-unicoop border"
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-              placeholder="Confirmar contraseña"
-              required
-              {...register("confirmPassword", { required: true })}
-            />
+              <p className="text-red-500 text-sm font-semibold">
+                Debe ingresar una contraseña
+              </p>
+            )}
+            <div className="relative w-11/12">
+              <input
+                type={showPassword3 ? "text" : "password"}
+                className="w-full p-2.5 rounded-md text-xl text-unicoop bg-background text-center border-solid border-unicoop border"
+                placeholder="Confirmar contraseña"
+                {...register("confirmPassword", { required: true })}
+              />
+              <button
+                type="button"
+                onClick={() => togglePasswordVisibility(3)}
+                className="absolute inset-y-0 right-0 flex items-center px-2 text-xl text-unicoop hover:text-unicoop-blue duration-150"
+              >
+                {showPassword3 ? <IoEyeOffOutline /> : <IoEyeOutline />}
+              </button>
+            </div>
             {errors.confirmPassword && (
-        <p className="text-red-500 text-sm font-semibold">
-          Debe ingresar una contraseña
-        </p>
-      )}
-            <button
-              className="flex items-center p-1.5 mt-4 gap-1 bg-buttons-update-green hover:bg-buttons-update-green-h text-unicoop duration-150 rounded"
-              type="submit"
-            >
-              Cambiar Contraseña
+              <p className="text-red-500 text-sm font-semibold">
+                Debe ingresar una contraseña
+              </p>
+            )}
+            <button type="submit" className="flex items-center p-1.5 mt-4 gap-1 bg-buttons-update-green hover:bg-buttons-update-green-h text-unicoop duration-150 rounded" >
+                <FaCheckCircle className='bg-transparent'/> Confirmar
             </button>
           </form>
-        </section>
       </main>
     </>
   );

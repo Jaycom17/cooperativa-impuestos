@@ -1,6 +1,7 @@
 import { AuthContext } from "../../context/AuthContext";
 import { useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import logo from '../../assets/LogoUniversidadCooperativa.png'
 
 import UsersLogForm from "../../components/LoginForms/UsersLogForm";
 
@@ -32,7 +33,7 @@ const LoginPage = () => {
 
   return (  
     <main className="flex flex-col bg-background mx-auto items-center min-h-screen place-content-center">
-      <img src="https://fernandocolmenares.co/wp-content/uploads/2020/08/U.CooperativaCol.png" alt="logo universidad cooperativa" className="w-11/12 md:w-96"/>
+      <img src={logo} alt="logo universidad cooperativa" className="w-11/12 md:w-96"/>
       <section className="p-6 w-11/12 md:w-[400px] bg-unicoop-black rounded-lg">
         <UsersLogForm onSubmit={onSubmit}/>
       </section>

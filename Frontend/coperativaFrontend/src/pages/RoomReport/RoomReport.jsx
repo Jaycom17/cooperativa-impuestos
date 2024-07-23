@@ -3,6 +3,10 @@ import AsideProf from "../../components/AsideProf/AsideProf";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { forms } from "../../utils/report";
+import logo from "../../assets/LogoUniversidadCooperativa.png";
+import { getIngresosFacturacionStu } from "../../services/ingFac.service";
+import ingFact from "../../formsData/IngFact.json";
+import GenericTabs from "../../components/ShowFormsGeneric/GenericTabs";
 
 function RoomReport() {
   const { roomID } = useParams();
@@ -10,10 +14,69 @@ function RoomReport() {
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [data, setData] = useState({});
 
+  const updateValue = (value, path, form) => {
+    // Crear una copia del objeto data
+    const updatedData = { ...form };
+    // Navegar al valor específico usando la ruta (path)
+    let currentLevel = updatedData;
+    const pathArray = path.split(".");
+    for (let i = 0; i < pathArray.length - 1; i++) {
+      currentLevel = currentLevel[pathArray[i]];
+    }
+
+    const lastKey = pathArray[pathArray.length - 1];
+
+    // Actualizar el valor
+    currentLevel[lastKey] = value;
+    setData(updatedData);
+  };
+
+  const recieveData = (key, path, form) => {
+    if (typeof key === "object") {
+      Object.entries(key).map(([key, val]) => {
+        recieveData(val, `${path}.${key}`, form);
+      });
+    } else {
+      updateValue(key, path, form);
+    }
+  };
+
   const toNav = (formTo, stuID) => {
     setForm(formTo);
     if (formTo === "stuSelect") {
       setSelectedStudent(stuID || null);
+    }
+    switch (formTo) {
+      case "form110":
+        break;
+      case "detalleReng":
+        break;
+      case "caratulaform":
+        break;
+      case "esfpatrimonioform":
+        break;
+      case "rentaliquida":
+        break;
+      case "impuestodiferido":
+        break;
+      case "ingrefactform":
+        setData(ingFact);
+        getIngresosFacturacionStu(stuID, roomID)
+          .then((res) => {
+            console.log(res.data.ingContent);
+            Object.entries(res.data.ingContent).map(([key, val]) => {
+              recieveData(val, [key], ingFact);
+            });
+            console.log(data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+        break;
+      case "activosfijos":
+        break;
+      case "stuSelect":
+        break;
     }
     console.log(formTo, stuID);
   };
@@ -22,12 +85,11 @@ function RoomReport() {
     <>
       <TeacherNavbar />
       <main className="flex">
-        <AsideProf toNav={toNav} form={form} />
-
+        <AsideProf toNav={toNav} />
         {form === "" && (
           <div className="flex flex-col items-center justify-center mb-32 text-center w-10/12 md:w-5/12 md:mx-auto">
             <img
-              src="https://fernandocolmenares.co/wp-content/uploads/2020/08/U.CooperativaCol.png"
+              src={logo}
               alt="Logo universidad cooperativa"
               className="w-11/12 md:w-96"
             />
@@ -36,15 +98,17 @@ function RoomReport() {
             </h1>
             <h2 className="text-lg lg:text-xl">
               Para empezar a revisar los avances de un estudiante en los
-              formularios, escoge uno dando clic en el botón <span className="text-blue-400">Estudiantes</span>, en la barra de navegación lateral.
+              formularios, escoge uno dando clic en el botón &quot;
+              <span className="text-unicoop-blue font-medium">Estudiantes</span>
+              &quot;, en la barra de navegación lateral.
             </h2>
           </div>
         )}
-        {(form === "stuSelect" && selectedStudent) && (
+        {form === "stuSelect" && selectedStudent && (
           <div className="flex flex-col items-center text-center w-full h-screen justify-center">
             <img
               className="w-[300px] md:w-[400px] rounded-[20%]"
-              src="https://fernandocolmenares.co/wp-content/uploads/2020/08/U.CooperativaCol.png"
+              src={logo}
               alt="Logo universidad cooperativa"
             />
             <h2 className="text-2xl font-semibold pb-8 text-center">
@@ -67,6 +131,14 @@ function RoomReport() {
               ))}
             </section>
           </div>
+        )}
+        {form !== "" && form !== "stuSelect" && (
+          <GenericTabs
+            json={data}
+            ValuesNames={[]}
+            TabsNames={[]}
+            onReport={true}
+          />
         )}
       </main>
     </>

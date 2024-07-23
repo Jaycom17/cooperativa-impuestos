@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import Form110Values from "./FormValues";
+import GenericValues from "./GenericValues";
 import TabBar from "../TabBar/TabBar";
 import { useState } from "react";
 
-function Form110Tabs({json, handleChange, TabsNames, CalculatedValues, ValuesNames, onReport = false}) {
+function GenericTabs({json, TabsNames, ValuesNames, onReport = false}) {
 
     console.log(json)
     const keys = Object.keys(json);
@@ -15,21 +15,21 @@ function Form110Tabs({json, handleChange, TabsNames, CalculatedValues, ValuesNam
 
     const [activeTab, setActiveTab] = useState(tabs[0].name);
 
-    const renderForm = (json, path) => (
-        <Form110Values json={json} path={path} handleChange={handleChange} CalculatedValues={CalculatedValues} ValuesNames={ValuesNames}/>
+    const renderForm = (json) => (
+        <GenericValues json={json} ValuesNames={ValuesNames}/>
     );
 
     return (
         <section className="w-full mt-12 md:mt-0 overflow-auto max-h-screen">
             <TabBar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} onReport={onReport}/>
             {tabs.map(tab => (
-                activeTab === tab.name ? renderForm(json[tab.name], tab.name) : null
+                activeTab === tab.name ? renderForm(json[tab.name]) : null
             ))}
         </section>
     );
-} export default Form110Tabs;
+} export default GenericTabs;
 
-Form110Tabs.propTypes = {
+GenericTabs.propTypes = {
     json: PropTypes.object.isRequired,
     handleChange: PropTypes.func.isRequired,
     TabsNames: PropTypes.object.isRequired,
