@@ -47,6 +47,17 @@ function Router() {
 
               <Route element={<ProtectedRouteStudent />}>
                 <Route path="/student" element={<MainStudent />} />
+                <Route
+                path="/esfpatrimonioform"
+                element={<ESFpatrimonioForm />}
+                />
+                <Route path="/caratulaform" element={<CaratulaForm />} />
+                <Route path="/ingrefactform" element={<IngresosFacturacionForm />}/>
+                <Route path="/activosfijos" element={<ActivosFijosForm />}/>
+                <Route path="/impuestodiferido" element={<ImpuestoDiferidoForm />}/>
+                <Route path="/form110" element={<From110Form />}/>
+                <Route path="/detalleReng" element={<DetalleReng />}/>
+                <Route path="/rentaliquida" element={<RentaLiquidaForm />} />
               </Route>
 
               <Route element={<ProtectedRouteAdmin />}>
@@ -61,17 +72,7 @@ function Router() {
                 <Route path="/roomreport/:roomID" element={<RoomReport />} />
                 <Route path="/resetpasswordteacher" element={<ResetPasswordTeacher />} />
               </Route>
-              <Route
-                path="/esfpatrimonioform"
-                element={<ESFpatrimonioForm />}
-              />
-              <Route path="/caratulaform" element={<CaratulaForm />} />
-              <Route path="/ingrefactform" element={<IngresosFacturacionForm />}/>
-              <Route path="/activosfijos" element={<ActivosFijosForm />}/>
-              <Route path="/impuestodiferido" element={<ImpuestoDiferidoForm />}/>
-              <Route path="/form110" element={<From110Form />}/>
-              <Route path="/detalleReng" element={<DetalleReng />}/>
-              <Route path="/rentaliquida" element={<RentaLiquidaForm />} />
+              
             </Routes>
           </BrowserRouter>
         </StudentProvider>

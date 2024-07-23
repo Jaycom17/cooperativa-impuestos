@@ -10,6 +10,17 @@ import { GrFormClose } from "react-icons/gr";
 import { MdMenu } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
 
+/**
+ * Componente lateral para navegación y visualización de estudiantes y formularios.
+ *
+ * Este componente proporciona un menú lateral para seleccionar estudiantes, buscar estudiantes,
+ * y navegar entre diferentes formularios asociados a un estudiante seleccionado.
+ *
+ * @component
+ * @param {Object} props - Las propiedades del componente.
+ * @param {Function} props.toNav - Función para navegar a diferentes rutas basadas en la interacción del usuario.
+ * @returns {JSX.Element} Elemento JSX que representa el componente de menú lateral.
+ */
 const AsideProf = ({ toNav }) => {
   const { roomID } = useParams();
   const [students, setStudents] = useState([]);
@@ -19,7 +30,12 @@ const AsideProf = ({ toNav }) => {
   const asideRef = useRef(null);
   const [contOpen, setContOpen] = useState(false);
 
-  // Función para cerrar el menú desplegable al hacer clic fuera de él
+  /**
+   * Función para cerrar el menú desplegable al hacer clic fuera de él.
+   * 
+   * @function
+   * @param {Event} event - El evento de clic del mouse.
+   */
   useEffect(() => {
     function handleClickOutside(event) {
       if (asideRef.current && !asideRef.current.contains(event.target)) {
@@ -31,7 +47,10 @@ const AsideProf = ({ toNav }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
+  
+  /**
+   * Hook efecto para obtener la lista de estudiantes al cambiar la ID de la sala.
+   */
   useEffect(() => {
     const fetchStudents = async () => {
       try {
@@ -48,10 +67,19 @@ const AsideProf = ({ toNav }) => {
     fetchStudents();
   }, [roomID]);
 
+  /**
+   * Maneja la apertura y cierre del menú lateral.
+   */
   const handleMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  /**
+   * Maneja la búsqueda de estudiantes en la lista.
+   * 
+   * @function
+   * @param {Event} e - El evento de cambio del input.
+   */
   const searchStudent = (e) => {
     const searchValue = e.target.value;
     const filteredStudents = studentsCopy.filter((student) =>
@@ -59,7 +87,13 @@ const AsideProf = ({ toNav }) => {
     );
     setStudents(filteredStudents);
   };
-
+  
+  /**
+   * Maneja la selección de un estudiante de la lista.
+   * 
+   * @function
+   * @param {Object} student - El objeto del estudiante seleccionado.
+   */
   const handleSelectedStud = (student) => {
     setSelectedStudent(student);
     setContOpen(false);
@@ -81,9 +115,7 @@ const AsideProf = ({ toNav }) => {
         ref={asideRef}
       >
         <button
-          className="flex w-full justify-center mt-2 md:hidden hover:bg-unicoop-slate-blue"
-          onClick={handleMenuOpen}
-        >
+          className="flex w-full justify-center mt-2 md:hidden hover:bg-unicoop-slate-blue" onClick={handleMenuOpen}>
           <GrFormClose className="hover:animate-spin-once cursor-pointer text-unicoop hover:text-buttons-closing-red text-3xl" />
         </button>
         <div className="flex flex-col items-center bg-transparent p-4 text-center font-semibold">

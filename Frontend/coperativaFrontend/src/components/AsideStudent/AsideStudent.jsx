@@ -11,7 +11,7 @@ const AsideStudent = () => {
   const asideRef = useRef(null);
 
   const { leaveRoom } = useContext(RoomContext);
-  const { logout, student } = useContext(StudentContext);
+  const { logout } = useContext(StudentContext);
 
   const handleLeaveRoom = async() => {
     leaveRoom();
@@ -49,25 +49,14 @@ const AsideStudent = () => {
 
   return (
     <section className="absolute md:relative">
-      <div
-        className="flex md:hidden cursor-pointer items-center text-unicoop rounded-br-lg h-12 px-2 bg-primary hover:bg-unicoop-slate-blue duration-200"
-        onClick={handleMenuOpen}
-      >
+      <button className="flex md:hidden cursor-pointer items-center text-unicoop rounded-br-lg h-12 px-2 bg-primary hover:bg-unicoop-slate-blue duration-200" onClick={handleMenuOpen}>
         <MdMenu className="text-2xl"/>
-      </div>
+      </button>
       <aside className={`fixed md:relative overflow-auto top-0 min-h-screen h-full w-[200px] bg-primary md:translate-x-0 transition-transform duration-150 ${ isMenuOpen ? "translate-x-0" : "-translate-x-full" }`} ref={asideRef} >
-        <div className="flex w-full justify-center mt-2 md:hidden ">
-          <GrFormClose className="hover:animate-spin-once cursor-pointer text-unicoop hover:text-buttons-closing-red text-3xl" onClick={handleMenuOpen} />
-        </div>
-        <div className="flex flex-col items-center bg-transparent p-4 text-center font-semibold">
-          <h1 className="text-white md:text-xl md:mt-[10px] bg-transparent">
-            {student.stuName || 'Nombre estudiante'}
-          </h1>
-        </div>
-        <Link
-          className="flex items-center justify-center w-full h-[40px] md:h-[50px] bg-transparent text-white text-sm md:text-base hover:bg-buttons-list-blue duration-200 font-medium"
-          to="/student"
-        >
+        <button className="flex w-full justify-center hover:bg-unicoop-slate-blue mt-2 md:hidden " onClick={handleMenuOpen}>
+          <GrFormClose className="hover:animate-spin-once cursor-pointer text-unicoop hover:text-buttons-closing-red text-3xl"  />
+        </button>
+        <Link className="flex items-center justify-center w-full md:mt-6 p-3 bg-transparent text-white text-sm md:text-base hover:bg-buttons-list-blue duration-200 font-medium" to="/student">
           Inicio
         </Link>
         <div className="flex flex-col items-center md:mt-2 p-4 text-center font-semibold">
@@ -77,7 +66,7 @@ const AsideStudent = () => {
           {forms.map((form, index) => (
             <Link
               key={index}
-              className="flex items-center justify-center w-full h-[40px] md:h-[50px] bg-transparent text-white text-sm md:text-base hover:bg-unicoop-slate-blue duration-200 font-medium"
+              className="flex items-center justify-center w-full p-4 bg-transparent text-white text-sm md:text-base hover:bg-unicoop-slate-blue duration-200 font-medium"
               to={form.to}
             >
               {form.label}
@@ -85,7 +74,7 @@ const AsideStudent = () => {
           ))}
         </section>
         <button
-          className="flex items-center justify-center w-full h-[50px] bg-transparent text-white hover:bg-buttons-closing-red duration-200 font-medium mt-[20px]"
+          className="flex items-center justify-center w-full p-4 bg-transparent text-white hover:bg-buttons-closing-red duration-200 font-medium mt-[20px]"
           onClick={handleLeaveRoom}
         >
           Salir de la sala

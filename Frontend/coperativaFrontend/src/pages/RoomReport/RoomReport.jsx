@@ -1,7 +1,7 @@
 import TeacherNavbar from "../../components/TeacherNavBar/TeacherNavbar";
 import AsideProf from "../../components/AsideProf/AsideProf";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { forms } from "../../utils/report";
 import logo from '../../assets/LogoUniversidadCooperativa.png';
 import { getIngresosFacturacionStu } from "../../services/ingFac.service";
@@ -12,7 +12,38 @@ function RoomReport() {
   const { roomID } = useParams();
   const [form, setForm] = useState("");
   const [selectedStudent, setSelectedStudent] = useState(null);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState({});
+
+  const updateValue = (value, path) => {
+    // Crear una copia del objeto data
+    const updatedData = { ...data };
+    console.log("infierno" ,updatedData)
+    // Navegar al valor específico usando la ruta (path)
+    let currentLevel = updatedData;
+    console.log("hola",currentLevel);
+    const pathArray = path.split('.');
+    console.log("mundo",pathArray);
+    for (let i = 0; i < pathArray.length - 1; i++) {
+      currentLevel = currentLevel[pathArray[i]];
+      console.log("sonrisa",currentLevel);
+    }
+
+    const lastKey = pathArray[pathArray.length - 1];
+
+    // Actualizar el valor
+    currentLevel[lastKey] = value;
+    setData(updatedData);
+  } 
+
+  const recieveData = (key, path) => {
+    if (typeof key === 'object') {
+        Object.entries(key).map(([key, val]) => {
+            recieveData(val, `${path}.${key}`);
+        })
+    } else {
+        updateValue(key,path)
+    }
+  }
 
   const toNav = (formTo, stuID) => {
     setForm(formTo);
@@ -21,36 +52,39 @@ function RoomReport() {
     }
     switch(formTo) {
       case "form110":
-        /**setData(getForm110(stuID)) (algo así?)*/
+        
         break;
       case "detalleReng":
-      //getter del elefante
+      
         break;
       case "caratulaform":
-      //getter del cartulina
+      
         break;
       case "esfpatrimonioform":
-      //getter del esefeo
+      
         break;
       case "rentaliquida":
-      //getter del liquido
+      
         break;
       case "impuestodiferido":
-      //getter del aja
+      
         break;
       case "ingrefactform":
-        setData(json)
+        setData(json);
+        console.log("Elefante",data)
         getIngresosFacturacionStu(stuID, roomID).then(res =>{
           console.log(res.data.ingContent);
-          setData(res.data.ingContent);
+          Object.entries(res.data.ingContent).map(([key, val]) => {
+            recieveData(val, [key]);
+          });
           console.log(data)
         }).catch(error => {console.log(error)});
         break;
       case "activosfijos":
-      //getter del infierno
+      
         break; 
       case "stuSelect":
-      //getter del fedelobo
+      
         break; 
     }
     console.log(formTo, stuID);
@@ -105,7 +139,7 @@ function RoomReport() {
           </div>
         )}
         {(form !== "" && form!=="stuSelect") && (
-          <Form110Tabs json={data} handleChange={() => console.log()} CalculatedValues={[]} TabsNames={[]} ValuesNames={[]} />
+          <Form110Tabs json={data} handleChange={() => console.log()} CalculatedValues={[]} TabsNames={[]} ValuesNames={[]} onReport={true}/>
         )}
       </main>
     </>

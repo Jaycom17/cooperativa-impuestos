@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { GrFormClose } from "react-icons/gr";
 import { MdMenu } from "react-icons/md";
 
-const TabBar = ({ tabs, activeTab, setActiveTab }) => {
+const TabBar = ({ tabs, activeTab, setActiveTab, onReport = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const asideRef = useRef(null);
 
@@ -27,7 +27,7 @@ const TabBar = ({ tabs, activeTab, setActiveTab }) => {
   const manyOptions = tabs.length > 6;
 
   return (
-    <section className="absolute z-10 right-0 top-0 md:relative">
+    <section className={`absolute z-10 right-0 ${onReport ? "top-16 md:top-0" : "top-0"} md:relative`}>
       <button
         className={`text-black bg-gray-200 hover:bg-gray-300 flex duration-200 p-3 w-28 rounded-bl-lg md:rounded-none ${
           manyOptions ? "md:w-full justify-center" : "justify-end md:hidden"
@@ -101,6 +101,7 @@ TabBar.propTypes = {
   ),
   activeTab: PropTypes.string.isRequired,
   setActiveTab: PropTypes.func.isRequired,
+  onReport: PropTypes.bool,
 };
 
 /**
