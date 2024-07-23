@@ -172,7 +172,7 @@ const From110Form = () => {
                 recieveData(val, `${path}.${key}`);
             })
         } else {
-            updateValue(key,path)
+            updateValue(key, path)
         }
     }
 
@@ -183,7 +183,6 @@ const From110Form = () => {
                     Object.entries(response.data.r110Content).map(([key, val]) => {
                         recieveData(val, [key]);
                     });
-
                 } else {
                     console.error("Error en la respuesta", response);
                 }
