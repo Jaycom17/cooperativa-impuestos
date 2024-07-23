@@ -1,7 +1,7 @@
 import AsideStudent from "../../../components/AsideStudent/AsideStudent";
 import ActivosFijosValues from "../../../components/ActivosFijosValues/ActivosFijosValues";
 import ActivosFijosTotals from "../../../components/ActivosFIjosTotals/ActivosFIjosTotal";
-import basicInformation from '../../../formsData/ActivosFijos.json';
+import basicInformation from '../../../formsData/ESFpatrimonio.json';
 import Accordeon from "../../../components/Accordeon/Accordeon";
 import TabBar from "../../../components/TabBar/TabBar";
 import { useState } from "react";
