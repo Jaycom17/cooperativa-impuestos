@@ -1,6 +1,6 @@
 import jsonData from "../../../formsData/ESFpatrimonio.json";
 import AsideStudent from "../../../components/AsideStudent/AsideStudent.jsx";
-import Form110Values from '../../../components/ESFvalues/ESFvalues.jsx';
+import EsfValues from '../../../components/ESFvalues/ESFvalues.jsx';
 import Accordeon from '../../../components/Accordeon/Accordeon.jsx';
 import TabBar from '../../../components/TabBar/TabBar.jsx';
 import { ValuesNames } from "../../../utils/esfPatrimonio.js"
@@ -10,17 +10,10 @@ const ESFpatrimonio = () => {
 
     const [data, setData] = useState(jsonData);
 
-    const calculateTotalPatBruto = (currentData) => {
-        return (currentData.EfectvEquiEfect || 0) + (currentData.InvInstFinDeriv || 0) + (currentData.CuentDocArreFinCob || 0) + (currentData.Inv || 0) + (currentData.ActivInt || 0) + (currentData.ActivBio || 0) + (currentData.PPEPANCMC || 0) + (currentData.Otro || 0);
-    }
 
 
     const handleChange = (e) => {
         let { name, value } = e.target;
-        console.log(name,value)
-
-        
-
         if (value === '') value = 0;
 
         // Crear una copia del objeto data
@@ -50,7 +43,6 @@ const ESFpatrimonio = () => {
         currentLevel[lastKey] = value;
         
         // Actualizar el estado con el objeto modificado
-        updatedData.Activos.ActivosEquivalentesEfectivo.Efectivo = calculateTotalPatBruto(updatedData.DatosResum.Patrim);
 
         // Calculo de los totales
         setData(updatedData);
@@ -59,28 +51,30 @@ const ESFpatrimonio = () => {
     };
 
     const tabs = [
-        { name: 'DatoPers', label: 'Datos Personales' },
-        { name: 'DatosResum', label: 'Datos Resumidos' },
-        { name: 'Totales', label: 'Totales' }
+        { name: 'Activos', label: 'Activos' },
+        { name: 'Pasivos', label: 'Pasivos' },
+        { name: 'TotalPatrimonio', label: 'Patrimonio Total' },
+        { name: 'PatrimonioContable', label: 'Patrimonio' },
+        { name: 'DatosInformativos', label: 'Datos Informativos' }
     ];
 
     const [activeTab, setActiveTab] = useState(tabs[0].name);
 
-    const renderSections = (sectionData, pathPrefix, excludeSection = "", friendlyNames = []) => {
+    const renderSections = (sectionData, pathPrefix, excludeSection = "", ValuesNamess = []) => {
         if (Array.isArray(sectionData)) {
             return Object.keys(sectionData).map((sectionKey) => {
                 if (sectionKey === excludeSection) return null;
 
-                const friendlyName = sectionData[sectionKey].Anio.toString();
+                const ValuesNames = sectionData[sectionKey].Anio.toString();
 
                 return (
                     <Accordeon
                         key={sectionKey}
-                        title={friendlyName}
+                        title={ValuesNames}
                         arrayIndex={sectionKey}
                     >
-                        <Form110Values
-                            title={friendlyName}
+                        <EsfValues
+                            title={ValuesNames}
                             path={`${pathPrefix}.${sectionKey}`}
                             data={sectionData[sectionKey]}
                             handleChange={handleChange}
@@ -93,13 +87,13 @@ const ESFpatrimonio = () => {
         return Object.keys(sectionData).map((sectionKey) => {
             if (sectionKey === excludeSection) return null;
 
-            const friendlyName = friendlyNames[sectionKey] || sectionKey;
+            const ValuesNames = ValuesNamess[sectionKey] || sectionKey;
 
             if(typeof sectionData[sectionKey] !== 'object'){
                 return (
                     <div key={sectionKey}>
-                        <Form110Values
-                            title={friendlyName}
+                        <EsfValues
+                            title={ValuesNames}
                             path={`${pathPrefix}.${sectionKey}`}
                             data={sectionData[sectionKey]}
                             handleChange={handleChange}
@@ -108,9 +102,9 @@ const ESFpatrimonio = () => {
                 );
             }
             return (
-                <Accordeon key={sectionKey} title={friendlyName}>
-                    <Form110Values
-                        title={friendlyName}
+                <Accordeon key={sectionKey} title={ValuesNames}>
+                    <EsfValues
+                        title={ValuesNames}
                         path={`${pathPrefix}.${sectionKey}`}
                         data={sectionData[sectionKey]}
                         handleChange={handleChange}
@@ -126,24 +120,14 @@ const ESFpatrimonio = () => {
             <AsideStudent />
             <section className="w-full mt-12 md:mt-0 overflow-auto max-h-screen">
                 <TabBar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
-                {activeTab === 'DatoPers' && renderSections(
-                    data.DatoPers,
-                    "DatoPers",
-                    "",
-                    ValuesNames
-                )}
-                {activeTab === 'DatosResum' && renderSections(
-                    data.DatosResum,
-                    "DatosResum",
-                    "",
-                    ValuesNames
-                )}
-                {activeTab === 'Totales' && renderSections(
-                    data.Totales,
-                    "Totales",
-                    "",
-                    ValuesNames
-                )}
+                {activeTab === 'Activos' && renderSections(data.Activos, 'Activos', 'Total' , ValuesNames)}
+                {activeTab === 'Pasivos' && renderSections(data.Pasivos, 'Pasivos', 'Total' , ValuesNames)}
+                {activeTab === 'TotalPatrimonio' && renderSections(data.TotalPatrimonio, 'TotalPatrimonio', 'Total' , ValuesNames)}
+                {activeTab === 'PatrimonioContable' && renderSections(data.PatrimonioContable, 'PatrimonioContable', 'Total', ValuesNames)}
+                {activeTab === 'DatosInformativos' && renderSections(data.DatosInformativos, 'DatosInformativos', 'Total' , ValuesNames)}
+                
+
+
             </section>
         </main>
     );

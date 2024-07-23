@@ -545,9 +545,7 @@
       "ActivosImpuestosDiferidos": {
         "ValorContable": 0,
         "EfectoConversion": 0,
-        "MenorValorFiscal": 0,
-        "MayorValorFiscal": 0,
-        "ValorFiscal": 0
+        "MenorValorFiscal": 0
       },
       "PropiedadesPlantaEquipo": {
           "Terrenos": {
@@ -573,13 +571,6 @@
               "ValorFiscal": 0
             },
             "AjusteAcumuladoRevaluacionesReexpresiones": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
-            },
-            "Total": {
               "ValorContable": 0,
               "EfectoConversion": 0,
               "MenorValorFiscal": 0,
