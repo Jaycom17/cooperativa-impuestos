@@ -4,13 +4,13 @@ import {
   obtainStudents,
   removeStudent,
   updateStudent,
-  studentByName,
+  studentByCedula,
   obtainStudentByRoom
 } from "../services/student.service.js";
 
 export const postStudent = async (req, res) => {
-  const { stuName, roomID } = req.body;
-  const student = { stuName, roomID };
+  const { stuCedula, roomID } = req.body;
+  const student = { stuCedula, roomID };
 
   const result = await createStudent(student);
 
@@ -63,10 +63,10 @@ export const deleteStudent = async (req, res) => {
   res.status(201).json(result);
 };
 
-export const searchStudentByName = async (req, res) => {
-  const { stuName, roomID } = req.params;
+export const searchStudentByCedula = async (req, res) => {
+  const { stuCedula, roomID } = req.params;
 
-  const result = await studentByName(stuName, roomID);
+  const result = await studentByCedula(stuCedula, roomID);
 
   if (result.message) {
     return res.status(500).json({ message: result.message });
