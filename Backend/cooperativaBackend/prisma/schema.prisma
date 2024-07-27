@@ -102,7 +102,7 @@ model report {
 model room {
   roomID       String          @id @db.VarChar(255)
   roomName     String          @db.VarChar(255)
-  roomPassword String          @db.VarChar(255) @unique
+  roomPassword String          @unique @db.VarChar(255)
   roomDate     DateTime        @db.Date
   roomStatus   room_roomStatus
   roomAnswer   Json
@@ -115,12 +115,11 @@ model room {
 }
 
 model student {
-  stuID   String   @id @db.VarChar(255)
-  stuCedula String  @db.VarChar(255) @unique
-  stuName String   @db.VarChar(128)
-  roomID  String
-  report  report[]
-  room    room     @relation(fields: [roomID], references: [roomID])
+  stuID     String   @id @db.VarChar(255)
+  stuCedula String   @db.VarChar(255)
+  roomID    String
+  report    report[]
+  room      room     @relation(fields: [roomID], references: [roomID])
 
   @@index([roomID], map: "student_roomID_fkey")
 }

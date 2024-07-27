@@ -17,7 +17,7 @@ export const createStudent = async (student) => {
 
     const studentExist = await prisma.student.findFirst({
       where: {
-        stuName: student.stuName,
+        stuCedula: student.stuCedula,
         roomID: student.roomID,
       },
     });
@@ -29,7 +29,7 @@ export const createStudent = async (student) => {
     const result = await prisma.student.create({
       data: {
         stuID: uuidv4(),
-        stuName: student.stuName,
+        stuCedula: student.stuCedula,
         roomID: student.roomID,
       },
     });
@@ -128,11 +128,11 @@ export const removeStudent = async (stuID) => {
   }
 };
 
-export const studentByName = async (stuName, roomID) => {
+export const studentByCedula = async (stuCedula, roomID) => {
   try {
     const result = await prisma.student.findMany({
       where: {
-        stuName: stuName,
+        stuCedula: stuCedula,
         roomID: roomID,
       },
     });
