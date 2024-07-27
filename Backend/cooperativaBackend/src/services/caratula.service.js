@@ -18,12 +18,29 @@ export const listCaratula = async () => {
 
 export const listCaratulaById = async (carID) => {
   try {
-    const result = await prisma.formcaratula.findUnique({
+    const res = await prisma.report.findFirst({
       where: {
-        carID,
+        stuID: student.stuID,
+        roomID: student.roomID,
+      },select: {
+        carID: true,
       },
     });
-    result.carContent = JSON.parse(result.carContent.replace(/'/g, '"'));
+
+    if (!res) {
+      return {message: "Caratula no encontrado"};
+    }
+
+    const result = await prisma.formcaratula.findUnique({
+      where: {
+        carID: res.carID,
+      },
+    });
+    
+    if (!result) {
+      return {message: "Caratula no encontrado"};
+    }
+
     return result;
   } catch (error) {
     console.error(error);
@@ -48,21 +65,34 @@ export const createCaratula = async (caratula) => {
   }
 };
 
-export const updateCaratula = async (carID, caratula) => {
+export const updateCaratula = async (student, caratula) => {
   try {
-    const result = await prisma.formcaratula.update({
+
+    const res = await prisma.report.findFirst({
       where: {
-        carID,
+        roomID: student.roomID,
+        stuID: student.stuID,
       },
-      data: {
-        carContent: JSON.stringify(caratula)
-          .replace(/\n|\s/g, "")
-          .replace(/"/g, "'"),
+      select: {
+        carID: true,
       },
     });
-    return true;
+
+    if (!res) {
+      return {message:'Formulario no encontrado'};
+    }
+
+    const result = await prisma.formcaratula.update({
+      where: {
+        carID: res.carID,
+      },
+      data: {
+        carContent: caratula,
+      },
+    });
+    return result;
   } catch (error) {
     console.error(error);
-    return false;
+    return {message: {error: 'No se pudo actualizar el formulario'}};
   }
 }

@@ -46,3 +46,50 @@ export const Caratula = z.object({
   Salvedad: z.boolean(),
   NoTarjProf: z.number()
 })
+
+export const CaratulaInput = {
+  "Anno": 1,
+  "DatDecl": {
+    "NIT": 1,
+    "DV": 1,
+    "PriApell": "",
+    "SegunApell": "",
+    "PriNomb": "",
+    "OtrosNomb": "",
+    "RazonSoc": "",
+    "CodDir": ""
+  },
+  "Tarif": {
+    "Art240": 1,
+    "Art2401": 1,
+    "Art194240360": 1,
+    "MegaInvHot": 1,
+    "MegaInv": 1,
+    "TarifGen": 1
+  },
+  "DatosInf": {
+    "PerNatuSinRes": true,
+    "ContrRegTriEsp": true,
+    "EntCoop": true,
+    "EntSecFin": true,
+    "NueSoc": true,
+    "ObrImp": true,
+    "ProgReorEmp": true,
+    "SocExtPresServ": true,
+    "OblApl": true,
+    "CostInvEstSis": true,
+    "CostInvEstSim": true,
+    "ProgTariImp": true,
+    "ContrEstJur": true,
+    "MonFuncDif": true,
+    "MegInv": true,
+    "EmpEcoNar": true,
+    "CompHoldCol": true,
+    "ZonaEcoSocEsp": true
+  },
+  "NoIdSig": 1,
+  "CodRepre": 1,
+  "CodCont": 1,
+  "Salvedad": true,
+  "NoTarjProf": 1
+}
