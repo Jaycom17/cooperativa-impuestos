@@ -116,6 +116,7 @@ model room {
 
 model student {
   stuID   String   @id @db.VarChar(255)
+  stuCedula String  @db.VarChar(255) @unique
   stuName String   @db.VarChar(128)
   roomID  String
   report  report[]
