@@ -12,6 +12,8 @@ import reportRouter from './routes/report.routes.js';
 import cookieParse from 'cookie-parser';
 import cors from 'cors';
 
+import esfRouter from './routes/esfPatrimonio.routes.js';
+
 const app = express();
 
 app.use(express.json());
@@ -32,6 +34,7 @@ app.use('/ingFact', ingFactRouter);
 app.use('/login', loginRouter);
 app.use('/room', roomRouter);
 app.use('/report', reportRouter);
+app.use('/esfPatrimonio', esfRouter);
 
 app.listen(3000, () => {
     console.log('Server started on http://localhost:3000');
