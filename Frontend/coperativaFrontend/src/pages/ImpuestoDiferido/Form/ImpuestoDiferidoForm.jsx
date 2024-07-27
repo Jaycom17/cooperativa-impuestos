@@ -1,13 +1,13 @@
 import AsideStudent from "../../../components/AsideStudent/AsideStudent";
-import jsonData from "../../../formsData/ImpuestoDiferido.json";
 import TabBar from "../../../components/TabBar/TabBar";
 import Accordeon from "../../../components/Accordeon/Accordeon";
 import ImpuestoDiferidoValues from "../../../components/ImpuestoDiferidoValues/ImpuestoDiferidoValues";
+import { getImpuestoDiferido, updateImpuestoDiferido } from "../../../services/impuestoDiferido.service";
 import {
   addDetalleCompensacionExcesoRentaPresuntiva,
   addDetalleCompensacionPerdidasFiscales,
 } from "../../../utils/impuestoDiferido";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function ImpuestoDiferidoForm() {
   const tabs = [
@@ -29,8 +29,21 @@ function ImpuestoDiferidoForm() {
     },
   ];
 
-  const [data, setData] = useState(jsonData);
+  const [data, setData] = useState({ 
+    ImpuestosDiferidosDiferenciasTemporarias: {},
+    ActivosCreditosTributos: {},
+    DetalleCompensacionPerdidasFiscales: {},
+    DetalleCompensacionExcesoRentaPresuntiva: {},
+   });
   const [activeTab, setActiveTab] = useState(tabs[0].name);
+
+  useEffect(() => {
+    getImpuestoDiferido().then((res) => {
+      if (res.data.impContent) {
+        setData(res.data.impContent);
+      }
+    });
+  }, []);
 
   const handleAdd = (path) => {
     console.log(path);
@@ -82,6 +95,8 @@ function ImpuestoDiferidoForm() {
         temp = temp[pathArray[i]];
       }
     }
+
+    updateImpuestoDiferido(newData);
 
     setData(newData);
   };
