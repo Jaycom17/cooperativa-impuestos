@@ -74,7 +74,7 @@ function RentaLiquidaForm() {
     },
   ];
 
-  const clculateValorFiscal = (path) => {
+  const calculateValorFiscal = (path) => {
     const pathArray = path.split(".");
 
     if (
@@ -106,7 +106,48 @@ function RentaLiquidaForm() {
       }
 
       temp.ValorFiscal = calculatedValue;
+      temp.Otras = temp.ValorFiscal;
     }
+  };
+
+  const calculateTotalIngresosNetosActividadIndustrialCoSer = () => {
+    const ingresos =
+      data.Ingresos.IngresosNetosActividadIndustrialCoSer
+        .IngresosNetosActividadIndustrialCoSer;
+
+    const totalIngresos = {
+      ValorContable: 0,
+      EfectoConversion: 0,
+      MenorValorFiscal: 0,
+      MayorValorFiscal: 0,
+      ValorFiscal: 0,
+      Tarifa9: 0,
+      Tarifa15: 0,
+      Tarifa20: 0,
+      MegaInversiones: 0,
+      MegaInversiones27: 0,
+      TarifaGeneral240: 0,
+      Otras: 0,
+    };
+
+    const keys = Object.keys(ingresos);
+
+    keys.forEach((key) => {
+      totalIngresos.ValorContable += ingresos[key].ValorContable || 0;
+      totalIngresos.EfectoConversion += ingresos[key].EfectoConversion || 0;
+      totalIngresos.MenorValorFiscal += ingresos[key].MenorValorFiscal || 0;
+      totalIngresos.MayorValorFiscal += ingresos[key].MayorValorFiscal || 0;
+      totalIngresos.ValorFiscal += ingresos[key].ValorFiscal || 0;
+      totalIngresos.Tarifa9 += ingresos[key].Tarifa9 || 0;
+      totalIngresos.Tarifa15 += ingresos[key].Tarifa15 || 0;
+      totalIngresos.Tarifa20 += ingresos[key].Tarifa20 || 0;
+      totalIngresos.MegaInversiones += ingresos[key].MegaInversiones || 0;
+      totalIngresos.MegaInversiones27 += ingresos[key].MegaInversiones27 || 0;
+      totalIngresos.TarifaGeneral240 += ingresos[key].TarifaGeneral240 || 0;
+      totalIngresos.Otras += ingresos[key].Otras || 0;
+    });
+
+    data.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total = totalIngresos;
   };
 
   const createOtrosSection = () => {
@@ -148,7 +189,9 @@ function RentaLiquidaForm() {
       }
     }
 
-    clculateValorFiscal(name);
+    calculateValorFiscal(name);
+
+    calculateTotalIngresosNetosActividadIndustrialCoSer();
 
     setData(newData);
   };

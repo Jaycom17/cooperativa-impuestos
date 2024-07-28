@@ -6,7 +6,9 @@ import { forms } from "../../utils/report";
 import logo from "../../assets/LogoUniversidadCooperativa.png";
 import { getIngresosFacturacionStu } from "../../services/ingFac.service";
 import ingFact from "../../formsData/IngFact.json";
+import impDif from "../../formsData/ImpuestoDiferido.json";
 import GenericTabs from "../../components/ShowFormsGeneric/GenericTabs";
+import { getImpuestoDiferidoStu } from "../../services/impuestoDiferido.service";
 
 function RoomReport() {
   const { roomID } = useParams();
@@ -58,6 +60,17 @@ function RoomReport() {
       case "rentaliquida":
         break;
       case "impuestodiferido":
+        setData(impDif);
+        getImpuestoDiferidoStu(stuID, roomID)
+          .then((res) => {
+            Object.entries(res.data.impContent).map(([key, val]) => {
+              recieveData(val, [key], impDif);
+            });
+            console.log(data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
         break;
       case "ingrefactform":
         setData(ingFact);

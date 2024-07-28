@@ -1,7 +1,5 @@
 import PropTypes from "prop-types";
-import { rentaLiquidaNames } from "../../utils/rentaLiquida";
-
-const CalculatedValues = []
+import { rentaLiquidaNames, noInputsValues } from "../../utils/rentaLiquida.js";
 
 function RentaLiquidaValues({ path, data, handleChange }) {
 
@@ -16,7 +14,7 @@ function RentaLiquidaValues({ path, data, handleChange }) {
       value = sectionData;
     }
     const pathParts = newPath.split(".");
-    if (CalculatedValues.includes(pathParts[pathParts.length - 1])) {
+    if (noInputsValues.includes(pathParts.join(".")) || noInputsValues.includes(pathParts[pathParts.length - 1]) || noInputsValues.includes(pathParts[pathParts.length - 2])) {
       return <p className="p-1 text-xl font-medium border-b-4">{value}</p>;
     } else {
       return (

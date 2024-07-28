@@ -136,7 +136,7 @@ function IngresosFacturacionForm() {
   return (
     <div className="flex">
       <AsideStudent />
-      <main className="overflow-auto max-h-screen p-2 mt-12 md:mt-0 flex flex-col gap-4">
+      <main className="w-full overflow-auto max-h-screen p-2 mt-12 md:mt-0 flex flex-col gap-4">
         <section className="border p-2">
           <h2 className="font-bold text-2xl">Venta de bienes</h2>
           <article className="grid grid-cols-1 lg:grid-cols-2 gap-2">

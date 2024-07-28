@@ -10,6 +10,16 @@ export const excludedCalculateValorFiscalInputs = [
     "GananciasCambioValorRazonable",
     "GananciasNetasOperacionesDiscontinuas",
 ]
+
+export const noInputsValues = [
+    "ValorFiscal",
+    "Total",
+    "Otras",
+    "TotalCostos",
+    "TotalIngresos",
+    "TotalGastos",
+];
+
 export const rentaLiquidaNames = {
     Ingresos: "Ingresos",
     IngresosNetosActividadIndustrialCoSer: "Ingresos netos Actividad Industrial, comercial y servicios",

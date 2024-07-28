@@ -4,8 +4,6 @@ import TabBar from "../TabBar/TabBar";
 import { useState } from "react";
 
 function GenericTabs({json, TabsNames, ValuesNames, onReport = false}) {
-
-    console.log(json)
     const keys = Object.keys(json);
 
     const tabs = keys.map(key => ({
