@@ -6,7 +6,10 @@ import { IngresosFacturacion } from "../models/ingFact.model.js";
 export const validateCaratula = async (req, res, next) => {
     try {
         const caratula = Caratula.parse(req.body);
+        const student = req.body.student;
         req.body = caratula;
+
+        req.body.student = student;
         next();
     } catch (error) {
         res.status(400).json({ error: error.errors });
@@ -16,7 +19,10 @@ export const validateCaratula = async (req, res, next) => {
 export const validateDetalleRenglones = async (req, res, next) => {
     try {
         const detalleRenglones = DetalleRenglones.parse(req.body);
+        const student = req.body.student;
         req.body = detalleRenglones;
+
+        req.body.student = student;
         next();
     } catch (error) {
         res.status(400).json({ error: error.errors });

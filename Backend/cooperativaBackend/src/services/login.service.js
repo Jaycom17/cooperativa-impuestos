@@ -19,7 +19,6 @@ export const loginUser = async (user) => {
     return { usuID: result.usuID, usuEmail: result.usuEmail, usuName: result.usuName, usuRole: result.usuRole, token };
 
   } catch (error) {
-    console.error(error);
     return { message: "Error al iniciar sesión" };
   }
 };
@@ -40,7 +39,6 @@ export const userProfile = async (usuID) => {
 
     return result;
   } catch (error) {
-    console.log(error)
     return { message: "Error al obtener el perfil" };
   }
 }

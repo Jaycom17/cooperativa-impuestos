@@ -11,9 +11,9 @@ export const getDetalleRenglones = async (req, res) => {
 }
 
 export const getDetalleRenglonesById = async (req, res) => {
-    const { detID } = req.params;
+    const student = req.body.student;
 
-    const result = await listDetalleRenglonesById(detID);
+    const result = await listDetalleRenglonesById(student);
 
     if (!result) {
         return res.status(404).json({ error: 'Detalles renglones no encontrado' });
@@ -35,10 +35,13 @@ export const postDetalleRenglones = async (req, res) => {
 }
 
 export const putDetalleRenglones = async (req, res) => {
-    const { detID } = req.params;
     const updatedDetalleRenglones = req.body;
 
-    const result = await updateDetalleRenglones(detID, updatedDetalleRenglones);
+    const student = req.body.student;
+
+    delete updatedDetalleRenglones.student;
+
+    const result = await updateDetalleRenglones(student, updatedDetalleRenglones);
 
     if (!result) {
         return res.status(500).json({ error: 'No se pudo actualizar los detalles renglones' });
