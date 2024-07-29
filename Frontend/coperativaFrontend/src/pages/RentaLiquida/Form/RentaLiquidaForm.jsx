@@ -74,13 +74,12 @@ function RentaLiquidaForm() {
     },
   ];
 
-  const calculateValorFiscal = (path) => {
-    const pathArray = path.split(".");
+  const calculateValorFiscal = (pathArray) => {
 
     if (
       calculateValorFiscalInputs.includes(pathArray[0]) &&
       !excludedCalculateValorFiscalInputs.some((elemment) =>
-        path.includes(elemment)
+        pathArray.includes(elemment)
       )
     ) {
       let newData = { ...data };
@@ -110,12 +109,13 @@ function RentaLiquidaForm() {
     }
   };
 
-  const calculateTotalIngresosNetosActividadIndustrialCoSer = () => {
-    const ingresos =
-      data.Ingresos.IngresosNetosActividadIndustrialCoSer
-        .IngresosNetosActividadIndustrialCoSer;
-
-    const totalIngresos = {
+  const calculateTotalIngresosNetosActividadIndustrialCoSer = (path, newData) => {
+    if (path[0] !== "Ingresos" || path[2] !== "IngresosNetosActividadIndustrialCoSer") return;
+  
+    // Clonar los ingresos para evitar modificar la referencia original
+    const ingresos = { ... newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer };
+  
+    let totalIngresos = {
       ValorContable: 0,
       EfectoConversion: 0,
       MenorValorFiscal: 0,
@@ -129,10 +129,11 @@ function RentaLiquidaForm() {
       TarifaGeneral240: 0,
       Otras: 0,
     };
-
+  
     const keys = Object.keys(ingresos);
-
+  
     keys.forEach((key) => {
+      if (key === "Total") return;
       totalIngresos.ValorContable += ingresos[key].ValorContable || 0;
       totalIngresos.EfectoConversion += ingresos[key].EfectoConversion || 0;
       totalIngresos.MenorValorFiscal += ingresos[key].MenorValorFiscal || 0;
@@ -146,9 +147,53 @@ function RentaLiquidaForm() {
       totalIngresos.TarifaGeneral240 += ingresos[key].TarifaGeneral240 || 0;
       totalIngresos.Otras += ingresos[key].Otras || 0;
     });
-
-    data.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total = totalIngresos;
+  
+    // Asignar los valores calculados a newData
+    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total = { ...totalIngresos };
   };
+
+  const calculateTotalDevolucionREbajasDescuento = (path, newData) => {
+    if (path[0] !== "Ingresos" || path[2] !== "DevolucionesRebajasDescuentos") return;
+  
+    // Clonar los ingresos para evitar modificar la referencia original
+    const devoluciones = { ... newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos };
+  
+    let totalIngresos = {
+      ValorContable: 0,
+      EfectoConversion: 0,
+      MenorValorFiscal: 0,
+      MayorValorFiscal: 0,
+      ValorFiscal: 0,
+      Tarifa9: 0,
+      Tarifa15: 0,
+      Tarifa20: 0,
+      MegaInversiones: 0,
+      MegaInversiones27: 0,
+      TarifaGeneral240: 0,
+      Otras: 0,
+    };
+  
+    const keys = Object.keys(devoluciones);
+  
+    keys.forEach((key) => {
+      if (key === "Total") return;
+      totalIngresos.ValorContable += devoluciones[key].ValorContable || 0;
+      totalIngresos.EfectoConversion += devoluciones[key].EfectoConversion || 0;
+      totalIngresos.MenorValorFiscal += devoluciones[key].MenorValorFiscal || 0;
+      totalIngresos.MayorValorFiscal += devoluciones[key].MayorValorFiscal || 0;
+      totalIngresos.ValorFiscal += devoluciones[key].ValorFiscal || 0;
+      totalIngresos.Tarifa9 += devoluciones[key].Tarifa9 || 0;
+      totalIngresos.Tarifa15 += devoluciones[key].Tarifa15 || 0;
+      totalIngresos.Tarifa20 += devoluciones[key].Tarifa20 || 0;
+      totalIngresos.MegaInversiones += devoluciones[key].MegaInversiones || 0;
+      totalIngresos.MegaInversiones27 += devoluciones[key].MegaInversiones27 || 0;
+      totalIngresos.TarifaGeneral240 += devoluciones[key].TarifaGeneral240 || 0;
+      totalIngresos.Otras += devoluciones[key].Otras || 0;
+    });
+  
+    // Asignar los valores calculados a newData
+    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total = { ...totalIngresos };
+  } 
 
   const createOtrosSection = () => {
     const keys = Object.keys(data);
@@ -189,9 +234,9 @@ function RentaLiquidaForm() {
       }
     }
 
-    calculateValorFiscal(name);
-
-    calculateTotalIngresosNetosActividadIndustrialCoSer();
+    calculateValorFiscal(pathArray);
+    calculateTotalDevolucionREbajasDescuento(pathArray, newData);
+    calculateTotalIngresosNetosActividadIndustrialCoSer(pathArray, newData);
 
     setData(newData);
   };

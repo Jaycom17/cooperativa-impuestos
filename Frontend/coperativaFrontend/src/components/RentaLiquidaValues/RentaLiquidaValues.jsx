@@ -15,7 +15,7 @@ function RentaLiquidaValues({ path, data, handleChange }) {
     }
     const pathParts = newPath.split(".");
     if (noInputsValues.includes(pathParts.join(".")) || noInputsValues.includes(pathParts[pathParts.length - 1]) || noInputsValues.includes(pathParts[pathParts.length - 2])) {
-      return <p className="p-1 text-xl font-medium border-b-4">{value}</p>;
+      return <p className="p-1 font-medium border-b-2">{value}</p>;
     } else {
       return (
         <input
