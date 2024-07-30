@@ -2,8 +2,7 @@ import PropTypes from "prop-types";
 import { ValuesNames, CalculatedValues } from "../../utils/esfPatrimonio.js";
 
 function ESFvalues({ path, data, handleChange }) {
-
-  const renderTextField = (sectionData, sectionTitle = "", value = 0) => {  
+  const renderTextField = (sectionData, sectionTitle = "", value = 0) => {
     let newPath = "";
     if (sectionTitle !== "") {
       newPath = path + "." + sectionTitle;
@@ -14,7 +13,6 @@ function ESFvalues({ path, data, handleChange }) {
       value = sectionData;
     }
     const pathParts = newPath.split(".");
-    console.log(pathParts.join(".")) ;
     if (CalculatedValues.includes(pathParts.join("."))) {
       return <p className="p-1 text-xl font-medium border-b-4">{value}</p>;
     } else {
@@ -24,7 +22,7 @@ function ESFvalues({ path, data, handleChange }) {
           type="number"
           name={newPath}
           defaultValue={value === 0 ? "" : value}
-          placeholder="0"
+          placeholder={newPath}
           onChange={(e) => handleChange(e)}
         />
       );
@@ -34,7 +32,12 @@ function ESFvalues({ path, data, handleChange }) {
   const renderSection = (sectionData, subSection = "") => (
     <>
       {typeof sectionData !== "object" ? (
-        <>{renderTextField(sectionData, `${subSection !== "" ? subSection : ""}`)}</>
+        <>
+          {renderTextField(
+            sectionData,
+            `${subSection !== "" ? subSection : ""}`
+          )}
+        </>
       ) : (
         <section className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-3">
           {Object.keys(sectionData).map((key) => (
@@ -65,9 +68,14 @@ function ESFvalues({ path, data, handleChange }) {
                   ))
                 ) : (
                   <div className="flex flex-col space-y-2 bg-white">
-                    {<>{renderTextField(sectionData[key], `${
-                              subSection !== "" ? `${subSection}.` : ""
-                            }${key}`)}</>}
+                    {
+                      <>
+                        {renderTextField(
+                          sectionData[key],
+                          `${subSection !== "" ? `${subSection}.` : ""}${key}`
+                        )}
+                      </>
+                    }
                   </div>
                 )}
               </section>
@@ -89,17 +97,31 @@ function ESFvalues({ path, data, handleChange }) {
     );
   }
 
+  const dataKeys = Object.keys(data);
+
   return (
     <>
-      {Object.keys(data).map((key) => (
-        <div
-          key={key}
-          className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white"
-        >
-          <h3 className="w-full font-bold text-xl pb-2">
-            {ValuesNames[key] || key}
-          </h3>
-          {<>{renderSection(data[key], key)}</>}
+      {dataKeys.map((key) => (
+        <div key={key}>
+          {Object.keys(data[key]).map((subKey) => (
+            <div key={subKey}>
+              {(typeof data[key][subKey] !== "object") ? (
+                <div className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white">
+                  <h3 className="w-full font-bold text-xl pb-2">
+                    {ValuesNames[key] || key}
+                  </h3>
+                  {<>{renderSection(data[key], key)}</>}
+                </div>
+              ) : (
+                <div className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white">
+                  <h3 className="w-full font-bold text-xl pb-2">
+                    {ValuesNames[subKey] || subKey}
+                  </h3>
+                  {<>{renderSection(data[key][subKey], `${key}.${subKey}`)}</>}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       ))}
     </>

@@ -87,10 +87,7 @@ const ESFpatrimonio = () => {
     }
     //Activos Total
     const valorcontactivostotal = (currentData) => {
-        let returnvalue = 0;
-        returnvalue = (currentData.ActivosEquivalentesEfectivo.Total.ValorContable || 0);
-        console.log('valorcontactivostotal', returnvalue);
-        return returnvalue;
+        return (currentData.ActivosEquivalentesEfectivo.Total.ValorContable || 0);
     }
     //Pasivos
     //Obligaciones financieras y cuentas por pagar
@@ -181,51 +178,57 @@ const ESFpatrimonio = () => {
     }
     //Provisiones
     const valorcontprovisiones = (currentData) => {
-        return (currentData.procesosLegalesLitigiosYDemandas.ValorContable || 0) + (currentData.mantenimientoYReparaciones.ValorContable || 0) + (currentData.obligacionesFiscales.ValorContable || 0) + (currentData.desmantelamientosRestauracionYRehabilitacion.ValorContable || 0) + (currentData.garantias.ValorContable || 0) + (currentData.contratosOnerosos.ValorContable || 0) + (currentData.reembolsosAClientes.ValorContable || 0) + (currentData.reestructuracionesDeNegocios.ValorContable || 0) + (currentData.otros.ValorContable || 0) + (currentData.pasivosContingentesAsumidosEnUnaCombinacionDeNegocios.ValorContable || 0) + (currentData.relacionadasConElMedioAmbiente.ValorContable || 0) + (currentData.otrasProvisiones.ValorContable || 0);
+        return 0;//return (currentData.procesosLegalesLitigiosYDemandas.ValorContable || 0) + (currentData.mantenimientoYReparaciones.ValorContable || 0) + (currentData.obligacionesFiscales.ValorContable || 0) + (currentData.desmantelamientosRestauracionYRehabilitacion.ValorContable || 0) + (currentData.garantias.ValorContable || 0) + (currentData.contratosOnerosos.ValorContable || 0) + (currentData.reembolsosAClientes.ValorContable || 0) + (currentData.reestructuracionesDeNegocios.ValorContable || 0) + (currentData.OtrosPasivos.ValorContable || 0) + (currentData.pasivosContingentesAsumidosEnUnaCombinacionDeNegocios.ValorContable || 0) + (currentData.relacionadasConElMedioAmbiente.ValorContable || 0) + (currentData.otrasProvisiones.ValorContable || 0);
     }
     const efectconverprovisiones = (currentData) => {
-        return (currentData.procesosLegalesLitigiosYDemandas.EfectoConversion || 0) + (currentData.mantenimientoYReparaciones.EfectoConversion || 0) + (currentData.obligacionesFiscales.EfectoConversion || 0) + (currentData.desmantelamientosRestauracionYRehabilitacion.EfectoConversion || 0) + (currentData.garantias.EfectoConversion || 0) + (currentData.contratosOnerosos.EfectoConversion || 0) + (currentData.reembolsosAClientes.EfectoConversion || 0) + (currentData.reestructuracionesDeNegocios.EfectoConversion || 0) + (currentData.otros.EfectoConversion || 0) + (currentData.pasivosContingentesAsumidosEnUnaCombinacionDeNegocios.EfectoConversion || 0) + (currentData.relacionadasConElMedioAmbiente.EfectoConversion || 0) + (currentData.otrasProvisiones.EfectoConversion || 0);
+        return 0;//return (currentData.procesosLegalesLitigiosYDemandas.EfectoConversion || 0) + (currentData.mantenimientoYReparaciones.EfectoConversion || 0) + (currentData.obligacionesFiscales.EfectoConversion || 0) + (currentData.desmantelamientosRestauracionYRehabilitacion.EfectoConversion || 0) + (currentData.garantias.EfectoConversion || 0) + (currentData.contratosOnerosos.EfectoConversion || 0) + (currentData.reembolsosAClientes.EfectoConversion || 0) + (currentData.reestructuracionesDeNegocios.EfectoConversion || 0) + (currentData.OtrosPasivos.EfectoConversion || 0) + (currentData.pasivosContingentesAsumidosEnUnaCombinacionDeNegocios.EfectoConversion || 0) + (currentData.relacionadasConElMedioAmbiente.EfectoConversion || 0) + (currentData.otrasProvisiones.EfectoConversion || 0);
     }
     const menorfiscalprovisiones = (currentData) => {
-        return (currentData.procesosLegalesLitigiosYDemandas.MenorValorFiscal || 0) + (currentData.mantenimientoYReparaciones.MenorValorFiscal || 0) + (currentData.obligacionesFiscales.MenorValorFiscal || 0) + (currentData.desmantelamientosRestauracionYRehabilitacion.MenorValorFiscal || 0) + (currentData.garantias.MenorValorFiscal || 0) + (currentData.contratosOnerosos.MenorValorFiscal || 0) + (currentData.reembolsosAClientes.MenorValorFiscal || 0) + (currentData.reestructuracionesDeNegocios.MenorValorFiscal || 0) + (currentData.otros.MenorValorFiscal || 0) + (currentData.pasivosContingentesAsumidosEnUnaCombinacionDeNegocios.MenorValorFiscal || 0) + (currentData.relacionadasConElMedioAmbiente.MenorValorFiscal || 0) + (currentData.otrasProvisiones.MenorValorFiscal || 0);
+        return 0;//return (currentData.procesosLegalesLitigiosYDemandas.MenorValorFiscal || 0) + (currentData.mantenimientoYReparaciones.MenorValorFiscal || 0) + (currentData.obligacionesFiscales.MenorValorFiscal || 0) + (currentData.desmantelamientosRestauracionYRehabilitacion.MenorValorFiscal || 0) + (currentData.garantias.MenorValorFiscal || 0) + (currentData.contratosOnerosos.MenorValorFiscal || 0) + (currentData.reembolsosAClientes.MenorValorFiscal || 0) + (currentData.reestructuracionesDeNegocios.MenorValorFiscal || 0) + (currentData.OtrosPasivos.MenorValorFiscal || 0) + (currentData.pasivosContingentesAsumidosEnUnaCombinacionDeNegocios.MenorValorFiscal || 0) + (currentData.relacionadasConElMedioAmbiente.MenorValorFiscal || 0) + (currentData.otrasProvisiones.MenorValorFiscal || 0);
     }
     const mayorfiscalprovisiones = (currentData) => {
-        return (currentData.procesosLegalesLitigiosYDemandas.MayorValorFiscal || 0) + (currentData.mantenimientoYReparaciones.MayorValorFiscal || 0) + (currentData.obligacionesFiscales.MayorValorFiscal || 0) + (currentData.desmantelamientosRestauracionYRehabilitacion.MayorValorFiscal || 0) + (currentData.garantias.MayorValorFiscal || 0) + (currentData.contratosOnerosos.MayorValorFiscal || 0) + (currentData.reembolsosAClientes.MayorValorFiscal || 0) + (currentData.reestructuracionesDeNegocios.MayorValorFiscal || 0) + (currentData.otros.MayorValorFiscal || 0) + (currentData.pasivosContingentesAsumidosEnUnaCombinacionDeNegocios.MayorValorFiscal || 0) + (currentData.relacionadasConElMedioAmbiente.MayorValorFiscal || 0) + (currentData.otrasProvisiones.MayorValorFiscal || 0);
+        return 0;//return (currentData.procesosLegalesLitigiosYDemandas.MayorValorFiscal || 0) + (currentData.mantenimientoYReparaciones.MayorValorFiscal || 0) + (currentData.obligacionesFiscales.MayorValorFiscal || 0) + (currentData.desmantelamientosRestauracionYRehabilitacion.MayorValorFiscal || 0) + (currentData.garantias.MayorValorFiscal || 0) + (currentData.contratosOnerosos.MayorValorFiscal || 0) + (currentData.reembolsosAClientes.MayorValorFiscal || 0) + (currentData.reestructuracionesDeNegocios.MayorValorFiscal || 0) + (currentData.OtrosPasivos.MayorValorFiscal || 0) + (currentData.pasivosContingentesAsumidosEnUnaCombinacionDeNegocios.MayorValorFiscal || 0) + (currentData.relacionadasConElMedioAmbiente.MayorValorFiscal || 0) + (currentData.otrasProvisiones.MayorValorFiscal || 0);
     }
+
+    
     const valorfiscalprovisiones = (currentData) => {
-        return (currentData.procesosLegalesLitigiosYDemandas.ValorFiscal || 0) + (currentData.mantenimientoYReparaciones.ValorFiscal || 0) + (currentData.obligacionesFiscales.ValorFiscal || 0) + (currentData.desmantelamientosRestauracionYRehabilitacion.ValorFiscal || 0) + (currentData.garantias.ValorFiscal || 0) + (currentData.contratosOnerosos.ValorFiscal || 0) + (currentData.reembolsosAClientes.ValorFiscal || 0) + (currentData.reestructuracionesDeNegocios.ValorFiscal || 0) + (currentData.otros.ValorFiscal || 0) + (currentData.pasivosContingentesAsumidosEnUnaCombinacionDeNegocios.ValorFiscal || 0) + (currentData.relacionadasConElMedioAmbiente.ValorFiscal || 0) + (currentData.otrasProvisiones.ValorFiscal || 0);
+        /**
+         * TODO: Revisar que esa vualta le falta algo
+         */
+        //return (currentData.procesosLegalesLitigiosYDemandas.ValorFiscal || 0) + (currentData.mantenimientoYReparaciones.ValorFiscal || 0) + (currentData.obligacionesFiscales.ValorFiscal || 0) + (currentData.desmantelamientosRestauracionYRehabilitacion.ValorFiscal || 0) + (currentData.garantias.ValorFiscal || 0) + (currentData.contratosOnerosos.ValorFiscal || 0) + (currentData.reembolsosAClientes.ValorFiscal || 0) + (currentData.reestructuracionesDeNegocios.ValorFiscal || 0) + (currentData.return 0;//.ValorFiscal || 0) + (currentData.pasivosContingentesAsumidosEnUnaCombinacionDeNegocios.ValorFiscal || 0) + (currentData.relacionadasConElMedioAmbiente.ValorFiscal || 0) + (currentData.otrasProvisiones.ValorFiscal || 0) || 0;
+        return 0;   
     }
     //Pasivos por ingresos diferidos
     const valorcontpasivosingresosdiferidos = (currentData) => {
-        return (currentData.AnticiposYAvancesRecibidosDeClientes.ValorContable || 0) + (currentData.IngresosDiferidosPorProgramasDeFidelizacion.ValorContable || 0) + (currentData.SubvencionesDelGobiernoYOtrasAyudas.ValorContable || 0) + (currentData.OtrosPasivosPorIngresosDiferidos.ValorContable || 0);
+        return 0;//return (currentData.AnticiposYAvancesRecibidosDeClientes.ValorContable || 0) + (currentData.IngresosDiferidosPorProgramasDeFidelizacion.ValorContable || 0) + (currentData.SubvencionesDelGobiernoYOtrasAyudas.ValorContable || 0) + (currentData.OtrosPasivosIngresosDiferidos.ValorContable || 0);
     }
     const efectconverpasivosingresosdiferidos = (currentData) => {
-        return (currentData.AnticiposYAvancesRecibidosDeClientes.EfectoConversion || 0) + (currentData.IngresosDiferidosPorProgramasDeFidelizacion.EfectoConversion || 0) + (currentData.SubvencionesDelGobiernoYOtrasAyudas.EfectoConversion || 0) + (currentData.OtrosPasivosPorIngresosDiferidos.EfectoConversion || 0);
+        return 0;//return (currentData.AnticiposYAvancesRecibidosDeClientes.EfectoConversion || 0) + (currentData.IngresosDiferidosPorProgramasDeFidelizacion.EfectoConversion || 0) + (currentData.SubvencionesDelGobiernoYOtrasAyudas.EfectoConversion || 0) + (currentData.OtrosPasivosIngresosDiferidos.EfectoConversion || 0);
     }
     const menorfiscalpasivosingresosdiferidos = (currentData) => {
-        return (currentData.AnticiposYAvancesRecibidosDeClientes.MenorValorFiscal || 0) + (currentData.IngresosDiferidosPorProgramasDeFidelizacion.MenorValorFiscal || 0) + (currentData.SubvencionesDelGobiernoYOtrasAyudas.MenorValorFiscal || 0) + (currentData.OtrosPasivosPorIngresosDiferidos.MenorValorFiscal || 0);
+        return 0;//return (currentData.AnticiposYAvancesRecibidosDeClientes.MenorValorFiscal || 0) + (currentData.IngresosDiferidosPorProgramasDeFidelizacion.MenorValorFiscal || 0) + (currentData.SubvencionesDelGobiernoYOtrasAyudas.MenorValorFiscal || 0) + (currentData.OtrosPasivosIngresosDiferidos.MenorValorFiscal || 0);
     }
     const mayorfiscalpasivosingresosdiferidos = (currentData) => {
-        return (currentData.AnticiposYAvancesRecibidosDeClientes.MayorValorFiscal || 0) + (currentData.IngresosDiferidosPorProgramasDeFidelizacion.MayorValorFiscal || 0) + (currentData.SubvencionesDelGobiernoYOtrasAyudas.MayorValorFiscal || 0) + (currentData.OtrosPasivosPorIngresosDiferidos.MayorValorFiscal || 0);
+        return 0;//return (currentData.AnticiposYAvancesRecibidosDeClientes.MayorValorFiscal || 0) + (currentData.IngresosDiferidosPorProgramasDeFidelizacion.MayorValorFiscal || 0) + (currentData.SubvencionesDelGobiernoYOtrasAyudas.MayorValorFiscal || 0) + (currentData.OtrosPasivosIngresosDiferidos.MayorValorFiscal || 0);
     }
     const valorfiscalpasivosingresosdiferidos = (currentData) => {
-        return (currentData.AnticiposYAvancesRecibidosDeClientes.ValorFiscal || 0) + (currentData.IngresosDiferidosPorProgramasDeFidelizacion.ValorFiscal || 0) + (currentData.SubvencionesDelGobiernoYOtrasAyudas.ValorFiscal || 0) + (currentData.OtrosPasivosPorIngresosDiferidos.ValorFiscal || 0);
+        return 0;//return (currentData.AnticiposYAvancesRecibidosDeClientes.ValorFiscal || 0) + (currentData.IngresosDiferidosPorProgramasDeFidelizacion.ValorFiscal || 0) + (currentData.SubvencionesDelGobiernoYOtrasAyudas.ValorFiscal || 0) + (currentData.OtrosPasivosIngresosDiferidos.ValorFiscal || 0);
     }
     //Otros pasivos
     const valorcontotrospasivos = (currentData) => {
-        return (currentData.DepositosRecibidos.ValorContable || 0) + (currentData.RetencionesATercerosSobreContratos.ValorContable || 0) + (currentData.EmbargosJudiciales.ValorContable || 0) + (currentData.CuentasEnParticipacion.ValorContable || 0) + (currentData.PasivoParaEjecucionDeExcedentesESAL.ValorContable || 0) + (currentData.FondosSocialesMutualesYOtros.ValorContable || 0) + (currentData.OtrosPasivos.ValorContable || 0) + (currentData.PasivosReconocidosSolamenteParaFinesFiscales.ValorContable || 0);
+        return 0;//return (currentData.DepositosRecibidos.ValorContable || 0) + (currentData.RetencionesATercerosSobreContratos.ValorContable || 0) + (currentData.EmbargosJudiciales.ValorContable || 0) + (currentData.CuentasEnParticipacion.ValorContable || 0) + (currentData.PasivoParaEjecucionDeExcedentesESAL.ValorContable || 0) + (currentData.FondosSocialesMutualesYOtros.ValorContable || 0) + (currentData.OtrosPasivos.ValorContable || 0) + (currentData.PasivosReconocidosSolamenteParaFinesFiscales.ValorContable || 0);
     }
     const efectconverotrospasivos = (currentData) => {
-        return (currentData.DepositosRecibidos.EfectoConversion || 0) + (currentData.RetencionesATercerosSobreContratos.EfectoConversion || 0) + (currentData.EmbargosJudiciales.EfectoConversion || 0) + (currentData.CuentasEnParticipacion.EfectoConversion || 0) + (currentData.PasivoParaEjecucionDeExcedentesESAL.EfectoConversion || 0) + (currentData.FondosSocialesMutualesYOtros.EfectoConversion || 0) + (currentData.OtrosPasivos.EfectoConversion || 0) + (currentData.PasivosReconocidosSolamenteParaFinesFiscales.EfectoConversion || 0);
+        return 0;//return (currentData.DepositosRecibidos.EfectoConversion || 0) + (currentData.RetencionesATercerosSobreContratos.EfectoConversion || 0) + (currentData.EmbargosJudiciales.EfectoConversion || 0) + (currentData.CuentasEnParticipacion.EfectoConversion || 0) + (currentData.PasivoParaEjecucionDeExcedentesESAL.EfectoConversion || 0) + (currentData.FondosSocialesMutualesYOtros.EfectoConversion || 0) + (currentData.OtrosPasivos.EfectoConversion || 0) + (currentData.PasivosReconocidosSolamenteParaFinesFiscales.EfectoConversion || 0);
     }
     const menorfiscalotrospasivos = (currentData) => {
-        return (currentData.DepositosRecibidos.MenorValorFiscal || 0) + (currentData.RetencionesATercerosSobreContratos.MenorValorFiscal || 0) + (currentData.EmbargosJudiciales.MenorValorFiscal || 0) + (currentData.CuentasEnParticipacion.MenorValorFiscal || 0) + (currentData.PasivoParaEjecucionDeExcedentesESAL.MenorValorFiscal || 0) + (currentData.FondosSocialesMutualesYOtros.MenorValorFiscal || 0) + (currentData.OtrosPasivos.MenorValorFiscal || 0) + (currentData.PasivosReconocidosSolamenteParaFinesFiscales.MenorValorFiscal || 0);
+        return 0;//return (currentData.DepositosRecibidos.MenorValorFiscal || 0) + (currentData.RetencionesATercerosSobreContratos.MenorValorFiscal || 0) + (currentData.EmbargosJudiciales.MenorValorFiscal || 0) + (currentData.CuentasEnParticipacion.MenorValorFiscal || 0) + (currentData.PasivoParaEjecucionDeExcedentesESAL.MenorValorFiscal || 0) + (currentData.FondosSocialesMutualesYOtros.MenorValorFiscal || 0) + (currentData.OtrosPasivos.MenorValorFiscal || 0) + (currentData.PasivosReconocidosSolamenteParaFinesFiscales.MenorValorFiscal || 0);
     }
     const mayorfiscalotrospasivos = (currentData) => {
-        return (currentData.DepositosRecibidos.MayorValorFiscal || 0) + (currentData.RetencionesATercerosSobreContratos.MayorValorFiscal || 0) + (currentData.EmbargosJudiciales.MayorValorFiscal || 0) + (currentData.CuentasEnParticipacion.MayorValorFiscal || 0) + (currentData.PasivoParaEjecucionDeExcedentesESAL.MayorValorFiscal || 0) + (currentData.FondosSocialesMutualesYOtros.MayorValorFiscal || 0) + (currentData.OtrosPasivos.MayorValorFiscal || 0) + (currentData.PasivosReconocidosSolamenteParaFinesFiscales.MayorValorFiscal || 0);
+        return 0;//return (currentData.DepositosRecibidos.MayorValorFiscal || 0) + (currentData.RetencionesATercerosSobreContratos.MayorValorFiscal || 0) + (currentData.EmbargosJudiciales.MayorValorFiscal || 0) + (currentData.CuentasEnParticipacion.MayorValorFiscal || 0) + (currentData.PasivoParaEjecucionDeExcedentesESAL.MayorValorFiscal || 0) + (currentData.FondosSocialesMutualesYOtros.MayorValorFiscal || 0) + (currentData.OtrosPasivos.MayorValorFiscal || 0) + (currentData.PasivosReconocidosSolamenteParaFinesFiscales.MayorValorFiscal || 0);
     }
     const valorfiscalotrospasivos = (currentData) => {
-        return (currentData.DepositosRecibidos.ValorFiscal || 0) + (currentData.RetencionesATercerosSobreContratos.ValorFiscal || 0) + (currentData.EmbargosJudiciales.ValorFiscal || 0) + (currentData.CuentasEnParticipacion.ValorFiscal || 0) + (currentData.PasivoParaEjecucionDeExcedentesESAL.ValorFiscal || 0) + (currentData.FondosSocialesMutualesYOtros.ValorFiscal || 0) + (currentData.OtrosPasivos.ValorFiscal || 0) + (currentData.PasivosReconocidosSolamenteParaFinesFiscales.ValorFiscal || 0);
+        return 0;//return (currentData.DepositosRecibidos.ValorFiscal || 0) + (currentData.RetencionesATercerosSobreContratos.ValorFiscal || 0) + (currentData.EmbargosJudiciales.ValorFiscal || 0) + (currentData.CuentasEnParticipacion.ValorFiscal || 0) + (currentData.PasivoParaEjecucionDeExcedentesESAL.ValorFiscal || 0) + (currentData.FondosSocialesMutualesYOtros.ValorFiscal || 0) + (currentData.OtrosPasivos.ValorFiscal || 0) + (currentData.PasivosReconocidosSolamenteParaFinesFiscales.ValorFiscal || 0);
     }
     //Patrimonio Total
     //Patrimonio
@@ -238,10 +241,16 @@ const ESFpatrimonio = () => {
 
     const clculateValorFiscal = (path) => {
         const pathArray = path.split(".");
+
+        console.log({pathArray, excludedCalculateValorFiscalInputs})
+
+        console.log(excludedCalculateValorFiscalInputs.some((elemment) =>
+            pathArray.includes(elemment)
+          ))
     
         if (          
           !excludedCalculateValorFiscalInputs.some((elemment) =>
-            path.includes(elemment)
+            pathArray.includes(elemment)
           )
         ) {
           let newData = { ...data };
@@ -302,13 +311,7 @@ const ESFpatrimonio = () => {
         // Actualizar el valor
         currentLevel[lastKey] = value;
         
-        // Actualizar el estado con el objeto modificado
         // Activos Equivalentes Efectivo
-        updatedData.Activos.ActivosEquivalentesEfectivo.Total.ValorContable = valorcontactivosequi(updatedData.Activos.ActivosEquivalentesEfectivo);
-        updatedData.Activos.ActivosEquivalentesEfectivo.Total.EfectoConversion = efectconveractivosequi(updatedData.Activos.ActivosEquivalentesEfectivo);
-        updatedData.Activos.ActivosEquivalentesEfectivo.Total.MenorValorFiscal = menorfiscalactivosequi(updatedData.Activos.ActivosEquivalentesEfectivo);
-        updatedData.Activos.ActivosEquivalentesEfectivo.Total.MayorValorFiscal = mayorfiscalactivosequi(updatedData.Activos.ActivosEquivalentesEfectivo);
-        updatedData.Activos.ActivosEquivalentesEfectivo.Total.ValorFiscal = valorfiscalactivosequi(updatedData.Activos.ActivosEquivalentesEfectivo);
         clculateValorFiscal(name);  
         // Inversiones Instrumentos Financieros Derivados VN
         //Cuentas Comerciales Cobrar Otras Por Cobrar
@@ -330,6 +333,9 @@ const ESFpatrimonio = () => {
         updatedData.Activos.CuentasComercialesCobrarOtrasPorCobrar.DeterioroAcumuladoValorCuentasDocumentosCobrar.Total.MayorValorFiscal = mayorfiscaldeterioroacumuladodocumentos(updatedData.Activos.CuentasComercialesCobrarOtrasPorCobrar.DeterioroAcumuladoValorCuentasDocumentosCobrar);
         updatedData.Activos.CuentasComercialesCobrarOtrasPorCobrar.DeterioroAcumuladoValorCuentasDocumentosCobrar.Total.ValorFiscal = valorfiscaldeterioroacumuladodocumentos(updatedData.Activos.CuentasComercialesCobrarOtrasPorCobrar.DeterioroAcumuladoValorCuentasDocumentosCobrar);
         //Activos Total
+        /**
+         * TODO: revisar
+         */
         updatedData.Activos.Total.ValorContable = valorcontactivostotal(updatedData.Activos);
         //Pasivos
         //Obligaciones financieras y cuentas por pagar
@@ -358,11 +364,11 @@ const ESFpatrimonio = () => {
         updatedData.Pasivos.ImpuestosGravamenesTasasPorPagar.Total.ValorFiscal = valorfiscalimpuestosgravamentasas(updatedData.Pasivos.ImpuestosGravamenesTasasPorPagar);
         //Pasivos por impuestos diferidos
         //Pasivos por beneficios a los empleados
-        updatedData.Pasivos.PasivosPorBeneficiosALosEmpleados.Total.ValorContable = valorcontpasivosbeneficiosempleados(updatedData.Pasivos.PasivosPorBeneficiosALosEmpleados);
-        updatedData.Pasivos.PasivosPorBeneficiosALosEmpleados.Total.EfectoConversion = efectconverpasivosbeneficiosempleados(updatedData.Pasivos.PasivosPorBeneficiosALosEmpleados);
-        updatedData.Pasivos.PasivosPorBeneficiosALosEmpleados.Total.MenorValorFiscal = menorfiscalpasivosbeneficiosempleados(updatedData.Pasivos.PasivosPorBeneficiosALosEmpleados);
-        updatedData.Pasivos.PasivosPorBeneficiosALosEmpleados.Total.MayorValorFiscal = mayorfiscalpasivosbeneficiosempleados(updatedData.Pasivos.PasivosPorBeneficiosALosEmpleados);
-        updatedData.Pasivos.PasivosPorBeneficiosALosEmpleados.Total.ValorFiscal = valorfiscalpasivosbeneficiosempleados(updatedData.Pasivos.PasivosPorBeneficiosALosEmpleados);
+        updatedData.Pasivos.PasivosBeneficiosEmpleados.Total.ValorContable = valorcontpasivosbeneficiosempleados(updatedData.Pasivos.PasivosBeneficiosEmpleados);
+        updatedData.Pasivos.PasivosBeneficiosEmpleados.Total.EfectoConversion = efectconverpasivosbeneficiosempleados(updatedData.Pasivos.PasivosBeneficiosEmpleados);
+        updatedData.Pasivos.PasivosBeneficiosEmpleados.Total.MenorValorFiscal = menorfiscalpasivosbeneficiosempleados(updatedData.Pasivos.PasivosBeneficiosEmpleados);
+        updatedData.Pasivos.PasivosBeneficiosEmpleados.Total.MayorValorFiscal = mayorfiscalpasivosbeneficiosempleados(updatedData.Pasivos.PasivosBeneficiosEmpleados);
+        updatedData.Pasivos.PasivosBeneficiosEmpleados.Total.ValorFiscal = valorfiscalpasivosbeneficiosempleados(updatedData.Pasivos.PasivosBeneficiosEmpleados);
         //Provisiones
         updatedData.Pasivos.Provisiones.Total.ValorContable = valorcontprovisiones(updatedData.Pasivos.Provisiones);
         updatedData.Pasivos.Provisiones.Total.EfectoConversion = efectconverprovisiones(updatedData.Pasivos.Provisiones);
@@ -370,11 +376,11 @@ const ESFpatrimonio = () => {
         updatedData.Pasivos.Provisiones.Total.MayorValorFiscal = mayorfiscalprovisiones(updatedData.Pasivos.Provisiones);
         updatedData.Pasivos.Provisiones.Total.ValorFiscal = valorfiscalprovisiones(updatedData.Pasivos.Provisiones);
         //Pasivos por ingresos diferidos
-        updatedData.Pasivos.PasivosPorIngresosDiferidos.Total.ValorContable = valorcontpasivosingresosdiferidos(updatedData.Pasivos.PasivosPorIngresosDiferidos);
-        updatedData.Pasivos.PasivosPorIngresosDiferidos.Total.EfectoConversion = efectconverpasivosingresosdiferidos(updatedData.Pasivos.PasivosPorIngresosDiferidos);
-        updatedData.Pasivos.PasivosPorIngresosDiferidos.Total.MenorValorFiscal = menorfiscalpasivosingresosdiferidos(updatedData.Pasivos.PasivosPorIngresosDiferidos);
-        updatedData.Pasivos.PasivosPorIngresosDiferidos.Total.MayorValorFiscal = mayorfiscalpasivosingresosdiferidos(updatedData.Pasivos.PasivosPorIngresosDiferidos);
-        updatedData.Pasivos.PasivosPorIngresosDiferidos.Total.ValorFiscal = valorfiscalpasivosingresosdiferidos(updatedData.Pasivos.PasivosPorIngresosDiferidos);
+        updatedData.Pasivos.PasivosIngresosDiferidos.Total.ValorContable = valorcontpasivosingresosdiferidos(updatedData.Pasivos.PasivosIngresosDiferidos);
+        updatedData.Pasivos.PasivosIngresosDiferidos.Total.EfectoConversion = efectconverpasivosingresosdiferidos(updatedData.Pasivos.PasivosIngresosDiferidos);
+        updatedData.Pasivos.PasivosIngresosDiferidos.Total.MenorValorFiscal = menorfiscalpasivosingresosdiferidos(updatedData.Pasivos.PasivosIngresosDiferidos);
+        updatedData.Pasivos.PasivosIngresosDiferidos.Total.MayorValorFiscal = mayorfiscalpasivosingresosdiferidos(updatedData.Pasivos.PasivosIngresosDiferidos);
+        updatedData.Pasivos.PasivosIngresosDiferidos.Total.ValorFiscal = valorfiscalpasivosingresosdiferidos(updatedData.Pasivos.PasivosIngresosDiferidos);
         //Otros pasivos
         updatedData.Pasivos.OtrosPasivos.Total.ValorContable = valorcontotrospasivos(updatedData.Pasivos.OtrosPasivos);
         updatedData.Pasivos.OtrosPasivos.Total.EfectoConversion = efectconverotrospasivos(updatedData.Pasivos.OtrosPasivos);
@@ -383,9 +389,15 @@ const ESFpatrimonio = () => {
         updatedData.Pasivos.OtrosPasivos.Total.ValorFiscal = valorfiscalotrospasivos(updatedData.Pasivos.OtrosPasivos);
         //Patrimonio Total
 
+
+        //Totales
+        updatedData.Activos.ActivosEquivalentesEfectivo.Total.ValorContable = valorcontactivosequi(updatedData.Activos.ActivosEquivalentesEfectivo);
+        updatedData.Activos.ActivosEquivalentesEfectivo.Total.EfectoConversion = efectconveractivosequi(updatedData.Activos.ActivosEquivalentesEfectivo);
+        updatedData.Activos.ActivosEquivalentesEfectivo.Total.MenorValorFiscal = menorfiscalactivosequi(updatedData.Activos.ActivosEquivalentesEfectivo);
+        updatedData.Activos.ActivosEquivalentesEfectivo.Total.MayorValorFiscal = mayorfiscalactivosequi(updatedData.Activos.ActivosEquivalentesEfectivo);
+        updatedData.Activos.ActivosEquivalentesEfectivo.Total.ValorFiscal = valorfiscalactivosequi(updatedData.Activos.ActivosEquivalentesEfectivo);
         // Calculo de los totales
         setData(updatedData);
-        console.log(data)
         
     };
 

@@ -193,7 +193,11 @@ function RentaLiquidaForm() {
   
     // Asignar los valores calculados a newData
     newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total = { ...totalIngresos };
-  } 
+  };
+
+  const calculateTotalIngresosNetosAct = (path, newData) => {
+    if (path[0] !== "Ingresos" || path[1] !== "IngresosNetosActividadIndustrialCoSer") return;
+  };
 
   const createOtrosSection = () => {
     const keys = Object.keys(data);

@@ -449,5 +449,5 @@ export const TabsNames = {
     "DatosInformativos" : "Datos Informativos"
 }
 export const excludedCalculateValorFiscalInputs = [
-    "Activos.ActivosEquivalentesEfectivo.Total.ValorFiscal",
+    "Total",
 ]
