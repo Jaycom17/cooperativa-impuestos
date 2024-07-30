@@ -54,10 +54,16 @@ function ImpuestoDiferidoForm() {
   const handleQuit = (path) => {
     if (path === "DetalleCompensacionPerdidasFiscales") {
       let newData = { ...data };
+      if(newData.DetalleCompensacionPerdidasFiscales.length === 1){
+        return;
+      }
       newData.DetalleCompensacionPerdidasFiscales.pop();
       setData(newData);
     } else if (path === "DetalleCompensacionExcesoRentaPresuntiva") {
       let newData = { ...data };
+      if(newData.DetalleCompensacionExcesoRentaPresuntiva.length === 1){
+        return;
+      }
       newData.DetalleCompensacionExcesoRentaPresuntiva.pop();
       setData(newData);
     }

@@ -1,13 +1,31 @@
-import PropTypes from "prop-types";
+//Importación de librerías
 import { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
+//Importación de iconos
 import { GrFormClose } from "react-icons/gr";
 import { MdMenu } from "react-icons/md";
 
+/**
+ * Componente de barra de pestañas que muestra una lista de pestañas y permite navegar entre ellas.
+ *
+ * @component
+ * @param {Object} props - Propiedades del componente.
+ * @param {Array} props.tabs - Array de objetos que representan las pestañas.
+ * @param {string} props.activeTab - Nombre de la pestaña activa.
+ * @param {Function} props.setActiveTab - Función para cambiar la pestaña activa.
+ * @param {boolean} [props.onReport=false] - Bandera para ajustar el estilo del componente en función de si está en una página de reporte.
+ * @returns {JSX.Element} Elemento JSX que representa la barra de pestañas.
+ */
 const TabBar = ({ tabs, activeTab, setActiveTab, onReport = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const asideRef = useRef(null);
 
-  // Función para cerrar el menú desplegable al hacer clic fuera de él
+  /**
+   * Función para cerrar el menú desplegable al hacer clic fuera de él.
+   * 
+   * @function
+   * @param {Event} event - El evento de clic del mouse.
+   */
   useEffect(() => {
     function handleClickOutside(event) {
       if (asideRef.current && !asideRef.current.contains(event.target)) {
@@ -20,6 +38,9 @@ const TabBar = ({ tabs, activeTab, setActiveTab, onReport = false }) => {
     };
   }, []);
 
+  /**
+   * Maneja la apertura y cierre del menú desplegable.
+   */
   const handleMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
   };

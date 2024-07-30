@@ -1,11 +1,22 @@
+//Importación de librerías
 import { useState, useRef, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-
-import { GrFormClose } from "react-icons/gr";
-import { MdMenu } from "react-icons/md";
+//Importación de componentes
 import { RoomContext } from "../../context/RoomContext";
 import { StudentContext } from "../../context/StuContext";
+//Importación de iconos
+import { GrFormClose } from "react-icons/gr";
+import { MdMenu } from "react-icons/md";
 
+/**
+ * Componente lateral para navegación y visualización de formularios del estudiante.
+ *
+ * Este componente proporciona un menú lateral para navegar entre diferentes formularios,
+ * así como un botón para salir de la sala.
+ *
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa el componente de menú lateral para el estudiante.
+ */
 const AsideStudent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const asideRef = useRef(null);
@@ -13,12 +24,23 @@ const AsideStudent = () => {
   const { leaveRoom } = useContext(RoomContext);
   const { logout } = useContext(StudentContext);
 
+  /**
+   * Maneja la salida de la sala y la sesión del estudiante.
+   *
+   * @async
+   * @function
+   */
   const handleLeaveRoom = async() => {
     leaveRoom();
     await logout();
   };
 
-  // Función para cerrar el menú desplegable al hacer clic fuera de él
+  /**
+   * Función para cerrar el menú desplegable al hacer clic fuera de él.
+   * 
+   * @function
+   * @param {Event} event - El evento de clic del mouse.
+   */
   useEffect(() => {
     function handleClickOutside(event) {
       if (asideRef.current && !asideRef.current.contains(event.target)) {
@@ -31,6 +53,9 @@ const AsideStudent = () => {
     };
   }, []);
 
+  /**
+   * Maneja la apertura y cierre del menú lateral.
+   */
   const handleMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
   };

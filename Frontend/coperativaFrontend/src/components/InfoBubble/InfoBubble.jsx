@@ -1,8 +1,21 @@
+//Importación de librerías
 import { useState } from "react";
-import { FaCircleInfo } from "react-icons/fa6";
 import PropTypes from "prop-types";
+//Importación de iconos
+import { FaCircleInfo } from "react-icons/fa6";
 
-
+/**
+ * Componente de burbuja de información.
+ *
+ * Este componente muestra un icono de información que, al pasar el mouse sobre él,
+ * despliega una burbuja con información adicional.
+ *
+ * @component
+ * @param {Object} props - Las propiedades del componente.
+ * @param {string} props.info - El texto de información a mostrar en la burbuja.
+ * @param {string} props.colorMode - El modo de color del componente, puede ser 'light' o 'dark'.
+ * @returns {JSX.Element} Elemento JSX que representa una burbuja de información.
+ */
 const InfoBubble = ({info, colorMode}) => {
     const [hovered, setHovered] = useState(false);
 

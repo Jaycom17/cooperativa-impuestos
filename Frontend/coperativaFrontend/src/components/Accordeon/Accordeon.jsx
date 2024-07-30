@@ -1,6 +1,8 @@
+//Importación de librerías
 import { useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
 import PropTypes from "prop-types";
+//Importación de iconos
+import { IoIosArrowDown } from "react-icons/io";
 import { GrSubtractCircle, GrAddCircle  } from "react-icons/gr";
 
 /**

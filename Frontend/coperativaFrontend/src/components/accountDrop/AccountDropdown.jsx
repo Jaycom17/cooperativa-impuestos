@@ -1,6 +1,8 @@
+//Importación de librerías
 import { useState, useEffect, useRef } from "react";
-import { VscAccount } from "react-icons/vsc";
 import PropTypes from "prop-types";
+//Importación de iconos
+import { VscAccount } from "react-icons/vsc";
 
 /**
  * Componente desplegable de cuenta.

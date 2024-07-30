@@ -1,11 +1,13 @@
+//Importación de librerías
 import { useParams } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { getStudentsByRoom } from "../../services/student.service";
-import { forms } from "../../utils/report";
 import PropTypes from "prop-types";
-
+//Importación de componentes
 import FloatingContainer from "../FloatingContainer/FloatingContainer";
-
+//Importación de utilidades
+import { forms } from "../../utils/report";
+//Importación de iconos
 import { GrFormClose } from "react-icons/gr";
 import { MdMenu } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
@@ -19,9 +21,10 @@ import { FaSearch } from "react-icons/fa";
  * @component
  * @param {Object} props - Las propiedades del componente.
  * @param {Function} props.toNav - Función para navegar a diferentes rutas basadas en la interacción del usuario.
+ * @param {Function} props.getStudent - Función para obtener el estudiante que se se ha seleccionado.
  * @returns {JSX.Element} Elemento JSX que representa el componente de menú lateral.
  */
-const AsideProf = ({ toNav }) => {
+const AsideProf = ({ toNav, getStudent }) => {
   const { roomID } = useParams();
   const [students, setStudents] = useState([]);
   const [selectedStudent, setSelectedStudent] = useState(null);
@@ -98,6 +101,7 @@ const AsideProf = ({ toNav }) => {
     setSelectedStudent(student);
     setContOpen(false);
     toNav("stuSelect", student.stuID);
+    getStudent(student)
   };
 
   return (
@@ -189,6 +193,7 @@ const AsideProf = ({ toNav }) => {
 
 AsideProf.propTypes = {
   toNav: PropTypes.func,
+  getStudent: PropTypes.func,
 };
 
 export default AsideProf;

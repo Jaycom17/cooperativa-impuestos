@@ -1,22 +1,48 @@
+//Importación de librerías
+import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+//Importación de componentes
+import FloatingContainer from "../FloatingContainer/FloatingContainer";
+import RoomForm from "../RoomForm/RoomForm";
+//Importación de servicios
+import { updateRoomState, deleteRoom } from "../../services/room.service";
+//Importación de utilidades
+import cutString from "../../utils/CropName";
+//Importación de iconos
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FaPencilAlt } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
-import { useState, useEffect } from 'react';
-import FloatingContainer from "../FloatingContainer/FloatingContainer";
-import RoomForm from "../RoomForm/RoomForm";
-import { updateRoomState, deleteRoom } from "../../services/room.service";
-import cutString from "../../utils/CropName";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 
+/**
+ * Componente que representa una sala con opciones para actualizar, revisar o eliminar.
+ *
+ * @component
+ * @param {Object} props - Propiedades del componente.
+ * @param {Object} props.room - Información de la sala.
+ * @param {string} props.room.roomID - ID de la sala.
+ * @param {string} props.room.roomName - Nombre de la sala.
+ * @param {string} props.room.roomPassword - Contraseña de la sala.
+ * @param {string} props.room.roomStatus - Estado de la sala (abierta o cerrada).
+ * @param {string} props.room.roomDate - Fecha de creación de la sala.
+ * @param {string} props.usuId - ID del usuario.
+ * @param {Function} props.onRefresh - Función para refrescar la lista de salas.
+ * @returns {JSX.Element} Elemento JSX que representa una sala.
+ */
 const Room = ({ room, usuId, onRefresh }) => {
   const [activated, setActivated] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
 
+  /**
+   * Efecto que actualiza el estado de la sala al montar el componente y cuando cambia `room.roomStatus`.
+   */
   useEffect(() => {
     setActivated(room.roomStatus.toLowerCase() === 'open');
   }, [room.roomStatus]);
 
+  /**
+   * Alterna el estado de activación de la sala.
+   */
   const toggleActivated = () => {
     const roomStatus = !activated ? 'open' : 'closed';
     try {
@@ -27,6 +53,12 @@ const Room = ({ room, usuId, onRefresh }) => {
     }
   };
 
+  /**
+   * Formatea una fecha en una cadena con el formato "dd / mm / yyyy".
+   *
+   * @param {string} dateString - La fecha en formato de cadena.
+   * @returns {string} La fecha formateada.
+   */
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const year = date.getFullYear();
@@ -35,6 +67,9 @@ const Room = ({ room, usuId, onRefresh }) => {
     return `${day} / ${month} / ${year}`;
   };
 
+  /**
+   * Maneja la eliminación de una sala.
+   */
   const handleDelete = () =>{
     const confirmDelete = window.confirm(`¿Estás seguro de que deseas eliminar la sala ${room.roomName}?`);
     if (confirmDelete) {

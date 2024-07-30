@@ -1,4 +1,6 @@
+//Importación de librerías
 import PropTypes from "prop-types";
+//Importación de utilidades
 import { friendlyNames, contablesDatosInformativosKeys, contablesValorTotalKeys, fiscalesDatosInformativosKeys, fiscalesValorTotalKeys } from "../../utils/activosFijos";
 
 /**

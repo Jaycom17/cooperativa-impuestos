@@ -1,11 +1,14 @@
+//Importación de librerías
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import PropTypes from "prop-types";
+//Importación de servicios
+import { createProfessor, updateProfessor, getProfessor } from "../../services/professor.service";
+//Importación de iconos
 import { IoEyeOffOutline, IoEyeOutline, IoPersonAddSharp } from "react-icons/io5";
 import { FaCheckCircle } from "react-icons/fa";
 import { MdCreate } from "react-icons/md";
-import PropTypes from "prop-types";
-import { createProfessor, updateProfessor, getProfessor } from "../../services/professor.service";
 
 const ProfForm = ({ profId, onRefresh, setOpen }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -21,7 +24,10 @@ const ProfForm = ({ profId, onRefresh, setOpen }) => {
     setValue,
     formState: { errors },
   } = useForm();
-
+  
+  /**
+   * Función para obtener y establecer los datos del profesor si existe un `profId`.
+   */
   useEffect(() => {
     if (profId) {
       getProfessor(profId).then((response) => {
@@ -36,12 +42,22 @@ const ProfForm = ({ profId, onRefresh, setOpen }) => {
       });
     } else { setIsUpdate(false); }
   }, [profId, setValue]);
-
+  
+  /**
+   * Alterna la visibilidad de la contraseña.
+   *
+   * @param {number} field - El campo de contraseña a alternar (1 o 2).
+   */
   const togglePasswordVisibility = (field) => {
     if(field === 1) {setShowPassword(!showPassword);}
     else if(field === 2){setShowPassword2(!showPassword2);}
   };
 
+  /**
+   * Maneja el envío del formulario.
+   *
+   * @param {Object} data - Los datos del formulario.
+   */
   const onSubmit = (data) => {
     if (data.usuPassword !== data.confirmPassword) {
       setPasswordMatch(false);

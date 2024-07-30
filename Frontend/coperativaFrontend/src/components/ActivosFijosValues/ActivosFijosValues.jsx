@@ -1,4 +1,6 @@
+//Importación de librerías
 import PropTypes from "prop-types";
+//Importación de utilidades
 import { ActivosFijosTotal, friendlyNames, contablesDatosInformativosKeys, contablesValorTotalKeys, fiscalesDatosInformativosKeys, fiscalesValorTotalKeys } from "../../utils/activosFijos.js";
 
 /**

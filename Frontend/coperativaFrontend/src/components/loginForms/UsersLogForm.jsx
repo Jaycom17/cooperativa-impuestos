@@ -1,23 +1,40 @@
-import { useState } from "react";
+//Importación de librerías
+import { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
-import { IoLogInOutline, IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import PropTypes from 'prop-types';
-import { useContext } from "react";
+//Importación de componentes
 import { AuthContext } from "../../context/AuthContext";
+//Importación de iconos
+import { IoLogInOutline, IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 
+/**
+ * Formulario de inicio de sesión para usuarios.
+ *
+ * Este componente proporciona un formulario para que los usuarios inicien sesión
+ * utilizando su correo electrónico y contraseña. Utiliza la biblioteca react-hook-form
+ * para el manejo de formularios y validaciones.
+ *
+ * @component
+ * @param {Object} props - Las propiedades del componente.
+ * @param {Function} props.onSubmit - Función para manejar el envío del formulario.
+ * @returns {JSX.Element} Elemento JSX que representa el formulario de inicio de sesión para usuarios.
+ */
 const UsersLogForm = ({onSubmit}) =>{
-    const [showPassword, setShowPassword] = useState(false);
-    const { loginError } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
+  const { loginError } = useContext(AuthContext);
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
+  const {
+      register,
+      handleSubmit,
+      formState: { errors },
+  } = useForm();
 
-    const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword);
-    };
+  /**
+   * Alterna la visibilidad de la contraseña.
+   */
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
     return(
         <form

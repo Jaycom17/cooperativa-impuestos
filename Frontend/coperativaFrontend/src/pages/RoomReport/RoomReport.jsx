@@ -7,6 +7,8 @@ import logo from "../../assets/LogoUniversidadCooperativa.png";
 import { getIngresosFacturacionStu } from "../../services/ingFac.service";
 import ingFact from "../../formsData/IngFact.json";
 import GenericTabs from "../../components/ShowFormsGeneric/GenericTabs";
+import Formulario from '../../assets/Formulario.png'
+
 
 function RoomReport() {
   const { roomID } = useParams();
@@ -31,10 +33,14 @@ function RoomReport() {
     setData(updatedData);
   };
 
-  const recieveData = (key, path, form) => {
+  const getStudentID = (student) =>{
+    setSelectedStudent(student.stuID)
+  }
+
+  const receiveData = (key, path, form) => {
     if (typeof key === "object") {
       Object.entries(key).map(([key, val]) => {
-        recieveData(val, `${path}.${key}`, form);
+        receiveData(val, `${path}.${key}`, form);
       });
     } else {
       updateValue(key, path, form);
@@ -65,7 +71,7 @@ function RoomReport() {
           .then((res) => {
             console.log(res.data.ingContent);
             Object.entries(res.data.ingContent).map(([key, val]) => {
-              recieveData(val, [key], ingFact);
+              receiveData(val, [key], ingFact);
             });
             console.log(data);
           })
@@ -85,7 +91,7 @@ function RoomReport() {
     <>
       <TeacherNavbar />
       <main className="flex">
-        <AsideProf toNav={toNav} />
+        <AsideProf toNav={toNav} getStudent={getStudentID} />
         {form === "" && (
           <div className="flex flex-col items-center justify-center mb-32 text-center w-10/12 md:w-5/12 md:mx-auto">
             <img
@@ -118,11 +124,11 @@ function RoomReport() {
               {forms.map((form, index) => (
                 <button
                   key={index}
-                  onClick={() => toNav(form.to, selectedStudent.stuID)}
+                  onClick={() => toNav(form.to, selectedStudent)}
                   className="flex items-center hover:scale-105 hover:bg-slate-100 duration-150 justify-center w-full flex-col rounded-2xl p-2"
                 >
                   <img
-                    src="https://cdn.pixabay.com/photo/2016/03/31/14/48/sheet-1292828_1280.png"
+                    src={Formulario}
                     alt="Logo Formulario"
                     className="h-10 rounded-t-lg"
                   />

@@ -1,11 +1,20 @@
+//Importación de librerías
 import { useState, useRef,useContext, useEffect } from "react";
-import { MdMenu } from "react-icons/md";
-import { GrFormClose } from "react-icons/gr";
 import { Link, useNavigate } from "react-router-dom";
-
+//Importación de componentes
 import AccountDropdown from "../AccountDrop/AccountDropdown";
 import { AuthContext } from "../../context/AuthContext";
+//Importación de iconos
+import { MdMenu } from "react-icons/md";
+import { GrFormClose } from "react-icons/gr";
 
+/**
+ * Componente de barra de navegación para el perfil de profesor.
+ * Incluye un menú desplegable para dispositivos móviles y enlaces de navegación.
+ *
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa la barra de navegación del profesor.
+ */
 const TeacherNavbarTW = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -15,7 +24,12 @@ const TeacherNavbarTW = () => {
 
     const tNavRef = useRef(null);
 
-    // Función para cerrar el menú desplegable al hacer clic fuera de él
+    /**
+     * Función para cerrar el menú desplegable al hacer clic fuera de él.
+     * 
+     * @function
+     * @param {Event} event - El evento de clic del mouse.
+     */
     useEffect(() => {
         function handleClickOutside(event) {
             if (tNavRef.current && !tNavRef.current.contains(event.target)) {
@@ -61,8 +75,6 @@ const TeacherNavbarTW = () => {
             />
         </section>
         
-        
-        {/*Menu lateral*/}
         <div className={`fixed w-full h-screen md:hidden bg-primary/50 backdrop-blur-sm top-0 right-0 transition-transform duration-150 ${isMenuOpen ? '-translate-x-0': 'translate-x-full'} z-20`}>
             <section className="text-unicoop-white bg-primary flex-col absolute right-0 top-0 h-screen p-8 gap-4 z-50 flex font-semibold w-56 items-center" ref={tNavRef}>
                 <GrFormClose onClick={() => setIsMenuOpen(false)} className="text-3xl bg-primary cursor-pointer hover:animate-spin-once hover:text-buttons-closing-red"/>
@@ -72,7 +84,7 @@ const TeacherNavbarTW = () => {
                 ))}
             </section>
         </div>
-        {/*Hasta aquí el menú lateral*/}
+
       </nav>
     );
   };
