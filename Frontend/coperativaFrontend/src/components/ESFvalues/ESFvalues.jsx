@@ -102,26 +102,31 @@ function ESFvalues({ path, data, handleChange }) {
   return (
     <>
       {dataKeys.map((key) => (
-        <div key={key}>
-          {Object.keys(data[key]).map((subKey) => (
-            <div key={subKey}>
-              {(typeof data[key][subKey] !== "object") ? (
-                <div className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white">
-                  <h3 className="w-full font-bold text-xl pb-2">
-                    {ValuesNames[key] || key}
-                  </h3>
-                  {<>{renderSection(data[key], key)}</>}
-                </div>
-              ) : (
-                <div className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white">
-                  <h3 className="w-full font-bold text-xl pb-2">
-                    {ValuesNames[subKey] || subKey}
-                  </h3>
-                  {<>{renderSection(data[key][subKey], `${key}.${subKey}`)}</>}
-                </div>
-              )}
-            </div>
-          ))}
+        <div
+          key={key}
+          className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white"
+        >
+          <h3 className="w-full font-bold text-xl pb-2">
+            {ValuesNames[key] || key}
+          </h3>
+          {Object.keys(data[key]).some(
+            (subKey) => typeof data[key][subKey] === "object"
+          )
+            ? Object.keys(data[key]).map(
+                (subKey) =>
+                  typeof data[key][subKey] === "object" && (
+                    <div
+                      key={subKey}
+                      className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white"
+                    >
+                      <h3 className="w-full font-bold text-xl pb-2">
+                        {ValuesNames[subKey] || subKey}
+                      </h3>
+                      {renderSection(data[key][subKey], `${key}.${subKey}`)}
+                    </div>
+                  )
+              )
+            : renderSection(data[key], key)}
         </div>
       ))}
     </>
