@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { ValuesNames, CalculatedValues } from "../../utils/form110.js";
+import { ValuesNames, CalculatedValues } from "../../utils/esfPatrimonio.js";
 
 function ESFvalues({ path, data, handleChange }) {
 
@@ -14,7 +14,8 @@ function ESFvalues({ path, data, handleChange }) {
       value = sectionData;
     }
     const pathParts = newPath.split(".");
-    if (CalculatedValues.includes(pathParts[pathParts.length - 1])) {
+    console.log(pathParts.join(".")) ;
+    if (CalculatedValues.includes(pathParts.join("."))) {
       return <p className="p-1 text-xl font-medium border-b-4">{value}</p>;
     } else {
       return (
@@ -23,7 +24,7 @@ function ESFvalues({ path, data, handleChange }) {
           type="number"
           name={newPath}
           defaultValue={value === 0 ? "" : value}
-          placeholder={newPath}
+          placeholder="0"
           onChange={(e) => handleChange(e)}
         />
       );
