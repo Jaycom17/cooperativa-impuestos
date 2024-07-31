@@ -197,7 +197,73 @@ function RentaLiquidaForm() {
 
   const calculateTotalIngresosNetosAct = (path, newData) => {
     if (path[0] !== "Ingresos" || path[1] !== "IngresosNetosActividadIndustrialCoSer") return;
+
+    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.Total.ValorContable = newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total.ValorContable - newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total.ValorContable;
+
+    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.Total.EfectoConversion = newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total.EfectoConversion - newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total.EfectoConversion;
+
+    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.Total.MenorValorFiscal = newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total.MenorValorFiscal - newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total.MenorValorFiscal;
+
+    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.Total.MayorValorFiscal = newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total.MayorValorFiscal - newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total.MayorValorFiscal;
+
+    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.Total.ValorFiscal = newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total.ValorFiscal - newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total.ValorFiscal;
+
+    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.Total.Tarifa9 = newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total.Tarifa9 - newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total.Tarifa9;
+
+    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.Total.Tarifa15 = newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total.Tarifa15 - newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total.Tarifa15;
+
+    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.Total.Tarifa20 = newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total.Tarifa20 - newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total.Tarifa20;
+
+    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.Total.MegaInversiones = newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total.MegaInversiones - newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total.MegaInversiones;
+
+    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.Total.MegaInversiones27 = newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total.MegaInversiones27 - newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total.MegaInversiones27;
+
+    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.Total.TarifaGeneral240 = newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total.TarifaGeneral240 - newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total.TarifaGeneral240;
+
+    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.Total.Otras = newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total.Otras - newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total.Otras;
   };
+
+  const calculateTotalSection = (path, newData, condition) => {
+    if (path[0] !== condition[0] || path[1] !== condition[1]) return;
+
+    const section = { ... newData[condition[0]][condition[1]] };
+
+    let total = {
+      ValorContable: 0,
+      EfectoConversion: 0,
+      MenorValorFiscal: 0,
+      MayorValorFiscal: 0,
+      ValorFiscal: 0,
+      Tarifa9: 0,
+      Tarifa15: 0,
+      Tarifa20: 0,
+      MegaInversiones: 0,
+      MegaInversiones27: 0,
+      TarifaGeneral240: 0,
+      Otras: 0,
+    };
+
+    const keys = Object.keys(section);
+  
+    keys.forEach((key) => {
+      if (key === "Total") return;
+      total.ValorContable += section[key].ValorContable || 0;
+      total.EfectoConversion += section[key].EfectoConversion || 0;
+      total.MenorValorFiscal += section[key].MenorValorFiscal || 0;
+      total.MayorValorFiscal += section[key].MayorValorFiscal || 0;
+      total.ValorFiscal += section[key].ValorFiscal || 0;
+      total.Tarifa9 += section[key].Tarifa9 || 0;
+      total.Tarifa15 += section[key].Tarifa15 || 0;
+      total.Tarifa20 += section[key].Tarifa20 || 0;
+      total.MegaInversiones += section[key].MegaInversiones || 0;
+      total.MegaInversiones27 += section[key].MegaInversiones27 || 0;
+      total.TarifaGeneral240 += section[key].TarifaGeneral240 || 0;
+      total.Otras += section[key].Otras || 0;
+    });
+  
+    // Asignar los valores calculados a newData
+    newData[condition[0]][condition[1]].Total = { ...total };
+  }
 
   const createOtrosSection = () => {
     const keys = Object.keys(data);
@@ -241,6 +307,17 @@ function RentaLiquidaForm() {
     calculateValorFiscal(pathArray);
     calculateTotalDevolucionREbajasDescuento(pathArray, newData);
     calculateTotalIngresosNetosActividadIndustrialCoSer(pathArray, newData);
+    calculateTotalIngresosNetosAct(pathArray, newData);
+    calculateTotalSection(pathArray, newData, ["Ingresos", "IngresosFinancieros"]);
+    calculateTotalSection(pathArray, newData, ["Ingresos", "GananciasInversionesSubsidiariasAsociadasNegocios"]);
+    calculateTotalSection(pathArray, newData, ["Ingresos", "IngresosPorMedicionesValorRazonable"]);
+    calculateTotalSection(pathArray, newData, ["Ingresos", "UtilidadVentaEnajenacionActivosMenos2Anos"]);
+    calculateTotalSection(pathArray, newData, ["Ingresos", "UtilidadVentaEnajenacionActivosMas2Anos"]);
+    calculateTotalSection(pathArray, newData, ["Ingresos", "IngresosReversionDeterioroValor"]);
+    calculateTotalSection(pathArray, newData, ["Ingresos", "IngresosReversionProvisiones"]);
+    calculateTotalSection(pathArray, newData, ["Ingresos", "IngresosReversionPasivosBeneficiosEmpleados"]);
+    calculateTotalSection(pathArray, newData, ["Ingresos", "OtrosIngresos"]);
+    calculateTotalSection(pathArray, newData, ["Costos", "CostosVentas"]);
 
     setData(newData);
   };
