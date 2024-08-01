@@ -1,8 +1,17 @@
+//Importación de componentes
 import AsideStudent from "../../components/AsideStudent/AsideStudent";
 import FormItem from "../../components/FormItem/FormItem";
-import logo from '../../assets/LogoUniversidadCooperativa.png'
+//Importación de imágenes
+import logo from '../../assets/LogoUniversidadCooperativa.png';
 
-
+/**
+ * Componente principal de la página del estudiante.
+ *
+ * Este componente muestra un menú lateral y una lista de formularios que el estudiante puede seleccionar y diligenciar.
+ *
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa la página principal del estudiante.
+ */
 const MainStudent = () => {
 
   const forms = [

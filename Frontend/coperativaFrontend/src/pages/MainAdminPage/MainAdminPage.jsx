@@ -1,14 +1,27 @@
-import Navbar from '../../components/Navbar/Navbar';
+//Importación de librerías
 import { useState, useEffect } from 'react';
-import { getProfessors } from '../../services/professor.service';
+//Importación de componentes
+import Navbar from '../../components/Navbar/Navbar';
 import Professor from '../../components/Professor/Professor';
+//Importación de servicios
+import { getProfessors } from '../../services/professor.service';
+//Importación de iconos
 import { FaSearch } from "react-icons/fa";
 
-
+/**
+ * Componente principal de la página de administración.
+ *
+ * Este componente se encarga de mostrar una lista de profesores, permitir la búsqueda
+ * de profesores y actualizar la lista de profesores.
+ *
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa la página principal de administración.
+ */
 const MainAdminPage = () => {
   const [professors, setProfessors] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Cargar la lista de profesores al montar el componente
   useEffect(() => {
     getProfessors().then((response) => {
       if (response.status === 200) {
@@ -20,6 +33,11 @@ const MainAdminPage = () => {
     });
   }, []);
 
+  /**
+   * Actualiza la lista de profesores.
+   *
+   * Esta función se llama para volver a cargar y actualizar la lista de profesores.
+   */
   const refreshProfessors = () => {
     getProfessors().then((response) => {
       if (response.status === 200) {
@@ -31,10 +49,16 @@ const MainAdminPage = () => {
     });
   };
 
+  /**
+   * Maneja el cambio en el campo de búsqueda.
+   *
+   * @param {Object} e - El evento de cambio.
+   */
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
+  // Filtrar los profesores según el término de búsqueda
   const filteredProfessors = professors.filter(professor =>
     professor.usuName.toLowerCase().includes(searchTerm.toLowerCase())
   );

@@ -1,14 +1,26 @@
+//Importación de librerías
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
+//Importación de componentes
 import Navbar from "../../components/Navbar/Navbar";
+//Importación de servicios
 import { profile } from "../../services/login.service";
 import { updateAdmin } from "../../services/admin.service";
+//Importación de imágenes
+import logo from '../../assets/LogoUniversidadCooperativa.png'
+//Importación de iconos
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { FaCheckCircle } from "react-icons/fa";
 import { MdCreate } from "react-icons/md";
-import logo from '../../assets/LogoUniversidadCooperativa.png'
 
-
+/**
+ * Componente UpdateInfoAdmin.
+ * 
+ * Este componente permite a un administrador actualizar su nombre, correo electrónico y contraseña.
+ * 
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa la vista para actualizar la información del administrador.
+ */
 function UpdateInfoAdmin() {
   const [passwordMatch, setPasswordMatch] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
@@ -21,6 +33,9 @@ function UpdateInfoAdmin() {
     formState: { errors },
   } = useForm();
 
+  /**
+   * Carga la información del perfil del administrador y establece los valores en el formulario.
+   */
   useEffect(() => {
     profile()
       .then((response) => {
@@ -35,11 +50,21 @@ function UpdateInfoAdmin() {
       });
   }, [setValue]);
 
+  /**
+   * Alterna la visibilidad de la contraseña.
+   * 
+   * @param {number} field - Indica cuál campo de contraseña alternar.
+   */
   const togglePasswordVisibility = (field) => {
     if(field === 1) {setShowPassword(!showPassword);}
     else if(field === 2){setShowPassword2(!showPassword2);}
   };
 
+  /**
+   * Maneja el envío del formulario.
+   * 
+   * @param {Object} data - Datos del formulario.
+   */
   const onSubmit = (data) => {
     if (data.usuPassword !== data.confirmPassword) {
       setPasswordMatch(false);

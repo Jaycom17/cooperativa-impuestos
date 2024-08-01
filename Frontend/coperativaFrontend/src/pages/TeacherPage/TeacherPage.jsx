@@ -1,10 +1,22 @@
+//Importación de librerías
+import { useState, useEffect } from 'react';
+//Importación de componentes
 import Room from '../../components/Room/Room';
 import TeacherNavbar from '../../components/TeacherNavBar/TeacherNavbar';
-import { useState, useEffect } from 'react';
+//Importación de servicios
 import { getRooms } from '../../services/room.service';
+//Importación de iconos
 import InfoBubble from '../../components/InfoBubble/InfoBubble';
 import { IoIosArrowDown } from "react-icons/io";
 
+/**
+ * Componente TeacherPage.
+ * 
+ * Este componente muestra una lista de salas con opciones para ordenar por fecha o nombre.
+ * 
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa la vista de la página del profesor.
+ */
 const TeacherPage = () => {
   const [rooms, setRooms] = useState([]);
   const [isDateAscending, setIsDateAscending] = useState(false);
@@ -12,6 +24,9 @@ const TeacherPage = () => {
 
   const dateInfo = 'La fecha se encuentra en formato: - Día / Mes / Año'
 
+   /**
+    * Obtiene y ordena las salas al montar el componente.
+    */
   useEffect(() => {
     getRooms()
       .then((response) => {
@@ -25,6 +40,9 @@ const TeacherPage = () => {
       });
   }, []);
 
+  /**
+   * Refresca la lista de salas.
+   */
   const refreshRooms = () => {
     getRooms()
       .then((response) => {
@@ -37,6 +55,9 @@ const TeacherPage = () => {
       });
   };
 
+  /**
+   * Ordena las salas por fecha en orden ascendente o descendente.
+   */
   const orderByDate = () => {
     const sortedRooms = [...rooms].sort((a, b) =>
       isDateAscending
@@ -47,6 +68,9 @@ const TeacherPage = () => {
     setIsDateAscending(!isDateAscending);
   };
 
+  /**
+   * Ordena las salas por nombre en orden ascendente o descendente.
+   */
   const orderByName = () => {
     const sortedRooms = [...rooms].sort((a, b) =>
       isNameAscending

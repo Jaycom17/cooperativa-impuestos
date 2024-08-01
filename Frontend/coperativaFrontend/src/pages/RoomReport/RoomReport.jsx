@@ -1,21 +1,40 @@
-import TeacherNavbar from "../../components/TeacherNavBar/TeacherNavbar";
-import AsideProf from "../../components/AsideProf/AsideProf";
+//Importación de librerías
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { forms } from "../../utils/report";
-import logo from "../../assets/LogoUniversidadCooperativa.png";
-import { getIngresosFacturacionStu } from "../../services/ingFac.service";
+//Importación de componentes
+import TeacherNavbar from "../../components/TeacherNavBar/TeacherNavbar";
+import AsideProf from "../../components/AsideProf/AsideProf";
 import ingFact from "../../formsData/IngFact.json";
 import GenericTabs from "../../components/ShowFormsGeneric/GenericTabs";
+//Importación de servicios
+import { getIngresosFacturacionStu } from "../../services/ingFac.service";
+//Importación de utilidades
+import { forms } from "../../utils/report";
+//Importación de imágenes
 import Formulario from '../../assets/Formulario.png'
+import logo from "../../assets/LogoUniversidadCooperativa.png";
 
-
+/**
+ * Componente RoomReport.
+ * 
+ * Este componente muestra los reportes de una sala y permite seleccionar formularios para revisarlos.
+ * 
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa la vista de reportes de una sala.
+ */
 function RoomReport() {
   const { roomID } = useParams();
   const [form, setForm] = useState("");
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [data, setData] = useState({});
 
+  /**
+   * Actualiza el valor en el objeto de datos utilizando una ruta específica.
+   * 
+   * @param {any} value - El valor a actualizar.
+   * @param {string} path - La ruta en el objeto de datos donde se debe actualizar el valor.
+   * @param {Object} form - El objeto de formulario en el que se deben actualizar los datos.
+   */
   const updateValue = (value, path, form) => {
     // Crear una copia del objeto data
     const updatedData = { ...form };
@@ -33,10 +52,22 @@ function RoomReport() {
     setData(updatedData);
   };
 
+  /**
+   * Establece el ID del estudiante seleccionado.
+   * 
+   * @param {Object} student - El objeto del estudiante.
+   */
   const getStudentID = (student) =>{
     setSelectedStudent(student.stuID)
   }
 
+  /**
+   * Recibe los datos y actualiza el objeto de datos utilizando una ruta específica.
+   * 
+   * @param {Object|any} key - Los datos a recibir, que pueden ser un objeto o un valor.
+   * @param {string} path - La ruta en el objeto de datos donde se deben actualizar los datos.
+   * @param {Object} form - El objeto de formulario en el que se deben actualizar los datos.
+   */
   const receiveData = (key, path, form) => {
     if (typeof key === "object") {
       Object.entries(key).map(([key, val]) => {
@@ -47,6 +78,12 @@ function RoomReport() {
     }
   };
 
+  /**
+   * Navega a una sección específica y actualiza el formulario y los datos.
+   * 
+   * @param {string} formTo - La sección a la que se debe navegar.
+   * @param {string} [stuID] - El ID del estudiante, si es necesario.
+   */
   const toNav = (formTo, stuID) => {
     setForm(formTo);
     if (formTo === "stuSelect") {

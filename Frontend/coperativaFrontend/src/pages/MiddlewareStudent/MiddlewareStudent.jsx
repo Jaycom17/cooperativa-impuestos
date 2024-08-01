@@ -1,9 +1,12 @@
+//Importación de librerías
 import { useState, useContext, useEffect } from "react";
-import { IoCaretBackSharp } from "react-icons/io5";
-import { RoomContext } from "../../context/RoomContext";
-import { StudentContext } from "../../context/StuContext";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+//Importación de hooks
+import { RoomContext } from "../../context/RoomContext";
+import { StudentContext } from "../../context/StuContext";
+//Importación de iconos
+import { IoCaretBackSharp } from "react-icons/io5";
 
 const OPTIONS = {
   SI: "SI",
@@ -11,6 +14,15 @@ const OPTIONS = {
   NOTHING: "NOTHING",
 };
 
+/**
+ * Componente MiddlewareStudent.
+ * 
+ * Este componente gestiona la lógica de entrada de estudiantes a una sala virtual, 
+ * permitiendo tanto a nuevos usuarios como a usuarios recurrentes registrarse o iniciar sesión.
+ * 
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa el middleware de estudiantes.
+ */
 function MiddlewareStudent() {
   const [firstTime, setFirstTime] = useState(OPTIONS.NOTHING);
 
@@ -39,10 +51,20 @@ function MiddlewareStudent() {
   }),
     [student];
 
+  /**
+   * Maneja el envío del formulario para nuevos estudiantes.
+   *
+   * @param {Object} data - Datos del formulario.
+   */
   const onSubmitNew = async (data) => {
     await checkStudent(data);
   };
 
+  /**
+   * Maneja el envío del formulario para estudiantes recurrentes.
+   *
+   * @param {Object} data - Datos del formulario.
+   */
   const onSubmitSaved = async (data) => {
     await sStudent(data.stuName);
   };
@@ -51,6 +73,11 @@ function MiddlewareStudent() {
     console.log(student);
   }, [student]);
 
+  /**
+   * Maneja la selección de si es la primera vez que el estudiante entra a la sala.
+   *
+   * @param {string} option - Opción seleccionada (SI, NO, NOTHING).
+   */
   const handleSetFirstTime = (option) => {
     if (option === OPTIONS.SI) {
       setAnimationClass("animate-slide-from-top");

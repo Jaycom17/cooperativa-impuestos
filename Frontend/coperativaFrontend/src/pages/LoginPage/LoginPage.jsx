@@ -1,16 +1,28 @@
-import { AuthContext } from "../../context/AuthContext";
+//Importación de librerías
 import { useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import logo from '../../assets/LogoUniversidadCooperativa.png'
-
+//Importación de componentes
 import UsersLogForm from "../../components/LoginForms/UsersLogForm";
+//Importación de hooks
+import { AuthContext } from "../../context/AuthContext";
+//Importación de imágenes
+import logo from '../../assets/LogoUniversidadCooperativa.png';
 
-
+/**
+ * Componente para la página de inicio de sesión.
+ *
+ * Este componente maneja la autenticación de los usuarios y redirige a las rutas correspondientes
+ * según el rol del usuario (admin o profesor).
+ *
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa la página de inicio de sesión.
+ */
 const LoginPage = () => {
   const navigate = useNavigate();
 
   const { singin, user } = useContext(AuthContext);
 
+  // Efecto que redirige a los usuarios autenticados a sus respectivas rutas
   useEffect(() => {
     if (!user) return;
 
@@ -25,8 +37,11 @@ const LoginPage = () => {
     }
   }, [user, navigate]);
 
-  
-
+  /**
+   * Maneja el evento de envío del formulario de inicio de sesión.
+   *
+   * @param {Object} values - Los valores del formulario de inicio de sesión.
+   */
   const onSubmit = async (values) => {
     await singin(values);
   };

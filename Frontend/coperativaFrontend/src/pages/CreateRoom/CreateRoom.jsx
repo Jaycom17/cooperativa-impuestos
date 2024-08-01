@@ -1,9 +1,20 @@
+//Importación de componentes
 import TeacherNavbar from '../../components/TeacherNavBar/TeacherNavbar';
 import RoomForm from '../../components/RoomForm/RoomForm';
+import InfoBubble from '../../components/InfoBubble/InfoBubble';
+//Importación de hooks
 import { AuthContext } from '../../context/AuthContext';
 import { useContext } from 'react';
-import InfoBubble from '../../components/InfoBubble/InfoBubble';
 
+/**
+ * Componente para la creación de una sala.
+ *
+ * Este componente proporciona un formulario para que los profesores creen nuevas salas. 
+ * La sala se crea con estado inactivo por defecto y debe activarse posteriormente.
+ *
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa la página de creación de una sala.
+ */
 const CreateRoom = () =>{
 
   const {user} = useContext(AuthContext);

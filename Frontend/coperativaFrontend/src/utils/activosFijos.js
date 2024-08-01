@@ -1,4 +1,7 @@
-//Datos calculados automáticamente del json
+/**
+ * Campos del JSON que se calculan automáticamente
+ * @constant {string[]}
+ */
 export const ActivosFijosTotal = [
     "ImporteNeto.Costo",
     "ImporteNeto.Ajuste",
@@ -6,7 +9,10 @@ export const ActivosFijosTotal = [
     "TotalNeto", "ValorNeto"
 ];
 
-//Rutas o caminos del json
+/**
+ * Rutas dentro del JSON para acceder a diferentes valores contables y fiscales.
+ * @constant {string[]}
+ */
 export const paths = [
     "Contables.Comienzo.Costo",
     "Contables.Comienzo.Conversion",
@@ -41,7 +47,10 @@ export const paths = [
     "Fiscales.GastoFiscal",
 ];
 
-//Nombres más completos y amigables de las secciones
+/**
+ * Nombres descriptivos para las secciones del JSON.
+ * @constant {Object}
+ */
 export const friendlyNames = {
     Comienzo: "Importe al comienzo del período (No incluye Depreciación, amortización o deterioro)",
     Incrementos: "Incrementos",
@@ -66,9 +75,6 @@ export const friendlyNames = {
     ValorNeto: "Valor Neto al final del período (Calculado)",
     GastoFiscal: "Gasto fiscal Depreciación y/o Amortización del período",
     CambiosValorRazonable: "Cambios de valor razonable",
-};
-
-export const friendlyNamesPPE = {
     Terrenos: "Terrenos",
     Edificios: "Edificios",
     Maquinaria: "Maquinaria",
@@ -87,9 +93,6 @@ export const friendlyNamesPPE = {
     AnimalesProductores: "Animales productores",
     ConstruccionesProceso: "Construcciones en proceso",
     Otras: "Otras propiedades, plantas y equipo",
-};
-
-export const friendlyNamesAI = {
     MarcasComerciales: "Marcas comerciales",
     ActivosIntangiblesExploracionEvaluacion: "Activos intangibles de exploración y evaluación",
     CabecerasOeriodicosRevistasTitulosPublicaciones: "Cabeceras de periódicos, revistas, títulos de publicaciones",
@@ -103,10 +106,13 @@ export const friendlyNamesAI = {
     Plusvalia: "Plusvalía",
     MejorasDerechosArrendamiento: "Mejoras de derechos de arrendamiento",
     SubvencionesEstado: "Subvenciones del Estado",
-    Otros: "Otros activos intangibles",
+    Otros: "Otros activos intangibles"
 };
 
-//Llaves para diferenciar las secciones del json
+/**
+ * Llaves utilizadas para identificar secciones de valores totales contables en el JSON de Activos Fijos.
+ * @constant {string[]}
+ */
 export const contablesValorTotalKeys = [
     "Comienzo",
     "Incrementos",
@@ -119,12 +125,20 @@ export const contablesValorTotalKeys = [
     "IngresosPeriodoDetereorio",
 ];
 
+/**
+ * Llaves utilizadas para identificar secciones de datos informativos contables en el JSON de Activos Fijos.
+ * @constant {string[]}
+ */
 export const contablesDatosInformativosKeys = [
     "ValorActivosLeasing",
     "DesmantelamientoRestauracion",
     "ValorRevaluacion",
 ];
 
+/**
+ * Llaves utilizadas para identificar secciones de valores totales fiscales en el JSON de Activos Fijos.
+ * @constant {string[]}
+ */
 export const fiscalesValorTotalKeys = [
     "SaldoComienzo",
     "IncrementosTransferencias",
@@ -135,6 +149,10 @@ export const fiscalesValorTotalKeys = [
     "GastoFiscalPeriodo",
 ];
 
+/**
+ * Llaves utilizadas para identificar secciones de datos informativos fiscales en el JSON de Activos Fijos
+ * @constant {string[]}
+ */
 export const fiscalesDatosInformativosKeys = [
     "ValorTotal",
     "DepreacionFinal",
@@ -142,27 +160,63 @@ export const fiscalesDatosInformativosKeys = [
     "GastoFiscal",
 ];
 
-//Funciones de cálculo
+/**
+ * Calcula el costo del importe neto al final del período.
+ * 
+ * @param {Object} currentData - Datos del JSON que contienen los valores necesarios para el cálculo.
+ * @returns {number} - El costo del importe neto al final del período.
+ */
 export const calculateCostoImpNetoFinPeriodo = (currentData) => {
     return (currentData.Contables.Comienzo.Costo || 0) + (currentData.Contables.Comienzo.Conversion || 0) + (currentData.Contables.Incrementos.Transferencias || 0) - (currentData.Contables.Disminuciones.Transferencias || 0) - (currentData.Contables.Depreciacion.Costo || 0) - (currentData.Contables.Depreciacion.Conversion || 0) + (currentData.Contables.Deterioro || 0);
 }
 
+/**
+ * Calcula el ajuste del importe neto al final del período.
+ * 
+ * @param {Object} currentData - Datos del JSON que contienen los valores necesarios para el cálculo.
+ * @returns {number} - El ajuste del importe neto al final del período.
+ */
 export const calculateAjusteImpNetoFinPeriodo = (currentData) => {
     return (currentData.Contables.Comienzo.Ajuste || 0) + (currentData.Contables.Incrementos.CambiosValorRazonable || 0) - (currentData.Contables.Disminuciones.CambiosValorRazonable || 0) - (currentData.Contables.Depreciacion.Ajuste || 0)
 }
 
+/**
+ * Calcula el subtotal al final del período.
+ * 
+ * @param {Object} currentData - Datos del JSON que contienen los valores necesarios para el cálculo.
+ * @returns {number} - El subtotal al final del período.
+ */
 export const calculateSubTotalFinPeriodo = (currentData) => {
     return (currentData.Fiscales.SaldoComienzo || 0) + (currentData.Fiscales.IncrementosTransferencias || 0) - (currentData.Fiscales.DisminucionesTransferencias || 0)
 }
 
+/**
+ * Calcula el total neto al final del período.
+ * 
+ * @param {Object} currentData - Datos del JSON que contienen los valores necesarios para el cálculo.
+ * @returns {number} - El total neto al final del período.
+ */
 export const calculateTotalNetoFinPeriodo = (currentData) => {
     return (currentData.Fiscales.SubtotalFinalPeriodo || 0) - (currentData.Fiscales.Depreciacion || 0)
 }
 
+/**
+ * Calcula el valor neto al final del período.
+ * 
+ * @param {Object} currentData - Datos del JSON que contienen los valores necesarios para el cálculo.
+ * @returns {number} - El valor neto al final del período.
+ */
 export const calculateValorNetoFinPeriodo = (currentData) => {
     return (currentData.Fiscales.ValorTotal || 0) - (currentData.Fiscales.DepreacionFinal || 0)
 }
 
+/**
+ * Calcula el total de los valores de las rutas especificadas en los elementos.
+ * 
+ * @param {Object} target - El objeto donde se asignarán los totales calculados.
+ * @param {Object[]} elements - Los elementos que contienen los datos a sumar.
+ * @returns {Object} - Un objeto con los totales calculados para cada ruta.
+ */
 export const calcultateTotal = (target, elements) => {
     // Inicializamos el objeto "Total" dentro de la sección con cero
     const totals = {};

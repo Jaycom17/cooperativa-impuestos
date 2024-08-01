@@ -1,20 +1,36 @@
-import TeacherNavbar from "../../components/TeacherNavBar/TeacherNavbar";
+//Importación de librerías
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+//Importación de componentes
+import TeacherNavbar from "../../components/TeacherNavBar/TeacherNavbar";
+//Importación de servicios
 import { updatePassword } from "../../services/professor.service.js";
+//Importación de imágenes
+import logo from '../../assets/LogoUniversidadCooperativa.png';
+//Importación de iconos
 import { MdCreate } from "react-icons/md";
 import { FaCheckCircle } from "react-icons/fa";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 
-
-import logo from '../../assets/LogoUniversidadCooperativa.png'
-
+/**
+ * Componente ResetPasswordTeacher.
+ * 
+ * Este componente permite a los profesores cambiar su contraseña.
+ * 
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa el formulario de restablecimiento de contraseña para profesores.
+ */
 function ResetPasswordTeacher() {
   const [passwordMatch, setPasswordMatch] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword2, setShowPassword2] = useState(false);
   const [showPassword3, setShowPassword3] = useState(false);
 
+  /**
+   * Alterna la visibilidad de las contraseñas.
+   * 
+   * @param {number} field - El campo cuya visibilidad se desea alternar (1, 2, 3).
+   */
   const togglePasswordVisibility = (field) => {
     if(field === 1) {setShowPassword(!showPassword);}
     else if(field === 2){setShowPassword2(!showPassword2);}
@@ -28,7 +44,12 @@ function ResetPasswordTeacher() {
     formState: { errors },
   } = useForm();
 
-  const changaPassword = async (data) => {
+  /**
+   * Maneja el cambio de contraseña.
+   * 
+   * @param {Object} data - Los datos del formulario.
+   */
+  const changePassword = async (data) => {
     try {
       const res = await updatePassword(data);
       if (res.status === 200) {
@@ -43,6 +64,11 @@ function ResetPasswordTeacher() {
     }
   };
 
+  /**
+   * Maneja el envío del formulario.
+   * 
+   * @param {Object} data - Los datos del formulario.
+   */
   const onSubmit = async (data) => {
     if (data.usuPassword !== data.confirmPassword) {
       setPasswordMatch(false);
@@ -52,7 +78,7 @@ function ResetPasswordTeacher() {
       return;
     }
     
-    await changaPassword(data);
+    await changePassword(data);
   };
   return (
     <>

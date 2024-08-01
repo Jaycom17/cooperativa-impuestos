@@ -1,6 +1,13 @@
+//Importación de componentes
 import Navbar from "../../components/Navbar/Navbar";
 import ProfForm from "../../components/ProfForm/ProfForm";
 
+/**
+ * Componente para la creación de un profesor.
+ *
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa la página de creación de un profesor.
+ */
 function CreateProfessor() {
   return (
     <>

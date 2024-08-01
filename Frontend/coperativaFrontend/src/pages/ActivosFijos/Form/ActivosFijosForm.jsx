@@ -1,19 +1,27 @@
+//Importación de librerías
+import { useState } from "react";
+//Importación de componentes
 import AsideStudent from "../../../components/AsideStudent/AsideStudent";
 import ActivosFijosValues from "../../../components/ActivosFijosValues/ActivosFijosValues";
 import ActivosFijosTotals from "../../../components/ActivosFIjosTotals/ActivosFIjosTotal";
 import basicInformation from '../../../formsData/ActivosFijos.json';
 import Accordeon from "../../../components/Accordeon/Accordeon";
 import TabBar from "../../../components/TabBar/TabBar";
-import { useState } from "react";
-import { friendlyNamesPPE, 
-        friendlyNamesAI, 
-        calculateCostoImpNetoFinPeriodo, 
-        calculateAjusteImpNetoFinPeriodo,
-        calculateSubTotalFinPeriodo,
-        calculateTotalNetoFinPeriodo,
-        calculateValorNetoFinPeriodo,
-        calcultateTotal } from "../../../utils/activosFijos";
+//Importación de utilidades
+import { friendlyNames,
+         calculateCostoImpNetoFinPeriodo, 
+         calculateAjusteImpNetoFinPeriodo,
+         calculateSubTotalFinPeriodo,
+         calculateTotalNetoFinPeriodo,
+         calculateValorNetoFinPeriodo,
+         calcultateTotal } from "../../../utils/activosFijos";
 
+/**
+ * Componente principal para la gestión del formulario de Activos Fijos.
+ *
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa el formulario de Activos Fijos.
+ */
 const ActivosFijosForm = () =>{
   const [data, setData] = useState(basicInformation);
 
@@ -27,6 +35,12 @@ const ActivosFijosForm = () =>{
 
     const [activeTab, setActiveTab] = useState(tabs[0].name);
 
+    /**
+     * Maneja los cambios en los inputs del formulario.
+     *
+     * @param {Event} e - El evento de cambio del input.
+     * @param {string} path - La ruta dentro del objeto de datos donde se encuentra el valor.
+     */
     const handleChange = (e, path) => {
         let { name, value } = e.target;
         if (value === '') value = 0;
@@ -48,6 +62,7 @@ const ActivosFijosForm = () =>{
                 }
             }
 
+            // Cálculo los valores basados en las nuevas entradas
             const keys = Object.keys(newData);
 
             keys.forEach((key) => {
@@ -67,7 +82,7 @@ const ActivosFijosForm = () =>{
                     }
                 });
             });
-
+            // Cálculo los totales
             const PPE = newData.PropiedadesPlantasEquipos;
             const PI = newData.PropiedadesInversión;
             const ANCMV = newData.ANCMV.ANCMV;
@@ -138,9 +153,16 @@ const ActivosFijosForm = () =>{
             return newData;
         });
     };
-    console.log(data)
 
-    const renderSections = (sectionData, pathPrefix, excludeSection = "", friendlyNames = []) => {
+    /**
+     * Renderiza las secciones del formulario basado en los datos proporcionados.
+     *
+     * @param {Object} sectionData - Los datos de la sección a renderizar.
+     * @param {string} pathPrefix - El prefijo de la ruta para los datos.
+     * @param {string} excludeSection - Sección a excluir del renderizado.
+     * @returns {JSX.Element[]} Un array de elementos JSX que representan las secciones.
+     */
+    const renderSections = (sectionData, pathPrefix, excludeSection = "") => {
         return Object.keys(sectionData).map((sectionKey) => {
             if (sectionKey === excludeSection) return null;
 
@@ -164,10 +186,10 @@ const ActivosFijosForm = () =>{
             <AsideStudent/>
             <section className="w-full mt-12 md:mt-0 overflow-auto max-h-screen">
                 <TabBar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab}/>
-                {activeTab === 'PPE' && renderSections(data.PropiedadesPlantasEquipos, 'PropiedadesPlantasEquipos', 'Total', friendlyNamesPPE)}
+                {activeTab === 'PPE' && renderSections(data.PropiedadesPlantasEquipos, 'PropiedadesPlantasEquipos', 'Total')}
                 {activeTab === 'PI' && renderSections(data.PropiedadesInversión, 'PropiedadesInversión', 'Total')}
                 {activeTab === 'ANCMV' && ( <ActivosFijosValues title={"ANCMV"} path={'ANCMV.ANCMV'} data={data.ANCMV.ANCMV} handleChange={handleChange} /> )}
-                {activeTab === 'AI' && renderSections(data.ActivosIntangibles, 'ActivosIntangibles', 'Total', friendlyNamesAI)}
+                {activeTab === 'AI' && renderSections(data.ActivosIntangibles, 'ActivosIntangibles', 'Total')}
                 {activeTab === 'TOTALES' && (
                     <div>
                         <Accordeon title={"Total Propiedades, plantas y equipos"}>
