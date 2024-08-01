@@ -109,92 +109,6 @@ function RentaLiquidaForm() {
     }
   };
 
-  const calculateTotalIngresosNetosActividadIndustrialCoSer = (path, newData) => {
-    if (path[0] !== "Ingresos" || path[2] !== "IngresosNetosActividadIndustrialCoSer") return;
-  
-    // Clonar los ingresos para evitar modificar la referencia original
-    const ingresos = { ... newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer };
-  
-    let totalIngresos = {
-      ValorContable: 0,
-      EfectoConversion: 0,
-      MenorValorFiscal: 0,
-      MayorValorFiscal: 0,
-      ValorFiscal: 0,
-      Tarifa9: 0,
-      Tarifa15: 0,
-      Tarifa20: 0,
-      MegaInversiones: 0,
-      MegaInversiones27: 0,
-      TarifaGeneral240: 0,
-      Otras: 0,
-    };
-  
-    const keys = Object.keys(ingresos);
-  
-    keys.forEach((key) => {
-      if (key === "Total") return;
-      totalIngresos.ValorContable += ingresos[key].ValorContable || 0;
-      totalIngresos.EfectoConversion += ingresos[key].EfectoConversion || 0;
-      totalIngresos.MenorValorFiscal += ingresos[key].MenorValorFiscal || 0;
-      totalIngresos.MayorValorFiscal += ingresos[key].MayorValorFiscal || 0;
-      totalIngresos.ValorFiscal += ingresos[key].ValorFiscal || 0;
-      totalIngresos.Tarifa9 += ingresos[key].Tarifa9 || 0;
-      totalIngresos.Tarifa15 += ingresos[key].Tarifa15 || 0;
-      totalIngresos.Tarifa20 += ingresos[key].Tarifa20 || 0;
-      totalIngresos.MegaInversiones += ingresos[key].MegaInversiones || 0;
-      totalIngresos.MegaInversiones27 += ingresos[key].MegaInversiones27 || 0;
-      totalIngresos.TarifaGeneral240 += ingresos[key].TarifaGeneral240 || 0;
-      totalIngresos.Otras += ingresos[key].Otras || 0;
-    });
-  
-    // Asignar los valores calculados a newData
-    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total = { ...totalIngresos };
-  };
-
-  const calculateTotalDevolucionREbajasDescuento = (path, newData) => {
-    if (path[0] !== "Ingresos" || path[2] !== "DevolucionesRebajasDescuentos") return;
-  
-    // Clonar los ingresos para evitar modificar la referencia original
-    const devoluciones = { ... newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos };
-  
-    let totalIngresos = {
-      ValorContable: 0,
-      EfectoConversion: 0,
-      MenorValorFiscal: 0,
-      MayorValorFiscal: 0,
-      ValorFiscal: 0,
-      Tarifa9: 0,
-      Tarifa15: 0,
-      Tarifa20: 0,
-      MegaInversiones: 0,
-      MegaInversiones27: 0,
-      TarifaGeneral240: 0,
-      Otras: 0,
-    };
-  
-    const keys = Object.keys(devoluciones);
-  
-    keys.forEach((key) => {
-      if (key === "Total") return;
-      totalIngresos.ValorContable += devoluciones[key].ValorContable || 0;
-      totalIngresos.EfectoConversion += devoluciones[key].EfectoConversion || 0;
-      totalIngresos.MenorValorFiscal += devoluciones[key].MenorValorFiscal || 0;
-      totalIngresos.MayorValorFiscal += devoluciones[key].MayorValorFiscal || 0;
-      totalIngresos.ValorFiscal += devoluciones[key].ValorFiscal || 0;
-      totalIngresos.Tarifa9 += devoluciones[key].Tarifa9 || 0;
-      totalIngresos.Tarifa15 += devoluciones[key].Tarifa15 || 0;
-      totalIngresos.Tarifa20 += devoluciones[key].Tarifa20 || 0;
-      totalIngresos.MegaInversiones += devoluciones[key].MegaInversiones || 0;
-      totalIngresos.MegaInversiones27 += devoluciones[key].MegaInversiones27 || 0;
-      totalIngresos.TarifaGeneral240 += devoluciones[key].TarifaGeneral240 || 0;
-      totalIngresos.Otras += devoluciones[key].Otras || 0;
-    });
-  
-    // Asignar los valores calculados a newData
-    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total = { ...totalIngresos };
-  };
-
   const calculateTotalIngresosNetosAct = (path, newData) => {
     if (path[0] !== "Ingresos" || path[1] !== "IngresosNetosActividadIndustrialCoSer") return;
 
@@ -223,10 +137,94 @@ function RentaLiquidaForm() {
     newData.Ingresos.IngresosNetosActividadIndustrialCoSer.Total.Otras = newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total.Otras - newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total.Otras;
   };
 
-  const calculateTotalSection = (path, newData, condition) => {
-    if (path[0] !== condition[0] || path[1] !== condition[1]) return;
+  const calcuateSubSection = (total, section) => {
+    total.ValorContable += section.ValorContable || 0;
+    total.EfectoConversion += section.EfectoConversion || 0;
+    total.MenorValorFiscal += section.MenorValorFiscal || 0;
+    total.MayorValorFiscal += section.MayorValorFiscal || 0;
+    total.ValorFiscal += section.ValorFiscal || 0;
+    total.Tarifa9 += section.Tarifa9 || 0;
+    total.Tarifa15 += section.Tarifa15 || 0;
+    total.Tarifa20 += section.Tarifa20 || 0;
+    total.MegaInversiones += section.MegaInversiones || 0;
+    total.MegaInversiones27 += section.MegaInversiones27 || 0;
+    total.TarifaGeneral240 += section.TarifaGeneral240 || 0;
+    total.Otras += section.Otras || 0;
+  }
 
-    const section = { ... newData[condition[0]][condition[1]] };
+  const calculateTotalSectionGeneric = (path, newData, condition, level) => {
+    for (let i = 0; i < condition.length; i++) {
+      if (path[i] !== condition[i])
+        return;
+    }
+
+
+    const section = moveIntoJson(path, {... newData}, level);
+
+    let total = {
+      ValorContable: 0,
+      EfectoConversion: 0,
+      MenorValorFiscal: 0,
+      MayorValorFiscal: 0,
+      ValorFiscal: 0,
+      Tarifa9: 0,
+      Tarifa15: 0,
+      Tarifa20: 0,
+      MegaInversiones: 0,
+      MegaInversiones27: 0,
+      TarifaGeneral240: 0,
+      Otras: 0,
+    };
+
+    const keys = Object.keys(section);
+
+    keys.forEach((key) => {
+      if (key === "Total") return;
+
+      if (typeof section[key].ValorContable !== "number" && typeof section[key].ValorFiscal !== "number"){
+        Object.keys(section[key]).forEach((subKey) => {
+          calcuateSubSection(total, section[key][subKey]);
+        });
+        return;
+      }
+
+      total.ValorContable += section[key].ValorContable || 0;
+      total.EfectoConversion += section[key].EfectoConversion || 0;
+      total.MenorValorFiscal += section[key].MenorValorFiscal || 0;
+      total.MayorValorFiscal += section[key].MayorValorFiscal || 0;
+      total.ValorFiscal += section[key].ValorFiscal || 0;
+      total.Tarifa9 += section[key].Tarifa9 || 0;
+      total.Tarifa15 += section[key].Tarifa15 || 0;
+      total.Tarifa20 += section[key].Tarifa20 || 0;
+      total.MegaInversiones += section[key].MegaInversiones || 0;
+      total.MegaInversiones27 += section[key].MegaInversiones27 || 0;
+      total.TarifaGeneral240 += section[key].TarifaGeneral240 || 0;
+      total.Otras += section[key].Otras || 0;
+    });
+
+    // Asignar los valores calculados a newData
+    //newData[condition[0]][condition[1]].Total = { ...total };
+    return total;
+  }
+
+  const moveIntoJson = (path, newData, level) => {
+    if (level === 0) {
+      return {... newData};
+    }
+
+    const aux = path.shift();
+
+    level--;
+
+    return moveIntoJson(path, newData[aux], level);
+  };
+
+  /**
+   * 
+   * @returns const calculateTotalSection3levels = (path, newData, condition) => {
+    if (path[0] !== condition[0] || path[1] !== condition[1] || path[2] !== condition[2] || path[3] !== condition[3]) return;
+
+    const section = { ... newData[condition[0]][condition[1]][condition[2]][condition[3]] };
 
     let total = {
       ValorContable: 0,
@@ -262,9 +260,10 @@ function RentaLiquidaForm() {
     });
   
     // Asignar los valores calculados a newData
-    newData[condition[0]][condition[1]].Total = { ...total };
-  }
+    newData[condition[0]][condition[1]][condition[2]][condition[3]].Total = { ...total };
+  };
 
+   */
   const createOtrosSection = () => {
     const keys = Object.keys(data);
     const excludedSections = tabs.map((tab) => tab.name);
@@ -305,19 +304,75 @@ function RentaLiquidaForm() {
     }
 
     calculateValorFiscal(pathArray);
-    calculateTotalDevolucionREbajasDescuento(pathArray, newData);
-    calculateTotalIngresosNetosActividadIndustrialCoSer(pathArray, newData);
+
+    // Ingresos
+    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total = calculateTotalSectionGeneric([...pathArray], { ...newData}, ["Ingresos", "IngresosNetosActividadIndustrialCoSer", "IngresosNetosActividadIndustrialCoSer"], 3) || newData.Ingresos.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer.Total;
+
+    newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Ingresos", "IngresosNetosActividadIndustrialCoSer", "DevolucionesRebajasDescuentos"], 3) || newData.Ingresos.IngresosNetosActividadIndustrialCoSer.DevolucionesRebajasDescuentos.Total;
+
     calculateTotalIngresosNetosAct(pathArray, newData);
-    calculateTotalSection(pathArray, newData, ["Ingresos", "IngresosFinancieros"]);
-    calculateTotalSection(pathArray, newData, ["Ingresos", "GananciasInversionesSubsidiariasAsociadasNegocios"]);
-    calculateTotalSection(pathArray, newData, ["Ingresos", "IngresosPorMedicionesValorRazonable"]);
-    calculateTotalSection(pathArray, newData, ["Ingresos", "UtilidadVentaEnajenacionActivosMenos2Anos"]);
-    calculateTotalSection(pathArray, newData, ["Ingresos", "UtilidadVentaEnajenacionActivosMas2Anos"]);
-    calculateTotalSection(pathArray, newData, ["Ingresos", "IngresosReversionDeterioroValor"]);
-    calculateTotalSection(pathArray, newData, ["Ingresos", "IngresosReversionProvisiones"]);
-    calculateTotalSection(pathArray, newData, ["Ingresos", "IngresosReversionPasivosBeneficiosEmpleados"]);
-    calculateTotalSection(pathArray, newData, ["Ingresos", "OtrosIngresos"]);
-    calculateTotalSection(pathArray, newData, ["Costos", "CostosVentas"]);
+
+    newData.Ingresos.IngresosFinancieros.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Ingresos", "IngresosFinancieros"], 2) || newData.Ingresos.IngresosFinancieros.Total;
+
+    newData.Ingresos.GananciasInversionesSubsidiariasAsociadasNegocios.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Ingresos", "GananciasInversionesSubsidiariasAsociadasNegocios"], 2) || newData.Ingresos.GananciasInversionesSubsidiariasAsociadasNegocios.Total;
+
+    newData.Ingresos.IngresosPorMedicionesValorRazonable.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Ingresos", "IngresosPorMedicionesValorRazonable"], 2) || newData.Ingresos.IngresosPorMedicionesValorRazonable.Total;
+
+    newData.Ingresos.UtilidadVentaEnajenacionActivosMenos2Anos.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Ingresos", "UtilidadVentaEnajenacionActivosMenos2Anos"], 2) || newData.Ingresos.UtilidadVentaEnajenacionActivosMenos2Anos.Total;
+
+    newData.Ingresos.UtilidadVentaEnajenacionActivosMas2Anos.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Ingresos", "UtilidadVentaEnajenacionActivosMas2Anos"], 2) || newData.Ingresos.UtilidadVentaEnajenacionActivosMas2Anos.Total;
+
+    newData.Ingresos.IngresosReversionDeterioroValor.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Ingresos", "IngresosReversionDeterioroValor"], 2) || newData.Ingresos.IngresosReversionDeterioroValor.Total;
+
+    newData.Ingresos.IngresosReversionProvisiones.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Ingresos", "IngresosReversionProvisiones"], 2) || newData.Ingresos.IngresosReversionProvisiones.Total;
+
+    newData.Ingresos.IngresosReversionPasivosBeneficiosEmpleados.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Ingresos", "IngresosReversionPasivosBeneficiosEmpleados"], 2) || newData.Ingresos.IngresosReversionPasivosBeneficiosEmpleados.Total;
+
+    newData.Ingresos.OtrosIngresos.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Ingresos", "OtrosIngresos"], 2) || newData.Ingresos.OtrosIngresos.Total;
+
+    newData.Ingresos.AjustesFiscales.AdicionIngresos.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Ingresos", "AjustesFiscales", "AdicionIngresos"], 3) || newData.Ingresos.AjustesFiscales.AdicionIngresos.Total;
+
+    /**
+     * TODO: crear funcion para calcular el total de AjustesFiscales
+     */
+
+    // Costos
+    newData.Costos.MateriasPrimasReventaBienes.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Costos", "MateriasPrimasReventaBienes"], 2) || newData.Costos.MateriasPrimasReventaBienes.Total;
+
+    newData.Costos.ManoObra.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Costos", "ManoObra"], 2) || newData.Costos.ManoObra.Total;
+
+    newData.Costos.DepresionacionesAmortizacionesDeterioros.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Costos", "DepresionacionesAmortizacionesDeterioros"], 2) || newData.Costos.DepresionacionesAmortizacionesDeterioros.Total;
+
+    newData.Costos.OtrosCostos.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Costos", "OtrosCostos"], 2) || newData.Costos.OtrosCostos.Total;
+
+
+    // Gastos
+
+    newData.Gastos.Administracion.ManoObra.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Gastos", "Administracion", "ManoObra"], 3) || newData.Gastos.Administracion.ManoObra.Total;
+
+    newData.Gastos.Administracion.OtrosGastosAdministracion.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Gastos", "Administracion", "OtrosGastosAdministracion"], 3) || newData.Gastos.Administracion.OtrosGastosAdministracion.Total;
+
+    newData.Gastos.Administracion.DepreciacionesAmortizacionesDeterioros.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Gastos", "Administracion", "DepreciacionesAmortizacionesDeterioros"], 3) || newData.Gastos.Administracion.DepreciacionesAmortizacionesDeterioros.Total;
+
+    newData.Gastos.GastosDistribucionVentas.ManoObra.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Gastos", "GastosDistribucionVentas", "ManoObra"], 3) || newData.Gastos.GastosDistribucionVentas.ManoObra.Total;
+
+    newData.Gastos.GastosDistribucionVentas.OtrosGastosAdministracion.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Gastos", "GastosDistribucionVentas", "OtrosGastosAdministracion"], 3) || newData.Gastos.GastosDistribucionVentas.OtrosGastosAdministracion.Total;
+
+    newData.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Gastos", "GastosDistribucionVentas", "DepreciacionesAmortizacionesDeterioros"], 3) || newData.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.Total;
+
+    newData.Gastos.GastosFinancieros.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Gastos", "GastosFinancieros"], 2) || newData.Gastos.GastosFinancieros.Total;
+
+    /**
+     * TODO: calcular el de perdidas por inversion
+     */
+
+    newData.Gastos.PerdidasPorMedicionesValorRazonable.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Gastos", "PerdidasPorMedicionesValorRazonable"], 2) || newData.Gastos.PerdidasPorMedicionesValorRazonable.Total;
+
+    newData.Gastos.PerdidaVentaEnajenacionActivosFijos.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Gastos", "PerdidaVentaEnajenacionActivosFijos"], 2) || newData.Gastos.PerdidaVentaEnajenacionActivosFijos.Total;
+
+    newData.Gastos.GastosPorProviciones.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Gastos", "GastosPorProviciones"], 2) || newData.Gastos.GastosPorProviciones.Total;
+
+    newData.Gastos.OtrosGastos.Total = calculateTotalSectionGeneric([...pathArray], {... newData}, ["Gastos", "OtrosGastos"], 2) || newData.Gastos.OtrosGastos.Total;
 
     setData(newData);
   };
