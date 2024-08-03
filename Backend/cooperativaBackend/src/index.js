@@ -14,6 +14,7 @@ import cors from 'cors';
 
 import esfRouter from './routes/esfPatrimonio.routes.js';
 import ImpDifRouter from './routes/impuestoDiferido.routes.js';
+import rentaLiquidaRouter from './routes/rentaLiquida.routes.js';
 
 const app = express();
 
@@ -37,6 +38,7 @@ app.use('/room', roomRouter);
 app.use('/report', reportRouter);
 app.use('/esfPatrimonio', esfRouter);
 app.use('/impuestoDiferido', ImpDifRouter);
+app.use('/rentaLiquida', rentaLiquidaRouter);
 
 app.listen(3000, () => {
     console.log('Server started on http://localhost:3000');
