@@ -1,447 +1,447 @@
 {
-    "ImpuestosDiferidosDiferenciasTemporarias": {
-      "ActivoDiferido": {
-        "EfectivoYEfectivoEquivalente": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "InversionesEInstrumentosDerivados": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "CuentasPorCobrar": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "Inventarios": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "PropiedadesPlantaYEquipo": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "ActivosIntangibles": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "PropiedadesDeInversion": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "ActivosBiologicos": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "EntregarAPropietarios": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "PasivosFinancierosYCuentasPorPagar": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "ImpuestosGravamenesYTasas": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "BeneficiosAEmpleados": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "Provisiones": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "OtrosPasivosAnticiposYAvancesRecibidos": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "OperacionesConTitulosYDerivados": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "PerdidasFiscalesYExcesosDeRentaPresuntiva": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "Fiscales": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "OtrosActivos": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "Total": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        }
+  "ImpuestosDiferidosDiferenciasTemporarias": {
+    "ActivoDiferido": {
+      "EfectivoYEfectivoEquivalente": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
       },
-      "PasivoDiferido": {
-        "EfectivoYEfectivoEquivalente": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "InversionesEInstrumentosDerivados": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "CuentasPorCobrar": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "Inventarios": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "PropiedadesPlantaYEquipo": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "ActivosIntangibles": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "PropiedadesDeInversion": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "ActivosBiologicos": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "EntregarAPropietarios": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "PasivosFinancierosYCuentasPorPagar": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "ImpuestosGravamenesYTasas": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "BeneficiosAEmpleados": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "Provisiones": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "OtrosPasivosAnticiposYAvancesRecibidos": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "OperacionesConTitulosYDerivados": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "PerdidasFiscalesYExcesosDeRentaPresuntiva": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "Fiscales": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "OtrosActivos": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        },
-        "Total": {
-          "BaseContable": 0,
-          "BaseFiscal": 0,
-          "DiferenciaTemporaria": 0,
-          "DiferenciaPermanente": 0,
-          "SaldoImpuestoDiferidoActual": 0,
-          "SaldoImpuestoDiferidoAnterior": 0,
-          "Variacion": 0,
-          "TasaFiscalAplicada": 0
-        }
+      "InversionesEInstrumentosDerivados": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "CuentasPorCobrar": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "Inventarios": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "PropiedadesPlantaYEquipo": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "ActivosIntangibles": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "PropiedadesDeInversion": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "ActivosBiologicos": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "EntregarAPropietarios": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "PasivosFinancierosYCuentasPorPagar": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "ImpuestosGravamenesYTasas": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "BeneficiosAEmpleados": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "Provisiones": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "OtrosPasivosAnticiposYAvancesRecibidos": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "OperacionesConTitulosYDerivados": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "PerdidasFiscalesYExcesosDeRentaPresuntiva": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "Fiscales": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "OtrosActivos": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "Total": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
       }
     },
-    "ActivosCreditosTributos": {
-      "SaldosFavor": {
-        "Saldo31VigenciaActual": 0,
-        "Saldo31VigenciaAnterior": 0,
+    "PasivoDiferido": {
+      "EfectivoYEfectivoEquivalente": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
         "Variacion": 0,
-        "ReduccionCompensacion": 0,
-        "CorreccionMayorValor": 0,
-        "CorreccionMenorValor": 0,
-        "AjusteMayorValor": 0,
-        "AjusteMenorValor": 0
+        "TasaFiscalAplicada": 0
       },
-      "ImpuestosPagadosExterior": {
-        "Saldo31VigenciaActual": 0,
-        "Saldo31VigenciaAnterior": 0,
+      "InversionesEInstrumentosDerivados": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
         "Variacion": 0,
-        "ReduccionCompensacion": 0,
-        "CorreccionMayorValor": 0,
-        "CorreccionMenorValor": 0,
-        "AjusteMayorValor": 0,
-        "AjusteMenorValor": 0
+        "TasaFiscalAplicada": 0
+      },
+      "CuentasPorCobrar": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "Inventarios": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "PropiedadesPlantaYEquipo": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "ActivosIntangibles": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "PropiedadesDeInversion": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "ActivosBiologicos": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "EntregarAPropietarios": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "PasivosFinancierosYCuentasPorPagar": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "ImpuestosGravamenesYTasas": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "BeneficiosAEmpleados": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "Provisiones": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "OtrosPasivosAnticiposYAvancesRecibidos": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "OperacionesConTitulosYDerivados": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "PerdidasFiscalesYExcesosDeRentaPresuntiva": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "Fiscales": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "OtrosActivos": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
+      },
+      "Total": {
+        "BaseContable": 0,
+        "BaseFiscal": 0,
+        "DiferenciaTemporaria": 0,
+        "DiferenciaPermanente": 0,
+        "SaldoImpuestoDiferidoActual": 0,
+        "SaldoImpuestoDiferidoAnterior": 0,
+        "Variacion": 0,
+        "TasaFiscalAplicada": 0
       }
+    }
+  },
+  "ActivosCreditosTributos": {
+    "SaldosFavor": {
+      "Saldo31VigenciaActual": 0,
+      "Saldo31VigenciaAnterior": 0,
+      "Variacion": 0,
+      "ReduccionCompensacion": 0,
+      "CorreccionMayorValor": 0,
+      "CorreccionMenorValor": 0,
+      "AjusteMayorValor": 0,
+      "AjusteMenorValor": 0
     },
-    "DetalleCompensacionPerdidasFiscales": [
-      {
-        "Anio": 0,
-        "PerdidasFiscalesAcumuladasCompensarInicio": 0,
-        "PerdidaFiscalGeneradaPeriodo": 0,
-        "PerdidaFiscalCompensadaPeriodo": 0,
-        "ValoresNoCompesados": 0,
-        "AjustesMayorValor": 0,
-        "AjustesMenorValor": 0,
-        "PerdidaFiscalAcumuladaCompensarFinal": 0,
-        "SaldoActivoImpuestoDiferido": 0
-      },
-      {
-        "Anio": 0,
-        "PerdidasFiscalesAcumuladasCompensarInicio": 0,
-        "PerdidaFiscalGeneradaPeriodo": 0,
-        "PerdidaFiscalCompensadaPeriodo": 0,
-        "ValoresNoCompesados": 0,
-        "AjustesMayorValor": 0,
-        "AjustesMenorValor": 0,
-        "PerdidaFiscalAcumuladaCompensarFinal": 0,
-        "SaldoActivoImpuestoDiferido": 0
-      }
-    ],
-    "DetalleCompensacionExcesoRentaPresuntiva": [
-      {
-        "Anio": 0,
-        "ValorAcumuladoCompensarInicioPeriodo": 0,
-        "ValorGeneradoPeriodo": 0,
-        "ValorCompensadoPeriodo": 0,
-        "ValoresNoCompensados": 0,
-        "AjustesMayorValor": 0,
-        "AjustesMenorValor": 0,
-        "ValorAcumuladoCompensarFinalPerido": 0,
-        "SaldoActivoImpuestoDiferidoFinal": 0
-      }
-    ]
-  }
+    "ImpuestosPagadosExterior": {
+      "Saldo31VigenciaActual": 0,
+      "Saldo31VigenciaAnterior": 0,
+      "Variacion": 0,
+      "ReduccionCompensacion": 0,
+      "CorreccionMayorValor": 0,
+      "CorreccionMenorValor": 0,
+      "AjusteMayorValor": 0,
+      "AjusteMenorValor": 0
+    }
+  },
+  "DetalleCompensacionPerdidasFiscales": [
+    {
+      "Anio": 0,
+      "PerdidasFiscalesAcumuladasCompensarInicio": 0,
+      "PerdidaFiscalGeneradaPeriodo": 0,
+      "PerdidaFiscalCompensadaPeriodo": 0,
+      "ValoresNoCompesados": 0,
+      "AjustesMayorValor": 0,
+      "AjustesMenorValor": 0,
+      "PerdidaFiscalAcumuladaCompensarFinal": 0,
+      "SaldoActivoImpuestoDiferido": 0
+    },
+    {
+      "Anio": 0,
+      "PerdidasFiscalesAcumuladasCompensarInicio": 0,
+      "PerdidaFiscalGeneradaPeriodo": 0,
+      "PerdidaFiscalCompensadaPeriodo": 0,
+      "ValoresNoCompesados": 0,
+      "AjustesMayorValor": 0,
+      "AjustesMenorValor": 0,
+      "PerdidaFiscalAcumuladaCompensarFinal": 0,
+      "SaldoActivoImpuestoDiferido": 0
+    }
+  ],
+  "DetalleCompensacionExcesoRentaPresuntiva": [
+    {
+      "Anio": 0,
+      "ValorAcumuladoCompensarInicioPeriodo": 0,
+      "ValorGeneradoPeriodo": 0,
+      "ValorCompensadoPeriodo": 0,
+      "ValoresNoCompensados": 0,
+      "AjustesMayorValor": 0,
+      "AjustesMenorValor": 0,
+      "ValorAcumuladoCompensarFinalPerido": 0,
+      "SaldoActivoImpuestoDiferidoFinal": 0
+    }
+  ]
+}

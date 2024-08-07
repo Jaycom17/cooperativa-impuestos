@@ -2,7 +2,10 @@ import AsideStudent from "../../../components/AsideStudent/AsideStudent";
 import TabBar from "../../../components/TabBar/TabBar";
 import Accordeon from "../../../components/Accordeon/Accordeon";
 import ImpuestoDiferidoValues from "../../../components/ImpuestoDiferidoValues/ImpuestoDiferidoValues";
-import { getImpuestoDiferido, updateImpuestoDiferido } from "../../../services/impuestoDiferido.service";
+import {
+  getImpuestoDiferido,
+  updateImpuestoDiferido,
+} from "../../../services/impuestoDiferido.service";
 import {
   addDetalleCompensacionExcesoRentaPresuntiva,
   addDetalleCompensacionPerdidasFiscales,
@@ -29,12 +32,12 @@ function ImpuestoDiferidoForm() {
     },
   ];
 
-  const [data, setData] = useState({ 
+  const [data, setData] = useState({
     ImpuestosDiferidosDiferenciasTemporarias: {},
     ActivosCreditosTributos: {},
     DetalleCompensacionPerdidasFiscales: {},
     DetalleCompensacionExcesoRentaPresuntiva: {},
-   });
+  });
   const [activeTab, setActiveTab] = useState(tabs[0].name);
 
   useEffect(() => {
@@ -45,20 +48,50 @@ function ImpuestoDiferidoForm() {
     });
   }, []);
 
+  const calculateHori = (path) => {
+    if (path[0] !== "ImpuestosDiferidosDiferenciasTemporarias") {
+      return;
+    }
+
+    let newData = { ...data };
+    let temp = newData;
+
+    let auxData = newData[path[0]];
+
+    for (let i = 1; i < path.length - 1; i++) {
+      auxData = auxData[path[i]];
+    }
+
+    let calculatedVariacion = auxData.SaldoImpuestoDiferidoAnterior - auxData.SaldoImpuestoDiferidoActual;
+    let calculatedDiferenciaTemporaria = (auxData.BaseContable - auxData.BaseFiscal) * (-1);
+    let calculatedTarifaFiscalAplicada = calculatedDiferenciaTemporaria > 0 ? ((auxData.SaldoImpuestoDiferidoActual/calculatedDiferenciaTemporaria)*100): 0;  
+
+    for (let i = 0; i < path.length - 1; i++) {
+      if (!temp[path[i]]) {
+        temp[path[i]] = {}; // Crear objeto si no existe
+      }
+      temp = temp[path[i]]; // Mover al siguiente nivel del objeto
+    }
+
+    temp.Variacion = calculatedVariacion;
+    temp.DiferenciaTemporaria = calculatedDiferenciaTemporaria;
+    temp.TasaFiscalAplicada = calculatedTarifaFiscalAplicada;
+  };
+
   const handleAdd = (path) => {
     console.log(path);
     if (path === "DetalleCompensacionPerdidasFiscales") {
       let newData = { ...data };
-      newData.DetalleCompensacionPerdidasFiscales.push(
-        {...addDetalleCompensacionPerdidasFiscales}
-      );
+      newData.DetalleCompensacionPerdidasFiscales.push({
+        ...addDetalleCompensacionPerdidasFiscales,
+      });
 
       setData(newData);
     } else if (path === "DetalleCompensacionExcesoRentaPresuntiva") {
       let newData = { ...data };
-      newData.DetalleCompensacionExcesoRentaPresuntiva.push(
-       {...addDetalleCompensacionExcesoRentaPresuntiva}
-      );
+      newData.DetalleCompensacionExcesoRentaPresuntiva.push({
+        ...addDetalleCompensacionExcesoRentaPresuntiva,
+      });
 
       setData(newData);
     }
@@ -95,6 +128,8 @@ function ImpuestoDiferidoForm() {
         temp = temp[pathArray[i]];
       }
     }
+
+    calculateHori(pathArray);
 
     updateImpuestoDiferido(newData);
 

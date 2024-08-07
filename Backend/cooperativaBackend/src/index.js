@@ -38,7 +38,7 @@ app.use('/room', roomRouter);
 app.use('/report', reportRouter);
 app.use('/esfPatrimonio', esfRouter);
 app.use('/impuestoDiferido', ImpDifRouter);
-app.use('/rentaLiquida', rentaLiquidaRouter);
+app.use('/rentaliquida', rentaLiquidaRouter);
 
 app.listen(3000, () => {
     console.log('Server started on http://localhost:3000');

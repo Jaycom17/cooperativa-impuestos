@@ -22,7 +22,17 @@ export const getRentaLiquitaDetalle = async (renLiq, student) => {
         return { message: 'Formulario no encontrado' };
     }
 
-    const content = JSON.parse(detReg.detContent);
+    const content = detReg.detContent;
+
+    let rentKeys = Object.keys(renLiq.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer);
+
+    Object.keys(content.R47.VentBien).forEach((key, index) => {
+      renLiq.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer[rentKeys[index]].ValorContable = content.R47.VentBien[key].SaldCont;
+    });
+
+    Object.keys(content.R47.VentBien).forEach((key, index) => {
+      renLiq.IngresosNetosActividadIndustrialCoSer.IngresosNetosActividadIndustrialCoSer[rentKeys[index]].ValorContable = content.R47.VentBien[key].SaldCont;
+    });
 
     console.log(content, renLiq)
 
