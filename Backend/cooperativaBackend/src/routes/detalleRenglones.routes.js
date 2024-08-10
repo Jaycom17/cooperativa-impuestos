@@ -6,10 +6,10 @@ const detalleRenglonesRouter = Router();
 
 detalleRenglonesRouter.get("/", getDetalleRenglones);
 
-detalleRenglonesRouter.get("/:detID", getDetalleRenglonesById);
+detalleRenglonesRouter.get("/student", getDetalleRenglonesById);
 
 detalleRenglonesRouter.post("/", validateDetalleRenglones, postDetalleRenglones);
 
-detalleRenglonesRouter.put("/:detID", validateDetalleRenglones, putDetalleRenglones);
+detalleRenglonesRouter.put("/student", validateDetalleRenglones, putDetalleRenglones);
 
 export default detalleRenglonesRouter;
