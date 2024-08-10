@@ -12,6 +12,10 @@ import { GrSubtractCircle, GrAddCircle  } from "react-icons/gr";
  * @param {Object} props Las propiedades del componente.
  * @param {string} props.title El título del acordeón.
  * @param {React.ReactNode} props.children Contenido del acordeón.
+ * @param {string} props.arrayIndex Índice del acordeón en un arreglo.
+ * @param {Function} props.onAdd Función para agregar un elemento.
+ * @param {Function} props.onQuit Función para quitar un elemento.
+ * @param {string} props.path Ruta del elemento.
  * @returns {JSX.Element} Elemento JSX que representa el acordeón.
  */
 const Accordeon = ({title, children, arrayIndex, onAdd, onQuit, path}) =>{

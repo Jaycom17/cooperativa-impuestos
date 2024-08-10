@@ -2017,7 +2017,20 @@
           "Otras": 0
         }
       },
-      "DepreciacionDerechosUsoArrendamientos": {},
+      "DepreciacionDerechosUsoArrendamientos": {
+        "ValorContable": 0,
+          "EfectoConversion": 0,
+          "MenorValorFiscal": 0,
+          "MayorValorFiscal": 0,
+          "ValorFiscal": 0,
+          "Tarifa9": 0,
+          "Tarifa15": 0,
+          "Tarifa20": 0,
+          "MegaInversiones": 0,
+          "MegaInversiones27": 0,
+          "TarifaGeneral240": 0,
+          "Otras": 0
+      },
       "OtrasDepreciacionesAmortizaciones": {
         "Costo": {
           "ValorContable": 0,
@@ -2218,7 +2231,20 @@
           "Otras": 0
         }
       },
-      "Total": {}
+      "Total": {
+        "ValorContable": 0,
+        "EfectoConversion": 0,
+        "MenorValorFiscal": 0,
+        "MayorValorFiscal": 0,
+        "ValorFiscal": 0,
+        "Tarifa9": 0,
+        "Tarifa15": 0,
+        "Tarifa20": 0,
+        "MegaInversiones": 0,
+        "MegaInversiones27": 0,
+        "TarifaGeneral240": 0,
+        "Otras": 0
+      }
     },
     "OtrosCostos": {
       "Arrendamientos": {
@@ -2868,7 +2894,20 @@
             "Otras": 0
           }
         },
-        "DepreciacionArrendamientosOperativos": {},
+        "DepreciacionArrendamientosOperativos": {
+          "ValorContable": 0,
+          "EfectoConversion": 0,
+          "MenorValorFiscal": 0,
+          "MayorValorFiscal": 0,
+          "ValorFiscal": 0,
+          "Tarifa9": 0,
+          "Tarifa15": 0,
+          "Tarifa20": 0,
+          "MegaInversiones": 0,
+          "MegaInversiones27": 0,
+          "TarifaGeneral240": 0,
+          "Otras": 0
+        },
         "OtrasDepreciaciones": {
           "Costo": {
             "ValorContable": 0,
@@ -3246,7 +3285,7 @@
           "Otras": 0
         }
       },
-      "OtrosGastosAdministracion": {
+      "OtrosGastosDistribucionVentas": {
         "ImpuestosDistintosAlImpuestosDeRentaYComplementarios": {
           "ValorContable": 0,
           "EfectoConversion": 0,
@@ -3506,6 +3545,48 @@
           "Otras": 0
         },
         "Transporte": {
+          "ValorContable": 0,
+          "EfectoConversion": 0,
+          "MenorValorFiscal": 0,
+          "MayorValorFiscal": 0,
+          "ValorFiscal": 0,
+          "Tarifa9": 0,
+          "Tarifa15": 0,
+          "Tarifa20": 0,
+          "MegaInversiones": 0,
+          "MegaInversiones27": 0,
+          "TarifaGeneral240": 0,
+          "Otras": 0
+        },
+        "ConstitucionDeReservas": {
+          "ValorContable": 0,
+          "EfectoConversion": 0,
+          "MenorValorFiscal": 0,
+          "MayorValorFiscal": 0,
+          "ValorFiscal": 0,
+          "Tarifa9": 0,
+          "Tarifa15": 0,
+          "Tarifa20": 0,
+          "MegaInversiones": 0,
+          "MegaInversiones27": 0,
+          "TarifaGeneral240": 0,
+          "Otras": 0
+        },
+        "LiquidacionSiniestros": {
+          "ValorContable": 0,
+          "EfectoConversion": 0,
+          "MenorValorFiscal": 0,
+          "MayorValorFiscal": 0,
+          "ValorFiscal": 0,
+          "Tarifa9": 0,
+          "Tarifa15": 0,
+          "Tarifa20": 0,
+          "MegaInversiones": 0,
+          "MegaInversiones27": 0,
+          "TarifaGeneral240": 0,
+          "Otras": 0
+        },
+        "PrimasReaseguros": {
           "ValorContable": 0,
           "EfectoConversion": 0,
           "MenorValorFiscal": 0,
@@ -4498,8 +4579,34 @@
         "TarifaGeneral240": 0,
         "Otras": 0
       },
-      "DeduccionesFiscalesNoReconocidas": {},
-      "Total": {}
+      "DeduccionesFiscalesNoReconocidas": {
+        "ValorContable": 0,
+        "EfectoConversion": 0,
+        "MenorValorFiscal": 0,
+        "MayorValorFiscal": 0,
+        "ValorFiscal": 0,
+        "Tarifa9": 0,
+        "Tarifa15": 0,
+        "Tarifa20": 0,
+        "MegaInversiones": 0,
+        "MegaInversiones27": 0,
+        "TarifaGeneral240": 0,
+        "Otras": 0
+      },
+      "Total": {
+        "ValorContable": 0,
+        "EfectoConversion": 0,
+        "MenorValorFiscal": 0,
+        "MayorValorFiscal": 0,
+        "ValorFiscal": 0,
+        "Tarifa9": 0,
+        "Tarifa15": 0,
+        "Tarifa20": 0,
+        "MegaInversiones": 0,
+        "MegaInversiones27": 0,
+        "TarifaGeneral240": 0,
+        "Otras": 0
+      }
     },
     "PerdidasNetasOperacionesDiscontinuas": {
       "ValorContable": 0,
