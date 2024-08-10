@@ -52,9 +52,32 @@ export const getImpuestoDiferidoESF = async (impDif, student) => {
 
     impDif.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.Provisiones.BaseContable =  (content.Activos.Provisiones.Total.ValorContable - content.Activos.Provisiones.Total.ValorFiscal) < 0 ? content.Activos.Provisiones.Total.ValorContable : 0;
 
+    //Variables auxiliares Otros pasivos anticipos
+
+    let auxOtrosPas1 = ( content.Pasivos.ArrendamientosPorPagar.Total.ValorContable + content.Pasivos.OtrosPasivosFinancieros.Total.ValorContable + content.Pasivos.PasivosIngresosDiferidos.Total.ValorContable + content.Pasivos.OtrosPasivos.Total.ValorContable );
+    let auxOtrosPas2 = ( content.Pasivos.ArrendamientosPorPagar.Total.ValorFiscal + content.Pasivos.OtrosPasivosFinancieros.Total.ValorFiscal + content.Pasivos.PasivosIngresosDiferidos.Total.ValorFiscal + content.Pasivos.OtrosPasivos.Total.ValorFiscal );
+
+    //BASE CONTABLE
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.OtrosPasivosAnticiposYAvancesRecibidos.BaseContable = (auxOtrosPas1-auxOtrosPas2) > 0 ? auxOtrosPas1 : auxOtrosPas2; 
+
     //BASE FISCAL
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.OtrosPasivosAnticiposYAvancesRecibidos.BaseFiscal = impDif.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.OtrosPasivosAnticiposYAvancesRecibidos.BaseContable > 0 ? auxOtrosPas2 : 0;
+
+
+    //Variables auxiliares Otros activos
+
+    let auxOtrosAct1 = ( content.Activos.GastosPagadosPorAnticipado.Total.ValorContable + content.Activos.ActivosImpuestosCorrientes.Total.ValorContable + content.Activos.OtrosActivos.Total.ValorContable );
+    let auxOtrosAct2 = ( content.Activos.GastosPagadosPorAnticipado.Total.ValorFiscal + content.Activos.ActivosImpuestosCorrientes.Total.ValorFiscal + content.Activos.OtrosActivos.Total.ValorFiscal );
+
+    //BASE CONTABLE
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.OtrosActivos.BaseContable = (auxOtrosAct1-auxOtrosAct2) > 0 ? auxOtrosAct1 : 0;
+
+    //BASE FISCAL
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.OtrosActivos.BaseFiscal = impDif.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.OtrosActivos.BaseContable > 0 ? auxOtrosAct2 : 0;
+
+    
     /**
-     * TODO: corregir la parte de la base contable en la ternaria
+     * BASE FISCAL
      */
 
     impDif.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.EfectivoYEfectivoEquivalente.BaseFiscal =  impDif.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.EfectivoYEfectivoEquivalente.BaseContable < 0 ? content.Activos.ActivosEquivalentesEfectivo.Total.ValorFiscal : 0;

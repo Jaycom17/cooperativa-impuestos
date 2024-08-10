@@ -62,9 +62,15 @@ function ImpuestoDiferidoForm() {
       auxData = auxData[path[i]];
     }
 
-    let calculatedVariacion = auxData.SaldoImpuestoDiferidoAnterior - auxData.SaldoImpuestoDiferidoActual;
-    let calculatedDiferenciaTemporaria = (auxData.BaseContable - auxData.BaseFiscal) * (-1);
-    let calculatedTarifaFiscalAplicada = calculatedDiferenciaTemporaria > 0 ? ((auxData.SaldoImpuestoDiferidoActual/calculatedDiferenciaTemporaria)*100): 0;  
+    let calculatedDiferenciaTemporaria =
+      (auxData.BaseContable - auxData.BaseFiscal) * -1;
+    let calculatedSaldoImpuestoActual = calculatedDiferenciaTemporaria * 0.35;
+    let calculatedVariacion =
+      auxData.SaldoImpuestoDiferidoAnterior - calculatedSaldoImpuestoActual;
+    let calculatedTarifaFiscalAplicada =
+      calculatedDiferenciaTemporaria > 0
+        ? (calculatedSaldoImpuestoActual / calculatedDiferenciaTemporaria) * 100
+        : 0;
 
     for (let i = 0; i < path.length - 1; i++) {
       if (!temp[path[i]]) {
@@ -76,6 +82,7 @@ function ImpuestoDiferidoForm() {
     temp.Variacion = calculatedVariacion;
     temp.DiferenciaTemporaria = calculatedDiferenciaTemporaria;
     temp.TasaFiscalAplicada = calculatedTarifaFiscalAplicada;
+    temp.SaldoImpuestoDiferidoActual = calculatedSaldoImpuestoActual;
   };
 
   const handleAdd = (path) => {
