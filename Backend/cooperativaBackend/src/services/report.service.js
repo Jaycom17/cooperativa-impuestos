@@ -1,5 +1,7 @@
 import prisma from "../config/prisma.js";
 import { IngresosFacturacionInput } from "../models/ingFact.model.js";
+import {RentaLiquidaInput} from "../models/rentaLiquida.model.js";
+import { ImpuestoDiferidoInput } from "../models/impuestoDiferido.js";
 import { Form110Input } from "../models/form110.model.js"
 import { DetalleRenglonesInput } from "../models/detalleRenglones.model.js"
 import { CaratulaInput } from "../models/caratula.model.js"
@@ -51,7 +53,7 @@ export const createReport = async (stuID, roomID) => {
     await prisma.formimpuestodiferido.create({
       data: {
         impID: formsID.formImpuestoDiferido,
-        impContent: {},
+        impContent: ImpuestoDiferidoInput,
       },
     });
 
@@ -72,7 +74,7 @@ export const createReport = async (stuID, roomID) => {
     await prisma.formrentaliquida.create({
       data: {
         renID: formsID.formRentaLiquida,
-        renContent: {},
+        renContent: RentaLiquidaInput,
       },
     });
 

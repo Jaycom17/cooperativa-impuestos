@@ -44,7 +44,7 @@ function MiddlewareStudent() {
   };
 
   const onSubmitSaved = async (data) => {
-    await sStudent(data.stuName);
+    await sStudent(data.stuCedula);
   };
 
   useEffect(() => {
@@ -96,8 +96,7 @@ function MiddlewareStudent() {
         <div className={`flex flex-col items-center p-3 ${animationClass}`}>
           <h2 className="font-semibold text-3xl">Bienvenido a la sala</h2>
           <p className="text-center mt-3">
-            A continuación, escribe el nombre con el cual ingresaste previamente
-            a la sala.
+            A continuación, escribe tu cedula.
           </p>
           <form
             className="flex flex-col w-full items-center gap-2"
@@ -109,13 +108,13 @@ function MiddlewareStudent() {
               </p>
             )}
             <input
-              type="text"
+              type="number"
               className="w-1/2 p-2 rounded-md border border-gray-300 mt-3 text-black"
-              {...register("stuName", { required: true })}
+              {...register("stuCedula", { required: true })}
             />
-            {errors.stuName && (
+            {errors.stuCedula && (
               <p className="text-[red] text-sm bg-transparent">
-                Debe ingresar un nombre
+                Debe ingresar una cedula
               </p>
             )}
             <button
@@ -141,7 +140,7 @@ function MiddlewareStudent() {
         <div className={`flex flex-col items-center p-3 ${animationClass}`}>
           <h2 className="font-semibold text-3xl">Bienvenido a la sala</h2>
           <p className="text-center mt-3">
-            A continuación escribe el nombre con el cual deseas registrarte en
+            A continuación escribe tu numero de cedula, con el cual deseas registrarte en
             la sala.
           </p>
           <form
@@ -154,13 +153,13 @@ function MiddlewareStudent() {
               </p>
             )}
             <input
-              type="text"
+              type="number"
               className="w-1/2 p-2 rounded-md border border-gray-300 mt-3 text-black"
-              {...register("stuName", { required: true })}
+              {...register("stuCedula", { required: true })}
             />
-            {errors.stuName && (
+            {errors.stuCedula && (
               <p className="text-[red] text-sm bg-transparent">
-                Debe ingresar un nombre
+                Debe ingresar una cedula
               </p>
             )}
             <button

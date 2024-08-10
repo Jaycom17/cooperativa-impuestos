@@ -17,6 +17,7 @@ import IngresosFacturacionForm from "../pages/IngresosFacturacion/Form/IngresosF
 import ImpuestoDiferidoForm from "../pages/ImpuestoDiferido/Form/ImpuestoDiferidoForm";
 import ResetPasswordTeacher from "../pages/ResetPassword/ResetPasswordTeacher";
 import UpdateInfoAdmin from "../pages/UpdateInfoAdmin/UpdateInfoAdmin";
+import RentaLiquidaForm from "../pages/RentaLiquida/Form/RentaLiquidaForm";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -27,6 +28,7 @@ import { StudentProvider } from "../context/StuContext";
 import ProtectedRouteAdmin from "./ProtectedRouteAdmin";
 import ProtectedRouteProfessor from "./ProtectedRouteProfessor";
 import ProtectedRouteStudent from "./ProtectedRouteStudent";
+import ResumenESFForm from "../pages/ResumenESF/Form/ResumenESFForm";
 
 function Router() {
   return (
@@ -46,6 +48,17 @@ function Router() {
 
               <Route element={<ProtectedRouteStudent />}>
                 <Route path="/student" element={<MainStudent />} />
+                <Route
+                path="/esfpatrimonioform"
+                element={<ESFpatrimonioForm />}
+                />
+                <Route path="/caratulaform" element={<CaratulaForm />} />
+                <Route path="/ingrefactform" element={<IngresosFacturacionForm />}/>
+                <Route path="/activosfijos" element={<ActivosFijosForm />}/>
+                <Route path="/impuestodiferido" element={<ImpuestoDiferidoForm />}/>
+                <Route path="/form110" element={<From110Form />}/>
+                <Route path="/detalleReng" element={<DetalleReng />}/>
+                <Route path="/rentaliquida" element={<RentaLiquidaForm />} />
               </Route>
 
               <Route element={<ProtectedRouteAdmin />}>
@@ -70,6 +83,8 @@ function Router() {
               <Route path="/impuestodiferido" element={<ImpuestoDiferidoForm />}/>
               <Route path="/form110" element={<From110Form />}/>
               <Route path="/detalleReng" element={<DetalleReng />}/>
+              <Route path="/rentaliquida" element={<RentaLiquidaForm />} />
+              <Route path="/resumenesf" element={<ResumenESFForm />} />
             </Routes>
           </BrowserRouter>
         </StudentProvider>

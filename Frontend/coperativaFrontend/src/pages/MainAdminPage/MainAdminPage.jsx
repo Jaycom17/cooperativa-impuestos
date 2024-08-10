@@ -40,7 +40,7 @@ const MainAdminPage = () => {
   );
 
   return (
-    <div className="bg-background min-h-screen">
+    <main className="bg-background min-h-screen pb-3 ">
       <Navbar />
       <div className="relative w-3/4 md:w-1/3 mt-5 mx-auto ">
         <input
@@ -56,7 +56,7 @@ const MainAdminPage = () => {
           <Professor key={professor.usuID} professor={professor} onRefresh={refreshProfessors} />
         ))}
       </section>
-    </div>
+    </main>
   );
 };
 
