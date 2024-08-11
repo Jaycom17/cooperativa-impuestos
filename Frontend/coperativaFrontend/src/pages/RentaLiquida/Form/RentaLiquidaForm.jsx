@@ -652,15 +652,15 @@ function RentaLiquidaForm() {
         ["Gastos", "GastosDistribucionVentas", "ManoObra"]
       ) || newData.Gastos.GastosDistribucionVentas.ManoObra.Total;
 
-    newData.Gastos.GastosDistribucionVentas.OtrosGastosAdministracion.Total =
+    newData.Gastos.GastosDistribucionVentas.OtrosGastosDistribucionVentas.Total =
       calculateTotalSectionGeneric(
         [...pathArray],
         {
-          ...newData.Gastos.GastosDistribucionVentas.OtrosGastosAdministracion,
+          ...newData.Gastos.GastosDistribucionVentas.OtrosGastosDistribucionVentas,
         },
-        ["Gastos", "GastosDistribucionVentas", "OtrosGastosAdministracion"]
+        ["Gastos", "GastosDistribucionVentas", "OtrosGastosDistribucionVentas"]
       ) ||
-      newData.Gastos.GastosDistribucionVentas.OtrosGastosAdministracion.Total;
+      newData.Gastos.GastosDistribucionVentas.OtrosGastosDistribucionVentas.Total;
 
     newData.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.Total =
       calculateTotalSectionGeneric(

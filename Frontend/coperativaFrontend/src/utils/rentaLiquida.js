@@ -426,7 +426,4 @@ export const rentaLiquidaNames = {
     GeneracionesImponibles: "Generaciones imponibles",
     ReversionesDeducibles: "Reversiones deducibles",
     ReversionesImponibles: "Reversiones imponibles",
-    /**
-     * TODO: linea 4670 del json y 352 del excel
-     */
 }

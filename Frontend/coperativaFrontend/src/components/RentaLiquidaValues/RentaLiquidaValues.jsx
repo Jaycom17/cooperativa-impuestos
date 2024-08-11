@@ -81,7 +81,7 @@ function RentaLiquidaValues({ path, data, handleChange }) {
     return (
       <div className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white">
         <h3 className="w-full font-bold text-xl pb-2">
-          {rentaLiquidaNames[path] || path}
+          {rentaLiquidaNames[path] || rentaLiquidaNames[path.split(".").pop()] || path}
         </h3>
         {renderTextField(data)}
       </div>
