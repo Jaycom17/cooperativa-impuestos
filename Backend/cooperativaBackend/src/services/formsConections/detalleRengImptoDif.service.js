@@ -1,0 +1,33 @@
+import prisma from '../../config/prisma.js';
+
+export const getDetalleRengActivosFijos = async (detReng, student) => {
+    try {
+        const res = await prisma.report.findFirst({
+            where: {
+                stuID: student.stuID,
+                roomID: student.roomID,
+            },
+            select: {
+                impID: true,
+            },
+        });
+
+        const impDif = await prisma.formimpuestodiferido.findUnique({
+            where: {
+                impID: res.impID,
+            }
+        });
+
+        if (!impDif) {
+            return { message: 'Formulario no encontrado' };
+        }
+
+        const content = impDif.actContent;
+
+        detReng[R43][1860].REFSaldCont = content.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.Total.SaldoImpuestoDiferidoActual || 0;
+        detReng[R45][2826].REFSaldCont = content.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Total.SaldoImpuestoDiferidoActual || 0;
+        
+    } catch (e) {
+        console.log(e);
+    }
+}

@@ -5024,11 +5024,11 @@ export const DetalleRenglonesInput = {
       "SaldFisc": 0
     },
     "1510": {
-      "SaldCont": 0,
+      "REFSaldCont": 0,
       "Ajust1": 0,
       "Ajust2": "",
       "Ajust3": 0,
-      "SaldFisc": 0
+      "REFSaldFisc": 0
     },
     "1520": {
       "SaldCont": 0,
@@ -5346,14 +5346,14 @@ export const DetalleRenglonesInput = {
     },
     "1779": {
       "ValCost": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
         "SaldFisc": 0
       },
       "Reval": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
@@ -5362,14 +5362,14 @@ export const DetalleRenglonesInput = {
     },
     "1780": {
       "ValCost": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
         "SaldFisc": 0
       },
       "Reval": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
@@ -5378,14 +5378,14 @@ export const DetalleRenglonesInput = {
     },
     "1788": {
       "ValCost": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
         "SaldFisc": 0
       },
       "Reval": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
@@ -5393,7 +5393,7 @@ export const DetalleRenglonesInput = {
       }
     },
     "1789": {
-      "SaldCont": 0,
+      "REFSaldCont": 0,
       "Ajust1": 0,
       "Ajust2": "",
       "Ajust3": 0,
@@ -5401,21 +5401,21 @@ export const DetalleRenglonesInput = {
     },
     "1790": {
       "ValCost": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
-        "SaldFisc": 0
+        "REFSaldFisc": 0
       },
       "DeprAcum": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
-        "SaldFisc": 0
+        "REFSaldFisc": 0
       },
       "Det": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
@@ -5515,7 +5515,7 @@ export const DetalleRenglonesInput = {
       "SaldFisc": 0
     },
     "1860": {
-      "SaldCont": 0,
+      "REFSaldCont": 0,
       "Ajust1": 0,
       "Ajust2": "",
       "Ajust3": 0,
@@ -5735,7 +5735,7 @@ export const DetalleRenglonesInput = {
       "SaldFisc": 0
     },
     "2816": {
-      "SaldCont": 0,
+      "REFSaldCont": 0,
       "Ajust1": 0,
       "Ajust2": "",
       "Ajust3": 0,
@@ -5756,7 +5756,7 @@ export const DetalleRenglonesInput = {
       "SaldFisc": 0
     },
     "2826": {
-      "SaldCont": 0,
+      "REFSaldCont": 0,
       "Ajust1": 0,
       "Ajust2": "",
       "Ajust3": 0,

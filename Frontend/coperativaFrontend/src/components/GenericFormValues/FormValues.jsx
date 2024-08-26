@@ -24,12 +24,14 @@ function Form110Values({ json, path, handleChange, CalculatedValues, ValuesNames
 
     const renderNumberField = (label, value, key) => {
         const displayTitle = ValuesNames[label] || label;
+        const keySegment = key.split(".").pop();
+
         return(
             <div key={key} className="flex flex-col justify-between space-y-2 bg-white">
             <label className="bg-white font-semibold text-sm" htmlFor={key}>
                 {displayTitle}
             </label>
-            {CalculatedValues.includes(key.split(".").pop()) ? <p className="bg-white rounded-md p-1">{value}</p> : 
+            {(CalculatedValues.includes(keySegment)) ? <p className="bg-white rounded-md p-1">{value}</p> : 
             <input
                 className=" bg-white border rounded-md p-1"
                 type="number"

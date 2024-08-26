@@ -740,11 +740,11 @@
       "SaldFisc": 0
     },
     "1510": {
-      "SaldCont": 0,
+      "REFSaldCont": 0,
       "Ajust1": 0,
       "Ajust2": "",
       "Ajust3": 0,
-      "SaldFisc": 0
+      "REFSaldFisc": 0
     },
     "1520": {
       "SaldCont": 0,
@@ -1062,14 +1062,14 @@
     },
     "1779": {
       "ValCost": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
         "SaldFisc": 0
       },
       "Reval": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
@@ -1078,14 +1078,14 @@
     },
     "1780": {
       "ValCost": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
         "SaldFisc": 0
       },
       "Reval": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
@@ -1094,14 +1094,14 @@
     },
     "1788": {
       "ValCost": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
         "SaldFisc": 0
       },
       "Reval": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
@@ -1109,7 +1109,7 @@
       }
     },
     "1789": {
-      "SaldCont": 0,
+      "REFSaldCont": 0,
       "Ajust1": 0,
       "Ajust2": "",
       "Ajust3": 0,
@@ -1117,21 +1117,21 @@
     },
     "1790": {
       "ValCost": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
-        "SaldFisc": 0
+        "REFSaldFisc": 0
       },
       "DeprAcum": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
-        "SaldFisc": 0
+        "REFSaldFisc": 0
       },
       "Det": {
-        "SaldCont": 0,
+        "REFSaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
         "Ajust3": 0,
@@ -1231,7 +1231,7 @@
       "SaldFisc": 0
     },
     "1860": {
-      "SaldCont": 0,
+      "REFSaldCont": 0,
       "Ajust1": 0,
       "Ajust2": "",
       "Ajust3": 0,
@@ -1451,7 +1451,7 @@
       "SaldFisc": 0
     },
     "2816": {
-      "SaldCont": 0,
+      "REFSaldCont": 0,
       "Ajust1": 0,
       "Ajust2": "",
       "Ajust3": 0,
@@ -1472,7 +1472,7 @@
       "SaldFisc": 0
     },
     "2826": {
-      "SaldCont": 0,
+      "REFSaldCont": 0,
       "Ajust1": 0,
       "Ajust2": "",
       "Ajust3": 0,
@@ -1809,12 +1809,12 @@
     "TotFisc": 0
   },
   "R50": {
-    "TotCont": 0,
-    "TotFisc": 0
+    "ValCont": 0,
+    "ValFisc": 0
   },
   "R51": {
-    "TotCont": 0,
-    "TotFisc": 0,
+    "ValCont": 0,
+    "ValFisc": 0,
     "Dat": {
       "SaldCont": 0,
       "Ajust1": 0,
@@ -1906,8 +1906,8 @@
     "TotFisc": 0
   },
   "R55": {
-    "TotCont": 0,
-    "TotFisc": 0
+    "ValCont": 0,
+    "ValFisc": 0
   },
   "R56": {
     "TotCont": 0,
@@ -3993,12 +3993,12 @@
     "TotFisc": 0
   },
   "R68": {
-    "TotCont": 0,
-    "TotFisc": 0
+    "ValCont": 0,
+    "ValFisc": 0
   },
   "R69": {
-    "TotCont": 0,
-    "TotFisc": 0
+    "ValCont": 0,
+    "ValFisc": 0
   },
   "R70": {
     "TotCont": 0,
@@ -4026,15 +4026,8 @@
     }
   },
   "R71": {
-    "TotCont": 0,
-    "TotFisc": 0,
-    "IngBruto": {
-      "SaldCont": 0,
-      "Ajust1": 0,
-      "Ajust2": "",
-      "Ajust3": 0,
-      "SaldFisc": 0
-    }
+    "ValCont": 0,
+    "ValFisc": 0
   },
   "R72": {
     "TotCont": 0,
@@ -4046,10 +4039,7 @@
   },
   "R74": {
     "CompenPerFisc": {
-      "Ajust1": 0,
-      "Ajust2": "",
-      "Ajust3": 0,
-      "SaldFisc": 0
+      "Val": 0
     },
     "CompenExcRen": {
       "Exc": 0,
@@ -4062,7 +4052,7 @@
     "TotFisc": 0
   },
   "R76": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R77": {
     "Act235": 0,
@@ -4180,7 +4170,7 @@
     "TotFisc": 0
   },
   "R88": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R89": {
     "TotFisc": 0
@@ -4219,33 +4209,33 @@
   },
   "R95": {
     "LotRif": 0,
-    "Otro": 0,
+    "OtroGanOca": 0,
     "TotFisc": 0
   },
   "R96": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R97": {
     "TotFisc": 0
   },
   "R98": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R99": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R100": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R101": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R102": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R103": {
-    "TotCont": 0,
-    "TotFisc": 0
+    "ValCont": 0,
+    "ValFisc": 0
   },
   "R104": {
     "Ventas": {
