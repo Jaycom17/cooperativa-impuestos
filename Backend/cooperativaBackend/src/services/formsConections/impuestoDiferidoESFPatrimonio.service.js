@@ -24,6 +24,10 @@ export const getImpuestoDiferidoESF = async (impDif, student) => {
 
     const content = esfPat.esfContent;
 
+    /**
+     * Activo Diferido
+     */
+
     //BASE CONTABLE
 
     impDif.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.EfectivoYEfectivoEquivalente.BaseContable =  (content.Activos.ActivosEquivalentesEfectivo.Total.ValorContable - content.Activos.ActivosEquivalentesEfectivo.Total.ValorFiscal) < 0 ? content.Activos.ActivosEquivalentesEfectivo.Total.ValorContable : 0;
@@ -105,6 +109,76 @@ export const getImpuestoDiferidoESF = async (impDif, student) => {
     impDif.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.BeneficiosAEmpleados.BaseFiscal =  impDif.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.BeneficiosAEmpleados.BaseContable < 0 ? content.Activos.PasivosBeneficiosEmpleados.Total.ValorFiscal : 0;
 
     impDif.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.Provisiones.BaseFiscal = impDif.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.Provisiones.BaseContable < 0 ? content.Activos.Provisiones.Total.ValorFiscal : 0;
+
+    /**
+     * Pasivos Diferidos
+     */
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.EfectivoYEfectivoEquivalente.BaseContable =  (content.Activos.ActivosEquivalentesEfectivo.Total.ValorContable - content.Activos.ActivosEquivalentesEfectivo.Total.ValorFiscal) > 0 ? content.Activos.ActivosEquivalentesEfectivo.Total.ValorContable : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.InversionesEInstrumentosDerivados.BaseContable =  (content.Activos.ActivosEquivalentesEfectivo.Total.ValorContable - content.Activos.ActivosEquivalentesEfectivo.Total.ValorFiscal) > 0 ? content.Activos.ActivosEquivalentesEfectivo.Total.ValorContable : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.CuentasPorCobrar.BaseContable =  (content.Activos.CuentasComercialesCobrarOtrasPorCobrar.Total.ValorContable - content.Activos.CuentasComercialesCobrarOtrasPorCobrar.Total.ValorFiscal) > 0 ? content.Activos.CuentasComercialesCobrarOtrasPorCobrar.Total.ValorContable : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Inventarios.BaseContable =  (content.Activos.Inventarios.Total.ValorContable - content.Activos.Inventarios.Total.ValorFiscal) > 0 ? content.Activos.Inventarios.Total.ValorContable : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.PropiedadesPlantaYEquipo.BaseContable =  (content.Activos.PropiedadesPlantaEquipo.Total.ValorContable - content.Activos.PropiedadesPlantaEquipo.Total.ValorFiscal) > 0 ? content.Activos.PropiedadesPlantaEquipo.Total.ValorContable : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.ActivosIntangibles.BaseContable =  (content.Activos.ActivosIntangibles.Total.ValorContable - content.Activos.ActivosIntangibles.Total.ValorFiscal) > 0 ? content.Activos.ActivosIntangibles.Total.ValorContable : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.PropiedadesDeInversion.BaseContable =  (content.Activos.PropiedadesInversion.Total.ValorContable - content.Activos.PropiedadesInversion.Total.ValorFiscal) > 0 ? content.Activos.PropiedadesInversion.Total.ValorContable : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.ActivosBiologicos.BaseContable =  (content.Activos.ActivosBiologicos.Total.ValorContable - content.Activos.ActivosBiologicos.Total.ValorFiscal) > 0 ? content.Activos.ActivosBiologicos.Total.ValorContable : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.EntregarAPropietarios.BaseContable =  (content.Activos.ActivosNoCorrientes.Total.ValorContable - content.Activos.ActivosNoCorrientes.Total.ValorFiscal) > 0 ? content.Activos.ActivosNoCorrientes.Total.ValorContable : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.PasivosFinancierosYCuentasPorPagar.BaseContable =  (content.Activos.ObligacionesFinancierasCuentasPorPagar.Total.ValorContable - content.Activos.ObligacionesFinancierasCuentasPorPagar.Total.ValorFiscal) > 0 ? content.Activos.ObligacionesFinancierasCuentasPorPagar.Total.ValorContable : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.ImpuestosGravamenesYTasas.BaseContable =  (content.Activos.ImpuestosGravamenesTasasPorPagar.Total.ValorContable - content.Activos.ImpuestosGravamenesTasasPorPagar.Total.ValorFiscal) > 0 ? content.Activos.ImpuestosGravamenesTasasPorPagar.Total.ValorContable : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.BeneficiosAEmpleados.BaseContable =  (content.Activos.PasivosBeneficiosEmpleados.Total.ValorContable - content.Activos.PasivosBeneficiosEmpleados.Total.ValorFiscal) > 0 ? content.Activos.PasivosBeneficiosEmpleados.Total.ValorContable : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Provisiones.BaseContable =  (content.Activos.Provisiones.Total.ValorContable - content.Activos.Provisiones.Total.ValorFiscal) > 0 ? content.Activos.Provisiones.Total.ValorContable : 0;
+
+    //BASE FISCAL
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.OtrosPasivosAnticiposYAvancesRecibidos.BaseFiscal = impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.OtrosPasivosAnticiposYAvancesRecibidos.BaseContable > 0 ? auxOtrosPas2 : 0;
+
+    //BASE CONTABLE
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.OtrosActivos.BaseContable = (auxOtrosAct1-auxOtrosAct2) > 0 ? auxOtrosAct1 : 0;
+
+    //BASE FISCAL
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.OtrosActivos.BaseFiscal = impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.OtrosActivos.BaseContable > 0 ? auxOtrosAct2 : 0;
+
+    
+    /**
+     * BASE FISCAL
+     */
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.EfectivoYEfectivoEquivalente.BaseFiscal =  impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.EfectivoYEfectivoEquivalente.BaseContable > 0 ? content.Activos.ActivosEquivalentesEfectivo.Total.ValorFiscal : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.InversionesEInstrumentosDerivados.BaseFiscal =  impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.InversionesEInstrumentosDerivados.BaseContable > 0 ? content.Activos.ActivosEquivalentesEfectivo.Total.ValorFiscal : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.CuentasPorCobrar.BaseFiscal =  impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.CuentasPorCobrar.BaseContable > 0 ? content.Activos.CuentasComercialesCobrarOtrasPorCobrar.Total.ValorFiscal : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Inventarios.BaseFiscal =  impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Inventarios.BaseContable > 0 ? content.Activos.Inventarios.Total.ValorFiscal : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.PropiedadesPlantaYEquipo.BaseFiscal =  impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.PropiedadesPlantaYEquipo.BaseContable > 0 ? content.Activos.PropiedadesPlantaEquipo.Total.ValorFiscal : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.ActivosIntangibles.BaseFiscal =  impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.ActivosIntangibles.BaseContable > 0 ? content.Activos.ActivosIntangibles.Total.ValorFiscal : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.PropiedadesDeInversion.BaseFiscal =  impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.PropiedadesDeInversion.BaseContable > 0 ? content.Activos.PropiedadesInversion.Total.ValorFiscal : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.ActivosBiologicos.BaseFiscal =  impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.ActivosBiologicos.BaseContable > 0 ? content.Activos.ActivosBiologicos.Total.ValorFiscal : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.EntregarAPropietarios.BaseFiscal =  impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.EntregarAPropietarios.BaseContable > 0 ? content.Activos.ActivosNoCorrientes.Total.ValorFiscal : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.PasivosFinancierosYCuentasPorPagar.BaseFiscal =  impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.PasivosFinancierosYCuentasPorPagar.BaseContable > 0 ? content.Activos.ObligacionesFinancierasCuentasPorPagar.Total.ValorFiscal : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.ImpuestosGravamenesYTasas.BaseFiscal =  impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.ImpuestosGravamenesYTasas.BaseContable > 0 ? content.Activos.ImpuestosGravamenesTasasPorPagar.Total.ValorFiscal : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.BeneficiosAEmpleados.BaseFiscal =  impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.BeneficiosAEmpleados.BaseContable > 0 ? content.Activos.PasivosBeneficiosEmpleados.Total.ValorFiscal : 0;
+
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Provisiones.BaseFiscal = impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Provisiones.BaseContable > 0 ? content.Activos.Provisiones.Total.ValorFiscal : 0;
 
   }catch(e){
     console.log(e);
