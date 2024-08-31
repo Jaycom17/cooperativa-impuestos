@@ -11,6 +11,6 @@ activosFijosRouter.get("/student", validateStudent, getActivosFijosById);
 
 activosFijosRouter.get("/:stuID/:roomID", validateAuth, getActivosFijosByStudent);
 
-activosFijosRouter.put("/student", validateActivosFijos, putActivosFijos);
+activosFijosRouter.put("/student", validateActivosFijos,validateStudent, putActivosFijos);
 
 export default activosFijosRouter;
