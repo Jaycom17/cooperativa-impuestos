@@ -1,10 +1,12 @@
 import prisma from "../config/prisma.js";
+
 import { IngresosFacturacionInput } from "../models/ingFact.model.js";
-import {RentaLiquidaInput} from "../models/rentaLiquida.model.js";
+import { RentaLiquidaInput } from "../models/rentaLiquida.model.js";
 import { ImpuestoDiferidoInput } from "../models/impuestoDiferido.js";
-import { Form110Input } from "../models/form110.model.js"
-import { DetalleRenglonesInput } from "../models/detalleRenglones.model.js"
-import { CaratulaInput } from "../models/caratula.model.js"
+import { Form110Input } from "../models/form110.model.js";
+import { DetalleRenglonesInput } from "../models/detalleRenglones.model.js";
+import { CaratulaInput } from "../models/caratula.model.js";
+import { ActivosFijosInput } from "../models/activosFijos.model.js";
 
 import { v4 as uuidv4 } from "uuid";
 

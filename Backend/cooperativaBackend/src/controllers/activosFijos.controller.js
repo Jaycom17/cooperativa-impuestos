@@ -18,9 +18,9 @@ export const getActivosFijos = async (_req, res) => {
 };
 
 export const getActivosFijosById = async (req, res) => {
-  const { actID } = req.params;
+  const student = req.body.student;
 
-  const result = await listActivosFijosById(actID);
+  const result = await listActivosFijosById(student);
 
   if (!result) {
     return res.status(404).json({ error: "Activo fijo no encontrado" });
@@ -28,6 +28,18 @@ export const getActivosFijosById = async (req, res) => {
 
   res.json(result);
 };
+
+export const getActivosFijosByStudent = async (req, res) => {
+  const stuID = req.params.stuID;
+  const roomID = req.params.roomID;
+
+  const result = await listActivosFijosById({ stuID, roomID });
+
+  if (!result) {
+      return res.status(404).json({ error: 'Formulario no encontrado' });
+  }
+  res.json(result);
+}
 
 export const postActivosFijos = async (req, res) => {
   const newActivosFijos = req.body;
@@ -42,10 +54,13 @@ export const postActivosFijos = async (req, res) => {
 };
 
 export const putActivosFijos = async (req, res) => {
-  const { actID } = req.params;
+  const student = req.body.student;
+
   const updatedActivosFijos = req.body;
 
-  const result = await updateActivosFijos(actID, updatedActivosFijos);
+  delete updatedActivosFijos.student;
+
+  const result = await updateActivosFijos(student, updatedActivosFijos);
 
   if (!result) {
     return res

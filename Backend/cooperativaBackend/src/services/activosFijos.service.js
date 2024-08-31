@@ -16,13 +16,33 @@ export const listActivosFijos = async () => {
   }
 };
 
-export const listActivosFijosById = async (actID) => {
+export const listActivosFijosById = async ( student) => {
   try {
-    const result = await prisma.formactivosfijos.findUnique({
+
+    const res = await prisma.report.findFirst({
       where: {
-        actID,
+        stuID: student.stuID,
+        roomID: student.roomID,
+      },
+      select: {
+        actID: true,
       },
     });
+
+    if (!res) {
+      return { message: 'Formulario no encontrado' };
+    }
+
+    const result = await prisma.formactivosfijos.findUnique({
+      where: {
+        actID: res.actID,
+      },
+    });
+
+    if (!result) {
+      return { message: 'Formulario no encontrado' };
+    } 
+
     return result;
   } catch (error) {
     console.error(error.ConnectorError);
@@ -47,16 +67,29 @@ export const createActivosFijos = async (activosFijos) => {
   }
 };
 
-export const updateActivosFijos = async (actID, activosFijos) => {
+export const updateActivosFijos = async (student, activosFijos) => {
   try {
+
+    const res = await prisma.report.findFirst({
+      where: {
+        stuID: student.stuID,
+        roomID: student.roomID,
+      },
+      select: {
+        actID: true,
+      },
+    });
+
+    if (!res) {
+      return { message: 'Formulario no encontrado' };
+    }
+
     const result = await prisma.formactivosfijos.update({
       where: {
-        actID,
+        actID: res.actID,
       },
       data: {
-        actContent: JSON.stringify(activosFijos)
-          .replace(/\n|\s/g, "")
-          .replace(/"/g, "'"),
+        actContent: activosFijos,
       },
     });
     return true;
