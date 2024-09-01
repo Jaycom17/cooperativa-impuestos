@@ -8,6 +8,7 @@ import { getRooms } from '../../services/room.service';
 //Importación de iconos
 import InfoBubble from '../../components/InfoBubble/InfoBubble';
 import { IoIosArrowDown } from "react-icons/io";
+import { PiWarningCircleBold } from "react-icons/pi";
 
 /**
  * Componente TeacherPage.
@@ -86,24 +87,34 @@ const TeacherPage = () => {
       <TeacherNavbar/>
       <main className="flex flex-col items-center min-h-screen bg-background">
         {/**Aquí, en esta sección la idea sería poner los filtros (Barra de busqueda, ordenar por?) */}
-        <section className="flex justify-between items-center w-11/12 mt-5">
-          <InfoBubble info={dateInfo} />
-          <div className="flex gap-4 text-background text-xs md:text-base">
-            <button className="bg-unicoop p-1.5 rounded-md font-medium hover:bg-slate-200 duration-150 flex items-center" onClick={orderByDate}>
-              Ordenar por fecha
-              <IoIosArrowDown className={`ml-1 md:text-lg transition-transform duration-300 ${isDateAscending ? 'rotate-180':''}`}/>
-            </button>
-            <button className="bg-unicoop p-1.5 rounded-md font-medium hover:bg-slate-200 duration-150 flex items-center" onClick={orderByName}>
-              Ordenar por nombre
-              <IoIosArrowDown className={`ml-1 md:text-lg transition-transform duration-300 ${isNameAscending ? 'rotate-180':''}`}/>
-            </button>
-          </div>
-        </section>
-        <section className="w-11/12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 my-5 mx-auto justify-items-center">
-          {rooms.map((room) => (
-            <Room key={room.roomID} room={room} onRefresh={refreshRooms} />
-          ))}
-        </section>
+        {rooms.length === 0 ? 
+          <section className='flex items-center flex-col text-unicoop w-11/12 md:w-3/5 text-center border bg-unicoop-black rounded-xl mt-44 md:mt-16 md:mb-8 p-9'>
+            <PiWarningCircleBold className='text-4xl mb-3'/>
+            <h1 className='text-2xl lg:text-3xl font-semibold'>¡PARECE QUE AÚN NO HAY SALAS CREADAS!</h1>
+            <p className='text-lg lg:text-xl'>Empieza creando una sala, dando clic en &quot;<span className='text-unicoop-green font-medium'>Crear sala</span>&quot; en la barra de navegación para poder visualizarla aquí, y hacer la respectiva gestión de esta.</p>
+          </section>
+        :
+          <section className='w-11/12'>
+            <section className="flex justify-between items-center mt-5">
+              <InfoBubble info={dateInfo} />
+              <div className="flex gap-4 text-background text-xs md:text-base">
+                <button className="bg-unicoop p-1.5 rounded-md font-medium hover:bg-slate-200 duration-150 flex items-center" onClick={orderByDate}>
+                  Ordenar por fecha
+                  <IoIosArrowDown className={`ml-1 md:text-lg transition-transform duration-300 ${isDateAscending ? 'rotate-180':''}`}/>
+                </button>
+                <button className="bg-unicoop p-1.5 rounded-md font-medium hover:bg-slate-200 duration-150 flex items-center" onClick={orderByName}>
+                  Ordenar por nombre
+                  <IoIosArrowDown className={`ml-1 md:text-lg transition-transform duration-300 ${isNameAscending ? 'rotate-180':''}`}/>
+                </button>
+              </div>
+            </section>
+            <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 my-5 mx-auto justify-items-center">
+              {rooms.map((room) => (
+                <Room key={room.roomID} room={room} onRefresh={refreshRooms} />
+              ))}
+            </section>
+          </section> 
+        }
       </main>
     </>
   );

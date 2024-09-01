@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const createRoom = async (room) => {
     try {
+        console.log(room)
         const usuResult = await prisma.user.findUnique({ where: { usuID: room.usuID } });
         if (!usuResult) {
             return false;

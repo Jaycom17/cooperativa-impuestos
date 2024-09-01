@@ -1,4 +1,4 @@
-import { z } from "zod"
+import { z } from "zod";
 
 export const ImpuestoDiferido = z.object({
   ImpuestosDiferidosDiferenciasTemporarias: z.object({
@@ -10,7 +10,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       InversionesEInstrumentosDerivados: z.object({
         BaseContable: z.number(),
@@ -19,7 +19,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       CuentasPorCobrar: z.object({
         BaseContable: z.number(),
@@ -28,7 +28,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       Inventarios: z.object({
         BaseContable: z.number(),
@@ -37,7 +37,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       PropiedadesPlantaYEquipo: z.object({
         BaseContable: z.number(),
@@ -46,7 +46,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       ActivosIntangibles: z.object({
         BaseContable: z.number(),
@@ -55,7 +55,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       PropiedadesDeInversion: z.object({
         BaseContable: z.number(),
@@ -64,7 +64,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       ActivosBiologicos: z.object({
         BaseContable: z.number(),
@@ -73,7 +73,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       EntregarAPropietarios: z.object({
         BaseContable: z.number(),
@@ -82,7 +82,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       PasivosFinancierosYCuentasPorPagar: z.object({
         BaseContable: z.number(),
@@ -91,7 +91,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       ImpuestosGravamenesYTasas: z.object({
         BaseContable: z.number(),
@@ -100,7 +100,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       BeneficiosAEmpleados: z.object({
         BaseContable: z.number(),
@@ -109,7 +109,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       Provisiones: z.object({
         BaseContable: z.number(),
@@ -118,7 +118,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       OtrosPasivosAnticiposYAvancesRecibidos: z.object({
         BaseContable: z.number(),
@@ -127,7 +127,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       OperacionesConTitulosYDerivados: z.object({
         BaseContable: z.number(),
@@ -136,7 +136,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       PerdidasFiscalesYExcesosDeRentaPresuntiva: z.object({
         BaseContable: z.number(),
@@ -145,7 +145,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       Fiscales: z.object({
         BaseContable: z.number(),
@@ -154,7 +154,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       OtrosActivos: z.object({
         BaseContable: z.number(),
@@ -163,7 +163,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       Total: z.object({
         BaseContable: z.number(),
@@ -172,8 +172,8 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
-      })
+        TasaFiscalAplicada: z.number(),
+      }),
     }),
     PasivoDiferido: z.object({
       EfectivoYEfectivoEquivalente: z.object({
@@ -183,7 +183,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       InversionesEInstrumentosDerivados: z.object({
         BaseContable: z.number(),
@@ -192,7 +192,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       CuentasPorCobrar: z.object({
         BaseContable: z.number(),
@@ -201,7 +201,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       Inventarios: z.object({
         BaseContable: z.number(),
@@ -210,7 +210,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       PropiedadesPlantaYEquipo: z.object({
         BaseContable: z.number(),
@@ -219,7 +219,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       ActivosIntangibles: z.object({
         BaseContable: z.number(),
@@ -228,7 +228,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       PropiedadesDeInversion: z.object({
         BaseContable: z.number(),
@@ -237,7 +237,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       ActivosBiologicos: z.object({
         BaseContable: z.number(),
@@ -246,7 +246,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       EntregarAPropietarios: z.object({
         BaseContable: z.number(),
@@ -255,7 +255,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       PasivosFinancierosYCuentasPorPagar: z.object({
         BaseContable: z.number(),
@@ -264,7 +264,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       ImpuestosGravamenesYTasas: z.object({
         BaseContable: z.number(),
@@ -273,7 +273,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       BeneficiosAEmpleados: z.object({
         BaseContable: z.number(),
@@ -282,7 +282,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       Provisiones: z.object({
         BaseContable: z.number(),
@@ -291,7 +291,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       OtrosPasivosAnticiposYAvancesRecibidos: z.object({
         BaseContable: z.number(),
@@ -300,7 +300,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       OperacionesConTitulosYDerivados: z.object({
         BaseContable: z.number(),
@@ -309,7 +309,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       PerdidasFiscalesYExcesosDeRentaPresuntiva: z.object({
         BaseContable: z.number(),
@@ -318,7 +318,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       Fiscales: z.object({
         BaseContable: z.number(),
@@ -327,7 +327,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       OtrosActivos: z.object({
         BaseContable: z.number(),
@@ -336,7 +336,7 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
+        TasaFiscalAplicada: z.number(),
       }),
       Total: z.object({
         BaseContable: z.number(),
@@ -345,9 +345,9 @@ export const ImpuestoDiferido = z.object({
         DiferenciaPermanente: z.number(),
         SaldoImpuestoDiferido: z.number(),
         Variacion: z.number(),
-        TasaFiscalAplicada: z.number()
-      })
-    })
+        TasaFiscalAplicada: z.number(),
+      }),
+    }),
   }),
   ActivosCreditosTributos: z.object({
     SaldosFavor: z.object({
@@ -358,7 +358,7 @@ export const ImpuestoDiferido = z.object({
       CorreccionMayorValor: z.number(),
       CorreccionMenorValor: z.number(),
       AjusteMayorValor: z.number(),
-      AjusteMenorValor: z.number()
+      AjusteMenorValor: z.number(),
     }),
     ImpuestosPagadosExterior: z.object({
       Saldo31VigenciaActual: z.number(),
@@ -368,8 +368,8 @@ export const ImpuestoDiferido = z.object({
       CorreccionMayorValor: z.number(),
       CorreccionMenorValor: z.number(),
       AjusteMayorValor: z.number(),
-      AjusteMenorValor: z.number()
-    })
+      AjusteMenorValor: z.number(),
+    }),
   }),
   DetalleCompensacionPerdidasFiscales: z.array(
     z.object({
@@ -381,7 +381,7 @@ export const ImpuestoDiferido = z.object({
       AjustesMayorValor: z.number(),
       AjustesMenorValor: z.number(),
       PerdidaFiscalAcumuladaCompensarFinal: z.number(),
-      SaldoActivoImpuestoDiferido: z.number()
+      SaldoActivoImpuestoDiferido: z.number(),
     })
   ),
   DetalleCompensacionExcesoRentaPresuntiva: z.array(
@@ -394,7 +394,455 @@ export const ImpuestoDiferido = z.object({
       AjustesMayorValor: z.number(),
       AjustesMenorValor: z.number(),
       ValorAcumuladoCompensarFinalPerido: z.number(),
-      SaldoActivoImpuestoDiferidoFinal: z.number()
+      SaldoActivoImpuestoDiferidoFinal: z.number(),
     })
-  )
-})
+  ),
+});
+
+export const ImpuestoDiferidoInput = {
+  ImpuestosDiferidosDiferenciasTemporarias: {
+    ActivoDiferido: {
+      EfectivoYEfectivoEquivalente: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      InversionesEInstrumentosDerivados: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      CuentasPorCobrar: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      Inventarios: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      PropiedadesPlantaYEquipo: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      ActivosIntangibles: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      PropiedadesDeInversion: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      ActivosBiologicos: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      EntregarAPropietarios: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      PasivosFinancierosYCuentasPorPagar: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      ImpuestosGravamenesYTasas: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      BeneficiosAEmpleados: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      Provisiones: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      OtrosPasivosAnticiposYAvancesRecibidos: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      OperacionesConTitulosYDerivados: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      PerdidasFiscalesYExcesosDeRentaPresuntiva: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      Fiscales: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      OtrosActivos: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      Total: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+    },
+    PasivoDiferido: {
+      EfectivoYEfectivoEquivalente: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      InversionesEInstrumentosDerivados: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      CuentasPorCobrar: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      Inventarios: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      PropiedadesPlantaYEquipo: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      ActivosIntangibles: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      PropiedadesDeInversion: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      ActivosBiologicos: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      EntregarAPropietarios: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      PasivosFinancierosYCuentasPorPagar: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      ImpuestosGravamenesYTasas: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      BeneficiosAEmpleados: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      Provisiones: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      OtrosPasivosAnticiposYAvancesRecibidos: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      OperacionesConTitulosYDerivados: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      PerdidasFiscalesYExcesosDeRentaPresuntiva: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      Fiscales: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      OtrosActivos: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+      Total: {
+        BaseContable: 0,
+        BaseFiscal: 0,
+        DiferenciaTemporaria: 0,
+        DiferenciaPermanente: 0,
+        SaldoImpuestoDiferidoActual: 0,
+        SaldoImpuestoDiferidoAnterior: 0,
+        Variacion: 0,
+        TasaFiscalAplicada: 0,
+      },
+    },
+  },
+  ActivosCreditosTributos: {
+    SaldosFavor: {
+      Saldo31VigenciaActual: 0,
+      Saldo31VigenciaAnterior: 0,
+      Variacion: 0,
+      ReduccionCompensacion: 0,
+      CorreccionMayorValor: 0,
+      CorreccionMenorValor: 0,
+      AjusteMayorValor: 0,
+      AjusteMenorValor: 0,
+    },
+    ImpuestosPagadosExterior: {
+      Saldo31VigenciaActual: 0,
+      Saldo31VigenciaAnterior: 0,
+      Variacion: 0,
+      ReduccionCompensacion: 0,
+      CorreccionMayorValor: 0,
+      CorreccionMenorValor: 0,
+      AjusteMayorValor: 0,
+      AjusteMenorValor: 0,
+    },
+  },
+  DetalleCompensacionPerdidasFiscales: [
+    {
+      Anio: 0,
+      PerdidasFiscalesAcumuladasCompensarInicio: 0,
+      PerdidaFiscalGeneradaPeriodo: 0,
+      PerdidaFiscalCompensadaPeriodo: 0,
+      ValoresNoCompesados: 0,
+      AjustesMayorValor: 0,
+      AjustesMenorValor: 0,
+      PerdidaFiscalAcumuladaCompensarFinal: 0,
+      SaldoActivoImpuestoDiferido: 0,
+    },
+    {
+      Anio: 0,
+      PerdidasFiscalesAcumuladasCompensarInicio: 0,
+      PerdidaFiscalGeneradaPeriodo: 0,
+      PerdidaFiscalCompensadaPeriodo: 0,
+      ValoresNoCompesados: 0,
+      AjustesMayorValor: 0,
+      AjustesMenorValor: 0,
+      PerdidaFiscalAcumuladaCompensarFinal: 0,
+      SaldoActivoImpuestoDiferido: 0,
+    },
+  ],
+  DetalleCompensacionExcesoRentaPresuntiva: [
+    {
+      Anio: 0,
+      ValorAcumuladoCompensarInicioPeriodo: 0,
+      ValorGeneradoPeriodo: 0,
+      ValorCompensadoPeriodo: 0,
+      ValoresNoCompensados: 0,
+      AjustesMayorValor: 0,
+      AjustesMenorValor: 0,
+      ValorAcumuladoCompensarFinalPerido: 0,
+      SaldoActivoImpuestoDiferidoFinal: 0,
+    },
+  ],
+};

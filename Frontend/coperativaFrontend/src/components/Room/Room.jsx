@@ -60,10 +60,7 @@ const Room = ({ room, usuId, onRefresh }) => {
    * @returns {string} La fecha formateada.
    */
   const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const year = date.getFullYear();
-    const month = ('0' + (date.getMonth() + 1)).slice(-2);
-    const day = ('0' + (date.getDate() + 1)).slice(-2);
+    const [year, month, day] = dateString.split('T')[0].split('-');
     return `${day} / ${month} / ${year}`;
   };
 

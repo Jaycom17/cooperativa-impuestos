@@ -16,14 +16,30 @@ export const listDetalleRenglones = async () => {
   }
 };
 
-export const listDetalleRenglonesById = async (detID) => {
+export const listDetalleRenglonesById = async (student) => {
   try {
-    const result = await prisma.formdetallerenglones.findUnique({
+    const res = await prisma.report.findFirst({
       where: {
-        detID,
+        stuID: student.stuID,
+        roomID: student.roomID,
+      },select: {
+        detID: true,
       },
     });
-    result.detContent = JSON.parse(result.detContent.replace(/'/g, '"'));
+
+    if (!res) {
+      return {message: "Detalle Renglones no encontrado"};
+    }
+
+    const result = await prisma.formdetallerenglones.findUnique({
+      where: {
+        detID : res.detID,
+      },
+    });
+    
+    if (!result) {
+      return {message: "Detalle Renglones no encontrado"};
+    }
     return result;
   } catch (error) {
     console.error(error);
@@ -48,21 +64,33 @@ export const createDetalleRenglones = async (detalleRenglones) => {
   }
 };
 
-export const updateDetalleRenglones = async (detID, detalleRenglones) => {
+export const updateDetalleRenglones = async (student, detalleRenglones) => {
   try {
-    const result = await prisma.formdetallerenglones.update({
+    const res = await prisma.report.findFirst({
       where: {
-        detID,
+        roomID: student.roomID,
+        stuID: student.stuID,
       },
-      data: {
-        detContent: JSON.stringify(detalleRenglones)
-          .replace(/\n|\s/g, "")
-          .replace(/"/g, "'"),
+      select: {
+        detID: true,
       },
     });
-    return true;
+
+    if (!res) {
+      return {message: "Detalle Renglones no encontrado"};
+    }
+
+    const result = await prisma.formdetallerenglones.update({
+      where: {
+        detID: res.detID,
+      },
+      data: {
+        detContent: detalleRenglones,
+      },
+    });
+    return result;
   } catch (error) {
     console.error(error);
-    return false;
+    return {message: {error: 'No se pudo actualizar el formulario'}};
   }
 }

@@ -5,9 +5,11 @@ import { useState } from "react";
 import TeacherNavbar from "../../components/TeacherNavBar/TeacherNavbar";
 import AsideProf from "../../components/AsideProf/AsideProf";
 import ingFact from "../../formsData/IngFact.json";
+import impDif from "../../formsData/ImpuestoDiferido.json";
 import GenericTabs from "../../components/ShowFormsGeneric/GenericTabs";
 //Importación de servicios
 import { getIngresosFacturacionStu } from "../../services/ingFac.service";
+import { getImpuestoDiferidoStu } from "../../services/impuestoDiferido.service";
 //Importación de utilidades
 import { forms } from "../../utils/report";
 //Importación de imágenes
@@ -101,6 +103,17 @@ function RoomReport() {
       case "rentaliquida":
         break;
       case "impuestodiferido":
+        setData(impDif);
+        getImpuestoDiferidoStu(stuID, roomID)
+          .then((res) => {
+            Object.entries(res.data.impContent).map(([key, val]) => {
+              receiveData(val, [key], impDif);
+            });
+            console.log(data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
         break;
       case "ingrefactform":
         setData(ingFact);

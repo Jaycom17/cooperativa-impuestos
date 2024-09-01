@@ -59,7 +59,7 @@ const AsideProf = ({ toNav, getStudent }) => {
       try {
         const { data } = await getStudentsByRoom(roomID);
         const sortedData = data.sort((a, b) =>
-          a.stuName.localeCompare(b.stuName)
+          a.stuCedula.localeCompare(b.stuCedula)
         );
         setStudents(sortedData);
         setStudentsCopy(sortedData);
@@ -86,7 +86,7 @@ const AsideProf = ({ toNav, getStudent }) => {
   const searchStudent = (e) => {
     const searchValue = e.target.value;
     const filteredStudents = studentsCopy.filter((student) =>
-      student.stuName.toLowerCase().includes(searchValue.toLowerCase())
+      student.stuCedula.toLowerCase().includes(searchValue.toLowerCase())
     );
     setStudents(filteredStudents);
   };
@@ -125,7 +125,7 @@ const AsideProf = ({ toNav, getStudent }) => {
         <div className="flex flex-col items-center bg-transparent p-4 text-center font-semibold">
           <h1 className="text-white md:text-xl md:mt-[10px] bg-transparent">
             {selectedStudent
-              ? selectedStudent.stuName
+              ? selectedStudent.stuCedula
               : "Nombre del estudiante"}
           </h1>
         </div>
@@ -181,7 +181,7 @@ const AsideProf = ({ toNav, getStudent }) => {
                     : ""
                 }`}
               >
-                {student.stuName}
+                {student.stuCedula}
               </button>
             ))}
           </div>

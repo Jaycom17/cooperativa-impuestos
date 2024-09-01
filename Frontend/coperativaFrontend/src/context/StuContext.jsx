@@ -52,11 +52,11 @@ export const StudentProvider = ({ children }) => {
     }
   };
 
-  const sStudent = async (stuName) => {
+  const sStudent = async (stuCedula) => {
     try {
       const roomID = JSON.parse(localStorage.getItem("room")).roomID;
 
-      const res = await searchStudent(stuName, roomID);
+      const res = await searchStudent(stuCedula, roomID);
 
       if (res.statusText !== 'OK') return;
 

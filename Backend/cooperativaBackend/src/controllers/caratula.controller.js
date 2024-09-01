@@ -11,9 +11,9 @@ export const getCaratula = async (req, res) => {
 }
 
 export const getCaratulaById = async (req, res) => {
-    const { carID } = req.params;
+    const student = req.body.student;
 
-    const result = await listCaratulaById(carID);
+    const result = await listCaratulaById(student);
 
     if (!result) {
         return res.status(404).json({ error: 'Caratula no encontrado' });
@@ -35,10 +35,13 @@ export const postCaratula = async (req, res) => {
 }
 
 export const putCaratula = async (req, res) => {
-    const { carID } = req.params;
     const updatedCaratula = req.body;
 
-    const result = await updateCaratula(carID, updatedCaratula);
+    const student = req.body.student;
+
+    delete updatedCaratula.student;
+
+    const result = await updateCaratula(student, updatedCaratula);
 
     if (!result) {
         return res.status(500).json({ error: 'No se pudo actualizar la caratula' });

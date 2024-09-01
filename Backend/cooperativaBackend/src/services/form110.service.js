@@ -86,7 +86,7 @@ export const updateFormulario110 = async (student, form110) => {
         r110ID: res.r110ID,
       },
       data: {
-        r110Content: form110
+        r110Content: form110,
       },
     });
     return result;

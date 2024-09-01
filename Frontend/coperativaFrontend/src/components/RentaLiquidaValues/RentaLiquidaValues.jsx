@@ -1,7 +1,5 @@
 import PropTypes from "prop-types";
-import { rentaLiquidaNames } from "../../utils/rentaLiquida";
-
-const CalculatedValues = []
+import { rentaLiquidaNames, noInputsValues } from "../../utils/rentaLiquida.js";
 
 function RentaLiquidaValues({ path, data, handleChange }) {
 
@@ -16,8 +14,8 @@ function RentaLiquidaValues({ path, data, handleChange }) {
       value = sectionData;
     }
     const pathParts = newPath.split(".");
-    if (CalculatedValues.includes(pathParts[pathParts.length - 1])) {
-      return <p className="p-1 text-xl font-medium border-b-4">{value}</p>;
+    if (noInputsValues.includes(pathParts.join(".")) || noInputsValues.includes(pathParts[pathParts.length - 1]) || noInputsValues.includes(pathParts[pathParts.length - 2])) {
+      return <p className="p-1 font-medium border-b-2">{value}</p>;
     } else {
       return (
         <input
@@ -83,7 +81,7 @@ function RentaLiquidaValues({ path, data, handleChange }) {
     return (
       <div className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white">
         <h3 className="w-full font-bold text-xl pb-2">
-          {rentaLiquidaNames[path] || path}
+          {rentaLiquidaNames[path] || rentaLiquidaNames[path.split(".").pop()] || path}
         </h3>
         {renderTextField(data)}
       </div>
@@ -100,7 +98,24 @@ function RentaLiquidaValues({ path, data, handleChange }) {
           <h3 className="w-full font-bold text-xl pb-2">
             {rentaLiquidaNames[key] || key}
           </h3>
-          {<>{renderSection(data[key], key)}</>}
+          {Object.keys(data[key]).some(
+            (subKey) => typeof data[key][subKey] === "object"
+          )
+            ? Object.keys(data[key]).map(
+                (subKey) =>
+                  typeof data[key][subKey] === "object" && (
+                    <div
+                      key={subKey}
+                      className="flex flex-col border my-4 rounded-md p-4 gap-4 bg-white"
+                    >
+                      <h3 className="w-full font-bold text-xl pb-2">
+                        {rentaLiquidaNames[subKey] || subKey}
+                      </h3>
+                      {renderSection(data[key][subKey], `${key}.${subKey}`)}
+                    </div>
+                  )
+              )
+            : renderSection(data[key], key)}
         </div>
       ))}
     </>
