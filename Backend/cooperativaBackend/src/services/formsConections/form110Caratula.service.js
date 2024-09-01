@@ -1,30 +1,31 @@
 import prisma from '../../config/prisma.js';
 
-export const getDetalleRengIngFact = async (detReng, student) => {
+export const getForm110Caratula = async (form110, student) => {
     try {
+
         const res = await prisma.report.findFirst({
             where: {
                 stuID: student.stuID,
                 roomID: student.roomID,
             },
             select: {
-                ingID: true,
+                carID: true,
             },
         });
 
-        const ingFact = await prisma.formingresosfancturacion.findUnique({
+        const caratula = await prisma.formcaratula.findUnique({
             where: {
-                ingID: res.ingID,
+                carID: res.carID,
             }
         });
 
-        if (!ingFact) {
+        if (!caratula) {
             return { message: 'Formulario no encontrado' };
         }
 
-        const content = ingFact.ingContent;
+        const content = caratula.carContent;
 
-        detReng[R43][2816].REFSaldCont = content.Totales.PasivIngrDif.TotPasivDif || 0;
+        form110.DatoPers.DatDecl.RazonSoc = (content.DatDecl.RazonSoc || 0)
 
     } catch (e) {
         console.log(e);

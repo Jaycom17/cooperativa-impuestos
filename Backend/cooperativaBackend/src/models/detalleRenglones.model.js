@@ -742,11 +742,11 @@ export const DetalleRenglones = z.object({
       SaldFisc: z.number()
     }),
     1510: z.object({
-      SaldCont: z.number(),
+      REFSaldCont: z.number(),
       Ajust1: z.number(),
       Ajust2: z.string(),
       Ajust3: z.number(),
-      SaldFisc: z.number()
+      REFSaldFisc: z.number()
     }),
     1520: z.object({
       SaldCont: z.number(),
@@ -1064,14 +1064,14 @@ export const DetalleRenglones = z.object({
     }),
     1779: z.object({
       ValCost: z.object({
-        SaldCont: z.number(),
+        REFSaldCont: z.number(),
         Ajust1: z.number(),
         Ajust2: z.string(),
         Ajust3: z.number(),
         SaldFisc: z.number()
       }),
       Reval: z.object({
-        SaldCont: z.number(),
+        REFSaldCont: z.number(),
         Ajust1: z.number(),
         Ajust2: z.string(),
         Ajust3: z.number(),
@@ -1080,14 +1080,14 @@ export const DetalleRenglones = z.object({
     }),
     1780: z.object({
       ValCost: z.object({
-        SaldCont: z.number(),
+        REFSaldCont: z.number(),
         Ajust1: z.number(),
         Ajust2: z.string(),
         Ajust3: z.number(),
         SaldFisc: z.number()
       }),
       Reval: z.object({
-        SaldCont: z.number(),
+        REFSaldCont: z.number(),
         Ajust1: z.number(),
         Ajust2: z.string(),
         Ajust3: z.number(),
@@ -1096,14 +1096,14 @@ export const DetalleRenglones = z.object({
     }),
     1788: z.object({
       ValCost: z.object({
-        SaldCont: z.number(),
+        REFSaldCont: z.number(),
         Ajust1: z.number(),
         Ajust2: z.string(),
         Ajust3: z.number(),
         SaldFisc: z.number()
       }),
       Reval: z.object({
-        SaldCont: z.number(),
+        REFSaldCont: z.number(),
         Ajust1: z.number(),
         Ajust2: z.string(),
         Ajust3: z.number(),
@@ -1111,7 +1111,7 @@ export const DetalleRenglones = z.object({
       })
     }),
     1789: z.object({
-      SaldCont: z.number(),
+      REFSaldCont: z.number(),
       Ajust1: z.number(),
       Ajust2: z.string(),
       Ajust3: z.number(),
@@ -1119,21 +1119,21 @@ export const DetalleRenglones = z.object({
     }),
     1790: z.object({
       ValCost: z.object({
-        SaldCont: z.number(),
+        REFSaldCont: z.number(),
         Ajust1: z.number(),
         Ajust2: z.string(),
         Ajust3: z.number(),
-        SaldFisc: z.number()
+        REFSaldFisc: z.number()
       }),
       DeprAcum: z.object({
-        SaldCont: z.number(),
+        REFSaldCont: z.number(),
         Ajust1: z.number(),
         Ajust2: z.string(),
         Ajust3: z.number(),
-        SaldFisc: z.number()
+        REFSaldFisc: z.number()
       }),
       Det: z.object({
-        SaldCont: z.number(),
+        REFSaldCont: z.number(),
         Ajust1: z.number(),
         Ajust2: z.string(),
         Ajust3: z.number(),
@@ -1233,7 +1233,7 @@ export const DetalleRenglones = z.object({
       SaldFisc: z.number()
     }),
     1860: z.object({
-      SaldCont: z.number(),
+      REFSaldCont: z.number(),
       Ajust1: z.number(),
       Ajust2: z.string(),
       Ajust3: z.number(),
@@ -1450,7 +1450,7 @@ export const DetalleRenglones = z.object({
       SaldFisc: z.number()
     }),
     2816: z.object({
-      SaldCont: z.number(),
+      REFSaldCont: z.number(),
       Ajust1: z.number(),
       Ajust2: z.string(),
       Ajust3: z.number(),
@@ -1471,7 +1471,7 @@ export const DetalleRenglones = z.object({
       SaldFisc: z.number()
     }),
     2826: z.object({
-      SaldCont: z.number(),
+      REFSaldCont: z.number(),
       Ajust1: z.number(),
       Ajust2: z.string(),
       Ajust3: z.number(),
@@ -1508,90 +1508,24 @@ export const DetalleRenglones = z.object({
     TotFisc: z.number()
   }),
   R46: z.object({
-    3130: z.object({
-      SaldCont: z.number(),
-      Ajust1: z.number(),
-      Ajust2: z.string(),
-      Ajust3: z.number(),
-      SaldFisc: z.number()
-    }),
+    3130: z.object({ SaldCont: z.number() }),
     3605: z.object({
-      UtilDesImp: z.object({
-        SaldCont: z.number(),
-        Ajust1: z.number(),
-        Ajust2: z.string(),
-        Ajust3: z.number(),
-        SaldFisc: z.number()
-      }),
-      PerDesImp: z.object({
-        SaldCont: z.number(),
-        Ajust1: z.number(),
-        Ajust2: z.string(),
-        Ajust3: z.number(),
-        SaldFisc: z.number()
-      })
+      UtilDesImp: z.object({ SaldCont: z.number() }),
+      PerDesImp: z.object({ SaldCont: z.number() })
     }),
-    3705: z.object({
-      SaldCont: z.number(),
-      Ajust1: z.number(),
-      Ajust2: z.string(),
-      Ajust3: z.number(),
-      SaldFisc: z.number()
-    }),
-    3710: z.object({
-      SaldCont: z.number(),
-      Ajust1: z.number(),
-      Ajust2: z.string(),
-      Ajust3: z.number(),
-      SaldFisc: z.number()
-    }),
+    3705: z.object({ SaldCont: z.number() }),
+    3710: z.object({ SaldCont: z.number() }),
     3715: z.object({
-      GananAcum: z.object({
-        SaldCont: z.number(),
-        Ajust1: z.number(),
-        Ajust2: z.string(),
-        Ajust3: z.number(),
-        SaldFisc: z.number()
-      }),
-      PerAcum: z.object({
-        SaldCont: z.number(),
-        Ajust1: z.number(),
-        Ajust2: z.string(),
-        Ajust3: z.number(),
-        SaldFisc: z.number()
-      })
+      GananAcum: z.object({ SaldCont: z.number() }),
+      PerAcum: z.object({ SaldCont: z.number() })
     }),
     3720: z.object({
-      GananAcumORI: z.object({
-        SaldCont: z.number(),
-        Ajust1: z.number(),
-        Ajust2: z.string(),
-        Ajust3: z.number(),
-        SaldFisc: z.number()
-      }),
-      PerAcumORI: z.object({
-        SaldCont: z.number(),
-        Ajust1: z.number(),
-        Ajust2: z.string(),
-        Ajust3: z.number(),
-        SaldFisc: z.number()
-      })
+      GananAcumORI: z.object({ SaldCont: z.number() }),
+      PerAcumORI: z.object({ SaldCont: z.number() })
     }),
     3805: z.object({
-      Reval: z.object({
-        SaldCont: z.number(),
-        Ajust1: z.number(),
-        Ajust2: z.string(),
-        Ajust3: z.number(),
-        SaldFisc: z.number()
-      }),
-      MetPar: z.object({
-        SaldCont: z.number(),
-        Ajust1: z.number(),
-        Ajust2: z.string(),
-        Ajust3: z.number(),
-        SaldFisc: z.number()
-      })
+      Reval: z.object({ SaldCont: z.number() }),
+      MetPar: z.object({ SaldCont: z.number() })
     }),
     TotCont: z.number(),
     TotFisc: z.number()
@@ -1851,10 +1785,10 @@ export const DetalleRenglones = z.object({
     TotCont: z.number(),
     TotFisc: z.number()
   }),
-  R50: z.object({ TotCont: z.number(), TotFisc: z.number() }),
+  R50: z.object({ ValCont: z.number(), ValFisc: z.number() }),
   R51: z.object({
-    TotCont: z.number(),
-    TotFisc: z.number(),
+    ValCont: z.number(),
+    ValFisc: z.number(),
     Dat: z.object({
       SaldCont: z.number(),
       Ajust1: z.number(),
@@ -1945,7 +1879,7 @@ export const DetalleRenglones = z.object({
     TotCont: z.number(),
     TotFisc: z.number()
   }),
-  R55: z.object({ TotCont: z.number(), TotFisc: z.number() }),
+  R55: z.object({ ValCont: z.number(), ValFisc: z.number() }),
   R56: z.object({
     TotCont: z.number(),
     TotFisc: z.number(),
@@ -3993,8 +3927,8 @@ export const DetalleRenglones = z.object({
     TotFisc: z.number()
   }),
   R67: z.object({ TotCont: z.number(), TotFisc: z.number() }),
-  R68: z.object({ TotCont: z.number(), TotFisc: z.number() }),
-  R69: z.object({ TotCont: z.number(), TotFisc: z.number() }),
+  R68: z.object({ ValCont: z.number(), ValFisc: z.number() }),
+  R69: z.object({ ValCont: z.number(), ValFisc: z.number() }),
   R70: z.object({
     TotCont: z.number(),
     TotFisc: z.number(),
@@ -4020,26 +3954,11 @@ export const DetalleRenglones = z.object({
       SaldFisc: z.number()
     })
   }),
-  R71: z.object({
-    TotCont: z.number(),
-    TotFisc: z.number(),
-    IngBruto: z.object({
-      SaldCont: z.number(),
-      Ajust1: z.number(),
-      Ajust2: z.string(),
-      Ajust3: z.number(),
-      SaldFisc: z.number()
-    })
-  }),
+  R71: z.object({ ValCont: z.number(), ValFisc: z.number() }),
   R72: z.object({ TotCont: z.number(), TotFisc: z.number() }),
   R73: z.object({ TotCont: z.number(), TotFisc: z.number() }),
   R74: z.object({
-    CompenPerFisc: z.object({
-      Ajust1: z.number(),
-      Ajust2: z.string(),
-      Ajust3: z.number(),
-      SaldFisc: z.number()
-    }),
+    CompenPerFisc: z.object({ Val: z.number() }),
     CompenExcRen: z.object({
       Exc: z.number(),
       Sub: z.number(),
@@ -4048,7 +3967,7 @@ export const DetalleRenglones = z.object({
     TotFisc: z.number()
   }),
   R75: z.object({ TotFisc: z.number() }),
-  R76: z.object({ TotFisc: z.number() }),
+  R76: z.object({ ValFisc: z.number() }),
   R77: z.object({
     Act235: z.number(),
     RentNet: z.number(),
@@ -4143,7 +4062,7 @@ export const DetalleRenglones = z.object({
   }),
   R86: z.object({ TotFisc: z.number() }),
   R87: z.object({ TotFisc: z.number() }),
-  R88: z.object({ TotFisc: z.number() }),
+  R88: z.object({ ValFisc: z.number() }),
   R89: z.object({ TotFisc: z.number() }),
   R90: z.object({ TotFisc: z.number() }),
   R91: z.object({ TotFisc: z.number() }),
@@ -4166,15 +4085,19 @@ export const DetalleRenglones = z.object({
     TotFisc: z.number()
   }),
   R94: z.object({ TotFisc: z.number() }),
-  R95: z.object({ LotRif: z.number(), Otro: z.number(), TotFisc: z.number() }),
-  R96: z.object({ TotFisc: z.number() }),
+  R95: z.object({
+    LotRif: z.number(),
+    OtroGanOca: z.number(),
+    TotFisc: z.number()
+  }),
+  R96: z.object({ ValFisc: z.number() }),
   R97: z.object({ TotFisc: z.number() }),
-  R98: z.object({ TotFisc: z.number() }),
-  R99: z.object({ TotFisc: z.number() }),
-  R100: z.object({ TotFisc: z.number() }),
-  R101: z.object({ TotFisc: z.number() }),
-  R102: z.object({ TotFisc: z.number() }),
-  R103: z.object({ TotCont: z.number(), TotFisc: z.number() }),
+  R98: z.object({ ValFisc: z.number() }),
+  R99: z.object({ ValFisc: z.number() }),
+  R100: z.object({ ValFisc: z.number() }),
+  R101: z.object({ ValFisc: z.number() }),
+  R102: z.object({ ValFisc: z.number() }),
+  R103: z.object({ ValCont: z.number(), ValFisc: z.number() }),
   R104: z.object({
     Ventas: z.object({
       Data: z.array(
@@ -4270,16 +4193,16 @@ export const DetalleRenglones = z.object({
     TotFisc: z.number()
   }),
   R105: z.object({ TotFisc: z.number() }),
-  R106: z.object({ TotFisc: z.number() }),
-  R107: z.object({ TotFisc: z.number() }),
-  R108: z.object({ TotFisc: z.number() }),
-  R109: z.object({ TotFisc: z.number() }),
+  R106: z.object({ ValFisc: z.number() }),
+  R107: z.object({ ValFisc: z.number() }),
+  R108: z.object({ ValFisc: z.number() }),
+  R109: z.object({ ValFisc: z.number() }),
   R110: z.object({ TotFisc: z.number() }),
   R111: z.object({ Extem: z.number(), TotFisc: z.number() }),
   R112: z.object({ TotFisc: z.number() }),
   R113: z.object({ TotFisc: z.number() }),
-  R114: z.object({ TotFisc: z.number() }),
-  R115: z.object({ TotFisc: z.number() })
+  R114: z.object({ ValFisc: z.number() }),
+  R115: z.object({ ValFisc: z.number() })
 })
 
 export const DetalleRenglonesInput = {
@@ -6093,12 +6016,12 @@ export const DetalleRenglonesInput = {
     "TotFisc": 0
   },
   "R50": {
-    "TotCont": 0,
-    "TotFisc": 0
+    "ValCont": 0,
+    "ValFisc": 0
   },
   "R51": {
-    "TotCont": 0,
-    "TotFisc": 0,
+    "ValCont": 0,
+    "ValFisc": 0,
     "Dat": {
       "SaldCont": 0,
       "Ajust1": 0,
@@ -6190,8 +6113,8 @@ export const DetalleRenglonesInput = {
     "TotFisc": 0
   },
   "R55": {
-    "TotCont": 0,
-    "TotFisc": 0
+    "ValCont": 0,
+    "ValFisc": 0
   },
   "R56": {
     "TotCont": 0,
@@ -8277,12 +8200,12 @@ export const DetalleRenglonesInput = {
     "TotFisc": 0
   },
   "R68": {
-    "TotCont": 0,
-    "TotFisc": 0
+    "ValCont": 0,
+    "ValFisc": 0
   },
   "R69": {
-    "TotCont": 0,
-    "TotFisc": 0
+    "ValCont": 0,
+    "ValFisc": 0
   },
   "R70": {
     "TotCont": 0,
@@ -8310,15 +8233,8 @@ export const DetalleRenglonesInput = {
     }
   },
   "R71": {
-    "TotCont": 0,
-    "TotFisc": 0,
-    "IngBruto": {
-      "SaldCont": 0,
-      "Ajust1": 0,
-      "Ajust2": "",
-      "Ajust3": 0,
-      "SaldFisc": 0
-    }
+    "ValCont": 0,
+    "ValFisc": 0
   },
   "R72": {
     "TotCont": 0,
@@ -8330,10 +8246,7 @@ export const DetalleRenglonesInput = {
   },
   "R74": {
     "CompenPerFisc": {
-      "Ajust1": 0,
-      "Ajust2": "",
-      "Ajust3": 0,
-      "SaldFisc": 0
+      "Val": 0
     },
     "CompenExcRen": {
       "Exc": 0,
@@ -8346,7 +8259,7 @@ export const DetalleRenglonesInput = {
     "TotFisc": 0
   },
   "R76": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R77": {
     "Act235": 0,
@@ -8464,7 +8377,7 @@ export const DetalleRenglonesInput = {
     "TotFisc": 0
   },
   "R88": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R89": {
     "TotFisc": 0
@@ -8503,33 +8416,33 @@ export const DetalleRenglonesInput = {
   },
   "R95": {
     "LotRif": 0,
-    "Otro": 0,
+    "OtroGanOca": 0,
     "TotFisc": 0
   },
   "R96": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R97": {
     "TotFisc": 0
   },
   "R98": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R99": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R100": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R101": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R102": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R103": {
-    "TotCont": 0,
-    "TotFisc": 0
+    "ValCont": 0,
+    "ValFisc": 0
   },
   "R104": {
     "Ventas": {
@@ -8602,15 +8515,6 @@ export const DetalleRenglonesInput = {
           "Ajust2": "",
           "Ajust3": 0,
           "SaldFisc": 0
-        },
-        {
-          "Nombre": "",
-          "Nit": "",
-          "SaldCont": 0,
-          "Ajust1": 0,
-          "Ajust2": "",
-          "Ajust3": 0,
-          "SaldFisc": 0
         }
       ],
       "TotCont": 0,
@@ -8638,16 +8542,16 @@ export const DetalleRenglonesInput = {
     "TotFisc": 0
   },
   "R106": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R107": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R108": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R109": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R110": {
     "TotFisc": 0
@@ -8663,9 +8567,9 @@ export const DetalleRenglonesInput = {
     "TotFisc": 0
   },
   "R114": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R115": {
-    "TotFisc": 0
+    "ValFisc": 0
   }
 }

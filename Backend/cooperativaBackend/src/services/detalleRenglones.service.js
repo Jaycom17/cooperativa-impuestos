@@ -18,6 +18,7 @@ export const listDetalleRenglones = async () => {
 
 export const listDetalleRenglonesById = async (student) => {
   try {
+    console.log(student);
     const res = await prisma.report.findFirst({
       where: {
         stuID: student.stuID,

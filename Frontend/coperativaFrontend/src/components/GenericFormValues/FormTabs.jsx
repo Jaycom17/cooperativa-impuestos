@@ -3,9 +3,7 @@ import Form110Values from "./FormValues";
 import TabBar from "../TabBar/TabBar";
 import { useState } from "react";
 
-function Form110Tabs({json, handleChange, TabsNames, CalculatedValues, ValuesNames, onReport = false}) {
-
-    console.log(json)
+function Form110Tabs({json, handleChange, TabsNames, CalculatedValues, ValuesNames, onReport = false, handleAdd, handleQuit}) {
     const keys = Object.keys(json);
 
     const tabs = keys.map(key => ({
@@ -16,9 +14,8 @@ function Form110Tabs({json, handleChange, TabsNames, CalculatedValues, ValuesNam
     const [activeTab, setActiveTab] = useState(tabs[0].name);
 
     const renderForm = (json, path) => (
-        <Form110Values json={json} path={path} handleChange={handleChange} CalculatedValues={CalculatedValues} ValuesNames={ValuesNames}/>
+        <Form110Values json={json} path={path} handleChange={handleChange} CalculatedValues={CalculatedValues} ValuesNames={ValuesNames} handleAdd={handleAdd} handleQuit={handleQuit}/>
     );
-
     return (
         <section className="w-full mt-12 md:mt-0 overflow-auto max-h-screen">
             <TabBar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} onReport={onReport}/>
@@ -36,4 +33,6 @@ Form110Tabs.propTypes = {
     CalculatedValues: PropTypes.array.isRequired,
     ValuesNames: PropTypes.object.isRequired,
     onReport: PropTypes.bool,
+    handleAdd: PropTypes.func.isRequired,
+    handleQuit: PropTypes.func.isRequired
 }

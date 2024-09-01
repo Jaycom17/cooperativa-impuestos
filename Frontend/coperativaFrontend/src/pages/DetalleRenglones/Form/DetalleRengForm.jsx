@@ -1,16 +1,90 @@
 import jsonData from '../../../formsData/DetalleReng.json';
 import AsideStudent from "../../../components/AsideStudent/AsideStudent";
-import Form110Tabs from '../../../components/GenericFormValues/FormTabs.jsx';
-import { useState } from "react";
-import { TabsNames, CalculatedValues, ValuesNames, RSumNorm, RSumFisc, RSumVal } from "../../../utils/DetalleReng.js";
+import FormTabs from '../../../components/GenericFormValues/FormTabs.jsx';
+import { useState, useEffect } from "react";
+import { TabsNames, CalculatedValues, ValuesNames, RSumNorm, RSumFisc, RSumVal, addRetencion } from "../../../utils/DetalleReng.js";
+import { getForm, updateForm } from "../../../services/detalleReng.service.js";
 
 const DetalleReng = () => {
     const [data, setData] = useState(jsonData);
 
+    const updateValue = (value, path) => {
+        // Crear una copia del objeto data
+        const updatedData = { ...data };
+
+        // Navegar al valor específico usando la ruta (path)
+        let currentLevel = updatedData;
+        const pathArray = path.split('.');
+        for (let i = 0; i < pathArray.length - 1; i++) {
+            currentLevel = currentLevel[pathArray[i]];
+        }
+
+        const lastKey = pathArray[pathArray.length - 1];
+
+        // Actualizar el valor
+        currentLevel[lastKey] = value;
+        setData(updatedData);
+    }
+
+    const updateArray = (length, path) => {
+        // Crear una copia del objeto data
+        const updatedData = { ...data };
+
+        // Navegar al valor específico usando la ruta (path)
+        let currentLevel = updatedData;
+        const pathArray = path.split('.');
+        for (let i = 0; i < pathArray.length - 1; i++) {
+            currentLevel = currentLevel[pathArray[i]];
+        }
+
+        const lastKey = pathArray[pathArray.length - 1];
+
+        // Actualizar el valor
+        console.log("length", currentLevel[lastKey].length)
+        for (let i = 0; i < length; i++) {
+            if (currentLevel[lastKey].length < length) {
+                currentLevel[lastKey].push({
+                    ...addRetencion,
+                });
+            }
+        }
+        setData(updatedData);
+    }
+
+    const recieveData = (key, path) => {
+        if (Array.isArray(key) && key.length > 1) {
+            updateArray(key.length, path);
+        }
+        if (typeof key === 'object') {
+            Object.entries(key).map(([key, val]) => {
+                recieveData(val, `${path}.${key}`);
+            })
+        } else {
+            updateValue(key, path)
+        }
+
+    }
+
+    useEffect(() => {
+        getForm()
+            .then((response) => {
+                if (response.status === 200) {
+                    Object.entries(response.data.detContent).map(([key, val]) => {
+                        recieveData(val, [key]);
+                    });
+                } else {
+                    console.error("Error en la respuesta", response);
+                }
+            })
+            .catch((error) => {
+                console.error("Error en la llamada a la API", error);
+            });
+    }, []);
+
     function redondear(numero, digitos) {
         const factor = Math.pow(10, -digitos);
         return Math.round(numero / factor) * factor;
-      }
+    }
 
     const calculateSaldFisc = (currentData) => {
         for (let key in currentData) {
@@ -44,6 +118,7 @@ const DetalleReng = () => {
         return result;
     }
 
+
     const calculateTotFisc = (currentData) => {
         let result = 0;
         if (typeof currentData === "object") {
@@ -63,6 +138,41 @@ const DetalleReng = () => {
         return result;
     }
 
+    const calculateTotContR104 = (currentData) => {
+        let result = 0;
+        if (typeof currentData === "object") {
+            for (let key in currentData) {
+                if (typeof currentData[key] === 'object') {
+                    if ("TotCont" in currentData[key]) {
+                        result += currentData[key].TotCont
+                    }
+                    else {
+                        result += calculateTotContR104(currentData[key])
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+
+    const calculateTotFiscR104 = (currentData) => {
+        let result = 0;
+        if (typeof currentData === "object") {
+            for (let key in currentData) {
+                if (typeof currentData[key] === 'object') {
+                    if ("TotFisc" in currentData[key]) {
+                        result += currentData[key].TotFisc
+                    }
+                    else {
+                        result += calculateTotFiscR104(currentData[key])
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
     const calculateTotFiscVal = (currentData) => {
         let result = 0;
         for (let key in currentData) {
@@ -71,16 +181,6 @@ const DetalleReng = () => {
             }
         }
         return result;
-    }
-
-    const calculateR44TotCont = (currentData) => {
-        let result = (currentData.R36.TotCont || 0) + ((currentData.R37.TotCont || 0)) + (currentData.R38.TotCont || 0) + (currentData.R39.TotCont || 0) +
-            (currentData.R40.TotCont || 0) + (currentData.R41.TotCont || 0) + (currentData.R42.TotCont || 0) + (currentData.R43.TotCont || 0);
-        if (result < 0) {
-            return 0;
-        } else {
-            return result;
-        }
     }
 
     const calculateRSum = (currentData, RDest, RSum) => {
@@ -147,13 +247,11 @@ const DetalleReng = () => {
         }
         //TotFisc
         const Vals = [(currentData.R85.Esc1 || 0), (currentData.R85.Esc2 || 0), (currentData.R85.Esc3 || 0), (currentData.R85.Esc4 || 0)]
-        console.log("Valores", Vals)
-        console.log("Maximo", redondear(Math.max(...Vals),-3))
-        currentData.R85.TotFisc = redondear(Math.max(...Vals),-3)
+        currentData.R85.TotFisc = redondear(Math.max(...Vals), -3)
         return currentData.R85
     }
 
-    
+
 
     const calculateRestNoNeg = (val1, val2) => {
         let result = val1 - val2;
@@ -216,17 +314,17 @@ const DetalleReng = () => {
     }
 
     const calculateR93 = (currentData) => {
-        currentData.R93.DescDonEnt.ValApli = (currentData.R93.DescDonEnt.Donac || 0) * ((currentData.R93.DescDonEnt.PorcApli || 0)/100);
-        currentData.R93.DescDonEnt.Limit = redondear((currentData.R92.TotFisc || 0) * 0.25,-3);
-        if((currentData.R93.DescDonEnt.ValApli || 0) < (currentData.R93.DescDonEnt.Limit || 0)){
+        currentData.R93.DescDonEnt.ValApli = (currentData.R93.DescDonEnt.Donac || 0) * ((currentData.R93.DescDonEnt.PorcApli || 0) / 100);
+        currentData.R93.DescDonEnt.Limit = redondear((currentData.R92.TotFisc || 0) * 0.25, -3);
+        if ((currentData.R93.DescDonEnt.ValApli || 0) < (currentData.R93.DescDonEnt.Limit || 0)) {
             currentData.R93.DescDonEnt.Desc = (currentData.R93.DescDonEnt.ValApli || 0);
-        }else{
+        } else {
             currentData.R93.DescDonEnt.Desc = (currentData.R93.DescDonEnt.Limit || 0);
         }
         const result = ((currentData.R93.DescDonEnt.Desc || 0) + (currentData.R93.Otro.IndCom || 0) + (currentData.R93.Otro.IVA || 0) + (currentData.R93.Otro.RetTran || 0) + (currentData.R93.Otro.Otro || 0))
-        if( result > (currentData.R92.TotFisc || 0)){
+        if (result > (currentData.R92.TotFisc || 0)) {
             currentData.R93.TotFisc = (currentData.R92.TotFisc || 0);
-        }else{
+        } else {
             currentData.R93.TotFisc = result;
         }
         return currentData.R93
@@ -234,17 +332,76 @@ const DetalleReng = () => {
 
     const calculateR95 = (currentData) => {
         currentData.R95.LotRif = (currentData["R80"][429543]["PreRifLot"].SaldFisc || 0) * 0.2;
-        if(((currentData.R85.TotFisc || 0) - (currentData["R80"][429543]["PreRifLot"].SaldFisc || 0)) >0){
-            currentData.R95.OtroGanOca = redondear((currentData.R85.TotFisc || 0) - (currentData["R80"][429543]["PreRifLot"].SaldFisc || 0),-3)*0.1;
-        }else{
+        if (((currentData.R85.TotFisc || 0) - (currentData["R80"][429543]["PreRifLot"].SaldFisc || 0)) > 0) {
+            currentData.R95.OtroGanOca = redondear((currentData.R85.TotFisc || 0) - (currentData["R80"][429543]["PreRifLot"].SaldFisc || 0), -3) * 0.1;
+        } else {
             currentData.R95.OtroGanOca = 0;
         }
         currentData.R95.TotFisc = (currentData.R95.LotRif || 0) + (currentData.R95.OtroGanOca || 0)
         return currentData.R95
     }
 
+
+
+    const handleAdd = (path) => {
+        const pathArray = path.split('.');
+        let newData = { ...data };
+        if (pathArray[pathArray.length - 2] === "Ventas") {
+            newData.R104.Ventas.Data.push({
+                ...addRetencion,
+            });
+        } else if (pathArray[pathArray.length - 2] === "Servicio") {
+            newData.R104.Servicio.Data.push({
+                ...addRetencion,
+            });
+        } else if (pathArray[pathArray.length - 2] === "HonorCom") {
+            newData.R104.HonorCom.Data.push({
+                ...addRetencion,
+            });
+        } else if (pathArray[pathArray.length - 2] === "RenFin") {
+            newData.R104.RenFin.Data.push({
+                ...addRetencion,
+            });
+        } else if (pathArray[pathArray.length - 2] === "DiviPart") {
+            newData.R104.DiviPart.Data.push({
+                ...addRetencion,
+            });
+        } else if (pathArray[pathArray.length - 2] === "Otro") {
+            newData.R104.Otro.Data.push({
+                ...addRetencion,
+            });
+        }
+        setData(newData);
+    };
+
+    const handleQuit = (path) => {
+        const pathArray = path.split('.');
+        let newData = { ...data };
+        if (pathArray[pathArray.length - 2] === "Ventas") {
+            if (newData.R104.Ventas.Data.length !== 1)
+                newData.R104.Ventas.Data.pop();
+
+        } else if (pathArray[pathArray.length - 2] === "Servicio") {
+            if (newData.R104.Servicio.Data.length !== 1)
+                newData.R104.Servicio.Data.pop();
+        } else if (pathArray[pathArray.length - 2] === "HonorCom") {
+            if (newData.R104.HonorCom.Data.length !== 1)
+                newData.R104.HonorCom.Data.pop();
+        } else if (pathArray[pathArray.length - 2] === "RenFin") {
+            if (newData.R104.RenFin.Data.length !== 1)
+                newData.R104.RenFin.Data.pop();
+        } else if (pathArray[pathArray.length - 2] === "DiviPart") {
+            if (newData.R104.DiviPart.Data.length !== 1)
+                newData.R104.DiviPart.Data.pop();
+        } else if (pathArray[pathArray.length - 2] === "Otro") {
+            if (newData.R104.Otro.Data.length !== 1)
+                newData.R104.Otro.Data.pop();
+        }
+        setData(newData);
+    };
+
     const handleChange = (e) => {
-        let { name, value } = e.target;
+        let { name, value, type } = e.target;
 
         if (value === '') value = 0;
 
@@ -262,13 +419,17 @@ const DetalleReng = () => {
 
         // Detectar el tipo de dato actual
         const currentValueType = typeof currentLevel[lastKey];
-
         // Convertir el valor al tipo correcto
-        if (currentValueType === 'number') {
-            value = parseFloat(value);
-        } else if (currentValueType === 'boolean') {
-            value = value === 'true';
+        if (type !== 'text') {
+            if (currentValueType === 'number') {
+                value = parseFloat(value);
+            } else if (currentValueType === 'boolean') {
+                value = value === 'true';
+            }
+        } else if (type === 'text' && value === 0) {
+            value = "";
         }
+
         // No es necesario convertir si es una cadena de texto (string)
 
         // Actualizar el valor
@@ -307,6 +468,36 @@ const DetalleReng = () => {
             }
         } else if (RSumVal.includes(key)) {
             updatedData[key].TotFisc = calculateTotFiscVal(updatedData[key]);
+        } else if (key == "R104") {
+            for (let subKey in updatedData[key]) {
+                if (typeof updatedData[key][subKey] === 'object') {
+                    updatedData[key][subKey]["Data"] = calculateSaldFisc(updatedData[key][subKey]["Data"]);
+                    let TotCont = calculateTotCont(updatedData[key][subKey]);
+                    let TotFisc = calculateTotFisc(updatedData[key][subKey]);
+                    if (TotCont < 0) {
+                        updatedData[key][subKey].TotCont = 0;
+                    } else {
+                        updatedData[key][subKey].TotCont = TotCont;
+                    }
+                    if (TotFisc < 0) {
+                        updatedData[key][subKey].TotFisc = 0;
+                    } else {
+                        updatedData[key][subKey].TotFisc = TotFisc;
+                    }
+                }
+            }
+            let TotCont = calculateTotContR104(updatedData[key]);
+            let TotFisc = calculateTotFiscR104(updatedData[key]);
+            if (TotCont < 0) {
+                updatedData[key].TotCont = 0;
+            } else {
+                updatedData[key].TotCont = TotCont;
+            }
+            if (TotFisc < 0) {
+                updatedData[key].TotFisc = 0;
+            } else {
+                updatedData[key].TotFisc = TotFisc;
+            }
         }
         updatedData.R44 = calculateRSum(updatedData, "R44", ["R36", "R37", "R38", "R39", "R40", "R41", "R42", "R43"]);
 
@@ -331,15 +522,15 @@ const DetalleReng = () => {
 
         updatedData.R85 = calculateR85(updatedData);
 
-        updatedData.R86.TotFisc = redondear((updatedData.R79.TotFisc || 0) * 0.35,-3);
+        updatedData.R86.TotFisc = redondear((updatedData.R79.TotFisc || 0) * 0.35, -3);
 
-        updatedData.R87.TotFisc = redondear((updatedData.R54.TotFisc || 0) * 0.1,-3);
+        updatedData.R87.TotFisc = redondear((updatedData.R54.TotFisc || 0) * 0.1, -3);
 
-        updatedData.R89.TotFisc = redondear((updatedData.R56.TotFisc || 0) * 0.27,-3);
+        updatedData.R89.TotFisc = redondear((updatedData.R56.TotFisc || 0) * 0.27, -3);
 
-        updatedData.R90.TotFisc = redondear(((updatedData.R53.TotFisc || 0) * 0.31) + (((updatedData.R53.TotFisc || 0) * 0.69)*0.1),-3);
+        updatedData.R90.TotFisc = redondear(((updatedData.R53.TotFisc || 0) * 0.31) + (((updatedData.R53.TotFisc || 0) * 0.69) * 0.1), -3);
 
-        updatedData.R91.TotFisc = redondear((updatedData.R52.TotFisc || 0) * 0.33,-3);
+        updatedData.R91.TotFisc = redondear((updatedData.R52.TotFisc || 0) * 0.33, -3);
 
         updatedData.R92 = calculateRSumFisc(updatedData, "R92", ["R86", "R87", "R88", "R89", "R90", "R91"]);
 
@@ -351,6 +542,18 @@ const DetalleReng = () => {
 
         updatedData.R97.TotFisc = (updatedData.R94.TotFisc || 0) + (updatedData.R95.TotFisc || 0) - (updatedData.R96.ValFisc || 0);
 
+        updatedData.R105.TotFisc = (updatedData.R103.ValFisc || 0) + (updatedData.R104.TotFisc || 0);
+
+        updatedData.R110.TotFisc = calculateRestNoNeg(((updatedData.R97.TotFisc || 0) + (updatedData.R106.ValFisc || 0) + (updatedData.R108.ValFisc || 0) + (updatedData.R109.ValFisc || 0))
+            , ((updatedData.R98.ValFisc || 0) + (updatedData.R99.ValFisc || 0) + (updatedData.R100.ValFisc || 0) + (updatedData.R101.ValFisc || 0) + (updatedData.R102.ValFisc || 0) + (updatedData.R105.TotFisc || 0) + (updatedData.R107.ValFisc || 0)));
+
+        updatedData.R111.TotFisc = updatedData.R111.Extem;
+
+        updatedData.R112.TotFisc = calculateRestNoNeg(((updatedData.R97.TotFisc || 0) + (updatedData.R106.ValFisc || 0) + (updatedData.R108.ValFisc || 0) + (updatedData.R109.ValFisc || 0) + (updatedData.R111.TotFisc || 0))
+            , ((updatedData.R98.ValFisc || 0) + (updatedData.R99.ValFisc || 0) + (updatedData.R100.ValFisc || 0) + (updatedData.R101.ValFisc || 0) + (updatedData.R102.ValFisc || 0) + (updatedData.R105.TotFisc || 0) + (updatedData.R107.ValFisc || 0)));
+
+        updatedData.R113.TotFisc = calculateRestNoNeg(((updatedData.R98.ValFisc || 0) + (updatedData.R99.ValFisc || 0) + (updatedData.R100.ValFisc || 0) + (updatedData.R101.ValFisc || 0) + (updatedData.R102.ValFisc || 0) + (updatedData.R105.TotFisc || 0) + (updatedData.R107.ValFisc || 0))
+            , ((updatedData.R97.TotFisc || 0) + (updatedData.R106.ValFisc || 0) + (updatedData.R108.ValFisc || 0) + (updatedData.R109.ValFisc || 0) + (updatedData.R111.TotFisc || 0)));
 
         //}
 
@@ -379,12 +582,13 @@ const DetalleReng = () => {
         // Calculo de los totales
         setData(updatedData);
         console.log(data)
+        updateForm(data);
     };
 
     return (
         <main className="flex md:flex-row w-full">
             <AsideStudent />
-            <Form110Tabs json={data} handleChange={handleChange} TabsNames={TabsNames}
+            <FormTabs json={data} handleChange={handleChange} handleAdd={handleAdd} handleQuit={handleQuit} TabsNames={TabsNames}
                 CalculatedValues={CalculatedValues} ValuesNames={ValuesNames} />
         </main>
     );

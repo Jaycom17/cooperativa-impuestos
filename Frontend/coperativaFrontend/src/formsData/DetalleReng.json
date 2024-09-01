@@ -4308,15 +4308,6 @@
           "Ajust2": "",
           "Ajust3": 0,
           "SaldFisc": 0
-        },
-        {
-          "Nombre": "",
-          "Nit": "",
-          "SaldCont": 0,
-          "Ajust1": 0,
-          "Ajust2": "",
-          "Ajust3": 0,
-          "SaldFisc": 0
         }
       ],
       "TotCont": 0,
@@ -4344,16 +4335,16 @@
     "TotFisc": 0
   },
   "R106": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R107": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R108": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R109": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R110": {
     "TotFisc": 0
@@ -4369,9 +4360,9 @@
     "TotFisc": 0
   },
   "R114": {
-    "TotFisc": 0
+    "ValFisc": 0
   },
   "R115": {
-    "TotFisc": 0
+    "ValFisc": 0
   }
 }

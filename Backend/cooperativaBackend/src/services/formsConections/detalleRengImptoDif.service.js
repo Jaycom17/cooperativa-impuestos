@@ -22,7 +22,7 @@ export const getDetalleRengActivosFijos = async (detReng, student) => {
             return { message: 'Formulario no encontrado' };
         }
 
-        const content = impDif.actContent;
+        const content = impDif.impContent;
 
         detReng[R43][1860].REFSaldCont = content.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.Total.SaldoImpuestoDiferidoActual || 0;
         detReng[R45][2826].REFSaldCont = content.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Total.SaldoImpuestoDiferidoActual || 0;

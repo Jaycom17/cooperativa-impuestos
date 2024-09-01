@@ -9,3 +9,13 @@ export const RSumNorm = ["R33","R34","R35","R36","R37","R38","R39","R40","R41","
 export const RSumFisc = ["R60","R84"];
 
 export const RSumVal = ["R77","R78","R82","R95"];
+
+export const addRetencion = {
+    "Nombre": "",
+    "Nit": "",
+    "SaldCont": 0,
+    "Ajust1": 0,
+    "Ajust2": "",
+    "Ajust3": 0,
+    "SaldFisc": 0
+  }
