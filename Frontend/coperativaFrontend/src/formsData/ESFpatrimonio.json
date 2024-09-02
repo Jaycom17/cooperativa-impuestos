@@ -67,13 +67,6 @@
               "MenorValorFiscal": 0,
               "MayorValorFiscal": 0,
               "ValorFiscal": 0
-            },
-            "Total": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
             }
           },
           "InstrumentosDeudaCostoAmortizado": {
@@ -157,13 +150,6 @@
               "ValorFiscal": 0
             },
             "Costo": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
-            },
-            "Total": {
               "ValorContable": 0,
               "EfectoConversion": 0,
               "MenorValorFiscal": 0,
@@ -599,13 +585,6 @@
               "MenorValorFiscal": 0,
               "MayorValorFiscal": 0,
               "ValorFiscal": 0
-            },
-            "Total": {
-              "ValorContable": 0,
-              "EfectoConversion": 0,
-              "MenorValorFiscal": 0,
-              "MayorValorFiscal": 0,
-              "ValorFiscal": 0
             }
           },
           "DepreciacionAcumuladaPropiedadesPlantaEquipo": {
@@ -660,13 +639,6 @@
                 "MenorValorFiscal": 0,
                 "MayorValorFiscal": 0,
                 "ValorFiscal": 0
-              },
-              "Total": {
-                "ValorContable": 0,
-                "EfectoConversion": 0,
-                "MenorValorFiscal": 0,
-                "MayorValorFiscal": 0,
-                "ValorFiscal": 0
               }
             },
             "ArrendamientoFinanciero": {
@@ -683,13 +655,6 @@
                 "MenorValorFiscal": 0,
                 "MayorValorFiscal": 0,
                 "ValorFiscal": 0
-              },
-              "Total": {
-                "ValorContable": 0,
-                "EfectoConversion": 0,
-                "MenorValorFiscal": 0,
-                "MayorValorFiscal": 0,
-                "ValorFiscal": 0
               }
             },
             "OtrosActivosIntangibles": {
@@ -701,13 +666,6 @@
                 "ValorFiscal": 0
               },
               "AjusteAcumuladoRevaluacionesReexpresiones": {
-                "ValorContable": 0,
-                "EfectoConversion": 0,
-                "MenorValorFiscal": 0,
-                "MayorValorFiscal": 0,
-                "ValorFiscal": 0
-              },
-              "Total": {
                 "ValorContable": 0,
                 "EfectoConversion": 0,
                 "MenorValorFiscal": 0,
@@ -761,13 +719,6 @@
                 "ValorFiscal": 0
               },
               "CompraAcciones": {
-                "ValorContable": 0,
-                "EfectoConversion": 0,
-                "MenorValorFiscal": 0,
-                "MayorValorFiscal": 0,
-                "ValorFiscal": 0
-              },
-              "Total": {
                 "ValorContable": 0,
                 "EfectoConversion": 0,
                 "MenorValorFiscal": 0,
@@ -1451,7 +1402,7 @@
           "MayorValorFiscal": 0,
           "ValorFiscal": 0
         }
-      },
+    },
     "TotalPatrimonio":{
       "ValorContable": 0,
       "EfectoConversion": 0,

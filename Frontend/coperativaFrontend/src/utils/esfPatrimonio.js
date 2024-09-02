@@ -197,6 +197,9 @@ export const CalculatedValues = ["Activos.ActivosEquivalentesEfectivo.Total.Valo
     "DatosInformativos.Patrimonio.DividendosNoGravadosPagadosPeriodo.EfectoConversion",
     "DatosInformativos.Patrimonio.DividendosGravadosPagadosPeriodoCargoUtilidades.ValorContable",
     "DatosInformativos.Patrimonio.DividendosGravadosPagadosPeriodoCargoUtilidades.EfectoConversion",
+    "Pasivos.OtrosPasivos.PasivosReconocidosSolamenteParaFinesFiscales.Total.ValorContable",
+    "Pasivos.OtrosPasivos.PasivosReconocidosSolamenteParaFinesFiscales.Total.EfectoConversion",
+    "Pasivos.OtrosPasivos.PasivosReconocidosSolamenteParaFinesFiscales.Total.MenorValorFiscal",
 ]
 export const ValuesNames = {
     "Total" : "Total",
@@ -450,4 +453,21 @@ export const TabsNames = {
 }
 export const excludedCalculateValorFiscalInputs = [
     "Total",
+    "garantias",
+    "procesosLegalesLitigiosYDemandas",
+    "mantenimientoYReparaciones",
+    "obligacionesFiscales",
+    "desmantelamientosRestauracionYRehabilitacion",
+    "contratosOnerosos",
+    "reembolsosAClientes",
+    "reestructuracionesDeNegocios",
+    "pasivosContingentesAsumidosEnUnaCombinacionDeNegocios",
+    "relacionadasConElMedioAmbiente",
+    "otrasProvisiones",
+    "PatrimonioContable",
+    "CapitalSocialReservas",
+    "ResultadoEjercicio",
+    "ResultadosAcumulados",
+    "GananciasPerdidasAcumuladasRetenidasAdopcionPrimera",
+    "OtroResultadoIntegralAcumulado",
 ]

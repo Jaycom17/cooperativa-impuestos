@@ -7,6 +7,8 @@ import logo from "../../assets/LogoUniversidadCooperativa.png";
 import { getIngresosFacturacionStu } from "../../services/ingFac.service";
 import ingFact from "../../formsData/IngFact.json";
 import impDif from "../../formsData/ImpuestoDiferido.json";
+import { getEsfPatrimonioStu } from "../../services/esfPatrimonio.service";
+import esfpath from "../../formsData/ESFpatrimonio.json";
 import GenericTabs from "../../components/ShowFormsGeneric/GenericTabs";
 import { getImpuestoDiferidoStu } from "../../services/impuestoDiferido.service";
 
@@ -56,6 +58,19 @@ function RoomReport() {
       case "caratulaform":
         break;
       case "esfpatrimonioform":
+        console.log(stuID, roomID , selectedStudent);
+        setData(esfpath);
+        getEsfPatrimonioStu(selectedStudent, roomID)
+          .then((res) => {
+            console.log(res);
+            Object.entries(res.data.esfContent).map(([key, val]) => {
+              recieveData(val, [key], esfpath);
+            });
+            console.log(data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
         break;
       case "rentaliquida":
         break;
