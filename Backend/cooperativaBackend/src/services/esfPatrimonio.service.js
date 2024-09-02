@@ -1,5 +1,7 @@
 import prisma from "../config/prisma.js";
 import { v4 as uuidv4 } from "uuid";
+import {getESFRenglones110} from './formsConections/esfpatrimonioDetalleRenglones110.service.js';
+
 
 export const listEsfPatrimonio = async () => {
   try {
@@ -42,8 +44,8 @@ export const listEsfPatrimonioById = async (student) => {
     if (!result) {
       return { message: 'Formulario no encontrado' };
     } 
-
-    return result;
+    let esfresult = await getESFRenglones110(result.esfContent, student);
+    return esfresult;
   } catch (error) {
     console.error(error);
     return false;

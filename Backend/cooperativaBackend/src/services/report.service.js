@@ -5,6 +5,7 @@ import { ImpuestoDiferidoInput } from "../models/impuestoDiferido.js";
 import { Form110Input } from "../models/form110.model.js"
 import { DetalleRenglonesInput } from "../models/detalleRenglones.model.js"
 import { CaratulaInput } from "../models/caratula.model.js"
+import {ESFPatrimonioinputs} from "../models/EsfPatrimonio.model.js"
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -46,7 +47,7 @@ export const createReport = async (stuID, roomID) => {
     await prisma.formesfpatrimonio.create({
       data: {
         esfID: formsID.formEsfPatrimonio,
-        esfContent: {},
+        esfContent: ESFPatrimonioinputs,
       },
     });
 
