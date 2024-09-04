@@ -1,4 +1,4 @@
-import { JWT_SECRET, JWT_SECRET_STUDENT, JWT_SECRET_REFRESH } from "../config/env.js";
+import { JWT_SECRET, JWT_SECRET_STUDENT } from "../config/env.js";
 import jwt from "jsonwebtoken";
 
 export function createAccessToken(user) {

@@ -150,10 +150,12 @@ const ActivosFijosForm = () => {
       calcultateTotal(TotalPPEPIANCMV, elementosPPEPIANCMV);
       calcultateTotal(TotalTodo, elementosTodo);
 
+      
+    updateActivosFijos(newData);
+
       return newData;
     });
 
-    updateActivosFijos(data);
   };
 
   const renderSections = (

@@ -16,7 +16,7 @@ export const listActivosFijos = async () => {
   }
 };
 
-export const listActivosFijosById = async ( student) => {
+export const listActivosFijosById = async (student) => {
   try {
 
     const res = await prisma.report.findFirst({

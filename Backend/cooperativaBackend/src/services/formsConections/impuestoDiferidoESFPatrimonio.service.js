@@ -134,7 +134,7 @@ export const getImpuestoDiferidoESF = async (impDif, student) => {
 
     impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.PasivosFinancierosYCuentasPorPagar.BaseContable =  (content.Activos.ObligacionesFinancierasCuentasPorPagar.Total.ValorContable - content.Activos.ObligacionesFinancierasCuentasPorPagar.Total.ValorFiscal) > 0 ? content.Activos.ObligacionesFinancierasCuentasPorPagar.Total.ValorContable : 0;
 
-    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.ImpuestosGravamenesYTasas.BaseContable =  (content.Activos.ImpuestosGravamenesTasasPorPagar.Total.ValorContable - content.Activos.ImpuestosGravamenesTasasPorPagar.Total.ValorFiscal) > 0 ? content.Activos.ImpuestosGravamenesTasasPorPagar.Total.ValorContable : 0;
+    impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.ImpuestosGravamenesYTasas.BaseContable =  (content.Activos.ImpuestosGrav<amenesTasasPorPagar.Total.ValorContable - content.Activos.ImpuestosGravamenesTasasPorPagar.Total.ValorFiscal) > 0 ? content.Activos.ImpuestosGravamenesTasasPorPagar.Total.ValorContable : 0;
 
     impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.BeneficiosAEmpleados.BaseContable =  (content.Activos.PasivosBeneficiosEmpleados.Total.ValorContable - content.Activos.PasivosBeneficiosEmpleados.Total.ValorFiscal) > 0 ? content.Activos.PasivosBeneficiosEmpleados.Total.ValorContable : 0;
 
@@ -179,6 +179,8 @@ export const getImpuestoDiferidoESF = async (impDif, student) => {
     impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.BeneficiosAEmpleados.BaseFiscal =  impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.BeneficiosAEmpleados.BaseContable > 0 ? content.Activos.PasivosBeneficiosEmpleados.Total.ValorFiscal : 0;
 
     impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Provisiones.BaseFiscal = impDif.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Provisiones.BaseContable > 0 ? content.Activos.Provisiones.Total.ValorFiscal : 0;
+
+    return impDif;
 
   }catch(e){
     console.log(e);

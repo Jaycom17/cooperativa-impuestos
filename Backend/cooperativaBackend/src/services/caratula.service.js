@@ -16,7 +16,7 @@ export const listCaratula = async () => {
   }
 };
 
-export const listCaratulaById = async (carID) => {
+export const listCaratulaById = async (student) => {
   try {
     const res = await prisma.report.findFirst({
       where: {

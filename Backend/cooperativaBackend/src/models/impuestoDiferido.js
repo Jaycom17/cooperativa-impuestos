@@ -808,8 +808,8 @@ export const ImpuestoDiferidoInput = {
       AjusteMenorValor: 0,
     },
   },
-  DetalleCompensacionPerdidasFiscales: [
-    {
+  DetalleCompensacionPerdidasFiscales: {
+    Anterior: {
       Anio: 0,
       PerdidasFiscalesAcumuladasCompensarInicio: 0,
       PerdidaFiscalGeneradaPeriodo: 0,
@@ -820,7 +820,7 @@ export const ImpuestoDiferidoInput = {
       PerdidaFiscalAcumuladaCompensarFinal: 0,
       SaldoActivoImpuestoDiferido: 0,
     },
-    {
+    Actual: {
       Anio: 0,
       PerdidasFiscalesAcumuladasCompensarInicio: 0,
       PerdidaFiscalGeneradaPeriodo: 0,
@@ -831,9 +831,9 @@ export const ImpuestoDiferidoInput = {
       PerdidaFiscalAcumuladaCompensarFinal: 0,
       SaldoActivoImpuestoDiferido: 0,
     },
-  ],
-  DetalleCompensacionExcesoRentaPresuntiva: [
-    {
+  },
+  DetalleCompensacionExcesoRentaPresuntiva: {
+    Anterior: {
       Anio: 0,
       ValorAcumuladoCompensarInicioPeriodo: 0,
       ValorGeneradoPeriodo: 0,
@@ -844,5 +844,16 @@ export const ImpuestoDiferidoInput = {
       ValorAcumuladoCompensarFinalPerido: 0,
       SaldoActivoImpuestoDiferidoFinal: 0,
     },
-  ],
+    Actual: {
+      Anio: 0,
+      ValorAcumuladoCompensarInicioPeriodo: 0,
+      ValorGeneradoPeriodo: 0,
+      ValorCompensadoPeriodo: 0,
+      ValoresNoCompensados: 0,
+      AjustesMayorValor: 0,
+      AjustesMenorValor: 0,
+      ValorAcumuladoCompensarFinalPerido: 0,
+      SaldoActivoImpuestoDiferidoFinal: 0,
+    },
+  },
 };
