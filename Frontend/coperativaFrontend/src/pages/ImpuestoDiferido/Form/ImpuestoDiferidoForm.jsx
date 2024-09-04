@@ -6,10 +6,6 @@ import {
   getImpuestoDiferido,
   updateImpuestoDiferido,
 } from "../../../services/impuestoDiferido.service";
-import {
-  addDetalleCompensacionExcesoRentaPresuntiva,
-  addDetalleCompensacionPerdidasFiscales,
-} from "../../../utils/impuestoDiferido";
 import { useState, useEffect } from "react";
 
 function ImpuestoDiferidoForm() {
@@ -48,7 +44,55 @@ function ImpuestoDiferidoForm() {
     });
   }, []);
 
-  const calculateHori = (path) => {
+  const calculateHoriActivosCreditosTributos = (path) => {
+    if(path[0] !== "ActivosCreditosTributos" && path[1] !== "SaldosFavor"){
+      return;
+    }
+
+    let newData = { ...data };
+    let temp = newData;
+
+    let auxData = newData[path[0]];
+
+    for (let i = 1; i < path.length - 1; i++) {
+      auxData = auxData[path[i]];
+    }
+
+    let calculatedVariacion = auxData.Saldo31VigenciaActual - auxData.Saldo31VigenciaAnterior;
+    
+    for (let i = 0; i < path.length - 1; i++) {
+      if (!temp[path[i]]) {
+        temp[path[i]] = {}; // Crear objeto si no existe
+      }
+      temp = temp[path[i]]; // Mover al siguiente nivel del objeto
+    }
+    temp.Variacion = calculatedVariacion;
+    temp.ReduccionCompensacion = auxData.ReduccionCompensacion;
+  }
+
+  const calculateHoriPerdidasFiscales = (path) => {
+    if(path[0] !== "DetalleCompensacionPerdidasFiscales"){
+      return;
+    }
+
+    let newData = { ...data };
+    let temp = newData;
+
+    let auxData = newData[path[0]];
+
+    for (let i = 1; i < path.length - 1; i++) {
+      auxData = auxData[path[i]];
+    }
+
+    if(path[1] === "Anterior"){
+      let calculatedPerdidaFiscalAcumulada = auxData.PerdidasFiscalesAcumuladasCompensarInicio;
+    }else{
+      
+    }
+
+  }
+
+  const calculateHoriDiferenciasTemporarias = (path) => {
     if (path[0] !== "ImpuestosDiferidosDiferenciasTemporarias") {
       return;
     }
@@ -85,37 +129,6 @@ function ImpuestoDiferidoForm() {
     temp.SaldoImpuestoDiferidoActual = calculatedSaldoImpuestoActual;
   };
 
-  const handleAdd = (path) => {
-    console.log(path);
-    if (path === "DetalleCompensacionPerdidasFiscales") {
-      let newData = { ...data };
-      newData.DetalleCompensacionPerdidasFiscales.push({
-        ...addDetalleCompensacionPerdidasFiscales,
-      });
-
-      setData(newData);
-    } else if (path === "DetalleCompensacionExcesoRentaPresuntiva") {
-      let newData = { ...data };
-      newData.DetalleCompensacionExcesoRentaPresuntiva.push({
-        ...addDetalleCompensacionExcesoRentaPresuntiva,
-      });
-
-      setData(newData);
-    }
-  };
-
-  const handleQuit = (path) => {
-    if (path === "DetalleCompensacionPerdidasFiscales") {
-      let newData = { ...data };
-      newData.DetalleCompensacionPerdidasFiscales.pop();
-      setData(newData);
-    } else if (path === "DetalleCompensacionExcesoRentaPresuntiva") {
-      let newData = { ...data };
-      newData.DetalleCompensacionExcesoRentaPresuntiva.pop();
-      setData(newData);
-    }
-  };
-
   const handleChange = (e, path) => {
     let { name, value } = e.target;
     if (value === "") value = 0;
@@ -136,7 +149,8 @@ function ImpuestoDiferidoForm() {
       }
     }
 
-    calculateHori(pathArray);
+    calculateHoriDiferenciasTemporarias(pathArray);
+    calculateHoriActivosCreditosTributos(pathArray);
 
     updateImpuestoDiferido(newData);
 
@@ -161,8 +175,6 @@ function ImpuestoDiferidoForm() {
             title={friendlyName}
             arrayIndex={sectionKey}
             path={`${pathPrefix}`}
-            onAdd={handleAdd}
-            onQuit={handleQuit}
           >
             <ImpuestoDiferidoValues
               title={friendlyName}
