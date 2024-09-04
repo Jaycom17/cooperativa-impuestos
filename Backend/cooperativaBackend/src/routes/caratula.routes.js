@@ -9,7 +9,7 @@ caratulaRouter.get("/", getCaratula);
 
 caratulaRouter.get("/student", validateStudent,  getCaratulaById);
 
-caratulaRouter.put("/:stuID/:roomID",validateAuth, validateCaratula, postCaratula);
+caratulaRouter.get("/:stuID/:roomID",validateAuth, validateCaratula, postCaratula);
 
 caratulaRouter.put("/student", validateStudent, validateCaratula, putCaratula);
 

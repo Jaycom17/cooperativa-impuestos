@@ -1,6 +1,7 @@
 import axios from "./axios.service.js";
 
 export const updateForm = async (form) => {
+  console.log(form)
   return await axios.put(`http://localhost:3000/form110/student`, form);
 };
 

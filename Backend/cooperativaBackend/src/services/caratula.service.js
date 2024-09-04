@@ -18,6 +18,7 @@ export const listCaratula = async () => {
 
 export const listCaratulaById = async (student) => {
   try {
+    console.log("student", student);
     const res = await prisma.report.findFirst({
       where: {
         stuID: student.stuID,

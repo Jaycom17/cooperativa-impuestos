@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 import Accordeon from "../Accordeon/Accordeon";
 
-function Form110Values({ json, path, handleChange, CalculatedValues, ValuesNames}) {
-
+function Form110Values({ json, path, handleChange, CalculatedValues, ValuesNames, handleAdd, handleQuit}) {
     const renderTextField = (label, value, key) => {
         const displayTitle = ValuesNames[label] || label;
         return(
@@ -24,12 +23,14 @@ function Form110Values({ json, path, handleChange, CalculatedValues, ValuesNames
 
     const renderNumberField = (label, value, key) => {
         const displayTitle = ValuesNames[label] || label;
+        const keySegment = key.split(".").pop();
+
         return(
             <div key={key} className="flex flex-col justify-between space-y-2 bg-white">
             <label className="bg-white font-semibold text-sm" htmlFor={key}>
                 {displayTitle}
             </label>
-            {CalculatedValues.includes(key.split(".").pop()) ? <p className="bg-white rounded-md p-1">{value}</p> : 
+            {(CalculatedValues.includes(keySegment)) ? <p className="bg-white rounded-md p-1">{value}</p> : 
             <input
                 className=" bg-white border rounded-md p-1"
                 type="number"
@@ -96,11 +97,19 @@ function Form110Values({ json, path, handleChange, CalculatedValues, ValuesNames
 
     const renderAccordeon = (title, content, key) => {
         const displayTitle = ValuesNames[title] || title;
+        if(Array.isArray(content)){
+            return (
+                <Accordeon key={key} title={displayTitle} path={key} arrayIndex={Object.keys(content)[0]} onAdd={handleAdd} onQuit={handleQuit}>
+                    {renderContent(content, key)}
+                </Accordeon>
+            );
+        }
         return (
             <Accordeon key={key} title={displayTitle}>
                 {renderContent(content, key)}
             </Accordeon>
         );
+
     };
 
     return (
@@ -116,5 +125,7 @@ Form110Values.propTypes = {
     json: PropTypes.object.isRequired,
     handleChange: PropTypes.func.isRequired,
     CalculatedValues: PropTypes.array.isRequired,
-    ValuesNames: PropTypes.object.isRequired
+    ValuesNames: PropTypes.object.isRequired,
+    handleAdd: PropTypes.func.isRequired,
+    handleQuit: PropTypes.func.isRequired
 }
