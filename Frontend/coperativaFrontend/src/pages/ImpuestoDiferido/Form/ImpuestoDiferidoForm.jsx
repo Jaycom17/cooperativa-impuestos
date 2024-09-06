@@ -44,12 +44,11 @@ function ImpuestoDiferidoForm() {
     });
   }, []);
 
-  const calculateHoriActivosCreditosTributos = (path) => {
+  const calculateHoriActivosCreditosTributos = (path, newData) => {
     if(path[0] !== "ActivosCreditosTributos" && path[1] !== "SaldosFavor"){
       return;
     }
 
-    let newData = { ...data };
     let temp = newData;
 
     let auxData = newData[path[0]];
@@ -70,26 +69,45 @@ function ImpuestoDiferidoForm() {
     temp.ReduccionCompensacion = auxData.ReduccionCompensacion;
   }
 
-  const calculateHoriPerdidasFiscales = (path) => {
+  const calculateHoriPerdidasFiscales = (path, newData) => {
     if(path[0] !== "DetalleCompensacionPerdidasFiscales"){
       return;
     }
 
-    let newData = { ...data };
     let temp = newData;
 
-    let auxData = newData[path[0]];
+    if(path[1] === "Anterior"){
+      let calculatedPerdidaFiscalAcumuladaAnt = newData.DetalleCompensacionPerdidasFiscales.Anterior.PerdidasFiscalesAcumuladasCompensarInicio + newData.DetalleCompensacionPerdidasFiscales.Actual.PerdidaFiscalGeneradaPeriodo - newData.DetalleCompensacionPerdidasFiscales.Anterior.PerdidaFiscalCompensadaPeriodo - newData.DetalleCompensacionPerdidasFiscales.Anterior.ValoresNoCompesados + newData.DetalleCompensacionPerdidasFiscales.Anterior.AjustesMayorValor - newData.DetalleCompensacionPerdidasFiscales.Anterior.AjustesMenorValor;
 
-    for (let i = 1; i < path.length - 1; i++) {
-      auxData = auxData[path[i]];
+      temp.DetalleCompensacionPerdidasFiscales.Anterior.PerdidaFiscalAcumulada = calculatedPerdidaFiscalAcumuladaAnt;
+      temp.DetalleCompensacionPerdidasFiscales.Anterior.SaldoActivoImpuestoDiferido = Math.abs((calculatedPerdidaFiscalAcumuladaAnt * 0.35).toFixed(2));
+    }else{
+      let calculatedPerdidaFiscalAcumuladaAct = newData.DetalleCompensacionPerdidasFiscales.Actual.PerdidasFiscalesAcumuladasCompensarInicio - newData.DetalleCompensacionPerdidasFiscales.Actual.PerdidaFiscalCompensadaPeriodo - newData.DetalleCompensacionPerdidasFiscales.Actual.ValoresNoCompesados + newData.DetalleCompensacionPerdidasFiscales.Actual.AjustesMayorValor - newData.DetalleCompensacionPerdidasFiscales.Actual.AjustesMenorValor;
+
+      temp.DetalleCompensacionPerdidasFiscales.Actual.PerdidaFiscalAcumulada = calculatedPerdidaFiscalAcumuladaAct;
+      temp.DetalleCompensacionPerdidasFiscales.Actual.SaldoActivoImpuestoDiferido = Math.abs((calculatedPerdidaFiscalAcumuladaAct * 0.35).toFixed(2));
     }
+  }
+
+  const calculateHoriExcesoRentaPresuntiva = (path, newData) => {
+    if(path[0] !== "DetalleCompensacionExcesoRentaPresuntiva"){
+      return;
+    }
+
+    let temp = newData;
 
     if(path[1] === "Anterior"){
-      let calculatedPerdidaFiscalAcumulada = auxData.PerdidasFiscalesAcumuladasCompensarInicio;
-    }else{
-      
-    }
+      let calculatedValorAcumuladoCompensarFinalPeridoAnt = newData.DetalleCompensacionExcesoRentaPresuntiva.Anterior.ValorAcumuladoCompensarInicioPeriodo + newData.DetalleCompensacionExcesoRentaPresuntiva.Anterior.ValorGeneradoPeriodo - newData.DetalleCompensacionExcesoRentaPresuntiva.Anterior.ValorCompensadoPeriodo - newData.DetalleCompensacionExcesoRentaPresuntiva.Anterior.ValoresNoCompensados + newData.DetalleCompensacionExcesoRentaPresuntiva.Anterior.AjustesMayorValor - newData.DetalleCompensacionExcesoRentaPresuntiva.Anterior.AjustesMenorValor;
 
+      temp.DetalleCompensacionExcesoRentaPresuntiva.Anterior.PerdidaFiscalAcumulada = calculatedValorAcumuladoCompensarFinalPeridoAnt;
+      temp.DetalleCompensacionExcesoRentaPresuntiva.Anterior.SaldoActivoImpuestoDiferido = Math.abs((calculatedValorAcumuladoCompensarFinalPeridoAnt * 0.35).toFixed(2));
+
+    }else{
+      let calculatedValorAcumuladoCompensarFinalPeridoAct = newData.DetalleCompensacionExcesoRentaPresuntiva.Actual.ValorAcumuladoCompensarInicioPeriodo + newData.DetalleCompensacionExcesoRentaPresuntiva.Actual.ValorGeneradoPeriodo - newData.DetalleCompensacionExcesoRentaPresuntiva.Actual.ValorCompensadoPeriodo - newData.DetalleCompensacionExcesoRentaPresuntiva.Actual.ValoresNoCompensados + newData.DetalleCompensacionExcesoRentaPresuntiva.Actual.AjustesMayorValor - newData.DetalleCompensacionExcesoRentaPresuntiva.Actual.AjustesMenorValor;
+
+      temp.DetalleCompensacionExcesoRentaPresuntiva.Actual.PerdidaFiscalAcumulada = calculatedValorAcumuladoCompensarFinalPeridoAct;
+      temp.DetalleCompensacionExcesoRentaPresuntiva.Actual.SaldoActivoImpuestoDiferido = Math.abs((calculatedValorAcumuladoCompensarFinalPeridoAct * 0.35).toFixed(2));
+    }
   }
 
   const calculateHoriDiferenciasTemporarias = (path) => {
@@ -149,8 +167,10 @@ function ImpuestoDiferidoForm() {
       }
     }
 
-    calculateHoriDiferenciasTemporarias(pathArray);
-    calculateHoriActivosCreditosTributos(pathArray);
+    calculateHoriDiferenciasTemporarias(pathArray, newData);
+    calculateHoriActivosCreditosTributos(pathArray, newData);
+    calculateHoriPerdidasFiscales(pathArray, newData); 
+    calculateHoriExcesoRentaPresuntiva(pathArray, newData);
 
     updateImpuestoDiferido(newData);
 
