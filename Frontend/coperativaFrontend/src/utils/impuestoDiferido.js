@@ -67,28 +67,13 @@ export const calculatedValues = [
   "DiferenciaTemporaria",
   "SaldoImpuestoDiferidoActual",
   "TasaFiscalAplicada",
+  "PerdidaFiscalAcumulada",
+  "SaldoActivoImpuestoDiferido",
+  "Actual.ValorGeneradoPeriodo",
+  "Actual.PerdidaFiscalGeneradaPeriodo",
+  "Actual.PerdidaFiscalCompensadaPeriodo",
+  "ReduccionCompensacion",
+  "ImpuestosPagadosExterior.Saldo31VigenciaActual",
+  "ImpuestosPagadosExterior.Saldo31VigenciaAnterior",
+  "ImpuestosPagadosExterior.ReduccionCompensacion",
 ];
-
-export const addDetalleCompensacionPerdidasFiscales = {
-  Anio: 0,
-  PerdidasFiscalesAcumuladasCompensarInicio: 0,
-  PerdidaFiscalGeneradaPeriodo: 0,
-  PerdidaFiscalCompensadaPeriodo: 0,
-  ValoresNoCompesados: 0,
-  AjustesMayorValor: 0,
-  AjustesMenorValor: 0,
-  PerdidaFiscalAcumuladaCompensarFinal: 0,
-  SaldoActivoImpuestoDiferido: 0,
-};
-
-export const addDetalleCompensacionExcesoRentaPresuntiva = {
-  Anio: 0,
-  ValorAcumuladoCompensarInicioPeriodo: 0,
-  ValorGeneradoPeriodo: 0,
-  ValorCompensadoPeriodo: 0,
-  ValoresNoCompensados: 0,
-  AjustesMayorValor: 0,
-  AjustesMenorValor: 0,
-  ValorAcumuladoCompensarFinalPerido: 0,
-  SaldoActivoImpuestoDiferidoFinal: 0,
-};

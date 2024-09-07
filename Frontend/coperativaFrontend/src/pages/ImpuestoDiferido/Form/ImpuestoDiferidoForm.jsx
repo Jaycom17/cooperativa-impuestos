@@ -172,9 +172,9 @@ function ImpuestoDiferidoForm() {
     calculateHoriPerdidasFiscales(pathArray, newData); 
     calculateHoriExcesoRentaPresuntiva(pathArray, newData);
 
-    updateImpuestoDiferido(newData);
-
     setData(newData);
+
+    updateImpuestoDiferido(data);
   };
 
   const renderSections = (
@@ -183,29 +183,6 @@ function ImpuestoDiferidoForm() {
     excludeSection = "",
     friendlyNames = []
   ) => {
-    if (Array.isArray(sectionData)) {
-      return Object.keys(sectionData).map((sectionKey) => {
-        if (sectionKey === excludeSection) return null;
-
-        const friendlyName = sectionData[sectionKey].Anio.toString();
-
-        return (
-          <Accordeon
-            key={sectionKey}
-            title={friendlyName}
-            arrayIndex={sectionKey}
-            path={`${pathPrefix}`}
-          >
-            <ImpuestoDiferidoValues
-              title={friendlyName}
-              path={`${pathPrefix}.${sectionKey}`}
-              data={sectionData[sectionKey]}
-              handleChange={handleChange}
-            />
-          </Accordeon>
-        );
-      });
-    }
 
     return Object.keys(sectionData).map((sectionKey) => {
       if (sectionKey === excludeSection) return null;

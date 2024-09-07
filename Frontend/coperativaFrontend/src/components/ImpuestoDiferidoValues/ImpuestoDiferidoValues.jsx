@@ -39,7 +39,7 @@ function ImpuestoDiferidoValues({ title, path, data, handleChange }) {
                 ))
               ) : (
                 <div className="flex flex-col space-y-2 bg-white">
-                  {calculatedValues.includes(`${key}`) ? (
+                  {(calculatedValues.includes(`${path.split(".")[path.split(".").length-1]}.${key}`) || calculatedValues.includes(key) || key === "Total") ? (
                     <p className="p-1 font-medium border-b-4">
                       {sectionData[key]}
                     </p>
