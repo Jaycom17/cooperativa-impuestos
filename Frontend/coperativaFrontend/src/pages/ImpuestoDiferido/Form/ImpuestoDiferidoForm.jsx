@@ -110,6 +110,94 @@ function ImpuestoDiferidoForm() {
     }
   }
 
+  const calculateTotalActivos = (path, newData) => {
+    if (path[0] !== "ImpuestosDiferidosDiferenciasTemporarias"  && path[0] !== "ActivoDiferido") {
+      return;
+    }
+
+    let temp = newData;
+
+    let auxData = newData.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido;
+
+    let calculatedTotal = {
+      "BaseContable": 0,
+      "BaseFiscal": 0,
+      "DiferenciaTemporaria": 0,
+      "DiferenciaPermanente": 0,
+      "SaldoImpuestoDiferidoActual": 0,
+      "SaldoImpuestoDiferidoAnterior": 0,
+      "Variacion": 0,
+      "TasaFiscalAplicada": 0
+    }
+
+    Object.keys(auxData).forEach((key) => {
+      if (key === "Total") {
+        return;
+      }
+      calculatedTotal.BaseContable += auxData[key].BaseContable;
+      calculatedTotal.BaseFiscal += auxData[key].BaseFiscal;
+      calculatedTotal.DiferenciaTemporaria += auxData[key].DiferenciaTemporaria;
+      calculatedTotal.DiferenciaPermanente += auxData[key].DiferenciaPermanente;
+      calculatedTotal.SaldoImpuestoDiferidoActual += auxData[key].SaldoImpuestoDiferidoActual;
+      calculatedTotal.SaldoImpuestoDiferidoAnterior += auxData[key].SaldoImpuestoDiferidoAnterior;
+      calculatedTotal.Variacion += auxData[key].Variacion;
+      calculatedTotal.TasaFiscalAplicada += auxData[key].TasaFiscalAplicada;
+    });
+
+    temp.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.Total.BaseContable = calculatedTotal.BaseContable;
+    temp.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.Total.BaseFiscal = calculatedTotal.BaseFiscal;
+    temp.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.Total.DiferenciaTemporaria = calculatedTotal.DiferenciaTemporaria;
+    temp.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.Total.DiferenciaPermanente = calculatedTotal.DiferenciaPermanente;
+    temp.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.Total.SaldoImpuestoDiferidoActual = calculatedTotal.SaldoImpuestoDiferidoActual;
+    temp.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.Total.SaldoImpuestoDiferidoAnterior = calculatedTotal.SaldoImpuestoDiferidoAnterior;
+    temp.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.Total.Variacion = calculatedTotal.Variacion;
+    temp.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.Total.TasaFiscalAplicada = calculatedTotal.TasaFiscalAplicada;
+  }
+
+  const calculateTotalPasivos = (path, newData) => {
+    if (path[0] !== "ImpuestosDiferidosDiferenciasTemporarias"  && path[0] !== "PasivoDiferido") {
+      return;
+    }
+
+    let temp = newData;
+
+    let auxData = newData.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido;
+
+    let calculatedTotal = {
+      "BaseContable": 0,
+      "BaseFiscal": 0,
+      "DiferenciaTemporaria": 0,
+      "DiferenciaPermanente": 0,
+      "SaldoImpuestoDiferidoActual": 0,
+      "SaldoImpuestoDiferidoAnterior": 0,
+      "Variacion": 0,
+      "TasaFiscalAplicada": 0
+    }
+
+    Object.keys(auxData).forEach((key) => {
+      if (key === "Total") {
+        return;
+      }
+      calculatedTotal.BaseContable += auxData[key].BaseContable;
+      calculatedTotal.BaseFiscal += auxData[key].BaseFiscal;
+      calculatedTotal.DiferenciaTemporaria += auxData[key].DiferenciaTemporaria;
+      calculatedTotal.DiferenciaPermanente += auxData[key].DiferenciaPermanente;
+      calculatedTotal.SaldoImpuestoDiferidoActual += auxData[key].SaldoImpuestoDiferidoActual;
+      calculatedTotal.SaldoImpuestoDiferidoAnterior += auxData[key].SaldoImpuestoDiferidoAnterior;
+      calculatedTotal.Variacion += auxData[key].Variacion;
+      calculatedTotal.TasaFiscalAplicada += auxData[key].TasaFiscalAplicada;
+    });
+
+    temp.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Total.BaseContable = calculatedTotal.BaseContable;
+    temp.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Total.BaseFiscal = calculatedTotal.BaseFiscal;
+    temp.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Total.DiferenciaTemporaria = calculatedTotal.DiferenciaTemporaria;
+    temp.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Total.DiferenciaPermanente = calculatedTotal.DiferenciaPermanente;
+    temp.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Total.SaldoImpuestoDiferidoActual = calculatedTotal.SaldoImpuestoDiferidoActual;
+    temp.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Total.SaldoImpuestoDiferidoAnterior = calculatedTotal.SaldoImpuestoDiferidoAnterior;
+    temp.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Total.Variacion = calculatedTotal.Variacion;
+    temp.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Total.TasaFiscalAplicada = calculatedTotal.TasaFiscalAplicada;
+  }
+
   const calculateHoriDiferenciasTemporarias = (path) => {
     if (path[0] !== "ImpuestosDiferidosDiferenciasTemporarias") {
       return;
@@ -171,6 +259,9 @@ function ImpuestoDiferidoForm() {
     calculateHoriActivosCreditosTributos(pathArray, newData);
     calculateHoriPerdidasFiscales(pathArray, newData); 
     calculateHoriExcesoRentaPresuntiva(pathArray, newData);
+
+    calculateTotalActivos(pathArray, newData);
+    calculateTotalPasivos(pathArray, newData);
 
     setData(newData);
 

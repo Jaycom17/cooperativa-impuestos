@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { friendlyNames, calculatedValues } from "../../utils/impuestoDiferido.js";
+import { friendlyNames, calculatedValues, excludedValues } from "../../utils/impuestoDiferido.js";
 
 function ImpuestoDiferidoValues({ title, path, data, handleChange }) {
   const renderSection = (sectionData, sectionTitle) => (
@@ -19,7 +19,8 @@ function ImpuestoDiferidoValues({ title, path, data, handleChange }) {
                     <label className="bg-white text-sm" htmlFor={subKey}>
                       {friendlyNames[subKey] || subKey}
                     </label>
-                    {(calculatedValues.includes(`${key}.${subKey}`) || calculatedValues.includes(subKey) || key === "Total") ? (
+                    {console.log(`${path.split(".")[path.split(".").length -1]}.${key}.${subKey}`)}
+                    {((calculatedValues.includes(`${key}.${subKey}`) || calculatedValues.includes(subKey) || key === "Total") && !excludedValues.includes(`${path.split(".")[path.split(".").length -1]}.${key}.${subKey}`)) ? (
                       <p className="p-1 font-medium border-b-4">
                         {subValue}
                       </p>
