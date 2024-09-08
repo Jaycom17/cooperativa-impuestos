@@ -1,15 +1,16 @@
 import { Router } from "express";
 import { validateActivosFijos } from "../middlewares/activosFijos.middleware.js";
-import { postActivosFijos, getActivosFijos, getActivosFijosById, putActivosFijos } from "../controllers/activosFijos.controller.js";
+import { getActivosFijos, getActivosFijosById, putActivosFijos, getActivosFijosByStudent } from "../controllers/activosFijos.controller.js";
+import { validateAuth, validateStudent } from "../middlewares/auth.middleware.js";
 
 const activosFijosRouter = Router();
 
 activosFijosRouter.get("/", getActivosFijos);
 
-activosFijosRouter.get("/:actID", getActivosFijosById);
+activosFijosRouter.get("/student", validateStudent, getActivosFijosById);
 
-activosFijosRouter.post("/", validateActivosFijos, postActivosFijos);
+activosFijosRouter.get("/:stuID/:roomID", validateAuth, getActivosFijosByStudent);
 
-activosFijosRouter.put("/:actID", validateActivosFijos, putActivosFijos);
+activosFijosRouter.put("/student", validateActivosFijos,validateStudent, putActivosFijos);
 
 export default activosFijosRouter;

@@ -1,4 +1,4 @@
-import { z } from "zod"
+import { z } from "zod";
 
 export const Caratula = z.object({
   Anno: z.number(),
@@ -10,7 +10,7 @@ export const Caratula = z.object({
     PriNomb: z.string(),
     OtrosNomb: z.string(),
     RazonSoc: z.string(),
-    CodDir: z.string()
+    CodDir: z.string(),
   }),
   Tarif: z.object({
     Art240: z.number(),
@@ -18,7 +18,7 @@ export const Caratula = z.object({
     Art194240360: z.number(),
     MegaInvHot: z.number(),
     MegaInv: z.number(),
-    TarifGen: z.number()
+    TarifGen: z.number(),
   }),
   DatosInf: z.object({
     PerNatuSinRes: z.boolean(),
@@ -38,14 +38,14 @@ export const Caratula = z.object({
     MegInv: z.boolean(),
     EmpEcoNar: z.boolean(),
     CompHoldCol: z.boolean(),
-    ZonaEcoSocEsp: z.boolean()
+    ZonaEcoSocEsp: z.boolean(),
   }),
   NoIdSig: z.number(),
   CodRepre: z.number(),
   CodCont: z.number(),
   Salvedad: z.boolean(),
-  NoTarjProf: z.number()
-})
+  NoTarjProf: z.number(),
+});
 
 export const CaratulaInput = {
   "Anno": 0,

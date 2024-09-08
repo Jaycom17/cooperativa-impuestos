@@ -1,4 +1,4 @@
-import { z } from "zod"
+import { z } from "zod";
 
 export const Formulario110 = z.object({
   DatoPers: z.object({
@@ -14,18 +14,18 @@ export const Formulario110 = z.object({
       RazonSoc: z.string(),
       CodDir: z.string(),
       ActEcoPrin: z.string(),
-      Correct: z.object({ Cod: z.number(), NoFormAnt: z.number() })
+      Correct: z.object({ Cod: z.number(), NoFormAnt: z.number() }),
     }),
     FractAnnoAgrv: z.boolean(),
     RenunPertRegTribEsp: z.boolean(),
     VinPagObraImpu: z.boolean(),
-    PerdFiscAcumAnnoAnt: z.number()
+    PerdFiscAcumAnnoAnt: z.number(),
   }),
   DatosResum: z.object({
     DatosInf: z.object({
       TotalCostGastNom: z.number(),
       AportSistSegSocial: z.number(),
-      AportSenaEtc: z.number()
+      AportSenaEtc: z.number(),
     }),
     Patrim: z.object({
       EfectvEquiEfect: z.number(),
@@ -38,7 +38,7 @@ export const Formulario110 = z.object({
       Otro: z.number(),
       TotalBruto: z.number(),
       Pasiv: z.number(),
-      TotalLiqui: z.number()
+      TotalLiqui: z.number(),
     }),
     Ingre: z.object({
       Brutos: z.number(),
@@ -55,7 +55,7 @@ export const Formulario110 = z.object({
       TotBruto: z.number(),
       DevRebDec: z.number(),
       IngNoRent: z.number(),
-      Tot: z.number()
+      Tot: z.number(),
     }),
     CostDedic: z.object({
       Cost: z.number(),
@@ -63,7 +63,7 @@ export const Formulario110 = z.object({
       GastDistVent: z.number(),
       GastFinan: z.number(),
       Otro: z.number(),
-      Tot: z.number()
+      Tot: z.number(),
     }),
     ESAL: z.object({ InvEfecAnno: z.number(), InvLiqui: z.number() }),
     Renta: z.object({
@@ -76,7 +76,7 @@ export const Formulario110 = z.object({
       RentPresun: z.number(),
       RentExenta: z.number(),
       RenGravable: z.number(),
-      RenLiquida: z.number()
+      RenLiquida: z.number(),
     }),
     GananciasOcasion: z.object({
       IngreGananOcasion: z.number(),
@@ -84,7 +84,7 @@ export const Formulario110 = z.object({
       UtiliPerdFisc: z.number(),
       CostGananOcas: z.number(),
       GananOcasionNoAgrav: z.number(),
-      GananOcasGrav: z.number()
+      GananOcasGrav: z.number(),
     }),
     LiquiPriv: z.object({
       ImpuesRentLiquiGrav: z.object({
@@ -93,7 +93,7 @@ export const Formulario110 = z.object({
         DivPartGravET: z.number(),
         DivPartGrav27: z.number(),
         DivPartGrav: z.number(),
-        DivPartGrav33: z.number()
+        DivPartGrav33: z.number(),
       }),
       TotImpRentLiquidGrav: z.number(),
       DescTrib: z.number(),
@@ -109,19 +109,19 @@ export const Formulario110 = z.object({
       Reten: z.object({
         AutoReten: z.number(),
         OtraReten: z.number(),
-        TotReten: z.number()
+        TotReten: z.number(),
       }),
       AntRenAnnoGravSig: z.number(),
       SobreInstFin: z.object({
         AnticSobreInstAnnoGranAnt: z.number(),
         SobreInstFinan: z.number(),
-        AnticSobreInstAnnoGravSig: z.number()
+        AnticSobreInstAnnoGravSig: z.number(),
       }),
       SaldoPagImp: z.number(),
       Sansion: z.number(),
       TotSaldPag: z.number(),
-      TotSaldFav: z.number()
-    })
+      TotSaldFav: z.number(),
+    }),
   }),
   Totales: z.object({
     ValTotExiObrImpMod0: z.number(),
@@ -130,146 +130,146 @@ export const Formulario110 = z.object({
     CodCont: z.number(),
     Salvedad: z.boolean(),
     NoTarjProf: z.number(),
-    PagoTot: z.number()
-  })
-})
+    PagoTot: z.number(),
+  }),
+});
 
 export const Form110Input = {
-  "DatoPers": {
-    "Anno": 0,
-    "NumForm": 0,
-    "DatDecl": {
-      "NIT": 0,
-      "DV": 0,
-      "PriApll": "",
-      "SecApll": "",
-      "PriNomb": "",
-      "OtrosNomb": "",
-      "RazonSoc": "",
-      "CodDir": "",
-      "ActEcoPrin": "",
-      "Correct": {
-        "Cod": 0,
-        "NoFormAnt": 0
-      }
+  DatoPers: {
+    Anno: 0,
+    NumForm: 0,
+    DatDecl: {
+      NIT: 0,
+      DV: 0,
+      PriApll: "",
+      SecApll: "",
+      PriNomb: "",
+      OtrosNomb: "",
+      RazonSoc: "",
+      CodDir: "",
+      ActEcoPrin: "",
+      Correct: {
+        Cod: 0,
+        NoFormAnt: 0,
+      },
     },
-    "FractAnnoAgrv": false,
-    "RenunPertRegTribEsp": false,
-    "VinPagObraImpu": false,
-    "PerdFiscAcumAnnoAnt": 0
+    FractAnnoAgrv: false,
+    RenunPertRegTribEsp: false,
+    VinPagObraImpu: false,
+    PerdFiscAcumAnnoAnt: 0,
   },
-  "DatosResum": {
-    "DatosInf": {
-      "TotalCostGastNom": 0,
-      "AportSistSegSocial": 0,
-      "AportSenaEtc": 0
+  DatosResum: {
+    DatosInf: {
+      TotalCostGastNom: 0,
+      AportSistSegSocial: 0,
+      AportSenaEtc: 0,
     },
-    "Patrim": {
-      "EfectvEquiEfect": 0,
-      "InvInstFinDeriv": 0,
-      "CuentDocArreFinCob": 0,
-      "Inv": 0,
-      "ActivInt": 0,
-      "ActivBio": 0,
-      "PPEPANCMC": 0,
-      "Otro": 0,
-      "TotalBruto": 0,
-      "Pasiv": 0,
-      "TotalLiqui": 0
+    Patrim: {
+      EfectvEquiEfect: 0,
+      InvInstFinDeriv: 0,
+      CuentDocArreFinCob: 0,
+      Inv: 0,
+      ActivInt: 0,
+      ActivBio: 0,
+      PPEPANCMC: 0,
+      Otro: 0,
+      TotalBruto: 0,
+      Pasiv: 0,
+      TotalLiqui: 0,
     },
-    "Ingre": {
-      "Brutos": 0,
-      "Finan": 0,
-      "DividNoCont": 0,
-      "DividDistrEntNoCol": 0,
-      "DividGravExt06": 0,
-      "DividGravNat06": 0,
-      "DividGravNat07": 0,
-      "DiviDNoGrav07": 0,
-      "DividGravExt07": 0,
-      "DividGravMega07": 0,
-      "Otro": 0,
-      "TotBruto": 0,
-      "DevRebDec": 0,
-      "IngNoRent": 0,
-      "Tot": 0
+    Ingre: {
+      Brutos: 0,
+      Finan: 0,
+      DividNoCont: 0,
+      DividDistrEntNoCol: 0,
+      DividGravExt06: 0,
+      DividGravNat06: 0,
+      DividGravNat07: 0,
+      DiviDNoGrav07: 0,
+      DividGravExt07: 0,
+      DividGravMega07: 0,
+      Otro: 0,
+      TotBruto: 0,
+      DevRebDec: 0,
+      IngNoRent: 0,
+      Tot: 0,
     },
-    "CostDedic": {
-      "Cost": 0,
-      "GastAdmin": 0,
-      "GastDistVent": 0,
-      "GastFinan": 0,
-      "Otro": 0,
-      "Tot": 0
+    CostDedic: {
+      Cost: 0,
+      GastAdmin: 0,
+      GastDistVent: 0,
+      GastFinan: 0,
+      Otro: 0,
+      Tot: 0,
     },
-    "ESAL": {
-      "InvEfecAnno": 0,
-      "InvLiqui": 0
+    ESAL: {
+      InvEfecAnno: 0,
+      InvLiqui: 0,
     },
-    "Renta": {
-      "RecuDedu": 0,
-      "Passiv": 0,
-      "LiquidOrd": 0,
-      "PerdidLiqui": 0,
-      "Compensacion": 0,
-      "RentLiquida": 0,
-      "RentPresun": 0,
-      "RentExenta": 0,
-      "RenGravable": 0,
-      "RenLiquida": 0
+    Renta: {
+      RecuDedu: 0,
+      Passiv: 0,
+      LiquidOrd: 0,
+      PerdidLiqui: 0,
+      Compensacion: 0,
+      RentLiquida: 0,
+      RentPresun: 0,
+      RentExenta: 0,
+      RenGravable: 0,
+      RenLiquida: 0,
     },
-    "GananciasOcasion": {
-      "IngreGananOcasion": 0,
-      "RentDeudReg": 0,
-      "UtiliPerdFisc": 0,
-      "CostGananOcas": 0,
-      "GananOcasionNoAgrav": 0,
-      "GananOcasGrav": 0
+    GananciasOcasion: {
+      IngreGananOcasion: 0,
+      RentDeudReg: 0,
+      UtiliPerdFisc: 0,
+      CostGananOcas: 0,
+      GananOcasionNoAgrav: 0,
+      GananOcasGrav: 0,
     },
-    "LiquiPriv": {
-      "ImpuesRentLiquiGrav": {
-        "RentLiquidGrav": 0,
-        "DivPartGravET00": 0,
-        "DivPartGravET": 0,
-        "DivPartGrav27": 0,
-        "DivPartGrav": 0,
-        "DivPartGrav33": 0
+    LiquiPriv: {
+      ImpuesRentLiquiGrav: {
+        RentLiquidGrav: 0,
+        DivPartGravET00: 0,
+        DivPartGravET: 0,
+        DivPartGrav27: 0,
+        DivPartGrav: 0,
+        DivPartGrav33: 0,
       },
-      "TotImpRentLiquidGrav": 0,
-      "DescTrib": 0,
-      "ImpNetRent": 0,
-      "ImpGanOcas": 0,
-      "DescPorImpPagad": 0,
-      "TotImpCarg": 0,
-      "ValInvObraImp50": 0,
-      "DescEfectInvObrImp": 0,
-      "CredFisc": 0,
-      "AnticRentLiquidAnnoAntGrav": 0,
-      "SaldFavAnnoAntGrav": 0,
-      "Reten": {
-        "AutoReten": 0,
-        "OtraReten": 0,
-        "TotReten": 0
+      TotImpRentLiquidGrav: 0,
+      DescTrib: 0,
+      ImpNetRent: 0,
+      ImpGanOcas: 0,
+      DescPorImpPagad: 0,
+      TotImpCarg: 0,
+      ValInvObraImp50: 0,
+      DescEfectInvObrImp: 0,
+      CredFisc: 0,
+      AnticRentLiquidAnnoAntGrav: 0,
+      SaldFavAnnoAntGrav: 0,
+      Reten: {
+        AutoReten: 0,
+        OtraReten: 0,
+        TotReten: 0,
       },
-      "AntRenAnnoGravSig": 0,
-      "SobreInstFin": {
-        "AnticSobreInstAnnoGranAnt": 0,
-        "SobreInstFinan": 0,
-        "AnticSobreInstAnnoGravSig": 0
+      AntRenAnnoGravSig: 0,
+      SobreInstFin: {
+        AnticSobreInstAnnoGranAnt: 0,
+        SobreInstFinan: 0,
+        AnticSobreInstAnnoGravSig: 0,
       },
-      "SaldoPagImp": 0,
-      "Sansion": 0,
-      "TotSaldPag": 0,
-      "TotSaldFav": 0
-    }
+      SaldoPagImp: 0,
+      Sansion: 0,
+      TotSaldPag: 0,
+      TotSaldFav: 0,
+    },
   },
-  "Totales": {
-    "ValTotExiObrImpMod0": 0,
-    "ValTotProyObrImpMod2": 0,
-    "CodRepre": 0,
-    "CodCont": 0,
-    "Salvedad": false,
-    "NoTarjProf": 0,
-    "PagoTot": 0
-  }
+  Totales: {
+    ValTotExiObrImpMod0: 0,
+    ValTotProyObrImpMod2: 0,
+    CodRepre: 0,
+    CodCont: 0,
+    Salvedad: false,
+    NoTarjProf: 0,
+    PagoTot: 0,
+  },
 };

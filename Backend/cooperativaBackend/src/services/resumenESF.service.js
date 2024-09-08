@@ -1,12 +1,12 @@
 import prisma from "../config/prisma.js";
 import { v4 as uuidv4 } from "uuid";
 
-export const listActivosFijos = async () => {
+export const listResumenESF = async () => {
   try {
-    const result = await prisma.formactivosfijos.findMany();
+    const result = await prisma.formresumenesferi.findMany();
 
-    result.forEach((activosFijos) => {
-      activosFijos.actContent = JSON.parse(activosFijos.actContent.replace(/'/g, '"'));
+    result.forEach((resESF) => {
+        resESF.resContent = JSON.parse(resESF.resContent.replace(/'/g, '"'));
     });
 
     return result;
@@ -16,7 +16,7 @@ export const listActivosFijos = async () => {
   }
 };
 
-export const listActivosFijosById = async ( student) => {
+export const listResumenESFById = async (student) => {
   try {
 
     const res = await prisma.report.findFirst({
@@ -25,7 +25,7 @@ export const listActivosFijosById = async ( student) => {
         roomID: student.roomID,
       },
       select: {
-        actID: true,
+        resID: true,
       },
     });
 
@@ -33,9 +33,9 @@ export const listActivosFijosById = async ( student) => {
       return { message: 'Formulario no encontrado' };
     }
 
-    const result = await prisma.formactivosfijos.findUnique({
+    const result = await prisma.formresumenesferi.findUnique({
       where: {
-        actID: res.actID,
+        resID: res.resID,
       },
     });
 
@@ -45,56 +45,56 @@ export const listActivosFijosById = async ( student) => {
 
     return result;
   } catch (error) {
-    console.error(error.ConnectorError);
+    console.error(error);
     return false;
   }
 };
 
-export const createActivosFijos = async (activosFijos) => {
+export const createResumenESF = async (resESF) => {
   try {
-    const result = await prisma.formactivosfijos.create({
+    const result = await prisma.formresumenesferi.create({
       data: {
-        actID: uuidv4(),
-        actContent: JSON.stringify(activosFijos)
+        resID: uuidv4(),
+        resContent: JSON.stringify(resESF)
           .replace(/\n|\s/g, "")
           .replace(/"/g, "'"),
       },
     });
     return true;
   } catch (error) {
-    console.error(error.ConnectorError);
+    console.error(error);
     return false;
   }
 };
 
-export const updateActivosFijos = async (student, activosFijos) => {
+export const updateResumenESF = async (student, resESF) => {
   try {
-
     const res = await prisma.report.findFirst({
       where: {
         stuID: student.stuID,
         roomID: student.roomID,
       },
       select: {
-        actID: true,
+        resID: true,
       },
     });
 
     if (!res) {
       return { message: 'Formulario no encontrado' };
     }
-
-    const result = await prisma.formactivosfijos.update({
+    
+    const result = await prisma.formresumenesferi.update({
       where: {
-        actID: res.actID,
+        resID: res.resID,
       },
       data: {
-        actContent: activosFijos,
+        resContent: resESF
       },
     });
-    return true;
+
+    return result;
   } catch (error) {
-    console.error(error.ConnectorError);
-    return false;
+    console.error(error);
+    return {message: {error: 'No se pudo actualizar el formulario'}};
   }
 }

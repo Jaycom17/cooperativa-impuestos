@@ -1,10 +1,14 @@
 import prisma from "../config/prisma.js";
+
 import { IngresosFacturacionInput } from "../models/ingFact.model.js";
-import {RentaLiquidaInput} from "../models/rentaLiquida.model.js";
+import { RentaLiquidaInput } from "../models/rentaLiquida.model.js";
 import { ImpuestoDiferidoInput } from "../models/impuestoDiferido.js";
-import { Form110Input } from "../models/form110.model.js"
-import { DetalleRenglonesInput } from "../models/detalleRenglones.model.js"
-import { CaratulaInput } from "../models/caratula.model.js"
+import { Form110Input } from "../models/form110.model.js";
+import { DetalleRenglonesInput } from "../models/detalleRenglones.model.js";
+import { CaratulaInput } from "../models/caratula.model.js";
+import { ActivosFijosInput } from "../models/activosFijos.model.js";
+import { ESFPatrimonioInput } from "../models/esfPatrimonio.model.js";
+import { ResumenESFInput } from "../models/resumenESF-ERI.js";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -25,7 +29,7 @@ export const createReport = async (stuID, roomID) => {
     await prisma.formactivosfijos.create({
       data: {
         actID: formsID.formActivosFijos,
-        actContent: {},
+        actContent: ActivosFijosInput,
       },
     });
 
@@ -46,7 +50,7 @@ export const createReport = async (stuID, roomID) => {
     await prisma.formesfpatrimonio.create({
       data: {
         esfID: formsID.formEsfPatrimonio,
-        esfContent: {},
+        esfContent: ESFPatrimonioInput,
       },
     });
 
@@ -81,7 +85,7 @@ export const createReport = async (stuID, roomID) => {
     await prisma.formresumenesferi.create({
       data: {
         resID: formsID.formResumen,
-        resContent: {},
+        resContent: ResumenESFInput,
       },
     });
 
@@ -104,21 +108,5 @@ export const createReport = async (stuID, roomID) => {
   } catch (error) {
     console.error(error);
     return { message: "Error al crear el reporte" };
-  }
-};
-
-export const listReport = async (student) => {
-  try {
-    const report = await prisma.report.findFirst({
-      where: {
-        stuID: student.stuID,
-        roomID: student.roomID,
-      },
-    });
-
-    return report;
-  } catch (error) {
-    console.error(error);
-    return { message: "Error al obtener el reporte" };
   }
 };
