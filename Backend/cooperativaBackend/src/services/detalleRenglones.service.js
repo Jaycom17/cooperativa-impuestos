@@ -1,5 +1,8 @@
 import prisma from "../config/prisma.js";
 import { v4 as uuidv4 } from "uuid";
+import {getDetalleRengActivosFijos} from "./formsConections/detalleRengActivosFijos.service.js"
+import {getDetalleRengImptoDif} from "./formsConections/detalleRengImptoDif.service.js"
+import {getDetalleRengIngFact} from "./formsConections/detalleRengIngFact.service.js"
 
 export const listDetalleRenglones = async () => {
   try {
@@ -32,7 +35,7 @@ export const listDetalleRenglonesById = async (student) => {
       return {message: "Detalle Renglones no encontrado"};
     }
 
-    const result = await prisma.formdetallerenglones.findUnique({
+    let result = await prisma.formdetallerenglones.findUnique({
       where: {
         detID : res.detID,
       },
@@ -41,6 +44,11 @@ export const listDetalleRenglonesById = async (student) => {
     if (!result) {
       return {message: "Detalle Renglones no encontrado"};
     }
+
+    result.detContent = await getDetalleRengActivosFijos(result.detContent, student);
+    result.detContent = await getDetalleRengImptoDif(result.detContent, student);
+    result.detContent = await getDetalleRengIngFact(result.detContent, student);
+
     return result;
   } catch (error) {
     console.error(error);

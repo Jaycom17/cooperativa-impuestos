@@ -1791,7 +1791,7 @@
       "Ajust3": 0,
       "SaldFisc": 0
     },
-    "RecSocNacNoMegSoc": {
+    "RecSocNacNoMegSocR49": {
       "SaldCont": 0,
       "Ajust1": 0,
       "Ajust2": "",
@@ -1838,7 +1838,7 @@
       "Ajust3": 0,
       "SaldFisc": 0
     },
-    "RecSocNacNoMegSoc": {
+    "RecSocNacNoMegSocR52": {
       "SaldCont": 0,
       "Ajust1": 0,
       "Ajust2": "",
@@ -1863,7 +1863,7 @@
       "Ajust3": 0,
       "SaldFisc": 0
     },
-    "RecSocNacNoMegSoc": {
+    "RecSocNacNoMegSocR53": {
       "SaldCont": 0,
       "Ajust1": 0,
       "Ajust2": "",
@@ -1888,7 +1888,7 @@
       "Ajust3": 0,
       "SaldFisc": 0
     },
-    "RecSocNacNoMegSoc": {
+    "RecSocNacNoMegSocR54": {
       "SaldCont": 0,
       "Ajust1": 0,
       "Ajust2": "",
@@ -3653,6 +3653,13 @@
   },
   "R65": {
     "5305": {
+      "IntDevSectFinan": {
+        "SaldCont": 0,
+        "Ajust1": 0,
+        "Ajust2": "",
+        "Ajust3": 0,
+        "SaldFisc": 0
+      },
       "IntDevPrestTer": {
         "SaldCont": 0,
         "Ajust1": 0,
@@ -3702,7 +3709,7 @@
         "Ajust3": 0,
         "SaldFisc": 0
       },
-      "Otro": {
+      "OtrosGastFinan": {
         "SaldCont": 0,
         "Ajust1": 0,
         "Ajust2": "",
@@ -4105,7 +4112,7 @@
     "TotFisc": 0
   },
   "R81": {
-    "Valor": {
+    "ValorQuitCap": {
       "SaldCont": 0,
       "Ajust1": 0,
       "Ajust2": "",
@@ -4150,7 +4157,7 @@
       "Ajust1": 0,
       "SaldFisc": 0
     },
-    "AprtSoc": {
+    "AprtSocEncima": {
       "Ajust1": 0,
       "SaldFisc": 0
     },
@@ -4200,7 +4207,7 @@
       "IndCom": 0,
       "IVA": 0,
       "RetTran": 0,
-      "Otro": 0
+      "OtroDesc": 0
     },
     "TotFisc": 0
   },

@@ -25,7 +25,9 @@ export const getForm110Caratula = async (form110, student) => {
 
         const content = caratula.carContent;
 
-        form110.DatoPers.DatDecl.RazonSoc = (content.DatDecl.RazonSoc || 0)
+        form110.DatoPers.DatDecl.RazonSoc = (content.DatDecl.RazonSoc || "")
+
+        return form110;
 
     } catch (e) {
         console.log(e);

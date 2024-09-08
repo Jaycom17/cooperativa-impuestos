@@ -3,6 +3,7 @@ import Form110Values from "./FormValues";
 import TabBar from "../TabBar/TabBar";
 import { useState } from "react";
 
+
 function Form110Tabs({json, handleChange, TabsNames, CalculatedValues, ValuesNames, onReport = false, handleAdd, handleQuit}) {
     const keys = Object.keys(json);
 
@@ -14,7 +15,7 @@ function Form110Tabs({json, handleChange, TabsNames, CalculatedValues, ValuesNam
     const [activeTab, setActiveTab] = useState(tabs[0].name);
 
     const renderForm = (json, path) => (
-        <Form110Values json={json} path={path} handleChange={handleChange} CalculatedValues={CalculatedValues} ValuesNames={ValuesNames} handleAdd={handleAdd} handleQuit={handleQuit}/>
+        <Form110Values json={json} path={path} key={path} handleChange={handleChange} CalculatedValues={CalculatedValues} ValuesNames={ValuesNames} handleAdd={handleAdd} handleQuit={handleQuit}/>
     );
     return (
         <section className="w-full mt-12 md:mt-0 overflow-auto max-h-screen">

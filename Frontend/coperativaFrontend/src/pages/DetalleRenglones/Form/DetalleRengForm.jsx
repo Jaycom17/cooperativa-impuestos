@@ -72,6 +72,7 @@ const DetalleReng = () => {
                     Object.entries(response.data.detContent).map(([key, val]) => {
                         recieveData(val, [key]);
                     });
+                    setData(calculateData(data));
                 } else {
                     console.error("Error en la respuesta", response);
                 }
@@ -321,7 +322,7 @@ const DetalleReng = () => {
         } else {
             currentData.R93.DescDonEnt.Desc = (currentData.R93.DescDonEnt.Limit || 0);
         }
-        const result = ((currentData.R93.DescDonEnt.Desc || 0) + (currentData.R93.Otro.IndCom || 0) + (currentData.R93.Otro.IVA || 0) + (currentData.R93.Otro.RetTran || 0) + (currentData.R93.Otro.Otro || 0))
+        const result = ((currentData.R93.DescDonEnt.Desc || 0) + (currentData.R93.Otro.IndCom || 0) + (currentData.R93.Otro.IVA || 0) + (currentData.R93.Otro.RetTran || 0) + (currentData.R93.Otro.OtroDesc || 0))
         if (result > (currentData.R92.TotFisc || 0)) {
             currentData.R93.TotFisc = (currentData.R92.TotFisc || 0);
         } else {
@@ -341,7 +342,161 @@ const DetalleReng = () => {
         return currentData.R95
     }
 
+    const calculateSaldFiscR80 = (currentData) => {
+        for (let key in currentData) {
+            if (currentData[key] && typeof currentData[key] === 'object') {
+                currentData[key] = calculateSaldFiscR80(currentData[key])
+            }
+        }
+        if ("SaldFisc" in currentData) {
+            currentData.SaldFisc = (currentData.Ajust1 || 0);
+            if (currentData.SaldFisc < 0) currentData.SaldFisc = 0;
+        }
+        return currentData;
+    }
 
+    const calculateData = (updatedData) => {
+        const keys = RSumNorm.concat(RSumFisc, RSumVal);
+        for (let key of keys) {
+            if (RSumNorm.includes(key)) {
+                for (let subKey in updatedData[key]) {
+                    if (typeof updatedData[key][subKey] === 'object') {
+                        updatedData[key][subKey] = calculateSaldFisc(updatedData[key][subKey]);
+                    }
+                }
+                let TotCont = calculateTotCont(updatedData[key]);
+                let TotFisc = calculateTotFisc(updatedData[key]);
+                if (TotCont < 0) {
+                    updatedData[key].TotCont = 0;
+                } else {
+                    updatedData[key].TotCont = TotCont;
+                }
+                if (TotFisc < 0) {
+                    updatedData[key].TotFisc = 0;
+                } else {
+                    updatedData[key].TotFisc = TotFisc;
+                }
+            } else if (RSumFisc.includes(key)) {
+                for (let subKey in updatedData[key]) {
+                    if (typeof updatedData[key][subKey] === 'object') {
+                        updatedData[key][subKey] = calculateSaldFisc(updatedData[key][subKey]);
+                    }
+                }
+                let TotFisc = calculateTotFisc(updatedData[key]);
+                if (TotFisc < 0) {
+                    updatedData[key].TotFisc = 0;
+                } else {
+                    updatedData[key].TotFisc = TotFisc;
+                }
+            } else if (RSumVal.includes(key)) {
+                updatedData[key].TotFisc = calculateTotFiscVal(updatedData[key]);
+            } else if (key == "R104") {
+                for (let subKey in updatedData[key]) {
+                    if (typeof updatedData[key][subKey] === 'object') {
+                        updatedData[key][subKey]["Data"] = calculateSaldFisc(updatedData[key][subKey]["Data"]);
+                        let TotCont = calculateTotCont(updatedData[key][subKey]);
+                        let TotFisc = calculateTotFisc(updatedData[key][subKey]);
+                        if (TotCont < 0) {
+                            updatedData[key][subKey].TotCont = 0;
+                        } else {
+                            updatedData[key][subKey].TotCont = TotCont;
+                        }
+                        if (TotFisc < 0) {
+                            updatedData[key][subKey].TotFisc = 0;
+                        } else {
+                            updatedData[key][subKey].TotFisc = TotFisc;
+                        }
+                    }
+                }
+                let TotCont = calculateTotContR104(updatedData[key]);
+                let TotFisc = calculateTotFiscR104(updatedData[key]);
+                if (TotCont < 0) {
+                    updatedData[key].TotCont = 0;
+                } else {
+                    updatedData[key].TotCont = TotCont;
+                }
+                if (TotFisc < 0) {
+                    updatedData[key].TotFisc = 0;
+                } else {
+                    updatedData[key].TotFisc = TotFisc;
+                }
+            } else if (key == "R80") {
+                for (let subKey in updatedData[key]) {
+                    if (typeof updatedData[key][subKey] === 'object') {
+                        updatedData[key][subKey] = calculateSaldFiscR80(updatedData[key][subKey]);
+                    }
+                }
+                let TotCont = calculateTotCont(updatedData[key]);
+                let TotFisc = calculateTotFisc(updatedData[key]);
+                if (TotCont < 0) {
+                    updatedData[key].TotCont = 0;
+                } else {
+                    updatedData[key].TotCont = TotCont;
+                }
+                if (TotFisc < 0) {
+                    updatedData[key].TotFisc = 0;
+                } else {
+                    updatedData[key].TotFisc = TotFisc;
+                }
+            }
+            updatedData.R44 = calculateRSum(updatedData, "R44", ["R36", "R37", "R38", "R39", "R40", "R41", "R42", "R43"]);
+
+            updatedData.R46.TotCont = calculateRestNoNeg((updatedData.R44.TotCont || 0), (updatedData.R45.TotCont || 0));
+            updatedData.R46.TotFisc = calculateRestNoNeg((updatedData.R44.TotFisc || 0), (updatedData.R45.TotFisc || 0));
+            updatedData["R46"][3130].SaldCont = calculate3130(updatedData.R46)
+
+            updatedData["R51"]["Dat"].SaldFisc = calculateRestNoNeg(((updatedData["R51"]["Dat"].SaldCont || 0) + (updatedData["R51"]["Dat"].Ajust1 || 0)), (updatedData["R51"]["Dat"].Ajust3 || 0));
+
+            updatedData.R58 = calculateRSum(updatedData, "R58", ["R47", "R48", "R49", "R50", "R51", "R52", "R53", "R54", "R55", "R56", "R57"]);
+            updatedData.R61 = calculateRSum(updatedData, "R61", ["R58", "R59", "R60"]);
+            updatedData.R67 = calculateRSum(updatedData, "R67", ["R62", "R63", "R64", "R65", "R66"]);
+
+            updatedData.R72 = calculateRSumRes(updatedData, "R72", ["R61", "R69", "R70", "R71"], ["R52", "R53", "R54", "R55", "R56", "R67", "R68"]);
+            updatedData.R73 = calculateRSumRes(updatedData, "R73", ["R52", "R53", "R54", "R55", "R56", "R67", "R68"], ["R61", "R69", "R70", "R71"]);
+            updatedData.R74.CompenExcRen.Sub = updatedData.R74.CompenExcRen.Exc
+            updatedData.R74.CompenExcRen.ValFin = calculateR74Valfin(updatedData)
+            updatedData.R74.TotFisc = updatedData.R74.CompenExcRen.ValFin;
+            updatedData.R75.TotFisc = calculateRestNoNeg((updatedData.R72.TotFisc || 0), (updatedData.R74.TotFisc || 0));
+
+            updatedData.R79.TotFisc = calculateR79TotFisc(updatedData);
+
+            updatedData.R85 = calculateR85(updatedData);
+
+            updatedData.R86.TotFisc = redondear((updatedData.R79.TotFisc || 0) * 0.35, -3);
+
+            updatedData.R87.TotFisc = redondear((updatedData.R54.TotFisc || 0) * 0.1, -3);
+
+            updatedData.R89.TotFisc = redondear((updatedData.R56.TotFisc || 0) * 0.27, -3);
+
+            updatedData.R90.TotFisc = redondear(((updatedData.R53.TotFisc || 0) * 0.31) + (((updatedData.R53.TotFisc || 0) * 0.69) * 0.1), -3);
+
+            updatedData.R91.TotFisc = redondear((updatedData.R52.TotFisc || 0) * 0.33, -3);
+
+            updatedData.R92 = calculateRSumFisc(updatedData, "R92", ["R86", "R87", "R88", "R89", "R90", "R91"]);
+
+            updatedData.R93 = calculateR93(updatedData)
+
+            updatedData.R94.TotFisc = calculateRestNoNeg((updatedData.R92.TotFisc || 0), (updatedData.R93.TotFisc || 0));
+
+            updatedData.R95 = calculateR95(updatedData);
+
+            updatedData.R97.TotFisc = (updatedData.R94.TotFisc || 0) + (updatedData.R95.TotFisc || 0) - (updatedData.R96.ValFisc || 0);
+
+            updatedData.R105.TotFisc = (updatedData.R103.ValFisc || 0) + (updatedData.R104.TotFisc || 0);
+
+            updatedData.R110.TotFisc = calculateRestNoNeg(((updatedData.R97.TotFisc || 0) + (updatedData.R106.ValFisc || 0) + (updatedData.R108.ValFisc || 0) + (updatedData.R109.ValFisc || 0))
+                , ((updatedData.R98.ValFisc || 0) + (updatedData.R99.ValFisc || 0) + (updatedData.R100.ValFisc || 0) + (updatedData.R101.ValFisc || 0) + (updatedData.R102.ValFisc || 0) + (updatedData.R105.TotFisc || 0) + (updatedData.R107.ValFisc || 0)));
+
+            updatedData.R111.TotFisc = updatedData.R111.Extem;
+
+            updatedData.R112.TotFisc = calculateRestNoNeg(((updatedData.R97.TotFisc || 0) + (updatedData.R106.ValFisc || 0) + (updatedData.R108.ValFisc || 0) + (updatedData.R109.ValFisc || 0) + (updatedData.R111.TotFisc || 0))
+                , ((updatedData.R98.ValFisc || 0) + (updatedData.R99.ValFisc || 0) + (updatedData.R100.ValFisc || 0) + (updatedData.R101.ValFisc || 0) + (updatedData.R102.ValFisc || 0) + (updatedData.R105.TotFisc || 0) + (updatedData.R107.ValFisc || 0)));
+
+            updatedData.R113.TotFisc = calculateRestNoNeg(((updatedData.R98.ValFisc || 0) + (updatedData.R99.ValFisc || 0) + (updatedData.R100.ValFisc || 0) + (updatedData.R101.ValFisc || 0) + (updatedData.R102.ValFisc || 0) + (updatedData.R105.TotFisc || 0) + (updatedData.R107.ValFisc || 0))
+                , ((updatedData.R97.TotFisc || 0) + (updatedData.R106.ValFisc || 0) + (updatedData.R108.ValFisc || 0) + (updatedData.R109.ValFisc || 0) + (updatedData.R111.TotFisc || 0)));
+        }
+        return updatedData;
+    }
 
     const handleAdd = (path) => {
         const pathArray = path.split('.');
@@ -488,6 +643,24 @@ const DetalleReng = () => {
             }
             let TotCont = calculateTotContR104(updatedData[key]);
             let TotFisc = calculateTotFiscR104(updatedData[key]);
+            if (TotCont < 0) {
+                updatedData[key].TotCont = 0;
+            } else {
+                updatedData[key].TotCont = TotCont;
+            }
+            if (TotFisc < 0) {
+                updatedData[key].TotFisc = 0;
+            } else {
+                updatedData[key].TotFisc = TotFisc;
+            }
+        } else if (key == "R80") {
+            for (let subKey in updatedData[key]) {
+                if (typeof updatedData[key][subKey] === 'object') {
+                    updatedData[key][subKey] = calculateSaldFiscR80(updatedData[key][subKey]);
+                }
+            }
+            let TotCont = calculateTotCont(updatedData[key]);
+            let TotFisc = calculateTotFisc(updatedData[key]);
             if (TotCont < 0) {
                 updatedData[key].TotCont = 0;
             } else {

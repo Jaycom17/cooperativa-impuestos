@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useState, useEffect, useRef } from "react";
 import { GrFormClose } from "react-icons/gr";
 import { MdMenu } from "react-icons/md";
+import cutString from "../../utils/CropName.js"
 
 const TabBar = ({ tabs, activeTab, setActiveTab, onReport = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -80,8 +81,9 @@ const TabBar = ({ tabs, activeTab, setActiveTab, onReport = false }) => {
                       }`
                 } `}
                 onClick={() => setActiveTab(tab.name)}
+                title={tab.label}
               >
-                {tab.label}
+                {cutString(tab.label)}
               </button>
             ))}
         </section>

@@ -23,7 +23,7 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
             type="string"
             name={newPath}
             value={value}
-            placeholder={newPath}
+            placeholder={value}
             onChange={(e) => handleChange(e)}
           />
         );
@@ -48,7 +48,7 @@ function ActivosFijosValues({ title, path, data, handleChange }) {
             type="number"
             name={newPath}
             value={value === 0 ? "" : value}
-            placeholder={newPath}
+            placeholder={value}
             onChange={(e) => handleChange(e)}
           />
         );

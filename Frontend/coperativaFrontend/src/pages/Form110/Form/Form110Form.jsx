@@ -183,6 +183,7 @@ const From110Form = () => {
                     Object.entries(response.data.r110Content).map(([key, val]) => {
                         recieveData(val, [key]);
                     });
+                    setData(calculateData(data));
                 } else {
                     console.error("Error en la respuesta", response);
                 }
@@ -323,8 +324,28 @@ const From110Form = () => {
         }
     }
 
+    const calculateData = (updatedData) =>{
+        updatedData.DatosResum.Patrim.TotalBruto = calculateTotalPatBruto(updatedData.DatosResum.Patrim);
+        updatedData.DatosResum.Patrim.TotalLiqui = calculateTotalLiqui(updatedData.DatosResum.Patrim);
+        updatedData.DatosResum.Ingre.TotBruto = calculateTotBruto(updatedData.DatosResum.Ingre);
+        updatedData.DatosResum.Ingre.Tot = calculateTotNeto(updatedData.DatosResum.Ingre);
+        updatedData.DatosResum.CostDedic.Tot = calculateTotCostGast(updatedData.DatosResum.CostDedic);
+        updatedData.DatosResum.Renta.LiquidOrd = calculateLiquidOrd(updatedData.DatosResum);
+        updatedData.DatosResum.Renta.PerdidLiqui = calculatePerdidLiqui(updatedData.DatosResum);
+        updatedData.DatosResum.Renta.RentLiquida = calculateRentLiquida(updatedData.DatosResum.Renta);
+        updatedData.DatosResum.Renta.RenLiquida = calculateRenLiquida(updatedData.DatosResum.Renta);
+        updatedData.DatosResum.LiquiPriv.TotImpRentLiquidGrav = calculateTotImpRentLiquidGrav(updatedData.DatosResum.LiquiPriv.ImpuesRentLiquiGrav);
+        updatedData.DatosResum.LiquiPriv.ImpNetRent = calculateImpNetRent(updatedData.DatosResum.LiquiPriv);
+        updatedData.DatosResum.LiquiPriv.TotImpCarg = calculateTotImpCarg(updatedData.DatosResum.LiquiPriv);
+        updatedData.DatosResum.LiquiPriv.Reten.TotReten = calculateTotReten(updatedData.DatosResum.LiquiPriv.Reten);
+        updatedData.DatosResum.LiquiPriv.SaldoPagImp = calculateSaldoPagImp(updatedData.DatosResum.LiquiPriv);
+        updatedData.DatosResum.LiquiPriv.TotSaldPag = calculateTotSaldPag(updatedData.DatosResum.LiquiPriv);
+        updatedData.DatosResum.LiquiPriv.TotSaldFav = calculateTotSaldFav(updatedData.DatosResum.LiquiPriv);
+        return updatedData;
+    }
+
     const handleChange = (e) => {
-        let { name, value } = e.target;
+        let { name, value, type } = e.target;
         console.log(name, value)
 
 
@@ -347,10 +368,14 @@ const From110Form = () => {
         const currentValueType = typeof currentLevel[lastKey];
 
         // Convertir el valor al tipo correcto
-        if (currentValueType === 'number') {
-            value = parseFloat(value);
-        } else if (currentValueType === 'boolean') {
-            value = value === 'true';
+        if (type !== 'text') {
+            if (currentValueType === 'number') {
+                value = parseFloat(value);
+            } else if (currentValueType === 'boolean') {
+                value = value === 'true';
+            }
+        } else if (type === 'text' && value === 0) {
+            value = "";
         }
         // No es necesario convertir si es una cadena de texto (string)
 
@@ -358,25 +383,9 @@ const From110Form = () => {
         currentLevel[lastKey] = value;
 
         // Actualizar el estado con el objeto modificado
-        updatedData.DatosResum.Patrim.TotalBruto = calculateTotalPatBruto(updatedData.DatosResum.Patrim);
-        updatedData.DatosResum.Patrim.TotalLiqui = calculateTotalLiqui(updatedData.DatosResum.Patrim);
-        updatedData.DatosResum.Ingre.TotBruto = calculateTotBruto(updatedData.DatosResum.Ingre);
-        updatedData.DatosResum.Ingre.Tot = calculateTotNeto(updatedData.DatosResum.Ingre);
-        updatedData.DatosResum.CostDedic.Tot = calculateTotCostGast(updatedData.DatosResum.CostDedic);
-        updatedData.DatosResum.Renta.LiquidOrd = calculateLiquidOrd(updatedData.DatosResum);
-        updatedData.DatosResum.Renta.PerdidLiqui = calculatePerdidLiqui(updatedData.DatosResum);
-        updatedData.DatosResum.Renta.RentLiquida = calculateRentLiquida(updatedData.DatosResum.Renta);
-        updatedData.DatosResum.Renta.RenLiquida = calculateRenLiquida(updatedData.DatosResum.Renta);
-        updatedData.DatosResum.LiquiPriv.TotImpRentLiquidGrav = calculateTotImpRentLiquidGrav(updatedData.DatosResum.LiquiPriv.ImpuesRentLiquiGrav);
-        updatedData.DatosResum.LiquiPriv.ImpNetRent = calculateImpNetRent(updatedData.DatosResum.LiquiPriv);
-        updatedData.DatosResum.LiquiPriv.TotImpCarg = calculateTotImpCarg(updatedData.DatosResum.LiquiPriv);
-        updatedData.DatosResum.LiquiPriv.Reten.TotReten = calculateTotReten(updatedData.DatosResum.LiquiPriv.Reten);
-        updatedData.DatosResum.LiquiPriv.SaldoPagImp = calculateSaldoPagImp(updatedData.DatosResum.LiquiPriv);
-        updatedData.DatosResum.LiquiPriv.TotSaldPag = calculateTotSaldPag(updatedData.DatosResum.LiquiPriv);
-        updatedData.DatosResum.LiquiPriv.TotSaldFav = calculateTotSaldFav(updatedData.DatosResum.LiquiPriv);
-
+        
         // Calculo de los totales
-        setData(updatedData);
+        setData(calculateData(updatedData));
         console.log(data);
         updateForm(data);
 

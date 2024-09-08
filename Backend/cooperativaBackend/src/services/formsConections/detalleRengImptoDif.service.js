@@ -1,6 +1,6 @@
 import prisma from '../../config/prisma.js';
 
-export const getDetalleRengActivosFijos = async (detReng, student) => {
+export const getDetalleRengImptoDif = async (detReng, student) => {
     try {
         const res = await prisma.report.findFirst({
             where: {
@@ -23,10 +23,11 @@ export const getDetalleRengActivosFijos = async (detReng, student) => {
         }
 
         const content = impDif.impContent;
-
-        detReng[R43][1860].REFSaldCont = content.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.Total.SaldoImpuestoDiferidoActual || 0;
-        detReng[R45][2826].REFSaldCont = content.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Total.SaldoImpuestoDiferidoActual || 0;
+        detReng["R43"]["1860"].REFSaldCont = content.ImpuestosDiferidosDiferenciasTemporarias.ActivoDiferido.Total.SaldoImpuestoDiferidoActual || 0;
+        detReng["R45"]["2826"].REFSaldCont = content.ImpuestosDiferidosDiferenciasTemporarias.PasivoDiferido.Total.SaldoImpuestoDiferidoActual || 0;
         
+        return detReng;
+
     } catch (e) {
         console.log(e);
     }

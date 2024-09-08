@@ -24,7 +24,11 @@ export const getDetalleRengIngFact = async (detReng, student) => {
 
         const content = ingFact.ingContent;
 
-        detReng[R43][2816].REFSaldCont = content.Totales.PasivIngrDif.TotPasivDif || 0;
+
+
+        detReng["R45"]["2816"].REFSaldCont = (content.Totales.PasivIngrDif.TotPasivDif || 0);
+
+        return detReng;
 
     } catch (e) {
         console.log(e);

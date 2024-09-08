@@ -1,5 +1,7 @@
 import prisma from "../config/prisma.js";
 import { v4 as uuidv4 } from "uuid";
+import { getForm110Caratula } from "./formsConections/form110Caratula.service.js"
+import { getForm110DetalleReng } from "./formsConections/form110DetalleReng.service.js"
 
 export const listFormulario110 = async () => {
   try {
@@ -40,6 +42,10 @@ export const listFormulario110ById = async (student) => {
     if (!result) {
       return {message: "Formulario 110 no encontrado"};
     }
+
+    result.r110Content = await getForm110Caratula(result.r110Content, student);
+    result.r110Content = await getForm110DetalleReng(result.r110Content, student);
+
     return result;
   } catch (error) {
     console.error(error);

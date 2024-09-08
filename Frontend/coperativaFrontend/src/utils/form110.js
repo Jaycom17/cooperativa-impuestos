@@ -1,4 +1,11 @@
-export const CalculatedValues = ["TotalBruto", "TotalLiqui", "TotBruto", "Tot", "LiquidOrd", "PerdidLiqui", "RentLiquida", "RenLiquida", "TotImpRentLiquidGrav", "ImpNetRent", "TotImpCarg", "TotReten", "SaldoPagImp", "TotSaldPag", "TotSaldFav"]
+export const CalculatedValues = ["TotalBruto", "TotalLiqui", "TotBruto", "Tot", "LiquidOrd", "PerdidLiqui", "RentLiquida", 
+    "RenLiquida", "TotImpRentLiquidGrav", "ImpNetRent", "TotImpCarg", "TotReten", "SaldoPagImp", "TotSaldPag", "TotSaldFav",
+    "TotalCostGastNom", "AportSistSegSocial","AportSenaEtc","EfectvEquiEfect","InvInstFinDeriv","CuentDocArreFinCob","Inv",
+    "ActivInt","ActivBio","PPEPANCMC","Otro","Pasiv","Brutos","Finan","DividNoCont","DividGravNat06","DividGravNat07","DiviDNoGrav07",
+    "DividGravMega07","DevRebDec","IngNoRent","Cost","GastAdmin","GastDistVent","GastFinan","RecuDedu","Compensacion","RentPresun",
+    "RentExenta","RenGravable","IngreGananOcasion","RentDeudReg","UtiliPerdFisc","CostGananOcas","GananOcasionNoAgrav","GananOcasGrav",
+    "RentLiquidGrav","DivPartGravET00","DivPartGrav27","DivPartGrav","DivPartGrav33","DescTrib","ImpGanOcas","AnticRentLiquidAnnoAntGrav",
+    "SaldFavAnnoAntGrav","OtraReten","AntRenAnnoGravSig","Sansion"]
 export const ValuesNames = {
     "DatoPers": "Datos Personales",
     "Anno": "Año",
@@ -112,7 +119,8 @@ export const ValuesNames = {
     "CodCont": "Código Contador o Revisor Fiscal",
     "Salvedad": "Con salvedades",
     "NoTarjProf": "No. Tarjeta profesional",
-    "PagoTot": "Pago total"
+    "PagoTot": "Pago total",
+    
 };
 export const TabsNames = {
     "DatoPers": "Datos Personales",

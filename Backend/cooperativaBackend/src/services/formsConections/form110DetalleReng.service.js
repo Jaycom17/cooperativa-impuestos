@@ -39,7 +39,7 @@ export const getForm110DetalleReng = async (form110, student) => {
         form110.DatosResum.Patrim.Otro = (content.R43.TotFisc || 0);
         form110.DatosResum.Patrim.Pasiv = (content.R45.TotFisc || 0);
 
-        form110.DatosResum.Ingre.Bruto = (content.R47.TotFisc || 0);
+        form110.DatosResum.Ingre.Brutos = (content.R47.TotFisc || 0);
         form110.DatosResum.Ingre.Finan = (content.R48.TotFisc || 0);
         form110.DatosResum.Ingre.DividNoCont = (content.R49.TotFisc || 0);
         form110.DatosResum.Ingre.DividGravNat06 = (content.R52.TotFisc || 0);
@@ -85,6 +85,8 @@ export const getForm110DetalleReng = async (form110, student) => {
         form110.DatosResum.LiquiPriv.AntRenAnnoGravSig = (content.R106.ValFisc || 0);
 
         form110.DatosResum.LiquiPriv.Sansion = (content.R111.TotFisc || 0);
+
+        return form110;
 
     } catch (e) {
         console.log(e);
