@@ -381,6 +381,57 @@ export const getRentaLiquitaDetalle = async (renLiq, student) => {
 
     renLiq.Ingresos.MenosIngresosNoConstitutivosRenta.ValorFiscal = content.R60.TotFisc;
 
+
+    /**
+     * ##############################################Costos##############################################
+     */
+
+    /**
+     * TODO: quedo en la linea 135 del renta liquida
+     */
+
+    /**
+     * Valor contable costos dematerias primas
+     */
+
+    renLiq.Costos.MateriasPrimasReventaBienes.CostossVentasCalculadoSistemaPermanente.ValorContable = content.R62["61"].CostVenSisPer.SaldCont;
+    renLiq.Costos.MateriasPrimasReventaBienes.MateriasPrimasProduccion.InventarioInicial.ValorContable = content.R62["61"].InvIniMatPri.Data.SaldCont;
+    renLiq.Costos.MateriasPrimasReventaBienes.MateriasPrimasProduccion.ComprasLocales.ValorContable = content.R62["61"].InvIniMatPri.CompLoc.SaldCont;
+    renLiq.Costos.MateriasPrimasReventaBienes.MateriasPrimasProduccion.Importaciones.ValorContable = content.R62["61"].InvIniMatPri.Imp.SaldCont;
+    renLiq.Costos.MateriasPrimasReventaBienes.MateriasPrimasProduccion.InventarioFinal.ValorContable = content.R62["61"].InvIniMatPri.InvFinMatPri.SaldCont;
+    renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.InventarioInicial.ValorContable = content.R62["61"].CostVentInv.InvIni.SaldCont;
+    renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.ComprasLocales.ValorContable = content.R62["61"].CostVentInv.CompLoc.SaldCont;
+    renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.Importaciones.ValorContable = content.R62["61"].CostVentInv.Import.SaldCont;
+    renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.InventarioFinal.ValorContable = content.R62["61"].CostVentInv.InvFin.SaldCont;
+
+    /**
+     * Menor valor fiscal costos dematerias primas
+     */
+
+    renLiq.Costos.MateriasPrimasReventaBienes.CostossVentasCalculadoSistemaPermanente.MenorValorFiscal = content.R62["61"].CostVenSisPer.Ajust1;
+    renLiq.Costos.MateriasPrimasReventaBienes.MateriasPrimasProduccion.InventarioInicial.MenorValorFiscal = content.R62["61"].InvIniMatPri.Data.Ajust1;
+    renLiq.Costos.MateriasPrimasReventaBienes.MateriasPrimasProduccion.ComprasLocales.MenorValorFiscal = content.R62["61"].InvIniMatPri.CompLoc.Ajust1;
+    renLiq.Costos.MateriasPrimasReventaBienes.MateriasPrimasProduccion.Importaciones.MenorValorFiscal = content.R62["61"].InvIniMatPri.Imp.Ajust1;
+    renLiq.Costos.MateriasPrimasReventaBienes.MateriasPrimasProduccion.InventarioFinal.MenorValorFiscal = content.R62["61"].InvIniMatPri.InvFinMatPri.Ajust1;
+    renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.InventarioInicial.MenorValorFiscal = content.R62["61"].CostVentInv.InvIni.Ajust1;
+    renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.ComprasLocales.MenorValorFiscal = content.R62["61"].CostVentInv.CompLoc.Ajust1;
+    renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.Importaciones.MenorValorFiscal = content.R62["61"].CostVentInv.Import.Ajust1;
+    renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.InventarioFinal.MenorValorFiscal = content.R62["61"].CostVentInv.InvFin.Ajust1;
+
+    /**
+     * Mayor valor fiscal costos dematerias primas
+     */
+
+    renLiq.Costos.MateriasPrimasReventaBienes.CostossVentasCalculadoSistemaPermanente.MayorValorFiscal = content.R62["61"].CostVenSisPer.Ajust3;
+    renLiq.Costos.MateriasPrimasReventaBienes.MateriasPrimasProduccion.InventarioInicial.MayorValorFiscal = content.R62["61"].InvIniMatPri.Data.Ajust3;
+    renLiq.Costos.MateriasPrimasReventaBienes.MateriasPrimasProduccion.ComprasLocales.MayorValorFiscal = content.R62["61"].InvIniMatPri.CompLoc.Ajust3;
+    renLiq.Costos.MateriasPrimasReventaBienes.MateriasPrimasProduccion.Importaciones.MayorValorFiscal = content.R62["61"].InvIniMatPri.Imp.Ajust3;
+    renLiq.Costos.MateriasPrimasReventaBienes.MateriasPrimasProduccion.InventarioFinal.MayorValorFiscal = content.R62["61"].InvIniMatPri.InvFinMatPri.Ajust3;
+    renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.InventarioInicial.MayorValorFiscal = content.R62["61"].CostVentInv.InvIni.Ajust3;
+    renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.ComprasLocales.MayorValorFiscal = content.R62["61"].CostVentInv.CompLoc.Ajust3;
+    renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.Importaciones.MayorValorFiscal = content.R62["61"].CostVentInv.Import.Ajust3;
+    renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.InventarioFinal.MayorValorFiscal = content.R62["61"].CostVentInv.InvFin.Ajust3;
+
   }catch(e){
     console.log(e);
   }
