@@ -79,14 +79,24 @@ export const removeUser = async (usuID) => {
       include: { student: true }
     });
 
+    
     // Verificar si el usuario tiene salas asignadas
     if (userRooms.length > 0) {
+
       // Eliminar estudiantes y salas asignadas al usuario
       for (const room of userRooms) {
         const roomId = room.roomID;
 
         // Verificar si la sala tiene estudiantes
         if (room.student.length > 0) {
+
+          for(const student of room.student){
+            const deleteReport = await prisma.report.deleteMany({
+              where: { stuID: student.stuID,
+                  roomID: roomId
+               }
+            });
+          }
           // Eliminar estudiantes asignados a la sala
           const deleteStudentsResult = await prisma.student.deleteMany({
             where: { roomID: roomId }

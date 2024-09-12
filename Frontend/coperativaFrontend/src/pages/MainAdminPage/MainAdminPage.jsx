@@ -8,6 +8,7 @@ import { getProfessors } from '../../services/professor.service';
 //Importación de iconos
 import { FaSearch } from "react-icons/fa";
 import { RiAlarmWarningLine } from "react-icons/ri";
+import { TbError404 } from "react-icons/tb";
 
 /**
  * Componente principal de la página de administración.
@@ -67,7 +68,7 @@ const MainAdminPage = () => {
   return (
     <main className="bg-background min-h-screen pb-3 ">
       <Navbar />
-      {filteredProfessors.length === 0 ? 
+      {professors.length === 0 ? 
           <section className='flex mx-auto items-center flex-col text-unicoop w-11/12 md:w-3/4 text-center border bg-unicoop-black rounded-xl mt-11 md:mt-16 md:mb-8 p-9'>
             <RiAlarmWarningLine className='text-4xl mb-3'/>
             <h1 className='text-2xl lg:text-3xl font-semibold'>¡PARECE QUE AÚN NO HAY PROFESORES CREADOS!</h1>
@@ -84,13 +85,21 @@ const MainAdminPage = () => {
             />
             <FaSearch className="absolute inset-y-0 right-2 text-2xl my-auto text-unicoop cursor-text"/>
           </div>
-          <section className="w-11/12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 my-5 mx-auto justify-items-center">
-            {filteredProfessors.map((professor) => (
-              <Professor key={professor.usuID} professor={professor} onRefresh={refreshProfessors} />
-            ))}
-          </section>
+            {filteredProfessors.length === 0 ? 
+              <section className='flex mx-auto items-center flex-col text-unicoop w-11/12 md:w-3/4 text-center border bg-unicoop-black rounded-xl mt-11 md:mt-16 md:mb-8 p-9'>
+                <TbError404 className='text-5xl mb-3 text-unicoop-yellow'/>
+                <h1 className='text-2xl lg:text-3xl font-semibold'>¡UPS, PARECE QUE NO SE ENCONTRARON COINCIDENCIAS DE BÚSQUEDA!</h1>
+              </section>
+            :
+            <section className="w-11/12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 my-5 mx-auto justify-items-center">
+              {filteredProfessors.map((professor) => (
+                <Professor key={professor.usuID} professor={professor} onRefresh={refreshProfessors} />
+              ))}
+            </section>
+
+            }
         </section>
-        }
+      }
       
     </main>
   );

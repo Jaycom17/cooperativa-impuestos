@@ -126,7 +126,7 @@ const AsideProf = ({ toNav, getStudent }) => {
           <h1 className="text-white md:text-xl md:mt-[10px] bg-transparent">
             {selectedStudent
               ? selectedStudent.stuCedula
-              : "Nombre del estudiante"}
+              : "Cédula del estudiante"}
           </h1>
         </div>
         <button
@@ -157,18 +157,24 @@ const AsideProf = ({ toNav, getStudent }) => {
         )}
       </aside>
       <FloatingContainer open={contOpen} setOpen={setContOpen}>
-        <section className="bg-primary rounded-md text-black">
-          <div className="relative w-10/12 p-2 mx-auto">
-            <input
-              className="w-full mx-auto p-1.5 rounded-md mt-2"
-              placeholder="Buscar estudiante"
-              type="text"
-              onChange={searchStudent}
-            />
-            <FaSearch className="absolute inset-y-0 right-4 top-1 text-xl my-auto cursor-text text-black/65" />
-          </div>
+        <section className="bg-primary rounded-md text-black p-2">
+          <article className="flex flex-col items-center">
+            <h2 className="text-unicoop font-medium text-lg">
+              Conteo de estudiantes: <span>{studentsCopy.length}</span>
+            </h2>
+            <div className="relative w-10/12 p-2 mx-auto">
+              <input
+                className="w-full mx-auto p-1.5 rounded-md mt-2"
+                placeholder="Buscar estudiante"
+                type="text"
+                onChange={searchStudent}
+              />
+              <FaSearch className="absolute inset-y-0 right-4 top-1 text-xl my-auto cursor-text text-black/65" />
+            </div>
+          </article>
+          
           {students.length === 0 && (
-            <p className="text-center mt-2 px-4 md:text-lg text-unicoop">Aún no hay estudiantes registrados en esta sala :(</p>
+            <p className="text-center mt-2 px-4 md:text-lg text-unicoop">Ups, no se encontraron estudiantes :(</p>
           )}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 p-3">
             {students.map((student) => (

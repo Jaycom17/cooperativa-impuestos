@@ -120,10 +120,10 @@ function MiddlewareStudent() {
       )}
 
       {firstTime === OPTIONS.NO && (
-        <div className={`flex flex-col items-center p-3 ${animationClass}`}>
-          <h2 className="font-semibold text-3xl">Bienvenido a la sala</h2>
+        <div className={`flex flex-col items-center p-3 text-center ${animationClass}`}>
+          <h2 className="font-semibold text-3xl">Bienvenido de nuevo a la sala</h2>
           <p className="text-center mt-3">
-            A continuación, escribe tu cedula.
+            A continuación, escribe tu número de cedula para volver a ingresar a esta sala.
           </p>
           <form
             className="flex flex-col w-full items-center gap-2"
@@ -136,12 +136,12 @@ function MiddlewareStudent() {
             )}
             <input
               type="number"
-              className="w-1/2 p-2 rounded-md border border-gray-300 mt-3 text-black"
+              className="w-4/5 p-2 rounded-md border border-gray-300 mt-3 text-black"
               {...register("stuCedula", { required: true })}
             />
             {errors.stuCedula && (
-              <p className="text-[red] text-sm bg-transparent">
-                Debe ingresar una cedula
+              <p className="text-[red] text-sm font-medium">
+                Debes ingresar un número de cédula
               </p>
             )}
             <button
@@ -164,11 +164,10 @@ function MiddlewareStudent() {
       )}
 
       {firstTime === OPTIONS.SI && (
-        <div className={`flex flex-col items-center p-3 ${animationClass}`}>
+        <div className={`flex flex-col items-center p-3 sm:w-2/3 lg:w-1/3 text-center ${animationClass}`}>
           <h2 className="font-semibold text-3xl">Bienvenido a la sala</h2>
           <p className="text-center mt-3">
-            A continuación escribe tu numero de cedula, con el cual deseas registrarte en
-            la sala.
+            A continuación escribe tu número de cédula para registrarte en la sala. 
           </p>
           <form
             className="flex flex-col w-full items-center gap-2"
@@ -181,12 +180,12 @@ function MiddlewareStudent() {
             )}
             <input
               type="number"
-              className="w-1/2 p-2 rounded-md border border-gray-300 mt-3 text-black"
+              className="w-4/5 p-2 rounded-md border border-gray-300 mt-3 text-black"
               {...register("stuCedula", { required: true })}
             />
             {errors.stuCedula && (
-              <p className="text-[red] text-sm bg-transparent">
-                Debe ingresar una cedula
+              <p className="text-[red] text-sm bg-transparent font-medium">
+                Debes ingresar un número de cédula
               </p>
             )}
             <button
@@ -205,8 +204,7 @@ function MiddlewareStudent() {
             </button>
           </div>
           <p className="mt-3 text-center">
-            <span className="font-bold">Recomendación:</span> Anota este nombre
-            para futuros ingresos a esta sala ;)
+            <span className="font-bold">Nota:</span> Para futuros ingresos a esta sala, recuerda hacerlo dando clic en el botón &quot;NO&quot; en la anterior página para cargar todos tus avances ;).
           </p>
         </div>
       )}
