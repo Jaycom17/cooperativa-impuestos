@@ -387,10 +387,6 @@ export const getRentaLiquitaDetalle = async (renLiq, student) => {
      */
 
     /**
-     * TODO: quedo en la linea 135 del renta liquida
-     */
-
-    /**
      * Valor contable costos dematerias primas
      */
 
@@ -403,6 +399,11 @@ export const getRentaLiquitaDetalle = async (renLiq, student) => {
     renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.ComprasLocales.ValorContable = content.R62["61"].CostVentInv.CompLoc.SaldCont;
     renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.Importaciones.ValorContable = content.R62["61"].CostVentInv.Import.SaldCont;
     renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.InventarioFinal.ValorContable = content.R62["61"].CostVentInv.InvFin.SaldCont;
+    renLiq.Costos.MateriasPrimasReventaBienes.ProductosProceso.InventarioInicial.ValorContable = content.R62["61"].InvIniTrbProc.SaldCont;
+    renLiq.Costos.MateriasPrimasReventaBienes.ProductosProceso.InventarioFinal.ValorContable = content.R62["61"].AsisTec.InvFinTrbProc.SaldCont;
+    renLiq.Costos.MateriasPrimasReventaBienes.ProductosTerminados.InventarioInicial.ValorContable = content.R62["61"].InvIniProdTer.SaldCont;
+    renLiq.Costos.MateriasPrimasReventaBienes.ProductosTerminados.InventarioFinal.ValorContable = content.R62["61"].AsisTec.InvFinProdTer.SaldCont;
+    renLiq.Costos.MateriasPrimasReventaBienes.CostosPrestacionServicios.ValorContable = content.R62["6140"].CostActRenExt.SaldCont;
 
     /**
      * Menor valor fiscal costos dematerias primas
@@ -417,6 +418,11 @@ export const getRentaLiquitaDetalle = async (renLiq, student) => {
     renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.ComprasLocales.MenorValorFiscal = content.R62["61"].CostVentInv.CompLoc.Ajust1;
     renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.Importaciones.MenorValorFiscal = content.R62["61"].CostVentInv.Import.Ajust1;
     renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.InventarioFinal.MenorValorFiscal = content.R62["61"].CostVentInv.InvFin.Ajust1;
+    renLiq.Costos.MateriasPrimasReventaBienes.ProductosProceso.InventarioInicial.MenorValorFiscal = content.R62["61"].InvIniTrbProc.Ajust1;
+    renLiq.Costos.MateriasPrimasReventaBienes.ProductosProceso.InventarioFinal.MenorValorFiscal = content.R62["61"].AsisTec.InvFinTrbProc.Ajust1;
+    renLiq.Costos.MateriasPrimasReventaBienes.ProductosTerminados.InventarioInicial.MenorValorFiscal = content.R62["61"].InvIniProdTer.Ajust1;
+    renLiq.Costos.MateriasPrimasReventaBienes.ProductosTerminados.InventarioFinal.MenorValorFiscal = content.R62["61"].AsisTec.InvFinProdTer.Ajust1;
+    renLiq.Costos.MateriasPrimasReventaBienes.CostosPrestacionServicios.MenorValorFiscal = content.R62["6140"].CostActRenExt.Ajust1;
 
     /**
      * Mayor valor fiscal costos dematerias primas
@@ -431,6 +437,176 @@ export const getRentaLiquitaDetalle = async (renLiq, student) => {
     renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.ComprasLocales.MayorValorFiscal = content.R62["61"].CostVentInv.CompLoc.Ajust3;
     renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.Importaciones.MayorValorFiscal = content.R62["61"].CostVentInv.Import.Ajust3;
     renLiq.Costos.MateriasPrimasReventaBienes.CostoBienesVendidos.InventarioFinal.MayorValorFiscal = content.R62["61"].CostVentInv.InvFin.Ajust3;
+    renLiq.Costos.MateriasPrimasReventaBienes.ProductosProceso.InventarioInicial.MayorValorFiscal = content.R62["61"].InvIniTrbProc.Ajust3;
+    renLiq.Costos.MateriasPrimasReventaBienes.ProductosProceso.InventarioFinal.MayorValorFiscal = content.R62["61"].AsisTec.InvFinTrbProc.Ajust3;
+    renLiq.Costos.MateriasPrimasReventaBienes.ProductosTerminados.InventarioInicial.MayorValorFiscal = content.R62["61"].InvIniProdTer.Ajust3;
+    renLiq.Costos.MateriasPrimasReventaBienes.ProductosTerminados.InventarioFinal.MayorValorFiscal = content.R62["61"].AsisTec.InvFinProdTer.Ajust3;
+    renLiq.Costos.MateriasPrimasReventaBienes.CostosPrestacionServicios.MayorValorFiscal = content.R62["6140"].CostActRenExt.Ajust3;
+
+
+    /**
+     * Valor contable mano de obra
+     */
+
+    renLiq.Costos.ManoObra.CortoPlazo.ValorContable = content.R62["61"].CostManoObr.CortoPlz.SaldCont;
+    renLiq.Costos.ManoObra.LargoPlazo.ValorContable = content.R62["61"].CostManoObr.LargoPlz.SaldCont;
+    renLiq.Costos.ManoObra.PostTerminacionVinculoLaboral.ValorContable = content.R62["61"].CostManoObr.TermVincLab.SaldCont;
+    renLiq.Costos.ManoObra.PostEmpleo.ValorContable = content.R62["61"].CostManoObr.PostEmpl.SaldCont;
+
+    /**
+     * Menor valor fiscal mano de obra
+     */
+
+    renLiq.Costos.ManoObra.CortoPlazo.MenorValorFiscal = content.R62["61"].CostManoObr.CortoPlz.Ajust1;
+    renLiq.Costos.ManoObra.LargoPlazo.MenorValorFiscal = content.R62["61"].CostManoObr.LargoPlz.Ajust1;
+    renLiq.Costos.ManoObra.PostTerminacionVinculoLaboral.MenorValorFiscal = content.R62["61"].CostManoObr.TermVincLab.Ajust1;
+    renLiq.Costos.ManoObra.PostEmpleo.MenorValorFiscal = content.R62["61"].CostManoObr.PostEmpl.Ajust1;
+
+    /**
+     * Mayor valor fiscal mano de obra
+     */
+
+    renLiq.Costos.ManoObra.CortoPlazo.MayorValorFiscal = content.R62["61"].CostManoObr.CortoPlz.Ajust3;
+    renLiq.Costos.ManoObra.LargoPlazo.MayorValorFiscal = content.R62["61"].CostManoObr.LargoPlz.Ajust3;
+    renLiq.Costos.ManoObra.PostTerminacionVinculoLaboral.MayorValorFiscal = content.R62["61"].CostManoObr.TermVincLab.Ajust3;
+    renLiq.Costos.ManoObra.PostEmpleo.MayorValorFiscal = content.R62["61"].CostManoObr.PostEmpl.Ajust3;
+
+    /**
+     * Valor contable depreciaciones amortizaciones y deterioro
+     */
+
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionPropiedadesPlantaEquipo.Costo.ValorContable = content.R62["61"].CostDepr.DeprPrpPltEqu.Cost.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionPropiedadesPlantaEquipo.AjusteAcumunlado.ValorContable = content.R62["61"].CostDepr.DeprPrpPltEqu.AjusAcum.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionPropiedadesInversion.Costo.ValorContable = content.R62["61"].CostDepr.DeprPrpInv.Cost.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionPropiedadesInversion.AjusteAcumunlado.ValorContable = content.R62["61"].CostDepr.DeprPrpInv.AjusAcum.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionActivosBiologicos.Costo.ValorContable = content.R62["61"].CostDepr.DeprActBio.Cost.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionActivosBiologicos.AjusteAcumunlado.ValorContable = content.R62["61"].CostDepr.DeprActBio.AjusAcum.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.AmortizacionActivosIntangibles.Costo.ValorContable = content.R62["61"].CostDepr.DepreActInt.Cost.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.AmortizacionActivosIntangibles.AjusteAcumunlado.ValorContable = content.R62["61"].CostDepr.DepreActInt.AjusAcum.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.OtrasDepreciacionesAmortizaciones.Costo.ValorContable = content.R62["61"].CostDepr.Otro.Cost.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.OtrasDepreciacionesAmortizaciones.AjusteAcumunlado.ValorContable = content.R62["61"].CostDepr.Otro.AjusAcum.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.Inventarios.ValorContable = content.R62["61"].Deterioros.Inv.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.PropiedadesPlantaEquipo.ValorContable = content.R62["61"].Deterioros.PrpPltEqu.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosIntangibles.ValorContable = content.R62["61"].Deterioros.ActInt.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosExploracionEvaluacionRecursosMinerales.ValorContable = content.R62["61"].Deterioros.ActExp.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.PropiedadesInversionMedidasCosto.ValorContable = content.R62["61"].Deterioros.PrpInver.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosNoCorrientesMantenidosVentaEntregarPropietarios.ValorContable = content.R62["61"].Deterioros.ActNoCorr.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosBiologicosMedidosCosto.ValorContable = content.R62["61"].Deterioros.ActBio.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.BienesArteCultura.ValorContable = content.R62["61"].Deterioros.BienArt.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosFinancieros.ValorContable = content.R62["61"].Deterioros.ActFin.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.CarteraCreditoOperacionesLeasing.ValorContable = content.R62["61"].Deterioros.CartCred.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.OtrasInversionesMedidasCostoMetodoParticipacion.ValorContable = content.R62["61"].Deterioros.OtrasInv.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.DerechosUsoArrendamientosOperativos.ValorContable = content.R62["61"].Deterioros.DerUso.SaldCont;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.OtrosDeterioros.ValorContable = content.R62["61"].Deterioros.Otros.SaldCont;
+
+    /**
+     * Menor valor fiscal depreciaciones amortizaciones y deterioro
+     */
+
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionPropiedadesPlantaEquipo.Costo.MenorValorFiscal = content.R62["61"].CostDepr.DeprPrpPltEqu.Cost.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionPropiedadesPlantaEquipo.AjusteAcumunlado.MenorValorFiscal = content.R62["61"].CostDepr.DeprPrpPltEqu.AjusAcum.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionPropiedadesInversion.Costo.MenorValorFiscal = content.R62["61"].CostDepr.DeprPrpInv.Cost.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionPropiedadesInversion.AjusteAcumunlado.MenorValorFiscal = content.R62["61"].CostDepr.DeprPrpInv.AjusAcum.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionActivosBiologicos.Costo.MenorValorFiscal = content.R62["61"].CostDepr.DeprActBio.Cost.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionActivosBiologicos.AjusteAcumunlado.MenorValorFiscal = content.R62["61"].CostDepr.DeprActBio.AjusAcum.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.AmortizacionActivosIntangibles.Costo.MenorValorFiscal = content.R62["61"].CostDepr.DepreActInt.Cost.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.AmortizacionActivosIntangibles.AjusteAcumunlado.MenorValorFiscal = content.R62["61"].CostDepr.DepreActInt.AjusAcum.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.OtrasDepreciacionesAmortizaciones.Costo.MenorValorFiscal = content.R62["61"].CostDepr.Otro.Cost.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.OtrasDepreciacionesAmortizaciones.AjusteAcumunlado.MenorValorFiscal = content.R62["61"].CostDepr.Otro.AjusAcum.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.Inventarios.MenorValorFiscal = content.R62["61"].Deterioros.Inv.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.PropiedadesPlantaEquipo.MenorValorFiscal = content.R62["61"].Deterioros.PrpPltEqu.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosIntangibles.MenorValorFiscal = content.R62["61"].Deterioros.ActInt.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosExploracionEvaluacionRecursosMinerales.MenorValorFiscal = content.R62["61"].Deterioros.ActExp.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.PropiedadesInversionMedidasCosto.MenorValorFiscal = content.R62["61"].Deterioros.PrpInver.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosNoCorrientesMantenidosVentaEntregarPropietarios.MenorValorFiscal = content.R62["61"].Deterioros.ActNoCorr.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosBiologicosMedidosCosto.MenorValorFiscal = content.R62["61"].Deterioros.ActBio.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.BienesArteCultura.MenorValorFiscal = content.R62["61"].Deterioros.BienArt.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosFinancieros.MenorValorFiscal = content.R62["61"].Deterioros.ActFin.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.CarteraCreditoOperacionesLeasing.MenorValorFiscal = content.R62["61"].Deterioros.CartCred.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.OtrasInversionesMedidasCostoMetodoParticipacion.MenorValorFiscal = content.R62["61"].Deterioros.OtrasInv.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.DerechosUsoArrendamientosOperativos.MenorValorFiscal = content.R62["61"].Deterioros.DerUso.Ajust1;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.OtrosDeterioros.MenorValorFiscal = content.R62["61"].Deterioros.Otros.Ajust1;
+
+    /**
+     * Mayor valor fiscal depreciaciones amortizaciones y deterioro
+     */
+
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionPropiedadesPlantaEquipo.Costo.MayorValorFiscal = content.R62["61"].CostDepr.DeprPrpPltEqu.Cost.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionPropiedadesPlantaEquipo.AjusteAcumunlado.MayorValorFiscal = content.R62["61"].CostDepr.DeprPrpPltEqu.AjusAcum.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionPropiedadesInversion.Costo.MayorValorFiscal = content.R62["61"].CostDepr.DeprPrpInv.Cost.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionPropiedadesInversion.AjusteAcumunlado.MayorValorFiscal = content.R62["61"].CostDepr.DeprPrpInv.AjusAcum.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionActivosBiologicos.Costo.MayorValorFiscal = content.R62["61"].CostDepr.DeprActBio.Cost.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DepreciacionActivosBiologicos.AjusteAcumunlado.MayorValorFiscal = content.R62["61"].CostDepr.DeprActBio.AjusAcum.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.AmortizacionActivosIntangibles.Costo.MayorValorFiscal = content.R62["61"].CostDepr.DepreActInt.Cost.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.AmortizacionActivosIntangibles.AjusteAcumunlado.MayorValorFiscal = content.R62["61"].CostDepr.DepreActInt.AjusAcum.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.OtrasDepreciacionesAmortizaciones.Costo.MayorValorFiscal = content.R62["61"].CostDepr.Otro.Cost.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.OtrasDepreciacionesAmortizaciones.AjusteAcumunlado.MayorValorFiscal = content.R62["61"].CostDepr.Otro.AjusAcum.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.Inventarios.MayorValorFiscal = content.R62["61"].Deterioros.Inv.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.PropiedadesPlantaEquipo.MayorValorFiscal = content.R62["61"].Deterioros.PrpPltEqu.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosIntangibles.MayorValorFiscal = content.R62["61"].Deterioros.ActInt.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosExploracionEvaluacionRecursosMinerales.MayorValorFiscal = content.R62["61"].Deterioros.ActExp.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.PropiedadesInversionMedidasCosto.MayorValorFiscal = content.R62["61"].Deterioros.PrpInver.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosNoCorrientesMantenidosVentaEntregarPropietarios.MayorValorFiscal = content.R62["61"].Deterioros.ActNoCorr.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosBiologicosMedidosCosto.MayorValorFiscal = content.R62["61"].Deterioros.ActBio.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.BienesArteCultura.MayorValorFiscal = content.R62["61"].Deterioros.BienArt.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosFinancieros.MayorValorFiscal = content.R62["61"].Deterioros.ActFin.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.CarteraCreditoOperacionesLeasing.MayorValorFiscal = content.R62["61"].Deterioros.CartCred.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.OtrasInversionesMedidasCostoMetodoParticipacion.MayorValorFiscal = content.R62["61"].Deterioros.OtrasInv.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.DerechosUsoArrendamientosOperativos.MayorValorFiscal = content.R62["61"].Deterioros.DerUso.Ajust3;
+    renLiq.Costos.DepresionacionesAmortizacionesDeterioros.DeterioroValorActivos.OtrosDeterioros.MayorValorFiscal = content.R62["61"].Deterioros.Otros.Ajust3;
+
+    /**
+     * Valor contable otros costos
+     */
+    
+    renLiq.Costos.OtrosCostos.Arrendamientos.ValorContable = content.R62["61"].Otros.Arren.SaldCont;
+    renLiq.Costos.OtrosCostos.Seguros.ValorContable = content.R62["61"].Otros.Seguro.SaldCont;
+    renLiq.Costos.OtrosCostos.Servicios.ValorContable = content.R62["61"].Otros.Serv.SaldCont;
+    renLiq.Costos.OtrosCostos.Honorarios.ValorContable = content.R62["61"].Otros.Honor.SaldCont;
+    renLiq.Costos.OtrosCostos.ServiciosTecnicos.VinculadosEconomicos.ValorContable = content.R62["61"].ServTecn.VinEco.SaldCont;
+    renLiq.Costos.OtrosCostos.ServiciosTecnicos.JurisdiccionesNoCooperantesBajaNulaImposicion.ValorContable = content.R62["61"].ServTecn.JurisNoCoop.SaldCont;
+    renLiq.Costos.OtrosCostos.ServiciosTecnicos.NoVinculados.ValorContable = content.R62["61"].ServTecn.NoVin.SaldCont;
+    renLiq.Costos.OtrosCostos.AsistenciaTecnica.VinculadosEconomicos.ValorContable = content.R62["61"].AsisTec.VinEco.SaldCont;
+    renLiq.Costos.OtrosCostos.AsistenciaTecnica.JurisdiccionesNoCooperantesBajaNulaImposicion.ValorContable = content.R62["61"].AsisTec.JurisNoCoop.SaldCont;
+    renLiq.Costos.OtrosCostos.AsistenciaTecnica.NoVinculados.ValorContable = content.R62["61"].AsisTec.NoVin.SaldCont;
+    renLiq.Costos.OtrosCostos.OtrosConceptosReconocidosCostos.ValorContable = content.R62["61"].AsisTec.Otros.SaldCont;
+
+    /**
+     * Menor valor fiscal otros costos
+     */
+
+    renLiq.Costos.OtrosCostos.Arrendamientos.MenorValorFiscal = content.R62["61"].Otros.Arren.Ajust1;
+    renLiq.Costos.OtrosCostos.Seguros.MenorValorFiscal = content.R62["61"].Otros.Seguro.Ajust1;
+    renLiq.Costos.OtrosCostos.Servicios.MenorValorFiscal = content.R62["61"].Otros.Serv.Ajust1;
+    renLiq.Costos.OtrosCostos.Honorarios.MenorValorFiscal = content.R62["61"].Otros.Honor.Ajust1;
+    renLiq.Costos.OtrosCostos.ServiciosTecnicos.VinculadosEconomicos.MenorValorFiscal = content.R62["61"].ServTecn.VinEco.Ajust1;
+    renLiq.Costos.OtrosCostos.ServiciosTecnicos.JurisdiccionesNoCooperantesBajaNulaImposicion.MenorValorFiscal = content.R62["61"].ServTecn.JurisNoCoop.Ajust1;
+    renLiq.Costos.OtrosCostos.ServiciosTecnicos.NoVinculados.MenorValorFiscal = content.R62["61"].ServTecn.NoVin.Ajust1;
+    renLiq.Costos.OtrosCostos.AsistenciaTecnica.VinculadosEconomicos.MenorValorFiscal = content.R62["61"].AsisTec.VinEco.Ajust1;
+    renLiq.Costos.OtrosCostos.AsistenciaTecnica.JurisdiccionesNoCooperantesBajaNulaImposicion.MenorValorFiscal = content.R62["61"].AsisTec.JurisNoCoop.Ajust1;
+    renLiq.Costos.OtrosCostos.AsistenciaTecnica.NoVinculados.MenorValorFiscal = content.R62["61"].AsisTec.NoVin.Ajust1;
+    renLiq.Costos.OtrosCostos.OtrosConceptosReconocidosCostos.MenorValorFiscal = content.R62["61"].AsisTec.Otros.Ajust1;
+
+    /**
+     * Mayor valor fiscal otros costos
+     */
+
+    renLiq.Costos.OtrosCostos.Arrendamientos.MayorValorFiscal = content.R62["61"].Otros.Arren.Ajust3;
+    renLiq.Costos.OtrosCostos.Seguros.MayorValorFiscal = content.R62["61"].Otros.Seguro.Ajust3;
+    renLiq.Costos.OtrosCostos.Servicios.MayorValorFiscal = content.R62["61"].Otros.Serv.Ajust3;
+    renLiq.Costos.OtrosCostos.Honorarios.MayorValorFiscal = content.R62["61"].Otros.Honor.Ajust3;
+    renLiq.Costos.OtrosCostos.ServiciosTecnicos.VinculadosEconomicos.MayorValorFiscal = content.R62["61"].ServTecn.VinEco.Ajust3;
+    renLiq.Costos.OtrosCostos.ServiciosTecnicos.JurisdiccionesNoCooperantesBajaNulaImposicion.MayorValorFiscal = content.R62["61"].ServTecn.JurisNoCoop.Ajust3;
+    renLiq.Costos.OtrosCostos.ServiciosTecnicos.NoVinculados.MayorValorFiscal = content.R62["61"].ServTecn.NoVin.Ajust3;
+    renLiq.Costos.OtrosCostos.AsistenciaTecnica.VinculadosEconomicos.MayorValorFiscal = content.R62["61"].AsisTec.VinEco.Ajust3;
+    renLiq.Costos.OtrosCostos.AsistenciaTecnica.JurisdiccionesNoCooperantesBajaNulaImposicion.MayorValorFiscal = content.R62["61"].AsisTec.JurisNoCoop.Ajust3;
+    renLiq.Costos.OtrosCostos.AsistenciaTecnica.NoVinculados.MayorValorFiscal = content.R62["61"].AsisTec.NoVin.Ajust3;
+    renLiq.Costos.OtrosCostos.OtrosConceptosReconocidosCostos.MayorValorFiscal = content.R62["61"].AsisTec.Otros.Ajust3;
+    renLiq.Costos.OtrosCostos.OtrosConceptosFiscalesNoReconocidos.MayorValorFiscal = content.R62["6140"].CostFiscActFij.Ajust3;
+
+    /**
+     * ##############################################Gastos##############################################
+     */
 
   }catch(e){
     console.log(e);
