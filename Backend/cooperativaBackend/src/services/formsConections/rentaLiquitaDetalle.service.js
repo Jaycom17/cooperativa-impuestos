@@ -608,6 +608,61 @@ export const getRentaLiquitaDetalle = async (renLiq, student) => {
      * ##############################################Gastos##############################################
      */
 
+    /**
+     * Valor contable gastos de administracion, mano de obra
+     */
+
+    renLiq.Gastos.Administracion.ManoObra.CortoPlazo.ValorContable = content.R63["5105"].SalOtro.SaldCont + content.R63["5105"].AporEPS.SaldCont + content.R63["5105"].AporARL.SaldCont + content.R63["5105"].AporFondPen.SaldCont + content.R63["5105"].AporSENA.SaldCont + content.R63["5105"].AporICBF.DeprePrpPltEqui.Cost.SaldCont + content.R63["5105"].AporICBF.DeprePrpPltEqui.AporCajaComp.SaldCont;
+
+    /**
+     * Menor valor fiscal gastos de administracion, mano de obra
+     */
+
+    renLiq.Gastos.Administracion.ManoObra.CortoPlazo.MenorValorFiscal = content.R63["5105"].SalOtro.Ajust1 + content.R63["5105"].AporEPS.Ajust1 + content.R63["5105"].AporARL.Ajust1 + content.R63["5105"].AporFondPen.Ajust1 + content.R63["5105"].AporSENA.Ajust1 + content.R63["5105"].AporICBF.DeprePrpPltEqui.Cost.Ajust1 + content.R63["5105"].AporICBF.DeprePrpPltEqui.AporCajaComp.Ajust1;
+
+    /**
+     * Mayor valor fiscal gastos de administracion, mano de obra
+     */
+
+    renLiq.Gastos.Administracion.ManoObra.CortoPlazo.MayorValorFiscal = content.R63["5105"].SalOtro.Ajust3 + content.R63["5105"].AporEPS.Ajust3 + content.R63["5105"].AporARL.Ajust3 + content.R63["5105"].AporFondPen.Ajust3 + content.R63["5105"].AporSENA.Ajust3 + content.R63["5105"].AporICBF.DeprePrpPltEqui.Cost.Ajust3 + content.R63["5105"].AporICBF.DeprePrpPltEqui.AporCajaComp.Ajust3;
+
+    /**
+     * Valor contable gastos de administracion, otros gastos de adminisracion
+     */
+
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ImpuestosDistintosAlImpuestosDeRentaYComplementarios.ValorContable = content.R63["5115"].SaldCont;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ArrendamientosOperativos.ValorContable = content.R63["5120"].SaldCont;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ContribucionesYAfiliaciones.ValorContable = content.R63["5125"].SaldCont;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Honorarios.ValorContable = content.R63["5110"].SaldCont;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Seguros.ValorContable = content.R63["5130"].SaldCont;
+
+    //Servicios Administrativos
+
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ServiciosAdministrativos.VinculadosEconomicos.ValorContable = content.R63["5135"].ServAdmVinEco.SaldCont;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ServiciosAdministrativos.JurisdiccionesNoCooperantesBajaNulaImposicion.ValorContable = content.R63["5135"].ServAdmVinTer.SaldCont;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ServiciosAdministrativos.NoVinculados.ValorContable = content.R63["5135"].ServAdmNoVin.SaldCont;
+
+    //Regalias
+
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Regalias.VinculadosEconomicos.ValorContable = content.R63["5136"].VinEco.SaldCont;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Regalias.JurisdiccionesNoCooperantesBajaNulaImposicion.ValorContable = content.R63["5136"].TerJurNoCoop.SaldCont;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Regalias.NoVinculados.ValorContable = content.R63["5136"].NoVin.SaldCont;
+
+    //Asistencia Tecnica
+
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.AsistenciaTecnica.VinculadosEconomicos.ValorContable = content.R63["5135"].ServTecVinEco.SaldCont;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.AsistenciaTecnica.JurisdiccionesNoCooperantesBajaNulaImposicion.ValorContable = content.R63["5135"].ServTecVinTer.SaldCont;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.AsistenciaTecnica.NoVinculados.ValorContable = content.R63["5135"].ServTecNoVin.SaldCont;
+
+    //----------------
+
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.OtrosServicios.ValorContable = content.R63["5135"].Otro.SaldCont;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.InvestigacionYDesarrollo.ValorContable = content.R63["5137"].SaldCont;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.GastosLegales.ValorContable = content.R63["5140"].SaldCont;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ReparacionMantenimientoAdecuacionInstalaciones.ValorContable = content.R63["5145"].SaldCont + content.R63["5150"].SaldCont;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Transporte.ValorContable = content.R63["5155"].SaldCont;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.OtrosGastos.ValorContable = content.R63["5195"].SaldCont;
+
   }catch(e){
     console.log(e);
   }
