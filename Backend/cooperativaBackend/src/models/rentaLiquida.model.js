@@ -8587,7 +8587,20 @@ export const RentaLiquidaInput = {
             Otras: 0,
           },
         },
-        DepreciacionArrendamientosOperativos: {},
+        DepreciacionArrendamientosOperativos: {
+          ValorContable: 0,
+            EfectoConversion: 0,
+            MenorValorFiscal: 0,
+            MayorValorFiscal: 0,
+            ValorFiscal: 0,
+            Tarifa9: 0,
+            Tarifa15: 0,
+            Tarifa20: 0,
+            MegaInversiones: 0,
+            MegaInversiones27: 0,
+            TarifaGeneral240: 0,
+            Otras: 0,
+        },
         OtrasDepreciaciones: {
           Costo: {
             ValorContable: 0,
