@@ -7860,6 +7860,16 @@ export const DetalleRenglonesInput = {
   },
   R65: {
     5305: {
+      /**
+       * ?se salto uno sotelo, ojo
+       */
+      IntDevSecFin: {
+        SaldCont: 0,
+        Ajust1: 0,
+        Ajust2: "",
+        Ajust3: 0,
+        SaldFisc: 0,
+      },
       IntDevPrestTer: {
         SaldCont: 0,
         Ajust1: 0,

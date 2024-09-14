@@ -8978,7 +8978,12 @@ export const RentaLiquidaInput = {
           Otras: 0,
         },
       },
-      OtrosGastosAdministracion: {
+      /**
+       * !Corregir
+       * ?acsdvdvsvf
+       * ?dscdfvdf
+       */
+      OtrosGastosDistribucion: {
         ImpuestosDistintosAlImpuestosDeRentaYComplementarios: {
           ValorContable: 0,
           EfectoConversion: 0,
@@ -9239,6 +9244,47 @@ export const RentaLiquidaInput = {
         },
         Transporte: {
           ValorContable: 0,
+          EfectoConversion: 0,
+          MenorValorFiscal: 0,
+          MayorValorFiscal: 0,
+          ValorFiscal: 0,
+          Tarifa9: 0,
+          Tarifa15: 0,
+          Tarifa20: 0,
+          MegaInversiones: 0,
+          MegaInversiones27: 0,
+          TarifaGeneral240: 0,
+          Otras: 0,
+        },
+        ConstitucionReservas: {
+          ValorContable: 0,
+          EfectoConversion: 0,
+          MenorValorFiscal: 0,
+          MayorValorFiscal: 0,
+          ValorFiscal: 0,
+          Tarifa9: 0,
+          Tarifa15: 0,
+          Tarifa20: 0,
+          MegaInversiones: 0,
+          MegaInversiones27: 0,
+          TarifaGeneral240: 0,
+          Otras: 0,
+        
+        },
+        LiquidacionSiniestros: {ValorContable: 0,
+          EfectoConversion: 0,
+          MenorValorFiscal: 0,
+          MayorValorFiscal: 0,
+          ValorFiscal: 0,
+          Tarifa9: 0,
+          Tarifa15: 0,
+          Tarifa20: 0,
+          MegaInversiones: 0,
+          MegaInversiones27: 0,
+          TarifaGeneral240: 0,
+          Otras: 0,
+        },
+        PrimasReaseguros: {ValorContable: 0,
           EfectoConversion: 0,
           MenorValorFiscal: 0,
           MayorValorFiscal: 0,

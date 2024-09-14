@@ -635,78 +635,78 @@ export const getRentaLiquitaDetalle = async (renLiq, student) => {
      * Menor Valor Fiscal gastos de administracion, otros gastos de adminisracion
      */
 
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ImpuestosDistintosAlImpuestosDeRentaYComplementarios.ValorContable = content.R63["5115"].Ajust3;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ArrendamientosOperativos.ValorContable = content.R63["5120"].Ajust3;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ContribucionesYAfiliaciones.ValorContable = content.R63["5125"].Ajust3;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Honorarios.ValorContable = content.R63["5110"].Ajust3;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Seguros.ValorContable = content.R63["5130"].Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ImpuestosDistintosAlImpuestosDeRentaYComplementarios.MenorValorFiscal = content.R63["5115"].Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ArrendamientosOperativos.MenorValorFiscal = content.R63["5120"].Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ContribucionesYAfiliaciones.MenorValorFiscal = content.R63["5125"].Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Honorarios.MenorValorFiscal = content.R63["5110"].Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Seguros.MenorValorFiscal = content.R63["5130"].Ajust3;
 
     //Servicios Administrativos
 
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ServiciosAdministrativos.VinculadosEconomicos.ValorContable = content.R63["5135"].ServAdmVinEco.Ajust3;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ServiciosAdministrativos.JurisdiccionesNoCooperantesBajaNulaImposicion.ValorContable = content.R63["5135"].ServAdmVinTer.Ajust3;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ServiciosAdministrativos.NoVinculados.ValorContable = content.R63["5135"].ServAdmNoVin.Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ServiciosAdministrativos.VinculadosEconomicos.MenorValorFiscal = content.R63["5135"].ServAdmVinEco.Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ServiciosAdministrativos.JurisdiccionesNoCooperantesBajaNulaImposicion.MenorValorFiscal = content.R63["5135"].ServAdmVinTer.Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ServiciosAdministrativos.NoVinculados.MenorValorFiscal = content.R63["5135"].ServAdmNoVin.Ajust3;
 
     //Regalias
 
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Regalias.VinculadosEconomicos.ValorContable = content.R63["5136"].VinEco.Ajust3;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Regalias.JurisdiccionesNoCooperantesBajaNulaImposicion.ValorContable = content.R63["5136"].TerJurNoCoop.Ajust3;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Regalias.NoVinculados.ValorContable = content.R63["5136"].NoVin.Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Regalias.VinculadosEconomicos.MenorValorFiscal = content.R63["5136"].VinEco.Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Regalias.JurisdiccionesNoCooperantesBajaNulaImposicion.MenorValorFiscal = content.R63["5136"].TerJurNoCoop.Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Regalias.NoVinculados.MenorValorFiscal = content.R63["5136"].NoVin.Ajust3;
 
     //Asistencia Tecnica
 
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.AsistenciaTecnica.VinculadosEconomicos.ValorContable = content.R63["5135"].ServTecVinEco.Ajust3;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.AsistenciaTecnica.JurisdiccionesNoCooperantesBajaNulaImposicion.ValorContable = content.R63["5135"].ServTecVinTer.Ajust3;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.AsistenciaTecnica.NoVinculados.ValorContable = content.R63["5135"].ServTecNoVin.Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.AsistenciaTecnica.VinculadosEconomicos.MenorValorFiscal = content.R63["5135"].ServTecVinEco.Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.AsistenciaTecnica.JurisdiccionesNoCooperantesBajaNulaImposicion.MenorValorFiscal = content.R63["5135"].ServTecVinTer.Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.AsistenciaTecnica.NoVinculados.MenorValorFiscal = content.R63["5135"].ServTecNoVin.Ajust3;
 
     //----------------
 
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.OtrosServicios.ValorContable = content.R63["5135"].Otro.Ajust3;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.InvestigacionYDesarrollo.ValorContable = content.R63["5137"].Ajust3;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.GastosLegales.ValorContable = content.R63["5140"].Ajust3;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ReparacionMantenimientoAdecuacionInstalaciones.ValorContable = content.R63["5145"].Ajust3 + content.R63["5150"].Ajust3;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Transporte.ValorContable = content.R63["5155"].Ajust3;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.OtrosGastos.ValorContable = content.R63["5195"].Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.OtrosServicios.MenorValorFiscal = content.R63["5135"].Otro.Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.InvestigacionYDesarrollo.MenorValorFiscal = content.R63["5137"].Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.GastosLegales.MenorValorFiscal = content.R63["5140"].Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ReparacionMantenimientoAdecuacionInstalaciones.MenorValorFiscal = content.R63["5145"].Ajust3 + content.R63["5150"].Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Transporte.MenorValorFiscal = content.R63["5155"].Ajust3;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.OtrosGastos.MenorValorFiscal = content.R63["5195"].Ajust3;
 
     /**
      * Mayor Valor Fiscal gastos de administracion, otros gastos de adminisracion
      */
 
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ImpuestosDistintosAlImpuestosDeRentaYComplementarios.ValorContable = content.R63["5115"].Ajust1;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ArrendamientosOperativos.ValorContable = content.R63["5120"].Ajust1;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ContribucionesYAfiliaciones.ValorContable = content.R63["5125"].Ajust1;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Honorarios.ValorContable = content.R63["5110"].Ajust1;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Seguros.ValorContable = content.R63["5130"].Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ImpuestosDistintosAlImpuestosDeRentaYComplementarios.MayorValorFiscal = content.R63["5115"].Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ArrendamientosOperativos.MayorValorFiscal = content.R63["5120"].Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ContribucionesYAfiliaciones.MayorValorFiscal = content.R63["5125"].Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Honorarios.MayorValorFiscal = content.R63["5110"].Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Seguros.MayorValorFiscal = content.R63["5130"].Ajust1;
 
     //Servicios Administrativos
 
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ServiciosAdministrativos.VinculadosEconomicos.ValorContable = content.R63["5135"].ServAdmVinEco.Ajust1;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ServiciosAdministrativos.JurisdiccionesNoCooperantesBajaNulaImposicion.ValorContable = content.R63["5135"].ServAdmVinTer.Ajust1;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ServiciosAdministrativos.NoVinculados.ValorContable = content.R63["5135"].ServAdmNoVin.Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ServiciosAdministrativos.VinculadosEconomicos.MayorValorFiscal = content.R63["5135"].ServAdmVinEco.Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ServiciosAdministrativos.JurisdiccionesNoCooperantesBajaNulaImposicion.MayorValorFiscal = content.R63["5135"].ServAdmVinTer.Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ServiciosAdministrativos.NoVinculados.MayorValorFiscal = content.R63["5135"].ServAdmNoVin.Ajust1;
 
     //Regalias
 
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Regalias.VinculadosEconomicos.ValorContable = content.R63["5136"].VinEco.Ajust1;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Regalias.JurisdiccionesNoCooperantesBajaNulaImposicion.ValorContable = content.R63["5136"].TerJurNoCoop.Ajust1;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Regalias.NoVinculados.ValorContable = content.R63["5136"].NoVin.Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Regalias.VinculadosEconomicos.MayorValorFiscal = content.R63["5136"].VinEco.Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Regalias.JurisdiccionesNoCooperantesBajaNulaImposicion.MayorValorFiscal = content.R63["5136"].TerJurNoCoop.Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Regalias.NoVinculados.MayorValorFiscal = content.R63["5136"].NoVin.Ajust1;
 
     //Asistencia Tecnica
 
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.AsistenciaTecnica.VinculadosEconomicos.ValorContable = content.R63["5135"].ServTecVinEco.Ajust1;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.AsistenciaTecnica.JurisdiccionesNoCooperantesBajaNulaImposicion.ValorContable = content.R63["5135"].ServTecVinTer.Ajust1;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.AsistenciaTecnica.NoVinculados.ValorContable = content.R63["5135"].ServTecNoVin.Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.AsistenciaTecnica.VinculadosEconomicos.MayorValorFiscal = content.R63["5135"].ServTecVinEco.Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.AsistenciaTecnica.JurisdiccionesNoCooperantesBajaNulaImposicion.MayorValorFiscal = content.R63["5135"].ServTecVinTer.Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.AsistenciaTecnica.NoVinculados.MayorValorFiscal = content.R63["5135"].ServTecNoVin.Ajust1;
 
     //----------------
 
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.OtrosServicios.ValorContable = content.R63["5135"].Otro.Ajust1;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.InvestigacionYDesarrollo.ValorContable = content.R63["5137"].Ajust1;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.GastosLegales.ValorContable = content.R63["5140"].Ajust1;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ReparacionMantenimientoAdecuacionInstalaciones.ValorContable = content.R63["5145"].Ajust1 + content.R63["5150"].Ajust1;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Transporte.ValorContable = content.R63["5155"].Ajust1;
-    renLiq.Gastos.Administracion.OtrosGastosAdministracion.OtrosGastos.ValorContable = content.R63["5195"].Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.OtrosServicios.MayorValorFiscal = content.R63["5135"].Otro.Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.InvestigacionYDesarrollo.MayorValorFiscal = content.R63["5137"].Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.GastosLegales.MayorValorFiscal = content.R63["5140"].Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.ReparacionMantenimientoAdecuacionInstalaciones.MayorValorFiscal = content.R63["5145"].Ajust1 + content.R63["5150"].Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.Transporte.MayorValorFiscal = content.R63["5155"].Ajust1;
+    renLiq.Gastos.Administracion.OtrosGastosAdministracion.OtrosGastos.MayorValorFiscal = content.R63["5195"].Ajust1;
 
     /**
-     * Valor contable gastos de administracion, otros gastos de adminisracion
+     * Valor contable gastos de administracion, depreciasiones amortizaciones y deterioro
      */
 
     renLiq.Gastos.Administracion.DepreciacionesAmortizacionesDeterioros.DepreciacionPropiedadesPlantaEquipo.Costo.ValorContable = content.R63["5160"].DeprePrpPltEqui.Cost.SaldCont;
@@ -735,7 +735,7 @@ export const getRentaLiquitaDetalle = async (renLiq, student) => {
     renLiq.Gastos.Administracion.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.OtrosDeterioros.ValorContable = content.R63["5199"].Otro.SaldCont;
 
     /**
-     * Menor valor fiscal gastos de administracion, otros gastos de adminisracion
+     * Menor valor fiscal gastos de administracion, depreciasiones amortizaciones y deterioro
      */
 
     renLiq.Gastos.Administracion.DepreciacionesAmortizacionesDeterioros.DepreciacionPropiedadesPlantaEquipo.Costo.MenorValorFiscal = content.R63["5160"].DeprePrpPltEqui.Cost.Ajust3;
@@ -746,7 +746,7 @@ export const getRentaLiquitaDetalle = async (renLiq, student) => {
     renLiq.Gastos.Administracion.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.CarteraCreditoOperacionesLeasing.MenorValorFiscal = content.R63["5199"].CartCred.Ajust3;
 
     /**
-     * Mayor valor fiscal gastos de administracion, otros gastos de adminisracion
+     * Mayor valor fiscal gastos de administracion, depreciasiones amortizaciones y deterioro
      */
 
     renLiq.Gastos.Administracion.DepreciacionesAmortizacionesDeterioros.DepreciacionPropiedadesPlantaEquipo.Costo.MayorValorFiscal = content.R63["5160"].DeprePrpPltEqui.Cost.Ajust1;
@@ -755,6 +755,286 @@ export const getRentaLiquitaDetalle = async (renLiq, student) => {
     renLiq.Gastos.Administracion.DepreciacionesAmortizacionesDeterioros.AmortizacionActivosIntangibles.Costo.MayorValorFiscal = content.R63["5166"].AmortActInt.Cost.Ajust1;
     renLiq.Gastos.Administracion.DepreciacionesAmortizacionesDeterioros.OtrasAmortizaciones.Costo.MayorValorFiscal = content.R63["5166"].Otros.Cost.Ajust1;
     renLiq.Gastos.Administracion.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.CarteraCreditoOperacionesLeasing.MayorValorFiscal = content.R63["5199"].CartCred.Ajust1;
+
+    /**
+     * Valor contable gastos de distribucion y ventas, mano de obra
+     */
+
+    renLiq.Gastos.GastosDistribucionVentas.ManoObra.CortoPlazo.ValorContable = content.R64["5205"].SalOtro.SaldCont + content.R64["5205"].AporEPS.SaldCont + content.R64["5205"].AporARL.SaldCont + content.R64["5205"].AporFondPen.SaldCont + content.R64["5205"].AporSENA.SaldCont + content.R64["5205"].AporICBF.DeprePrpPltEqui.Cost.SaldCont + content.R64["5205"].AporICBF.DeprePrpPltEqui.AporCajaComp.SaldCont;
+
+    /**
+     * Menor valor fiscal gastos de distribucion y ventas, mano de obra
+     */
+
+    renLiq.Gastos.GastosDistribucionVentas.ManoObra.CortoPlazo.MenorValorFiscal = content.R64["5205"].SalOtro.Ajust3 + content.R64["5205"].AporEPS.Ajust3 + content.R64["5205"].AporARL.Ajust3 + content.R64["5205"].AporFondPen.Ajust3 + content.R64["5205"].AporSENA.Ajust3 + content.R64["5205"].AporICBF.DeprePrpPltEqui.Cost.Ajust3 + content.R64["5205"].AporICBF.DeprePrpPltEqui.AporCajaComp.Ajust3;
+
+    /**
+     * Mayor valor fiscal gastos de distribucion y ventas, mano de obra
+     */
+
+    renLiq.Gastos.GastosDistribucionVentas.ManoObra.CortoPlazo.MayorValorFiscal = content.R64["5205"].SalOtro.Ajust1 + content.R64["5205"].AporEPS.Ajust1 + content.R64["5205"].AporARL.Ajust1 + content.R64["5205"].AporFondPen.Ajust1 + content.R64["5205"].AporSENA.Ajust1 + content.R64["5205"].AporICBF.DeprePrpPltEqui.Cost.Ajust1 + content.R64["5205"].AporICBF.DeprePrpPltEqui.AporCajaComp.Ajust1;
+
+
+    /**
+     * Valor contable gastos de distribucion y ventas, otros gastos de distribucion y ventas
+     */
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ImpuestosDistintosAlImpuestosDeRentaYComplementarios.ValorContable = content.R64["5215"].SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ArrendamientosOperativos.ValorContable = content.R64["5220"].SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ContribucionesYAfiliaciones.ValorContable = content.R64["5225"].SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Honorarios.ValorContable = content.R64["5210"].SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Seguros.ValorContable = content.R64["5230"].SaldCont;
+
+    //Servicios Administrativos
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ServiciosAdministrativos.VinculadosEconomicos.ValorContable = content.R64["5235"].ServAdmVinEco.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ServiciosAdministrativos.JurisdiccionesNoCooperantesBajaNulaImposicion.ValorContable = content.R64["5235"].ServAdmVinTer.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ServiciosAdministrativos.NoVinculados.ValorContable = content.R64["5235"].ServAdmNoVin.SaldCont;
+
+    //Regalias
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Regalias.VinculadosEconomicos.ValorContable = content.R64["5236"].VinEco.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Regalias.JurisdiccionesNoCooperantesBajaNulaImposicion.ValorContable = content.R64["5236"].TerJurNoCoop.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Regalias.NoVinculados.ValorContable = content.R64["5236"].NoVin.SaldCont;
+
+    //Asistencia Tecnica
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.AsistenciaTecnica.VinculadosEconomicos.ValorContable = content.R64["5235"].ServTecVinEco.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.AsistenciaTecnica.JurisdiccionesNoCooperantesBajaNulaImposicion.ValorContable = content.R64["5235"].ServTecVinTer.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.AsistenciaTecnica.NoVinculados.ValorContable = content.R64["5235"].ServTecNoVin.SaldCont;
+
+    //----------------
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.OtrosServicios.ValorContable = content.R64["5235"].Otro.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.InvestigacionYDesarrollo.ValorContable = content.R64["5241"].SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.GastosLegales.ValorContable = content.R64["5240"].SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ReparacionMantenimientoAdecuacionInstalaciones.ValorContable = content.R64["5245"].SaldCont + content.R64["5250"].SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Transporte.ValorContable = content.R64["5255"].SaldCont;
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ConstitucionReservas.ValorContable = content.R64["5237"].SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.LiquidacionSiniestros.ValorContable = content.R64["5238"].SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.PrimasReaseguros.ValorContable = content.R64["5239"].SaldCont;
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.OtrosGastos.ValorContable = content.R64["5295"].SaldCont;
+
+    /**
+     * Menor Valor Fiscal gastos de Gastos Ventas, otros gastos de adminisracion
+     */
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ImpuestosDistintosAlImpuestosDeRentaYComplementarios.MenorValorFiscal = content.R64["5215"].Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ArrendamientosOperativos.MenorValorFiscal = content.R64["5220"].Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ContribucionesYAfiliaciones.MenorValorFiscal = content.R64["5225"].Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Honorarios.MenorValorFiscal = content.R64["5210"].Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Seguros.MenorValorFiscal = content.R64["5230"].Ajust3;
+
+    //Servicios Administrativos
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ServiciosAdministrativos.VinculadosEconomicos.MenorValorFiscal = content.R64["5235"].ServAdmVinEco.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ServiciosAdministrativos.JurisdiccionesNoCooperantesBajaNulaImposicion.MenorValorFiscal = content.R64["5235"].ServAdmVinTer.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ServiciosAdministrativos.NoVinculados.MenorValorFiscal = content.R64["5235"].ServAdmNoVin.Ajust3;
+
+    //Regalias
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Regalias.VinculadosEconomicos.MenorValorFiscal = content.R64["5236"].VinEco.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Regalias.JurisdiccionesNoCooperantesBajaNulaImposicion.MenorValorFiscal = content.R64["5236"].TerJurNoCoop.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Regalias.NoVinculados.MenorValorFiscal = content.R64["5236"].NoVin.Ajust3;
+
+    //Asistencia Tecnica
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.AsistenciaTecnica.VinculadosEconomicos.MenorValorFiscal = content.R64["5235"].ServTecVinEco.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.AsistenciaTecnica.JurisdiccionesNoCooperantesBajaNulaImposicion.MenorValorFiscal = content.R64["5235"].ServTecVinTer.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.AsistenciaTecnica.NoVinculados.MenorValorFiscal = content.R64["5235"].ServTecNoVin.Ajust3;
+
+    //----------------
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.OtrosServicios.MenorValorFiscal = content.R64["5235"].Otro.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.InvestigacionYDesarrollo.MenorValorFiscal = content.R64["5237"].Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.GastosLegales.MenorValorFiscal = content.R64["5240"].Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ReparacionMantenimientoAdecuacionInstalaciones.MenorValorFiscal = content.R64["5245"].Ajust3 + content.R64["5250"].Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Transporte.MenorValorFiscal = content.R64["5255"].Ajust3;
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ConstitucionReservas.MenorValorFiscal = content.R64["5237"].Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.LiquidacionSiniestros.MenorValorFiscal = content.R64["5238"].Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.PrimasReaseguros.MenorValorFiscal = content.R64["5239"].Ajust3;
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.OtrosGastos.MenorValorFiscal = content.R64["5295"].Ajust3;
+
+    /**
+     * Mayor Valor Fiscal gastos de administracion, otros gastos de adminisracion
+     */
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ImpuestosDistintosAlImpuestosDeRentaYComplementarios.MayorValorFiscal = content.R64["5215"].Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ArrendamientosOperativos.MayorValorFiscal = content.R64["5220"].Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ContribucionesYAfiliaciones.MayorValorFiscal = content.R64["5225"].Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Honorarios.MayorValorFiscal = content.R64["5210"].Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Seguros.MayorValorFiscal = content.R64["5230"].Ajust1;
+
+    //Servicios Administrativos
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ServiciosAdministrativos.VinculadosEconomicos.MayorValorFiscal = content.R64["5235"].ServAdmVinEco.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ServiciosAdministrativos.JurisdiccionesNoCooperantesBajaNulaImposicion.MayorValorFiscal = content.R64["5235"].ServAdmVinTer.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ServiciosAdministrativos.NoVinculados.MayorValorFiscal = content.R64["5235"].ServAdmNoVin.Ajust1;
+
+    //Regalias
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Regalias.VinculadosEconomicos.MayorValorFiscal = content.R64["5236"].VinEco.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Regalias.JurisdiccionesNoCooperantesBajaNulaImposicion.MayorValorFiscal = content.R64["5236"].TerJurNoCoop.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Regalias.NoVinculados.MayorValorFiscal = content.R64["5236"].NoVin.Ajust1;
+
+    //Asistencia Tecnica
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.AsistenciaTecnica.VinculadosEconomicos.MayorValorFiscal = content.R64["5235"].ServTecVinEco.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.AsistenciaTecnica.JurisdiccionesNoCooperantesBajaNulaImposicion.v = content.R64["5235"].ServTecVinTer.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.AsistenciaTecnica.NoVinculados.MayorValorFiscal = content.R64["5235"].ServTecNoVin.Ajust1;
+
+    //----------------
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.OtrosServicios.MayorValorFiscal = content.R64["5235"].Otro.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.InvestigacionYDesarrollo.MayorValorFiscal = content.R64["5237"].Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.GastosLegales.MayorValorFiscal = content.R64["5240"].Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ReparacionMantenimientoAdecuacionInstalaciones.MayorValorFiscal = content.R64["5245"].Ajust1 + content.R64["5250"].Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.Transporte.MayorValorFiscal = content.R64["5255"].Ajust1;
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.ConstitucionReservas.MayorValorFiscal = content.R64["5237"].Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.LiquidacionSiniestros.MayorValorFiscal = content.R64["5238"].Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.PrimasReaseguros.MayorValorFiscal = content.R64["5239"].Ajust3;
+
+    renLiq.Gastos.GastosDistribucionVentas.OtrosGastosDistribucion.OtrosGastos.MayorValorFiscal = content.R64["5295"].Ajust1;
+
+    /**
+     * Valor contable gastos de distribucion y ventas, depreciasiones amortizaciones y deterioro
+     */
+
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DepreciacionPropiedadesPlantaEquipo.Costo.ValorContable = content.R64["5260"].DeprePrpPltEqui.Cost.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DepreciacionPropiedadesPlantaEquipo.AjusteAcumunlado.ValorContable = content.R64["5260"].DeprePrpPltEqui.AjusAcum.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DepreciacionPropiedadesInversion.Costo.ValorContable = content.R64["5260"].DeprePropInv.Cost.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DepreciacionPropiedadesInversion.AjusteAcumunlado.ValorContable = content.R64["5260"].DeprePropInv.AjusAcum.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.OtrasDepreciaciones.Costo.ValorContable = content.R64["5260"].DepreOtro.Cost.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.OtrasDepreciaciones.AjusteAcumunlado.ValorContable = content.R64["5260"].DepreOtro.AjusAcum.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.AmortizacionActivosIntangibles.Costo.ValorContable = content.R64["5266"].AmortActInt.Cost.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.AmortizacionActivosIntangibles.AjusteAcumunlado.ValorContable = content.R64["5266"].AmortActInt.AjusAcum.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.OtrasAmortizaciones.Costo.ValorContable = content.R64["5266"].Otros.Cost.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.OtrasAmortizaciones.AjusteAcumunlado.ValorContable = content.R64["5266"].Otros.AjusAcum.SaldCont;
+
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.Inventarios.ValorContable = content.R64["5299"].Inv.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.PropiedadesPlantaEquipo.ValorContable = content.R64["5299"].PrpPltEqui.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosIntangibles.ValorContable = content.R64["5299"].ActInt.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosExploracionEvaluacionRecursosMinerales.ValorContable = content.R64["5299"].ActExplEva.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.PropiedadesInversionMedidasCosto.ValorContable = content.R64["5299"].PropInv.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosNoCorrientesMantenidosVentaEntregarPropietarios.ValorContable = content.R64["5299"].ActNoCorr.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.BienesArteCultura.ValorContable = content.R64["5299"].BienArt.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosBiologicosMedidosCosto.ValorContable = content.R64["5299"].ActBio.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosFinancieros.ValorContable = content.R64["5299"].ActFin.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.CarteraCreditoOperacionesLeasing.ValorContable = content.R64["5299"].CartCred.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.OtrasInversionesMedidasCostoMetodoParticipacion.ValorContable = content.R64["5299"].OtroInv.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.DerechosUsoArrendamientosOperativos.ValorContable = content.R64["5299"].DerUso.SaldCont;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.OtrosDeterioros.ValorContable = content.R64["5299"].Otro.SaldCont;
+
+    /**
+     * Menor valor fiscal gastos de distribucion y ventas, depreciasiones amortizaciones y deterioro
+     */
+
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DepreciacionPropiedadesPlantaEquipo.Costo.MenorValorFiscal = content.R64["5260"].DeprePrpPltEqui.Cost.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DepreciacionPropiedadesInversion.Costo.MenorValorFiscal = content.R64["5260"].DeprePropInv.Cost.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.OtrasDepreciaciones.Costo.MenorValorFiscal = content.R64["5260"].DepreOtro.Cost.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.AmortizacionActivosIntangibles.Costo.MenorValorFiscal = content.R64["5266"].AmortActInt.Cost.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.OtrasAmortizaciones.Costo.MenorValorFiscal = content.R64["5266"].Otros.Cost.Ajust3;
+
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.Inventarios.MenorValorFiscal = content.R64["5299"].Inv.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.PropiedadesPlantaEquipo.MenorValorFiscal = content.R64["5299"].PrpPltEqui.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosIntangibles.MenorValorFiscal = content.R64["5299"].ActInt.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosExploracionEvaluacionRecursosMinerales.MenorValorFiscal = content.R64["5299"].ActExplEva.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.PropiedadesInversionMedidasCosto.MenorValorFiscal = content.R64["5299"].PropInv.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosNoCorrientesMantenidosVentaEntregarPropietarios.MenorValorFiscal = content.R64["5299"].ActNoCorr.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.BienesArteCultura.MenorValorFiscal = content.R64["5299"].BienArt.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosBiologicosMedidosCosto.MenorValorFiscal = content.R64["5299"].ActBio.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosFinancieros.MenorValorFiscal = content.R64["5299"].ActFin.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.CarteraCreditoOperacionesLeasing.MenorValorFiscal = content.R64["5299"].CartCred.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.OtrasInversionesMedidasCostoMetodoParticipacion.MenorValorFiscal = content.R64["5299"].OtroInv.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.DerechosUsoArrendamientosOperativos.MenorValorFiscal = content.R64["5299"].DerUso.Ajust3;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.OtrosDeterioros.MenorValorFiscal = content.R64["5299"].Otro.Ajust3;
+
+    /**
+     * Mayor valor fiscal gastos de distribucion y ventas, depreciasiones amortizaciones y deterioro
+     */
+
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DepreciacionPropiedadesPlantaEquipo.Costo.MayorValorFiscal = content.R64["5260"].DeprePrpPltEqui.Cost.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DepreciacionPropiedadesInversion.Costo.MayorValorFiscal = content.R64["5260"].DeprePropInv.Cost.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.OtrasDepreciaciones.Costo.MayorValorFiscal = content.R64["5260"].DepreOtro.Cost.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.AmortizacionActivosIntangibles.Costo.MayorValorFiscal = content.R64["5266"].AmortActInt.Cost.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.OtrasAmortizaciones.Costo.MayorValorFiscal = content.R64["5266"].Otros.Cost.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.CarteraCreditoOperacionesLeasing.MayorValorFiscal = content.R64["5266"].CartCred.Ajust1;
+
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.Inventarios.MayorValorFiscal = content.R64["5299"].Inv.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.PropiedadesPlantaEquipo.MayorValorFiscal = content.R64["5299"].PrpPltEqui.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosIntangibles.MayorValorFiscal = content.R64["5299"].ActInt.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosExploracionEvaluacionRecursosMinerales.MayorValorFiscal = content.R64["5299"].ActExplEva.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.PropiedadesInversionMedidasCosto.MayorValorFiscal = content.R64["5299"].PropInv.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosNoCorrientesMantenidosVentaEntregarPropietarios.MayorValorFiscal = content.R64["5299"].ActNoCorr.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.BienesArteCultura.MayorValorFiscal = content.R64["5299"].BienArt.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosBiologicosMedidosCosto.MayorValorFiscal = content.R64["5299"].ActBio.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.ActivosFinancieros.MayorValorFiscal = content.R64["5299"].ActFin.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.CarteraCreditoOperacionesLeasing.MayorValorFiscal = content.R64["5299"].CartCred.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.OtrasInversionesMedidasCostoMetodoParticipacion.MayorValorFiscal = content.R64["5299"].OtroInv.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.DerechosUsoArrendamientosOperativos.MayorValorFiscal = content.R64["5299"].DerUso.Ajust1;
+    renLiq.Gastos.GastosDistribucionVentas.DepreciacionesAmortizacionesDeterioros.DeterioroValorActivos.OtrosDeterioros.MayorValorFiscal = content.R64["5299"].Otro.Ajust1;
+
+    /**
+     * Valor contable gastos finacieros
+     */
+
+    renLiq.Gastos.GastosFinancieros.InteresesDevengadosSectorFinanciero.ValorContable = content.R65["5305"].IntDevSecFin.SaldCont;
+    renLiq.Gastos.GastosFinancieros.InteresesDevengadosPrestamosTerceros.ValorContable = content.R65["5305"].IntDevPrestTer.SaldCont;
+    renLiq.Gastos.GastosFinancieros.IntrumentosFinancierosMedidos.ValorContable = content.R65["5305"].InstFin.SaldCont;
+    renLiq.Gastos.GastosFinancieros.CostosTransaccion.ValorContable = content.R65["5305"].CstTrans.SaldCont;
+    renLiq.Gastos.GastosFinancieros.DiferenciaCambio.ValorContable = content.R65["5305"].DifCamb.SaldCont;
+    renLiq.Gastos.GastosFinancieros.InteresesImplicitos.ValorContable = content.R65["5305"].IntImpl.SaldCont;
+    renLiq.Gastos.GastosFinancieros.ActualizacionProvisiones.ValorContable = content.R65["5305"].ActProvRecValPres.SaldCont;
+    renLiq.Gastos.GastosFinancieros.AccionesPreferenciales.ValorContable = content.R65["5305"].IntAccPref.SaldCont;
+    renLiq.Gastos.GastosFinancieros.OtrosGastosFinancieros.ValorContable = content.R65["5305"].Otro.SaldCont + content.R65["5310"].IntDIANSegSoc.SaldCont;
+
+    /**
+     * Menor valor fiscal gastos finacieros
+     */
+
+    renLiq.Gastos.GastosFinancieros.InteresesDevengadosSectorFinanciero.MenorValorFiscal = content.R65["5305"].IntDevSecFin.Ajust3;
+    renLiq.Gastos.GastosFinancieros.InteresesDevengadosPrestamosTerceros.MenorValorFiscal = content.R65["5305"].IntDevPrestTer.Ajust3;
+    renLiq.Gastos.GastosFinancieros.CostosTransaccion.MenorValorFiscal = content.R65["5305"].CstTrans.Ajust3;
+    renLiq.Gastos.GastosFinancieros.DiferenciaCambio.MenorValorFiscal = content.R65["5305"].DifCamb.Ajust3;
+    renLiq.Gastos.GastosFinancieros.AccionesPreferenciales.MenorValorFiscal = content.R65["5305"].IntAccPref.Ajust3;
+    renLiq.Gastos.GastosFinancieros.OtrosGastosFinancieros.MenorValorFiscal = content.R65["5305"].Otro.Ajust3 + content.R65["5310"].IntDIANSegSoc.Ajust3;
+
+    /**
+     * Mayor valor fiscal gastos finacieros
+     */
+
+    renLiq.Gastos.GastosFinancieros.InteresesDevengadosSectorFinanciero.MayorValorFiscal = content.R65["5305"].IntDevSecFin.Ajust1;
+    renLiq.Gastos.GastosFinancieros.InteresesDevengadosPrestamosTerceros.MayorValorFiscal = content.R65["5305"].IntDevPrestTer.Ajust1;
+    renLiq.Gastos.GastosFinancieros.CostosTransaccion.MayorValorFiscal = content.R65["5305"].CstTrans.Ajust1;
+    renLiq.Gastos.GastosFinancieros.DiferenciaCambio.MayorValorFiscal = content.R65["5305"].DifCamb.Ajust1;
+    renLiq.Gastos.GastosFinancieros.AccionesPreferenciales.MayorValorFiscal = content.R65["5305"].IntAccPref.Ajust1;
+    renLiq.Gastos.GastosFinancieros.OtrosGastosFinancieros.MayorValorFiscal = content.R65["5305"].Otro.Ajust1 + content.R65["5310"].IntDIANSegSoc.Ajust1;
+
+    /**
+     * Valor contable perdidas ppor inversiones en subsidiarias, asociadas y negocios conjuntos
+     */
+
+    renLiq.Gastos.PredidasPorInversionesSubsidiariasAsociadasNegocios.PerdidaMetodoParticipacion.ValorContable = content.R66["5313"].PerMetPart.SaldCont;
+    renLiq.Gastos.PredidasPorInversionesSubsidiariasAsociadasNegocios.PerdidaMetodoValorRazonable.ValorContable = content.R66["5313"].PerMedValRaz.SaldCont;
+
+    /**
+     * Valor contable perdidas por mediciones a valor razonable
+     */
+
+    renLiq.Gastos.PerdidasPorMedicionesValorRazonable.ActivosBiologicos.ValorContable = content.R66["5314"].ActBio.SaldCont;
+    renLiq.Gastos.PerdidasPorMedicionesValorRazonable.PropiedadesInversion.ValorContable = content.R66["5314"].PrpInv.SaldCont;
+    renLiq.Gastos.PerdidasPorMedicionesValorRazonable.InstrumentosFinancieros.ValorContable = content.R66["5314"].InsFin.SaldCont;
+    renLiq.Gastos.PerdidasPorMedicionesValorRazonable.InstrumentosDerivados.ValorContable = content.R66["5314"].InsDer.SaldCont;
+    renLiq.Gastos.PerdidasPorMedicionesValorRazonable.Otros.ValorContable = content.R66["5314"].Otros.SaldCont;
+
+    /**
+     * Valor contable perdidas en la venta o enajenacion de activos fijos
+     */
 
   }catch(e){
     console.log(e);
